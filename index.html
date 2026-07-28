@@ -59,59 +59,17 @@
     }
 
     .site-header {
-      min-height: 330px;
       position: relative;
-      display: flex;
-      align-items: end;
       overflow: hidden;
       border-bottom: 1px solid var(--line);
       box-shadow: var(--shadow);
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.68), rgba(0,0,0,.12) 50%, rgba(0,0,0,.58)),
-        url("./banner.jpeg") center / cover no-repeat;
+      background: #090603;
     }
 
-    .header-inner {
-      width: min(var(--max), calc(100% - 2rem));
-      margin: 0 auto;
-      display: flex;
-      align-items: end;
-      gap: 1.2rem;
-      padding: 1.3rem 0 1.7rem;
-    }
-
-    .header-logo {
-      width: clamp(105px, 15vw, 175px);
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid var(--gold);
-      box-shadow: 0 0 0 5px rgba(0,0,0,.35), 0 14px 34px rgba(0,0,0,.7);
-      flex: 0 0 auto;
-    }
-
-    .brand-copy {
-      padding: .9rem 1.2rem;
-      border-left: 4px solid var(--gold);
-      border-radius: 0 12px 12px 0;
-      background: linear-gradient(90deg, rgba(8,5,3,.86), rgba(8,5,3,.40));
-      backdrop-filter: blur(2px);
-    }
-
-    .brand-copy h1 {
-      margin: 0;
-      font-size: clamp(2.1rem, 5vw, 4.5rem);
-      line-height: 1;
-      color: var(--gold-light);
-      text-shadow: 0 3px 0 #1a1005, 0 0 24px rgba(213,161,59,.25);
-      letter-spacing: .025em;
-    }
-
-    .brand-copy p {
-      margin: .55rem 0 0;
-      font-size: clamp(1rem, 2vw, 1.35rem);
-      color: #f5e2b0;
-      font-weight: 700;
+    .banner-image {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .nav-shell {
@@ -471,22 +429,6 @@
     }
 
     @media (max-width: 720px) {
-      .site-header {
-        min-height: 245px;
-      }
-
-      .header-inner {
-        min-height: 245px;
-      }
-
-      .header-logo {
-        width: 88px;
-      }
-
-      .brand-copy {
-        padding: .65rem .75rem;
-      }
-
       .nav-inner {
         flex-wrap: wrap;
         padding: .45rem 0;
@@ -549,16 +491,10 @@
   </div>
 
   <header class="site-header" id="start">
-    <div class="header-inner">
-      <a href="#start" aria-label="Zur Startseite">
-        <img class="header-logo" src="./logo.jpeg" alt="Logo des The Old Smugglers Club">
-      </a>
-
-      <div class="brand-copy">
-        <h1>The Old Smugglers Club</h1>
-        <p>Gemeinsam tippen. Gemeinsam siegen.</p>
-      </div>
-    </div>
+    <img
+      class="banner-image"
+      src="./banner.jpeg"
+      alt="The Old Smugglers Club – Gemeinsam tippen. Gemeinsam siegen. Saison 2026/2027">
   </header>
 
   <div class="nav-shell">
