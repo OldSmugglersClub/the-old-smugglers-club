@@ -1,187 +1,813 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Old Smugglers Club</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Offizielle Website des The Old Smugglers Club – Bundesliga, DFB-Pokal, Champions League, Relegation, Schmuggleraufträge und Sonderevents.">
+  <meta name="theme-color" content="#120b05">
+  <title>The Old Smugglers Club</title>
 
-<style>
+  <!-- Diese Version verwendet exakt die aktuell in GitHub sichtbaren Dateinamen:
+       Hintergrund.jpeg
+       banner.jpeg
+       Champion-Trophäe.jpeg
+       favicon.jpeg
+       logo.jpeg
+  -->
+  <link rel="icon" type="image/jpeg" href="./favicon.jpeg">
 
-body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:#111;
-    color:white;
-}
+  <style>
+    :root {
+      --gold: #d5a13b;
+      --gold-light: #f2d27e;
+      --gold-dark: #76501e;
+      --text: #f5ead2;
+      --muted: #c6b58f;
+      --panel: rgba(18, 11, 6, 0.90);
+      --panel-soft: rgba(18, 11, 6, 0.77);
+      --line: rgba(213, 161, 59, 0.52);
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.48);
+      --radius: 18px;
+      --max: 1200px;
+    }
 
-header{
-    background:#202020;
-    padding:25px;
-    text-align:center;
-    border-bottom:4px solid #d4af37;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-header h1{
-    margin:0;
-    font-size:48px;
-    color:#d4af37;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-header p{
-    color:#ddd;
-    font-size:20px;
-}
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+      background:
+        linear-gradient(rgba(7, 4, 2, 0.74), rgba(7, 4, 2, 0.90)),
+        url("./Hintergrund.jpeg") center top / cover fixed no-repeat;
+    }
 
-nav{
-    background:#000;
-    padding:15px;
-    text-align:center;
-}
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 20px;
-    font-weight:bold;
-}
+    a {
+      color: inherit;
+    }
 
-.hero{
-    padding:70px 20px;
-    text-align:center;
-    background:linear-gradient(180deg,#2d2d2d,#111);
-}
+    .site-header {
+      min-height: 330px;
+      position: relative;
+      display: flex;
+      align-items: end;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.68), rgba(0,0,0,.12) 50%, rgba(0,0,0,.58)),
+        url("./banner.jpeg") center / cover no-repeat;
+    }
 
-.hero h2{
-    color:#d4af37;
-    font-size:42px;
-}
+    .header-inner {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+      display: flex;
+      align-items: end;
+      gap: 1.2rem;
+      padding: 1.3rem 0 1.7rem;
+    }
 
-.hero p{
-    font-size:20px;
-    max-width:900px;
-    margin:auto;
-    line-height:1.6;
-}
+    .header-logo {
+      width: clamp(105px, 15vw, 175px);
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      box-shadow: 0 0 0 5px rgba(0,0,0,.35), 0 14px 34px rgba(0,0,0,.7);
+      flex: 0 0 auto;
+    }
 
-.button{
-    display:inline-block;
-    margin-top:35px;
-    padding:15px 35px;
-    background:#d4af37;
-    color:black;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-}
+    .brand-copy {
+      padding: .9rem 1.2rem;
+      border-left: 4px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      background: linear-gradient(90deg, rgba(8,5,3,.86), rgba(8,5,3,.40));
+      backdrop-filter: blur(2px);
+    }
 
-.section{
-    padding:60px 30px;
-    max-width:1100px;
-    margin:auto;
-}
+    .brand-copy h1 {
+      margin: 0;
+      font-size: clamp(2.1rem, 5vw, 4.5rem);
+      line-height: 1;
+      color: var(--gold-light);
+      text-shadow: 0 3px 0 #1a1005, 0 0 24px rgba(213,161,59,.25);
+      letter-spacing: .025em;
+    }
 
-.card{
-    background:#1f1f1f;
-    border-left:5px solid #d4af37;
-    padding:25px;
-    margin-bottom:25px;
-    border-radius:10px;
-}
+    .brand-copy p {
+      margin: .55rem 0 0;
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      color: #f5e2b0;
+      font-weight: 700;
+    }
 
-footer{
-    text-align:center;
-    background:#000;
-    color:#999;
-    padding:30px;
-    margin-top:50px;
-}
+    .nav-shell {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(9, 6, 3, .95);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
 
-</style>
+    .nav-inner {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
 
+    .mini-brand {
+      display: none;
+      align-items: center;
+      gap: .65rem;
+      text-decoration: none;
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+
+    .mini-brand img {
+      width: 38px;
+      height: 38px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+    }
+
+    .menu-button {
+      display: none;
+      color: var(--gold-light);
+      background: #1a1108;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      padding: .65rem .85rem;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .22rem;
+      list-style: none;
+      margin: 0;
+      padding: .55rem 0;
+    }
+
+    nav a {
+      display: block;
+      padding: .72rem .85rem;
+      border-radius: 9px;
+      text-decoration: none;
+      color: #f0ddb0;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: #120b05;
+      background: linear-gradient(#e4bb5d, #98631f);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    main {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2rem 0 4rem;
+    }
+
+    .panel {
+      padding: clamp(1.2rem, 3vw, 2rem);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background:
+        linear-gradient(rgba(21,13,8,.90), rgba(11,7,4,.95)),
+        radial-gradient(circle at top right, rgba(213,161,59,.08), transparent 45%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 1.2rem;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    h2, h3 {
+      color: var(--gold-light);
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin: .35rem 0 1rem;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 1.45rem;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-top: 1.35rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: .72rem 1.05rem;
+      border: 1px solid #dfb65c;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+
+    .button-primary {
+      color: #130c05;
+      background: linear-gradient(#f2d27e, #b97822);
+      box-shadow: inset 0 1px rgba(255,255,255,.5), 0 8px 22px rgba(0,0,0,.3);
+    }
+
+    .button-secondary {
+      color: var(--gold-light);
+      background: rgba(24,15,8,.78);
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      filter: brightness(1.07);
+      outline: none;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .55rem;
+      margin-top: 1rem;
+    }
+
+    .countdown div {
+      text-align: center;
+      padding: .8rem .3rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(0,0,0,.28);
+    }
+
+    .countdown strong {
+      display: block;
+      color: var(--gold-light);
+      font-size: clamp(1.5rem, 4vw, 2.35rem);
+      line-height: 1;
+    }
+
+    .countdown span {
+      color: var(--muted);
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .notice {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-left: 4px solid var(--gold);
+      border-radius: 8px;
+      background: rgba(213,161,59,.08);
+    }
+
+    .section {
+      margin-top: 1.3rem;
+      scroll-margin-top: 90px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-title span {
+      font-size: 1.7rem;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: clamp(1.65rem, 3vw, 2.45rem);
+    }
+
+    .competition-grid,
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .9rem;
+    }
+
+    .competition,
+    .card {
+      padding: 1.05rem;
+      border: 1px solid rgba(213,161,59,.4);
+      border-radius: 12px;
+      background: linear-gradient(rgba(29,18,10,.94), rgba(13,8,5,.94));
+      box-shadow: 0 10px 28px rgba(0,0,0,.28);
+    }
+
+    .competition {
+      text-align: center;
+    }
+
+    .competition b {
+      display: block;
+      margin-top: .35rem;
+      color: var(--gold-light);
+    }
+
+    .competition span {
+      font-size: 1.9rem;
+    }
+
+    .hall-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .trophy {
+      width: 100%;
+      max-height: 560px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 14px 32px rgba(0,0,0,.42);
+    }
+
+    .rank-list {
+      display: grid;
+      gap: .75rem;
+    }
+
+    .rank {
+      display: grid;
+      grid-template-columns: 52px 1fr auto;
+      gap: .8rem;
+      align-items: center;
+      padding: .85rem;
+      border: 1px solid rgba(213,161,59,.28);
+      border-radius: 11px;
+      background: rgba(0,0,0,.24);
+    }
+
+    .rank-number {
+      color: var(--gold-light);
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    .rank small {
+      display: block;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      background: rgba(8,5,3,.97);
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1.4rem 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    footer a {
+      color: var(--gold-light);
+    }
+
+    .welcome {
+      position: fixed;
+      inset: 0;
+      z-index: 5000;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle, rgba(89,53,18,.20), transparent 35%),
+        rgba(4,3,2,.97);
+      opacity: 1;
+      visibility: visible;
+      transition: opacity .65s ease, visibility .65s ease;
+    }
+
+    .welcome.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .welcome-box {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .welcome-box img {
+      width: min(240px, 55vw);
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 40px rgba(213,161,59,.25);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .hall-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .competition-grid,
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .site-header {
+        min-height: 245px;
+      }
+
+      .header-inner {
+        min-height: 245px;
+      }
+
+      .header-logo {
+        width: 88px;
+      }
+
+      .brand-copy {
+        padding: .65rem .75rem;
+      }
+
+      .nav-inner {
+        flex-wrap: wrap;
+        padding: .45rem 0;
+      }
+
+      .mini-brand {
+        display: flex;
+      }
+
+      .menu-button {
+        display: inline-block;
+      }
+
+      nav {
+        display: none;
+        width: 100%;
+      }
+
+      nav.open {
+        display: block;
+      }
+
+      nav ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: .4rem 0 .7rem;
+      }
+
+      nav a {
+        border: 1px solid rgba(213,161,59,.2);
+      }
+
+      .competition-grid,
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .rank {
+        grid-template-columns: 44px 1fr;
+      }
+
+      .rank > :last-child {
+        grid-column: 2;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="welcome" id="welcome" aria-hidden="true">
+    <div class="welcome-box">
+      <img src="./logo.jpeg" alt="">
+      <h2>⚓ Willkommen an Bord</h2>
+      <p>Die Schatzkammer des Old Smugglers Club wird geöffnet …</p>
+    </div>
+  </div>
 
-<header>
+  <header class="site-header" id="start">
+    <div class="header-inner">
+      <a href="#start" aria-label="Zur Startseite">
+        <img class="header-logo" src="./logo.jpeg" alt="Logo des The Old Smugglers Club">
+      </a>
 
-<h1>The Old Smugglers Club</h1>
+      <div class="brand-copy">
+        <h1>The Old Smugglers Club</h1>
+        <p>Gemeinsam tippen. Gemeinsam siegen.</p>
+      </div>
+    </div>
+  </header>
 
-<p>Offizielle Website des Bundesliga-Tippspiels</p>
+  <div class="nav-shell">
+    <div class="nav-inner">
+      <a class="mini-brand" href="#start">
+        <img src="./logo.jpeg" alt="">
+        <span>Old Smugglers</span>
+      </a>
 
-</header>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="navigation">
+        ☰ Menü
+      </button>
 
-<nav>
+      <nav id="navigation" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="#start">Start</a></li>
+          <li><a href="#wettbewerbe">Wettbewerbe</a></li>
+          <li><a href="#auftraege">Schmuggleraufträge</a></li>
+          <li><a href="#hall-of-fame">Hall of Fame</a></li>
+          <li><a href="#piratenkodex">Piratenkodex</a></li>
+          <li><a href="#kummerkasten">Kummerkasten</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 
-<a href="#">Start</a>
-<a href="#">Hall of Fame</a>
-<a href="#">Regeln</a>
-<a href="#">Tabelle</a>
-<a href="#">Kummerkasten</a>
+  <main>
+    <section class="hero-grid">
+      <article class="panel">
+        <div class="eyebrow">Saison 2026/2027</div>
+        <h2>Willkommen in der Zentrale der Crew</h2>
+        <p class="lead">
+          Der Old Smugglers Club ist kein reines Bundesliga-Tippspiel.
+          Bundesliga, DFB-Pokal, UEFA Champions League, Relegation,
+          Dynamo-Schmuggleraufträge, Piratenkodex und ausgewählte Sonderevents
+          bilden gemeinsam unsere Saison.
+        </p>
 
-</nav>
+        <div class="actions">
+          <a class="button button-primary"
+             href="https://www.kicktipp.de/the-old-smugglers-club/"
+             target="_blank"
+             rel="noopener noreferrer">
+            ⚽ Zum Kicktipp
+          </a>
+          <a class="button button-secondary" href="#wettbewerbe">Wettbewerbe ansehen</a>
+        </div>
+      </article>
 
-<section class="hero">
+      <aside class="panel">
+        <div class="eyebrow">Bundesliga-Start</div>
+        <h3>28. August 2026</h3>
 
-<h2>Willkommen im Old Smugglers Club</h2>
+        <div class="countdown" aria-live="polite">
+          <div><strong id="days">--</strong><span>Tage</span></div>
+          <div><strong id="hours">--</strong><span>Stunden</span></div>
+          <div><strong id="minutes">--</strong><span>Minuten</span></div>
+          <div><strong id="seconds">--</strong><span>Sekunden</span></div>
+        </div>
 
-<p>
+        <p class="notice" id="countdown-note">
+          Der Countdown läuft bis zum Saisonstart.
+        </p>
+      </aside>
+    </section>
 
-Hier geht es nicht nur ums Tippen.
-Hier geht es um Ruhm, Ehre, Spott, legendäre Fehleinschätzungen
-und den Kampf um den Titel.
+    <section class="section panel" id="wettbewerbe">
+      <div class="section-title"><span>⚔️</span><h2>Unsere Wettbewerbe</h2></div>
 
-</p>
+      <div class="competition-grid">
+        <div class="competition"><span>⚽</span><b>Bundesliga</b></div>
+        <div class="competition"><span>🏆</span><b>DFB-Pokal</b></div>
+        <div class="competition"><span>⭐</span><b>Champions League</b></div>
+        <div class="competition"><span>↔️</span><b>Relegation</b></div>
+        <div class="competition"><span>🗺️</span><b>Schmuggleraufträge</b></div>
+        <div class="competition"><span>🏴‍☠️</span><b>Sonderevents</b></div>
+      </div>
+    </section>
 
-<a class="button" href="#">Zum Tippspiel</a>
+    <section class="section panel" id="auftraege">
+      <div class="section-title"><span>🗺️</span><h2>Schmuggleraufträge</h2></div>
 
-</section>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Dynamo Dresden</h3>
+          <p>Ausgewählte Spiele von Dynamo Dresden werden als eigene Schmuggleraufträge aufgenommen.</p>
+        </article>
 
-<section class="section">
+        <article class="card">
+          <h3>Piratenkodex-Sonderevents</h3>
+          <p>Internationale Topspiele wie El Clásico oder große Duelle aus England und Italien können als Mission erscheinen.</p>
+        </article>
 
-<div class="card">
+        <article class="card">
+          <h3>Weihnachtsregatta</h3>
+          <p>Ein Sonderformat zwischen den Jahren, das auf Wunsch außerhalb der regulären Saisonwertung geführt werden kann.</p>
+        </article>
+      </div>
+    </section>
 
-<h2>🏆 Hall of Fame</h2>
+    <section class="section panel" id="hall-of-fame">
+      <div class="section-title"><span>🏆</span><h2>Hall of Fame</h2></div>
 
-<p>
+      <div class="hall-grid">
+        <img class="trophy"
+             src="./Champion-Trophäe.jpeg"
+             alt="Champion-Pokal des Old Smugglers Club">
 
-Hier erscheinen alle bisherigen Meister des Old Smugglers Club.
+        <div>
+          <p class="lead">
+            Hier werden Meister, Pokalsieger, Sonderevent-Champions und besondere Rekorde dauerhaft verewigt.
+          </p>
 
-</p>
+          <div class="rank-list">
+            <div class="rank">
+              <div class="rank-number">1.</div>
+              <div>
+                <strong>ZweikampfGott</strong>
+                <small>Weltmeister 2026</small>
+              </div>
+              <strong>Champion</strong>
+            </div>
 
-</div>
+            <div class="rank">
+              <div class="rank-number">2.</div>
+              <div>
+                <strong>Noch offen</strong>
+                <small>Saison 2026/2027</small>
+              </div>
+              <strong>—</strong>
+            </div>
 
-<div class="card">
+            <div class="rank">
+              <div class="rank-number">3.</div>
+              <div>
+                <strong>Noch offen</strong>
+                <small>Saison 2026/2027</small>
+              </div>
+              <strong>—</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<h2>📅 Saison 2026/27</h2>
+    <section class="section panel" id="piratenkodex">
+      <div class="section-title"><span>📜</span><h2>Piratenkodex</h2></div>
 
-<p>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Fair Play</h3>
+          <p>Sportlicher Ehrgeiz ist erwünscht. Persönliche Angriffe bleiben außen vor.</p>
+        </article>
 
-Countdown bis zum Saisonstart und alle Spieltage folgen hier.
+        <article class="card">
+          <h3>Verbindliche Tipps</h3>
+          <p>Jeder Tipper ist selbst dafür verantwortlich, seine Tipps fristgerecht abzugeben.</p>
+        </article>
 
-</p>
+        <article class="card">
+          <h3>Gemeinschaft</h3>
+          <p>Spott gehört dazu. Respekt bleibt Pflicht. Am Ende sitzen alle in derselben Taverne.</p>
+        </article>
+      </div>
+    </section>
 
-</div>
+    <section class="section panel" id="kummerkasten">
+      <div class="section-title"><span>📬</span><h2>Kummerkasten</h2></div>
 
-<div class="card">
+      <p class="lead">
+        Themen, die nicht in den öffentlichen Chat gehören, können vertraulich an die Spielleitung geschickt werden.
+      </p>
 
-<h2>📬 Kummerkasten</h2>
+      <div class="actions">
+        <a class="button button-primary" href="mailto:kummerkasten@the-old-smugglers-club.de">
+          Nachricht an den Kummerkasten
+        </a>
+      </div>
+    </section>
+  </main>
 
-<p>
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <strong>The Old Smugglers Club</strong><br>
+        Gemeinsam tippen. Gemeinsam siegen.
+      </div>
 
-Anregungen, Kritik oder Wünsche können vertraulich per Mail an den Kummerkasten gesendet werden.
+      <div>
+        <a href="#start">Nach oben</a>
+        &nbsp;·&nbsp;
+        <a href="mailto:captain@the-old-smugglers-club.de">Kontakt</a>
+      </div>
 
-</p>
+      <div>© <span id="year"></span> The Old Smugglers Club</div>
+    </div>
+  </footer>
 
-</div>
+  <script>
+    const menuButton = document.querySelector(".menu-button");
+    const navigation = document.getElementById("navigation");
 
-</section>
+    menuButton.addEventListener("click", () => {
+      const open = navigation.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(open));
+    });
 
-<footer>
+    navigation.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navigation.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
 
-© 2026 The Old Smugglers Club
+    const target = new Date("2026-08-28T20:30:00+02:00").getTime();
 
-</footer>
+    function updateCountdown() {
+      const distance = target - Date.now();
 
+      if (distance <= 0) {
+        document.getElementById("days").textContent = "0";
+        document.getElementById("hours").textContent = "0";
+        document.getElementById("minutes").textContent = "0";
+        document.getElementById("seconds").textContent = "0";
+        document.getElementById("countdown-note").textContent =
+          "Die Bundesliga-Saison 2026/2027 hat begonnen.";
+        return;
+      }
+
+      document.getElementById("days").textContent =
+        Math.floor(distance / (1000 * 60 * 60 * 24));
+      document.getElementById("hours").textContent =
+        Math.floor((distance / (1000 * 60 * 60)) % 24);
+      document.getElementById("minutes").textContent =
+        Math.floor((distance / (1000 * 60)) % 60);
+      document.getElementById("seconds").textContent =
+        Math.floor((distance / 1000) % 60);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("welcome").classList.add("hidden");
+      }, 1100);
+    });
+  </script>
 </body>
-
 </html>
