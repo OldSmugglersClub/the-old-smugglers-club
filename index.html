@@ -746,6 +746,139 @@
       font-weight: 700 !important;
     }
 
+
+    .kodex-map {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(1.2rem, 3vw, 2rem);
+      border: 2px solid rgba(114,70,24,.9);
+      border-radius: 18px;
+      color: #2c1a0d;
+      background:
+        radial-gradient(circle at 12% 16%, rgba(95,52,18,.14), transparent 22%),
+        radial-gradient(circle at 88% 80%, rgba(95,52,18,.12), transparent 24%),
+        linear-gradient(rgba(230,198,132,.94), rgba(197,154,85,.96)),
+        repeating-linear-gradient(
+          8deg,
+          rgba(74,41,13,.045) 0 2px,
+          transparent 2px 8px
+        );
+      box-shadow:
+        inset 0 0 55px rgba(78,42,14,.28),
+        0 16px 35px rgba(0,0,0,.34);
+    }
+
+    .kodex-map::before,
+    .kodex-map::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border: 2px solid rgba(72,38,11,.28);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .kodex-map::before {
+      top: -55px;
+      left: -45px;
+    }
+
+    .kodex-map::after {
+      right: -50px;
+      bottom: -58px;
+    }
+
+    .kodex-heading {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .kodex-heading .eyebrow {
+      color: #6a3a11;
+    }
+
+    .kodex-heading h2 {
+      margin: .2rem 0 .45rem;
+      color: #2b180b;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      text-shadow: 0 1px 0 rgba(255,255,255,.35);
+    }
+
+    .kodex-heading p {
+      max-width: 780px;
+      margin: 0 auto;
+      color: #4a2a12;
+      font-weight: 700;
+    }
+
+    .kodex-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .kodex-rule {
+      position: relative;
+      padding: 1rem 1rem 1rem 4.2rem;
+      border: 1px solid rgba(81,44,14,.52);
+      border-radius: 12px;
+      background: rgba(255,244,211,.28);
+      box-shadow: inset 0 0 22px rgba(87,48,16,.08);
+    }
+
+    .kodex-rule::before {
+      content: attr(data-number);
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      display: grid;
+      place-items: center;
+      width: 2.4rem;
+      height: 2.4rem;
+      border: 1px solid rgba(75,40,13,.62);
+      border-radius: 50%;
+      color: #f4d48a;
+      background: #3a2110;
+      font-weight: 900;
+      box-shadow: 0 4px 10px rgba(0,0,0,.22);
+    }
+
+    .kodex-rule h3 {
+      margin: 0 0 .45rem;
+      color: #2b180b;
+      font-size: 1.28rem;
+    }
+
+    .kodex-rule p {
+      margin: 0;
+      color: #4a2a12;
+      line-height: 1.55;
+    }
+
+    .kodex-verdict {
+      position: relative;
+      z-index: 1;
+      margin-top: 1.2rem;
+      padding: 1rem 1.1rem;
+      border-left: 5px solid #6a3a11;
+      border-radius: 8px;
+      color: #2d190b;
+      background: rgba(255,244,211,.34);
+      font-weight: 800;
+    }
+
+    @media (max-width: 820px) {
+      .kodex-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     footer {
       border-top: 1px solid var(--line);
       background: rgba(8,5,3,.97);
@@ -1172,24 +1305,63 @@
       </div>
     </section>
 
-    <section class="section panel" id="piratenkodex">
-      <div class="section-title"><span>📜</span><h2>Piratenkodex</h2></div>
+    <section class="section" id="piratenkodex">
+      <div class="kodex-map">
+        <div class="kodex-heading">
+          <div class="eyebrow">Der Kodex der Crew</div>
+          <h2>📜 Piratenkodex</h2>
+          <p>
+            Diese Regeln gelten für alle Wettbewerbe, Smuggleraufträge und Sonderevents
+            des Old Smugglers Club.
+          </p>
+        </div>
 
-      <div class="card-grid">
-        <article class="card">
-          <h3>Fair Play</h3>
-          <p>Sportlicher Ehrgeiz ist erwünscht. Persönliche Angriffe bleiben außen vor.</p>
-        </article>
+        <div class="kodex-grid">
+          <article class="kodex-rule" data-number="I">
+            <h3>Fair Play</h3>
+            <p>
+              Sportlicher Ehrgeiz ist ausdrücklich erwünscht. Manipulation, absichtliche
+              Falschinformationen oder unsportliche Einflussnahme haben in der Crew keinen Platz.
+            </p>
+          </article>
 
-        <article class="card">
-          <h3>Verbindliche Tipps</h3>
-          <p>Jeder Tipper ist selbst dafür verantwortlich, seine Tipps fristgerecht abzugeben.</p>
-        </article>
+          <article class="kodex-rule" data-number="II">
+            <h3>Umgangston</h3>
+            <p>
+              Spott und Rivalität gehören dazu, persönliche Angriffe jedoch nicht.
+              Respekt gegenüber allen Mitgliedern bleibt Pflicht.
+            </p>
+          </article>
 
-        <article class="card">
-          <h3>Gemeinschaft</h3>
-          <p>Spott gehört dazu. Respekt bleibt Pflicht. Am Ende sitzen alle in derselben Taverne.</p>
-        </article>
+          <article class="kodex-rule" data-number="III">
+            <h3>Fristen</h3>
+            <p>
+              Jeder Tipp muss vor der jeweils gültigen Abgabefrist eingereicht werden.
+              Verspätete Tipps gelten als nicht abgegeben, sofern die Spielleitung nichts anderes festlegt.
+            </p>
+          </article>
+
+          <article class="kodex-rule" data-number="IV">
+            <h3>Spielleitung</h3>
+            <p>
+              Die Spielleitung legt Wettbewerbe, Wertungen, Sonderregeln und Fristen fest.
+              Ihre Entscheidungen gelten verbindlich, sofern kein offensichtlicher Fehler vorliegt.
+            </p>
+          </article>
+
+          <article class="kodex-rule" data-number="V">
+            <h3>Sanktionen</h3>
+            <p>
+              Regelverstöße können je nach Schwere mit Verwarnung, Punkteabzug,
+              Ausschluss aus einer Sonderwertung oder im Extremfall mit Ausschluss aus dem Tippspiel geahndet werden.
+            </p>
+          </article>
+        </div>
+
+        <div class="kodex-verdict">
+          Wer an Bord kommt, akzeptiert den Piratenkodex. Ziel bleibt ein faires,
+          verbindliches und unterhaltsames Tippspiel für die gesamte Crew.
+        </div>
       </div>
     </section>
 
