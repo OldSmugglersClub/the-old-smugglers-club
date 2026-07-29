@@ -54,11 +54,11 @@ main{width:100%;max-width:none;margin:0;background:rgba(12,8,5,.94);box-shadow:n
 .hero-visual img{
   position:absolute;
   inset:0;
-  width:100%;
+  width:118%;
   height:100%;
   object-fit:cover;
-  object-position:center center;
-  transform:none;
+  object-position:38% center;
+  transform:translateX(-6%);
   filter:saturate(.96) contrast(1.03) brightness(.92);
 }
 
@@ -140,9 +140,9 @@ main{width:100%;max-width:none;margin:0;background:rgba(12,8,5,.94);box-shadow:n
   }
 
   .hero-visual img{
-    width:100%;
-    object-position:center center;
-    transform:none;
+    width:112%;
+    object-position:35% center;
+    transform:translateX(-5%);
   }
 }
 
