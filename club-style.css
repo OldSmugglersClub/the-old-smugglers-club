@@ -136,7 +136,7 @@ main{width:100%;max-width:none;margin:0;background:rgba(12,8,5,.94);box-shadow:n
   }
 
   .hero-copy{
-    padding-left:clamp(70px,7vw,120px);
+    padding-left:64px;
   }
 
   .hero-visual img{
