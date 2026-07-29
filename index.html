@@ -1789,9 +1789,9 @@
           </div>
 
           <div>
-            <h3 class="champion-name">ZweikampfGott</h3>
-            <p class="champion-meta">Weltmeisterschaft · Champion 2026</p>
-            <div class="champion-season">Old Smugglers Champion</div>
+            <h3 class="champion-name" id="champion-name">ZweikampfGott</h3>
+            <p class="champion-meta" id="champion-meta">Weltmeisterschaft · Champion 2026</p>
+            <div class="champion-season" id="champion-label">Old Smugglers Champion</div>
           </div>
         </article>
 
@@ -1799,40 +1799,40 @@
           <div class="honour-card">
             <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-crown"></use></svg></div>
             <div>
-              <strong>Meister 2025/2026</strong>
-              <small>Manuel</small>
+              <strong id="meister-title">Meister 2025/2026</strong>
+              <small id="meister-name">Manuel</small>
             </div>
           </div>
 
           <div class="honour-card">
             <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></div>
             <div>
-              <strong>DFB-Pokal 2025/2026</strong>
-              <small>Manuel</small>
+              <strong id="dfb-title">DFB-Pokal 2025/2026</strong>
+              <small id="dfb-name">Manuel</small>
             </div>
           </div>
 
           <div class="honour-card">
             <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-star-compass"></use></svg></div>
             <div>
-              <strong>Champions League 2025/2026</strong>
-              <small>ZweikampfGott</small>
+              <strong id="cl-title">Champions League 2025/2026</strong>
+              <small id="cl-name">ZweikampfGott</small>
             </div>
           </div>
 
           <div class="honour-card">
             <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-ship-lantern"></use></svg></div>
             <div>
-              <strong>Weihnachtsregatta 2026</strong>
-              <small class="status-open">Noch offen</small>
+              <strong id="weihnachtsregatta-title">Weihnachtsregatta 2026</strong>
+              <small class="status-open" id="weihnachtsregatta-name">Noch offen</small>
             </div>
           </div>
 
           <div class="honour-card">
             <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-scroll"></use></svg></div>
             <div>
-              <strong>Piratenkodex 2026/2027</strong>
-              <small class="status-open">Sieger noch offen</small>
+              <strong id="piratenkodex-title">Piratenkodex 2026/2027</strong>
+              <small class="status-open" id="piratenkodex-name">Sieger noch offen</small>
             </div>
           </div>
         </div>
@@ -1843,12 +1843,12 @@
           <h3 class="hall-section-title">Meisterchronik</h3>
           <div class="history-table">
             <div class="history-row">
-              <span>2025/2026</span>
-              <strong>Manuel</strong>
+              <span id="chronik-season-1">2025/2026</span>
+              <strong id="chronik-name-1">Manuel</strong>
             </div>
             <div class="history-row">
-              <span>2026/2027</span>
-              <strong class="status-open">Noch offen</strong>
+              <span id="chronik-season-2">2026/2027</span>
+              <strong class="status-open" id="chronik-name-2">Noch offen</strong>
             </div>
           </div>
         </div>
@@ -1857,20 +1857,20 @@
           <h3 class="hall-section-title">Rekordtafel</h3>
           <div class="records-grid">
             <div class="record-card">
-              <span>Gesamtpunkte</span>
-              <strong>346 · Manuel</strong>
+              <span id="record-total-label">Gesamtpunkte</span>
+              <strong id="record-total-value">346 · Manuel</strong>
             </div>
             <div class="record-card">
-              <span>Bonuspunkte</span>
-              <strong>60 · ZweikampfGott</strong>
+              <span id="record-bonus-label">Bonuspunkte</span>
+              <strong id="record-bonus-value">60 · ZweikampfGott</strong>
             </div>
             <div class="record-card">
-              <span>Exakte Tipps</span>
-              <strong>17 · Marius</strong>
+              <span id="record-exact-label">Exakte Tipps</span>
+              <strong id="record-exact-value">17 · Marius</strong>
             </div>
             <div class="record-card">
-              <span>Weitere Rekorde</span>
-              <strong class="status-open">Noch offen</strong>
+              <span id="record-other-label">Weitere Rekorde</span>
+              <strong class="status-open" id="record-other-value">Noch offen</strong>
             </div>
           </div>
         </div>
@@ -1878,8 +1878,8 @@
 
       <h3 class="hall-section-title">Ehrenmitglieder & besondere Leistungen</h3>
       <div class="history-row">
-        <span>Status</span>
-        <strong class="status-open">Noch keine Einträge</strong>
+        <span id="honours-label">Status</span>
+        <strong class="status-open" id="honours-value">Noch keine Einträge</strong>
       </div>
     </section>
 
@@ -2070,6 +2070,123 @@
         closeMobileMenu();
       }
     });
+
+
+    function setText(id, value) {
+      const element = document.getElementById(id);
+      if (element && value !== undefined && value !== null) {
+        element.textContent = value;
+      }
+    }
+
+    function setOpenState(id, isOpen, openText = "Noch offen") {
+      const element = document.getElementById(id);
+      if (!element) return;
+
+      if (isOpen) {
+        element.textContent = openText;
+        element.classList.add("status-open");
+      } else {
+        element.classList.remove("status-open");
+      }
+    }
+
+    async function loadClubData() {
+      try {
+        const response = await fetch("./clubdaten.json", { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`clubdaten.json konnte nicht geladen werden: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        setText("champion-name", data.aktuellerChampion?.name);
+        setText(
+          "champion-meta",
+          [data.aktuellerChampion?.wettbewerb, data.aktuellerChampion?.titel, data.aktuellerChampion?.jahr]
+            .filter(Boolean)
+            .join(" · ")
+        );
+        setText("champion-label", data.aktuellerChampion?.label);
+
+        setText("meister-title", `Meister ${data.meister?.saison ?? ""}`.trim());
+        setText("meister-name", data.meister?.name);
+
+        setText("dfb-title", `DFB-Pokal ${data.dfbPokal?.saison ?? ""}`.trim());
+        setText("dfb-name", data.dfbPokal?.name);
+        setOpenState("dfb-name", Boolean(data.dfbPokal?.offen), "Noch offen");
+
+        setText("cl-title", `Champions League ${data.championsLeague?.saison ?? ""}`.trim());
+        setText("cl-name", data.championsLeague?.name);
+        setOpenState("cl-name", Boolean(data.championsLeague?.offen), "Noch offen");
+
+        setText(
+          "weihnachtsregatta-title",
+          `Weihnachtsregatta ${data.weihnachtsregatta?.jahr ?? ""}`.trim()
+        );
+        setText("weihnachtsregatta-name", data.weihnachtsregatta?.name);
+        setOpenState(
+          "weihnachtsregatta-name",
+          Boolean(data.weihnachtsregatta?.offen),
+          "Noch offen"
+        );
+
+        setText(
+          "piratenkodex-title",
+          `Piratenkodex ${data.piratenkodex?.saison ?? ""}`.trim()
+        );
+        setText("piratenkodex-name", data.piratenkodex?.name);
+        setOpenState(
+          "piratenkodex-name",
+          Boolean(data.piratenkodex?.offen),
+          "Sieger noch offen"
+        );
+
+        const chronik = Array.isArray(data.meisterchronik) ? data.meisterchronik : [];
+        if (chronik[0]) {
+          setText("chronik-season-1", chronik[0].saison);
+          setText("chronik-name-1", chronik[0].name);
+          setOpenState("chronik-name-1", Boolean(chronik[0].offen));
+        }
+        if (chronik[1]) {
+          setText("chronik-season-2", chronik[1].saison);
+          setText("chronik-name-2", chronik[1].name);
+          setOpenState("chronik-name-2", Boolean(chronik[1].offen));
+        }
+
+        setText("record-total-label", data.rekorde?.gesamtpunkte?.label);
+        setText(
+          "record-total-value",
+          `${data.rekorde?.gesamtpunkte?.wert ?? ""} · ${data.rekorde?.gesamtpunkte?.name ?? ""}`.trim()
+        );
+
+        setText("record-bonus-label", data.rekorde?.bonuspunkte?.label);
+        setText(
+          "record-bonus-value",
+          `${data.rekorde?.bonuspunkte?.wert ?? ""} · ${data.rekorde?.bonuspunkte?.name ?? ""}`.trim()
+        );
+
+        setText("record-exact-label", data.rekorde?.exakteTipps?.label);
+        setText(
+          "record-exact-value",
+          `${data.rekorde?.exakteTipps?.wert ?? ""} · ${data.rekorde?.exakteTipps?.name ?? ""}`.trim()
+        );
+
+        setText("record-other-label", data.rekorde?.weitere?.label);
+        setText("record-other-value", data.rekorde?.weitere?.wert);
+        setOpenState("record-other-value", Boolean(data.rekorde?.weitere?.offen));
+
+        setText("honours-label", data.ehrenmitglieder?.label);
+        setText("honours-value", data.ehrenmitglieder?.wert);
+        setOpenState("honours-value", Boolean(data.ehrenmitglieder?.offen), "Noch keine Einträge");
+
+        console.info("Clubdaten erfolgreich geladen.");
+      } catch (error) {
+        console.warn("Clubdaten konnten nicht geladen werden. Fallback-Werte bleiben sichtbar.", error);
+      }
+    }
+
+    loadClubData();
 
     document.getElementById("year").textContent = new Date().getFullYear();
 
