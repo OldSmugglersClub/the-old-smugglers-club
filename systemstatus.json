@@ -1,0 +1,27 @@
+{
+  "version": "30.0",
+  "modus": "Plan B · datengetrieben",
+  "aktualisiertAm": "2026-07-29T16:00:00+02:00",
+  "module": [
+    {
+      "name": "Clubdaten",
+      "datei": "clubdaten.json",
+      "status": "aktiv"
+    },
+    {
+      "name": "Spieltag",
+      "datei": "spieltag.json",
+      "status": "aktiv"
+    },
+    {
+      "name": "Bundesliga-Tabelle",
+      "datei": "bundesliga-tabelle.json",
+      "status": "aktiv"
+    },
+    {
+      "name": "Topspieler",
+      "datei": "topspieler.json",
+      "status": "aktiv"
+    }
+  ]
+}
