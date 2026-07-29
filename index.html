@@ -320,47 +320,151 @@
       font-size: 1.9rem;
     }
 
-    .hall-grid {
+    .hall-hero {
       display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 1rem;
-      align-items: center;
+      grid-template-columns: minmax(260px, .85fr) minmax(0, 1.15fr);
+      gap: 1.2rem;
+      align-items: stretch;
+      margin-bottom: 1rem;
+    }
+
+    .champion-showcase {
+      position: relative;
+      min-height: 100%;
+      padding: 1rem;
+      border: 1px solid rgba(242,210,126,.72);
+      border-radius: 16px;
+      background:
+        radial-gradient(circle at 50% 28%, rgba(213,161,59,.24), transparent 34%),
+        linear-gradient(rgba(26,16,8,.95), rgba(9,6,3,.98));
+      box-shadow: inset 0 0 32px rgba(213,161,59,.08), 0 14px 32px rgba(0,0,0,.42);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .champion-showcase::before {
+      content: "AKTUELLER CHAMPION";
+      display: inline-block;
+      margin-bottom: .75rem;
+      padding: .32rem .7rem;
+      border: 1px solid rgba(242,210,126,.45);
+      border-radius: 999px;
+      color: var(--gold-light);
+      background: rgba(0,0,0,.28);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .13em;
     }
 
     .trophy {
-      width: 100%;
-      max-height: 560px;
-      object-fit: cover;
-      border: 1px solid var(--line);
+      width: min(100%, 390px);
+      margin: 0 auto;
+      max-height: 430px;
+      object-fit: contain;
       border-radius: 14px;
-      box-shadow: 0 14px 32px rgba(0,0,0,.42);
+      filter: drop-shadow(0 14px 24px rgba(0,0,0,.58));
     }
 
-    .rank-list {
-      display: grid;
-      gap: .75rem;
+    .champion-name {
+      margin: .75rem 0 .15rem;
+      color: var(--gold-light);
+      font-size: clamp(1.65rem, 3vw, 2.35rem);
+      line-height: 1.1;
     }
 
-    .rank {
+    .champion-meta {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .honours-overview {
       display: grid;
-      grid-template-columns: 52px 1fr auto;
       gap: .8rem;
+    }
+
+    .honour-card {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: .85rem;
       align-items: center;
-      padding: .85rem;
-      border: 1px solid rgba(213,161,59,.28);
-      border-radius: 11px;
+      padding: .95rem 1rem;
+      border: 1px solid rgba(213,161,59,.34);
+      border-radius: 12px;
       background: rgba(0,0,0,.24);
     }
 
-    .rank-number {
-      color: var(--gold-light);
+    .honour-icon {
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      border: 1px solid rgba(242,210,126,.38);
+      border-radius: 50%;
+      background: rgba(213,161,59,.09);
       font-size: 1.5rem;
-      font-weight: 800;
     }
 
-    .rank small {
+    .honour-card strong {
+      color: var(--gold-light);
+      font-size: 1.05rem;
+    }
+
+    .honour-card small {
       display: block;
       color: var(--muted);
+    }
+
+    .hall-section-title {
+      margin: 1.15rem 0 .75rem;
+      color: var(--gold-light);
+      font-size: 1.35rem;
+    }
+
+    .hall-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .history-table,
+    .records-grid {
+      display: grid;
+      gap: .65rem;
+    }
+
+    .history-row,
+    .record-card {
+      display: grid;
+      grid-template-columns: minmax(120px, .7fr) 1.3fr;
+      gap: .8rem;
+      align-items: center;
+      padding: .82rem .9rem;
+      border: 1px solid rgba(213,161,59,.28);
+      border-radius: 10px;
+      background: rgba(0,0,0,.22);
+    }
+
+    .history-row span:first-child,
+    .record-card span:first-child {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .history-row strong,
+    .record-card strong {
+      color: var(--text);
+    }
+
+    .status-open {
+      color: var(--muted) !important;
+      font-style: italic;
+      font-weight: 400 !important;
+    }
+
+    .no-rating {
+      color: #d2b47a !important;
+      font-weight: 700 !important;
     }
 
     footer {
@@ -418,7 +522,8 @@
 
     @media (max-width: 900px) {
       .hero-grid,
-      .hall-grid {
+      .hall-hero,
+      .hall-columns {
         grid-template-columns: 1fr;
       }
 
@@ -464,6 +569,12 @@
       .competition-grid,
       .card-grid {
         grid-template-columns: 1fr;
+      }
+
+      .history-row,
+      .record-card {
+        grid-template-columns: 1fr;
+        gap: .2rem;
       }
 
       .countdown {
@@ -598,45 +709,105 @@
     <section class="section panel" id="hall-of-fame">
       <div class="section-title"><span>🏆</span><h2>Hall of Fame</h2></div>
 
-      <div class="hall-grid">
-        <img class="trophy"
-             src="./Champion-Trophäe.jpeg"
-             alt="Champion-Pokal des Old Smugglers Club">
+      <p class="lead">
+        Die Ehrenhalle des Old Smugglers Club dokumentiert Champions, Saisonssieger,
+        Sonderwertungen und Rekorde dauerhaft und nachvollziehbar.
+      </p>
 
-        <div>
-          <p class="lead">
-            Hier werden Meister, Pokalsieger, Sonderevent-Champions und besondere Rekorde dauerhaft verewigt.
-          </p>
+      <div class="hall-hero">
+        <article class="champion-showcase">
+          <img class="trophy"
+               src="./Champion-Trophäe.jpeg"
+               alt="Champion-Pokal des Old Smugglers Club">
+          <h3 class="champion-name">ZweikampfGott</h3>
+          <p class="champion-meta">Weltmeisterschaft · Champion 2026</p>
+        </article>
 
-          <div class="rank-list">
-            <div class="rank">
-              <div class="rank-number">1.</div>
-              <div>
-                <strong>ZweikampfGott</strong>
-                <small>Weltmeister 2026</small>
-              </div>
-              <strong>Champion</strong>
+        <div class="honours-overview">
+          <div class="honour-card">
+            <div class="honour-icon">👑</div>
+            <div>
+              <strong>Meister 2025/2026</strong>
+              <small>Manuel</small>
             </div>
+          </div>
 
-            <div class="rank">
-              <div class="rank-number">2.</div>
-              <div>
-                <strong>Noch offen</strong>
-                <small>Saison 2026/2027</small>
-              </div>
-              <strong>—</strong>
+          <div class="honour-card">
+            <div class="honour-icon">🏆</div>
+            <div>
+              <strong>DFB-Pokal 2025/2026</strong>
+              <small class="no-rating">Keine Wertung</small>
             </div>
+          </div>
 
-            <div class="rank">
-              <div class="rank-number">3.</div>
-              <div>
-                <strong>Noch offen</strong>
-                <small>Saison 2026/2027</small>
-              </div>
-              <strong>—</strong>
+          <div class="honour-card">
+            <div class="honour-icon">⭐</div>
+            <div>
+              <strong>Champions League 2025/2026</strong>
+              <small class="no-rating">Keine Wertung</small>
+            </div>
+          </div>
+
+          <div class="honour-card">
+            <div class="honour-icon">🎄</div>
+            <div>
+              <strong>Weihnachtsregatta 2026</strong>
+              <small class="status-open">Noch offen</small>
+            </div>
+          </div>
+
+          <div class="honour-card">
+            <div class="honour-icon">📜</div>
+            <div>
+              <strong>Piratenkodex 2026/2027</strong>
+              <small class="status-open">Sieger noch offen</small>
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="hall-columns">
+        <div>
+          <h3 class="hall-section-title">Meisterchronik</h3>
+          <div class="history-table">
+            <div class="history-row">
+              <span>2025/2026</span>
+              <strong>Manuel</strong>
+            </div>
+            <div class="history-row">
+              <span>2026/2027</span>
+              <strong class="status-open">Noch offen</strong>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="hall-section-title">Rekordtafel</h3>
+          <div class="records-grid">
+            <div class="record-card">
+              <span>Meiste Punkte</span>
+              <strong>346 · Manuel</strong>
+            </div>
+            <div class="record-card">
+              <span>Meiste exakte Tipps</span>
+              <strong class="status-open">Noch offen</strong>
+            </div>
+            <div class="record-card">
+              <span>Größter Vorsprung</span>
+              <strong class="status-open">Noch offen</strong>
+            </div>
+            <div class="record-card">
+              <span>Weitere Rekorde</span>
+              <strong class="status-open">Noch offen</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="hall-section-title">Ehrenmitglieder & besondere Leistungen</h3>
+      <div class="history-row">
+        <span>Status</span>
+        <strong class="status-open">Noch keine Einträge</strong>
       </div>
     </section>
 
