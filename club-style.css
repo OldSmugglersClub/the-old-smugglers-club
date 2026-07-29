@@ -14,7 +14,7 @@ main{width:100%;max-width:none;margin:0;background:rgba(12,8,5,.94);box-shadow:n
 .hero{
   position:relative;
   display:grid;
-  grid-template-columns:minmax(500px,36%) 1fr;
+  grid-template-columns:minmax(560px,42%) 1fr;
   min-height:400px;
   overflow:hidden;
   border-bottom:1px solid var(--gold);
@@ -27,7 +27,7 @@ main{width:100%;max-width:none;margin:0;background:rgba(12,8,5,.94);box-shadow:n
   display:flex;
   flex-direction:column;
   justify-content:center;
-  padding:32px clamp(34px,4vw,70px);
+  padding:34px clamp(38px,5vw,92px);
   background:
     radial-gradient(circle at 85% 50%,rgba(77,48,24,.18),transparent 36%),
     linear-gradient(90deg,#090604 0%,#110b07 74%,rgba(17,11,7,.86) 100%);
@@ -37,9 +37,9 @@ main{width:100%;max-width:none;margin:0;background:rgba(12,8,5,.94);box-shadow:n
   content:"";
   position:absolute;
   top:0;
-  right:-54px;
+  right:-120px;
   bottom:0;
-  width:90px;
+  width:180px;
   z-index:-1;
   background:linear-gradient(90deg,#110b07 0%,rgba(17,11,7,.84) 45%,rgba(17,11,7,0) 100%);
   pointer-events:none;
@@ -54,11 +54,11 @@ main{width:100%;max-width:none;margin:0;background:rgba(12,8,5,.94);box-shadow:n
 .hero-visual img{
   position:absolute;
   inset:0;
-  width:126%;
+  width:118%;
   height:100%;
   object-fit:cover;
-  object-position:24% center;
-  transform:translateX(-12%);
+  object-position:38% center;
+  transform:translateX(-6%);
   filter:saturate(.96) contrast(1.03) brightness(.92);
 }
 
@@ -66,7 +66,7 @@ main{width:100%;max-width:none;margin:0;background:rgba(12,8,5,.94);box-shadow:n
   position:absolute;
   inset:0;
   background:
-    linear-gradient(90deg,rgba(10,6,4,.58) 0%,rgba(10,6,4,.12) 11%,rgba(10,6,4,0) 28%),
+    linear-gradient(90deg,rgba(10,6,4,.72) 0%,rgba(10,6,4,.22) 18%,rgba(10,6,4,0) 46%),
     linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.16));
   pointer-events:none;
 }
@@ -130,21 +130,6 @@ main{width:100%;max-width:none;margin:0;background:rgba(12,8,5,.94);box-shadow:n
     padding-left:clamp(36px,4vw,76px);
     padding-right:clamp(36px,4vw,76px);
   }
-
-  .hero{
-    grid-template-columns:minmax(560px,34%) 1fr;
-  }
-
-  .hero-copy{
-    padding-left:clamp(58px,5vw,88px);
-  }
-
-  .hero-visual img{
-    width:128%;
-    object-position:20% center;
-    transform:translateX(-14%);
-  }
-}
 
   .hero{
     grid-template-columns:minmax(620px,40%) 1fr;
