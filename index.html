@@ -1200,6 +1200,310 @@
         grid-column: 2;
       }
     }
+  
+    /* VERSION 21 – MOBILE OPTIMIERUNG */
+    @media (max-width: 720px) {
+      html {
+        scroll-padding-top: 76px;
+      }
+
+      body {
+        background-attachment: scroll;
+        background-size: auto 100%;
+      }
+
+      .nav-shell {
+        position: sticky;
+        top: 0;
+      }
+
+      .nav-inner {
+        width: min(100% - 1rem, var(--max));
+        min-height: 64px;
+        gap: .5rem;
+      }
+
+      .mini-brand {
+        min-width: 0;
+        font-size: .98rem;
+      }
+
+      .mini-brand img {
+        width: 42px;
+        height: 42px;
+      }
+
+      .menu-button {
+        min-width: 112px;
+        min-height: 48px;
+        padding: .72rem .95rem;
+        font-size: 1rem;
+        font-weight: 800;
+        touch-action: manipulation;
+      }
+
+      nav {
+        padding-bottom: .4rem;
+      }
+
+      nav ul {
+        grid-template-columns: 1fr;
+        gap: .42rem;
+        padding: .4rem 0 .65rem;
+      }
+
+      nav a {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .78rem 1rem;
+        border: 1px solid rgba(213,161,59,.28);
+        background: rgba(21,13,8,.92);
+        font-size: 1rem;
+        text-align: center;
+        touch-action: manipulation;
+      }
+
+      main,
+      .subpage-main {
+        width: min(100% - 1rem, var(--max));
+        padding-top: 1rem;
+        padding-bottom: 2.5rem;
+      }
+
+      .panel,
+      .kodex-map {
+        padding: 1rem;
+        border-radius: 14px;
+      }
+
+      .section {
+        margin-top: .85rem;
+        scroll-margin-top: 78px;
+      }
+
+      .section-title {
+        gap: .55rem;
+        margin-bottom: .8rem;
+      }
+
+      .section-title h2 {
+        font-size: clamp(1.55rem, 8vw, 2rem);
+      }
+
+      .section-title .pirate-icon {
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+
+      .hero-grid,
+      .hall-hero,
+      .hall-columns,
+      .kummerkasten-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: .85rem;
+      }
+
+      .lead {
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+
+      .actions,
+      .page-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: .65rem;
+      }
+
+      .button,
+      .kummerkasten-button {
+        width: 100%;
+        min-height: 52px;
+        padding: .82rem 1rem;
+        font-size: 1rem;
+        text-align: center;
+        touch-action: manipulation;
+      }
+
+      .competition-grid,
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: .75rem;
+      }
+
+      .competition {
+        min-height: 148px;
+        padding: .9rem;
+      }
+
+      .competition b {
+        font-size: 1.2rem;
+      }
+
+      .competition-link small {
+        font-size: .84rem;
+      }
+
+      .competition-link:last-child {
+        grid-column: auto;
+        width: 100%;
+      }
+
+      .smuggler-single {
+        grid-template-columns: 1fr;
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .55rem;
+      }
+
+      .flip-card {
+        min-height: 78px;
+      }
+
+      .flip-value {
+        font-size: 2rem;
+      }
+
+      .hall-hero {
+        margin-bottom: .75rem;
+      }
+
+      .champion-showcase {
+        padding: .9rem;
+      }
+
+      .trophy-stage {
+        min-height: 230px;
+      }
+
+      .trophy {
+        height: 220px;
+      }
+
+      .honour-card {
+        grid-template-columns: 48px 1fr;
+        padding: .8rem;
+      }
+
+      .honour-icon {
+        width: 46px;
+        height: 46px;
+      }
+
+      .history-row,
+      .record-card {
+        grid-template-columns: 1fr;
+        gap: .18rem;
+        padding: .75rem;
+      }
+
+      .kodex-grid {
+        grid-template-columns: 1fr;
+        gap: .75rem;
+      }
+
+      .kodex-rule,
+      .kodex-rule:last-child {
+        grid-column: auto;
+        width: 100%;
+        padding: .95rem .9rem .95rem 3.8rem;
+      }
+
+      .kodex-rule::before {
+        left: .8rem;
+        top: .85rem;
+        width: 2.35rem;
+        height: 2.35rem;
+      }
+
+      .kodex-heading h2 {
+        font-size: clamp(1.9rem, 10vw, 2.55rem);
+      }
+
+      .kodex-heading p {
+        font-size: .95rem;
+      }
+
+      .subpage-banner {
+        min-height: 150px;
+        background-position: center center;
+      }
+
+      .subpage-banner-content {
+        padding: 1.35rem .75rem;
+      }
+
+      .subpage-banner h1 {
+        font-size: clamp(1.75rem, 9vw, 2.45rem);
+      }
+
+      .subpage-banner p {
+        font-size: .98rem;
+      }
+
+      .breadcrumb {
+        width: min(100% - 1rem, var(--max));
+        margin-top: .7rem;
+        font-size: .82rem;
+      }
+
+      footer .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+
+      .welcome-box {
+        padding: 1rem;
+      }
+
+      .welcome-box img {
+        width: min(180px, 52vw);
+      }
+    }
+
+    @media (max-width: 420px) {
+      .nav-inner {
+        width: calc(100% - .7rem);
+      }
+
+      .mini-brand span {
+        font-size: .9rem;
+      }
+
+      .menu-button {
+        min-width: 100px;
+        padding-inline: .75rem;
+      }
+
+      main,
+      .subpage-main {
+        width: calc(100% - .7rem);
+      }
+
+      .panel,
+      .kodex-map {
+        padding: .85rem;
+      }
+
+      .competition {
+        min-height: 138px;
+      }
+
+      .countdown {
+        gap: .42rem;
+      }
+
+      .flip-card {
+        min-height: 72px;
+      }
+    }
+
   </style>
 </head>
 
@@ -1309,7 +1613,7 @@
 
   <div class="welcome" id="welcome" aria-hidden="true">
     <div class="welcome-box">
-      <img src="./logo.jpeg" alt="">
+      <img src="./logo.jpeg" alt="" decoding="async">
       <h2>Willkommen an Bord</h2>
       <p>Die Schatzkammer des Old Smugglers Club wird geöffnet …</p>
     </div>
@@ -1319,13 +1623,13 @@
     <img
       class="banner-image"
       src="./banner.png"
-      alt="The Old Smugglers Club – Gemeinsam tippen. Gemeinsam siegen. Saison 2026/2027">
+      alt="The Old Smugglers Club – Gemeinsam tippen. Gemeinsam siegen. Saison 2026/2027" fetchpriority="high" decoding="async">
   </header>
 
   <div class="nav-shell">
     <div class="nav-inner">
       <a class="mini-brand" href="#start">
-        <img src="./logo.jpeg" alt="">
+        <img src="./logo.jpeg" alt="" decoding="async">
         <span>Old Smugglers</span>
       </a>
 
@@ -1480,7 +1784,7 @@
                    else if(this.dataset.tried==='1'){this.dataset.tried='2';this.src=fallbacks[0];}
                    else if(this.dataset.tried==='2'){this.dataset.tried='3';this.src=fallbacks[1];}
                    else{this.style.display='none';this.nextElementSibling.hidden=false;}
-                 ">
+                 " loading="lazy" decoding="async">
             <div class="trophy-fallback" hidden aria-label="Pokal">🏆</div>
           </div>
 
@@ -1750,6 +2054,22 @@
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
+
+    
+    function closeMobileMenu() {
+      navigation.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+    }
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") closeMobileMenu();
+    });
+
+    document.addEventListener("click", event => {
+      if (!navigation.contains(event.target) && !menuButton.contains(event.target)) {
+        closeMobileMenu();
+      }
+    });
 
     document.getElementById("year").textContent = new Date().getFullYear();
 
