@@ -241,16 +241,19 @@
       font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
       border-color: rgba(191, 137, 48, .78);
       background:
-        linear-gradient(118deg, transparent 0 11%, rgba(181,120,38,.055) 11.2% 11.6%, transparent 11.9% 31%, rgba(0,0,0,.10) 31.3% 32%, transparent 32.4% 54%, rgba(181,120,38,.05) 54.3% 54.7%, transparent 55.1% 73%, rgba(0,0,0,.10) 73.4% 74.1%, transparent 74.5%),
-        linear-gradient(74deg, transparent 0 26%, rgba(203,142,49,.04) 26.2% 26.5%, transparent 26.8% 62%, rgba(0,0,0,.08) 62.3% 63%, transparent 63.4%),
-        radial-gradient(ellipse at 22% 22%, rgba(210,151,65,.055), transparent 34%),
-        radial-gradient(ellipse at 75% 72%, rgba(0,0,0,.22), transparent 42%),
-        linear-gradient(135deg, rgba(255,255,255,.026), transparent 24%),
-        radial-gradient(circle at 88% 18%, rgba(196,139,48,.10), transparent 36%),
+        radial-gradient(ellipse at 22% 22%, rgba(210,151,65,.05), transparent 34%),
+        radial-gradient(ellipse at 76% 68%, rgba(177,112,34,.045), transparent 38%),
+        radial-gradient(ellipse at 75% 72%, rgba(0,0,0,.22), transparent 44%),
+        repeating-linear-gradient(
+          168deg,
+          transparent 0 22px,
+          rgba(190,126,39,.025) 22px 23px,
+          transparent 23px 49px
+        ),
         repeating-radial-gradient(
           ellipse at 35% 45%,
-          rgba(255,255,255,.018) 0 1px,
-          rgba(0,0,0,.032) 1px 3px
+          rgba(255,255,255,.017) 0 1px,
+          rgba(0,0,0,.033) 1px 3px
         ),
         linear-gradient(150deg, rgba(29,20,13,.975), rgba(7,5,3,.99));
       box-shadow:
@@ -268,36 +271,30 @@
       pointer-events: none;
     }
 
-    /* Dezente Kompassprägung */
+    /* Geprägtes Steuerrad */
     .welcome-panel::before {
-      width: 250px;
-      aspect-ratio: 1;
-      right: -48px;
-      top: 28px;
-      border: 1px solid rgba(196,139,48,.24);
-      border-radius: 50%;
-      opacity: .78;
-      background:
-        linear-gradient(90deg, transparent 49.6%, rgba(196,139,48,.26) 50%, transparent 50.4%),
-        linear-gradient(0deg, transparent 49.6%, rgba(196,139,48,.26) 50%, transparent 50.4%),
-        linear-gradient(45deg, transparent 49.6%, rgba(196,139,48,.18) 50%, transparent 50.4%),
-        linear-gradient(-45deg, transparent 49.6%, rgba(196,139,48,.18) 50%, transparent 50.4%),
-        radial-gradient(circle, transparent 0 28%, rgba(196,139,48,.20) 28.5% 29%, transparent 29.5% 54%, rgba(196,139,48,.16) 54.5% 55%, transparent 55.5%);
-      transform: rotate(-7deg);
+      width: 230px;
+      height: 230px;
+      right: -58px;
+      top: 52px;
+      opacity: .62;
+      background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20240%20240%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3CradialGradient%20id%3D%22g%22%20cx%3D%2250%25%22%20cy%3D%2245%25%22%20r%3D%2260%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23b98535%22%20stop-opacity%3D%22.42%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%2255%25%22%20stop-color%3D%22%237d5320%22%20stop-opacity%3D%22.28%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%233d260f%22%20stop-opacity%3D%22.12%22%2F%3E%0A%20%20%20%20%3C%2FradialGradient%3E%0A%20%20%20%20%3Cfilter%20id%3D%22s%22%20x%3D%22-30%25%22%20y%3D%22-30%25%22%20width%3D%22160%25%22%20height%3D%22160%25%22%3E%0A%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%222.5%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3C%2Ffilter%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cg%20fill%3D%22none%22%20stroke%3D%22%23b47b2c%22%20stroke-opacity%3D%22.46%22%20filter%3D%22url%28%23s%29%22%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%22120%22%20r%3D%2270%22%20stroke-width%3D%228%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%22120%22%20r%3D%2236%22%20stroke-width%3D%225%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%22120%22%20r%3D%2213%22%20fill%3D%22url%28%23g%29%22%20stroke-width%3D%224%22%2F%3E%0A%20%20%20%20%3Cg%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22120%22%20y1%3D%2248%22%20x2%3D%22120%22%20y2%3D%2214%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22120%22%20y1%3D%22192%22%20x2%3D%22120%22%20y2%3D%22226%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2248%22%20y1%3D%22120%22%20x2%3D%2214%22%20y2%3D%22120%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22192%22%20y1%3D%22120%22%20x2%3D%22226%22%20y2%3D%22120%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2269%22%20y1%3D%2269%22%20x2%3D%2245%22%20y2%3D%2245%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22171%22%20y1%3D%22171%22%20x2%3D%22195%22%20y2%3D%22195%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22171%22%20y1%3D%2269%22%20x2%3D%22195%22%20y2%3D%2245%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2269%22%20y1%3D%22171%22%20x2%3D%2245%22%20y2%3D%22195%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3Cg%20stroke-width%3D%225%22%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22120%22%20y1%3D%2284%22%20x2%3D%22120%22%20y2%3D%22156%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2284%22%20y1%3D%22120%22%20x2%3D%22156%22%20y2%3D%22120%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2295%22%20y1%3D%2295%22%20x2%3D%22145%22%20y2%3D%22145%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22145%22%20y1%3D%2295%22%20x2%3D%2295%22%20y2%3D%22145%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E") center / contain no-repeat;
+      transform: rotate(-8deg);
+      filter: saturate(.78) contrast(1.08);
     }
 
     /* Schwache Siegelprägung */
     .welcome-panel::after {
-      width: 176px;
-      height: 176px;
-      right: 18px;
-      bottom: 10px;
+      width: 150px;
+      height: 150px;
+      right: 22px;
+      bottom: 6px;
       border: 2px solid rgba(188,129,43,.20);
       border-radius: 50%;
       box-shadow:
         inset 0 0 0 7px rgba(188,129,43,.075),
         inset 0 0 0 10px rgba(0,0,0,.20);
-      opacity: .68;
+      opacity: .54;
     }
 
     .welcome-season {
@@ -439,9 +436,11 @@
 
     @media (max-width: 720px) {
       .welcome-panel::before {
-        width: 185px;
-        right: -75px;
-        opacity: .30;
+        width: 170px;
+        height: 170px;
+        right: -68px;
+        top: 76px;
+        opacity: .46;
       }
 
       .welcome-panel::after {
