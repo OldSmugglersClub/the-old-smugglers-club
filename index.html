@@ -241,15 +241,12 @@
       font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
       border-color: rgba(191, 137, 48, .78);
       background:
-        linear-gradient(118deg, transparent 0 18%, rgba(171,111,35,.035) 18.3% 18.6%, transparent 18.9% 54%, rgba(0,0,0,.08) 54.4% 55.1%, transparent 55.5%),
-        radial-gradient(ellipse at 22% 22%, rgba(201,142,58,.035), transparent 34%),
-        radial-gradient(ellipse at 75% 72%, rgba(0,0,0,.18), transparent 42%),
-        linear-gradient(135deg, rgba(255,255,255,.018), transparent 24%),
-        radial-gradient(circle at 88% 18%, rgba(182,126,39,.065), transparent 34%),
+        linear-gradient(135deg, rgba(255,255,255,.025), transparent 24%),
+        radial-gradient(circle at 88% 18%, rgba(182,126,39,.08), transparent 34%),
         repeating-radial-gradient(
           ellipse at 35% 45%,
-          rgba(255,255,255,.011) 0 1px,
-          rgba(0,0,0,.023) 1px 3px
+          rgba(255,255,255,.012) 0 1px,
+          rgba(0,0,0,.018) 1px 3px
         ),
         linear-gradient(150deg, rgba(25,18,12,.97), rgba(8,6,4,.985));
       box-shadow:
@@ -303,15 +300,15 @@
       position: relative;
       display: inline-flex;
       align-items: center;
-      min-height: 32px;
-      margin-bottom: .65rem;
-      padding: .30rem .82rem;
+      min-height: 34px;
+      margin-bottom: .75rem;
+      padding: .35rem 1.05rem;
       color: #241506;
       border: 1px solid #d0a351;
       border-radius: 5px;
       text-transform: uppercase;
-      letter-spacing: .12em;
-      font-size: .72rem;
+      letter-spacing: .13em;
+      font-size: .76rem;
       font-weight: 900;
       text-shadow: 0 1px rgba(255,255,255,.22);
       background:
@@ -340,41 +337,40 @@
 
     .welcome-title {
       max-width: 720px;
-      margin: .12rem 0 .35rem;
-      color: #c89546;
+      margin: .1rem 0 .45rem;
+      color: #d9ae5c;
       font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
-      font-size: clamp(1.72rem, 3.35vw, 2.55rem);
+      font-size: clamp(1.9rem, 4vw, 3rem);
       font-weight: 700;
-      letter-spacing: -.018em;
-      line-height: 1.04;
+      letter-spacing: -.025em;
+      line-height: 1.08;
       text-shadow:
-        0 1px 0 #2b1908,
-        0 2px 4px rgba(0,0,0,.58),
-        0 0 1px rgba(224,177,84,.22);
+        0 1px 0 #3e260c,
+        0 2px 8px rgba(0,0,0,.65);
     }
 
     .welcome-title::first-letter {
-      font-size: 1.04em;
-      color: #bd8738;
+      font-size: 1.12em;
+      color: #c99642;
     }
 
     .welcome-divider {
       display: flex;
       align-items: center;
-      width: min(360px, 64%);
-      gap: .48rem;
-      margin: .62rem 0 .92rem;
+      width: min(420px, 72%);
+      gap: .55rem;
+      margin: .75rem 0 1rem;
       color: rgba(197,143,50,.60);
     }
 
     .welcome-divider span {
       height: 1px;
       flex: 1;
-      background: linear-gradient(90deg, transparent, rgba(197,143,50,.34) 28%, rgba(197,143,50,.42));
+      background: linear-gradient(90deg, transparent, rgba(197,143,50,.48));
     }
 
     .welcome-divider span:last-child {
-      background: linear-gradient(90deg, rgba(197,143,50,.42), rgba(197,143,50,.34) 72%, transparent);
+      background: linear-gradient(90deg, rgba(197,143,50,.48), transparent);
     }
 
     .welcome-divider .pirate-icon {
@@ -386,23 +382,23 @@
     .welcome-copy {
       position: relative;
       z-index: 1;
-      max-width: 705px;
+      max-width: 760px;
       margin: 0;
-      color: #e7d7ba;
-      font-size: 1.02rem;
-      line-height: 1.60;
+      color: #eee0c5;
+      font-size: 1.06rem;
+      line-height: 1.52;
       text-shadow: 0 1px 2px rgba(0,0,0,.72);
     }
 
     .welcome-copy strong {
-      color: #c99a50;
+      color: #d9ae5c;
       font-weight: 700;
     }
 
     .welcome-actions {
       position: relative;
       z-index: 1;
-      margin-top: 1.72rem;
+      margin-top: 1.25rem;
     }
 
     .welcome-primary,
@@ -453,7 +449,7 @@
       }
 
       .welcome-title {
-        font-size: clamp(1.62rem, 7.4vw, 2.15rem);
+        font-size: clamp(1.75rem, 8vw, 2.35rem);
       }
 
       .welcome-divider {
@@ -1983,7 +1979,7 @@
     <section class="hero-grid">
       <article class="panel welcome-panel">
         <div class="welcome-season">Saison 2026/2027</div>
-        <h2 class="welcome-title">Willkommen in der<br>Zentrale der Crew</h2>
+        <h2 class="welcome-title">Willkommen in der Zentrale der Crew</h2>
         <div class="welcome-divider" aria-hidden="true">
           <span></span>
           <svg class="pirate-icon"><use href="#icon-star-compass"></use></svg>
