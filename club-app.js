@@ -110,12 +110,10 @@ function renderTopPlayers(data) {
   const root = $("topplayers-grid");
   if (!root) return;
 
-  const icons = ["🏴‍☠️","🎯","⚓"];
   const cats = Array.isArray(data.kategorien) ? data.kategorien : [];
 
   root.innerHTML = cats.map((item,index) => `
     <article class="stat-card">
-      <div class="stat-icon">${icons[index] || "☠️"}</div>
       <span>${escapeHtml(item.titel)}</span>
       <strong>${escapeHtml(item.name)}</strong>
       <em>${escapeHtml(item.wert)}</em>
@@ -163,6 +161,28 @@ async function boot() {
   ]);
 }
 
+
+function startCountdown() {
+  const target = new Date("2026-08-28T20:30:00+02:00").getTime();
+
+  function update() {
+    const distance = Math.max(0, target - Date.now());
+    const days = Math.floor(distance / 86400000);
+    const hours = Math.floor((distance % 86400000) / 3600000);
+    const minutes = Math.floor((distance % 3600000) / 60000);
+    const seconds = Math.floor((distance % 60000) / 1000);
+
+    setText("countdown-days", String(days).padStart(2, "0"));
+    setText("countdown-hours", String(hours).padStart(2, "0"));
+    setText("countdown-minutes", String(minutes).padStart(2, "0"));
+    setText("countdown-seconds", String(seconds).padStart(2, "0"));
+  }
+
+  update();
+  window.setInterval(update, 1000);
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const menu = $("menu-button");
   const nav = $("main-nav");
@@ -177,5 +197,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const year = $("year");
   if (year) year.textContent = new Date().getFullYear();
 
+  startCountdown();
   boot();
 });
