@@ -617,6 +617,72 @@
       font-weight: 700 !important;
     }
 
+
+    .svg-symbols {
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .pirate-icon {
+      width: 1.25em;
+      height: 1.25em;
+      flex: 0 0 auto;
+      vertical-align: -0.2em;
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,.6));
+    }
+
+    .section-title .pirate-icon {
+      width: 2.05rem;
+      height: 2.05rem;
+    }
+
+    .competition .pirate-icon {
+      width: 46px;
+      height: 46px;
+    }
+
+    .competition .icon-medallion {
+      display: grid;
+      place-items: center;
+      width: 78px;
+      height: 78px;
+      border: 1px solid rgba(242,210,126,.55);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, rgba(242,210,126,.18), rgba(0,0,0,.22) 68%);
+      box-shadow: inset 0 0 18px rgba(242,210,126,.08), 0 8px 20px rgba(0,0,0,.28);
+    }
+
+    .honour-icon .pirate-icon {
+      width: 31px;
+      height: 31px;
+    }
+
+    .button .pirate-icon {
+      width: 1.15rem;
+      height: 1.15rem;
+      margin-right: .45rem;
+    }
+
+    .kummerkasten-logo {
+      display: grid;
+      place-items: center;
+      width: 76px;
+      height: 76px;
+      border: 1px solid rgba(242,210,126,.58);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 30%, rgba(242,210,126,.18), rgba(0,0,0,.25) 65%);
+      box-shadow: inset 0 0 20px rgba(213,161,59,.08), 0 10px 24px rgba(0,0,0,.34);
+    }
+
+    .kummerkasten-logo .pirate-icon {
+      width: 46px;
+      height: 46px;
+    }
+
     footer {
       border-top: 1px solid var(--line);
       background: rgba(8,5,3,.97);
@@ -851,6 +917,109 @@
   </style>
 </head>
 <body>
+
+  <svg class="svg-symbols" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="gold-metal" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#fff0a6"/>
+        <stop offset="24%" stop-color="#d9a83f"/>
+        <stop offset="52%" stop-color="#8b5719"/>
+        <stop offset="78%" stop-color="#e0b755"/>
+        <stop offset="100%" stop-color="#5d3710"/>
+      </linearGradient>
+      <linearGradient id="dark-metal" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#4e3923"/>
+        <stop offset="50%" stop-color="#160f09"/>
+        <stop offset="100%" stop-color="#050302"/>
+      </linearGradient>
+      <filter id="icon-shadow" x="-40%" y="-40%" width="180%" height="180%">
+        <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity=".75"/>
+      </filter>
+
+      <symbol id="icon-crossed-sabres" viewBox="0 0 64 64">
+        <g fill="none" stroke="url(#gold-metal)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#icon-shadow)">
+          <path d="M13 9l38 38"/>
+          <path d="M51 9L13 47"/>
+          <path d="M9 13l8-4-4 8"/>
+          <path d="M55 13l-8-4 4 8"/>
+          <path d="M18 46l-7 7"/>
+          <path d="M46 46l7 7"/>
+          <path d="M14 49l5 5"/>
+          <path d="M50 49l-5 5"/>
+        </g>
+      </symbol>
+
+      <symbol id="icon-map" viewBox="0 0 64 64">
+        <path d="M8 13l15-5 18 6 15-5v42l-15 5-18-6-15 5z" fill="url(#dark-metal)" stroke="url(#gold-metal)" stroke-width="3" filter="url(#icon-shadow)"/>
+        <path d="M23 8v42M41 14v42" stroke="#d8b766" stroke-width="2" opacity=".7"/>
+        <path d="M15 23c7-5 10 2 16-1s9-1 17 4M18 39c6-6 13-4 20 0" fill="none" stroke="#d8b766" stroke-width="2" stroke-dasharray="3 3"/>
+        <path d="M44 20l4 4-4 4-4-4z" fill="#e6c66e"/>
+      </symbol>
+
+      <symbol id="icon-trophy" viewBox="0 0 64 64">
+        <path d="M20 8h24v13c0 11-5 18-12 21-7-3-12-10-12-21z" fill="url(#gold-metal)" stroke="#6b4213" stroke-width="2" filter="url(#icon-shadow)"/>
+        <path d="M20 14H10v5c0 9 6 14 14 14M44 14h10v5c0 9-6 14-14 14" fill="none" stroke="#d7a93f" stroke-width="4"/>
+        <path d="M27 43h10v7h8v6H19v-6h8z" fill="url(#gold-metal)" stroke="#6b4213" stroke-width="2"/>
+        <path d="M26 18h12" stroke="#fff0a6" stroke-width="2" opacity=".7"/>
+      </symbol>
+
+      <symbol id="icon-scroll" viewBox="0 0 64 64">
+        <path d="M17 8h30c-5 3-5 8 0 11v33H17V19c5-3 5-8 0-11z" fill="#8a5b25" stroke="url(#gold-metal)" stroke-width="3" filter="url(#icon-shadow)"/>
+        <path d="M17 8c-7 0-7 11 0 11h7M47 52c7 0 7-11 0-11h-7" fill="none" stroke="url(#gold-metal)" stroke-width="3"/>
+        <path d="M24 25h16M24 32h16M24 39h11" stroke="#f1d48a" stroke-width="2" opacity=".85"/>
+      </symbol>
+
+      <symbol id="icon-sealed-letter" viewBox="0 0 64 64">
+        <path d="M8 15h48v34H8z" fill="url(#dark-metal)" stroke="url(#gold-metal)" stroke-width="3" filter="url(#icon-shadow)"/>
+        <path d="M9 17l23 18 23-18" fill="none" stroke="#e5c46d" stroke-width="3"/>
+        <path d="M9 47l18-15M55 47L37 32" fill="none" stroke="#9f6c25" stroke-width="2"/>
+        <circle cx="32" cy="38" r="9" fill="#7f1515" stroke="#d6a53c" stroke-width="2"/>
+        <path d="M28 38l3 3 6-7" fill="none" stroke="#f5d986" stroke-width="2.5" stroke-linecap="round"/>
+      </symbol>
+
+      <symbol id="icon-football" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" r="24" fill="url(#dark-metal)" stroke="url(#gold-metal)" stroke-width="3" filter="url(#icon-shadow)"/>
+        <path d="M32 20l8 6-3 10H27l-3-10z" fill="url(#gold-metal)"/>
+        <path d="M32 20V10M40 26l10-4M37 36l7 10M27 36l-7 10M24 26l-10-4" stroke="#d8b766" stroke-width="2"/>
+      </symbol>
+
+      <symbol id="icon-star-compass" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" r="24" fill="url(#dark-metal)" stroke="url(#gold-metal)" stroke-width="3" filter="url(#icon-shadow)"/>
+        <path d="M32 8l6 18 18 6-18 6-6 18-6-18-18-6 18-6z" fill="url(#gold-metal)"/>
+        <circle cx="32" cy="32" r="5" fill="#1b1008" stroke="#f5d986" stroke-width="2"/>
+      </symbol>
+
+      <symbol id="icon-anchor" viewBox="0 0 64 64">
+        <g fill="none" stroke="url(#gold-metal)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#icon-shadow)">
+          <circle cx="32" cy="12" r="6"/>
+          <path d="M32 18v30"/>
+          <path d="M20 28h24"/>
+          <path d="M13 39c3 10 10 15 19 15s16-5 19-15"/>
+          <path d="M13 39l7 2-3 7M51 39l-7 2 3 7"/>
+        </g>
+      </symbol>
+
+      <symbol id="icon-ship-lantern" viewBox="0 0 64 64">
+        <path d="M24 14h16l5 9v25H19V23z" fill="url(#dark-metal)" stroke="url(#gold-metal)" stroke-width="3" filter="url(#icon-shadow)"/>
+        <path d="M27 7h10M28 14V8h8v6" stroke="#d8b766" stroke-width="3"/>
+        <path d="M25 27h14v15H25z" fill="#f0a92f" opacity=".9"/>
+        <path d="M28 39c1-7 7-7 8 0" fill="none" stroke="#fff1a8" stroke-width="2"/>
+      </symbol>
+
+      <symbol id="icon-crown" viewBox="0 0 64 64">
+        <path d="M10 20l10 8 12-16 12 16 10-8-5 28H15z" fill="url(#gold-metal)" stroke="#6d4514" stroke-width="2" filter="url(#icon-shadow)"/>
+        <path d="M17 43h30" stroke="#fff0a6" stroke-width="2"/>
+      </symbol>
+
+      <symbol id="icon-skull" viewBox="0 0 64 64">
+        <path d="M32 8c-13 0-22 9-22 21 0 9 5 15 12 18v8h20v-8c7-3 12-9 12-18C54 17 45 8 32 8z" fill="url(#dark-metal)" stroke="url(#gold-metal)" stroke-width="3" filter="url(#icon-shadow)"/>
+        <circle cx="24" cy="29" r="5" fill="#d9a83f"/>
+        <circle cx="40" cy="29" r="5" fill="#d9a83f"/>
+        <path d="M29 39h6M22 50h20" stroke="#d9a83f" stroke-width="3"/>
+      </symbol>
+    </defs>
+  </svg>
+
   <header class="subpage-banner">
     <div class="subpage-banner-content">
 <h1>Champions League</h1>
@@ -910,7 +1079,7 @@
       </div>
 
       <div class="page-actions">
-        <a class="button button-primary" href="https://www.kicktipp.de/the-old-smugglers-club/" target="_blank" rel="noopener noreferrer">⚽ Zum Kicktipp</a>
+        <a class="button button-primary" href="https://www.kicktipp.de/the-old-smugglers-club/" target="_blank" rel="noopener noreferrer"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-football"></use></svg>Zum Kicktipp</a>
         <a class="button button-secondary" href="./index.html#wettbewerbe">Zurück zu allen Wettbewerben</a>
       </div>
     </section>
