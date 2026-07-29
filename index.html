@@ -241,25 +241,31 @@
       font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
       border-color: rgba(191, 137, 48, .78);
       background:
-        radial-gradient(ellipse at 22% 22%, rgba(210,151,65,.05), transparent 34%),
-        radial-gradient(ellipse at 76% 68%, rgba(177,112,34,.045), transparent 38%),
-        radial-gradient(ellipse at 75% 72%, rgba(0,0,0,.22), transparent 44%),
+        radial-gradient(ellipse at 20% 18%, rgba(207,145,55,.050), transparent 31%),
+        radial-gradient(ellipse at 78% 68%, rgba(171,105,31,.055), transparent 39%),
+        radial-gradient(ellipse at 48% 54%, rgba(255,255,255,.018), transparent 48%),
         repeating-linear-gradient(
-          168deg,
-          transparent 0 22px,
-          rgba(190,126,39,.025) 22px 23px,
-          transparent 23px 49px
+          172deg,
+          transparent 0 24px,
+          rgba(184,121,37,.022) 24px 25px,
+          transparent 25px 51px
+        ),
+        repeating-linear-gradient(
+          12deg,
+          transparent 0 33px,
+          rgba(0,0,0,.040) 33px 34px,
+          transparent 34px 69px
         ),
         repeating-radial-gradient(
           ellipse at 35% 45%,
-          rgba(255,255,255,.017) 0 1px,
-          rgba(0,0,0,.033) 1px 3px
+          rgba(255,255,255,.018) 0 1px,
+          rgba(0,0,0,.036) 1px 3px
         ),
-        linear-gradient(150deg, rgba(29,20,13,.975), rgba(7,5,3,.99));
+        linear-gradient(150deg, rgba(30,21,13,.978), rgba(7,5,3,.992));
       box-shadow:
-        inset 0 1px 0 rgba(245,205,116,.18),
-        inset 0 0 0 1px rgba(174,117,36,.14),
-        inset 0 0 38px rgba(0,0,0,.52),
+        inset 0 1px 0 rgba(245,205,116,.20),
+        inset 0 0 0 1px rgba(174,117,36,.17),
+        inset 0 0 42px rgba(0,0,0,.56),
         var(--shadow);
     }
 
@@ -271,30 +277,73 @@
       pointer-events: none;
     }
 
-    /* Geprägtes Steuerrad */
+    /* Dezente, geprägte Windrose */
     .welcome-panel::before {
-      width: 230px;
-      height: 230px;
-      right: -58px;
-      top: 52px;
+      width: 265px;
+      height: 265px;
+      right: -74px;
+      top: 34px;
+      border: 1px solid rgba(190,132,43,.18);
+      border-radius: 50%;
       opacity: .62;
-      background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20240%20240%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3CradialGradient%20id%3D%22g%22%20cx%3D%2250%25%22%20cy%3D%2245%25%22%20r%3D%2260%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23b98535%22%20stop-opacity%3D%22.42%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%2255%25%22%20stop-color%3D%22%237d5320%22%20stop-opacity%3D%22.28%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%233d260f%22%20stop-opacity%3D%22.12%22%2F%3E%0A%20%20%20%20%3C%2FradialGradient%3E%0A%20%20%20%20%3Cfilter%20id%3D%22s%22%20x%3D%22-30%25%22%20y%3D%22-30%25%22%20width%3D%22160%25%22%20height%3D%22160%25%22%3E%0A%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%223%22%20stdDeviation%3D%222.5%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%22.55%22%2F%3E%0A%20%20%20%20%3C%2Ffilter%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cg%20fill%3D%22none%22%20stroke%3D%22%23b47b2c%22%20stroke-opacity%3D%22.46%22%20filter%3D%22url%28%23s%29%22%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%22120%22%20r%3D%2270%22%20stroke-width%3D%228%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%22120%22%20r%3D%2236%22%20stroke-width%3D%225%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22120%22%20cy%3D%22120%22%20r%3D%2213%22%20fill%3D%22url%28%23g%29%22%20stroke-width%3D%224%22%2F%3E%0A%20%20%20%20%3Cg%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22120%22%20y1%3D%2248%22%20x2%3D%22120%22%20y2%3D%2214%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22120%22%20y1%3D%22192%22%20x2%3D%22120%22%20y2%3D%22226%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2248%22%20y1%3D%22120%22%20x2%3D%2214%22%20y2%3D%22120%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22192%22%20y1%3D%22120%22%20x2%3D%22226%22%20y2%3D%22120%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2269%22%20y1%3D%2269%22%20x2%3D%2245%22%20y2%3D%2245%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22171%22%20y1%3D%22171%22%20x2%3D%22195%22%20y2%3D%22195%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22171%22%20y1%3D%2269%22%20x2%3D%22195%22%20y2%3D%2245%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2269%22%20y1%3D%22171%22%20x2%3D%2245%22%20y2%3D%22195%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3Cg%20stroke-width%3D%225%22%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22120%22%20y1%3D%2284%22%20x2%3D%22120%22%20y2%3D%22156%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2284%22%20y1%3D%22120%22%20x2%3D%22156%22%20y2%3D%22120%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%2295%22%20y1%3D%2295%22%20x2%3D%22145%22%20y2%3D%22145%22%2F%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22145%22%20y1%3D%2295%22%20x2%3D%2295%22%20y2%3D%22145%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E") center / contain no-repeat;
-      transform: rotate(-8deg);
-      filter: saturate(.78) contrast(1.08);
+      background:
+        conic-gradient(
+          from 0deg,
+          transparent 0 9deg,
+          rgba(190,132,43,.18) 9deg 11deg,
+          transparent 11deg 34deg,
+          rgba(190,132,43,.12) 34deg 36deg,
+          transparent 36deg 54deg,
+          rgba(190,132,43,.18) 54deg 56deg,
+          transparent 56deg 79deg,
+          rgba(190,132,43,.12) 79deg 81deg,
+          transparent 81deg 99deg,
+          rgba(190,132,43,.18) 99deg 101deg,
+          transparent 101deg 124deg,
+          rgba(190,132,43,.12) 124deg 126deg,
+          transparent 126deg 144deg,
+          rgba(190,132,43,.18) 144deg 146deg,
+          transparent 146deg 169deg,
+          rgba(190,132,43,.12) 169deg 171deg,
+          transparent 171deg 189deg,
+          rgba(190,132,43,.18) 189deg 191deg,
+          transparent 191deg 214deg,
+          rgba(190,132,43,.12) 214deg 216deg,
+          transparent 216deg 234deg,
+          rgba(190,132,43,.18) 234deg 236deg,
+          transparent 236deg 259deg,
+          rgba(190,132,43,.12) 259deg 261deg,
+          transparent 261deg 279deg,
+          rgba(190,132,43,.18) 279deg 281deg,
+          transparent 281deg 304deg,
+          rgba(190,132,43,.12) 304deg 306deg,
+          transparent 306deg 324deg,
+          rgba(190,132,43,.18) 324deg 326deg,
+          transparent 326deg 349deg,
+          rgba(190,132,43,.12) 349deg 351deg,
+          transparent 351deg 360deg
+        ),
+        radial-gradient(circle, transparent 0 18%, rgba(190,132,43,.16) 18.5% 19%, transparent 19.5% 42%, rgba(190,132,43,.12) 42.5% 43%, transparent 43.5% 66%, rgba(190,132,43,.10) 66.5% 67%, transparent 67.5%),
+        linear-gradient(90deg, transparent 49.6%, rgba(190,132,43,.16) 50%, transparent 50.4%),
+        linear-gradient(0deg, transparent 49.6%, rgba(190,132,43,.16) 50%, transparent 50.4%),
+        linear-gradient(45deg, transparent 49.7%, rgba(190,132,43,.10) 50%, transparent 50.3%),
+        linear-gradient(-45deg, transparent 49.7%, rgba(190,132,43,.10) 50%, transparent 50.3%);
+      transform: rotate(-7deg);
+      filter: contrast(1.05);
     }
 
     /* Schwache Siegelprägung */
     .welcome-panel::after {
-      width: 150px;
-      height: 150px;
-      right: 22px;
-      bottom: 6px;
-      border: 2px solid rgba(188,129,43,.20);
+      width: 160px;
+      height: 160px;
+      right: 24px;
+      bottom: 8px;
+      border: 2px solid rgba(188,129,43,.16);
       border-radius: 50%;
       box-shadow:
         inset 0 0 0 7px rgba(188,129,43,.075),
         inset 0 0 0 10px rgba(0,0,0,.20);
-      opacity: .54;
+      opacity: .58;
     }
 
     .welcome-season {
@@ -436,10 +485,10 @@
 
     @media (max-width: 720px) {
       .welcome-panel::before {
-        width: 170px;
-        height: 170px;
-        right: -68px;
-        top: 76px;
+        width: 185px;
+        height: 185px;
+        right: -72px;
+        top: 70px;
         opacity: .46;
       }
 
