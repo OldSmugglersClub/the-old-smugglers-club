@@ -66,33 +66,70 @@
       </div>
     </section>
 
-    <section class="legacy-section" id="spieltag">
-      <div class="section-title"><span>Aktueller Spieltag</span></div>
-      <div class="panel match-preview">
-        <h2 id="matchday-title">1. Spieltag</h2>
-        <p id="matchday-note">Die Paarungen werden hier angezeigt, sobald sie eingetragen sind.</p>
-        <div id="match-list" class="match-list"></div>
+
+    <section class="content-shell" id="spieltag">
+      <div class="content-heading">
+        <div>
+          <span class="section-kicker">Bundesliga · Saison 2026/2027</span>
+          <h2>Aktueller Spieltag</h2>
+        </div>
+        <a class="section-link" href="./bundesliga.html">Zum Spieltag →</a>
+      </div>
+
+      <div class="matchday-stage">
+        <div class="matchday-empty">
+          <span class="matchday-number">01</span>
+          <div>
+            <strong>1. Spieltag</strong>
+            <p>Die offiziellen Paarungen erscheinen hier nach Veröffentlichung des Spielplans.</p>
+          </div>
+        </div>
+        <div id="match-list" class="match-cards"></div>
       </div>
     </section>
 
-    <section class="legacy-section" id="tabelle">
-      <div class="section-title"><span>Bundesliga-Tabelle</span></div>
-      <div class="panel table-wrap">
-        <table>
-          <thead><tr><th>Pl.</th><th>Verein</th><th>Sp.</th><th>S</th><th>U</th><th>N</th><th>Tore</th><th>Diff.</th><th>Pkt.</th></tr></thead>
-          <tbody id="league-table-body"><tr><td colspan="9">Die Saison hat noch nicht begonnen.</td></tr></tbody>
-        </table>
-      </div>
+    <section class="content-shell split-layout" id="tabelle">
+      <article class="feature-panel">
+        <div class="panel-head">
+          <div>
+            <span class="section-kicker">Bundesliga</span>
+            <h2>Tabelle</h2>
+          </div>
+          <span class="panel-state">Saisonstart 28.08.2026</span>
+        </div>
+
+        <div class="table-wrap refined-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Pl.</th><th>Verein</th><th>Sp.</th><th>S</th><th>U</th><th>N</th><th>Tore</th><th>Diff.</th><th>Pkt.</th>
+              </tr>
+            </thead>
+            <tbody id="league-table-body">
+              <tr>
+                <td colspan="9" class="table-placeholder">
+                  Die Tabelle wird nach dem ersten abgeschlossenen Spieltag automatisch aufgebaut.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="feature-panel" id="topspieler">
+        <div class="panel-head">
+          <div>
+            <span class="section-kicker">Tippspiel</span>
+            <h2>Topspieler</h2>
+          </div>
+        </div>
+        <div id="topplayers-grid" class="topplayers-stack"></div>
+      </article>
     </section>
 
-    <section class="legacy-section" id="topspieler">
-      <div class="section-title"><span>Topspieler</span></div>
-      <div id="topplayers-grid" class="stats-grid"></div>
-    </section>
-
-    <section class="legacy-section hall-grid" id="hall-of-fame">
-      <article class="panel">
-        <div class="section-title compact"><span>Amtierender Champion</span></div>
+    <section class="content-shell hall-layout" id="hall-of-fame">
+      <article class="feature-panel champion-panel">
+        <span class="section-kicker">Amtierender Champion</span>
         <h2 id="champion-name">ZweikampfGott</h2>
         <p id="champion-meta">Weltmeisterschaft · Champion · 2026</p>
         <ul class="record-list">
@@ -101,20 +138,28 @@
           <li><span>Exakte Tipps</span><strong id="record-exact">17 · Marius</strong></li>
         </ul>
       </article>
-      <article class="panel">
-        <div class="section-title compact"><span>Siegerchronik</span></div>
-        <div id="hall-timeline"></div>
+
+      <article class="feature-panel">
+        <span class="section-kicker">Chronik der Sieger</span>
+        <h2>Hall of Fame</h2>
+        <div id="hall-timeline" class="winner-timeline"></div>
       </article>
     </section>
 
-    <section class="legacy-section" id="wettbewerbe">
-      <div class="section-title"><span>Unsere Wettbewerbe</span></div>
-      <div class="competition-links">
-        <a href="./bundesliga.html">Bundesliga</a>
-        <a href="./dfb-pokal.html">DFB-Pokal</a>
-        <a href="./champions-league.html">Champions League</a>
-        <a href="./dynamo-dresden.html">Dynamo Dresden</a>
-        <a href="./weihnachtsregatta.html">Weihnachtsregatta</a>
+    <section class="content-shell" id="wettbewerbe">
+      <div class="content-heading">
+        <div>
+          <span class="section-kicker">Kurs auf neue Beute</span>
+          <h2>Unsere Wettbewerbe</h2>
+        </div>
+      </div>
+
+      <div class="competition-grid">
+        <a href="./bundesliga.html"><strong>Bundesliga</strong><span>34 Spieltage</span></a>
+        <a href="./dfb-pokal.html"><strong>DFB-Pokal</strong><span>K.-o.-Wettbewerb</span></a>
+        <a href="./champions-league.html"><strong>Champions League</strong><span>Europäische Nächte</span></a>
+        <a href="./dynamo-dresden.html"><strong>Dynamo Dresden</strong><span>Sonderaufträge</span></a>
+        <a href="./weihnachtsregatta.html"><strong>Weihnachtsregatta</strong><span>Winter-Spezial</span></a>
       </div>
     </section>
   </main>
