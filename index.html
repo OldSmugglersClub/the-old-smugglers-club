@@ -322,7 +322,7 @@
 
     .hall-hero {
       display: grid;
-      grid-template-columns: minmax(260px, .85fr) minmax(0, 1.15fr);
+      grid-template-columns: minmax(320px, .95fr) minmax(0, 1.05fr);
       gap: 1.2rem;
       align-items: stretch;
       margin-bottom: 1rem;
@@ -331,51 +331,101 @@
     .champion-showcase {
       position: relative;
       min-height: 100%;
-      padding: 1rem;
+      padding: 1.15rem;
       border: 1px solid rgba(242,210,126,.72);
       border-radius: 16px;
       background:
-        radial-gradient(circle at 50% 28%, rgba(213,161,59,.24), transparent 34%),
-        linear-gradient(rgba(26,16,8,.95), rgba(9,6,3,.98));
-      box-shadow: inset 0 0 32px rgba(213,161,59,.08), 0 14px 32px rgba(0,0,0,.42);
+        radial-gradient(circle at 50% 34%, rgba(213,161,59,.28), transparent 38%),
+        linear-gradient(rgba(26,16,8,.96), rgba(9,6,3,.99));
+      box-shadow: inset 0 0 38px rgba(213,161,59,.09), 0 14px 32px rgba(0,0,0,.42);
       text-align: center;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .champion-showcase::before {
-      content: "AKTUELLER CHAMPION";
-      display: inline-block;
-      margin-bottom: .75rem;
-      padding: .32rem .7rem;
-      border: 1px solid rgba(242,210,126,.45);
+    .champion-badge {
+      align-self: center;
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      margin-bottom: .65rem;
+      padding: .38rem .78rem;
+      border: 1px solid rgba(242,210,126,.52);
       border-radius: 999px;
       color: var(--gold-light);
-      background: rgba(0,0,0,.28);
-      font-size: .72rem;
+      background: rgba(0,0,0,.34);
+      font-size: .74rem;
       font-weight: 800;
-      letter-spacing: .13em;
+      letter-spacing: .12em;
+    }
+
+    .trophy-stage {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 310px;
+      margin: .15rem 0 .8rem;
+      border-radius: 14px;
+      background:
+        radial-gradient(circle, rgba(242,210,126,.18), transparent 52%),
+        linear-gradient(180deg, rgba(255,255,255,.018), rgba(0,0,0,.18));
+    }
+
+    .trophy-stage::after {
+      content: "";
+      position: absolute;
+      left: 15%;
+      right: 15%;
+      bottom: 10px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(0,0,0,.55);
+      filter: blur(7px);
     }
 
     .trophy {
-      width: min(100%, 390px);
+      position: relative;
+      z-index: 1;
+      width: min(92%, 420px);
+      height: 300px;
       margin: 0 auto;
-      max-height: 430px;
       object-fit: contain;
       border-radius: 14px;
-      filter: drop-shadow(0 14px 24px rgba(0,0,0,.58));
+      filter: drop-shadow(0 16px 26px rgba(0,0,0,.62));
+    }
+
+    .trophy-fallback {
+      position: relative;
+      z-index: 1;
+      font-size: 10rem;
+      line-height: 1;
+      filter: drop-shadow(0 16px 26px rgba(0,0,0,.62));
     }
 
     .champion-name {
-      margin: .75rem 0 .15rem;
+      margin: .35rem 0 .15rem;
       color: var(--gold-light);
-      font-size: clamp(1.65rem, 3vw, 2.35rem);
-      line-height: 1.1;
+      font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+      line-height: 1.05;
+      text-shadow: 0 3px 14px rgba(213,161,59,.25);
     }
 
     .champion-meta {
       margin: 0;
-      color: var(--muted);
+      color: var(--text);
       font-weight: 700;
+    }
+
+    .champion-season {
+      margin: .6rem auto 0;
+      display: inline-block;
+      padding: .42rem .75rem;
+      border-top: 1px solid rgba(242,210,126,.32);
+      color: var(--muted);
+      font-size: .9rem;
+      letter-spacing: .04em;
     }
 
     .honours-overview {
@@ -716,11 +766,28 @@
 
       <div class="hall-hero">
         <article class="champion-showcase">
-          <img class="trophy"
-               src="./Champion-Trophäe.jpeg"
-               alt="Champion-Pokal des Old Smugglers Club">
-          <h3 class="champion-name">ZweikampfGott</h3>
-          <p class="champion-meta">Weltmeisterschaft · Champion 2026</p>
+          <div class="champion-badge">🏆 AKTUELLER CHAMPION</div>
+
+          <div class="trophy-stage">
+            <img class="trophy"
+                 src="./Champion-Trophäe.jpeg"
+                 alt="Champion-Pokal des Old Smugglers Club"
+                 onerror="
+                   const fallbacks=['./champion-trophy.jpg','./Champion-Trophäe.jpg','./champion-trophy.jpeg'];
+                   const next=fallbacks.shift();
+                   if(!this.dataset.tried){this.dataset.tried='1';this.src=next;}
+                   else if(this.dataset.tried==='1'){this.dataset.tried='2';this.src=fallbacks[0];}
+                   else if(this.dataset.tried==='2'){this.dataset.tried='3';this.src=fallbacks[1];}
+                   else{this.style.display='none';this.nextElementSibling.hidden=false;}
+                 ">
+            <div class="trophy-fallback" hidden aria-label="Pokal">🏆</div>
+          </div>
+
+          <div>
+            <h3 class="champion-name">ZweikampfGott</h3>
+            <p class="champion-meta">Weltmeisterschaft 2026</p>
+            <div class="champion-season">Old Smugglers Champion</div>
+          </div>
         </article>
 
         <div class="honours-overview">
