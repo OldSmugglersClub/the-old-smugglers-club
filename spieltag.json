@@ -1,11 +1,21 @@
 {
-  "schemaVersion": 2,
-  "aktualisiertAm": "2026-07-29T16:00:00+02:00",
+  "version": 1,
+  "aktualisiertAm": "2026-07-29T15:53:00+02:00",
   "wettbewerb": "Bundesliga",
   "saison": "2026/2027",
   "spieltag": 1,
-  "status": "Vorbereitung",
-  "startdatum": "2026-08-28",
-  "hinweis": "Der Bereich ist technisch aktiv. Paarungen und Anstoßzeiten werden nach Eintragung in spieltag.json automatisch angezeigt.",
-  "spiele": []
+  "status": "geplant",
+  "hinweis": "Die offiziellen Paarungen und Anstoßzeiten werden eingetragen, sobald der vollständige Spielplan vorliegt.",
+  "spiele": [
+    {
+      "id": "bl-2026-27-01-01",
+      "datum": "2026-08-28",
+      "uhrzeit": "20:30",
+      "heim": "Noch offen",
+      "auswaerts": "Noch offen",
+      "heimtore": null,
+      "auswaertstore": null,
+      "status": "geplant"
+    }
+  ]
 }
