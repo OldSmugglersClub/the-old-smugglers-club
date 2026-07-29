@@ -1,169 +1,44 @@
 <!doctype html>
-<html lang="de">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="The Old Smugglers Club – Saison 2026/2027">
-  <meta name="theme-color" content="#130d08">
-  <title>The Old Smugglers Club</title>
-  <link rel="icon" href="./favicon.jpeg">
-  <link rel="stylesheet" href="./club-style.css?v=34-1">
-  <script src="./club-app.js" defer></script>
-</head>
-<body>
-  <header class="topbar">
-    <a class="brand-lockup" href="./index.html" aria-label="The Old Smugglers Club Startseite">
-      <img src="./logo.jpeg" alt="">
-      <span><small>The Old</small>Smugglers Club</span>
-    </a>
-    <button class="menu-button" id="menu-button" aria-expanded="false">Menü</button>
-    <nav id="main-nav">
-      <a class="active" href="./index.html">Startseite</a>
-      <a href="#spieltag">Spieltag</a>
-      <a href="#tabelle">Tabelle</a>
-      <a href="#topspieler">Topspieler</a>
-      <a href="#hall-of-fame">Hall of Fame</a>
-      <a href="#wettbewerbe">Wettbewerbe</a>
-      <a href="./piratenkodex.html">Piratenkodex</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <div class="season-label">Saison 2026/2027</div>
-        <h1>Der Kampf um den<br>Smugglers-Thron<br>beginnt.</h1>
-        <div class="ornament" aria-hidden="true"><span></span><b>◆</b><span></span></div>
-        <p>Neue Saison. Neue Beute. Neue Geschichten.<br>
-        Wer hält Kurs, wer verliert die Nerven und wer schreibt sich als nächster Champion in die Chronik des Clubs?</p>
-        <a class="hero-button" href="#spieltag">Zur aktuellen Saison <span>→</span></a>
-      </div>
-
-      <div class="hero-visual" aria-hidden="true">
-        <img src="./hero-segelschiff.jpg" alt="">
-        <div class="hero-vignette"></div>
-      </div>
-    </section>
-
-    <section class="countdown-wrap" aria-label="Countdown zum Bundesliga-Auftakt">
-      <div class="countdown-logo">
-        <span class="countdown-mark">BL</span>
-        <small>Bundesliga</small>
-      </div>
-      <div class="countdown-main">
-        <h2>Bundesliga-Auftakt</h2>
-        <div class="countdown-grid">
-          <div><strong id="countdown-days">00</strong><span>Tage</span></div>
-          <div><strong id="countdown-hours">00</strong><span>Stunden</span></div>
-          <div><strong id="countdown-minutes">00</strong><span>Minuten</span></div>
-          <div><strong id="countdown-seconds">00</strong><span>Sekunden</span></div>
-        </div>
-      </div>
-      <div class="countdown-date">
-        <small>Saisonstart</small>
-        <strong>28.08.2026</strong>
-        <span>⚓</span>
-      </div>
-    </section>
-
-
-    <section class="content-shell" id="spieltag">
-      <div class="content-heading">
-        <div>
-          <span class="section-kicker">Bundesliga · Saison 2026/2027</span>
-          <h2>Aktueller Spieltag</h2>
-        </div>
-        <a class="section-link" href="./bundesliga.html">Zum Spieltag →</a>
-      </div>
-
-      <div class="matchday-stage">
-        <div class="matchday-empty">
-          <span class="matchday-number">01</span>
-          <div>
-            <strong>1. Spieltag</strong>
-            <p>Die offiziellen Paarungen erscheinen hier nach Veröffentlichung des Spielplans.</p>
-          </div>
-        </div>
-        <div id="match-list" class="match-cards"></div>
-      </div>
-    </section>
-
-    <section class="content-shell split-layout" id="tabelle">
-      <article class="feature-panel">
-        <div class="panel-head">
-          <div>
-            <span class="section-kicker">Bundesliga</span>
-            <h2>Tabelle</h2>
-          </div>
-          <span class="panel-state">Saisonstart 28.08.2026</span>
-        </div>
-
-        <div class="table-wrap refined-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Pl.</th><th>Verein</th><th>Sp.</th><th>S</th><th>U</th><th>N</th><th>Tore</th><th>Diff.</th><th>Pkt.</th>
-              </tr>
-            </thead>
-            <tbody id="league-table-body">
-              <tr>
-                <td colspan="9" class="table-placeholder">
-                  Die Tabelle wird nach dem ersten abgeschlossenen Spieltag automatisch aufgebaut.
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </article>
-
-      <article class="feature-panel" id="topspieler">
-        <div class="panel-head">
-          <div>
-            <span class="section-kicker">Tippspiel</span>
-            <h2>Topspieler</h2>
-          </div>
-        </div>
-        <div id="topplayers-grid" class="topplayers-stack"></div>
-      </article>
-    </section>
-
-    <section class="content-shell hall-layout" id="hall-of-fame">
-      <article class="feature-panel champion-panel">
-        <span class="section-kicker">Amtierender Champion</span>
-        <h2 id="champion-name">ZweikampfGott</h2>
-        <p id="champion-meta">Weltmeisterschaft · Champion · 2026</p>
-        <ul class="record-list">
-          <li><span>Gesamtpunkte</span><strong id="record-total">346 · Manuel</strong></li>
-          <li><span>Bonuspunkte</span><strong id="record-bonus">60 · ZweikampfGott</strong></li>
-          <li><span>Exakte Tipps</span><strong id="record-exact">17 · Marius</strong></li>
-        </ul>
-      </article>
-
-      <article class="feature-panel">
-        <span class="section-kicker">Chronik der Sieger</span>
-        <h2>Hall of Fame</h2>
-        <div id="hall-timeline" class="winner-timeline"></div>
-      </article>
-    </section>
-
-    <section class="content-shell" id="wettbewerbe">
-      <div class="content-heading">
-        <div>
-          <span class="section-kicker">Kurs auf neue Beute</span>
-          <h2>Unsere Wettbewerbe</h2>
-        </div>
-      </div>
-
-      <div class="competition-grid">
-        <a href="./bundesliga.html"><strong>Bundesliga</strong><span>34 Spieltage</span></a>
-        <a href="./dfb-pokal.html"><strong>DFB-Pokal</strong><span>K.-o.-Wettbewerb</span></a>
-        <a href="./champions-league.html"><strong>Champions League</strong><span>Europäische Nächte</span></a>
-        <a href="./dynamo-dresden.html"><strong>Dynamo Dresden</strong><span>Sonderaufträge</span></a>
-        <a href="./weihnachtsregatta.html"><strong>Weihnachtsregatta</strong><span>Winter-Spezial</span></a>
-      </div>
-    </section>
-  </main>
-
-  <footer>© <span id="year"></span> The Old Smugglers Club</footer>
-</body>
-</html>
+<html lang="de"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Old Smugglers Club · Saison 2026/2027</title>
+<meta name="theme-color" content="#110b06">
+<link rel="stylesheet" href="./style-v40.css?v=40-0">
+<script src="./app-v40.js?v=40-0" defer></script>
+</head><body>
+<header class="site-header">
+  <a class="brand" href="#top"><img src="./club-crest.svg" alt=""><span><small>The Old</small>Smugglers<strong>Club</strong></span></a>
+  <button class="menu" id="menuBtn" aria-expanded="false">Menü</button>
+  <nav id="nav"><a class="active" href="#top">Startseite</a><a href="#matchday">Spieltag</a><a href="#table">Tabelle</a><a href="#stats">Topspieler</a><a href="#hall">Hall of Fame</a><a href="#competitions">Wettbewerbe</a><a href="./piratenkodex.html">Piratenkodex</a></nav>
+</header>
+<main id="top">
+<section class="hero">
+  <img class="hero-image" src="./hero-v40.jpg" alt="Segelschiff bei Sonnenuntergang">
+  <div class="hero-shade"></div>
+  <div class="hero-copy">
+    <div class="season"><span></span>Saison 2026/2027<span></span></div>
+    <h1>Der Kampf um den<br>Smugglers-Thron<br>beginnt.</h1>
+    <div class="divider"><i></i><b>◆</b><i></i></div>
+    <p>Neue Saison. Neue Beute. Neue Geschichten.<br>Wer hält Kurs, wer verliert die Nerven und wer schreibt sich als nächster Champion in die Chronik des Clubs?</p>
+    <a class="btn" href="#matchday">Zur aktuellen Saison <span>→</span></a>
+  </div>
+</section>
+<section class="countdown-board" aria-label="Countdown zum Bundesliga-Auftakt">
+  <div class="bl-badge"><div>BL</div><span>Bundesliga</span></div>
+  <div class="count-center"><h2>Bundesliga-Auftakt</h2><div class="count-grid">
+    <div><strong id="days">00</strong><span>Tage</span></div><div><strong id="hours">00</strong><span>Stunden</span></div><div><strong id="minutes">00</strong><span>Minuten</span></div><div><strong id="seconds">00</strong><span>Sekunden</span></div>
+  </div></div>
+  <div class="start-date"><span>Saisonstart</span><strong>28.08.2026</strong><svg viewBox="0 0 40 40"><path d="M20 4v25M12 12h16M8 25c2 8 8 11 12 11s10-3 12-11M20 29l-6-7M20 29l6-7"/></svg></div>
+</section>
+<section class="dashboard">
+  <article class="module match-module" id="matchday"><header><h2>Aktueller Spieltag</h2></header><div class="match-grid" id="matchGrid"></div><a class="small-btn" href="./bundesliga.html">Zum kompletten Spieltag →</a></article>
+  <article class="module table-module" id="table"><header><h2>Bundesliga Tabelle</h2></header><div class="table-wrap"><table><thead><tr><th>Pl.</th><th>Verein</th><th>Sp</th><th>S</th><th>U</th><th>N</th><th>Tore</th><th>Diff</th><th>Pkt</th></tr></thead><tbody id="tableBody"></tbody></table></div><a class="small-btn" href="./bundesliga.html">Zum kompletten Spielplan →</a></article>
+  <article class="module stats-module" id="stats"><header><h2>Topspieler</h2></header><div id="statsGrid"></div><a class="small-btn" href="#stats">Zu allen Statistiken →</a></article>
+  <article class="module hall-module" id="hall"><header><h2>Hall of Fame</h2></header><div class="champion"><div class="cup"><svg viewBox="0 0 100 140"><path d="M25 10h50v34c0 22-11 38-25 38S25 66 25 44zM25 22H10v12c0 17 8 28 22 30M75 22h15v12c0 17-8 28-22 30M50 82v24M30 126h40M38 106h24v20"/></svg></div><div class="champion-info"><span>Amtierender Champion</span><h3 id="championName">ZweikampfGott</h3><p id="championTitle">Weltmeisterschaft-Champion · 2026</p><div class="champion-numbers"><div><strong id="cPoints">346</strong><span>Gesamtpunkte</span></div><div><strong id="cBonus">60</strong><span>Bonuspunkte</span></div><div><strong id="cExact">17</strong><span>Exakte Tipps</span></div></div></div></div><a class="small-btn" href="#hall">Zur Chronik →</a></article>
+</section>
+<section class="competitions" id="competitions"><h2>Unsere Wettbewerbe</h2><div class="competition-grid">
+<a class="comp bundesliga" href="./bundesliga.html"><span>Bundesliga</span></a><a class="comp pokal" href="./dfb-pokal.html"><span>DFB-Pokal</span></a><a class="comp champions" href="./champions-league.html"><span>Champions League</span></a><a class="comp dynamo" href="./dynamo-dresden.html"><span>Dynamo Dresden</span></a><a class="comp regatta" href="./weihnachtsregatta.html"><span>Weihnachtsregatta</span></a><a class="comp smugglers" href="#"><span>The Old Smugglers Cup</span></a>
+</div><a class="all-btn" href="#competitions">Alle Wettbewerbe ansehen →</a></section>
+</main>
+<footer><span>© 2026 The Old Smugglers Club</span><b class="footer-anchor"><svg viewBox="0 0 40 40"><path d="M20 4v25M12 12h16M8 25c2 8 8 11 12 11s10-3 12-11M20 29l-6-7M20 29l6-7"/></svg></b><nav><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Kontakt</a></nav></footer>
+</body></html>
