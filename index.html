@@ -232,6 +232,235 @@
       outline: none;
     }
 
+
+    /* Willkommen-Kachel: nur die Gestaltung innerhalb der bestehenden Kachel */
+    .welcome-panel {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      border-color: rgba(191, 137, 48, .78);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.025), transparent 24%),
+        radial-gradient(circle at 88% 18%, rgba(182,126,39,.08), transparent 34%),
+        repeating-radial-gradient(
+          ellipse at 35% 45%,
+          rgba(255,255,255,.012) 0 1px,
+          rgba(0,0,0,.018) 1px 3px
+        ),
+        linear-gradient(150deg, rgba(25,18,12,.97), rgba(8,6,4,.985));
+      box-shadow:
+        inset 0 1px 0 rgba(245,205,116,.12),
+        inset 0 0 0 1px rgba(0,0,0,.62),
+        inset 0 0 34px rgba(0,0,0,.46),
+        var(--shadow);
+    }
+
+    .welcome-panel::before,
+    .welcome-panel::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* Dezente Kompassprägung */
+    .welcome-panel::before {
+      width: 250px;
+      aspect-ratio: 1;
+      right: -48px;
+      top: 28px;
+      border: 1px solid rgba(180,124,43,.12);
+      border-radius: 50%;
+      opacity: .42;
+      background:
+        linear-gradient(90deg, transparent 49.6%, rgba(180,124,43,.14) 50%, transparent 50.4%),
+        linear-gradient(0deg, transparent 49.6%, rgba(180,124,43,.14) 50%, transparent 50.4%),
+        linear-gradient(45deg, transparent 49.6%, rgba(180,124,43,.09) 50%, transparent 50.4%),
+        linear-gradient(-45deg, transparent 49.6%, rgba(180,124,43,.09) 50%, transparent 50.4%),
+        radial-gradient(circle, transparent 0 28%, rgba(180,124,43,.10) 28.5% 29%, transparent 29.5% 54%, rgba(180,124,43,.08) 54.5% 55%, transparent 55.5%);
+      transform: rotate(-7deg);
+    }
+
+    /* Schwache Siegelprägung */
+    .welcome-panel::after {
+      width: 148px;
+      height: 148px;
+      right: 28px;
+      bottom: 20px;
+      border: 2px solid rgba(174,119,39,.10);
+      border-radius: 50%;
+      box-shadow:
+        inset 0 0 0 7px rgba(174,119,39,.035),
+        inset 0 0 0 10px rgba(0,0,0,.20);
+      opacity: .46;
+    }
+
+    .welcome-season {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      margin-bottom: .75rem;
+      padding: .35rem 1.05rem;
+      color: #241506;
+      border: 1px solid #d0a351;
+      border-radius: 5px;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-size: .76rem;
+      font-weight: 900;
+      text-shadow: 0 1px rgba(255,255,255,.22);
+      background:
+        linear-gradient(90deg, rgba(86,52,13,.18), transparent 20% 80%, rgba(86,52,13,.18)),
+        linear-gradient(#d8ad5c, #8e5c1d);
+      box-shadow:
+        inset 0 1px rgba(255,255,255,.32),
+        inset 0 -2px rgba(42,23,5,.40),
+        0 5px 12px rgba(0,0,0,.28);
+    }
+
+    .welcome-season::before,
+    .welcome-season::after {
+      content: "";
+      width: 7px;
+      height: 7px;
+      margin: 0 .65rem 0 -.25rem;
+      border-radius: 50%;
+      background: #6a4215;
+      box-shadow: inset 0 1px 1px rgba(255,255,255,.25);
+    }
+
+    .welcome-season::after {
+      margin: 0 -.25rem 0 .65rem;
+    }
+
+    .welcome-title {
+      max-width: 720px;
+      margin: .1rem 0 .45rem;
+      color: #d9ae5c;
+      font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -.025em;
+      line-height: 1.08;
+      text-shadow:
+        0 1px 0 #3e260c,
+        0 2px 8px rgba(0,0,0,.65);
+    }
+
+    .welcome-title::first-letter {
+      font-size: 1.12em;
+      color: #c99642;
+    }
+
+    .welcome-divider {
+      display: flex;
+      align-items: center;
+      width: min(420px, 72%);
+      gap: .55rem;
+      margin: .75rem 0 1rem;
+      color: rgba(197,143,50,.60);
+    }
+
+    .welcome-divider span {
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(90deg, transparent, rgba(197,143,50,.48));
+    }
+
+    .welcome-divider span:last-child {
+      background: linear-gradient(90deg, rgba(197,143,50,.48), transparent);
+    }
+
+    .welcome-divider .pirate-icon {
+      width: 18px;
+      height: 18px;
+      opacity: .72;
+    }
+
+    .welcome-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0;
+      color: #eee0c5;
+      font-size: 1.06rem;
+      line-height: 1.52;
+      text-shadow: 0 1px 2px rgba(0,0,0,.72);
+    }
+
+    .welcome-copy strong {
+      color: #d9ae5c;
+      font-weight: 700;
+    }
+
+    .welcome-actions {
+      position: relative;
+      z-index: 1;
+      margin-top: 1.25rem;
+    }
+
+    .welcome-primary,
+    .welcome-secondary {
+      min-height: 48px;
+      border-radius: 7px;
+      font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      letter-spacing: .01em;
+      box-shadow:
+        inset 0 1px rgba(255,255,255,.22),
+        0 8px 18px rgba(0,0,0,.34);
+    }
+
+    .welcome-primary {
+      border-color: #e1ba68;
+      background:
+        linear-gradient(90deg, rgba(104,61,12,.12), transparent 25% 75%, rgba(104,61,12,.12)),
+        linear-gradient(#e3bd69, #a76b20);
+    }
+
+    .welcome-secondary {
+      gap: .55rem;
+      border-color: rgba(210,158,59,.80);
+      background:
+        linear-gradient(rgba(26,18,12,.94), rgba(10,8,6,.96));
+    }
+
+    .welcome-primary .pirate-icon,
+    .welcome-secondary .pirate-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    @media (max-width: 720px) {
+      .welcome-panel::before {
+        width: 185px;
+        right: -75px;
+        opacity: .30;
+      }
+
+      .welcome-panel::after {
+        display: none;
+      }
+
+      .welcome-season {
+        font-size: .68rem;
+        letter-spacing: .10em;
+      }
+
+      .welcome-title {
+        font-size: clamp(1.75rem, 8vw, 2.35rem);
+      }
+
+      .welcome-divider {
+        width: 78%;
+      }
+
+      .welcome-copy {
+        font-size: 1rem;
+      }
+    }
+
     .countdown {
       display: grid;
       grid-template-columns: repeat(4, minmax(72px, 1fr));
@@ -1748,24 +1977,35 @@
 
   <main>
     <section class="hero-grid">
-      <article class="panel">
-        <div class="eyebrow">Saison 2026/2027</div>
-        <h2>Willkommen in der Zentrale der Crew</h2>
-        <p class="lead">
-          Der Old Smugglers Club ist kein reines Bundesliga-Tippspiel.
-          Bundesliga, DFB-Pokal, UEFA Champions League, Relegation,
-          Dynamo-Smuggleraufträge, Piratenkodex und ausgewählte Sonderevents
-          bilden gemeinsam unsere Saison.
+      <article class="panel welcome-panel">
+        <div class="welcome-season">Saison 2026/2027</div>
+        <h2 class="welcome-title">Willkommen in der Zentrale der Crew</h2>
+        <div class="welcome-divider" aria-hidden="true">
+          <span></span>
+          <svg class="pirate-icon"><use href="#icon-star-compass"></use></svg>
+          <span></span>
+        </div>
+
+        <p class="lead welcome-copy">
+          Willkommen im <strong>Hauptquartier der Crew</strong>. Hier werden
+          Bundesliga, DFB-Pokal, Champions League, Relegation und die legendären
+          <strong>Smuggleraufträge</strong> gemeinsam ausgespielt. Alle Informationen,
+          Missionen und Ergebnisse – für eine Saison voller Ruhm, Ehre und
+          unvergesslicher Duelle.
         </p>
 
-        <div class="actions">
-          <a class="button button-primary"
+        <div class="actions welcome-actions">
+          <a class="button button-primary welcome-primary"
              href="https://www.kicktipp.de/the-old-smugglers-club/"
              target="_blank"
              rel="noopener noreferrer">
-            <svg class="pirate-icon" aria-hidden="true"><use href="#icon-football"></use></svg>Zum Kicktipp
+            <svg class="pirate-icon" aria-hidden="true"><use href="#icon-skull"></use></svg>
+            Zum Kicktipp
           </a>
-          <a class="button button-secondary" href="#wettbewerbe">Wettbewerbe ansehen</a>
+          <a class="button button-secondary welcome-secondary" href="#wettbewerbe">
+            Wettbewerbe ansehen
+            <svg class="pirate-icon" aria-hidden="true"><use href="#icon-anchor"></use></svg>
+          </a>
         </div>
       </article>
 
