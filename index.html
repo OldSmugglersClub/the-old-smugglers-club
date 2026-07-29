@@ -234,31 +234,116 @@
 
     .countdown {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: .55rem;
-      margin-top: 1rem;
+      grid-template-columns: repeat(4, minmax(72px, 1fr));
+      gap: .7rem;
+      margin-top: 1.15rem;
+      perspective: 900px;
     }
 
-    .countdown div {
+    .flip-unit {
       text-align: center;
-      padding: .8rem .3rem;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: rgba(0,0,0,.28);
     }
 
-    .countdown strong {
+    .flip-card {
+      position: relative;
+      min-height: 92px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid rgba(242,210,126,.65);
+      border-radius: 12px;
+      background:
+        linear-gradient(180deg, rgba(48,29,12,.96) 0%, rgba(22,13,7,.98) 49%, rgba(10,7,4,.99) 51%, rgba(28,17,9,.98) 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        inset 0 -1px 0 rgba(0,0,0,.75),
+        0 10px 24px rgba(0,0,0,.34);
+      transform-style: preserve-3d;
+    }
+
+    .flip-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 1px;
+      background: rgba(0,0,0,.82);
+      box-shadow: 0 1px 0 rgba(255,255,255,.05);
+      z-index: 2;
+    }
+
+    .flip-card::after {
+      content: "☠";
+      position: absolute;
+      right: .42rem;
+      bottom: .28rem;
+      color: rgba(213,161,59,.18);
+      font-size: .85rem;
+      pointer-events: none;
+    }
+
+    .flip-value {
+      position: relative;
+      z-index: 1;
       display: block;
-      color: var(--gold-light);
-      font-size: clamp(1.5rem, 4vw, 2.35rem);
+      min-width: 2ch;
+      color: #ffd873;
+      font-size: clamp(2rem, 4vw, 3rem);
       line-height: 1;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-shadow:
+        0 2px 0 #5a3712,
+        0 0 14px rgba(242,210,126,.32);
+      font-variant-numeric: tabular-nums;
     }
 
-    .countdown span {
-      color: var(--muted);
+    .flip-card.is-flipping {
+      animation: pirateFlip .48s ease;
+    }
+
+    .flip-label {
+      display: block;
+      margin-top: .48rem;
+      color: var(--gold-light);
       font-size: .72rem;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: .08em;
+      letter-spacing: .11em;
+    }
+
+    .countdown-rigging {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      margin-top: 1rem;
+      color: rgba(213,161,59,.55);
+    }
+
+    .countdown-rigging::before,
+    .countdown-rigging::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(213,161,59,.6), transparent);
+    }
+
+    .countdown-rigging span {
+      font-size: 1rem;
+    }
+
+    @keyframes pirateFlip {
+      0%   { transform: rotateX(0deg) scale(1); filter: brightness(1); }
+      45%  { transform: rotateX(-82deg) scale(.985); filter: brightness(.78); }
+      55%  { transform: rotateX(82deg) scale(.985); filter: brightness(1.16); }
+      100% { transform: rotateX(0deg) scale(1); filter: brightness(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .flip-card.is-flipping {
+        animation: none;
+      }
     }
 
     .notice {
@@ -628,7 +713,11 @@
       }
 
       .countdown {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(90px, 1fr));
+      }
+
+      .flip-card {
+        min-height: 82px;
       }
 
       .rank {
@@ -709,12 +798,37 @@
         <div class="eyebrow">Bundesliga-Start</div>
         <h3>28. August 2026</h3>
 
-        <div class="countdown" aria-live="polite">
-          <div><strong id="days">--</strong><span>Tage</span></div>
-          <div><strong id="hours">--</strong><span>Stunden</span></div>
-          <div><strong id="minutes">--</strong><span>Minuten</span></div>
-          <div><strong id="seconds">--</strong><span>Sekunden</span></div>
+        <div class="countdown" aria-live="polite" aria-label="Countdown bis zum Bundesliga-Start">
+          <div class="flip-unit">
+            <div class="flip-card" data-unit="days">
+              <strong class="flip-value" id="days">--</strong>
+            </div>
+            <span class="flip-label">Tage</span>
+          </div>
+
+          <div class="flip-unit">
+            <div class="flip-card" data-unit="hours">
+              <strong class="flip-value" id="hours">--</strong>
+            </div>
+            <span class="flip-label">Stunden</span>
+          </div>
+
+          <div class="flip-unit">
+            <div class="flip-card" data-unit="minutes">
+              <strong class="flip-value" id="minutes">--</strong>
+            </div>
+            <span class="flip-label">Minuten</span>
+          </div>
+
+          <div class="flip-unit">
+            <div class="flip-card" data-unit="seconds">
+              <strong class="flip-value" id="seconds">--</strong>
+            </div>
+            <span class="flip-label">Sekunden</span>
+          </div>
         </div>
+
+        <div class="countdown-rigging" aria-hidden="true"><span>⚓</span></div>
 
         <p class="notice" id="countdown-note">
           Der Countdown läuft bis zum Saisonstart.
@@ -949,27 +1063,39 @@
 
     const target = new Date("2026-08-28T20:30:00+02:00").getTime();
 
+    function setFlipValue(id, value) {
+      const element = document.getElementById(id);
+      const card = element.closest(".flip-card");
+      const formatted = String(value).padStart(2, "0");
+
+      if (element.textContent === formatted) return;
+
+      card.classList.remove("is-flipping");
+      void card.offsetWidth;
+      card.classList.add("is-flipping");
+
+      window.setTimeout(() => {
+        element.textContent = formatted;
+      }, 210);
+    }
+
     function updateCountdown() {
       const distance = target - Date.now();
 
       if (distance <= 0) {
-        document.getElementById("days").textContent = "0";
-        document.getElementById("hours").textContent = "0";
-        document.getElementById("minutes").textContent = "0";
-        document.getElementById("seconds").textContent = "0";
+        setFlipValue("days", 0);
+        setFlipValue("hours", 0);
+        setFlipValue("minutes", 0);
+        setFlipValue("seconds", 0);
         document.getElementById("countdown-note").textContent =
           "Die Bundesliga-Saison 2026/2027 hat begonnen.";
         return;
       }
 
-      document.getElementById("days").textContent =
-        Math.floor(distance / (1000 * 60 * 60 * 24));
-      document.getElementById("hours").textContent =
-        Math.floor((distance / (1000 * 60 * 60)) % 24);
-      document.getElementById("minutes").textContent =
-        Math.floor((distance / (1000 * 60)) % 60);
-      document.getElementById("seconds").textContent =
-        Math.floor((distance / 1000) % 60);
+      setFlipValue("days", Math.floor(distance / (1000 * 60 * 60 * 24)));
+      setFlipValue("hours", Math.floor((distance / (1000 * 60 * 60)) % 24));
+      setFlipValue("minutes", Math.floor((distance / (1000 * 60)) % 60));
+      setFlipValue("seconds", Math.floor((distance / 1000) % 60));
     }
 
     updateCountdown();
