@@ -1,24 +1,24 @@
 {
   "bereich": "Sonderevent",
-  "statusSchild": "Vorgemerkt",
+  "statusSchild": "1 Spieltag · 5 Spiele",
   "titel": "Weihnachtsregatta",
-  "beschreibung": "Das winterliche Sonderevent des Old Smugglers Club mit eigener Aufgabe und Wertung.",
+  "beschreibung": "Fünf ausgewählte Begegnungen über den Jahreswechsel bilden gemeinsam einen besonderen Kicktipp-Spieltag des Old Smugglers Club.",
   "karten": [
     {
-      "titel": "Event",
-      "text": "Die Weihnachtsregatta wird als eigenständiges Sonderevent geführt."
+      "titel": "Modus",
+      "text": "Die Weihnachtsregatta besteht aus fünf realen Spielen, die gemeinsam als ein eigener Tippspieltag gewertet werden."
     },
     {
-      "titel": "Termin",
-      "text": "Zeitraum und Teilnahmebedingungen werden rechtzeitig veröffentlicht."
+      "titel": "Zeitraum",
+      "text": "Die fünf Begegnungen finden vom 26. Dezember 2026 bis zum 3. Januar 2027 statt."
     },
     {
-      "titel": "Geplant",
-      "text": "Aufgabe, Teilnehmer, Ergebnisse und Sieger der Regatta."
+      "titel": "Wertung",
+      "text": "Für jeden Tipp gelten die Clubregeln: 2 Punkte für die richtige Tendenz, 3 Punkte für die richtige Tordifferenz und 5 Punkte für das exakte Ergebnis."
     }
   ],
   "aktuellerStandTitel": "Aktueller Stand:",
-  "aktuellerStand": "Das Event ist technisch vorbereitet. Weitere Daten folgen vor dem Start.",
+  "aktuellerStand": "Alle fünf Begegnungen sind in den zentralen Spieldaten hinterlegt und werden unten automatisch mit Datum, Anstoßzeit und später auch mit den Ergebnissen angezeigt.",
   "bereiche": [],
   "buttons": [
     {
