@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "datenVersion": 2,
+  "datenVersion": 3,
   "aktualisiert": "2026-07-30",
   "aktiveSaison": "2026-27",
   "hinweis": "Zentrale 1:1-Abbildung der in Kicktipp angelegten Wertungsspieltage. Ein Tippspieltag kann ein oder mehrere reale Spiele enthalten.",
@@ -12,7 +12,9 @@
   "planung": {
     "smugglerauftraegeGesamtProSaison": 34,
     "smugglerauftraegeAktuellAngelegt": 16,
-    "weitereSmugglerauftraege": "Update für 2027 folgt um Weihnachten 2026"
+    "weitereSmugglerauftraege": "Update für 2027 folgt um Weihnachten 2026",
+    "dynamoSpieleVollstaendigVorhanden": true,
+    "dynamoSpieleHinweis": "Alle 34 Dynamo-Spiele sind in spieldaten.json vorhanden. Die 18 Tippspieltage für 2027 werden beim Weihnachts-Update in die Gesamtfolge eingefügt."
   },
   "saisons": [
     {
@@ -42,14 +44,17 @@
           "name": "Smugglerauftrag Goldrausch",
           "saison": "2026/2027",
           "aktiv": true,
-          "status": "geplant",
+          "status": "terminiert",
           "typ": "smugglerauftrag",
           "bezugsSpieltag": 2,
           "spielAuswahl": {
             "wettbewerb": "2-bundesliga",
             "spieltagNummer": 2,
             "teamId": "dynamo-dresden"
-          }
+          },
+          "spielIds": [
+            "sma-2026-27-02-013"
+          ]
         },
         {
           "nummer": 4,
@@ -63,7 +68,10 @@
             "wettbewerb": "2-bundesliga",
             "spieltagNummer": 3,
             "teamId": "dynamo-dresden"
-          }
+          },
+          "spielIds": [
+            "sma-2026-27-03-020"
+          ]
         },
         {
           "nummer": 5,
@@ -89,7 +97,10 @@
             "wettbewerb": "2-bundesliga",
             "spieltagNummer": 4,
             "teamId": "dynamo-dresden"
-          }
+          },
+          "spielIds": [
+            "sma-2026-27-04-032"
+          ]
         },
         {
           "nummer": 7,
@@ -127,7 +138,10 @@
             "wettbewerb": "2-bundesliga",
             "spieltagNummer": 5,
             "teamId": "dynamo-dresden"
-          }
+          },
+          "spielIds": [
+            "sma-2026-27-05-044"
+          ]
         },
         {
           "nummer": 10,
@@ -153,7 +167,10 @@
             "wettbewerb": "2-bundesliga",
             "spieltagNummer": 6,
             "teamId": "dynamo-dresden"
-          }
+          },
+          "spielIds": [
+            "sma-2026-27-06-050"
+          ]
         },
         {
           "nummer": 12,
@@ -179,7 +196,10 @@
             "wettbewerb": "2-bundesliga",
             "spieltagNummer": 7,
             "teamId": "dynamo-dresden"
-          }
+          },
+          "spielIds": [
+            "sma-2026-27-07-063"
+          ]
         },
         {
           "nummer": 14,
@@ -217,7 +237,10 @@
             "wettbewerb": "2-bundesliga",
             "spieltagNummer": 8,
             "teamId": "dynamo-dresden"
-          }
+          },
+          "spielIds": [
+            "sma-2026-27-08-068"
+          ]
         },
         {
           "nummer": 17,
@@ -266,7 +289,10 @@
             "wettbewerb": "2-bundesliga",
             "spieltagNummer": 9,
             "teamId": "dynamo-dresden"
-          }
+          },
+          "spielIds": [
+            "sma-2026-27-09-078"
+          ]
         },
         {
           "nummer": 21,
@@ -303,7 +329,10 @@
             "wettbewerb": "2-bundesliga",
             "spieltagNummer": 10,
             "teamId": "dynamo-dresden"
-          }
+          },
+          "spielIds": [
+            "sma-2026-27-10-084"
+          ]
         },
         {
           "nummer": 24,
@@ -341,7 +370,10 @@
             "wettbewerb": "2-bundesliga",
             "spieltagNummer": 11,
             "teamId": "dynamo-dresden"
-          }
+          },
+          "spielIds": [
+            "sma-2026-27-11-095"
+          ]
         },
         {
           "nummer": 27,
@@ -378,7 +410,10 @@
             "wettbewerb": "2-bundesliga",
             "spieltagNummer": 12,
             "teamId": "dynamo-dresden"
-          }
+          },
+          "spielIds": [
+            "sma-2026-27-12-104"
+          ]
         },
         {
           "nummer": 30,
@@ -416,7 +451,10 @@
             "wettbewerb": "2-bundesliga",
             "spieltagNummer": 13,
             "teamId": "dynamo-dresden"
-          }
+          },
+          "spielIds": [
+            "sma-2026-27-13-112"
+          ]
         },
         {
           "nummer": 33,
@@ -454,7 +492,10 @@
             "wettbewerb": "2-bundesliga",
             "spieltagNummer": 14,
             "teamId": "dynamo-dresden"
-          }
+          },
+          "spielIds": [
+            "sma-2026-27-14-125"
+          ]
         },
         {
           "nummer": 36,
@@ -492,7 +533,10 @@
             "wettbewerb": "2-bundesliga",
             "spieltagNummer": 15,
             "teamId": "dynamo-dresden"
-          }
+          },
+          "spielIds": [
+            "sma-2026-27-15-129"
+          ]
         },
         {
           "nummer": 39,
@@ -518,7 +562,10 @@
             "wettbewerb": "2-bundesliga",
             "spieltagNummer": 16,
             "teamId": "dynamo-dresden"
-          }
+          },
+          "spielIds": [
+            "sma-2026-27-16-143"
+          ]
         },
         {
           "nummer": 41,

@@ -4,6 +4,32 @@
   "hinweis": "Zentrale Mannschaftsdaten. Namen werden hier einmal gepflegt und in allen Spielen über die Team-ID verwendet. Die Felder national und international sind optional und für spätere Wettbewerbszuordnungen vorbereitet.",
   "teams": [
     {
+      "id": "heidenheim",
+      "name": "1. FC Heidenheim 1846",
+      "kurzname": "1. FC Heidenheim",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "2-bundesliga",
+      "international": {
+        "uefa": false,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "kaiserslautern",
+      "name": "1. FC Kaiserslautern",
+      "kurzname": "1. FC Kaiserslautern",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "2-bundesliga",
+      "international": {
+        "uefa": false,
+        "wettbewerb": null
+      }
+    },
+    {
       "id": "koeln",
       "name": "1. FC Köln",
       "kurzname": "1. FC Köln",
@@ -13,6 +39,19 @@
       "national": "bundesliga",
       "international": {
         "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "magdeburg",
+      "name": "1. FC Magdeburg",
+      "kurzname": "1. FC Magdeburg",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "2-bundesliga",
+      "international": {
+        "uefa": false,
         "wettbewerb": null
       }
     },
@@ -134,6 +173,32 @@
       }
     },
     {
+      "id": "arminia-bielefeld",
+      "name": "DSC Arminia Bielefeld",
+      "kurzname": "Arminia Bielefeld",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "2-bundesliga",
+      "international": {
+        "uefa": false,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "braunschweig",
+      "name": "Eintracht Braunschweig",
+      "kurzname": "Braunschweig",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "2-bundesliga",
+      "international": {
+        "uefa": false,
+        "wettbewerb": null
+      }
+    },
+    {
       "id": "frankfurt",
       "name": "Eintracht Frankfurt",
       "kurzname": "Eintracht Frankfurt",
@@ -199,6 +264,19 @@
       }
     },
     {
+      "id": "energie-cottbus",
+      "name": "FC Energie Cottbus",
+      "kurzname": "Energie Cottbus",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "2-bundesliga",
+      "international": {
+        "uefa": false,
+        "wettbewerb": null
+      }
+    },
+    {
       "id": "fc-liverpool",
       "name": "FC Liverpool",
       "kurzname": "FC Liverpool",
@@ -225,6 +303,19 @@
       }
     },
     {
+      "id": "st-pauli",
+      "name": "FC St. Pauli",
+      "kurzname": "FC St. Pauli",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "2-bundesliga",
+      "international": {
+        "uefa": false,
+        "wettbewerb": null
+      }
+    },
+    {
       "id": "hamburger-sv",
       "name": "Hamburger SV",
       "kurzname": "Hamburger SV",
@@ -234,6 +325,45 @@
       "national": "bundesliga",
       "international": {
         "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "hannover-96",
+      "name": "Hannover 96",
+      "kurzname": "Hannover 96",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "2-bundesliga",
+      "international": {
+        "uefa": false,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "hertha-bsc",
+      "name": "Hertha BSC",
+      "kurzname": "Hertha BSC",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "2-bundesliga",
+      "international": {
+        "uefa": false,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "holstein-kiel",
+      "name": "Holstein Kiel",
+      "kurzname": "Holstein Kiel",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "2-bundesliga",
+      "international": {
+        "uefa": false,
         "wettbewerb": null
       }
     },
@@ -260,6 +390,19 @@
       "national": "serie-a",
       "international": {
         "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "karlsruher-sc",
+      "name": "Karlsruher SC",
+      "kurzname": "Karlsruher SC",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "2-bundesliga",
+      "international": {
+        "uefa": false,
         "wettbewerb": null
       }
     },
@@ -407,6 +550,32 @@
       }
     },
     {
+      "id": "greuther-fuerth",
+      "name": "SpVgg Greuther Fürth",
+      "kurzname": "Greuther Fürth",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "2-bundesliga",
+      "international": {
+        "uefa": false,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "darmstadt-98",
+      "name": "SV Darmstadt 98",
+      "kurzname": "Darmstadt 98",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "2-bundesliga",
+      "international": {
+        "uefa": false,
+        "wettbewerb": null
+      }
+    },
+    {
       "id": "elversberg",
       "name": "SV Elversberg",
       "kurzname": "SV Elversberg",
@@ -468,6 +637,45 @@
       "national": "bundesliga",
       "international": {
         "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "bochum",
+      "name": "VfL Bochum 1848",
+      "kurzname": "VfL Bochum",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "2-bundesliga",
+      "international": {
+        "uefa": false,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "osnabrueck",
+      "name": "VfL Osnabrück",
+      "kurzname": "VfL Osnabrück",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "2-bundesliga",
+      "international": {
+        "uefa": false,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "wolfsburg",
+      "name": "VfL Wolfsburg",
+      "kurzname": "VfL Wolfsburg",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "2-bundesliga",
+      "international": {
+        "uefa": false,
         "wettbewerb": null
       }
     }
