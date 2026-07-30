@@ -4,6 +4,18 @@
   const fileName = location.pathname.split("/").pop() || "bundesliga.html";
   const slug = fileName.replace(/\.html?$/i, "") || "bundesliga";
   const jsonUrl = `./${slug}.json`;
+  const gameDataUrl = "./spieldaten.json";
+
+  const FILTERS = {
+    "bundesliga": { type: "wettbewerb", value: "bundesliga", title: "Spiele der Bundesliga" },
+    "dfb-pokal": { type: "wettbewerb", value: "dfb-pokal", title: "Spiele des DFB-Pokals" },
+    "champions-league": { type: "wettbewerb", value: "champions-league", title: "Spiele der Champions League" },
+    "europa-league": { type: "wettbewerb", value: "europa-league", title: "Spiele der Europa League" },
+    "relegation": { type: "wettbewerb", value: "relegation", title: "Spiele der Relegation" },
+    "dynamo-dresden": { type: "sonderwertung", value: "smugglerauftrag", title: "Ausgewählte Smuggleraufträge" },
+    "piratenkodex": { type: "sonderwertung", value: "piratenkodex", title: "Ausgewählte Spiele des Piratenkodex" },
+    "weihnachtsregatta": { type: "sonderwertung", value: "weihnachtsregatta", title: "Spiele der Weihnachtsregatta" }
+  };
 
   const $ = (id) => document.getElementById(id);
   const text = (id, value) => {
@@ -14,6 +26,56 @@
   };
 
   const safeArray = (value) => Array.isArray(value) ? value : [];
+
+  function formatDate(value) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(value || "")) return value || "";
+    const [year, month, day] = value.split("-");
+    return `${day}.${month}.${year}`;
+  }
+
+  function formatResult(match) {
+    const hasHomeScore = Number.isFinite(match.heimtore);
+    const hasAwayScore = Number.isFinite(match.auswaertstore);
+    if (hasHomeScore && hasAwayScore) return `${match.heimtore}:${match.auswaertstore}`;
+    return match.status || "";
+  }
+
+  function centralGamesForPage(data) {
+    const filter = FILTERS[slug];
+    if (!filter) return [];
+
+    return safeArray(data && data.spiele)
+      .filter(match => {
+        if (!match || typeof match !== "object") return false;
+        if (filter.type === "wettbewerb") return match.wettbewerb === filter.value;
+        return safeArray(match.sonderwertungen).includes(filter.value);
+      })
+      .sort((a, b) => {
+        const first = `${a.datum || "9999-12-31"}T${a.anstoss || "23:59"}`;
+        const second = `${b.datum || "9999-12-31"}T${b.anstoss || "23:59"}`;
+        return first.localeCompare(second);
+      });
+  }
+
+  function centralGamesSection(data) {
+    const games = centralGamesForPage(data);
+    if (!games.length) return null;
+
+    return {
+      typ: "spiele",
+      titel: FILTERS[slug].title,
+      anzeigen: true,
+      spiele: games.map(match => ({
+        datum: formatDate(match.datum),
+        anstoss: match.anstoss || "Uhrzeit offen",
+        heim: match.heim || "Heimteam offen",
+        trenner: "–",
+        auswaerts: match.auswaerts || "Auswärtsteam offen",
+        ergebnis: formatResult(match),
+        status: match.status || ""
+      }))
+    };
+  }
 
   function renderCards(cards) {
     const root = $("info-cards");
@@ -138,11 +200,24 @@
     root.classList.toggle("is-hidden", root.children.length === 0);
   }
 
+  async function fetchJson(url, required = true) {
+    try {
+      const response = await fetch(url, { cache: "no-store" });
+      if (!response.ok) throw new Error(`${url}: HTTP ${response.status}`);
+      return await response.json();
+    } catch (error) {
+      if (required) throw error;
+      console.warn(`Optionale Datei konnte nicht geladen werden: ${url}`, error);
+      return { spiele: [] };
+    }
+  }
+
   async function load() {
     try {
-      const response = await fetch(jsonUrl, { cache: "no-store" });
-      if (!response.ok) throw new Error(`${jsonUrl}: HTTP ${response.status}`);
-      const data = await response.json();
+      const [data, centralGameData] = await Promise.all([
+        fetchJson(jsonUrl, true),
+        fetchJson(gameDataUrl, false)
+      ]);
 
       document.title = `${data.titel || "Wettbewerb"} | The Old Smugglers Club`;
       text("eyebrow", data.bereich);
@@ -158,7 +233,12 @@
       text("status-title", data.aktuellerStandTitel);
       text("status-text", data.aktuellerStand);
 
-      renderSections(data.bereiche);
+      const centralSection = centralGamesSection(centralGameData);
+      const sections = centralSection
+        ? [centralSection, ...safeArray(data.bereiche)]
+        : safeArray(data.bereiche);
+
+      renderSections(sections);
       renderButtons(data.buttons);
       text("footer-text", data.fusszeile);
     } catch (error) {
