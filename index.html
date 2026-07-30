@@ -3441,6 +3441,39 @@
       }
     }
 
+  
+    .countdown-message .mission-note {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-top: .48rem;
+    }
+
+    .countdown-message .mission-note > span:last-child {
+      display: inline;
+      min-width: 0;
+    }
+
+    .countdown-message .mission-note-icon {
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 22px;
+      width: 22px;
+      height: 22px;
+      border: 1px solid rgba(225,171,70,.72);
+      border-radius: 50%;
+      color: #e4bd63;
+      background:
+        radial-gradient(circle at 36% 28%, #f0cf7d 0 5%, transparent 7%),
+        linear-gradient(145deg, #8d5d1f, #3f250d);
+      box-shadow:
+        inset 0 0 0 2px rgba(63,35,10,.72),
+        0 2px 5px rgba(0,0,0,.42);
+      font-size: .7rem;
+      line-height: 1;
+      text-shadow: 0 1px 2px rgba(0,0,0,.72);
+    }
+
   </style>
 </head>
 
@@ -3650,7 +3683,10 @@
         <div class="countdown-message" id="countdown-note">
           <strong>Der Zähler läuft bis zum offiziellen Bundesliga-Start.</strong>
           <span>Bundesliga-Start: 28. August 2026</span>
-          <span class="mission-note">⚓ Bereits am 09. August startet der Smugglerauftrag „Auftakt“.</span>
+          <span class="mission-note">
+            <span class="mission-note-icon" aria-hidden="true">⌛</span>
+            <span>Bereits am 09. August startet der Smugglerauftrag „Auftakt“.</span>
+          </span>
         </div>
       </aside>
     </section>
