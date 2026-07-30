@@ -2888,15 +2888,13 @@
     <section class="section panel matchday-panel" id="aktueller-spieltag">
       <div class="matchday-head">
         <div>
-          <div class="eyebrow" id="matchday-competition">Aktueller Tipptermin</div>
-          <h2 id="matchday-title">Auftakt · Saison 2026/2027</h2>
+          <div class="eyebrow" id="matchday-competition"></div>
+          <h2 id="matchday-title"></h2>
         </div>
-        <div class="matchday-status" id="matchday-status">Termin fix</div>
+        <div class="matchday-status is-hidden" id="matchday-status"></div>
       </div>
 
-      <p class="lead" id="matchday-note">
-        Der erste Auftrag der neuen Saison beginnt am 09. August 2026. Paarung und Anstoßzeit werden aus dem Tippkalender übernommen.
-      </p>
+      <p class="lead is-hidden" id="matchday-note"></p>
 
       <div class="match-list" id="match-list">
         <div class="match-row">
@@ -2916,7 +2914,7 @@
       </div>
 
       <div class="matchday-actions">
-        <a class="button button-secondary is-hidden" id="matchday-page-link" href="#" aria-hidden="true">Zum Ereignis</a>
+        <a class="button button-secondary is-hidden" id="matchday-page-link" href="#" aria-hidden="true"></a>
         <a class="button button-primary" id="matchday-kicktipp-link"
            href="https://www.kicktipp.de/the-old-smugglers-club/"
            target="_blank" rel="noopener noreferrer">Jetzt bei Kicktipp tippen</a>
@@ -3353,40 +3351,101 @@
 
         const data = await response.json();
 
-        setText("matchday-competition", data.wettbewerb);
-        setText(
-          "matchday-title",
-          [data.titel, data.saison ? `Saison ${data.saison}` : ""].filter(Boolean).join(" · ")
-        );
-        setText("matchday-status", data.status);
-        setText("matchday-note", data.hinweis);
-        renderMatches(data.spiele);
-
+        const competition = document.getElementById("matchday-competition");
+        const title = document.getElementById("matchday-title");
+        const status = document.getElementById("matchday-status");
+        const note = document.getElementById("matchday-note");
         const pageLink = document.getElementById("matchday-page-link");
-        if (pageLink) {
-          const eventLink = typeof data.ereignisLink === "string" ? data.ereignisLink.trim() : "";
-          const hasConcreteEvent = Boolean(data.ereignisFestgelegt) && eventLink !== "";
-
-          if (hasConcreteEvent) {
-            pageLink.href = eventLink;
-            pageLink.textContent = data.buttonText || "Zum Ereignis";
-            pageLink.classList.remove("is-hidden");
-            pageLink.removeAttribute("aria-hidden");
-          } else {
-            pageLink.href = "#";
-            pageLink.classList.add("is-hidden");
-            pageLink.setAttribute("aria-hidden", "true");
-          }
-        }
-
         const kicktippLink = document.getElementById("matchday-kicktipp-link");
-        if (kicktippLink) {
-          kicktippLink.href = data.kicktippLink || "https://www.kicktipp.de/the-old-smugglers-club/";
+        const matchList = document.getElementById("matchday-list");
+
+        if (competition) {
+          competition.textContent = data.wettbewerb || "";
+          competition.classList.toggle("is-hidden", !data.wettbewerb);
         }
 
-        console.info("Tippkalenderdaten erfolgreich geladen.");
+        if (title) {
+          const titleParts = [];
+          if (data.titel) titleParts.push(data.titel);
+          if (data.saison) titleParts.push(`Saison ${data.saison}`);
+          title.textContent = titleParts.join(" · ");
+          title.classList.toggle("is-hidden", titleParts.length === 0);
+        }
+
+        if (status) {
+          status.textContent = data.status || "";
+          status.classList.toggle("is-hidden", !data.status);
+        }
+
+        if (note) {
+          const showNote = Boolean(data.hinweisAnzeigen) && Boolean(data.hinweis);
+          note.textContent = showNote ? data.hinweis : "";
+          note.classList.toggle("is-hidden", !showNote);
+        }
+
+        if (pageLink) {
+          const eventUrl = typeof data.ereignisLink === "string" ? data.ereignisLink.trim() : "";
+          const eventText = data.buttonText || "";
+          const showEventButton = Boolean(data.ereignisFestgelegt) && Boolean(eventUrl) && Boolean(eventText);
+
+          pageLink.href = showEventButton ? eventUrl : "#";
+          pageLink.textContent = showEventButton ? eventText : "";
+          pageLink.classList.toggle("is-hidden", !showEventButton);
+          pageLink.setAttribute("aria-hidden", showEventButton ? "false" : "true");
+        }
+
+        if (kicktippLink) {
+          const kicktippUrl = typeof data.kicktippLink === "string" ? data.kicktippLink.trim() : "";
+          const kicktippText = data.kicktippButtonText || "";
+          const showKicktippButton = Boolean(kicktippUrl) && Boolean(kicktippText);
+
+          kicktippLink.href = showKicktippButton ? kicktippUrl : "#";
+          kicktippLink.textContent = showKicktippButton ? kicktippText : "";
+          kicktippLink.classList.toggle("is-hidden", !showKicktippButton);
+          kicktippLink.setAttribute("aria-hidden", showKicktippButton ? "false" : "true");
+        }
+
+        if (matchList) {
+          const matches = Array.isArray(data.spiele) ? data.spiele : [];
+          matchList.innerHTML = "";
+
+          matches.forEach((match) => {
+            const article = document.createElement("article");
+            article.className = "matchday-item";
+
+            const date = match.datum || "";
+            const time = match.anstoss || "";
+            const home = match.heim || "";
+            const separator = match.trenner || "";
+            const away = match.auswaerts || "";
+            const matchStatus = match.status || "";
+
+            article.innerHTML = `
+              <div class="match-time">
+                <strong>${date}</strong>
+                <span>${time}</span>
+              </div>
+              <div class="match-teams">
+                <strong>${home}</strong>
+                ${separator ? `<span class="match-vs">${separator}</span>` : ""}
+                <strong>${away}</strong>
+                ${matchStatus ? `<small>${matchStatus}</small>` : ""}
+              </div>
+              <div class="match-emblem" aria-hidden="true">
+                <div>
+                  <strong>${data.emblemKurz || ""}</strong>
+                  <small>${data.emblemText || ""}</small>
+                </div>
+              </div>
+            `;
+
+            matchList.appendChild(article);
+          });
+
+          matchList.classList.toggle("is-hidden", matches.length === 0);
+        }
       } catch (error) {
-        console.warn("Tippkalenderdaten konnten nicht geladen werden.", error);
+        console.error("Spieltagsdaten konnten nicht geladen werden:", error);
       }
     }
 
