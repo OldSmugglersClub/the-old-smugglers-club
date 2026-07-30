@@ -1,0 +1,40 @@
+{
+  "bereich": "Wettbewerbszentrale",
+  "statusSchild": "Vorbereitung",
+  "titel": "DFB-Pokal",
+  "beschreibung": "Die Zentrale für alle Pokalrunden, Paarungen, Ergebnisse und Tippstände.",
+  "karten": [
+    {
+      "titel": "Modus",
+      "text": "K.-o.-Wettbewerb mit Entscheidungen über Weiterkommen und Ausscheiden."
+    },
+    {
+      "titel": "Runden",
+      "text": "Alle Runden vom Auftakt bis zum Finale können hier abgebildet werden."
+    },
+    {
+      "titel": "Geplant",
+      "text": "Paarungen, Ergebnisse, Tippwertung und besondere Pokalmomente."
+    }
+  ],
+  "aktuellerStandTitel": "Aktueller Stand:",
+  "aktuellerStand": "Die Pokaldaten werden eingetragen, sobald die ersten Paarungen feststehen.",
+  "bereiche": [],
+  "buttons": [
+    {
+      "text": "Zum Kicktipp",
+      "link": "https://www.kicktipp.de/the-old-smugglers-club/",
+      "neuesFenster": true,
+      "stil": "primaer",
+      "anzeigen": true
+    },
+    {
+      "text": "Zurück zu allen Wettbewerben",
+      "link": "./index.html#wettbewerbe",
+      "neuesFenster": false,
+      "stil": "sekundaer",
+      "anzeigen": true
+    }
+  ],
+  "fusszeile": "The Old Smugglers Club · DFB-Pokal 2026/2027"
+}

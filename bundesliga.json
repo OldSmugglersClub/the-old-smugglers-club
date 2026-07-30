@@ -1,0 +1,40 @@
+{
+  "bereich": "Wettbewerbszentrale",
+  "statusSchild": "Vorbereitung",
+  "titel": "Bundesliga",
+  "beschreibung": "Hier entsteht die vollständige Bundesliga-Zentrale mit Spieltagsübersicht, Saisonstand, Tippspiel-Link und späteren Statistiken.",
+  "karten": [
+    {
+      "titel": "Wertung",
+      "text": "Die Bundesliga bildet die reguläre Hauptwertung der Saison 2026/2027."
+    },
+    {
+      "titel": "Saisonstart",
+      "text": "Der erste Spieltag beginnt am 28. August 2026."
+    },
+    {
+      "titel": "Geplant",
+      "text": "Spieltage, Ergebnisse, Tabellenstand und besondere Saisonrekorde."
+    }
+  ],
+  "aktuellerStandTitel": "Aktueller Stand:",
+  "aktuellerStand": "Die Unterseite ist technisch aktiv. Ergebnisse und Tabellen werden ergänzt, sobald die Saison läuft.",
+  "bereiche": [],
+  "buttons": [
+    {
+      "text": "Zum Kicktipp",
+      "link": "https://www.kicktipp.de/the-old-smugglers-club/",
+      "neuesFenster": true,
+      "stil": "primaer",
+      "anzeigen": true
+    },
+    {
+      "text": "Zurück zu allen Wettbewerben",
+      "link": "./index.html#wettbewerbe",
+      "neuesFenster": false,
+      "stil": "sekundaer",
+      "anzeigen": true
+    }
+  ],
+  "fusszeile": "The Old Smugglers Club · Bundesliga 2026/2027"
+}

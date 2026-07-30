@@ -1,0 +1,40 @@
+{
+  "bereich": "Wettbewerbszentrale",
+  "statusSchild": "Vorgemerkt",
+  "titel": "Relegation",
+  "beschreibung": "Die Relegationszentrale für Hinspiel, Rückspiel, Tippwertung und Entscheidung.",
+  "karten": [
+    {
+      "titel": "Modus",
+      "text": "Hin- und Rückspiel entscheiden über Aufstieg beziehungsweise Klassenerhalt."
+    },
+    {
+      "titel": "Termin",
+      "text": "Die konkreten Termine werden nach Abschluss der regulären Saison ergänzt."
+    },
+    {
+      "titel": "Geplant",
+      "text": "Paarungen, Ergebnisse, Gesamtergebnis und Gewinner der Relegation."
+    }
+  ],
+  "aktuellerStandTitel": "Aktueller Stand:",
+  "aktuellerStand": "Die Teilnehmer stehen erst nach Abschluss der regulären Saison fest.",
+  "bereiche": [],
+  "buttons": [
+    {
+      "text": "Zum Kicktipp",
+      "link": "https://www.kicktipp.de/the-old-smugglers-club/",
+      "neuesFenster": true,
+      "stil": "primaer",
+      "anzeigen": true
+    },
+    {
+      "text": "Zurück zu allen Wettbewerben",
+      "link": "./index.html#wettbewerbe",
+      "neuesFenster": false,
+      "stil": "sekundaer",
+      "anzeigen": true
+    }
+  ],
+  "fusszeile": "The Old Smugglers Club · Relegation 2026/2027"
+}

@@ -1,0 +1,40 @@
+{
+  "bereich": "Sonderevent",
+  "statusSchild": "Vorgemerkt",
+  "titel": "Weihnachtsregatta",
+  "beschreibung": "Das winterliche Sonderevent des Old Smugglers Club mit eigener Aufgabe und Wertung.",
+  "karten": [
+    {
+      "titel": "Event",
+      "text": "Die Weihnachtsregatta wird als eigenständiges Sonderevent geführt."
+    },
+    {
+      "titel": "Termin",
+      "text": "Zeitraum und Teilnahmebedingungen werden rechtzeitig veröffentlicht."
+    },
+    {
+      "titel": "Geplant",
+      "text": "Aufgabe, Teilnehmer, Ergebnisse und Sieger der Regatta."
+    }
+  ],
+  "aktuellerStandTitel": "Aktueller Stand:",
+  "aktuellerStand": "Das Event ist technisch vorbereitet. Weitere Daten folgen vor dem Start.",
+  "bereiche": [],
+  "buttons": [
+    {
+      "text": "Zum Kicktipp",
+      "link": "https://www.kicktipp.de/the-old-smugglers-club/",
+      "neuesFenster": true,
+      "stil": "primaer",
+      "anzeigen": true
+    },
+    {
+      "text": "Zurück zu allen Wettbewerben",
+      "link": "./index.html#wettbewerbe",
+      "neuesFenster": false,
+      "stil": "sekundaer",
+      "anzeigen": true
+    }
+  ],
+  "fusszeile": "The Old Smugglers Club · Weihnachtsregatta"
+}

@@ -1,0 +1,40 @@
+{
+  "bereich": "Wettbewerbszentrale",
+  "statusSchild": "Vorbereitung",
+  "titel": "Champions League",
+  "beschreibung": "Alle Spieltage, K.-o.-Runden, Ergebnisse und Wertungen der Champions League an einem Ort.",
+  "karten": [
+    {
+      "titel": "Wertung",
+      "text": "Die Champions League wird als eigener Wettbewerb der Tipprunde geführt."
+    },
+    {
+      "titel": "Ligaphase",
+      "text": "Spielplan und Paarungen werden nach offizieller Veröffentlichung ergänzt."
+    },
+    {
+      "titel": "Geplant",
+      "text": "Ligaphase, K.-o.-Runden, Ergebnisse und Saisonrekorde."
+    }
+  ],
+  "aktuellerStandTitel": "Aktueller Stand:",
+  "aktuellerStand": "Die Wettbewerbsseite ist vorbereitet und wartet auf die offiziellen Termine.",
+  "bereiche": [],
+  "buttons": [
+    {
+      "text": "Zum Kicktipp",
+      "link": "https://www.kicktipp.de/the-old-smugglers-club/",
+      "neuesFenster": true,
+      "stil": "primaer",
+      "anzeigen": true
+    },
+    {
+      "text": "Zurück zu allen Wettbewerben",
+      "link": "./index.html#wettbewerbe",
+      "neuesFenster": false,
+      "stil": "sekundaer",
+      "anzeigen": true
+    }
+  ],
+  "fusszeile": "The Old Smugglers Club · Champions League 2026/2027"
+}

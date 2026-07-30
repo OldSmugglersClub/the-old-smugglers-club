@@ -1,0 +1,40 @@
+{
+  "bereich": "Sonderduelle",
+  "statusSchild": "Vorbereitung",
+  "titel": "Piratenkodex",
+  "beschreibung": "Hier werden besondere Duelle, Regeln, Aufgaben und deren Wertungen veröffentlicht.",
+  "karten": [
+    {
+      "titel": "Regeln",
+      "text": "Jedes Sonderduell erhält eine eindeutige Aufgabe und Wertung."
+    },
+    {
+      "titel": "Duell",
+      "text": "Teilnehmer, Zeitraum und Bedingungen werden vor Beginn bekannt gegeben."
+    },
+    {
+      "titel": "Geplant",
+      "text": "Aufgaben, Ergebnisse, Sieger und Archiv der Sonderduelle."
+    }
+  ],
+  "aktuellerStandTitel": "Aktueller Stand:",
+  "aktuellerStand": "Aktuell ist noch kein Sonderduell veröffentlicht.",
+  "bereiche": [],
+  "buttons": [
+    {
+      "text": "Zum Kicktipp",
+      "link": "https://www.kicktipp.de/the-old-smugglers-club/",
+      "neuesFenster": true,
+      "stil": "primaer",
+      "anzeigen": true
+    },
+    {
+      "text": "Zurück zu allen Wettbewerben",
+      "link": "./index.html#wettbewerbe",
+      "neuesFenster": false,
+      "stil": "sekundaer",
+      "anzeigen": true
+    }
+  ],
+  "fusszeile": "The Old Smugglers Club · Piratenkodex"
+}
