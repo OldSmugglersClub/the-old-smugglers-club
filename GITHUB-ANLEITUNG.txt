@@ -1,59 +1,31 @@
-GITHUB-UPLOAD – SPIELTAGSKACHEL VOLLSTÄNDIG JSON-GESTEUERT
+GITHUB-UPLOAD – KACHEL „UNSERE WETTBEWERBE“
 
 Im Hauptverzeichnis des GitHub-Repositories ersetzen:
 
 1. index.html
-2. spieltag.json
 
-Die Hintergrundbilder nur hochladen, falls sie noch nicht vorhanden sind.
+Diese Dateien nur hochladen, wenn sie im Repository noch fehlen:
 
-AB JETZT KOMMEN ALLE SICHTBAREN TEXTE DER KACHEL AUS spieltag.json:
+- spieltag.json
+- piraten-chronometer-hintergrund.jpg
+- piraten-spieltag-hintergrund.jpg
 
-- Wettbewerbsschild links oben
-- Statusschild rechts oben
-- Titel, zum Beispiel „Auftakt“, „1. Spieltag“ oder „Achtelfinale“
-- Saison
-- Hinweistext und dessen Sichtbarkeit
-- Datum und Anstoßzeit
-- Heim- und Auswärtsteam
-- Text zwischen den Mannschaften
-- Ereignisstatus
-- Ereignis-Button: Text und Ziel
-- Kicktipp-Button: Text und Ziel
-- OSC-Emblemtext
+UMGESETZTE ÄNDERUNGEN
 
-WICHTIGE SCHALTER
-
-"hinweisAnzeigen": true
-Der Hinweistext wird angezeigt.
-
-"hinweisAnzeigen": false
-Der Hinweistext wird vollständig ausgeblendet.
-Sobald das erste echte Spiel eingetragen ist, dieses Feld auf false setzen und "hinweis" leeren.
-
-"ereignisFestgelegt": false
-Der Button „Zum Ereignis“ bleibt ausgeblendet.
-
-"ereignisFestgelegt": true
-Der Button wird angezeigt, sofern "ereignisLink" und "buttonText" gefüllt sind.
-
-"ereignisLink"
-Dieser Link muss exakt zu dem Ereignis führen, das in der Kachel dargestellt wird.
-
-BEISPIELE
-
-Im Unterordner „beispiele“ liegen:
-
-- vor-saisonstart.json
-- erstes-ereignis.json
-
-Nach dem ersten eingetragenen Spiel kann der Inhalt von „erstes-ereignis.json“
-als Vorlage für spieltag.json verwendet werden.
-
-Künftig muss für neue Spieltage und Wettbewerbe nur noch spieltag.json geändert werden.
-Die index.html bleibt unverändert.
+- Bunte Einzelhintergründe der Wettbewerbe vollständig entfernt.
+- Einheitliche dunkle Leder-/Holzoptik passend zu den bereits fertigen Kacheln.
+- Überschrift „Unsere Wettbewerbe“ als dunkles Holzschild mit Messingnieten.
+- Alle sieben Wettbewerbskarten mit einheitlichen Messingrahmen und vier Ecknieten.
+- Vorhandene Symbole und Inhalte beibehalten.
+- Symbole als dunkle Messingmedaillons veredelt.
+- Alle Unterseiten-Schaltflächen als kleine genietete Holzschilder umgesetzt.
+- Bestehende Links unverändert übernommen.
+- Hover-Effekt zurückhaltend und passend zum Piratendesign angepasst.
+- Responsive Rasterlogik der vorhandenen Website beibehalten.
+- Keine Änderungen an den bereits finalisierten Kacheln.
 
 Nach dem Upload:
-- Änderungen committen.
-- GitHub Pages 30–90 Sekunden aktualisieren lassen.
-- Seite bei Bedarf mit Strg+F5 neu laden.
+
+1. Änderung committen.
+2. GitHub Pages 30–90 Sekunden aktualisieren lassen.
+3. Seite mit Strg+F5 neu laden.
