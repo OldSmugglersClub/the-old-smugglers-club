@@ -1,25 +1,41 @@
 {
   "bereich": "Sonderduelle",
-  "statusSchild": "Vorbereitung",
+  "statusSchild": "6 von 8 festgelegt",
   "titel": "Piratenkodex",
-  "beschreibung": "Hier werden besondere Duelle, Regeln, Aufgaben und deren Wertungen veröffentlicht.",
+  "beschreibung": "Acht ausgewählte europäische Traditionsduelle bilden in der Saison 2026/27 jeweils einen eigenen Wertungsspieltag und fließen vollständig in die Einzel-Gesamtwertung ein.",
   "karten": [
     {
-      "titel": "Regeln",
-      "text": "Jedes Sonderduell erhält eine eindeutige Aufgabe und Wertung."
+      "titel": "Wertung",
+      "text": "Jedes Piratenkodex-Spiel ist ein eigener Tippspieltag. Es gelten die regulären Punkte: 2 für die Tendenz, 3 für die Tordifferenz und 5 für das exakte Ergebnis."
     },
     {
-      "titel": "Duell",
-      "text": "Teilnehmer, Zeitraum und Bedingungen werden vor Beginn bekannt gegeben."
+      "titel": "Saison 2026/27",
+      "text": "Sechs Duelle sind bereits festgelegt. Piratenkodex VII und VIII werden beim Weihnachts-Update ergänzt."
     },
     {
-      "titel": "Geplant",
-      "text": "Aufgaben, Ergebnisse, Sieger und Archiv der Sonderduelle."
+      "titel": "Auswahl",
+      "text": "Gewertet werden gezielt ausgewählte Klassiker und Derbys aus den europäischen Topligen."
     }
   ],
   "aktuellerStandTitel": "Aktueller Stand:",
-  "aktuellerStand": "Aktuell ist noch kein Sonderduell veröffentlicht.",
-  "bereiche": [],
+  "aktuellerStand": "Piratenkodex I bis VI sind terminiert und werden unten automatisch aus den zentralen Spieldaten angezeigt. Zwei weitere Wertungsspieltage folgen beim Weihnachts-Update.",
+  "bereiche": [
+    {
+      "typ": "liste",
+      "titel": "Saisonplanung",
+      "anzeigen": true,
+      "eintraege": [
+        "Piratenkodex I – El Clásico",
+        "Piratenkodex II – Derby della Madonnina",
+        "Piratenkodex III – North-West Derby",
+        "Piratenkodex IV – Derby d’Italia",
+        "Piratenkodex V – Le Classique",
+        "Piratenkodex VI – Manchester Derby",
+        "Piratenkodex VII – Weihnachts-Update 2026",
+        "Piratenkodex VIII – Weihnachts-Update 2026"
+      ]
+    }
+  ],
   "buttons": [
     {
       "text": "Zum Kicktipp",
