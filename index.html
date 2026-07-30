@@ -3474,6 +3474,211 @@
       text-shadow: 0 1px 2px rgba(0,0,0,.72);
     }
 
+  
+    /* ================================================================
+       SMUGGLERAUFTRÄGE – JSON-GESTEUERTE KACHEL
+       ================================================================ */
+
+    .smuggler-panel {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(18,10,6,.86), rgba(14,8,5,.93)),
+        radial-gradient(circle at 82% 22%, rgba(174,111,28,.10), transparent 34%);
+    }
+
+    .smuggler-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(110deg, transparent 0 58%, rgba(184,121,35,.045) 59% 61%, transparent 62%),
+        radial-gradient(circle at 88% 72%, rgba(210,151,52,.05), transparent 24%);
+    }
+
+    .smuggler-header {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .smuggler-header h2 {
+      margin: .35rem 0 0;
+    }
+
+    .smuggler-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0,1.8fr) minmax(260px,.72fr);
+      gap: 1rem;
+      align-items: stretch;
+      margin-top: 1rem;
+    }
+
+    .smuggler-card,
+    .smuggler-sidecard {
+      border: 1px solid rgba(184,121,35,.60);
+      border-radius: 12px;
+      background:
+        linear-gradient(145deg, rgba(34,19,10,.96), rgba(15,9,5,.98));
+      box-shadow:
+        inset 0 0 0 2px rgba(22,12,6,.70),
+        0 10px 24px rgba(0,0,0,.28);
+    }
+
+    .smuggler-card {
+      padding: 1rem;
+    }
+
+    .smuggler-card__head {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      padding-bottom: .9rem;
+      border-bottom: 1px solid rgba(181,119,35,.26);
+    }
+
+    .smuggler-card__head h3 {
+      margin: 0 0 .25rem;
+      color: #efc96f;
+      font-size: 1.38rem;
+    }
+
+    .smuggler-card__head p {
+      margin: 0;
+      color: #c5aa72;
+    }
+
+    .smuggler-card__medallion {
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 56px;
+      width: 56px;
+      height: 56px;
+      border: 1px solid rgba(224,166,64,.78);
+      border-radius: 50%;
+      color: #edc76d;
+      background:
+        radial-gradient(circle at 34% 28%, rgba(247,213,135,.45), transparent 18%),
+        linear-gradient(145deg, #8c5a1c, #3d2209);
+      box-shadow:
+        inset 0 0 0 3px rgba(58,31,7,.74),
+        0 5px 12px rgba(0,0,0,.42);
+      font-size: 1.35rem;
+      text-shadow: 0 2px 3px rgba(0,0,0,.65);
+    }
+
+    .smuggler-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: .75rem;
+      margin: 1rem 0;
+    }
+
+    .smuggler-stats > div {
+      padding: .78rem;
+      border: 1px solid rgba(184,121,35,.46);
+      border-radius: 8px;
+      background: rgba(19,11,6,.72);
+    }
+
+    .smuggler-stats dt {
+      margin-bottom: .32rem;
+      color: #b99b62;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .smuggler-stats dd {
+      margin: 0;
+      color: #efd07f;
+      font-weight: 900;
+    }
+
+    .smuggler-description {
+      min-height: 1.5em;
+      margin: 0 0 1rem;
+      color: #d4be8e;
+      line-height: 1.5;
+    }
+
+    .smuggler-actions {
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+    }
+
+    .smuggler-sidecard {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .smuggler-sidecard__plaque {
+      width: 100%;
+      padding: .62rem .8rem;
+      border: 1px solid rgba(221,163,62,.70);
+      border-radius: 7px;
+      color: #e9c771;
+      background: linear-gradient(#5b3614,#251407);
+      font-size: .84rem;
+      font-weight: 900;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .smuggler-sidecard p {
+      margin: 1rem 0;
+      color: #c9b27e;
+      line-height: 1.5;
+    }
+
+    .smuggler-sidecard__seal {
+      display: grid;
+      place-items: center;
+      width: 64px;
+      height: 64px;
+      border: 1px solid rgba(218,158,58,.72);
+      border-radius: 50%;
+      color: #eac871;
+      background:
+        radial-gradient(circle at center, rgba(133,83,24,.95), rgba(47,25,7,.98));
+      box-shadow:
+        inset 0 0 0 4px rgba(32,17,5,.72),
+        0 7px 16px rgba(0,0,0,.38);
+      font-size: 1.45rem;
+    }
+
+    @media (max-width: 820px) {
+      .smuggler-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .smuggler-sidecard {
+        min-height: 180px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .smuggler-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .smuggler-header {
+        align-items: stretch;
+      }
+    }
+
   </style>
 </head>
 
@@ -3746,23 +3951,63 @@
       </div>
     </section>
 
-    <section class="section panel" id="auftraege">
-      <div class="section-title"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-map"></use></svg><h2>Smuggleraufträge</h2></div>
+    <section class="section panel smuggler-panel" id="auftraege">
+      <div class="smuggler-header">
+        <div>
+          <div class="eyebrow" id="smuggler-label">Sondermissionen</div>
+          <h2 id="smuggler-title">Smuggleraufträge</h2>
+        </div>
+        <div class="matchday-status" id="smuggler-status">IN VORBEREITUNG</div>
+      </div>
 
-      <p class="lead">
-        Spezialmissionen außerhalb der regulären Wettbewerbe. Aktuell bestehen die Smuggleraufträge ausschließlich aus ausgewählten Spielen von Dynamo Dresden.
+      <p class="lead" id="smuggler-intro">
+        Spezialmissionen außerhalb der regulären Wettbewerbe.
       </p>
 
-      <div class="card-grid smuggler-single">
-        <article class="card">
-          <h3>Dynamo Dresden</h3>
-          <p>
-            Ausgewählte Spiele von Dynamo Dresden werden als eigene Smuggleraufträge aufgenommen und separat gewertet.
-          </p>
-          <a class="button button-secondary" href="./dynamo-dresden.html">Zu den Dynamo-Aufträgen</a>
+      <div class="smuggler-grid" id="smuggler-grid">
+        <article class="smuggler-card">
+          <div class="smuggler-card__head">
+            <span class="smuggler-card__medallion" aria-hidden="true">☠</span>
+            <div>
+              <h3 id="smuggler-team">Dynamo Dresden</h3>
+              <p id="smuggler-subtitle">Ausgewählte Spiele als eigene Smuggleraufträge.</p>
+            </div>
+          </div>
+
+          <dl class="smuggler-stats">
+            <div>
+              <dt>Aktueller Auftrag</dt>
+              <dd id="smuggler-current">Noch offen</dd>
+            </div>
+            <div>
+              <dt>Nächster Auftrag</dt>
+              <dd id="smuggler-next">Noch offen</dd>
+            </div>
+            <div>
+              <dt>Saisonfortschritt</dt>
+              <dd id="smuggler-progress">0 / 0</dd>
+            </div>
+          </dl>
+
+          <p class="smuggler-description" id="smuggler-description"></p>
+
+          <div class="smuggler-actions">
+            <a class="button button-primary" id="smuggler-link" href="./dynamo-dresden.html">
+              Zu den Dynamo-Aufträgen
+            </a>
+          </div>
         </article>
+
+        <aside class="smuggler-sidecard">
+          <div class="smuggler-sidecard__plaque" id="smuggler-side-title">Piratenlogbuch</div>
+          <p id="smuggler-side-text">
+            Sobald ein Auftrag festgelegt ist, erscheinen hier Status und Fortschritt.
+          </p>
+          <div class="smuggler-sidecard__seal" aria-hidden="true">⚓</div>
+        </aside>
       </div>
     </section>
+
 
     <section class="section panel" id="hall-of-fame">
       <div class="section-title"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-trophy"></use></svg><h2>Hall of Fame</h2></div>
@@ -4409,6 +4654,51 @@
       }
     }
 
+    async function loadSmugglerData() {
+      try {
+        const response = await fetch("./smugglerauftraege.json", { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`smugglerauftraege.json: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        const setText = (id, value, fallback = "") => {
+          const element = document.getElementById(id);
+          if (element) element.textContent = value || fallback;
+        };
+
+        setText("smuggler-label", data.bereich, "Sondermissionen");
+        setText("smuggler-title", data.titel, "Smuggleraufträge");
+        setText("smuggler-status", data.status, "IN VORBEREITUNG");
+        setText("smuggler-intro", data.einleitung, "Spezialmissionen außerhalb der regulären Wettbewerbe.");
+        setText("smuggler-team", data.team, "Dynamo Dresden");
+        setText("smuggler-subtitle", data.untertitel, "Ausgewählte Spiele als eigene Smuggleraufträge.");
+        setText("smuggler-current", data.aktuellerAuftrag, "Noch offen");
+        setText("smuggler-next", data.naechsterAuftrag, "Noch offen");
+
+        const completed = Number(data.abgeschlossen) || 0;
+        const total = Number(data.gesamt) || 0;
+        setText("smuggler-progress", `${completed} / ${total}`);
+
+        setText("smuggler-description", data.beschreibung, "");
+        setText("smuggler-side-title", data.logbuchTitel, "Piratenlogbuch");
+        setText(
+          "smuggler-side-text",
+          data.logbuchText,
+          "Sobald ein Auftrag festgelegt ist, erscheinen hier Status und Fortschritt."
+        );
+
+        const link = document.getElementById("smuggler-link");
+        if (link) {
+          link.href = data.link || "./dynamo-dresden.html";
+          link.textContent = data.buttonText || "Zu den Dynamo-Aufträgen";
+        }
+      } catch (error) {
+        console.error("Smuggleraufträge konnten nicht geladen werden:", error);
+      }
+    }
+
     async function loadClubData() {
       try {
         const response = await fetch("./clubdaten.json", { cache: "no-store" });
@@ -4504,6 +4794,7 @@
       }
     }
 
+    loadSmugglerData();
     loadClubData();
     loadMatchdayData();
 

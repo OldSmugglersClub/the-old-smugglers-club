@@ -1,0 +1,17 @@
+{
+  "bereich": "Sondermissionen",
+  "titel": "Smuggleraufträge",
+  "status": "IN VORBEREITUNG",
+  "einleitung": "Spezialmissionen außerhalb der regulären Wettbewerbe. Aktuell bestehen die Smuggleraufträge ausschließlich aus ausgewählten Spielen von Dynamo Dresden.",
+  "team": "Dynamo Dresden",
+  "untertitel": "Ausgewählte Spiele werden als eigene Smuggleraufträge aufgenommen und separat gewertet.",
+  "aktuellerAuftrag": "Noch offen",
+  "naechsterAuftrag": "Auftakt",
+  "abgeschlossen": 0,
+  "gesamt": 1,
+  "beschreibung": "Der erste Smugglerauftrag startet am 09. August 2026. Weitere Aufträge werden im Saisonverlauf ergänzt.",
+  "buttonText": "Zu den Dynamo-Aufträgen",
+  "link": "./dynamo-dresden.html",
+  "logbuchTitel": "Piratenlogbuch",
+  "logbuchText": "Auftrag „Auftakt“ ist vorbereitet. Status und Fortschritt werden hier künftig automatisch aus der JSON-Datei angezeigt."
+}
