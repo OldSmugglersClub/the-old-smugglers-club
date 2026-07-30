@@ -28,14 +28,14 @@
     </div>
   </section>
 
-  <nav class="hs-main-tabs" aria-label="Highscore-Bereiche">
-    <button class="hs-main-tab is-active" data-section="individual">Einzelwertung</button>
-    <button class="hs-main-tab" data-section="old-team">Old Smugglers Team</button>
-    <button class="hs-main-tab" data-section="new-team">New Smugglers Team</button>
-    <button class="hs-main-tab" data-section="records">Rekorde & Orden</button>
+  <nav class="hs-main-tabs" aria-label="Highscore-Bereiche" role="tablist">
+    <button class="hs-main-tab is-active" data-section="individual" role="tab" aria-selected="true" aria-controls="section-individual">Einzelwertung</button>
+    <button class="hs-main-tab" data-section="old-team" role="tab" aria-selected="false" aria-controls="section-old-team">Old Smugglers Team</button>
+    <button class="hs-main-tab" data-section="new-team" role="tab" aria-selected="false" aria-controls="section-new-team">New Smugglers Team</button>
+    <button class="hs-main-tab" data-section="records" role="tab" aria-selected="false" aria-controls="section-records">Rekorde & Orden</button>
   </nav>
 
-  <section class="hs-section is-active" id="section-individual">
+  <section class="hs-section is-active" id="section-individual" role="tabpanel">
     <div class="hs-panel hs-podium-panel">
       <div class="hs-panel-head">
         <div><div class="hs-eyebrow">Top 3</div><h2>Podium</h2></div>
@@ -44,6 +44,7 @@
           <button class="hs-chip" data-individual-view="matchday">Einzelspieltag</button>
         </div>
       </div>
+      <div class="hs-ranking-notice" id="ranking-notice" role="status" aria-live="polite"></div>
       <div class="hs-podium" id="podium"></div>
     </div>
 
@@ -52,7 +53,7 @@
         <div><div class="hs-eyebrow">Komplette Rangliste</div><h2 id="individual-title">Einzelwertung – Gesamt</h2><p class="hs-status" id="individual-caption"></p></div>
         <label class="hs-search"><span>Spieler suchen</span><input id="player-search" type="search" placeholder="Name eingeben …" autocomplete="off"></label>
       </div>
-      <div class="hs-table-wrap"><table class="hs-table"><thead id="individual-head"></thead><tbody id="individual-body"></tbody></table></div>
+      <div class="hs-table-wrap"><table class="hs-table"><caption class="sr-only">Rangliste der Einzelspieler</caption><thead id="individual-head"></thead><tbody id="individual-body"></tbody></table></div>
       <div class="hs-pagination">
         <button class="hs-page-btn" id="page-prev">‹ Zurück</button>
         <span id="page-info">Seite 1 von 1</span>
@@ -62,10 +63,10 @@
     </div>
   </section>
 
-  <section class="hs-section" id="section-old-team"><div class="hs-panel"><div class="hs-team-detail" data-team-name="Old Smugglers Team"></div></div></section>
-  <section class="hs-section" id="section-new-team"><div class="hs-panel"><div class="hs-team-detail" data-team-name="New Smugglers Team"></div></div></section>
+  <section class="hs-section" id="section-old-team" role="tabpanel" hidden><div class="hs-panel"><div class="hs-team-detail" data-team-name="Old Smugglers Team"></div></div></section>
+  <section class="hs-section" id="section-new-team" role="tabpanel" hidden><div class="hs-panel"><div class="hs-team-detail" data-team-name="New Smugglers Team"></div></div></section>
 
-  <section class="hs-section" id="section-records">
+  <section class="hs-section" id="section-records" role="tabpanel" hidden>
     <div class="hs-panel"><div class="hs-eyebrow">Saisonbestwerte</div><h2>Rekorde</h2><div class="hs-record-grid" id="record-grid"></div></div>
     <div class="hs-panel"><div class="hs-eyebrow">Auszeichnungen</div><h2>Piratenorden</h2><div class="hs-order-grid" id="order-grid"></div><p class="hs-footnote">Orden, für die Verlauf- oder Tippdetails benötigt werden, erscheinen automatisch, sobald diese Daten in späteren Exporten vorhanden sind.</p></div>
     <div class="hs-panel"><div class="hs-eyebrow">Saisonverlauf</div><h2>Historie</h2><div id="history-grid" class="hs-history"></div></div>

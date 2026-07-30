@@ -50,3 +50,15 @@
 - Keine Bildassets, Cliparts, Emojis oder Standardicons ergänzt.
 - Grundlayout, Raster, Kachelgrößen und Seitenaufbau unverändert gelassen.
 - Mobile Darstellung berücksichtigt.
+
+## Version 2.26 – Highscore Datenlogik & Bedienung
+
+- Vorläufige Saisonstände mit 0 Punkten werden nicht mehr irreführend als echte Plätze 1 bis 3 ausgegeben.
+- Das Podium kennzeichnet eine noch unbesetzte Rangliste transparent als vorläufige alphabetische Reihenfolge.
+- Geteilte Führungen werden im Podiumsbereich ausdrücklich ausgewiesen.
+- Tabellenführer- und Rekordanzeigen zeigen vor Saisonbeginn korrekt „Noch offen“ statt eines zufälligen Spielernamens.
+- Sortierbare Spalten für Rang, Spieler, Punkte, Bonuspunkte und Spieltagssiege ergänzt.
+- Mobile Rangliste von einer horizontal scrollenden Tabelle auf vollständig lesbare Registerkarten umgestellt.
+- Tastaturbedienung, Fokusdarstellung und ARIA-Zustände der Highscore-Reiter verbessert.
+- Der gewählte Highscore-Bereich wird in der URL gespeichert und kann direkt verlinkt werden.
+- Grundlayout, Kachelgrößen, Raster und alle übrigen Websitebereiche unverändert gelassen.

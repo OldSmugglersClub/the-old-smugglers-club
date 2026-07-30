@@ -226,3 +226,37 @@
   .hs-main-tab::before,.hs-chip::before,.hs-page-btn::before,.hs-btn::before{inset:3px}
   .hs-table th,.hs-table td{padding:11px 12px}
 }
+
+/* =========================================================
+   Version 2.26 – Highscore Datenlogik & Bedienung
+   ========================================================= */
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.hs-ranking-notice{position:relative;margin:4px 0 8px;padding:12px 16px 12px 44px;border:1px solid rgba(190,143,61,.48);background:linear-gradient(180deg,rgba(61,40,20,.82),rgba(24,15,8,.9));color:#cdbb96;font-size:.9rem;line-height:1.45;box-shadow:inset 0 0 0 3px rgba(0,0,0,.25)}
+.hs-ranking-notice::before{content:"";position:absolute;left:17px;top:50%;width:12px;height:12px;transform:translateY(-50%) rotate(45deg);border:1px solid #d0a250;background:#4b2e12;box-shadow:inset 0 0 0 2px rgba(0,0,0,.35)}
+.hs-ranking-notice strong{color:#f0d293;font-family:Georgia,serif}
+.hs-ranking-notice[hidden]{display:none}
+.hs-podium-card.is-provisional{filter:saturate(.68);opacity:.9}
+.hs-podium-card.is-provisional .hs-rank-seal,.hs-podium-card.is-provisional .hs-pedestal-face span{border-style:dashed;color:#c9b58d}
+.hs-sort{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;padding:0;border:0;background:none;color:inherit;font:inherit;text-transform:inherit;letter-spacing:inherit;text-align:left;cursor:pointer}
+.hs-sort span{min-width:1em;color:#ffe0a0;font-size:.7rem;text-align:right}
+.hs-sort:focus-visible,.hs-main-tab:focus-visible,.hs-chip:focus-visible,.hs-page-btn:focus-visible,.hs-btn:focus-visible{outline:2px solid #f0c66d;outline-offset:3px}
+.hs-table td.hs-total{font-weight:800;color:#f3d58e}
+.hs-table td.hs-player{overflow-wrap:anywhere}
+.hs-main-tab[aria-selected="true"]{text-shadow:0 1px 2px #000}
+
+@media(max-width:700px){
+  .hs-ranking-notice{padding-left:38px}
+  .hs-table-wrap{overflow:visible;border:0;background:none;box-shadow:none}
+  .hs-table{min-width:0;border-collapse:separate;border-spacing:0 10px}
+  .hs-table thead{display:none}
+  .hs-table tbody,.hs-table tr,.hs-table td{display:block;width:100%}
+  .hs-table tbody tr{position:relative;border:1px solid rgba(190,143,61,.58);background:linear-gradient(180deg,rgba(56,37,21,.96),rgba(20,12,6,.98));box-shadow:inset 0 0 0 3px rgba(0,0,0,.32),0 8px 18px rgba(0,0,0,.25);padding:10px 12px}
+  .hs-table tbody tr:hover td,.hs-table tbody tr:nth-child(even) td,.hs-table td{background:none}
+  .hs-table td{display:grid;grid-template-columns:minmax(110px,42%) 1fr;gap:12px;padding:8px 4px;border-bottom:1px solid rgba(184,138,61,.16);text-align:right}
+  .hs-table td:last-child{border-bottom:0}
+  .hs-table td::before{content:attr(data-label);color:#ad9568;text-transform:uppercase;letter-spacing:.07em;font-size:.68rem;font-weight:800;text-align:left}
+  .hs-table td:first-child{width:auto;text-align:right}
+  .hs-rank::before{content:none}
+  .hs-empty{display:block!important;text-align:center!important}
+  .hs-empty::before{content:none!important}
+}
