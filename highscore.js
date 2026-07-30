@@ -11,6 +11,25 @@ const state = {
   sortDir: 'asc'
 };
 
+function setSystemStatus(type, title, message, retry = false) {
+  const el = document.querySelector('#hs-system-status');
+  if (!el) return;
+  el.className = `hs-system-status is-${type}`;
+  el.hidden = false;
+  el.innerHTML = `<strong>${esc(title)}</strong><span>${esc(message)}</span>${retry ? '<button type="button" id="hs-retry">Erneut laden</button>' : ''}`;
+  if (retry) document.querySelector('#hs-retry')?.addEventListener('click', loadHighscoreData);
+}
+
+function validatePayload(payload) {
+  const issues = [];
+  if (!payload || typeof payload !== 'object') issues.push('Ungültiges Datenformat');
+  if (!Array.isArray(payload?.individual?.overall)) issues.push('Gesamtwertung fehlt');
+  if (!Array.isArray(payload?.individual?.matchday)) issues.push('Spieltagswertung fehlt');
+  if (!Array.isArray(payload?.teams?.overall)) issues.push('Teamwertung fehlt');
+  if (!payload?.meta || typeof payload.meta !== 'object') issues.push('Metadaten fehlen');
+  return issues;
+}
+
 function setSection(name) {
   document.querySelectorAll('.hs-section').forEach(section => {
     const active = section.id === `section-${name}`;
@@ -103,7 +122,8 @@ function sortButton(label, key) {
   const active = state.sortKey === key;
   const direction = active ? state.sortDir : 'none';
   const symbol = active ? (state.sortDir === 'asc' ? '▲' : '▼') : '';
-  return `<button class="hs-sort" type="button" data-sort="${key}" aria-sort="${direction}">${label}<span aria-hidden="true">${symbol}</span></button>`;
+  const action = !active ? 'sortieren' : state.sortDir === 'asc' ? 'absteigend sortieren' : 'aufsteigend sortieren';
+  return `<button class="hs-sort" type="button" data-sort="${key}" data-direction="${direction}" aria-label="${esc(label)}: ${action}">${label}<span aria-hidden="true">${symbol}</span></button>`;
 }
 
 function rowCell(label, value, className = '') {
@@ -312,10 +332,15 @@ function init() {
   document.querySelectorAll('.hs-main-tab').forEach(tab => {
     tab.addEventListener('click', () => setSection(tab.dataset.section));
     tab.addEventListener('keydown', event => {
-      if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
       const tabs = [...document.querySelectorAll('.hs-main-tab')];
       const current = tabs.indexOf(tab);
-      const next = event.key === 'ArrowRight' ? (current + 1) % tabs.length : (current - 1 + tabs.length) % tabs.length;
+      let next = current;
+      if (event.key === 'ArrowRight') next = (current + 1) % tabs.length;
+      if (event.key === 'ArrowLeft') next = (current - 1 + tabs.length) % tabs.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = tabs.length - 1;
       tabs[next].focus();
       setSection(tabs[next].dataset.section);
     });
@@ -361,17 +386,38 @@ function classListToggle(element, active) {
   element.setAttribute('aria-pressed', String(active));
 }
 
-fetch('./highscore.json', { cache: 'no-store' })
-  .then(response => {
-    if (!response.ok) throw Error(`HTTP ${response.status}`);
-    return response.json();
-  })
-  .then(payload => {
-    data = payload;
-    init();
-  })
-  .catch(error => {
-    document.querySelector('#individual-body').innerHTML = '<tr><td class="hs-empty">Highscore-Daten konnten nicht geladen werden.</td></tr>';
-    document.querySelector('#ranking-notice').innerHTML = '<strong>Datenfehler.</strong> Die Rangliste ist momentan nicht verfügbar.';
-    console.error(error);
-  });
+function loadHighscoreData() {
+  setSystemStatus('loading', 'Daten werden geladen', 'Das Highscore-Register wird vorbereitet.');
+  fetch('./highscore.json', { cache: 'no-store' })
+    .then(response => {
+      if (!response.ok) throw Error(`HTTP ${response.status}`);
+      return response.json();
+    })
+    .then(payload => {
+      const issues = validatePayload(payload);
+      if (issues.length) throw Error(issues.join(' · '));
+      data = payload;
+      init();
+      const count = data.individual?.overall?.length || 0;
+      setSystemStatus('ready', 'Highscore geladen', `${count} Spieler und alle verfügbaren Statistikmodule wurden eingelesen.`);
+      window.setTimeout(() => {
+        const el = document.querySelector('#hs-system-status');
+        if (el?.classList.contains('is-ready')) el.hidden = true;
+      }, 3500);
+    })
+    .catch(error => {
+      const body = document.querySelector('#individual-body');
+      if (body) body.innerHTML = '<tr><td colspan="6" class="hs-empty"><strong>Highscore nicht verfügbar</strong><span>Die zentrale Datendatei konnte nicht gelesen werden.</span></td></tr>';
+      const notice = document.querySelector('#ranking-notice');
+      if (notice) notice.innerHTML = '<strong>Datenfehler.</strong> Die Rangliste ist momentan nicht verfügbar.';
+      setSystemStatus('error', 'Highscore konnte nicht geladen werden', 'Bitte Verbindung oder highscore.json prüfen.', true);
+      console.error(error);
+    });
+}
+
+window.addEventListener('hashchange', () => {
+  const requested = location.hash.replace('#', '');
+  if (['individual', 'old-team', 'new-team', 'records'].includes(requested)) setSection(requested);
+});
+
+loadHighscoreData();

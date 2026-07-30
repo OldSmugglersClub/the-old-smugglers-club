@@ -9,7 +9,8 @@
   <link rel="stylesheet" href="./highscore.css">
 </head>
 <body>
-<main class="hs-page">
+<a class="hs-skip-link" href="#highscore-content">Direkt zum Highscore-Inhalt</a>
+<main class="hs-page" id="highscore-content">
   <section class="hs-hero">
     <div class="hs-hero-top">
       <div class="hs-emblem" aria-hidden="true"><img src="./club-crest.svg" alt=""></div>
@@ -29,19 +30,23 @@
   </section>
 
   <nav class="hs-main-tabs" aria-label="Highscore-Bereiche" role="tablist">
-    <button class="hs-main-tab is-active" data-section="individual" role="tab" aria-selected="true" aria-controls="section-individual">Einzelwertung</button>
-    <button class="hs-main-tab" data-section="old-team" role="tab" aria-selected="false" aria-controls="section-old-team">Old Smugglers Team</button>
-    <button class="hs-main-tab" data-section="new-team" role="tab" aria-selected="false" aria-controls="section-new-team">New Smugglers Team</button>
-    <button class="hs-main-tab" data-section="records" role="tab" aria-selected="false" aria-controls="section-records">Rekorde & Orden</button>
+    <button id="tab-individual" class="hs-main-tab is-active" data-section="individual" role="tab" aria-selected="true" aria-controls="section-individual">Einzelwertung</button>
+    <button id="tab-old-team" class="hs-main-tab" data-section="old-team" role="tab" aria-selected="false" aria-controls="section-old-team">Old Smugglers Team</button>
+    <button id="tab-new-team" class="hs-main-tab" data-section="new-team" role="tab" aria-selected="false" aria-controls="section-new-team">New Smugglers Team</button>
+    <button id="tab-records" class="hs-main-tab" data-section="records" role="tab" aria-selected="false" aria-controls="section-records">Rekorde & Orden</button>
   </nav>
 
-  <section class="hs-section is-active" id="section-individual" role="tabpanel">
+  <div class="hs-system-status is-loading" id="hs-system-status" role="status" aria-live="polite">
+    <strong>Daten werden geladen</strong><span>Das Highscore-Register wird vorbereitet.</span>
+  </div>
+
+  <section class="hs-section is-active" id="section-individual" role="tabpanel" aria-labelledby="tab-individual">
     <div class="hs-panel hs-podium-panel">
       <div class="hs-panel-head">
-        <div><div class="hs-eyebrow">Top 3</div><h2>Podium</h2></div>
+        <div><div class="hs-eyebrow">Top 3</div><h2 id="podium-title">Podium</h2></div>
         <div class="hs-view-switch">
-          <button class="hs-chip is-active" data-individual-view="overall">Gesamtwertung</button>
-          <button class="hs-chip" data-individual-view="matchday">Einzelspieltag</button>
+          <button class="hs-chip is-active" data-individual-view="overall" aria-pressed="true" aria-controls="podium individual-body">Gesamtwertung</button>
+          <button class="hs-chip" data-individual-view="matchday" aria-pressed="false" aria-controls="podium individual-body">Einzelspieltag</button>
         </div>
       </div>
       <div class="hs-ranking-notice" id="ranking-notice" role="status" aria-live="polite"></div>
@@ -69,10 +74,10 @@
     </div>
   </section>
 
-  <section class="hs-section" id="section-old-team" role="tabpanel" hidden><div class="hs-panel"><div class="hs-team-detail" data-team-name="Old Smugglers Team"></div></div></section>
-  <section class="hs-section" id="section-new-team" role="tabpanel" hidden><div class="hs-panel"><div class="hs-team-detail" data-team-name="New Smugglers Team"></div></div></section>
+  <section class="hs-section" id="section-old-team" role="tabpanel" aria-labelledby="tab-old-team" hidden><div class="hs-panel"><div class="hs-team-detail" data-team-name="Old Smugglers Team"></div></div></section>
+  <section class="hs-section" id="section-new-team" role="tabpanel" aria-labelledby="tab-new-team" hidden><div class="hs-panel"><div class="hs-team-detail" data-team-name="New Smugglers Team"></div></div></section>
 
-  <section class="hs-section" id="section-records" role="tabpanel" hidden>
+  <section class="hs-section" id="section-records" role="tabpanel" aria-labelledby="tab-records" hidden>
     <div class="hs-records-command" aria-label="Status des Highscore-Registers">
       <div><span>Register</span><strong>Saison 2026/2027</strong></div>
       <div><span>Berechnung</span><strong>Nur bestätigte Daten</strong></div>

@@ -1,5 +1,18 @@
 # Changelog
 
+## Version 2.30 – Highscore Robustheit & Barrierefreiheit
+
+- Sichtbaren Lade-, Erfolgs- und Fehlerstatus für die zentrale Highscore-Datendatei ergänzt.
+- Direkte Wiederholungsfunktion eingebaut, falls `highscore.json` nicht geladen werden kann.
+- Strukturprüfung für Gesamtwertung, Spieltagswertung, Teamwertung und Metadaten ergänzt.
+- Fehlerzustände liefern jetzt eine verständliche Meldung statt einer leeren oder beschädigten Ansicht.
+- Sprunglink zum Highscore-Inhalt und deutlichere Tastatur-Fokusmarkierungen ergänzt.
+- Reiternavigation um Home-/Ende-Tasten erweitert.
+- Sortierschalter mit präziseren zugänglichen Beschriftungen versehen.
+- Unterstützung für reduzierte Bewegungen ergänzt.
+- Mobile Darstellung der Systemmeldungen angepasst.
+- Grundlayout, Raster, Kachelgrößen und alle übrigen Websitebereiche unverändert gelassen.
+
 ## Version 2.29 – Highscore Statistikregister & Detailhierarchie
 
 - Kopfregister für Saison, Berechnungsgrundlage, Exportstand und aktive Statistikmodule ergänzt.
