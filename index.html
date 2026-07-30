@@ -4872,78 +4872,108 @@
       const setPlaceholder = (data = {}) => {
         elements.next?.classList.add("is-placeholder");
         elements.next?.removeAttribute("href");
-
-        if (elements.nextDate) {
-          elements.nextDate.textContent = data.platzhalterDatum || "TT.MM.JJJJ · --:--";
-        }
-        if (elements.nextCompetition) {
-          elements.nextCompetition.textContent = data.platzhalterWettbewerb || "Wettbewerb offen";
-        }
+        if (elements.nextDate) elements.nextDate.textContent = data.platzhalterDatum || "TT.MM.JJJJ · --:--";
+        if (elements.nextCompetition) elements.nextCompetition.textContent = data.platzhalterWettbewerb || "Wettbewerb offen";
         if (elements.nextMatch) {
-          const home = data.platzhalterHeim || "Heimteam";
-          const separator = data.platzhalterTrenner || "–";
-          const away = data.platzhalterAuswaerts || "Auswärtsteam";
-          elements.nextMatch.textContent = `${home} ${separator} ${away}`;
+          elements.nextMatch.textContent = `${data.platzhalterHeim || "Heimteam"} ${data.platzhalterTrenner || "–"} ${data.platzhalterAuswaerts || "Auswärtsteam"}`;
         }
       };
 
       const makeLocalDate = (date, time = "00:00") => {
-        if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !/^\d{2}:\d{2}$/.test(time)) {
-          return null;
-        }
-
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !/^\d{2}:\d{2}$/.test(time)) return null;
         const [year, month, day] = date.split("-").map(Number);
         const [hour, minute] = time.split(":").map(Number);
         const value = new Date(year, month - 1, day, hour, minute, 0, 0);
-
         return Number.isNaN(value.getTime()) ? null : value;
       };
 
       try {
-        const [configResponse, gamesResponse, teamsResponse] = await Promise.all([
+        const [configResponse, gamesResponse, teamsResponse, matchdaysResponse] = await Promise.all([
           fetch("./spieltag.json", { cache: "no-store" }),
           fetch("./spieldaten.json", { cache: "no-store" }),
-          fetch("./teams.json", { cache: "no-store" })
+          fetch("./teams.json", { cache: "no-store" }),
+          fetch("./tippspieltage.json", { cache: "no-store" })
         ]);
 
-        if (!configResponse.ok) {
-          throw new Error(`spieltag.json konnte nicht geladen werden (${configResponse.status})`);
-        }
-        if (!gamesResponse.ok) {
-          throw new Error(`spieldaten.json konnte nicht geladen werden (${gamesResponse.status})`);
-        }
-        if (!teamsResponse.ok) {
-          throw new Error(`teams.json konnte nicht geladen werden (${teamsResponse.status})`);
+        for (const [name, response] of [
+          ["spieltag.json", configResponse],
+          ["spieldaten.json", gamesResponse],
+          ["teams.json", teamsResponse],
+          ["tippspieltage.json", matchdaysResponse]
+        ]) {
+          if (!response.ok) throw new Error(`${name} konnte nicht geladen werden (${response.status})`);
         }
 
         const data = await configResponse.json();
         const gameData = await gamesResponse.json();
         const teamData = await teamsResponse.json();
+        const matchdayData = await matchdaysResponse.json();
+        const locale = data.locale || "de-DE";
+        const liveMinutesDefault = Math.max(1, Number(data.liveDauerMinuten) || 120);
         const teamLookup = new Map((Array.isArray(teamData.teams) ? teamData.teams : []).map(team => [team.id, team]));
         const resolveTeamName = (teamId, fallback) => teamLookup.get(teamId)?.name || fallback || "Team offen";
-        const locale = data.locale || "de-DE";
-        const displayDays = Math.max(1, Number(data.anzeigeTage) || 7);
-        const liveMinutesDefault = Math.max(1, Number(data.liveDauerMinuten) || 120);
 
-        const simulatedNow = typeof data.testJetzt === "string" && data.testJetzt.trim()
-          ? new Date(data.testJetzt)
+        const simulatedNow = typeof data.testJetzt === "string" && data.testJetzt.trim() ? new Date(data.testJetzt) : null;
+        const now = simulatedNow && !Number.isNaN(simulatedNow.getTime()) ? simulatedNow : new Date();
+
+        const allGames = Array.isArray(gameData.saisons)
+          ? gameData.saisons.flatMap(season => Array.isArray(season.spiele) ? season.spiele : [])
+          : (Array.isArray(gameData.spiele) ? gameData.spiele : []);
+        const gameById = new Map(allGames.map(game => [game.id, game]));
+
+        const activeSeason = Array.isArray(matchdayData.saisons)
+          ? (matchdayData.saisons.find(season => season.id === matchdayData.aktiveSaison)
+            || matchdayData.saisons.find(season => season.aktiv)
+            || matchdayData.saisons[0])
           : null;
+        const matchdays = Array.isArray(activeSeason?.tippspieltage) ? activeSeason.tippspieltage : [];
 
-        const now = simulatedNow && !Number.isNaN(simulatedNow.getTime())
-          ? simulatedNow
-          : new Date();
+        const matchesSelection = (game, selection = {}) => {
+          if (selection.wettbewerb && game.wettbewerb !== selection.wettbewerb) return false;
+          if (selection.spieltagNummer != null && Number(game.spieltagNummer) !== Number(selection.spieltagNummer)) return false;
+          if (selection.runde && game.runde !== selection.runde) return false;
+          if (selection.teamId && game.heimTeamId !== selection.teamId && game.auswaertsTeamId !== selection.teamId) return false;
+          return true;
+        };
 
-        const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-        const windowEnd = new Date(todayStart);
-        windowEnd.setDate(windowEnd.getDate() + displayDays);
-        windowEnd.setMilliseconds(-1);
+        const resolveGames = (matchday) => {
+          const explicit = Array.isArray(matchday.spielIds)
+            ? matchday.spielIds.map(id => gameById.get(id)).filter(Boolean)
+            : [];
+          if (explicit.length) return explicit;
+          if (matchday.spielAuswahl) return allGames.filter(game => matchesSelection(game, matchday.spielAuswahl));
+          return [];
+        };
 
-        if (elements.label) {
-          elements.label.textContent = data.wettbewerbSchild || "Nächste Ereignisse";
-        }
-        if (elements.title) {
-          elements.title.textContent = data.titel || `Die nächsten ${displayDays} Tage`;
-        }
+        const preparedMatchdays = matchdays
+          .filter(matchday => matchday.aktiv !== false)
+          .map(matchday => {
+            const games = resolveGames(matchday).map((game, index) => {
+              const start = makeLocalDate(game.datum || game.datumVon, game.anstoss || "00:00");
+              if (!start) return null;
+              const liveMinutes = Math.max(1, Number(game.liveDauerMinuten) || liveMinutesDefault);
+              return {
+                ...game,
+                heim: resolveTeamName(game.heimTeamId, game.heim),
+                auswaerts: resolveTeamName(game.auswaertsTeamId, game.auswaerts),
+                _index: index,
+                _start: start,
+                _end: new Date(start.getTime() + liveMinutes * 60000)
+              };
+            }).filter(Boolean).sort((a, b) => a._start - b._start || a._index - b._index);
+            return {
+              ...matchday,
+              _games: games,
+              _start: games[0]?._start || null,
+              _end: games.length ? new Date(Math.max(...games.map(game => game._end.getTime()))) : null
+            };
+          })
+          .filter(matchday => matchday._games.length > 0)
+          .sort((a, b) => a._start - b._start || Number(a.nummer) - Number(b.nummer));
+
+        const currentMatchday = preparedMatchdays.find(matchday => matchday._start <= now && matchday._end >= now);
+        const nextMatchday = preparedMatchdays.find(matchday => matchday._end >= now);
+        const selectedMatchday = currentMatchday || nextMatchday;
 
         if (elements.note) {
           const noteVisible = Boolean(data.hinweisAnzeigen && data.hinweis);
@@ -4951,114 +4981,80 @@
           elements.note.classList.toggle("is-hidden", !noteVisible);
         }
 
-        const competitionNames = {
-          "bundesliga": "Bundesliga",
-          "2-bundesliga": "2. Bundesliga",
-          "dfb-pokal": "DFB-Pokal",
-          "champions-league": "Champions League",
-          "europa-league": "Europa League",
-          "relegation": "Relegation"
-        };
-
-        const allGames = Array.isArray(gameData.saisons)
-          ? gameData.saisons.flatMap((season) => Array.isArray(season.spiele) ? season.spiele : [])
-          : (Array.isArray(gameData.spiele) ? gameData.spiele : []);
-
-        const visibleEvents = allGames
-          .map((event, index) => {
-            const competitionDisplay = event.wettbewerbAnzeige
-              || competitionNames[event.wettbewerb]
-              || event.wettbewerb
-              || "Ereignis";
-            const start = makeLocalDate(event.datum, event.anstoss || "00:00");
-            if (!start) return null;
-
-            const liveMinutes = Math.max(
-              1,
-              Number(event.liveDauerMinuten) || liveMinutesDefault
-            );
-            const end = new Date(start.getTime() + liveMinutes * 60 * 1000);
-
-            return {
-              ...event,
-              heim: resolveTeamName(event.heimTeamId, event.heim),
-              auswaerts: resolveTeamName(event.auswaertsTeamId, event.auswaerts),
-              wettbewerb: competitionDisplay,
-              _index: index,
-              _start: start,
-              _end: end,
-              _isLive: start <= now && end > now
-            };
-          })
-          .filter(Boolean)
-          .filter((event) => event._end >= now && event._start <= windowEnd)
-          .sort((a, b) => a._start - b._start || a._index - b._index);
-
-        const customStatus = typeof data.statusSchild === "string"
-          ? data.statusSchild.trim()
-          : "";
-
-        let automaticStatus = "KEINE TERMINE";
-        if (visibleEvents.some((event) => event._isLive)) {
-          automaticStatus = "LIVE";
-        } else if (visibleEvents.length > 0) {
-          const onlyMatches = visibleEvents.every(
-            (event) => event.typ === "spiel" || (event.heim && event.auswaerts)
-          );
-          const noun = onlyMatches
-            ? (visibleEvents.length === 1 ? "SPIEL" : "SPIELE")
-            : (visibleEvents.length === 1 ? "TERMIN" : "TERMINE");
-          automaticStatus = `${visibleEvents.length} ${noun}`;
-        }
-
-        if (elements.status) {
-          elements.status.textContent = customStatus || automaticStatus;
-        }
-
-        const nextEvent = visibleEvents[0];
-        if (!nextEvent) {
+        if (!selectedMatchday) {
+          if (elements.label) elements.label.textContent = "Nächster Tippspieltag";
+          if (elements.title) elements.title.textContent = "Noch nicht terminiert";
+          if (elements.status) elements.status.textContent = "KEINE SPIELE";
           setPlaceholder(data);
+          elements.list?.replaceChildren();
+          elements.list?.classList.add("is-empty");
         } else {
+          const games = selectedMatchday._games;
+          const isCurrent = Boolean(currentMatchday && currentMatchday === selectedMatchday);
+          const liveGames = games.filter(game => game._start <= now && game._end > now);
+          const firstGame = games.find(game => game._end >= now) || games[0];
+          const gameNoun = games.length === 1 ? "SPIEL" : "SPIELE";
+
+          if (elements.label) elements.label.textContent = `${isCurrent ? "Aktueller" : "Nächster"} Tippspieltag · Nr. ${selectedMatchday.nummer}`;
+          if (elements.title) elements.title.textContent = selectedMatchday.name || `Tippspieltag ${selectedMatchday.nummer}`;
+          if (elements.status) elements.status.textContent = liveGames.length ? "LIVE" : `${games.length} ${gameNoun}`;
+
           elements.next?.classList.remove("is-placeholder");
+          const firstDate = new Intl.DateTimeFormat(locale, { weekday: "short", day: "2-digit", month: "2-digit", year: "numeric" }).format(firstGame._start);
+          if (elements.nextDate) elements.nextDate.textContent = `${firstDate} · ${firstGame.anstoss || "--:--"}`;
+          if (elements.nextCompetition) elements.nextCompetition.textContent = selectedMatchday.name || firstGame.wettbewerbAnzeige || "Tippspieltag";
+          if (elements.nextMatch) elements.nextMatch.textContent = `${firstGame.heim} ${firstGame.trenner || "–"} ${firstGame.auswaerts}`;
+          if (elements.next && firstGame.ereignisLink) elements.next.href = firstGame.ereignisLink;
+          else elements.next?.removeAttribute("href");
 
-          const dateText = new Intl.DateTimeFormat(locale, {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric"
-          }).format(nextEvent._start);
+          if (elements.list) {
+            elements.list.replaceChildren();
+            elements.list.classList.remove("is-empty");
+            const groups = new Map();
+            games.forEach(game => {
+              const key = game.datum || game.datumVon;
+              if (!groups.has(key)) groups.set(key, []);
+              groups.get(key).push(game);
+            });
 
-          if (elements.nextDate) {
-            const weekdayText = new Intl.DateTimeFormat(locale, {
-              weekday: "short"
-            }).format(nextEvent._start);
-            elements.nextDate.textContent = `${weekdayText} ${dateText} · ${nextEvent.anstoss}`;
-          }
-          if (elements.nextCompetition) {
-            elements.nextCompetition.textContent = nextEvent.wettbewerb || "Ereignis";
-          }
-          if (elements.nextMatch) {
-            const home = nextEvent.heim || "Heimteam";
-            const separator = nextEvent.trenner || "–";
-            const away = nextEvent.auswaerts || "Auswärtsteam";
-            elements.nextMatch.textContent = `${home} ${separator} ${away}`;
-          }
+            groups.forEach(eventsForDay => {
+              const day = document.createElement("section");
+              day.className = "sm-day";
+              const dayTitle = document.createElement("h3");
+              dayTitle.className = "sm-day__title";
+              dayTitle.textContent = new Intl.DateTimeFormat(locale, { weekday: "long", day: "2-digit", month: "long" }).format(eventsForDay[0]._start);
+              day.appendChild(dayTitle);
 
-          if (elements.next && nextEvent.ereignisLink) {
-            elements.next.href = nextEvent.ereignisLink;
-          } else {
-            elements.next?.removeAttribute("href");
+              eventsForDay.forEach(game => {
+                const row = document.createElement(game.ereignisLink ? "a" : "div");
+                row.className = "sm-event-row";
+                row.dataset.competition = selectedMatchday.typ || game.wettbewerb || "";
+                if (game.ereignisLink) row.href = game.ereignisLink;
+
+                const time = document.createElement("span");
+                time.className = "sm-event-row__time";
+                time.textContent = game.anstoss || "--:--";
+                const competition = document.createElement("span");
+                competition.className = "sm-event-row__competition";
+                competition.textContent = game.wettbewerbAnzeige || game.wettbewerb || "Ereignis";
+                const match = document.createElement("span");
+                match.className = "sm-event-row__match";
+                match.textContent = `${game.heim} ${game.trenner || "–"} ${game.auswaerts}`;
+                const rowStatus = document.createElement("span");
+                rowStatus.className = "sm-event-row__status";
+                rowStatus.textContent = game._start <= now && game._end > now ? "LIVE" : (game.status || "");
+                row.append(time, competition, match, rowStatus);
+                day.appendChild(row);
+              });
+              elements.list.appendChild(day);
+            });
           }
         }
 
         if (elements.overview) {
-          const href = typeof data.uebersichtLink === "string"
-            ? data.uebersichtLink.trim()
-            : "";
-          const text = typeof data.uebersichtButtonText === "string"
-            ? data.uebersichtButtonText.trim()
-            : "";
+          const href = typeof data.uebersichtLink === "string" ? data.uebersichtLink.trim() : "";
+          const text = typeof data.uebersichtButtonText === "string" ? data.uebersichtButtonText.trim() : "";
           const visible = Boolean(href && text);
-
           elements.overview.href = visible ? href : "#";
           elements.overview.textContent = visible ? text : "";
           elements.overview.classList.toggle("is-hidden", !visible);
@@ -5066,90 +5062,18 @@
         }
 
         if (elements.kicktipp) {
-          const href = typeof data.kicktippLink === "string"
-            ? data.kicktippLink.trim()
-            : "";
-          const text = typeof data.kicktippButtonText === "string"
-            ? data.kicktippButtonText.trim()
-            : "";
+          const href = typeof data.kicktippLink === "string" ? data.kicktippLink.trim() : "";
+          const text = typeof data.kicktippButtonText === "string" ? data.kicktippButtonText.trim() : "";
           const visible = Boolean(href && text);
-
           elements.kicktipp.href = visible ? href : "#";
           elements.kicktipp.textContent = visible ? text : "";
           elements.kicktipp.classList.toggle("is-hidden", !visible);
           elements.kicktipp.setAttribute("aria-hidden", String(!visible));
         }
-
-        if (!elements.list) return;
-
-        elements.list.replaceChildren();
-        elements.list.classList.toggle("is-empty", visibleEvents.length === 0);
-
-        if (visibleEvents.length === 0) return;
-
-        const groups = new Map();
-        visibleEvents.forEach((event) => {
-          const key = event.datum;
-          if (!groups.has(key)) groups.set(key, []);
-          groups.get(key).push(event);
-        });
-
-        groups.forEach((eventsForDay) => {
-          const day = document.createElement("section");
-          day.className = "sm-day";
-
-          const dayTitle = document.createElement("h3");
-          dayTitle.className = "sm-day__title";
-          dayTitle.textContent = new Intl.DateTimeFormat(locale, {
-            weekday: "long",
-            day: "2-digit",
-            month: "long"
-          }).format(eventsForDay[0]._start);
-
-          day.appendChild(dayTitle);
-
-          eventsForDay.forEach((event) => {
-            const row = document.createElement(event.ereignisLink ? "a" : "div");
-            row.className = "sm-event-row";
-            row.dataset.competition = event.wettbewerb || "";
-
-            if (event.ereignisLink) {
-              row.href = event.ereignisLink;
-            }
-
-            const time = document.createElement("span");
-            time.className = "sm-event-row__time";
-            time.textContent = event.anstoss || "--:--";
-
-            const competition = document.createElement("span");
-            competition.className = "sm-event-row__competition";
-            competition.textContent = event.wettbewerb || "Ereignis";
-
-            const match = document.createElement("span");
-            match.className = "sm-event-row__match";
-            match.textContent = `${event.heim || "Heimteam"} ${event.trenner || "–"} ${event.auswaerts || "Auswärtsteam"}`;
-
-            if (event.titel) {
-              const subtitle = document.createElement("small");
-              subtitle.className = "sm-event-row__subtitle";
-              subtitle.textContent = event.titel;
-              match.appendChild(subtitle);
-            }
-
-            const rowStatus = document.createElement("span");
-            rowStatus.className = "sm-event-row__status";
-            rowStatus.textContent = event._isLive ? "LIVE" : (event.status || "");
-
-            row.append(time, competition, match, rowStatus);
-            day.appendChild(row);
-          });
-
-          elements.list.appendChild(day);
-        });
       } catch (error) {
         console.error("Spieltagskachel:", error);
-        if (elements.label) elements.label.textContent = "Nächste Ereignisse";
-        if (elements.title) elements.title.textContent = "Die nächsten 7 Tage";
+        if (elements.label) elements.label.textContent = "Nächster Tippspieltag";
+        if (elements.title) elements.title.textContent = "Daten konnten nicht geladen werden";
         if (elements.status) elements.status.textContent = "DATENFEHLER";
         setPlaceholder();
         elements.list?.replaceChildren();
