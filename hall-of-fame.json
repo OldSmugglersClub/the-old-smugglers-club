@@ -1,0 +1,86 @@
+{
+  "titel": "Hall of Fame",
+  "einleitung": "Die Ehrenhalle des Old Smugglers Club dokumentiert Champions, Saisonsieger, Sonderwertungen und Rekorde dauerhaft und nachvollziehbar.",
+  "champion": {
+    "schild": "Aktueller Champion",
+    "bild": "./Champion-Trophäe.jpeg",
+    "bildAlt": "Champion-Pokal des Old Smugglers Club",
+    "name": "ZweikampfGott",
+    "titelzeile": "Weltmeisterschaft · Champion · 2026",
+    "untertitel": "Old Smugglers Champion"
+  },
+  "sieger": [
+    {
+      "titel": "Meister 2025/2026",
+      "name": "Manuel",
+      "symbol": "krone",
+      "offen": false
+    },
+    {
+      "titel": "DFB-Pokal 2025/2026",
+      "name": "Manuel",
+      "symbol": "pokal",
+      "offen": false
+    },
+    {
+      "titel": "Champions League 2025/2026",
+      "name": "ZweikampfGott",
+      "symbol": "stern",
+      "offen": false
+    },
+    {
+      "titel": "Weihnachtsregatta 2026",
+      "name": "Noch offen",
+      "symbol": "laterne",
+      "offen": true
+    },
+    {
+      "titel": "Piratenkodex 2026/2027",
+      "name": "Sieger noch offen",
+      "symbol": "schriftrolle",
+      "offen": true
+    }
+  ],
+  "meisterchronikTitel": "Meisterchronik",
+  "meisterchronik": [
+    {
+      "saison": "2025/2026",
+      "sieger": "Manuel",
+      "offen": false
+    },
+    {
+      "saison": "2026/2027",
+      "sieger": "Noch offen",
+      "offen": true
+    }
+  ],
+  "rekordtafelTitel": "Rekordtafel",
+  "rekorde": [
+    {
+      "bezeichnung": "Gesamtpunkte",
+      "wert": "346",
+      "spieler": "Manuel",
+      "offen": false
+    },
+    {
+      "bezeichnung": "Bonuspunkte",
+      "wert": "60",
+      "spieler": "ZweikampfGott",
+      "offen": false
+    },
+    {
+      "bezeichnung": "Exakte Tipps",
+      "wert": "17",
+      "spieler": "Marius",
+      "offen": false
+    },
+    {
+      "bezeichnung": "Weitere Rekorde",
+      "wert": "Noch offen",
+      "spieler": "",
+      "offen": true
+    }
+  ],
+  "ehrenmitgliederTitel": "Ehrenmitglieder & besondere Leistungen",
+  "ehrenmitglieder": []
+}
