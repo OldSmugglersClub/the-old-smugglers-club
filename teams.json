@@ -1,7 +1,7 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "aktualisiert": "2026-07-30",
-  "hinweis": "Zentrale Mannschaftsdaten. Namen werden hier einmal gepflegt und in allen Spielen über die Team-ID verwendet.",
+  "hinweis": "Zentrale Mannschaftsdaten. Namen werden hier einmal gepflegt und in allen Spielen über die Team-ID verwendet. Die Felder national und international sind optional und für spätere Wettbewerbszuordnungen vorbereitet.",
   "teams": [
     {
       "id": "augsburg",
@@ -9,7 +9,12 @@
       "kurzname": "FC Augsburg",
       "land": "Deutschland",
       "logo": "",
-      "aktiv": true
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
     },
     {
       "id": "bayern-muenchen",
@@ -17,7 +22,12 @@
       "kurzname": "FC Bayern",
       "land": "Deutschland",
       "logo": "",
-      "aktiv": true
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
     },
     {
       "id": "dortmund",
@@ -25,7 +35,12 @@
       "kurzname": "Borussia Dortmund",
       "land": "Deutschland",
       "logo": "",
-      "aktiv": true
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
     },
     {
       "id": "elversberg",
@@ -33,7 +48,12 @@
       "kurzname": "SV Elversberg",
       "land": "Deutschland",
       "logo": "",
-      "aktiv": true
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
     },
     {
       "id": "frankfurt",
@@ -41,7 +61,12 @@
       "kurzname": "Eintracht Frankfurt",
       "land": "Deutschland",
       "logo": "",
-      "aktiv": true
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
     },
     {
       "id": "freiburg",
@@ -49,7 +74,12 @@
       "kurzname": "SC Freiburg",
       "land": "Deutschland",
       "logo": "",
-      "aktiv": true
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
     },
     {
       "id": "hamburger-sv",
@@ -57,7 +87,12 @@
       "kurzname": "Hamburger SV",
       "land": "Deutschland",
       "logo": "",
-      "aktiv": true
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
     },
     {
       "id": "hoffenheim",
@@ -65,7 +100,12 @@
       "kurzname": "TSG Hoffenheim",
       "land": "Deutschland",
       "logo": "",
-      "aktiv": true
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
     },
     {
       "id": "koeln",
@@ -73,7 +113,12 @@
       "kurzname": "1. FC Köln",
       "land": "Deutschland",
       "logo": "",
-      "aktiv": true
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
     },
     {
       "id": "leverkusen",
@@ -81,7 +126,12 @@
       "kurzname": "Bayer 04 Leverkusen",
       "land": "Deutschland",
       "logo": "",
-      "aktiv": true
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
     },
     {
       "id": "mainz-05",
@@ -89,7 +139,12 @@
       "kurzname": "Mainz 05",
       "land": "Deutschland",
       "logo": "",
-      "aktiv": true
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
     },
     {
       "id": "moenchengladbach",
@@ -97,7 +152,12 @@
       "kurzname": "Gladbach",
       "land": "Deutschland",
       "logo": "",
-      "aktiv": true
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
     },
     {
       "id": "paderborn",
@@ -105,7 +165,12 @@
       "kurzname": "SC Paderborn 07",
       "land": "Deutschland",
       "logo": "",
-      "aktiv": true
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
     },
     {
       "id": "rb-leipzig",
@@ -113,7 +178,12 @@
       "kurzname": "RB Leipzig",
       "land": "Deutschland",
       "logo": "",
-      "aktiv": true
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
     },
     {
       "id": "schalke-04",
@@ -121,7 +191,12 @@
       "kurzname": "FC Schalke 04",
       "land": "Deutschland",
       "logo": "",
-      "aktiv": true
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
     },
     {
       "id": "stuttgart",
@@ -129,7 +204,12 @@
       "kurzname": "VfB Stuttgart",
       "land": "Deutschland",
       "logo": "",
-      "aktiv": true
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
     },
     {
       "id": "union-berlin",
@@ -137,7 +217,12 @@
       "kurzname": "1. FC Union Berlin",
       "land": "Deutschland",
       "logo": "",
-      "aktiv": true
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
     },
     {
       "id": "werder-bremen",
@@ -145,7 +230,12 @@
       "kurzname": "Werder Bremen",
       "land": "Deutschland",
       "logo": "",
-      "aktiv": true
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
     }
   ]
 }
