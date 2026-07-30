@@ -4900,9 +4900,10 @@
       };
 
       try {
-        const [configResponse, gamesResponse] = await Promise.all([
+        const [configResponse, gamesResponse, teamsResponse] = await Promise.all([
           fetch("./spieltag.json", { cache: "no-store" }),
-          fetch("./spieldaten.json", { cache: "no-store" })
+          fetch("./spieldaten.json", { cache: "no-store" }),
+          fetch("./teams.json", { cache: "no-store" })
         ]);
 
         if (!configResponse.ok) {
@@ -4911,9 +4912,15 @@
         if (!gamesResponse.ok) {
           throw new Error(`spieldaten.json konnte nicht geladen werden (${gamesResponse.status})`);
         }
+        if (!teamsResponse.ok) {
+          throw new Error(`teams.json konnte nicht geladen werden (${teamsResponse.status})`);
+        }
 
         const data = await configResponse.json();
         const gameData = await gamesResponse.json();
+        const teamData = await teamsResponse.json();
+        const teamLookup = new Map((Array.isArray(teamData.teams) ? teamData.teams : []).map(team => [team.id, team]));
+        const resolveTeamName = (teamId, fallback) => teamLookup.get(teamId)?.name || fallback || "Team offen";
         const locale = data.locale || "de-DE";
         const displayDays = Math.max(1, Number(data.anzeigeTage) || 7);
         const liveMinutesDefault = Math.max(1, Number(data.liveDauerMinuten) || 120);
@@ -4974,6 +4981,8 @@
 
             return {
               ...event,
+              heim: resolveTeamName(event.heimTeamId, event.heim),
+              auswaerts: resolveTeamName(event.auswaertsTeamId, event.auswaerts),
               wettbewerb: competitionDisplay,
               _index: index,
               _start: start,

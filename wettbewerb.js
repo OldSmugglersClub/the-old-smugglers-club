@@ -5,6 +5,7 @@
   const slug = fileName.replace(/\.html?$/i, "") || "bundesliga";
   const jsonUrl = `./${slug}.json`;
   const gameDataUrl = "./spieldaten.json";
+  const teamDataUrl = "./teams.json";
 
   const FILTERS = {
     "bundesliga": { type: "wettbewerb", value: "bundesliga", title: "Spiele der Bundesliga" },
@@ -61,8 +62,17 @@
       });
   }
 
-  function centralGamesSection(data) {
+  function createTeamLookup(teamData) {
+    return new Map(safeArray(teamData && teamData.teams).map(team => [team.id, team]));
+  }
+
+  function teamName(teamLookup, teamId, fallback) {
+    return teamLookup.get(teamId)?.name || fallback || "Team offen";
+  }
+
+  function centralGamesSection(data, teamData) {
     const games = centralGamesForPage(data);
+    const teamLookup = createTeamLookup(teamData);
     if (!games.length) return null;
 
     return {
@@ -73,9 +83,9 @@
         datum: match.datumAnzeige || formatDate(match.datum || match.datumVon),
         datumSortierung: match.datum || match.datumVon || "9999-12-31",
         anstoss: match.anstoss || "Uhrzeit offen",
-        heim: match.heim || "Heimteam offen",
+        heim: teamName(teamLookup, match.heimTeamId, match.heim || "Heimteam offen"),
         trenner: "–",
-        auswaerts: match.auswaerts || "Auswärtsteam offen",
+        auswaerts: teamName(teamLookup, match.auswaertsTeamId, match.auswaerts || "Auswärtsteam offen"),
         ergebnis: formatResult(match),
         status: match.status || "",
         runde: match.runde || "Spiele",
@@ -296,9 +306,10 @@
 
   async function load() {
     try {
-      const [data, centralGameData] = await Promise.all([
+      const [data, centralGameData, teamData] = await Promise.all([
         fetchJson(jsonUrl, true),
-        fetchJson(gameDataUrl, false)
+        fetchJson(gameDataUrl, false),
+        fetchJson(teamDataUrl, false)
       ]);
 
       document.title = `${data.titel || "Wettbewerb"} | The Old Smugglers Club`;
@@ -315,7 +326,7 @@
       text("status-title", data.aktuellerStandTitel);
       text("status-text", data.aktuellerStand);
 
-      const centralSection = centralGamesSection(centralGameData);
+      const centralSection = centralGamesSection(centralGameData, teamData);
       const sections = centralSection
         ? [centralSection, ...safeArray(data.bereiche)]
         : safeArray(data.bereiche);

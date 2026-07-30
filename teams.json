@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "aktualisiert": "2026-07-30",
+  "hinweis": "Zentrale Mannschaftsdaten. Namen werden hier einmal gepflegt und in allen Spielen über die Team-ID verwendet.",
+  "teams": [
+    {
+      "id": "augsburg",
+      "name": "FC Augsburg",
+      "kurzname": "FC Augsburg",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true
+    },
+    {
+      "id": "bayern-muenchen",
+      "name": "FC Bayern München",
+      "kurzname": "FC Bayern",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true
+    },
+    {
+      "id": "dortmund",
+      "name": "Borussia Dortmund",
+      "kurzname": "Borussia Dortmund",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true
+    },
+    {
+      "id": "elversberg",
+      "name": "SV Elversberg",
+      "kurzname": "SV Elversberg",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true
+    },
+    {
+      "id": "frankfurt",
+      "name": "Eintracht Frankfurt",
+      "kurzname": "Eintracht Frankfurt",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true
+    },
+    {
+      "id": "freiburg",
+      "name": "Sport-Club Freiburg",
+      "kurzname": "SC Freiburg",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true
+    },
+    {
+      "id": "hamburger-sv",
+      "name": "Hamburger SV",
+      "kurzname": "Hamburger SV",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true
+    },
+    {
+      "id": "hoffenheim",
+      "name": "TSG Hoffenheim",
+      "kurzname": "TSG Hoffenheim",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true
+    },
+    {
+      "id": "koeln",
+      "name": "1. FC Köln",
+      "kurzname": "1. FC Köln",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true
+    },
+    {
+      "id": "leverkusen",
+      "name": "Bayer 04 Leverkusen",
+      "kurzname": "Bayer 04 Leverkusen",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true
+    },
+    {
+      "id": "mainz-05",
+      "name": "1. FSV Mainz 05",
+      "kurzname": "Mainz 05",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true
+    },
+    {
+      "id": "moenchengladbach",
+      "name": "Borussia Mönchengladbach",
+      "kurzname": "Gladbach",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true
+    },
+    {
+      "id": "paderborn",
+      "name": "SC Paderborn 07",
+      "kurzname": "SC Paderborn 07",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true
+    },
+    {
+      "id": "rb-leipzig",
+      "name": "RB Leipzig",
+      "kurzname": "RB Leipzig",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true
+    },
+    {
+      "id": "schalke-04",
+      "name": "FC Schalke 04",
+      "kurzname": "FC Schalke 04",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true
+    },
+    {
+      "id": "stuttgart",
+      "name": "VfB Stuttgart",
+      "kurzname": "VfB Stuttgart",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true
+    },
+    {
+      "id": "union-berlin",
+      "name": "1. FC Union Berlin",
+      "kurzname": "1. FC Union Berlin",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true
+    },
+    {
+      "id": "werder-bremen",
+      "name": "SV Werder Bremen",
+      "kurzname": "Werder Bremen",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true
+    }
+  ]
+}
