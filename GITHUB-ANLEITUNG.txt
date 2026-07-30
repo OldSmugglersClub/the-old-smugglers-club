@@ -1,50 +1,19 @@
-GITHUB-UPLOAD – DYNAMISCHE SPIELTAGSKACHEL
+GITHUB-UPLOAD – KORREKTUR WETTBEWERBSSCHILD
 
-Diese Dateien im Hauptverzeichnis des GitHub-Repositories ersetzen:
+Bitte diese beiden Dateien im Hauptverzeichnis des GitHub-Repositories ersetzen:
 
 1. index.html
 2. spieltag.json
 
-Die vorhandenen Hintergrundbilder müssen nicht erneut hochgeladen werden,
-wenn sie bereits im Repository liegen.
-
-NEUE LOGIK
-
-1. Wettbewerbsschild
-   Der Text links oben wird dynamisch aus dem Feld "wettbewerb" in spieltag.json geladen.
-
-   Beispiele:
-   "Bundesliga"
-   "DFB-Pokal"
-   "Champions League"
-   "Smugglerauftrag"
-   "Piratenkodex"
-   "Relegation"
-   "Sonderevent"
-
-2. Button „Zum Ereignis“
-   Der Button erscheint nur, wenn das konkrete Ereignis feststeht und ein exakter Link vorhanden ist.
-
-   Solange Heim- und Auswärtsteam noch "Noch offen" sind:
-   "ereignisFestgelegt": false
-   "ereignisLink": ""
-
-   Dann wird der Button automatisch ausgeblendet.
-
-3. Sobald das Ereignis feststeht
-   Beispiel:
-
-   "ereignisFestgelegt": true,
-   "ereignisLink": "./bundesliga.html#spieltag-1",
-   "buttonText": "Zum Ereignis"
-
-   Der Link muss direkt zu der Seite oder zum Abschnitt führen,
-   der genau das in der Kachel angezeigte Ereignis beschreibt.
-
-4. Kicktipp-Button
-   Der Button „Jetzt bei Kicktipp tippen“ bleibt immer sichtbar und verwendet weiterhin "kicktippLink".
+Änderung:
+- Solange das konkrete Ereignis noch nicht feststeht, zeigt das Schild links oben
+  „AKTUELLER TIPPTERMIN“ statt „SMUGGLERAUFTRAG“.
+- Sobald ein konkretes Ereignis eingetragen wird, kann das Feld „wettbewerb“
+  in spieltag.json passend gesetzt werden, zum Beispiel:
+  „Bundesliga“, „DFB-Pokal“, „Champions League“, „Smugglerauftrag“,
+  „Piratenkodex“, „Relegation“ oder „Sonderevent“.
 
 Nach dem Upload:
 - Änderungen committen.
 - GitHub Pages 30–90 Sekunden aktualisieren lassen.
-- Seite bei Bedarf mit Strg+F5 neu laden.
+- Seite mit Strg+F5 neu laden, damit keine alte JSON-Datei aus dem Browser-Cache verwendet wird.
