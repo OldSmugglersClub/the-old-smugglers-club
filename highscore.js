@@ -2,6 +2,7 @@ const fmt = n => Number(n || 0).toLocaleString('de-DE', { maximumFractionDigits:
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 let data = {};
+let hallOfFame = {};
 const STORAGE_KEY = 'tosmc-highscore-state-v233';
 const state = {
   view: 'overall',
@@ -293,6 +294,7 @@ function openPlayerProfile(name) {
   populateComparisonSelect(name);
   renderPlayerPositionAnalysis(name);
   renderPlayerTrend(name);
+  renderPlayerLegacy(name);
   document.querySelector('#player-profile-note').textContent = noScore
     ? 'Noch keine sportliche Wertung vorhanden. Das Profil zeigt ausschließlich bestätigte Exportdaten.'
     : 'Das Profil vergleicht Gesamtwertung und aktuellen Einzelspieltag. Es werden keine fehlenden Werte geschätzt.';
@@ -603,6 +605,50 @@ function orderCard(title, holder, note, state) {
   </article>`;
 }
 
+
+function confirmedHallEntries() {
+  const entries = [];
+  const add = (type, title, holder, detail) => {
+    const name = String(holder || '').trim();
+    if (!name || /noch offen|offen|keine einträge|sieger noch offen/i.test(name)) return;
+    entries.push({ type, title, holder: name, detail: String(detail || '').trim() });
+  };
+  add('Titel', hallOfFame.aktuellerChampion?.titel || 'Champion', hallOfFame.aktuellerChampion?.name, `${hallOfFame.aktuellerChampion?.wettbewerb || 'Clubwettbewerb'} ${hallOfFame.aktuellerChampion?.jahr || ''}`.trim());
+  add('Meisterschaft', 'Saisonmeister', hallOfFame.meister?.name, hallOfFame.meister?.saison || '');
+  add('Pokal', 'DFB-Pokal', hallOfFame.dfbPokal?.offen ? '' : hallOfFame.dfbPokal?.name, hallOfFame.dfbPokal?.saison || '');
+  add('Europapokal', 'Champions League', hallOfFame.championsLeague?.offen ? '' : hallOfFame.championsLeague?.name, hallOfFame.championsLeague?.saison || '');
+  Object.values(hallOfFame.rekorde || {}).forEach(record => {
+    if (!record || record.offen) return;
+    add('Rekord', record.label || 'Bestmarke', record.name, record.wert ? `${record.wert}` : '');
+  });
+  return entries;
+}
+
+function renderLegacyArchive() {
+  const host = document.querySelector('#legacy-grid');
+  const note = document.querySelector('#legacy-note');
+  if (!host) return;
+  const entries = confirmedHallEntries();
+  if (!entries.length) {
+    host.innerHTML = '<div class="hs-legacy-empty"><strong>Chronik noch nicht verfügbar</strong><span>hall-of-fame.json enthält derzeit keine bestätigten Einträge.</span></div>';
+    if (note) note.textContent = 'Es werden keine historischen Gewinner aus dem aktuellen Highscore abgeleitet.';
+    return;
+  }
+  host.innerHTML = entries.map(entry => `<article class="hs-legacy-card"><span>${esc(entry.type)}</span><strong>${esc(entry.title)}</strong><b>${profileButton(entry.holder)}</b><small>${esc(entry.detail || 'Bestätigter Chronikeintrag')}</small></article>`).join('');
+  if (note) note.textContent = `${entries.length} bestätigte Titel- und Rekordeinträge aus hall-of-fame.json geladen.`;
+}
+
+function renderPlayerLegacy(name) {
+  const section = document.querySelector('#player-legacy');
+  const grid = document.querySelector('#player-legacy-grid');
+  const count = document.querySelector('#player-legacy-count');
+  if (!section || !grid || !count) return;
+  const entries = confirmedHallEntries().filter(entry => entry.holder.localeCompare(String(name), 'de', { sensitivity: 'base' }) === 0);
+  section.hidden = entries.length === 0;
+  count.textContent = `${entries.length} ${entries.length === 1 ? 'Eintrag' : 'Einträge'}`;
+  grid.innerHTML = entries.map(entry => `<article><span>${esc(entry.type)}</span><strong>${esc(entry.title)}</strong><small>${esc(entry.detail || 'Bestätigter Chronikeintrag')}</small></article>`).join('');
+}
+
 function renderRecords() {
   const individuals = officialRows('overall');
   const matchday = officialRows('matchday');
@@ -650,6 +696,7 @@ function renderRecords() {
   ];
   document.querySelector('#order-grid').innerHTML = orders.join('');
 
+  renderLegacyArchive();
   renderSeasonTrend(historyRows);
 
   document.querySelector('#history-grid').innerHTML = historyRows.length
@@ -765,15 +812,18 @@ function classListToggle(element, active) {
 
 function loadHighscoreData() {
   setSystemStatus('loading', 'Daten werden geladen', 'Das Highscore-Register wird vorbereitet.');
-  fetch('./highscore.json', { cache: 'no-store' })
-    .then(response => {
-      if (!response.ok) throw Error(`HTTP ${response.status}`);
+  Promise.all([
+    fetch('./highscore.json', { cache: 'no-store' }).then(response => {
+      if (!response.ok) throw Error(`highscore.json: HTTP ${response.status}`);
       return response.json();
-    })
-    .then(payload => {
+    }),
+    fetch('./hall-of-fame.json', { cache: 'no-store' }).then(response => response.ok ? response.json() : {})
+  ])
+    .then(([payload, hallPayload]) => {
       const issues = validatePayload(payload);
       if (issues.length) throw Error(issues.join(' · '));
       data = payload;
+      hallOfFame = hallPayload && typeof hallPayload === 'object' ? hallPayload : {};
       init();
       const count = data.individual?.overall?.length || 0;
       setSystemStatus('ready', 'Highscore geladen', `${count} Spieler und alle verfügbaren Statistikmodule wurden eingelesen.`);

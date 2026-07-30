@@ -1,3 +1,15 @@
+# Changelog
+
+## Version 2.36 – Highscore Saisonarchiv & Clubchronik
+
+- Zentrale `hall-of-fame.json` zusätzlich in die Highscore eingebunden.
+- Neuer Bereich „Saisonarchiv & Bestmarken“ mit ausschließlich bestätigten Titeln und Rekorden.
+- Offene oder unbestätigte Chronikeinträge werden automatisch ausgeblendet.
+- Spielerprofile zeigen vorhandene historische Titel und Rekorde des jeweiligen Spielers.
+- Ausfall der Hall-of-Fame-Datei beeinträchtigt die aktuelle Rangliste nicht.
+- Desktop-, Tablet- und Mobilgestaltung im bestehenden Holz-, Leder- und Messingstil ergänzt.
+- Grundlayout, Raster, Kachelgrößen und übrige Websitebereiche unverändert.
+
 # Version 2.35 – Highscore Saisonverlauf & Trendprüfung
 
 - Verlaufskompass für archivierte Highscore-Stände ergänzt.

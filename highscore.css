@@ -445,3 +445,24 @@
 .hs-season-trend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:16px 0 18px}.hs-season-trend article,.hs-player-trend-grid article{min-width:0;padding:14px;border:1px solid rgba(184,138,61,.38);background:linear-gradient(180deg,rgba(47,30,16,.94),rgba(15,9,5,.98));box-shadow:inset 0 0 0 3px rgba(0,0,0,.22)}.hs-season-trend span,.hs-player-trend-grid span{display:block;color:#998460;text-transform:uppercase;letter-spacing:.09em;font-size:.58rem;font-weight:800}.hs-season-trend strong,.hs-player-trend-grid strong{display:block;margin-top:7px;color:#efd39a;font:700 1.08rem/1.25 Georgia,serif;overflow-wrap:anywhere}.hs-season-trend small,.hs-player-trend-grid small{display:block;margin-top:5px;color:#a69471;font-size:.68rem;line-height:1.4}.hs-season-trend.is-locked article{filter:saturate(.62)}.hs-season-trend.is-active article{border-color:rgba(204,158,75,.55)}
 .hs-player-trend{position:relative;margin-top:16px;padding:16px;border:1px solid rgba(190,143,61,.42);background:radial-gradient(circle at 85% 0,rgba(192,142,57,.1),transparent 42%),linear-gradient(180deg,rgba(48,31,17,.94),rgba(15,9,5,.98));box-shadow:inset 0 0 0 3px rgba(0,0,0,.22)}.hs-player-trend-head{display:flex;align-items:end;justify-content:space-between;gap:16px;padding-bottom:12px;border-bottom:1px solid rgba(190,143,61,.28)}.hs-player-trend-head h3{margin:3px 0 0;color:#edd19a;font:700 1.3rem Georgia,serif}.hs-player-trend-head>strong{color:#d8b86f;text-transform:uppercase;letter-spacing:.09em;font-size:.65rem}.hs-player-trend-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:13px}.hs-player-trend-note{margin:12px 0 0;color:#aa9875;font-size:.73rem;line-height:1.45}.hs-player-trend.is-locked{filter:saturate(.72)}
 @media(max-width:760px){.hs-season-trend{grid-template-columns:1fr 1fr}.hs-player-trend-grid{grid-template-columns:1fr}.hs-player-trend-head{align-items:flex-start;flex-direction:column}}@media(max-width:440px){.hs-season-trend{grid-template-columns:1fr}}@media print{.hs-season-trend,.hs-player-trend{display:none!important}}
+
+
+/* Version 2.36 – Saisonarchiv und bestätigte Clubchronik */
+.hs-legacy-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin-top:18px}
+.hs-legacy-card{position:relative;min-width:0;padding:16px 15px 15px;border:1px solid rgba(190,143,61,.48);background:radial-gradient(circle at 85% 0,rgba(202,155,68,.1),transparent 38%),linear-gradient(180deg,rgba(54,35,19,.96),rgba(17,10,5,.99));box-shadow:inset 0 0 0 3px rgba(0,0,0,.25)}
+.hs-legacy-card::after{content:"";position:absolute;right:10px;top:10px;width:7px;height:7px;border-radius:50%;background:#8f672e;box-shadow:0 1px 3px #000}
+.hs-legacy-card>span,.hs-player-legacy-grid span{display:block;color:#99835f;text-transform:uppercase;letter-spacing:.1em;font-size:.57rem;font-weight:800}
+.hs-legacy-card>strong{display:block;margin-top:7px;color:#efd39a;font:700 1.08rem Georgia,serif}
+.hs-legacy-card>b{display:block;margin-top:9px;color:#d8b86f;font:700 .96rem Georgia,serif;overflow-wrap:anywhere}
+.hs-legacy-card small{display:block;margin-top:6px;color:#a69471;line-height:1.4}
+.hs-legacy-empty{grid-column:1/-1;padding:28px;text-align:center;border:1px dashed rgba(190,143,61,.4);background:rgba(18,11,6,.66)}
+.hs-legacy-empty strong{display:block;color:#e8cc92;font:700 1.15rem Georgia,serif}.hs-legacy-empty span{display:block;margin-top:7px;color:#a69370}
+.hs-player-legacy{position:relative;margin-top:16px;padding:16px;border:1px solid rgba(190,143,61,.42);background:radial-gradient(circle at 20% 0,rgba(192,142,57,.1),transparent 42%),linear-gradient(180deg,rgba(48,31,17,.94),rgba(15,9,5,.98));box-shadow:inset 0 0 0 3px rgba(0,0,0,.22)}
+.hs-player-legacy-head{display:flex;align-items:end;justify-content:space-between;gap:16px;padding-bottom:12px;border-bottom:1px solid rgba(190,143,61,.28)}
+.hs-player-legacy-head h3{margin:3px 0 0;color:#edd19a;font:700 1.3rem Georgia,serif}.hs-player-legacy-head>strong{color:#d8b86f;text-transform:uppercase;letter-spacing:.09em;font-size:.65rem}
+.hs-player-legacy-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:13px}.hs-player-legacy-grid article{padding:13px;border:1px solid rgba(177,130,52,.32);background:rgba(17,10,5,.75)}
+.hs-player-legacy-grid strong{display:block;margin-top:6px;color:#efd39a;font:700 1.02rem Georgia,serif}.hs-player-legacy-grid small{display:block;margin-top:5px;color:#9e8b68;line-height:1.35}
+.hs-player-legacy-note{margin:12px 0 0;color:#aa9875;font-size:.73rem;line-height:1.45}
+@media(max-width:900px){.hs-legacy-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.hs-legacy-grid,.hs-player-legacy-grid{grid-template-columns:1fr}.hs-player-legacy-head{align-items:flex-start;flex-direction:column}}
+@media print{.hs-player-legacy{display:none!important}}

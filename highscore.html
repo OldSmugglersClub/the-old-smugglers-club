@@ -94,6 +94,7 @@
     </div>
     <div class="hs-panel"><div class="hs-eyebrow">Datenlage</div><h2>Statistikstatus</h2><p class="hs-status">Zeigt transparent, welche Highscore-Module bereits belastbare Saisondaten besitzen.</p><div class="hs-readiness-grid" id="readiness-grid"></div></div>
     <div class="hs-panel"><div class="hs-eyebrow">Saisonbestwerte</div><h2>Rekorde</h2><div class="hs-record-grid" id="record-grid"></div></div>
+    <div class="hs-panel"><div class="hs-eyebrow">Clubchronik</div><h2>Saisonarchiv & Bestmarken</h2><p class="hs-status">Verknüpft die aktuelle Highscore ausschließlich mit bestätigten Einträgen aus der zentralen Hall of Fame.</p><div class="hs-legacy-grid" id="legacy-grid"></div><p class="hs-footnote" id="legacy-note">Chronikdaten werden separat geladen und nicht aus dem aktuellen Tabellenstand abgeleitet.</p></div>
     <div class="hs-panel"><div class="hs-eyebrow">Auszeichnungen</div><h2>Piratenorden</h2><div class="hs-order-grid" id="order-grid"></div><p class="hs-footnote">Nicht belastbar berechenbare Orden werden bewusst als gesperrt gekennzeichnet. Es werden keine Gewinner geschätzt oder erfunden.</p></div>
     <div class="hs-panel"><div class="hs-eyebrow">Saisonverlauf</div><h2>Verlaufskompass</h2><p class="hs-status">Wertet ausschließlich archivierte Rangstände aus. Ohne mindestens zwei bestätigte Stände wird kein Trend behauptet.</p><div id="season-trend" class="hs-season-trend"></div><div id="history-grid" class="hs-history"></div></div>
   </section>
@@ -114,6 +115,11 @@
         </div>
         <div class="hs-position-grid" id="player-position-grid"></div>
         <p class="hs-position-note" id="player-position-note"></p>
+      </section>
+      <section class="hs-player-legacy" id="player-legacy" aria-labelledby="player-legacy-title" hidden>
+        <div class="hs-player-legacy-head"><div><span class="hs-eyebrow">Clubchronik</span><h3 id="player-legacy-title">Historische Einträge</h3></div><strong id="player-legacy-count">0 Einträge</strong></div>
+        <div class="hs-player-legacy-grid" id="player-legacy-grid"></div>
+        <p class="hs-player-legacy-note">Es werden nur namentlich bestätigte Titel und Rekorde aus der Hall of Fame angezeigt.</p>
       </section>
       <section class="hs-player-trend" id="player-trend" aria-labelledby="player-trend-title">
         <div class="hs-player-trend-head"><div><span class="hs-eyebrow">Saisonkurs</span><h3 id="player-trend-title">Verlaufsanalyse</h3></div><strong id="player-trend-state">Noch offen</strong></div>
