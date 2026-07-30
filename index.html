@@ -1886,18 +1886,29 @@
     /* Finale bildbasierte Willkommen-Kachel */
     .welcome-panel {
       position: relative;
+      align-self: start;
+      width: 100%;
+      aspect-ratio: 1536 / 804;
+      min-height: 0;
       padding: 0 !important;
       overflow: hidden;
       background: #0b0704 !important;
-      min-height: 420px;
     }
+
     .welcome-panel::before,
-    .welcome-panel::after { display: none !important; }
+    .welcome-panel::after {
+      display: none !important;
+    }
+
     .welcome-image-card {
       position: absolute;
       inset: 0;
-      background: url("./willkommen-kachel-final.jpg") center center / cover no-repeat;
+      background-image: url("./willkommen-kachel-final.jpg");
+      background-position: center;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
     }
+
     .welcome-hotspot {
       position: absolute;
       z-index: 4;
@@ -1905,18 +1916,300 @@
       border-radius: 10px;
       outline: none;
     }
-    .welcome-hotspot:focus-visible { box-shadow: 0 0 0 3px rgba(255,210,98,.9); }
+
+    .welcome-hotspot:focus-visible {
+      box-shadow: 0 0 0 3px rgba(255,210,98,.9);
+    }
+
     .welcome-hotspot-kicktipp {
-      left: 5.1%; bottom: 7.2%; width: 28.8%; height: 13.2%;
+      left: 5.1%;
+      bottom: 7.2%;
+      width: 28.8%;
+      height: 13.2%;
     }
+
     .welcome-hotspot-wettbewerbe {
-      left: 36.2%; bottom: 7.2%; width: 34.0%; height: 13.2%;
+      left: 36.2%;
+      bottom: 7.2%;
+      width: 34.0%;
+      height: 13.2%;
     }
+
+    @media (max-width: 900px) {
+      .welcome-panel {
+        aspect-ratio: 1536 / 804;
+        min-height: 0;
+      }
+
+      .welcome-image-card {
+        background-position: center;
+        background-size: 100% 100%;
+      }
+
+      .welcome-hotspot-kicktipp {
+        left: 5.1%;
+        bottom: 7.2%;
+        width: 28.8%;
+        height: 13.2%;
+      }
+
+      .welcome-hotspot-wettbewerbe {
+        left: 36.2%;
+        bottom: 7.2%;
+        width: 34.0%;
+        height: 13.2%;
+      }
+    }
+
+    /* Zählerkachel – mechanischer Messing-Chronometer */
+    .countdown-panel {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      border-color: rgba(191,137,48,.78);
+      background:
+        radial-gradient(circle at 82% 24%, rgba(190,132,43,.08), transparent 34%),
+        repeating-radial-gradient(
+          ellipse at 44% 48%,
+          rgba(255,255,255,.012) 0 1px,
+          rgba(0,0,0,.026) 1px 3px
+        ),
+        linear-gradient(150deg, rgba(27,19,12,.975), rgba(8,6,4,.992));
+      box-shadow:
+        inset 0 1px 0 rgba(245,205,116,.17),
+        inset 0 0 0 1px rgba(174,117,36,.13),
+        inset 0 0 35px rgba(0,0,0,.5),
+        var(--shadow);
+    }
+
+    .countdown-panel::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 240px;
+      height: 240px;
+      right: -100px;
+      bottom: -78px;
+      opacity: .22;
+      border: 1px solid rgba(190,132,43,.28);
+      border-radius: 50%;
+      background:
+        conic-gradient(from 0deg,
+          transparent 0 10deg,
+          rgba(190,132,43,.22) 10deg 12deg,
+          transparent 12deg 43deg,
+          rgba(190,132,43,.14) 43deg 45deg,
+          transparent 45deg 88deg,
+          rgba(190,132,43,.22) 88deg 90deg,
+          transparent 90deg 133deg,
+          rgba(190,132,43,.14) 133deg 135deg,
+          transparent 135deg 178deg,
+          rgba(190,132,43,.22) 178deg 180deg,
+          transparent 180deg 223deg,
+          rgba(190,132,43,.14) 223deg 225deg,
+          transparent 225deg 268deg,
+          rgba(190,132,43,.22) 268deg 270deg,
+          transparent 270deg 313deg,
+          rgba(190,132,43,.14) 313deg 315deg,
+          transparent 315deg 358deg,
+          rgba(190,132,43,.22) 358deg 360deg),
+        radial-gradient(circle,
+          transparent 0 24%,
+          rgba(190,132,43,.17) 24.5% 25%,
+          transparent 25.5% 48%,
+          rgba(190,132,43,.13) 48.5% 49%,
+          transparent 49.5%);
+      transform: rotate(-9deg);
+    }
+
+    .countdown-plaque {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: .34rem .7rem;
+      color: #251606;
+      border: 1px solid #d0a351;
+      border-radius: 6px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .075em;
+      font-size: .68rem;
+      font-weight: 900;
+      line-height: 1.15;
+      text-shadow: 0 1px rgba(255,255,255,.22);
+      background:
+        linear-gradient(90deg, rgba(86,52,13,.2), transparent 18% 82%, rgba(86,52,13,.2)),
+        linear-gradient(#d8ad5c, #8e5c1d);
+      box-shadow:
+        inset 0 1px rgba(255,255,255,.32),
+        inset 0 -2px rgba(42,23,5,.40),
+        0 5px 12px rgba(0,0,0,.28);
+    }
+
+    .countdown-panel .countdown {
+      position: relative;
+      z-index: 1;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: .48rem;
+      margin-top: 1.15rem;
+    }
+
+    .countdown-panel .flip-unit {
+      min-width: 0;
+    }
+
+    .countdown-panel .flip-card {
+      min-height: 112px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: .68rem .22rem .48rem;
+      border: 1px solid rgba(220,171,76,.78);
+      border-radius: 11px;
+      background:
+        linear-gradient(180deg, rgba(63,40,17,.98), rgba(28,18,10,.99) 48%, rgba(10,7,4,.995) 49%, rgba(30,19,10,.99));
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        inset 0 0 0 1px rgba(82,48,13,.55),
+        inset 0 -10px 24px rgba(0,0,0,.3),
+        0 9px 20px rgba(0,0,0,.34);
+    }
+
+    .countdown-panel .flip-card::before {
+      top: 52%;
+      background: rgba(0,0,0,.88);
+      box-shadow:
+        0 1px 0 rgba(255,255,255,.055),
+        0 -1px 0 rgba(117,73,24,.18);
+    }
+
+    .countdown-panel .flip-card::after {
+      content: "";
+      inset: 7px;
+      right: 7px;
+      bottom: 7px;
+      border: 1px solid rgba(211,155,52,.16);
+      border-radius: 7px;
+      pointer-events: none;
+    }
+
+    .chronometer-rivet {
+      position: absolute;
+      top: 7px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #e4bb66, #7e4d13 62%, #2b1706 100%);
+      box-shadow: 0 1px 2px rgba(0,0,0,.7);
+      z-index: 3;
+    }
+
+    .rivet-left { left: 8px; }
+    .rivet-right { right: 8px; }
+
+    .countdown-panel .flip-value {
+      color: #d5a64e;
+      font-size: clamp(1.9rem, 3.15vw, 2.7rem);
+      letter-spacing: .015em;
+      text-shadow:
+        0 1px 0 #2d1906,
+        0 2px 5px rgba(0,0,0,.72),
+        0 0 2px rgba(224,177,84,.28);
+    }
+
+    .countdown-panel .flip-label {
+      position: relative;
+      z-index: 3;
+      margin-top: .72rem;
+      color: #dbc184;
+      font-size: .62rem;
+      letter-spacing: .075em;
+      line-height: 1;
+      text-shadow: 0 1px 2px rgba(0,0,0,.8);
+    }
+
+    .countdown-panel .countdown-rigging {
+      position: relative;
+      z-index: 1;
+      margin-top: .9rem;
+      gap: .55rem;
+      color: rgba(202,146,45,.72);
+    }
+
+    .countdown-panel .countdown-rigging::before,
+    .countdown-panel .countdown-rigging::after {
+      background: linear-gradient(90deg, transparent, rgba(202,146,45,.48), transparent);
+    }
+
+    .countdown-panel .hourglass {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      color: #c99842;
+      border: 1px solid rgba(202,146,45,.34);
+      border-radius: 50%;
+      font-size: .95rem;
+      background: rgba(16,10,6,.72);
+      box-shadow: inset 0 0 10px rgba(202,146,45,.08);
+    }
+
+    .countdown-message {
+      position: relative;
+      z-index: 1;
+      margin-top: .9rem;
+      padding: .9rem .85rem .82rem 1rem;
+      border-left: 4px solid #c9952e;
+      border-radius: 8px;
+      color: #eadabd;
+      background:
+        linear-gradient(135deg, rgba(71,44,18,.48), rgba(24,15,9,.72));
+      box-shadow:
+        inset 0 1px rgba(255,255,255,.035),
+        0 8px 18px rgba(0,0,0,.24);
+    }
+
+    .countdown-message strong,
+    .countdown-message span {
+      display: block;
+    }
+
+    .countdown-message strong {
+      color: #ead8af;
+      font-size: .92rem;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .countdown-message span {
+      margin-top: .28rem;
+      color: #c6a769;
+      font-size: .75rem;
+      letter-spacing: .02em;
+    }
+
     @media (max-width: 720px) {
-      .welcome-panel { min-height: 330px; }
-      .welcome-image-card { background-position: center; }
-      .welcome-hotspot-kicktipp { left: 5%; bottom: 7%; width: 29.5%; height: 13.5%; }
-      .welcome-hotspot-wettbewerbe { left: 36%; bottom: 7%; width: 35%; height: 13.5%; }
+      .countdown-plaque {
+        font-size: .64rem;
+      }
+
+      .countdown-panel .countdown {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .55rem;
+      }
+
+      .countdown-panel .flip-card {
+        min-height: 96px;
+      }
+
+      .countdown-panel .flip-label {
+        font-size: .64rem;
+      }
     }
 </style>
 </head>
@@ -2077,45 +2370,57 @@
         </div>
       </article>
 
-      <aside class="panel">
-        <div class="eyebrow">Bundesliga-Start</div>
-        <h3>28. August 2026</h3>
+      <aside class="panel countdown-panel">
+        <div class="countdown-plaque">
+          Bundesliga-Start · 28. August 2026
+        </div>
 
         <div class="countdown" aria-live="polite" aria-label="Countdown bis zum Bundesliga-Start">
           <div class="flip-unit">
             <div class="flip-card" data-unit="days">
+              <span class="chronometer-rivet rivet-left" aria-hidden="true"></span>
+              <span class="chronometer-rivet rivet-right" aria-hidden="true"></span>
               <strong class="flip-value" id="days">--</strong>
+              <span class="flip-label">Tage</span>
             </div>
-            <span class="flip-label">Tage</span>
           </div>
 
           <div class="flip-unit">
             <div class="flip-card" data-unit="hours">
+              <span class="chronometer-rivet rivet-left" aria-hidden="true"></span>
+              <span class="chronometer-rivet rivet-right" aria-hidden="true"></span>
               <strong class="flip-value" id="hours">--</strong>
+              <span class="flip-label">Stunden</span>
             </div>
-            <span class="flip-label">Stunden</span>
           </div>
 
           <div class="flip-unit">
             <div class="flip-card" data-unit="minutes">
+              <span class="chronometer-rivet rivet-left" aria-hidden="true"></span>
+              <span class="chronometer-rivet rivet-right" aria-hidden="true"></span>
               <strong class="flip-value" id="minutes">--</strong>
+              <span class="flip-label">Minuten</span>
             </div>
-            <span class="flip-label">Minuten</span>
           </div>
 
           <div class="flip-unit">
             <div class="flip-card" data-unit="seconds">
+              <span class="chronometer-rivet rivet-left" aria-hidden="true"></span>
+              <span class="chronometer-rivet rivet-right" aria-hidden="true"></span>
               <strong class="flip-value" id="seconds">--</strong>
+              <span class="flip-label">Sekunden</span>
             </div>
-            <span class="flip-label">Sekunden</span>
           </div>
         </div>
 
-        <div class="countdown-rigging" aria-hidden="true"><span>⚓</span></div>
+        <div class="countdown-rigging" aria-hidden="true">
+          <span class="hourglass">⌛</span>
+        </div>
 
-        <p class="notice" id="countdown-note">
-          Der Countdown läuft bis zum Saisonstart.
-        </p>
+        <div class="countdown-message" id="countdown-note">
+          <strong>Die Crew sticht in See, sobald der Zähler Null erreicht.</strong>
+          <span>Bundesliga-Start am 28. August 2026</span>
+        </div>
       </aside>
     </section>
 
