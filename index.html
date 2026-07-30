@@ -4900,12 +4900,20 @@
       };
 
       try {
-        const response = await fetch("./spieltag.json", { cache: "no-store" });
-        if (!response.ok) {
-          throw new Error(`spieltag.json konnte nicht geladen werden (${response.status})`);
+        const [configResponse, gamesResponse] = await Promise.all([
+          fetch("./spieltag.json", { cache: "no-store" }),
+          fetch("./spieldaten.json", { cache: "no-store" })
+        ]);
+
+        if (!configResponse.ok) {
+          throw new Error(`spieltag.json konnte nicht geladen werden (${configResponse.status})`);
+        }
+        if (!gamesResponse.ok) {
+          throw new Error(`spieldaten.json konnte nicht geladen werden (${gamesResponse.status})`);
         }
 
-        const data = await response.json();
+        const data = await configResponse.json();
+        const gameData = await gamesResponse.json();
         const locale = data.locale || "de-DE";
         const displayDays = Math.max(1, Number(data.anzeigeTage) || 7);
         const liveMinutesDefault = Math.max(1, Number(data.liveDauerMinuten) || 120);
@@ -4936,8 +4944,21 @@
           elements.note.classList.toggle("is-hidden", !noteVisible);
         }
 
-        const visibleEvents = (Array.isArray(data.ereignisse) ? data.ereignisse : [])
+        const competitionNames = {
+          "bundesliga": "Bundesliga",
+          "2-bundesliga": "2. Bundesliga",
+          "dfb-pokal": "DFB-Pokal",
+          "champions-league": "Champions League",
+          "europa-league": "Europa League",
+          "relegation": "Relegation"
+        };
+
+        const visibleEvents = (Array.isArray(gameData.spiele) ? gameData.spiele : [])
           .map((event, index) => {
+            const competitionDisplay = event.wettbewerbAnzeige
+              || competitionNames[event.wettbewerb]
+              || event.wettbewerb
+              || "Ereignis";
             const start = makeLocalDate(event.datum, event.anstoss || "00:00");
             if (!start) return null;
 
@@ -4949,6 +4970,7 @@
 
             return {
               ...event,
+              wettbewerb: competitionDisplay,
               _index: index,
               _start: start,
               _end: end,
