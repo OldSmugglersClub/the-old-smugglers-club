@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Offizielle Website des The Old Smugglers Club – Bundesliga, DFB-Pokal, Champions League, Relegation, Smuggleraufträge und Sonderevents.">
+  <meta name="description" content="Offizielle Website des The Old Smugglers Club – Bundesliga, DFB-Pokal, Champions League, Europa League, Relegation, Smuggleraufträge und Sonderevents.">
   <meta name="theme-color" content="#120b05">
   <title>The Old Smugglers Club</title>
 
@@ -483,6 +483,13 @@
       height: 20px;
     }
 
+
+      .competition-grid--even .competition-link:last-child {
+        grid-column: auto;
+        width: auto;
+        justify-self: stretch;
+      }
+
     @media (max-width: 720px) {
       .welcome-panel::before {
         width: 185px;
@@ -948,6 +955,14 @@
 
     .competition-link:last-child {
       grid-column: 2 / 3;
+    }
+
+
+    /* Acht Wettbewerbe: keine Sonderzentrierung der letzten Kachel. */
+    .competition-grid--even .competition-link:last-child {
+      grid-column: auto;
+      width: auto;
+      justify-self: stretch;
     }
 
     .hall-hero {
@@ -4426,7 +4441,7 @@
 <section class="section panel" id="wettbewerbe">
       <div class="section-title"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-crossed-sabres"></use></svg><h2>Unsere Wettbewerbe</h2></div>
 
-      <div class="competition-grid">
+      <div class="competition-grid competition-grid--even">
         <a class="competition competition-link" href="./bundesliga.html">
           <span class="icon-medallion"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-football"></use></svg></span><b>Bundesliga</b><small>Zur Wettbewerbsseite</small>
         </a>
@@ -4435,6 +4450,9 @@
         </a>
         <a class="competition competition-link" href="./champions-league.html">
           <span class="icon-medallion"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-star-compass"></use></svg></span><b>Champions League</b><small>Zur Wettbewerbsseite</small>
+        </a>
+        <a class="competition competition-link" href="./europa-league.html">
+          <span class="icon-medallion"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-ship-lantern"></use></svg></span><b>Europa League</b><small>Zur Wettbewerbsseite</small>
         </a>
         <a class="competition competition-link" href="./relegation.html">
           <span class="icon-medallion"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-anchor"></use></svg></span><b>Relegation</b><small>Zur Wettbewerbsseite</small>

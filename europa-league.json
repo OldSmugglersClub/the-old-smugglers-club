@@ -1,0 +1,40 @@
+{
+  "bereich": "Wettbewerbszentrale",
+  "statusSchild": "Ab Achtelfinale",
+  "titel": "Europa League",
+  "beschreibung": "Im Tippspiel beginnt die UEFA Europa League mit dem Achtelfinale. Alle anschließenden K.-o.-Runden werden hier gemeinsam dargestellt.",
+  "karten": [
+    {
+      "titel": "Start im Tippspiel",
+      "text": "Gewertet wird die Europa League ab dem Achtelfinale. Ligaphase und Zwischenrunde gehören nicht zu unserem Tippspiel."
+    },
+    {
+      "titel": "K.-o.-Phase",
+      "text": "Achtelfinale, Viertelfinale, Halbfinale und Finale werden nach den offiziellen Auslosungen und Terminierungen ergänzt."
+    },
+    {
+      "titel": "Datenmanagement",
+      "text": "Paarungen, Termine und Ergebnisse werden später zentral aus den Spieldaten geladen."
+    }
+  ],
+  "aktuellerStandTitel": "Aktueller Stand:",
+  "aktuellerStand": "Die Wettbewerbsseite ist vorbereitet. Konkrete Begegnungen erscheinen nach der Auslosung des Achtelfinales.",
+  "bereiche": [],
+  "buttons": [
+    {
+      "text": "Zum Kicktipp",
+      "link": "https://www.kicktipp.de/the-old-smugglers-club/",
+      "neuesFenster": true,
+      "stil": "primaer",
+      "anzeigen": true
+    },
+    {
+      "text": "Zurück zu allen Wettbewerben",
+      "link": "./index.html#wettbewerbe",
+      "neuesFenster": false,
+      "stil": "sekundaer",
+      "anzeigen": true
+    }
+  ],
+  "fusszeile": "The Old Smugglers Club · Europa League 2026/2027"
+}
