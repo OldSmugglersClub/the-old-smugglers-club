@@ -2862,6 +2862,24 @@
       }
     }
 
+    .test-mode-badge {
+      display: none;
+      margin-left: .55rem;
+      padding: .2rem .45rem;
+      border: 1px solid rgba(226,184,90,.68);
+      border-radius: 4px;
+      color: #f0cf7e;
+      background: rgba(55,31,10,.88);
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .06em;
+      vertical-align: middle;
+    }
+
+    .test-mode-badge.is-visible {
+      display: inline-block;
+    }
+
     .rolling-events {
       display: grid;
       gap: 1rem;
@@ -3319,7 +3337,7 @@
       <div class="matchday-head">
         <div>
           <div class="eyebrow" id="matchday-competition"></div>
-          <h2 id="matchday-title"></h2>
+          <h2 id="matchday-title"></h2><span class="test-mode-badge" id="test-mode-badge">TESTMODUS</span>
         </div>
         <div class="matchday-status is-hidden" id="matchday-status"></div>
       </div>
@@ -3778,6 +3796,14 @@
         const kicktippLink = document.getElementById("matchday-kicktipp-link");
         const nextEventSummary = document.getElementById("next-event-summary");
         const rollingRoot = document.getElementById("rolling-events");
+        const testModeBadge = document.getElementById("test-mode-badge");
+
+        if (testModeBadge) {
+          testModeBadge.classList.toggle(
+            "is-visible",
+            Boolean(simulatedNow && !Number.isNaN(simulatedNow.getTime()))
+          );
+        }
 
         if (competition) {
           competition.textContent = data.wettbewerbSchild || "Nächste Ereignisse";
@@ -3793,7 +3819,12 @@
           note.classList.toggle("is-hidden", !showNote);
         }
 
-        const now = new Date();
+        const simulatedNow = typeof data.testJetzt === "string" && data.testJetzt.trim()
+          ? new Date(data.testJetzt)
+          : null;
+        const now = simulatedNow && !Number.isNaN(simulatedNow.getTime())
+          ? simulatedNow
+          : new Date();
         const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
         const days = Number.isFinite(Number(data.anzeigeTage)) ? Number(data.anzeigeTage) : 7;
         const endWindow = new Date(startOfToday);
