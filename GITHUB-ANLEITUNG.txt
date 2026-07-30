@@ -1,7 +1,21 @@
-GITHUB-UPLOAD – Wettbewerbe V2
+GITHUB-UPLOAD – WETTBEWERBE V3
 
-Nur index.html ersetzen.
+Im Hauptverzeichnis des GitHub-Repositories ersetzen:
 
-Änderung:
-- Das Holzschild „Unsere Wettbewerbe“ ist jetzt horizontal mittig über der Kachel ausgerichtet.
-- Alle übrigen Elemente bleiben unverändert.
+1. index.html
+
+Zusätzlich sicherstellen, dass diese Datei vorhanden ist:
+
+2. piraten-spieltag-hintergrund.jpg
+
+Umgesetzte Änderung:
+- Der zuvor nahezu schwarze Hintergrund der Kachel „Unsere Wettbewerbe“ wurde ersetzt.
+- Die Kachel verwendet jetzt eine strukturierte Piratenkarten-/Holzoptik.
+- Warme Braun-, Messing- und Sepiatöne passen zu den bereits finalisierten Kacheln.
+- Dezente Kartenlinien, Lichtzonen und Vignettierung sorgen für Tiefe.
+- Wettbewerbskarten, Links, Anordnung und zentriertes Überschriftenschild bleiben unverändert.
+
+Nach dem Upload:
+1. Änderungen committen.
+2. GitHub Pages 30–90 Sekunden aktualisieren lassen.
+3. Seite mit Strg+F5 neu laden.
