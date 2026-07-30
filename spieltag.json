@@ -66,5 +66,9 @@
     }
   ],
   "liveDauerMinuten": 120,
-  "naechstesEreignisLeertext": "Aktuell sind keine Termine geplant."
+  "platzhalterDatum": "Noch offen",
+  "platzhalterWettbewerb": "Noch offen",
+  "platzhalterHeim": "Noch offen",
+  "platzhalterTrenner": "–",
+  "platzhalterAuswaerts": "Noch offen"
 }

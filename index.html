@@ -2811,13 +2811,6 @@
       text-decoration: none;
     }
 
-    .next-event-summary.is-empty {
-      grid-template-columns: 1fr;
-      justify-items: center;
-      text-align: center;
-      color: #d3b777;
-      cursor: default;
-    }
 
     .next-event-date,
     .next-event-competition,
@@ -2860,11 +2853,7 @@
         text-align: left;
       }
 
-      .next-event-summary.is-empty {
-        text-align: center;
-      }
-
-      .next-event-date {
+            .next-event-date {
         white-space: normal;
       }
 
@@ -3336,8 +3325,10 @@
       </div>
 
       <p class="lead is-hidden" id="matchday-note"></p>
-      <a class="next-event-summary is-empty" id="next-event-summary" aria-label="Nächstes Ereignis">
-        <span>Aktuell sind keine Tippereignisse geplant.</span>
+      <a class="next-event-summary" id="next-event-summary" aria-label="Noch offen, Noch offen, Noch offen – Noch offen">
+        <span class="next-event-date">Noch offen</span>
+        <span class="next-event-competition">Noch offen</span>
+        <span class="next-event-match">Noch offen – Noch offen</span>
       </a>
       <div class="rolling-events" id="rolling-events" tabindex="0" aria-label="Kommende Tippereignisse"></div>
 
@@ -3869,14 +3860,26 @@
         if (nextEventSummary) {
           const nextEvent = parsedEvents[0];
           nextEventSummary.innerHTML = "";
-          nextEventSummary.classList.toggle("is-empty", !nextEvent);
+          nextEventSummary.classList.remove("is-empty");
+
+          const date = document.createElement("span");
+          date.className = "next-event-date";
+
+          const competitionLabel = document.createElement("span");
+          competitionLabel.className = "next-event-competition";
+
+          const match = document.createElement("span");
+          match.className = "next-event-match";
 
           if (!nextEvent) {
-            const emptyText = document.createElement("span");
-            emptyText.textContent = data.naechstesEreignisLeertext || "Aktuell sind keine Tippereignisse geplant.";
-            nextEventSummary.appendChild(emptyText);
+            date.textContent = data.platzhalterDatum || "Noch offen";
+            competitionLabel.textContent = data.platzhalterWettbewerb || "Noch offen";
+            match.textContent = `${data.platzhalterHeim || "Noch offen"} ${data.platzhalterTrenner || "–"} ${data.platzhalterAuswaerts || "Noch offen"}`;
             nextEventSummary.removeAttribute("href");
-            nextEventSummary.setAttribute("aria-label", emptyText.textContent);
+            nextEventSummary.setAttribute(
+              "aria-label",
+              `${date.textContent}, ${competitionLabel.textContent}, ${match.textContent}`
+            );
           } else {
             const locale = data.locale || "de-DE";
             const dateText = new Intl.DateTimeFormat(locale, {
@@ -3885,21 +3888,11 @@
               year: "numeric"
             }).format(nextEvent.timestamp);
 
-            const date = document.createElement("span");
-            date.className = "next-event-date";
             date.textContent = `${dateText} · ${nextEvent.anstoss || ""}`;
-
-            const competitionLabel = document.createElement("span");
-            competitionLabel.className = "next-event-competition";
             competitionLabel.textContent = nextEvent.wettbewerb || "Ereignis";
-
-            const match = document.createElement("span");
-            match.className = "next-event-match";
             match.textContent = [nextEvent.heim, nextEvent.trenner || "–", nextEvent.auswaerts]
               .filter(Boolean)
               .join(" ");
-
-            nextEventSummary.append(date, competitionLabel, match);
 
             if (nextEvent.ereignisLink) {
               nextEventSummary.href = nextEvent.ereignisLink;
@@ -3912,6 +3905,8 @@
               `Nächstes Ereignis: ${date.textContent}, ${competitionLabel.textContent}, ${match.textContent}`
             );
           }
+
+          nextEventSummary.append(date, competitionLabel, match);
         }
 
         if (pageLink) {
