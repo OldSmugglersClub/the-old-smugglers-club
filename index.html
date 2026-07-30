@@ -4953,7 +4953,11 @@
           "relegation": "Relegation"
         };
 
-        const visibleEvents = (Array.isArray(gameData.spiele) ? gameData.spiele : [])
+        const allGames = Array.isArray(gameData.saisons)
+          ? gameData.saisons.flatMap((season) => Array.isArray(season.spiele) ? season.spiele : [])
+          : (Array.isArray(gameData.spiele) ? gameData.spiele : []);
+
+        const visibleEvents = allGames
           .map((event, index) => {
             const competitionDisplay = event.wettbewerbAnzeige
               || competitionNames[event.wettbewerb]

@@ -44,7 +44,11 @@
     const filter = FILTERS[slug];
     if (!filter) return [];
 
-    return safeArray(data && data.spiele)
+    const allGames = Array.isArray(data && data.saisons)
+      ? data.saisons.flatMap(season => safeArray(season && season.spiele))
+      : safeArray(data && data.spiele);
+
+    return allGames
       .filter(match => {
         if (!match || typeof match !== "object") return false;
         if (filter.type === "wettbewerb") return match.wettbewerb === filter.value;
