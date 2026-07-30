@@ -2,7 +2,7 @@ const fmt = n => Number(n || 0).toLocaleString('de-DE', { maximumFractionDigits:
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 let data = {};
-const STORAGE_KEY = 'tosmc-highscore-state-v232';
+const STORAGE_KEY = 'tosmc-highscore-state-v233';
 const state = {
   view: 'overall',
   page: 1,
@@ -60,9 +60,61 @@ function playerByName(name, view) {
   return (data.individual?.[view] || []).find(row => String(row.name) === String(name));
 }
 
+let activeProfileName = '';
+
+function comparisonMetric(label, aValue, bValue, higherIsBetter = true, suffix = '') {
+  const a = Number(aValue || 0);
+  const b = Number(bValue || 0);
+  const equal = a === b;
+  const aWins = higherIsBetter ? a > b : a < b;
+  const bWins = higherIsBetter ? b > a : b < a;
+  return `<article class="hs-comparison-metric">
+    <span>${esc(label)}</span>
+    <div><strong class="${!equal && aWins ? 'is-leading' : ''}">${fmt(a)}${suffix}</strong><i aria-hidden="true">:</i><strong class="${!equal && bWins ? 'is-leading' : ''}">${fmt(b)}${suffix}</strong></div>
+    <small>${equal ? 'Gleichstand' : aWins ? 'Vorteil Spieler A' : 'Vorteil Spieler B'}</small>
+  </article>`;
+}
+
+function renderPlayerComparison(nameA, nameB) {
+  const host = document.querySelector('#player-comparison');
+  if (!host || !nameA || !nameB || nameA === nameB) { if (host) host.hidden = true; return; }
+  const overallA = playerByName(nameA, 'overall') || {};
+  const overallB = playerByName(nameB, 'overall') || {};
+  const matchA = playerByName(nameA, 'matchday') || {};
+  const matchB = playerByName(nameB, 'matchday') || {};
+  document.querySelector('#comparison-name-a').textContent = nameA;
+  document.querySelector('#comparison-name-b').textContent = nameB;
+  document.querySelector('#comparison-grid').innerHTML = [
+    comparisonMetric('Gesamtrang', overallA.rank, overallB.rank, false),
+    comparisonMetric('Gesamtpunkte', overallA.totalPoints, overallB.totalPoints),
+    comparisonMetric('Bonuspunkte', overallA.bonusPoints, overallB.bonusPoints),
+    comparisonMetric('Spieltagsiege', overallA.matchdayWins, overallB.matchdayWins),
+    comparisonMetric('Aktueller Spieltag', matchA.points, matchB.points),
+    comparisonMetric('Spieltagsrang', matchA.matchdayRank ?? matchA.rank, matchB.matchdayRank ?? matchB.rank, false)
+  ].join('');
+  const allZero = [overallA.totalPoints, overallB.totalPoints, matchA.points, matchB.points].every(value => Number(value || 0) === 0);
+  document.querySelector('#comparison-note').textContent = allZero
+    ? 'Beide Spieler stehen noch ohne sportliche Wertung. Der Vergleich zeigt deshalb derzeit nur den bestätigten Datenstand.'
+    : 'Grün markiert ist jeweils der bessere bestätigte Wert. Rangwerte werden niedriger, Punktwerte höher bewertet.';
+  host.hidden = false;
+}
+
+function populateComparisonSelect(currentName) {
+  const select = document.querySelector('#player-compare-select');
+  const button = document.querySelector('#player-compare-start');
+  const comparison = document.querySelector('#player-comparison');
+  if (!select || !button) return;
+  const names = (data.individual?.overall || []).map(row => String(row.name)).filter(name => name !== currentName).sort((a,b) => a.localeCompare(b,'de'));
+  select.innerHTML = '<option value="">Spieler auswählen …</option>' + names.map(name => `<option value="${esc(name)}">${esc(name)}</option>`).join('');
+  select.value = '';
+  button.disabled = true;
+  if (comparison) comparison.hidden = true;
+}
+
 function openPlayerProfile(name) {
   const dialog = document.querySelector('#player-dialog');
   if (!dialog) return;
+  activeProfileName = name;
   const overall = playerByName(name, 'overall');
   const matchday = playerByName(name, 'matchday');
   document.querySelector('#player-dialog-title').textContent = name;
@@ -75,6 +127,7 @@ function openPlayerProfile(name) {
     <article><span>Spieltag-Bonus</span><strong>${fmt(matchday?.bonusPoints)}</strong><small>Im aktuellen Export</small></article>
     <article><span>Datenstand</span><strong>${esc(data.meta?.exportDate || '–')}</strong><small>${esc(data.meta?.source || 'Zentrale Highscore-Datei')}</small></article>`;
   const noScore = Number(overall?.totalPoints || 0) <= 0 && Number(matchday?.points || 0) <= 0;
+  populateComparisonSelect(name);
   document.querySelector('#player-profile-note').textContent = noScore
     ? 'Noch keine sportliche Wertung vorhanden. Das Profil zeigt ausschließlich bestätigte Exportdaten.'
     : 'Das Profil vergleicht Gesamtwertung und aktuellen Einzelspieltag. Es werden keine fehlenden Werte geschätzt.';
@@ -477,6 +530,10 @@ function init() {
   renderDataCompass();
 
   const profileDialog = document.querySelector('#player-dialog');
+  const compareSelect = document.querySelector('#player-compare-select');
+  const compareButton = document.querySelector('#player-compare-start');
+  compareSelect?.addEventListener('change', () => { compareButton.disabled = !compareSelect.value; });
+  compareButton?.addEventListener('click', () => renderPlayerComparison(activeProfileName, compareSelect?.value));
   document.querySelector('#player-dialog-close')?.addEventListener('click', () => profileDialog?.close());
   profileDialog?.addEventListener('click', event => { if (event.target === profileDialog) profileDialog.close(); });
 

@@ -1,3 +1,12 @@
+# Version 2.33 – Highscore Spieler-Direktvergleich
+
+- Spielerprofile um einen direkten Vergleich mit jedem anderen registrierten Spieler ergänzt.
+- Vergleich von Gesamtrang, Gesamtpunkten, Bonuspunkten, Spieltagssiegen, aktuellem Spieltag und Spieltagsrang.
+- Bessere Werte werden nachvollziehbar hervorgehoben; bei Rangwerten gilt der niedrigere Wert.
+- Transparenter Nullstand-Hinweis, solange noch keine sportliche Wertung vorliegt.
+- Vergleichsansicht vollständig im bestehenden Holz-, Leder- und Messingdesign umgesetzt.
+- Desktop-, Tablet- und Mobilansicht ergänzt, ohne Grundlayout oder andere Websitebereiche zu verändern.
+
 # Version 2.32 – Highscore Datenkompass & Spielerprofile
 
 ## Geändert

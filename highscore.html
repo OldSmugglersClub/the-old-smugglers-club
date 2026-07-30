@@ -107,6 +107,25 @@
       <h2 id="player-dialog-title">Spieler</h2>
       <p class="hs-status" id="player-dialog-status"></p>
       <div class="hs-profile-grid" id="player-profile-grid"></div>
+      <div class="hs-compare-controls" aria-labelledby="player-compare-title">
+        <div>
+          <span class="hs-eyebrow" id="player-compare-title">Direktvergleich</span>
+          <label for="player-compare-select">Mit Spieler vergleichen</label>
+        </div>
+        <div class="hs-compare-action">
+          <select id="player-compare-select"><option value="">Spieler auswählen …</option></select>
+          <button class="hs-register-btn" id="player-compare-start" type="button" disabled>Vergleichen</button>
+        </div>
+      </div>
+      <section class="hs-player-comparison" id="player-comparison" hidden aria-live="polite">
+        <div class="hs-comparison-head">
+          <div><span>Spieler A</span><strong id="comparison-name-a">–</strong></div>
+          <b aria-hidden="true">gegen</b>
+          <div><span>Spieler B</span><strong id="comparison-name-b">–</strong></div>
+        </div>
+        <div class="hs-comparison-grid" id="comparison-grid"></div>
+        <p class="hs-comparison-note" id="comparison-note"></p>
+      </section>
       <p class="hs-profile-note" id="player-profile-note"></p>
     </div>
   </dialog>
