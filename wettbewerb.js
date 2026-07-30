@@ -416,8 +416,10 @@
   function renderSections(sections, buttons, gameData, teamData, tableData) {
     const root = $("dynamic-sections");
     root.innerHTML = "";
-    if (slug === "bundesliga") {
+    if (slug === "bundesliga" || slug === "dynamo-dresden") {
       renderQuickBackButton(buttons, root);
+    }
+    if (slug === "bundesliga") {
       renderBundesligaTable(gameData, teamData, tableData, root);
     }
     safeArray(sections).filter(s => s && s.anzeigen !== false).forEach(section => {
