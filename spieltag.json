@@ -66,9 +66,9 @@
     }
   ],
   "liveDauerMinuten": 120,
-  "platzhalterDatum": "Noch offen",
-  "platzhalterWettbewerb": "Noch offen",
-  "platzhalterHeim": "Noch offen",
+  "platzhalterDatum": "TT.MM.JJJJ · --:--",
+  "platzhalterWettbewerb": "Wettbewerb offen",
+  "platzhalterHeim": "Heimteam",
   "platzhalterTrenner": "–",
-  "platzhalterAuswaerts": "Noch offen"
+  "platzhalterAuswaerts": "Auswärtsteam"
 }
