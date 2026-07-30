@@ -1,7 +1,78 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Highscore des The Old Smugglers Club"><title>Highscore | The Old Smugglers Club</title><link rel="stylesheet" href="./wettbewerb.css"><link rel="stylesheet" href="./highscore.css"></head>
-<body><main class="hs-page">
-<section class="hs-hero"><div class="hs-kicker">Ranglisten · Saison 2026/2027</div><h1>🏴‍☠️ Highscore</h1><p>Gesamtwertung, Einzelspieltage und das Duell zwischen Old Smugglers Team und New Smugglers Team.</p><div class="hs-summary"><article class="hs-stat-card"><span>Führender</span><strong id="summary-leader">–</strong><small id="summary-leader-points">0 Punkte</small></article><article class="hs-stat-card"><span>Letzter Spieltag</span><strong id="summary-matchday">–</strong><small id="summary-matchday-winner">Noch offen</small></article><article class="hs-stat-card"><span>Teamführer</span><strong id="summary-team">Gleichstand</strong><small id="summary-team-points">0 Punkte</small></article><article class="hs-stat-card"><span>Stand</span><strong id="summary-updated">–</strong><small>Kicktipp-Export</small></article></div></section>
-<section class="hs-panel"><h2>Einzelwertung</h2><div class="hs-tabs"><button class="hs-tab is-active" data-individual-view="overall">Gesamtübersicht</button><button class="hs-tab" data-individual-view="matchday">Rangliste Einzelspieltag</button></div><p class="hs-status" id="individual-caption"></p><div class="hs-table-wrap"><table class="hs-table"><thead id="individual-head"></thead><tbody id="individual-body"></tbody></table></div></section>
-<section class="hs-panel"><h2>Gruppierungen</h2><div class="hs-tabs"><button class="hs-tab is-active" data-team-view="overall">Gesamtübersicht</button><button class="hs-tab" data-team-view="matchday">Rangliste Einzelspieltag</button></div><p class="hs-status" id="team-caption"></p><div class="hs-team-grid" id="team-grid"></div></section>
-<section class="hs-panel"><h2>Rekorde</h2><div class="hs-summary" id="record-grid"></div><div class="hs-actions"><a class="hs-btn" href="./index.html#highscore">Zurück zur Startseite</a><a class="hs-btn" href="https://www.kicktipp.de/the-old-smugglers-club/" target="_blank" rel="noopener noreferrer">Zum Kicktipp</a></div></section>
-</main><script src="./highscore.js" defer></script></body></html>
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Highscore und Ranglisten des The Old Smugglers Club">
+  <title>Highscore | The Old Smugglers Club</title>
+  <link rel="stylesheet" href="./wettbewerb.css">
+  <link rel="stylesheet" href="./highscore.css">
+</head>
+<body>
+<main class="hs-page">
+  <section class="hs-hero">
+    <div class="hs-hero-top">
+      <div class="hs-emblem" aria-hidden="true"><img src="./club-crest.svg" alt=""></div>
+      <div>
+        <div class="hs-kicker">Ranglisten · Saison 2026/2027</div>
+        <h1>Highscore</h1>
+        <p>Einzelwertung, Gruppierungen, Rekorde und Piratenorden auf einen Blick.</p>
+      </div>
+    </div>
+
+    <div class="hs-summary">
+      <article class="hs-stat-card"><span>Tabellenführer</span><strong id="summary-leader">–</strong><small id="summary-leader-points">0 Punkte</small></article>
+      <article class="hs-stat-card"><span>Letzter Spieltag</span><strong id="summary-matchday">–</strong><small id="summary-matchday-winner">Noch offen</small></article>
+      <article class="hs-stat-card"><span>Führendes Team</span><strong id="summary-team">Gleichstand</strong><small id="summary-team-points">0 Punkte</small></article>
+      <article class="hs-stat-card"><span>Datenstand</span><strong id="summary-updated">–</strong><small>Kicktipp-Export</small></article>
+    </div>
+  </section>
+
+  <nav class="hs-main-tabs" aria-label="Highscore-Bereiche">
+    <button class="hs-main-tab is-active" data-section="individual">🏆 Einzelwertung</button>
+    <button class="hs-main-tab" data-section="old-team">⚓ Old Smugglers Team</button>
+    <button class="hs-main-tab" data-section="new-team">🏴 New Smugglers Team</button>
+    <button class="hs-main-tab" data-section="records">📈 Rekorde & Orden</button>
+  </nav>
+
+  <section class="hs-section is-active" id="section-individual">
+    <div class="hs-panel">
+      <div class="hs-panel-head">
+        <div><div class="hs-eyebrow">Top 3</div><h2>Podium</h2></div>
+        <div class="hs-view-switch">
+          <button class="hs-chip is-active" data-individual-view="overall">Gesamtwertung</button>
+          <button class="hs-chip" data-individual-view="matchday">Einzelspieltag</button>
+        </div>
+      </div>
+      <div class="hs-podium" id="podium"></div>
+    </div>
+
+    <div class="hs-panel">
+      <div class="hs-panel-head hs-panel-head-tools">
+        <div><div class="hs-eyebrow">Komplette Rangliste</div><h2 id="individual-title">Einzelwertung – Gesamt</h2><p class="hs-status" id="individual-caption"></p></div>
+        <label class="hs-search"><span>Spieler suchen</span><input id="player-search" type="search" placeholder="Name eingeben …" autocomplete="off"></label>
+      </div>
+      <div class="hs-table-wrap"><table class="hs-table"><thead id="individual-head"></thead><tbody id="individual-body"></tbody></table></div>
+      <div class="hs-pagination">
+        <button class="hs-page-btn" id="page-prev">‹ Zurück</button>
+        <span id="page-info">Seite 1 von 1</span>
+        <label>Einträge <select id="page-size"><option value="25" selected>25</option><option value="50">50</option><option value="100">100</option></select></label>
+        <button class="hs-page-btn" id="page-next">Weiter ›</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="hs-section" id="section-old-team"><div class="hs-panel"><div class="hs-team-detail" data-team-name="Old Smugglers Team"></div></div></section>
+  <section class="hs-section" id="section-new-team"><div class="hs-panel"><div class="hs-team-detail" data-team-name="New Smugglers Team"></div></div></section>
+
+  <section class="hs-section" id="section-records">
+    <div class="hs-panel"><div class="hs-eyebrow">Saisonbestwerte</div><h2>Rekorde</h2><div class="hs-record-grid" id="record-grid"></div></div>
+    <div class="hs-panel"><div class="hs-eyebrow">Auszeichnungen</div><h2>Piratenorden</h2><div class="hs-order-grid" id="order-grid"></div><p class="hs-footnote">Orden, für die Verlauf- oder Tippdetails benötigt werden, erscheinen automatisch, sobald diese Daten in späteren Exporten vorhanden sind.</p></div>
+    <div class="hs-panel"><div class="hs-eyebrow">Saisonverlauf</div><h2>Historie</h2><div id="history-grid" class="hs-history"></div></div>
+  </section>
+
+  <div class="hs-actions"><a class="hs-btn" href="./index.html#highscore">Zurück zur Startseite</a><a class="hs-btn" href="https://www.kicktipp.de/the-old-smugglers-club/" target="_blank" rel="noopener noreferrer">Zum Kicktipp</a></div>
+</main>
+<script src="./highscore.js" defer></script>
+</body>
+</html>
