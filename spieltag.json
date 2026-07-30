@@ -8,7 +8,6 @@
   "liveDauerMinuten": 120,
   "hinweisAnzeigen": false,
   "hinweis": "",
-  "leertext": "",
   "uebersichtLink": "",
   "uebersichtButtonText": "Alle Termine ansehen",
   "kicktippLink": "https://www.kicktipp.de/the-old-smugglers-club/",
@@ -20,7 +19,7 @@
   "platzhalterAuswaerts": "Auswärtsteam",
   "ereignisse": [
     {
-      "id": "bl-freitag",
+      "id": "test-bl-freitag",
       "typ": "spiel",
       "datum": "2026-08-28",
       "anstoss": "20:30",
@@ -33,7 +32,7 @@
       "status": "Termin fix"
     },
     {
-      "id": "smuggler-anker",
+      "id": "test-smuggler",
       "typ": "spiel",
       "datum": "2026-08-29",
       "anstoss": "13:00",
@@ -46,7 +45,7 @@
       "status": "Termin fix"
     },
     {
-      "id": "bl-sa-1",
+      "id": "test-bl-sa-1",
       "typ": "spiel",
       "datum": "2026-08-29",
       "anstoss": "15:30",
@@ -59,7 +58,7 @@
       "status": "Termin fix"
     },
     {
-      "id": "bl-sa-2",
+      "id": "test-bl-sa-2",
       "typ": "spiel",
       "datum": "2026-08-29",
       "anstoss": "15:30",
@@ -72,7 +71,7 @@
       "status": "Termin fix"
     },
     {
-      "id": "bl-sa-3",
+      "id": "test-bl-sa-3",
       "typ": "spiel",
       "datum": "2026-08-29",
       "anstoss": "15:30",
@@ -85,7 +84,7 @@
       "status": "Termin fix"
     },
     {
-      "id": "bl-sa-4",
+      "id": "test-bl-sa-4",
       "typ": "spiel",
       "datum": "2026-08-29",
       "anstoss": "15:30",
@@ -98,7 +97,7 @@
       "status": "Termin fix"
     },
     {
-      "id": "bl-sa-abend",
+      "id": "test-bl-sa-abend",
       "typ": "spiel",
       "datum": "2026-08-29",
       "anstoss": "18:30",
@@ -111,7 +110,7 @@
       "status": "Termin fix"
     },
     {
-      "id": "bl-so-1",
+      "id": "test-bl-so-1",
       "typ": "spiel",
       "datum": "2026-08-30",
       "anstoss": "15:30",
@@ -124,7 +123,7 @@
       "status": "Termin fix"
     },
     {
-      "id": "bl-so-2",
+      "id": "test-bl-so-2",
       "typ": "spiel",
       "datum": "2026-08-30",
       "anstoss": "17:30",
@@ -137,7 +136,7 @@
       "status": "Termin fix"
     },
     {
-      "id": "bl-so-3",
+      "id": "test-bl-so-3",
       "typ": "spiel",
       "datum": "2026-08-30",
       "anstoss": "19:30",
@@ -150,12 +149,12 @@
       "status": "Termin fix"
     },
     {
-      "id": "ausserhalb",
+      "id": "test-ausserhalb",
       "typ": "spiel",
       "datum": "2026-09-06",
       "anstoss": "15:30",
       "wettbewerb": "Bundesliga",
-      "titel": "2. Spieltag",
+      "titel": "2. Spieltag – außerhalb des Testfensters",
       "heim": "Testteam A",
       "trenner": "–",
       "auswaerts": "Testteam B",

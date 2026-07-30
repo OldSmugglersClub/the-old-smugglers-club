@@ -2862,24 +2862,6 @@
       }
     }
 
-    .test-mode-badge {
-      display: none;
-      margin-left: .55rem;
-      padding: .2rem .45rem;
-      border: 1px solid rgba(226,184,90,.68);
-      border-radius: 4px;
-      color: #f0cf7e;
-      background: rgba(55,31,10,.88);
-      font-size: .68rem;
-      font-weight: 900;
-      letter-spacing: .06em;
-      vertical-align: middle;
-    }
-
-    .test-mode-badge.is-visible {
-      display: inline-block;
-    }
-
     .rolling-events {
       display: grid;
       gap: 1rem;
@@ -3119,6 +3101,302 @@
       }
     }
 
+  
+    /* ================================================================
+       SPIELTAGSKACHEL – TECHNISCHER NEUAUFBAU
+       Isolierte sm-* Klassen, damit keine früheren Patch-Regeln eingreifen.
+       ================================================================ */
+
+    .sm-schedule {
+      height: 520px;
+      min-height: 520px;
+      max-height: 520px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .sm-schedule__header {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      flex: 0 0 auto;
+    }
+
+    .sm-schedule__heading {
+      min-width: 0;
+    }
+
+    .sm-schedule__heading h2 {
+      margin: .35rem 0 0;
+    }
+
+    .sm-next-event {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(190px,.78fr) minmax(175px,.72fr) minmax(0,1.8fr);
+      gap: .9rem;
+      align-items: center;
+      flex: 0 0 auto;
+      min-height: 58px;
+      margin: .9rem 0 .75rem;
+      padding: .72rem 1rem;
+      border: 1px solid rgba(190,129,39,.72);
+      border-radius: 8px;
+      color: #ead6a4;
+      background: linear-gradient(90deg, rgba(67,38,14,.94), rgba(24,14,8,.97));
+      box-shadow:
+        inset 0 0 0 2px rgba(20,12,7,.78),
+        0 7px 16px rgba(0,0,0,.28);
+      text-decoration: none;
+    }
+
+    .sm-next-event:not(.is-placeholder):hover,
+    .sm-next-event:not(.is-placeholder):focus-visible {
+      background: linear-gradient(90deg, rgba(80,46,17,.96), rgba(29,17,9,.99));
+      filter: brightness(1.06);
+      outline: none;
+    }
+
+    .sm-next-event.is-placeholder {
+      cursor: default;
+    }
+
+    .sm-next-event__date {
+      color: #e7bd62;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .sm-next-event__competition {
+      color: #e2c16f;
+      font-size: .82rem;
+      font-weight: 900;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .sm-next-event__match {
+      min-width: 0;
+      font-weight: 900;
+      line-height: 1.3;
+    }
+
+    .sm-event-list {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      align-content: start;
+      gap: .8rem;
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-gutter: stable;
+      padding: .15rem .28rem .15rem 0;
+      border: 1px solid rgba(181,119,35,.45);
+      border-radius: 10px;
+      background:
+        linear-gradient(rgba(18,10,6,.72), rgba(13,8,5,.82)),
+        radial-gradient(circle at 30% 30%, rgba(183,120,34,.07), transparent 42%);
+      box-shadow: inset 0 0 0 1px rgba(21,12,6,.56);
+    }
+
+    .sm-event-list.is-empty {
+      overflow-y: hidden;
+    }
+
+    .sm-event-list:focus-visible {
+      outline: 1px solid rgba(225,180,84,.72);
+      outline-offset: 3px;
+    }
+
+    .sm-event-list::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .sm-event-list::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background: rgba(10,7,4,.78);
+      box-shadow: inset 0 0 0 1px rgba(171,111,28,.22);
+    }
+
+    .sm-event-list::-webkit-scrollbar-thumb {
+      border: 2px solid rgba(12,8,4,.88);
+      border-radius: 10px;
+      background: linear-gradient(#d2a14b,#79501b);
+    }
+
+    .sm-event-list {
+      scrollbar-width: thin;
+      scrollbar-color: #a87429 rgba(10,7,4,.78);
+    }
+
+    .sm-day {
+      overflow: visible;
+      border: 1px solid rgba(181,119,35,.66);
+      border-radius: 9px;
+      background:
+        radial-gradient(circle at 85% 0%, rgba(189,128,39,.08), transparent 32%),
+        linear-gradient(145deg, rgba(34,21,12,.97), rgba(12,8,5,.99));
+      box-shadow:
+        inset 0 0 0 2px rgba(26,15,7,.76),
+        0 7px 16px rgba(0,0,0,.28);
+    }
+
+    .sm-day__title {
+      position: sticky;
+      top: 0;
+      z-index: 4;
+      margin: 0;
+      padding: .62rem .9rem;
+      border-bottom: 1px solid rgba(190,128,39,.48);
+      color: #ebc873;
+      background: linear-gradient(90deg, rgba(80,46,16,.96), rgba(31,18,9,.96));
+      box-shadow: 0 5px 9px rgba(0,0,0,.38);
+      font-size: .88rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-shadow: 0 2px 3px rgba(0,0,0,.75);
+    }
+
+    .sm-event-row {
+      display: grid;
+      grid-template-columns: 76px minmax(145px,.78fr) minmax(0,1.8fr) auto;
+      gap: .75rem;
+      align-items: center;
+      min-height: 50px;
+      padding: .58rem .8rem;
+      color: #ead6a4;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(186,123,37,.20);
+    }
+
+    .sm-event-row:last-child {
+      border-bottom: 0;
+    }
+
+    .sm-event-row[href]:hover,
+    .sm-event-row[href]:focus-visible {
+      background: rgba(102,60,20,.24);
+      filter: brightness(1.08);
+      outline: none;
+    }
+
+    .sm-event-row__time {
+      color: #e7bd62;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .sm-event-row__competition {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 27px;
+      padding: .25rem .55rem;
+      border: 1px solid rgba(190,129,39,.58);
+      border-radius: 5px;
+      color: #e5c475;
+      background: linear-gradient(#3d2410,#1d1108);
+      font-size: .72rem;
+      font-weight: 800;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .sm-event-row__match {
+      min-width: 0;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .sm-event-row__subtitle {
+      display: block;
+      margin-top: .1rem;
+      color: #b99b62;
+      font-size: .75rem;
+      font-weight: 400;
+    }
+
+    .sm-event-row__status {
+      color: #cda65b;
+      font-size: .75rem;
+      white-space: nowrap;
+    }
+
+    .sm-schedule__actions {
+      flex: 0 0 auto;
+      margin-top: .75rem;
+      padding-top: .1rem;
+    }
+
+    @media (max-width: 820px) {
+      .sm-schedule {
+        height: 590px;
+        min-height: 590px;
+        max-height: 590px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .sm-schedule__header {
+        align-items: stretch;
+      }
+
+      .sm-next-event {
+        grid-template-columns: 1fr;
+        gap: .28rem;
+        text-align: left;
+      }
+
+      .sm-next-event__date {
+        white-space: normal;
+      }
+
+      .sm-next-event__competition {
+        text-align: left;
+      }
+
+      .sm-event-row {
+        grid-template-columns: 66px 1fr;
+        gap: .4rem .65rem;
+      }
+
+      .sm-event-row__competition {
+        justify-self: start;
+      }
+
+      .sm-event-row__match,
+      .sm-event-row__status {
+        grid-column: 1 / -1;
+      }
+
+      .sm-event-row__status {
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .sm-schedule {
+        height: 620px;
+        min-height: 620px;
+        max-height: 620px;
+      }
+
+      .sm-event-list {
+        padding-right: .14rem;
+      }
+    }
+
   </style>
 </head>
 
@@ -3333,32 +3611,34 @@
       </aside>
     </section>
 
-    <section class="section panel matchday-panel" id="aktueller-spieltag">
-      <div class="matchday-head">
-        <div>
-          <div class="eyebrow" id="matchday-competition"></div>
-          <h2 id="matchday-title"></h2><span class="test-mode-badge" id="test-mode-badge">TESTMODUS</span>
+    <section class="section panel matchday-panel sm-schedule" id="aktueller-spieltag">
+      <header class="sm-schedule__header">
+        <div class="sm-schedule__heading">
+          <div class="eyebrow" id="sm-schedule-label">Nächste Ereignisse</div>
+          <h2 id="sm-schedule-title">Die nächsten 7 Tage</h2>
         </div>
-        <div class="matchday-status is-hidden" id="matchday-status"></div>
-      </div>
+        <div class="matchday-status" id="sm-schedule-status">Keine Termine</div>
+      </header>
 
-      <p class="lead is-hidden" id="matchday-note"></p>
-      <a class="next-event-summary" id="next-event-summary" aria-label="Noch offen, Noch offen, Noch offen – Noch offen">
-        <span class="next-event-date">Noch offen</span>
-        <span class="next-event-competition">Noch offen</span>
-        <span class="next-event-match">Noch offen – Noch offen</span>
+      <p class="lead is-hidden" id="sm-schedule-note"></p>
+
+      <a class="sm-next-event" id="sm-next-event" aria-label="Nächstes Ereignis">
+        <span class="sm-next-event__date" id="sm-next-date">TT.MM.JJJJ · --:--</span>
+        <span class="sm-next-event__competition" id="sm-next-competition">Wettbewerb offen</span>
+        <span class="sm-next-event__match" id="sm-next-match">Heimteam – Auswärtsteam</span>
       </a>
-      <div class="rolling-events" id="rolling-events" tabindex="0" aria-label="Kommende Tippereignisse"></div>
 
-      <div class="matchday-actions">
-        <a class="button button-secondary is-hidden" id="matchday-page-link" href="#" aria-hidden="true"></a>
-        <a class="button button-primary" id="matchday-kicktipp-link"
+      <div class="sm-event-list" id="sm-event-list" tabindex="0" aria-label="Kommende Tippereignisse"></div>
+
+      <footer class="matchday-actions sm-schedule__actions">
+        <a class="button button-secondary is-hidden" id="sm-overview-link" href="#" aria-hidden="true"></a>
+        <a class="button button-primary" id="sm-kicktipp-link"
            href="https://www.kicktipp.de/the-old-smugglers-club/"
            target="_blank" rel="noopener noreferrer">Jetzt bei Kicktipp tippen</a>
-      </div>
+      </footer>
     </section>
 
-    <section class="section panel" id="wettbewerbe">
+<section class="section panel" id="wettbewerbe">
       <div class="section-title"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-crossed-sabres"></use></svg><h2>Unsere Wettbewerbe</h2></div>
 
       <div class="competition-grid">
@@ -3782,263 +4062,266 @@
     }
 
     async function loadMatchdayData() {
+      const elements = {
+        label: document.getElementById("sm-schedule-label"),
+        title: document.getElementById("sm-schedule-title"),
+        status: document.getElementById("sm-schedule-status"),
+        note: document.getElementById("sm-schedule-note"),
+        next: document.getElementById("sm-next-event"),
+        nextDate: document.getElementById("sm-next-date"),
+        nextCompetition: document.getElementById("sm-next-competition"),
+        nextMatch: document.getElementById("sm-next-match"),
+        list: document.getElementById("sm-event-list"),
+        overview: document.getElementById("sm-overview-link"),
+        kicktipp: document.getElementById("sm-kicktipp-link")
+      };
+
+      const setPlaceholder = (data = {}) => {
+        elements.next?.classList.add("is-placeholder");
+        elements.next?.removeAttribute("href");
+
+        if (elements.nextDate) {
+          elements.nextDate.textContent = data.platzhalterDatum || "TT.MM.JJJJ · --:--";
+        }
+        if (elements.nextCompetition) {
+          elements.nextCompetition.textContent = data.platzhalterWettbewerb || "Wettbewerb offen";
+        }
+        if (elements.nextMatch) {
+          const home = data.platzhalterHeim || "Heimteam";
+          const separator = data.platzhalterTrenner || "–";
+          const away = data.platzhalterAuswaerts || "Auswärtsteam";
+          elements.nextMatch.textContent = `${home} ${separator} ${away}`;
+        }
+      };
+
+      const makeLocalDate = (date, time = "00:00") => {
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !/^\d{2}:\d{2}$/.test(time)) {
+          return null;
+        }
+
+        const [year, month, day] = date.split("-").map(Number);
+        const [hour, minute] = time.split(":").map(Number);
+        const value = new Date(year, month - 1, day, hour, minute, 0, 0);
+
+        return Number.isNaN(value.getTime()) ? null : value;
+      };
+
       try {
         const response = await fetch("./spieltag.json", { cache: "no-store" });
-        if (!response.ok) throw new Error(`spieltag.json: ${response.status}`);
+        if (!response.ok) {
+          throw new Error(`spieltag.json konnte nicht geladen werden (${response.status})`);
+        }
 
         const data = await response.json();
-
-        const competition = document.getElementById("matchday-competition");
-        const title = document.getElementById("matchday-title");
-        const status = document.getElementById("matchday-status");
-        const note = document.getElementById("matchday-note");
-        const pageLink = document.getElementById("matchday-page-link");
-        const kicktippLink = document.getElementById("matchday-kicktipp-link");
-        const nextEventSummary = document.getElementById("next-event-summary");
-        const rollingRoot = document.getElementById("rolling-events");
-        const testModeBadge = document.getElementById("test-mode-badge");
-
-        if (testModeBadge) {
-          testModeBadge.classList.toggle(
-            "is-visible",
-            Boolean(simulatedNow && !Number.isNaN(simulatedNow.getTime()))
-          );
-        }
-
-        if (competition) {
-          competition.textContent = data.wettbewerbSchild || "Nächste Ereignisse";
-        }
-
-        if (title) {
-          title.textContent = data.titel || "Die nächsten 7 Tage";
-        }
-
-        if (note) {
-          const showNote = Boolean(data.hinweisAnzeigen) && Boolean(data.hinweis);
-          note.textContent = showNote ? data.hinweis : "";
-          note.classList.toggle("is-hidden", !showNote);
-        }
+        const locale = data.locale || "de-DE";
+        const displayDays = Math.max(1, Number(data.anzeigeTage) || 7);
+        const liveMinutesDefault = Math.max(1, Number(data.liveDauerMinuten) || 120);
 
         const simulatedNow = typeof data.testJetzt === "string" && data.testJetzt.trim()
           ? new Date(data.testJetzt)
           : null;
+
         const now = simulatedNow && !Number.isNaN(simulatedNow.getTime())
           ? simulatedNow
           : new Date();
-        const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-        const days = Number.isFinite(Number(data.anzeigeTage)) ? Number(data.anzeigeTage) : 7;
-        const endWindow = new Date(startOfToday);
-        endWindow.setDate(endWindow.getDate() + days);
-        endWindow.setMilliseconds(-1);
 
-        const events = Array.isArray(data.ereignisse) ? data.ereignisse : [];
+        const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        const windowEnd = new Date(todayStart);
+        windowEnd.setDate(windowEnd.getDate() + displayDays);
+        windowEnd.setMilliseconds(-1);
 
-        const defaultLiveDuration = Number.isFinite(Number(data.liveDauerMinuten))
-          ? Number(data.liveDauerMinuten)
-          : 120;
+        if (elements.label) {
+          elements.label.textContent = data.wettbewerbSchild || "Nächste Ereignisse";
+        }
+        if (elements.title) {
+          elements.title.textContent = data.titel || `Die nächsten ${displayDays} Tage`;
+        }
 
-        const parsedEvents = events
-          .map((event) => {
-            const date = typeof event.datum === "string" ? event.datum : "";
-            const time = typeof event.anstoss === "string" && event.anstoss ? event.anstoss : "00:00";
-            const timestamp = new Date(`${date}T${time}:00`);
-            const liveDuration = Number.isFinite(Number(event.liveDauerMinuten))
-              ? Number(event.liveDauerMinuten)
-              : defaultLiveDuration;
-            const endTimestamp = new Date(timestamp.getTime() + liveDuration * 60 * 1000);
-            const isLive = timestamp <= now && endTimestamp > now;
+        if (elements.note) {
+          const noteVisible = Boolean(data.hinweisAnzeigen && data.hinweis);
+          elements.note.textContent = noteVisible ? data.hinweis : "";
+          elements.note.classList.toggle("is-hidden", !noteVisible);
+        }
 
-            return { ...event, timestamp, endTimestamp, isLive };
+        const visibleEvents = (Array.isArray(data.ereignisse) ? data.ereignisse : [])
+          .map((event, index) => {
+            const start = makeLocalDate(event.datum, event.anstoss || "00:00");
+            if (!start) return null;
+
+            const liveMinutes = Math.max(
+              1,
+              Number(event.liveDauerMinuten) || liveMinutesDefault
+            );
+            const end = new Date(start.getTime() + liveMinutes * 60 * 1000);
+
+            return {
+              ...event,
+              _index: index,
+              _start: start,
+              _end: end,
+              _isLive: start <= now && end > now
+            };
           })
-          .filter((event) =>
-            !Number.isNaN(event.timestamp.getTime()) &&
-            event.endTimestamp >= now &&
-            event.timestamp <= endWindow
-          )
-          .sort((a, b) => a.timestamp - b.timestamp);
+          .filter(Boolean)
+          .filter((event) => event._end >= now && event._start <= windowEnd)
+          .sort((a, b) => a._start - b._start || a._index - b._index);
 
-        if (status) {
-          const customStatus = typeof data.statusSchild === "string"
-            ? data.statusSchild.trim()
+        const customStatus = typeof data.statusSchild === "string"
+          ? data.statusSchild.trim()
+          : "";
+
+        let automaticStatus = "KEINE TERMINE";
+        if (visibleEvents.some((event) => event._isLive)) {
+          automaticStatus = "LIVE";
+        } else if (visibleEvents.length > 0) {
+          const onlyMatches = visibleEvents.every(
+            (event) => event.typ === "spiel" || (event.heim && event.auswaerts)
+          );
+          const noun = onlyMatches
+            ? (visibleEvents.length === 1 ? "SPIEL" : "SPIELE")
+            : (visibleEvents.length === 1 ? "TERMIN" : "TERMINE");
+          automaticStatus = `${visibleEvents.length} ${noun}`;
+        }
+
+        if (elements.status) {
+          elements.status.textContent = customStatus || automaticStatus;
+        }
+
+        const nextEvent = visibleEvents[0];
+        if (!nextEvent) {
+          setPlaceholder(data);
+        } else {
+          elements.next?.classList.remove("is-placeholder");
+
+          const dateText = new Intl.DateTimeFormat(locale, {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric"
+          }).format(nextEvent._start);
+
+          if (elements.nextDate) {
+            elements.nextDate.textContent = `${dateText} · ${nextEvent.anstoss}`;
+          }
+          if (elements.nextCompetition) {
+            elements.nextCompetition.textContent = nextEvent.wettbewerb || "Ereignis";
+          }
+          if (elements.nextMatch) {
+            const home = nextEvent.heim || "Heimteam";
+            const separator = nextEvent.trenner || "–";
+            const away = nextEvent.auswaerts || "Auswärtsteam";
+            elements.nextMatch.textContent = `${home} ${separator} ${away}`;
+          }
+
+          if (elements.next && nextEvent.ereignisLink) {
+            elements.next.href = nextEvent.ereignisLink;
+          } else {
+            elements.next?.removeAttribute("href");
+          }
+        }
+
+        if (elements.overview) {
+          const href = typeof data.uebersichtLink === "string"
+            ? data.uebersichtLink.trim()
             : "";
+          const text = typeof data.uebersichtButtonText === "string"
+            ? data.uebersichtButtonText.trim()
+            : "";
+          const visible = Boolean(href && text);
 
-          let automaticStatus;
-
-          if (parsedEvents.some((event) => event.isLive)) {
-            automaticStatus = "LIVE";
-          } else if (parsedEvents.length === 0) {
-            automaticStatus = "KEINE TERMINE";
-          } else {
-            const allAreMatches = parsedEvents.every(
-              (event) => event.typ === "spiel" || (event.heim && event.auswaerts)
-            );
-
-            if (allAreMatches) {
-              automaticStatus = parsedEvents.length === 1
-                ? "1 SPIEL"
-                : `${parsedEvents.length} SPIELE`;
-            } else {
-              automaticStatus = parsedEvents.length === 1
-                ? "1 TERMIN"
-                : `${parsedEvents.length} TERMINE`;
-            }
-          }
-
-          status.textContent = customStatus || automaticStatus;
-          status.classList.remove("is-hidden");
+          elements.overview.href = visible ? href : "#";
+          elements.overview.textContent = visible ? text : "";
+          elements.overview.classList.toggle("is-hidden", !visible);
+          elements.overview.setAttribute("aria-hidden", String(!visible));
         }
 
-        if (nextEventSummary) {
-          const nextEvent = parsedEvents[0];
-          nextEventSummary.innerHTML = "";
-          nextEventSummary.classList.remove("is-empty");
+        if (elements.kicktipp) {
+          const href = typeof data.kicktippLink === "string"
+            ? data.kicktippLink.trim()
+            : "";
+          const text = typeof data.kicktippButtonText === "string"
+            ? data.kicktippButtonText.trim()
+            : "";
+          const visible = Boolean(href && text);
 
-          const date = document.createElement("span");
-          date.className = "next-event-date";
+          elements.kicktipp.href = visible ? href : "#";
+          elements.kicktipp.textContent = visible ? text : "";
+          elements.kicktipp.classList.toggle("is-hidden", !visible);
+          elements.kicktipp.setAttribute("aria-hidden", String(!visible));
+        }
 
-          const competitionLabel = document.createElement("span");
-          competitionLabel.className = "next-event-competition";
+        if (!elements.list) return;
 
-          const match = document.createElement("span");
-          match.className = "next-event-match";
+        elements.list.replaceChildren();
+        elements.list.classList.toggle("is-empty", visibleEvents.length === 0);
 
-          if (!nextEvent) {
-            date.textContent = data.platzhalterDatum || "Noch offen";
-            competitionLabel.textContent = data.platzhalterWettbewerb || "Noch offen";
-            match.textContent = `${data.platzhalterHeim || "Noch offen"} ${data.platzhalterTrenner || "–"} ${data.platzhalterAuswaerts || "Noch offen"}`;
-            nextEventSummary.removeAttribute("href");
-            nextEventSummary.setAttribute(
-              "aria-label",
-              `${date.textContent}, ${competitionLabel.textContent}, ${match.textContent}`
-            );
-          } else {
-            const locale = data.locale || "de-DE";
-            const dateText = new Intl.DateTimeFormat(locale, {
-              day: "2-digit",
-              month: "2-digit",
-              year: "numeric"
-            }).format(nextEvent.timestamp);
+        if (visibleEvents.length === 0) return;
 
-            date.textContent = `${dateText} · ${nextEvent.anstoss || ""}`;
-            competitionLabel.textContent = nextEvent.wettbewerb || "Ereignis";
-            match.textContent = [nextEvent.heim, nextEvent.trenner || "–", nextEvent.auswaerts]
-              .filter(Boolean)
-              .join(" ");
+        const groups = new Map();
+        visibleEvents.forEach((event) => {
+          const key = event.datum;
+          if (!groups.has(key)) groups.set(key, []);
+          groups.get(key).push(event);
+        });
 
-            if (nextEvent.ereignisLink) {
-              nextEventSummary.href = nextEvent.ereignisLink;
-            } else {
-              nextEventSummary.removeAttribute("href");
+        groups.forEach((eventsForDay) => {
+          const day = document.createElement("section");
+          day.className = "sm-day";
+
+          const dayTitle = document.createElement("h3");
+          dayTitle.className = "sm-day__title";
+          dayTitle.textContent = new Intl.DateTimeFormat(locale, {
+            weekday: "long",
+            day: "2-digit",
+            month: "long"
+          }).format(eventsForDay[0]._start);
+
+          day.appendChild(dayTitle);
+
+          eventsForDay.forEach((event) => {
+            const row = document.createElement(event.ereignisLink ? "a" : "div");
+            row.className = "sm-event-row";
+
+            if (event.ereignisLink) {
+              row.href = event.ereignisLink;
             }
 
-            nextEventSummary.setAttribute(
-              "aria-label",
-              `Nächstes Ereignis: ${date.textContent}, ${competitionLabel.textContent}, ${match.textContent}`
-            );
-          }
+            const time = document.createElement("span");
+            time.className = "sm-event-row__time";
+            time.textContent = event.anstoss || "--:--";
 
-          nextEventSummary.append(date, competitionLabel, match);
-        }
+            const competition = document.createElement("span");
+            competition.className = "sm-event-row__competition";
+            competition.textContent = event.wettbewerb || "Ereignis";
 
-        if (pageLink) {
-          const overviewLink = typeof data.uebersichtLink === "string" ? data.uebersichtLink.trim() : "";
-          const overviewText = data.uebersichtButtonText || "";
-          const showOverview = Boolean(overviewLink) && Boolean(overviewText);
-          pageLink.href = showOverview ? overviewLink : "#";
-          pageLink.textContent = showOverview ? overviewText : "";
-          pageLink.classList.toggle("is-hidden", !showOverview);
-          pageLink.setAttribute("aria-hidden", showOverview ? "false" : "true");
-        }
+            const match = document.createElement("span");
+            match.className = "sm-event-row__match";
+            match.textContent = `${event.heim || "Heimteam"} ${event.trenner || "–"} ${event.auswaerts || "Auswärtsteam"}`;
 
-        if (kicktippLink) {
-          const kicktippUrl = typeof data.kicktippLink === "string" ? data.kicktippLink.trim() : "";
-          const kicktippText = data.kicktippButtonText || "";
-          const showKicktipp = Boolean(kicktippUrl) && Boolean(kicktippText);
-          kicktippLink.href = showKicktipp ? kicktippUrl : "#";
-          kicktippLink.textContent = showKicktipp ? kicktippText : "";
-          kicktippLink.classList.toggle("is-hidden", !showKicktipp);
-          kicktippLink.setAttribute("aria-hidden", showKicktipp ? "false" : "true");
-        }
+            if (event.titel) {
+              const subtitle = document.createElement("small");
+              subtitle.className = "sm-event-row__subtitle";
+              subtitle.textContent = event.titel;
+              match.appendChild(subtitle);
+            }
 
-        if (rollingRoot) {
-          rollingRoot.innerHTML = "";
+            const rowStatus = document.createElement("span");
+            rowStatus.className = "sm-event-row__status";
+            rowStatus.textContent = event._isLive ? "LIVE" : (event.status || "");
 
-          if (parsedEvents.length === 0) {
-            rollingRoot.classList.add("is-empty");
-          } else {
-            rollingRoot.classList.remove("is-empty");
-            const groups = new Map();
+            row.append(time, competition, match, rowStatus);
+            day.appendChild(row);
+          });
 
-            parsedEvents.forEach((event) => {
-              const key = event.datum;
-              if (!groups.has(key)) groups.set(key, []);
-              groups.get(key).push(event);
-            });
-
-            const locale = data.locale || "de-DE";
-
-            groups.forEach((dayEvents, dateKey) => {
-              const dayDate = new Date(`${dateKey}T12:00:00`);
-              const daySection = document.createElement("section");
-              daySection.className = "event-day";
-
-              const dayTitle = document.createElement("h4");
-              dayTitle.className = "event-day-title";
-              dayTitle.textContent = new Intl.DateTimeFormat(locale, {
-                weekday: "long",
-                day: "2-digit",
-                month: "long"
-              }).format(dayDate);
-
-              const table = document.createElement("div");
-              table.className = "event-table";
-
-              dayEvents.forEach((event) => {
-                const row = document.createElement(event.ereignisLink ? "a" : "div");
-                row.className = "event-row";
-
-                if (event.ereignisLink) {
-                  row.href = event.ereignisLink;
-                  row.setAttribute("aria-label", `${event.wettbewerb || "Ereignis"}: ${event.heim || ""} gegen ${event.auswaerts || ""}`);
-                }
-
-                const time = document.createElement("span");
-                time.className = "event-time";
-                time.textContent = event.anstoss || "";
-
-                const competitionLabel = document.createElement("span");
-                competitionLabel.className = "event-competition";
-                competitionLabel.textContent = event.wettbewerb || "Ereignis";
-
-                const match = document.createElement("span");
-                match.className = "event-match";
-                const pairing = [event.heim, event.trenner || "–", event.auswaerts]
-                  .filter(Boolean)
-                  .join(" ");
-                match.textContent = pairing;
-
-                if (event.titel) {
-                  const subtitle = document.createElement("small");
-                  subtitle.className = "event-title";
-                  subtitle.textContent = event.titel;
-                  match.appendChild(subtitle);
-                }
-
-                const eventStatus = document.createElement("span");
-                eventStatus.className = "event-status";
-                eventStatus.textContent = event.isLive ? "LIVE" : (event.status || "");
-
-                row.append(time, competitionLabel, match, eventStatus);
-                table.appendChild(row);
-              });
-
-              daySection.append(dayTitle, table);
-              rollingRoot.appendChild(daySection);
-            });
-          }
-        }
+          elements.list.appendChild(day);
+        });
       } catch (error) {
-        console.error("Spieltagsdaten konnten nicht geladen werden:", error);
+        console.error("Spieltagskachel:", error);
+        if (elements.label) elements.label.textContent = "Nächste Ereignisse";
+        if (elements.title) elements.title.textContent = "Die nächsten 7 Tage";
+        if (elements.status) elements.status.textContent = "DATENFEHLER";
+        setPlaceholder();
+        elements.list?.replaceChildren();
+        elements.list?.classList.add("is-empty");
       }
     }
 
