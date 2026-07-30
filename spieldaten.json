@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "aktualisiert": "2026-07-30",
   "spiele": [
     {
@@ -8,14 +8,18 @@
       "wettbewerbAnzeige": "Bundesliga",
       "saison": "2026/2027",
       "runde": "1. Spieltag",
+      "spieltagNummer": 1,
       "datum": "2026-08-28",
       "anstoss": "20:30",
+      "terminBestaetigt": true,
       "heim": "FC Bayern München",
       "auswaerts": "VfB Stuttgart",
       "heimtore": null,
       "auswaertstore": null,
       "status": "terminiert",
-      "sonderwertungen": []
+      "sonderwertungen": [],
+      "notiz": "",
+      "quelleStand": "2026-07-30"
     }
   ]
 }
