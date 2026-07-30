@@ -65,5 +65,6 @@
       "typ": "spiel"
     }
   ],
-  "liveDauerMinuten": 120
+  "liveDauerMinuten": 120,
+  "naechstesEreignisLeertext": "Aktuell sind keine Tippereignisse geplant."
 }

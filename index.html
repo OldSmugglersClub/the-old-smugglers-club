@@ -2791,6 +2791,76 @@
     }
 
 
+
+    .next-event-summary {
+      display: grid;
+      grid-template-columns: minmax(150px,.72fr) minmax(150px,.72fr) minmax(0,1.8fr);
+      gap: .8rem;
+      align-items: center;
+      min-height: 58px;
+      margin: .9rem 0 1rem;
+      padding: .72rem .9rem;
+      border: 1px solid rgba(188,126,37,.62);
+      border-radius: 9px;
+      color: #ead6a4;
+      background:
+        linear-gradient(90deg, rgba(72,41,15,.86), rgba(20,12,7,.94)),
+        rgba(21,13,8,.95);
+      box-shadow:
+        inset 0 0 0 2px rgba(22,13,7,.72),
+        0 8px 18px rgba(0,0,0,.24);
+      text-decoration: none;
+    }
+
+    .next-event-summary.is-empty {
+      grid-template-columns: 1fr;
+      text-align: center;
+      color: #c9ae77;
+      cursor: default;
+    }
+
+    .next-event-date,
+    .next-event-competition,
+    .next-event-match {
+      min-width: 0;
+    }
+
+    .next-event-date {
+      color: #e7bd62;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .next-event-competition {
+      color: #e2c16f;
+      font-size: .82rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .next-event-match {
+      font-weight: 900;
+      line-height: 1.3;
+    }
+
+    .next-event-summary:not(.is-empty):hover,
+    .next-event-summary:not(.is-empty):focus-visible {
+      filter: brightness(1.08);
+      outline: none;
+    }
+
+    @media (max-width: 760px) {
+      .next-event-summary {
+        grid-template-columns: 1fr;
+        gap: .35rem;
+      }
+
+      .next-event-date {
+        white-space: normal;
+      }
+    }
+
     .rolling-events {
       display: grid;
       gap: 1rem;
@@ -3243,6 +3313,9 @@
       </div>
 
       <p class="lead is-hidden" id="matchday-note"></p>
+      <a class="next-event-summary is-empty" id="next-event-summary" aria-label="Nächstes Ereignis">
+        <span>Aktuell sind keine Tippereignisse geplant.</span>
+      </a>
       <div class="rolling-events" id="rolling-events" tabindex="0" aria-label="Kommende Tippereignisse"></div>
 
       <div class="matchday-actions">
@@ -3689,6 +3762,7 @@
         const note = document.getElementById("matchday-note");
         const pageLink = document.getElementById("matchday-page-link");
         const kicktippLink = document.getElementById("matchday-kicktipp-link");
+        const nextEventSummary = document.getElementById("next-event-summary");
         const rollingRoot = document.getElementById("rolling-events");
 
         if (competition) {
@@ -3767,6 +3841,54 @@
 
           status.textContent = customStatus || automaticStatus;
           status.classList.remove("is-hidden");
+        }
+
+        if (nextEventSummary) {
+          const nextEvent = parsedEvents[0];
+          nextEventSummary.innerHTML = "";
+          nextEventSummary.classList.toggle("is-empty", !nextEvent);
+
+          if (!nextEvent) {
+            const emptyText = document.createElement("span");
+            emptyText.textContent = data.naechstesEreignisLeertext || "Aktuell sind keine Tippereignisse geplant.";
+            nextEventSummary.appendChild(emptyText);
+            nextEventSummary.removeAttribute("href");
+            nextEventSummary.setAttribute("aria-label", emptyText.textContent);
+          } else {
+            const locale = data.locale || "de-DE";
+            const dateText = new Intl.DateTimeFormat(locale, {
+              day: "2-digit",
+              month: "2-digit",
+              year: "numeric"
+            }).format(nextEvent.timestamp);
+
+            const date = document.createElement("span");
+            date.className = "next-event-date";
+            date.textContent = `${dateText} · ${nextEvent.anstoss || ""}`;
+
+            const competitionLabel = document.createElement("span");
+            competitionLabel.className = "next-event-competition";
+            competitionLabel.textContent = nextEvent.wettbewerb || "Ereignis";
+
+            const match = document.createElement("span");
+            match.className = "next-event-match";
+            match.textContent = [nextEvent.heim, nextEvent.trenner || "–", nextEvent.auswaerts]
+              .filter(Boolean)
+              .join(" ");
+
+            nextEventSummary.append(date, competitionLabel, match);
+
+            if (nextEvent.ereignisLink) {
+              nextEventSummary.href = nextEvent.ereignisLink;
+            } else {
+              nextEventSummary.removeAttribute("href");
+            }
+
+            nextEventSummary.setAttribute(
+              "aria-label",
+              `Nächstes Ereignis: ${date.textContent}, ${competitionLabel.textContent}, ${match.textContent}`
+            );
+          }
         }
 
         if (pageLink) {
