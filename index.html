@@ -2794,28 +2794,28 @@
 
     .next-event-summary {
       display: grid;
-      grid-template-columns: minmax(150px,.72fr) minmax(150px,.72fr) minmax(0,1.8fr);
-      gap: .8rem;
+      grid-template-columns: minmax(180px,.78fr) minmax(170px,.72fr) minmax(0,1.8fr);
+      gap: .9rem;
       align-items: center;
       min-height: 58px;
       margin: .9rem 0 1rem;
-      padding: .72rem .9rem;
-      border: 1px solid rgba(188,126,37,.62);
-      border-radius: 9px;
+      padding: .72rem 1rem;
+      border: 1px solid rgba(190,129,39,.72);
+      border-radius: 8px;
       color: #ead6a4;
       background:
-        linear-gradient(90deg, rgba(72,41,15,.86), rgba(20,12,7,.94)),
-        rgba(21,13,8,.95);
+        linear-gradient(90deg, rgba(67,38,14,.94), rgba(24,14,8,.97));
       box-shadow:
-        inset 0 0 0 2px rgba(22,13,7,.72),
-        0 8px 18px rgba(0,0,0,.24);
+        inset 0 0 0 2px rgba(20,12,7,.78),
+        0 7px 16px rgba(0,0,0,.28);
       text-decoration: none;
     }
 
     .next-event-summary.is-empty {
       grid-template-columns: 1fr;
+      justify-items: center;
       text-align: center;
-      color: #c9ae77;
+      color: #d3b777;
       cursor: default;
     }
 
@@ -2835,6 +2835,7 @@
       color: #e2c16f;
       font-size: .82rem;
       font-weight: 900;
+      text-align: center;
       text-transform: uppercase;
       letter-spacing: .05em;
     }
@@ -2846,7 +2847,9 @@
 
     .next-event-summary:not(.is-empty):hover,
     .next-event-summary:not(.is-empty):focus-visible {
-      filter: brightness(1.08);
+      background:
+        linear-gradient(90deg, rgba(80,46,17,.96), rgba(29,17,9,.99));
+      filter: brightness(1.06);
       outline: none;
     }
 
@@ -2854,10 +2857,19 @@
       .next-event-summary {
         grid-template-columns: 1fr;
         gap: .35rem;
+        text-align: left;
+      }
+
+      .next-event-summary.is-empty {
+        text-align: center;
       }
 
       .next-event-date {
         white-space: normal;
+      }
+
+      .next-event-competition {
+        text-align: left;
       }
     }
 
@@ -2972,6 +2984,17 @@
       color: #c9ae77;
       background: rgba(19,11,6,.74);
       text-align: center;
+    }
+
+
+    .rolling-events.is-empty {
+      min-height: 176px;
+      border: 1px solid rgba(181,119,35,.45);
+      border-radius: 9px;
+      background:
+        linear-gradient(rgba(18,10,6,.72), rgba(13,8,5,.82)),
+        radial-gradient(circle at 30% 30%, rgba(183,120,34,.07), transparent 42%);
+      box-shadow: inset 0 0 0 1px rgba(21,12,6,.56);
     }
 
     @media (max-width: 760px) {
@@ -3915,11 +3938,9 @@
           rollingRoot.innerHTML = "";
 
           if (parsedEvents.length === 0) {
-            const empty = document.createElement("div");
-            empty.className = "events-empty";
-            empty.textContent = data.leertext || "Für die nächsten 7 Tage sind aktuell keine Tippereignisse eingetragen.";
-            rollingRoot.appendChild(empty);
+            rollingRoot.classList.add("is-empty");
           } else {
+            rollingRoot.classList.remove("is-empty");
             const groups = new Map();
 
             parsedEvents.forEach((event) => {

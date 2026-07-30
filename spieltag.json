@@ -6,7 +6,7 @@
   "locale": "de-DE",
   "hinweisAnzeigen": false,
   "hinweis": "",
-  "leertext": "Für die nächsten 7 Tage sind aktuell keine Tippereignisse eingetragen.",
+  "leertext": "",
   "uebersichtLink": "",
   "uebersichtButtonText": "Alle Termine ansehen",
   "kicktippLink": "https://www.kicktipp.de/the-old-smugglers-club/",
@@ -66,5 +66,5 @@
     }
   ],
   "liveDauerMinuten": 120,
-  "naechstesEreignisLeertext": "Aktuell sind keine Tippereignisse geplant."
+  "naechstesEreignisLeertext": "Aktuell sind keine Termine geplant."
 }
