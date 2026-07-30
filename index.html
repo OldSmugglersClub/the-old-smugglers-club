@@ -3800,55 +3800,6 @@
       background: rgba(17,10,6,.82);
     }
 
-  
-    /* ================================================================
-       HALL OF FAME – PIRATISCHER HINTERGRUND & JSON-LOGIK
-       ================================================================ */
-
-    .hall-panel {
-      position: relative;
-      overflow: hidden;
-      background:
-        linear-gradient(rgba(10,6,3,.48), rgba(10,6,3,.66)),
-        radial-gradient(circle at 78% 20%, rgba(186,125,40,.12), transparent 34%),
-        url("./piraten-spieltag-hintergrund.jpg") center 42% / cover no-repeat;
-    }
-
-    .hall-panel::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.10), transparent 38%, rgba(0,0,0,.08)),
-        radial-gradient(circle at 16% 78%, rgba(190,128,39,.05), transparent 26%);
-    }
-
-    .hall-panel > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hall-panel .champion-showcase,
-    .hall-panel .honour-card,
-    .hall-panel .history-row,
-    .hall-panel .record-card {
-      background:
-        linear-gradient(145deg, rgba(30,17,9,.89), rgba(13,8,5,.93));
-      backdrop-filter: blur(1px);
-    }
-
-    .hall-panel .trophy-stage {
-      background:
-        radial-gradient(circle at 50% 45%, rgba(172,111,31,.12), transparent 58%),
-        rgba(12,7,4,.55);
-    }
-
-    .hof-empty {
-      color: #bfa97a;
-      font-style: italic;
-    }
-
   </style>
 </head>
 
@@ -4180,58 +4131,130 @@
       </div>
     </section>
 
-    <section class="section panel hall-panel" id="hall-of-fame">
-      <div class="section-title">
-        <svg class="pirate-icon" aria-hidden="true"><use href="#icon-trophy"></use></svg>
-        <h2 id="hof-title">Hall of Fame</h2>
-      </div>
 
-      <p class="lead" id="hof-intro"></p>
+    <section class="section panel" id="hall-of-fame">
+      <div class="section-title"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-trophy"></use></svg><h2>Hall of Fame</h2></div>
+
+      <p class="lead">
+        Die Ehrenhalle des Old Smugglers Club dokumentiert Champions, Saisonssieger,
+        Sonderwertungen und Rekorde dauerhaft und nachvollziehbar.
+      </p>
 
       <div class="hall-hero">
         <article class="champion-showcase">
-          <div class="champion-badge">
-            <svg class="pirate-icon" aria-hidden="true"><use href="#icon-trophy"></use></svg>
-            <span id="hof-champion-badge">AKTUELLER CHAMPION</span>
-          </div>
+          <div class="champion-badge"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-trophy"></use></svg> AKTUELLER CHAMPION</div>
 
           <div class="trophy-stage">
-            <img class="trophy" id="hof-champion-image"
+            <img class="trophy"
                  src="./Champion-Trophäe.jpeg"
                  alt="Champion-Pokal des Old Smugglers Club"
-                 loading="lazy" decoding="async">
-            <div class="trophy-fallback" id="hof-champion-fallback" hidden aria-label="Pokal">🏆</div>
+                 onerror="
+                   const fallbacks=['./champion-trophy.jpg','./Champion-Trophäe.jpg','./champion-trophy.jpeg'];
+                   const next=fallbacks.shift();
+                   if(!this.dataset.tried){this.dataset.tried='1';this.src=next;}
+                   else if(this.dataset.tried==='1'){this.dataset.tried='2';this.src=fallbacks[0];}
+                   else if(this.dataset.tried==='2'){this.dataset.tried='3';this.src=fallbacks[1];}
+                   else{this.style.display='none';this.nextElementSibling.hidden=false;}
+                 " loading="lazy" decoding="async">
+            <div class="trophy-fallback" hidden aria-label="Pokal">🏆</div>
           </div>
 
           <div>
-            <h3 class="champion-name" id="hof-champion-name"></h3>
-            <p class="champion-meta" id="hof-champion-meta"></p>
-            <div class="champion-season" id="hof-champion-label"></div>
+            <h3 class="champion-name" id="champion-name">ZweikampfGott</h3>
+            <p class="champion-meta" id="champion-meta">Weltmeisterschaft · Champion 2026</p>
+            <div class="champion-season" id="champion-label">Old Smugglers Champion</div>
           </div>
         </article>
 
-        <div class="honours-overview" id="hof-winners"></div>
+        <div class="honours-overview">
+          <div class="honour-card">
+            <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-crown"></use></svg></div>
+            <div>
+              <strong id="meister-title">Meister 2025/2026</strong>
+              <small id="meister-name">Manuel</small>
+            </div>
+          </div>
+
+          <div class="honour-card">
+            <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></div>
+            <div>
+              <strong id="dfb-title">DFB-Pokal 2025/2026</strong>
+              <small id="dfb-name">Manuel</small>
+            </div>
+          </div>
+
+          <div class="honour-card">
+            <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-star-compass"></use></svg></div>
+            <div>
+              <strong id="cl-title">Champions League 2025/2026</strong>
+              <small id="cl-name">ZweikampfGott</small>
+            </div>
+          </div>
+
+          <div class="honour-card">
+            <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-ship-lantern"></use></svg></div>
+            <div>
+              <strong id="weihnachtsregatta-title">Weihnachtsregatta 2026</strong>
+              <small class="status-open" id="weihnachtsregatta-name">Noch offen</small>
+            </div>
+          </div>
+
+          <div class="honour-card">
+            <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-scroll"></use></svg></div>
+            <div>
+              <strong id="piratenkodex-title">Piratenkodex 2026/2027</strong>
+              <small class="status-open" id="piratenkodex-name">Sieger noch offen</small>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="hall-columns">
         <div>
-          <h3 class="hall-section-title" id="hof-chronicle-title">Meisterchronik</h3>
-          <div class="history-table" id="hof-chronicle"></div>
+          <h3 class="hall-section-title">Meisterchronik</h3>
+          <div class="history-table">
+            <div class="history-row">
+              <span id="chronik-season-1">2025/2026</span>
+              <strong id="chronik-name-1">Manuel</strong>
+            </div>
+            <div class="history-row">
+              <span id="chronik-season-2">2026/2027</span>
+              <strong class="status-open" id="chronik-name-2">Noch offen</strong>
+            </div>
+          </div>
         </div>
 
         <div>
-          <h3 class="hall-section-title" id="hof-records-title">Rekordtafel</h3>
-          <div class="records-grid" id="hof-records"></div>
+          <h3 class="hall-section-title">Rekordtafel</h3>
+          <div class="records-grid">
+            <div class="record-card">
+              <span id="record-total-label">Gesamtpunkte</span>
+              <strong id="record-total-value">346 · Manuel</strong>
+            </div>
+            <div class="record-card">
+              <span id="record-bonus-label">Bonuspunkte</span>
+              <strong id="record-bonus-value">60 · ZweikampfGott</strong>
+            </div>
+            <div class="record-card">
+              <span id="record-exact-label">Exakte Tipps</span>
+              <strong id="record-exact-value">17 · Marius</strong>
+            </div>
+            <div class="record-card">
+              <span id="record-other-label">Weitere Rekorde</span>
+              <strong class="status-open" id="record-other-value">Noch offen</strong>
+            </div>
+          </div>
         </div>
       </div>
 
-      <h3 class="hall-section-title" id="hof-honours-title">
-        Ehrenmitglieder & besondere Leistungen
-      </h3>
-      <div class="history-table" id="hof-honours"></div>
+      <h3 class="hall-section-title">Ehrenmitglieder & besondere Leistungen</h3>
+      <div class="history-row">
+        <span id="honours-label">Status</span>
+        <strong class="status-open" id="honours-value">Noch keine Einträge</strong>
+      </div>
     </section>
 
-<section class="section" id="piratenkodex">
+    <section class="section" id="piratenkodex">
       <div class="kodex-map">
         <div class="kodex-heading">
           <div class="eyebrow">Der Kodex der Crew</div>
@@ -4799,172 +4822,103 @@
       }
     }
 
-    async function loadHallOfFameData() {
+    async function loadClubData() {
       try {
-        const response = await fetch("./hall-of-fame.json", { cache: "no-store" });
+        const response = await fetch("./clubdaten.json", { cache: "no-store" });
         if (!response.ok) {
-          throw new Error(`hall-of-fame.json: ${response.status}`);
+          throw new Error(`clubdaten.json konnte nicht geladen werden: ${response.status}`);
         }
 
         const data = await response.json();
 
-        const setText = (id, value, fallback = "") => {
-          const element = document.getElementById(id);
-          if (element) element.textContent = value || fallback;
-        };
+        setText("champion-name", data.aktuellerChampion?.name);
+        setText(
+          "champion-meta",
+          [data.aktuellerChampion?.wettbewerb, data.aktuellerChampion?.titel, data.aktuellerChampion?.jahr]
+            .filter(Boolean)
+            .join(" · ")
+        );
+        setText("champion-label", data.aktuellerChampion?.label);
 
-        setText("hof-title", data.titel, "Hall of Fame");
-        setText("hof-intro", data.einleitung);
-        setText("hof-champion-badge", data.champion?.schild, "AKTUELLER CHAMPION");
-        setText("hof-champion-name", data.champion?.name, "Noch offen");
-        setText("hof-champion-meta", data.champion?.titelzeile);
-        setText("hof-champion-label", data.champion?.untertitel);
+        setText("meister-title", `Meister ${data.meister?.saison ?? ""}`.trim());
+        setText("meister-name", data.meister?.name);
 
-        const championImage = document.getElementById("hof-champion-image");
-        const championFallback = document.getElementById("hof-champion-fallback");
-        if (championImage) {
-          championImage.src = data.champion?.bild || "./Champion-Trophäe.jpeg";
-          championImage.alt = data.champion?.bildAlt || "Champion-Pokal des Old Smugglers Club";
-          championImage.onerror = () => {
-            championImage.style.display = "none";
-            if (championFallback) championFallback.hidden = false;
-          };
-        }
+        setText("dfb-title", `DFB-Pokal ${data.dfbPokal?.saison ?? ""}`.trim());
+        setText("dfb-name", data.dfbPokal?.name);
+        setOpenState("dfb-name", Boolean(data.dfbPokal?.offen), "Noch offen");
 
-        const symbolMap = {
-          krone: "icon-crown",
-          pokal: "icon-trophy",
-          stern: "icon-star-compass",
-          laterne: "icon-ship-lantern",
-          schriftrolle: "icon-scroll"
-        };
-
-        const winnersRoot = document.getElementById("hof-winners");
-        if (winnersRoot) {
-          winnersRoot.replaceChildren();
-          const winners = Array.isArray(data.sieger) ? data.sieger : [];
-
-          winners.forEach((entry) => {
-            const card = document.createElement("div");
-            card.className = "honour-card";
-
-            const iconWrap = document.createElement("div");
-            iconWrap.className = "honour-icon";
-
-            const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-            svg.setAttribute("class", "pirate-icon");
-            svg.setAttribute("aria-hidden", "true");
-
-            const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
-            use.setAttribute("href", `#${symbolMap[entry.symbol] || "icon-trophy"}`);
-            svg.appendChild(use);
-            iconWrap.appendChild(svg);
-
-            const text = document.createElement("div");
-            const title = document.createElement("strong");
-            title.textContent = entry.titel || "";
-            const name = document.createElement("small");
-            name.textContent = entry.name || "Noch offen";
-            name.classList.toggle("status-open", Boolean(entry.offen));
-
-            text.append(title, name);
-            card.append(iconWrap, text);
-            winnersRoot.appendChild(card);
-          });
-        }
-
-        setText("hof-chronicle-title", data.meisterchronikTitel, "Meisterchronik");
-        const chronicleRoot = document.getElementById("hof-chronicle");
-        if (chronicleRoot) {
-          chronicleRoot.replaceChildren();
-          const entries = Array.isArray(data.meisterchronik) ? data.meisterchronik : [];
-
-          entries.forEach((entry) => {
-            const row = document.createElement("div");
-            row.className = "history-row";
-
-            const season = document.createElement("span");
-            season.textContent = entry.saison || "";
-
-            const winner = document.createElement("strong");
-            winner.textContent = entry.sieger || "Noch offen";
-            winner.classList.toggle("status-open", Boolean(entry.offen));
-
-            row.append(season, winner);
-            chronicleRoot.appendChild(row);
-          });
-        }
-
-        setText("hof-records-title", data.rekordtafelTitel, "Rekordtafel");
-        const recordsRoot = document.getElementById("hof-records");
-        if (recordsRoot) {
-          recordsRoot.replaceChildren();
-          const records = Array.isArray(data.rekorde) ? data.rekorde : [];
-
-          records.forEach((entry) => {
-            const card = document.createElement("div");
-            card.className = "record-card";
-
-            const label = document.createElement("span");
-            label.textContent = entry.bezeichnung || "";
-
-            const value = document.createElement("strong");
-            const parts = [entry.wert, entry.spieler].filter(Boolean);
-            value.textContent = parts.join(" · ") || "Noch offen";
-            value.classList.toggle("status-open", Boolean(entry.offen));
-
-            card.append(label, value);
-            recordsRoot.appendChild(card);
-          });
-        }
+        setText("cl-title", `Champions League ${data.championsLeague?.saison ?? ""}`.trim());
+        setText("cl-name", data.championsLeague?.name);
+        setOpenState("cl-name", Boolean(data.championsLeague?.offen), "Noch offen");
 
         setText(
-          "hof-honours-title",
-          data.ehrenmitgliederTitel,
-          "Ehrenmitglieder & besondere Leistungen"
+          "weihnachtsregatta-title",
+          `Weihnachtsregatta ${data.weihnachtsregatta?.jahr ?? ""}`.trim()
+        );
+        setText("weihnachtsregatta-name", data.weihnachtsregatta?.name);
+        setOpenState(
+          "weihnachtsregatta-name",
+          Boolean(data.weihnachtsregatta?.offen),
+          "Noch offen"
         );
 
-        const honoursRoot = document.getElementById("hof-honours");
-        if (honoursRoot) {
-          honoursRoot.replaceChildren();
-          const honours = Array.isArray(data.ehrenmitglieder)
-            ? data.ehrenmitglieder
-            : [];
+        setText(
+          "piratenkodex-title",
+          `Piratenkodex ${data.piratenkodex?.saison ?? ""}`.trim()
+        );
+        setText("piratenkodex-name", data.piratenkodex?.name);
+        setOpenState(
+          "piratenkodex-name",
+          Boolean(data.piratenkodex?.offen),
+          "Sieger noch offen"
+        );
 
-          if (honours.length === 0) {
-            const row = document.createElement("div");
-            row.className = "history-row";
-            const label = document.createElement("span");
-            label.textContent = "Status";
-            const value = document.createElement("strong");
-            value.className = "status-open";
-            value.textContent = "Noch keine Einträge";
-            row.append(label, value);
-            honoursRoot.appendChild(row);
-          } else {
-            honours.forEach((entry) => {
-              const row = document.createElement("div");
-              row.className = "history-row";
-
-              const label = document.createElement("span");
-              label.textContent = entry.status || entry.leistung || "Eintrag";
-
-              const value = document.createElement("strong");
-              value.textContent = entry.name || entry.wert || "Noch offen";
-              value.classList.toggle("status-open", Boolean(entry.offen));
-
-              row.append(label, value);
-              honoursRoot.appendChild(row);
-            });
-          }
+        const chronik = Array.isArray(data.meisterchronik) ? data.meisterchronik : [];
+        if (chronik[0]) {
+          setText("chronik-season-1", chronik[0].saison);
+          setText("chronik-name-1", chronik[0].name);
+          setOpenState("chronik-name-1", Boolean(chronik[0].offen));
         }
+        if (chronik[1]) {
+          setText("chronik-season-2", chronik[1].saison);
+          setText("chronik-name-2", chronik[1].name);
+          setOpenState("chronik-name-2", Boolean(chronik[1].offen));
+        }
+
+        setText("record-total-label", data.rekorde?.gesamtpunkte?.label);
+        setText(
+          "record-total-value",
+          `${data.rekorde?.gesamtpunkte?.wert ?? ""} · ${data.rekorde?.gesamtpunkte?.name ?? ""}`.trim()
+        );
+
+        setText("record-bonus-label", data.rekorde?.bonuspunkte?.label);
+        setText(
+          "record-bonus-value",
+          `${data.rekorde?.bonuspunkte?.wert ?? ""} · ${data.rekorde?.bonuspunkte?.name ?? ""}`.trim()
+        );
+
+        setText("record-exact-label", data.rekorde?.exakteTipps?.label);
+        setText(
+          "record-exact-value",
+          `${data.rekorde?.exakteTipps?.wert ?? ""} · ${data.rekorde?.exakteTipps?.name ?? ""}`.trim()
+        );
+
+        setText("record-other-label", data.rekorde?.weitere?.label);
+        setText("record-other-value", data.rekorde?.weitere?.wert);
+        setOpenState("record-other-value", Boolean(data.rekorde?.weitere?.offen));
+
+        setText("honours-label", data.ehrenmitglieder?.label);
+        setText("honours-value", data.ehrenmitglieder?.wert);
+        setOpenState("honours-value", Boolean(data.ehrenmitglieder?.offen), "Noch keine Einträge");
+
+        console.info("Clubdaten erfolgreich geladen.");
       } catch (error) {
-        console.warn("Hall-of-Fame-Daten konnten nicht geladen werden:", error);
+        console.warn("Clubdaten konnten nicht geladen werden. Fallback-Werte bleiben sichtbar.", error);
       }
     }
 
     loadSmugglerData();
-    loadHallOfFameData();
+    loadClubData();
     loadMatchdayData();
 
     document.getElementById("year").textContent = new Date().getFullYear();
