@@ -2887,7 +2887,7 @@
       </div>
 
       <div class="matchday-actions">
-        <a class="button button-secondary" id="matchday-page-link" href="./dynamo-dresden.html">Zum Smugglerauftrag</a>
+        <a class="button button-secondary" id="matchday-page-link" href="./dynamo-dresden.html">Zum Ereignis</a>
         <a class="button button-primary" id="matchday-kicktipp-link"
            href="https://www.kicktipp.de/the-old-smugglers-club/"
            target="_blank" rel="noopener noreferrer">Jetzt bei Kicktipp tippen</a>
@@ -3336,7 +3336,7 @@
         const pageLink = document.getElementById("matchday-page-link");
         if (pageLink) {
           pageLink.href = data.zielseite || "./dynamo-dresden.html";
-          pageLink.textContent = data.buttonText || "Zum aktuellen Tipptermin";
+          pageLink.textContent = data.buttonText || "Zum Ereignis";
         }
 
         const kicktippLink = document.getElementById("matchday-kicktipp-link");
