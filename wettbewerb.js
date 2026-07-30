@@ -311,7 +311,13 @@
       tbody.appendChild(tr);
     });
     table.appendChild(tbody);
-    root.appendChild(table);
+
+    // Tabellen dürfen auf kleinen Displays nicht die gesamte Seite verbreitern.
+    // Stattdessen bleiben sie innerhalb ihres Bereichs horizontal scrollbar.
+    const wrapper = document.createElement("div");
+    wrapper.className = "table-scroll generic-table-scroll";
+    wrapper.appendChild(table);
+    root.appendChild(wrapper);
   }
 
   function createMatchList(matches) {
