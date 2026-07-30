@@ -1,32 +1,48 @@
-GITHUB-UPLOAD – SPIELTAGSKACHEL MIT NEUTRALEM EREIGNIS-BUTTON
+GITHUB-UPLOAD – DYNAMISCHE SPIELTAGSKACHEL
 
-Folgende Dateien in das Hauptverzeichnis des GitHub-Repositories kopieren:
+Diese Dateien im Hauptverzeichnis des GitHub-Repositories ersetzen:
 
 1. index.html
-   Vorhandene Datei ersetzen.
-
 2. spieltag.json
-   Vorhandene Datei ersetzen.
 
-3. piraten-spieltag-hintergrund.jpg
-   Nur hochladen, falls die Datei noch nicht vorhanden ist.
+Die vorhandenen Hintergrundbilder müssen nicht erneut hochgeladen werden,
+wenn sie bereits im Repository liegen.
 
-4. piraten-chronometer-hintergrund.jpg
-   Nur hochladen, falls die Datei noch nicht vorhanden ist.
+NEUE LOGIK
 
-Umgesetzte Änderung:
-- Der linke Button heißt dauerhaft „Zum Ereignis“.
-- Das Ziel des Buttons bleibt dynamisch und wird weiterhin über „zielseite“ in spieltag.json gesteuert.
-- Dadurch funktioniert derselbe Button für Bundesliga, DFB-Pokal, Champions League, Piratenkodex, Smuggleraufträge, Relegation und Sonderevents.
+1. Wettbewerbsschild
+   Der Text links oben wird dynamisch aus dem Feld "wettbewerb" in spieltag.json geladen.
 
-Beispiele für „zielseite“ in spieltag.json:
-- Bundesliga: ./bundesliga.html
-- DFB-Pokal: ./dfb-pokal.html
-- Champions League: ./champions-league.html
-- Piratenkodex: ./piratenkodex.html
-- Smugglerauftrag: ./dynamo-dresden.html
-- Relegation: ./relegation.html
-- Weihnachtsregatta/Sonderevent: ./weihnachtsregatta.html
+   Beispiele:
+   "Bundesliga"
+   "DFB-Pokal"
+   "Champions League"
+   "Smugglerauftrag"
+   "Piratenkodex"
+   "Relegation"
+   "Sonderevent"
+
+2. Button „Zum Ereignis“
+   Der Button erscheint nur, wenn das konkrete Ereignis feststeht und ein exakter Link vorhanden ist.
+
+   Solange Heim- und Auswärtsteam noch "Noch offen" sind:
+   "ereignisFestgelegt": false
+   "ereignisLink": ""
+
+   Dann wird der Button automatisch ausgeblendet.
+
+3. Sobald das Ereignis feststeht
+   Beispiel:
+
+   "ereignisFestgelegt": true,
+   "ereignisLink": "./bundesliga.html#spieltag-1",
+   "buttonText": "Zum Ereignis"
+
+   Der Link muss direkt zu der Seite oder zum Abschnitt führen,
+   der genau das in der Kachel angezeigte Ereignis beschreibt.
+
+4. Kicktipp-Button
+   Der Button „Jetzt bei Kicktipp tippen“ bleibt immer sichtbar und verwendet weiterhin "kicktippLink".
 
 Nach dem Upload:
 - Änderungen committen.

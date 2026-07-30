@@ -2250,6 +2250,10 @@
       }
     }
 
+    .is-hidden {
+      display: none !important;
+    }
+
     /* Aktueller Tipptermin – Piraten-Design */
     .matchday-panel {
       position: relative;
@@ -2887,7 +2891,7 @@
       </div>
 
       <div class="matchday-actions">
-        <a class="button button-secondary" id="matchday-page-link" href="./dynamo-dresden.html">Zum Ereignis</a>
+        <a class="button button-secondary is-hidden" id="matchday-page-link" href="#" aria-hidden="true">Zum Ereignis</a>
         <a class="button button-primary" id="matchday-kicktipp-link"
            href="https://www.kicktipp.de/the-old-smugglers-club/"
            target="_blank" rel="noopener noreferrer">Jetzt bei Kicktipp tippen</a>
@@ -3335,8 +3339,19 @@
 
         const pageLink = document.getElementById("matchday-page-link");
         if (pageLink) {
-          pageLink.href = data.zielseite || "./dynamo-dresden.html";
-          pageLink.textContent = data.buttonText || "Zum Ereignis";
+          const eventLink = typeof data.ereignisLink === "string" ? data.ereignisLink.trim() : "";
+          const hasConcreteEvent = Boolean(data.ereignisFestgelegt) && eventLink !== "";
+
+          if (hasConcreteEvent) {
+            pageLink.href = eventLink;
+            pageLink.textContent = data.buttonText || "Zum Ereignis";
+            pageLink.classList.remove("is-hidden");
+            pageLink.removeAttribute("aria-hidden");
+          } else {
+            pageLink.href = "#";
+            pageLink.classList.add("is-hidden");
+            pageLink.setAttribute("aria-hidden", "true");
+          }
         }
 
         const kicktippLink = document.getElementById("matchday-kicktipp-link");
