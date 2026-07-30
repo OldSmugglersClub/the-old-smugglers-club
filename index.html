@@ -4145,6 +4145,34 @@
       z-index: 1;
     }
 
+
+
+    /* Mobile-Korrektur: Statusschild der Smuggleraufträge vollständig sichtbar */
+    @media (max-width: 680px) {
+      .smuggler-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .8rem;
+      }
+
+      .smuggler-header > div:first-child {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .smuggler-header h2 {
+        max-width: 100%;
+        font-size: clamp(2.2rem, 12vw, 3.25rem);
+        overflow-wrap: anywhere;
+      }
+
+      .smuggler-header .matchday-status {
+        align-self: flex-start;
+        max-width: 100%;
+        white-space: normal;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 
