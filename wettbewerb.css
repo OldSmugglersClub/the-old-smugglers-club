@@ -205,3 +205,51 @@ footer{
   .actions{flex-direction:column}
   .btn{width:100%}
 }
+
+/* Korrektur: kompakte Bundesliga-Spieltagsübersicht */
+.quick-actions{
+  margin:0 0 16px;
+}
+.matchday-accordion{
+  display:grid;
+  gap:10px;
+}
+.matchday-group{
+  overflow:hidden;
+  border:1px solid rgba(183,122,35,.5);
+  border-radius:9px;
+  background:rgba(17,10,5,.52);
+}
+.matchday-summary{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:14px 16px;
+  color:#e7c56f;
+  font-weight:900;
+  cursor:pointer;
+  list-style:none;
+  background:linear-gradient(90deg,rgba(64,39,17,.9),rgba(25,15,8,.9));
+}
+.matchday-summary::-webkit-details-marker{display:none}
+.matchday-summary::before{
+  content:"▶";
+  flex:0 0 auto;
+  color:#d8ad5c;
+  transition:transform .18s ease;
+}
+.matchday-group[open]>.matchday-summary::before{transform:rotate(90deg)}
+.matchday-summary>span:first-child{flex:1}
+.matchday-count{
+  color:var(--muted);
+  font-size:.88rem;
+  font-weight:700;
+}
+.matchday-group>.match-list{
+  padding:10px;
+}
+@media(max-width:800px){
+  .matchday-summary{padding:13px 12px}
+  .matchday-count{font-size:.78rem}
+}

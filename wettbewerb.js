@@ -71,12 +71,15 @@
       anzeigen: true,
       spiele: games.map(match => ({
         datum: match.datumAnzeige || formatDate(match.datum || match.datumVon),
+        datumSortierung: match.datum || match.datumVon || "9999-12-31",
         anstoss: match.anstoss || "Uhrzeit offen",
         heim: match.heim || "Heimteam offen",
         trenner: "–",
         auswaerts: match.auswaerts || "Auswärtsteam offen",
         ergebnis: formatResult(match),
-        status: match.status || ""
+        status: match.status || "",
+        runde: match.runde || "Spiele",
+        spieltagNummer: Number.isFinite(match.spieltagNummer) ? match.spieltagNummer : null
       }))
     };
   }
@@ -127,10 +130,10 @@
     root.appendChild(table);
   }
 
-  function renderMatches(section, root) {
+  function createMatchList(matches) {
     const list = document.createElement("div");
     list.className = "match-list";
-    safeArray(section.spiele).forEach(match => {
+    safeArray(matches).forEach(match => {
       const row = document.createElement("div");
       row.className = "match-row";
       const meta = document.createElement("span");
@@ -143,12 +146,87 @@
       row.append(meta, pairing, result);
       list.appendChild(row);
     });
-    root.appendChild(list);
+    return list;
   }
 
-  function renderSections(sections) {
+  function renderBundesligaMatchdays(section, root) {
+    const groups = new Map();
+    safeArray(section.spiele).forEach(match => {
+      const key = match.runde || "Spiele";
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(match);
+    });
+
+    const orderedGroups = [...groups.entries()].sort((a, b) => {
+      const aNumber = a[1][0] && a[1][0].spieltagNummer;
+      const bNumber = b[1][0] && b[1][0].spieltagNummer;
+      if (Number.isFinite(aNumber) && Number.isFinite(bNumber)) return aNumber - bNumber;
+      return a[0].localeCompare(b[0], "de");
+    });
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const todayIso = today.toISOString().slice(0, 10);
+    let openIndex = orderedGroups.findIndex(([, matches]) =>
+      matches.some(match => (match.datumSortierung || "9999-12-31") >= todayIso)
+    );
+    if (openIndex < 0) openIndex = Math.max(orderedGroups.length - 1, 0);
+
+    const accordion = document.createElement("div");
+    accordion.className = "matchday-accordion";
+
+    orderedGroups.forEach(([round, matches], index) => {
+      const details = document.createElement("details");
+      details.className = "matchday-group";
+      details.open = index === openIndex;
+
+      const summary = document.createElement("summary");
+      summary.className = "matchday-summary";
+
+      const title = document.createElement("span");
+      title.textContent = round;
+      const count = document.createElement("span");
+      count.className = "matchday-count";
+      count.textContent = `${matches.length} Spiele`;
+
+      summary.append(title, count);
+      details.append(summary, createMatchList(matches));
+      accordion.appendChild(details);
+    });
+
+    root.appendChild(accordion);
+  }
+
+  function renderMatches(section, root) {
+    if (slug === "bundesliga") {
+      renderBundesligaMatchdays(section, root);
+      return;
+    }
+    root.appendChild(createMatchList(section.spiele));
+  }
+
+
+  function renderQuickBackButton(buttons, root) {
+    const backButton = safeArray(buttons).find(button =>
+      button && button.anzeigen !== false && button.text && button.link &&
+      (button.link.includes("#wettbewerbe") || /zurück.*wettbewerb/i.test(button.text))
+    );
+    if (!backButton) return;
+
+    const quickActions = document.createElement("div");
+    quickActions.className = "actions quick-actions";
+    const link = document.createElement("a");
+    link.className = "btn btn-secondary";
+    link.href = backButton.link;
+    link.textContent = backButton.text;
+    quickActions.appendChild(link);
+    root.appendChild(quickActions);
+  }
+
+  function renderSections(sections, buttons) {
     const root = $("dynamic-sections");
     root.innerHTML = "";
+    if (slug === "bundesliga") renderQuickBackButton(buttons, root);
     safeArray(sections).filter(s => s && s.anzeigen !== false).forEach(section => {
       const article = document.createElement("section");
       article.className = "dynamic-section";
@@ -242,7 +320,7 @@
         ? [centralSection, ...safeArray(data.bereiche)]
         : safeArray(data.bereiche);
 
-      renderSections(sections);
+      renderSections(sections, data.buttons);
       renderButtons(data.buttons);
       text("footer-text", data.fusszeile);
     } catch (error) {
