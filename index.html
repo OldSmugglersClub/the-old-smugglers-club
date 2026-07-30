@@ -2790,7 +2790,141 @@
       }
     }
 
-</style>
+
+    .rolling-events {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .event-day {
+      overflow: hidden;
+      border: 1px solid rgba(181,119,35,.66);
+      border-radius: 10px;
+      background:
+        radial-gradient(circle at 85% 0%, rgba(189,128,39,.08), transparent 32%),
+        linear-gradient(145deg, rgba(34,21,12,.97), rgba(12,8,5,.99));
+      box-shadow:
+        inset 0 0 0 2px rgba(26,15,7,.76),
+        0 8px 18px rgba(0,0,0,.32);
+    }
+
+    .event-day-title {
+      margin: 0;
+      padding: .7rem 1rem;
+      border-bottom: 1px solid rgba(190,128,39,.48);
+      color: #ebc873;
+      background: linear-gradient(90deg, rgba(80,46,16,.88), rgba(31,18,9,.88));
+      font-size: .92rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-shadow: 0 2px 3px rgba(0,0,0,.75);
+    }
+
+    .event-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .event-row {
+      position: relative;
+      display: grid;
+      grid-template-columns: 84px minmax(145px,.78fr) minmax(0,1.8fr) auto;
+      gap: .8rem;
+      align-items: center;
+      min-height: 54px;
+      padding: .68rem .9rem;
+      color: #ead6a4;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(186,123,37,.20);
+      transition: background .18s ease, transform .18s ease, filter .18s ease;
+    }
+
+    .event-row:last-child {
+      border-bottom: 0;
+    }
+
+    .event-row:hover,
+    .event-row:focus-visible {
+      background: rgba(102,60,20,.24);
+      filter: brightness(1.08);
+      outline: none;
+    }
+
+    .event-time {
+      color: #e7bd62;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .event-competition {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      padding: .28rem .62rem;
+      border: 1px solid rgba(190,129,39,.58);
+      border-radius: 5px;
+      color: #e5c475;
+      background: linear-gradient(#3d2410,#1d1108);
+      font-size: .76rem;
+      font-weight: 800;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .event-match {
+      min-width: 0;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .event-title {
+      display: block;
+      margin-top: .12rem;
+      color: #b99b62;
+      font-size: .78rem;
+      font-weight: 400;
+    }
+
+    .event-status {
+      color: #cda65b;
+      font-size: .78rem;
+      white-space: nowrap;
+    }
+
+    .events-empty {
+      padding: 1.1rem;
+      border: 1px solid rgba(181,119,35,.52);
+      border-radius: 9px;
+      color: #c9ae77;
+      background: rgba(19,11,6,.74);
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .event-row {
+        grid-template-columns: 70px 1fr;
+        gap: .45rem .7rem;
+      }
+
+      .event-competition {
+        justify-self: start;
+      }
+
+      .event-match {
+        grid-column: 1 / -1;
+      }
+
+      .event-status {
+        grid-column: 1 / -1;
+        white-space: normal;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
@@ -3476,24 +3610,14 @@
         const note = document.getElementById("matchday-note");
         const pageLink = document.getElementById("matchday-page-link");
         const kicktippLink = document.getElementById("matchday-kicktipp-link");
-        const matchList = document.getElementById("matchday-list");
+        const rollingRoot = document.getElementById("rolling-events");
 
         if (competition) {
-          competition.textContent = data.wettbewerb || "";
-          competition.classList.toggle("is-hidden", !data.wettbewerb);
+          competition.textContent = data.wettbewerbSchild || "Nächste Ereignisse";
         }
 
         if (title) {
-          const titleParts = [];
-          if (data.titel) titleParts.push(data.titel);
-          if (data.saison) titleParts.push(`Saison ${data.saison}`);
-          title.textContent = titleParts.join(" · ");
-          title.classList.toggle("is-hidden", titleParts.length === 0);
-        }
-
-        if (status) {
-          status.textContent = data.status || "";
-          status.classList.toggle("is-hidden", !data.status);
+          title.textContent = data.titel || "Die nächsten 7 Tage";
         }
 
         if (note) {
@@ -3502,66 +3626,135 @@
           note.classList.toggle("is-hidden", !showNote);
         }
 
-        if (pageLink) {
-          const eventUrl = typeof data.ereignisLink === "string" ? data.ereignisLink.trim() : "";
-          const eventText = data.buttonText || "";
-          const showEventButton = Boolean(data.ereignisFestgelegt) && Boolean(eventUrl) && Boolean(eventText);
+        const now = new Date();
+        const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        const days = Number.isFinite(Number(data.anzeigeTage)) ? Number(data.anzeigeTage) : 7;
+        const endWindow = new Date(startOfToday);
+        endWindow.setDate(endWindow.getDate() + days);
+        endWindow.setMilliseconds(-1);
 
-          pageLink.href = showEventButton ? eventUrl : "#";
-          pageLink.textContent = showEventButton ? eventText : "";
-          pageLink.classList.toggle("is-hidden", !showEventButton);
-          pageLink.setAttribute("aria-hidden", showEventButton ? "false" : "true");
+        const events = Array.isArray(data.ereignisse) ? data.ereignisse : [];
+
+        const parsedEvents = events
+          .map((event) => {
+            const date = typeof event.datum === "string" ? event.datum : "";
+            const time = typeof event.anstoss === "string" && event.anstoss ? event.anstoss : "00:00";
+            const timestamp = new Date(`${date}T${time}:00`);
+            return { ...event, timestamp };
+          })
+          .filter((event) =>
+            !Number.isNaN(event.timestamp.getTime()) &&
+            event.timestamp >= now &&
+            event.timestamp <= endWindow
+          )
+          .sort((a, b) => a.timestamp - b.timestamp);
+
+        if (status) {
+          const countText = parsedEvents.length === 1
+            ? "1 Ereignis"
+            : `${parsedEvents.length} Ereignisse`;
+          status.textContent = data.statusSchild || countText;
+          status.classList.remove("is-hidden");
+        }
+
+        if (pageLink) {
+          const overviewLink = typeof data.uebersichtLink === "string" ? data.uebersichtLink.trim() : "";
+          const overviewText = data.uebersichtButtonText || "";
+          const showOverview = Boolean(overviewLink) && Boolean(overviewText);
+          pageLink.href = showOverview ? overviewLink : "#";
+          pageLink.textContent = showOverview ? overviewText : "";
+          pageLink.classList.toggle("is-hidden", !showOverview);
+          pageLink.setAttribute("aria-hidden", showOverview ? "false" : "true");
         }
 
         if (kicktippLink) {
           const kicktippUrl = typeof data.kicktippLink === "string" ? data.kicktippLink.trim() : "";
           const kicktippText = data.kicktippButtonText || "";
-          const showKicktippButton = Boolean(kicktippUrl) && Boolean(kicktippText);
-
-          kicktippLink.href = showKicktippButton ? kicktippUrl : "#";
-          kicktippLink.textContent = showKicktippButton ? kicktippText : "";
-          kicktippLink.classList.toggle("is-hidden", !showKicktippButton);
-          kicktippLink.setAttribute("aria-hidden", showKicktippButton ? "false" : "true");
+          const showKicktipp = Boolean(kicktippUrl) && Boolean(kicktippText);
+          kicktippLink.href = showKicktipp ? kicktippUrl : "#";
+          kicktippLink.textContent = showKicktipp ? kicktippText : "";
+          kicktippLink.classList.toggle("is-hidden", !showKicktipp);
+          kicktippLink.setAttribute("aria-hidden", showKicktipp ? "false" : "true");
         }
 
-        if (matchList) {
-          const matches = Array.isArray(data.spiele) ? data.spiele : [];
-          matchList.innerHTML = "";
+        if (rollingRoot) {
+          rollingRoot.innerHTML = "";
 
-          matches.forEach((match) => {
-            const article = document.createElement("article");
-            article.className = "matchday-item";
+          if (parsedEvents.length === 0) {
+            const empty = document.createElement("div");
+            empty.className = "events-empty";
+            empty.textContent = data.leertext || "Für die nächsten 7 Tage sind aktuell keine Tippereignisse eingetragen.";
+            rollingRoot.appendChild(empty);
+          } else {
+            const groups = new Map();
 
-            const date = match.datum || "";
-            const time = match.anstoss || "";
-            const home = match.heim || "";
-            const separator = match.trenner || "";
-            const away = match.auswaerts || "";
-            const matchStatus = match.status || "";
+            parsedEvents.forEach((event) => {
+              const key = event.datum;
+              if (!groups.has(key)) groups.set(key, []);
+              groups.get(key).push(event);
+            });
 
-            article.innerHTML = `
-              <div class="match-time">
-                <strong>${date}</strong>
-                <span>${time}</span>
-              </div>
-              <div class="match-teams">
-                <strong>${home}</strong>
-                ${separator ? `<span class="match-vs">${separator}</span>` : ""}
-                <strong>${away}</strong>
-                ${matchStatus ? `<small>${matchStatus}</small>` : ""}
-              </div>
-              <div class="match-emblem" aria-hidden="true">
-                <div>
-                  <strong>${data.emblemKurz || ""}</strong>
-                  <small>${data.emblemText || ""}</small>
-                </div>
-              </div>
-            `;
+            const locale = data.locale || "de-DE";
 
-            matchList.appendChild(article);
-          });
+            groups.forEach((dayEvents, dateKey) => {
+              const dayDate = new Date(`${dateKey}T12:00:00`);
+              const daySection = document.createElement("section");
+              daySection.className = "event-day";
 
-          matchList.classList.toggle("is-hidden", matches.length === 0);
+              const dayTitle = document.createElement("h4");
+              dayTitle.className = "event-day-title";
+              dayTitle.textContent = new Intl.DateTimeFormat(locale, {
+                weekday: "long",
+                day: "2-digit",
+                month: "long"
+              }).format(dayDate);
+
+              const table = document.createElement("div");
+              table.className = "event-table";
+
+              dayEvents.forEach((event) => {
+                const row = document.createElement(event.ereignisLink ? "a" : "div");
+                row.className = "event-row";
+
+                if (event.ereignisLink) {
+                  row.href = event.ereignisLink;
+                  row.setAttribute("aria-label", `${event.wettbewerb || "Ereignis"}: ${event.heim || ""} gegen ${event.auswaerts || ""}`);
+                }
+
+                const time = document.createElement("span");
+                time.className = "event-time";
+                time.textContent = event.anstoss || "";
+
+                const competitionLabel = document.createElement("span");
+                competitionLabel.className = "event-competition";
+                competitionLabel.textContent = event.wettbewerb || "Ereignis";
+
+                const match = document.createElement("span");
+                match.className = "event-match";
+                const pairing = [event.heim, event.trenner || "–", event.auswaerts]
+                  .filter(Boolean)
+                  .join(" ");
+                match.textContent = pairing;
+
+                if (event.titel) {
+                  const subtitle = document.createElement("small");
+                  subtitle.className = "event-title";
+                  subtitle.textContent = event.titel;
+                  match.appendChild(subtitle);
+                }
+
+                const eventStatus = document.createElement("span");
+                eventStatus.className = "event-status";
+                eventStatus.textContent = event.status || "";
+
+                row.append(time, competitionLabel, match, eventStatus);
+                table.appendChild(row);
+              });
+
+              daySection.append(dayTitle, table);
+              rollingRoot.appendChild(daySection);
+            });
+          }
         }
       } catch (error) {
         console.error("Spieltagsdaten konnten nicht geladen werden:", error);
