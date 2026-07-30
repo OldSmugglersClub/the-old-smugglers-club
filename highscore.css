@@ -355,3 +355,15 @@
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 @media(max-width:700px){.hs-system-status{align-items:flex-start;flex-direction:column}.hs-system-status strong{white-space:normal}.hs-system-status button{margin-left:0;width:100%}}
+
+
+/* =========================================================
+   Version 2.31 – Registerausgabe und Zustandsübernahme
+   ========================================================= */
+.hs-register-actions{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:12px 0 16px;padding:12px 14px;border:1px solid rgba(184,138,61,.48);background:linear-gradient(180deg,rgba(43,28,15,.96),rgba(18,11,6,.98));box-shadow:inset 0 0 0 3px rgba(0,0,0,.2)}
+.hs-register-actions p{margin:0;min-width:0}.hs-register-actions p span{display:block;color:#9e8962;text-transform:uppercase;letter-spacing:.1em;font-size:.61rem;font-weight:800}.hs-register-actions p strong{display:block;margin-top:3px;color:#ead097;font:700 .9rem Georgia,serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hs-register-actions>div{display:flex;gap:8px;flex:0 0 auto}.hs-register-btn{min-height:38px;padding:8px 13px;border:1px solid rgba(199,151,69,.65);border-radius:4px;background:linear-gradient(180deg,#493019,#211307);color:#edd39a;font-weight:800;letter-spacing:.035em;cursor:pointer}.hs-register-btn:hover{border-color:#e5bd68;background:linear-gradient(180deg,#61401f,#2c190b)}.hs-register-btn:focus-visible{outline:3px solid rgba(234,198,117,.92);outline-offset:3px}
+@media(max-width:620px){.hs-register-actions{align-items:stretch;flex-direction:column}.hs-register-actions p strong{white-space:normal}.hs-register-actions>div{display:grid;grid-template-columns:1fr 1fr}.hs-register-btn{width:100%}}
+@media print{
+  body{background:#fff!important;color:#111!important}.hs-page{max-width:none!important;padding:0!important}.hs-hero,.hs-main-tabs,.hs-system-status,.hs-podium-panel,.hs-search,.hs-ranking-toolbar,.hs-register-actions,.hs-pagination,.hs-actions,.hs-section:not(.is-active){display:none!important}.hs-panel{border:0!important;box-shadow:none!important;background:#fff!important;padding:0!important}.hs-panel-head{border-bottom:2px solid #222!important}.hs-panel h2,.hs-panel p,.hs-table,.hs-table th,.hs-table td{color:#111!important;text-shadow:none!important}.hs-table-wrap{overflow:visible!important}.hs-table{width:100%!important;border-collapse:collapse!important}.hs-table th,.hs-table td{border:1px solid #777!important;background:#fff!important}.hs-sort{color:#111!important}.hs-sort span{display:none!important}.hs-section{display:block!important}.hs-section:not(#section-individual){display:none!important}
+}

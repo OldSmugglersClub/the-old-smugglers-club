@@ -1,5 +1,16 @@
 # Changelog
 
+## Version 2.31 – Highscore Registerausgabe & Zustandsübernahme
+
+- CSV-Export für die aktuell gewählte Gesamt- oder Spieltagswertung ergänzt.
+- Export berücksichtigt aktive Suche und Sortierung, exportiert aber unabhängig von der sichtbaren Seitengröße alle Treffer.
+- Druckansicht für eine reduzierte, klar lesbare Ranglistenausgabe ergänzt.
+- Gewählte Ranglistenansicht, Sortierung und Seitengröße werden lokal im Browser gespeichert und beim nächsten Besuch wiederhergestellt.
+- Exportdateien enthalten Saison, Ansicht und Datenstand aus der zentralen Highscore-Datendatei.
+- Neue Bedienelemente vollständig im bestehenden Holz-, Leder- und Messingstil umgesetzt.
+- Mobile Darstellung der Registerausgabe angepasst.
+- Grundlayout, Raster, Kachelgrößen und alle übrigen Websitebereiche unverändert gelassen.
+
 ## Version 2.30 – Highscore Robustheit & Barrierefreiheit
 
 - Sichtbaren Lade-, Erfolgs- und Fehlerstatus für die zentrale Highscore-Datendatei ergänzt.

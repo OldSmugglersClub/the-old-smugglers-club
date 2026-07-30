@@ -2,6 +2,7 @@ const fmt = n => Number(n || 0).toLocaleString('de-DE', { maximumFractionDigits:
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 let data = {};
+const STORAGE_KEY = 'tosmc-highscore-state-v231';
 const state = {
   view: 'overall',
   page: 1,
@@ -10,6 +11,69 @@ const state = {
   sortKey: 'official',
   sortDir: 'asc'
 };
+
+function loadSavedState() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    if (['overall', 'matchday'].includes(saved.view)) state.view = saved.view;
+    if ([25, 50, 100].includes(Number(saved.pageSize))) state.pageSize = Number(saved.pageSize);
+    if (typeof saved.sortKey === 'string') state.sortKey = saved.sortKey;
+    if (['asc', 'desc'].includes(saved.sortDir)) state.sortDir = saved.sortDir;
+  } catch (error) {
+    console.warn('Gespeicherter Highscore-Zustand konnte nicht gelesen werden.', error);
+  }
+}
+
+function saveState() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      view: state.view, pageSize: state.pageSize, sortKey: state.sortKey, sortDir: state.sortDir
+    }));
+  } catch (error) {
+    console.warn('Highscore-Zustand konnte nicht gespeichert werden.', error);
+  }
+}
+
+function currentFilteredRows() {
+  const query = state.query.trim().toLocaleLowerCase('de');
+  const rows = sortedRows(state.view);
+  return query ? rows.filter(row => String(row.name).toLocaleLowerCase('de').includes(query)) : rows;
+}
+
+function csvCell(value) {
+  return `"${String(value ?? '').replace(/"/g, '""')}"`;
+}
+
+function exportCurrentRanking() {
+  const rows = currentFilteredRows();
+  const overall = state.view === 'overall';
+  const header = overall
+    ? ['Rang', 'Spieler', 'Bonuspunkte', 'Spieltagsiege', 'Gesamtpunkte']
+    : ['Rang', 'Spieler', 'Punkte', 'Bonus', 'Gesamtpunkte', 'Spieltagsplatz'];
+  const body = rows.map(row => overall
+    ? [row.rank, row.name, row.bonusPoints, row.matchdayWins, row.totalPoints]
+    : [row.rank, row.name, row.points, row.bonusPoints, row.totalPoints, row.matchdayRank]);
+  const meta = [
+    ['The Old Smugglers Club – Highscore'],
+    [`Saison ${data.meta?.season || '2026/2027'}`],
+    [overall ? 'Gesamtwertung' : (data.meta?.matchday || 'Einzelspieltag')],
+    [`Datenstand ${data.meta?.exportDate || 'unbekannt'}`],
+    []
+  ];
+  const csv = '\uFEFF' + [...meta, header, ...body].map(row => row.map(csvCell).join(';')).join('\r\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  const suffix = overall ? 'gesamtwertung' : 'spieltag';
+  link.href = url;
+  link.download = `old-smugglers-highscore-${suffix}.csv`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+  setSystemStatus('ready', 'CSV erstellt', `${rows.length} Ranglisteneinträge wurden exportiert.`);
+}
+
 
 function setSystemStatus(type, title, message, retry = false) {
   const el = document.querySelector('#hs-system-status');
@@ -152,10 +216,11 @@ function updateRankingToolbar(filteredCount) {
 }
 
 function renderIndividual() {
-  const all = sortedRows(state.view);
-  const query = state.query.trim().toLocaleLowerCase('de');
-  const filtered = query ? all.filter(row => String(row.name).toLocaleLowerCase('de').includes(query)) : all;
+  const filtered = currentFilteredRows();
   updateRankingToolbar(filtered.length);
+  const exportCaption = document.querySelector('#export-caption');
+  if (exportCaption) exportCaption.textContent = state.view === 'overall' ? 'Aktuelle Gesamtwertung' : (data.meta?.matchday || 'Aktueller Einzelspieltag');
+  saveState();
   const pages = Math.max(1, Math.ceil(filtered.length / state.pageSize));
   state.page = Math.min(state.page, pages);
   const start = (state.page - 1) * state.pageSize;
@@ -310,6 +375,7 @@ function resetRankingControls() {
 }
 
 function init() {
+  loadSavedState();
   const individuals = officialRows('overall');
   const matchday = officialRows('matchday');
   const teams = [...(data.teams?.overall || [])].sort((a, b) => Number(b.totalPoints || 0) - Number(a.totalPoints || 0));
@@ -324,6 +390,9 @@ function init() {
   document.querySelector('#summary-team-points').textContent = teamsTied && Number(teams[0]?.totalPoints || 0) === 0 ? 'Noch ohne Wertung' : `${fmt(teams[0]?.totalPoints)} Punkte`;
   document.querySelector('#summary-updated').textContent = data.meta?.exportDate || '–';
 
+  document.querySelectorAll('[data-individual-view]').forEach(item => classListToggle(item, item.dataset.individualView === state.view));
+  const pageSizeSelect = document.querySelector('#page-size');
+  if (pageSizeSelect) pageSizeSelect.value = String(state.pageSize);
   renderIndividual();
   renderTeam('Old Smugglers Team');
   renderTeam('New Smugglers Team');
@@ -366,6 +435,8 @@ function init() {
     renderIndividual();
   });
   document.querySelector('#ranking-reset').addEventListener('click', resetRankingControls);
+  document.querySelector('#export-csv').addEventListener('click', exportCurrentRanking);
+  document.querySelector('#print-ranking').addEventListener('click', () => window.print());
   document.querySelector('#page-prev').addEventListener('click', () => {
     if (state.page > 1) {
       state.page--;
