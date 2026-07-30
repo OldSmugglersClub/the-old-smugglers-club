@@ -4,110 +4,6 @@
   "hinweis": "Zentrale Mannschaftsdaten. Namen werden hier einmal gepflegt und in allen Spielen über die Team-ID verwendet. Die Felder national und international sind optional und für spätere Wettbewerbszuordnungen vorbereitet.",
   "teams": [
     {
-      "id": "augsburg",
-      "name": "FC Augsburg",
-      "kurzname": "FC Augsburg",
-      "land": "Deutschland",
-      "logo": "",
-      "aktiv": true,
-      "national": "bundesliga",
-      "international": {
-        "uefa": null,
-        "wettbewerb": null
-      }
-    },
-    {
-      "id": "bayern-muenchen",
-      "name": "FC Bayern München",
-      "kurzname": "FC Bayern",
-      "land": "Deutschland",
-      "logo": "",
-      "aktiv": true,
-      "national": "bundesliga",
-      "international": {
-        "uefa": null,
-        "wettbewerb": null
-      }
-    },
-    {
-      "id": "dortmund",
-      "name": "Borussia Dortmund",
-      "kurzname": "Borussia Dortmund",
-      "land": "Deutschland",
-      "logo": "",
-      "aktiv": true,
-      "national": "bundesliga",
-      "international": {
-        "uefa": null,
-        "wettbewerb": null
-      }
-    },
-    {
-      "id": "elversberg",
-      "name": "SV Elversberg",
-      "kurzname": "SV Elversberg",
-      "land": "Deutschland",
-      "logo": "",
-      "aktiv": true,
-      "national": "bundesliga",
-      "international": {
-        "uefa": null,
-        "wettbewerb": null
-      }
-    },
-    {
-      "id": "frankfurt",
-      "name": "Eintracht Frankfurt",
-      "kurzname": "Eintracht Frankfurt",
-      "land": "Deutschland",
-      "logo": "",
-      "aktiv": true,
-      "national": "bundesliga",
-      "international": {
-        "uefa": null,
-        "wettbewerb": null
-      }
-    },
-    {
-      "id": "freiburg",
-      "name": "Sport-Club Freiburg",
-      "kurzname": "SC Freiburg",
-      "land": "Deutschland",
-      "logo": "",
-      "aktiv": true,
-      "national": "bundesliga",
-      "international": {
-        "uefa": null,
-        "wettbewerb": null
-      }
-    },
-    {
-      "id": "hamburger-sv",
-      "name": "Hamburger SV",
-      "kurzname": "Hamburger SV",
-      "land": "Deutschland",
-      "logo": "",
-      "aktiv": true,
-      "national": "bundesliga",
-      "international": {
-        "uefa": null,
-        "wettbewerb": null
-      }
-    },
-    {
-      "id": "hoffenheim",
-      "name": "TSG Hoffenheim",
-      "kurzname": "TSG Hoffenheim",
-      "land": "Deutschland",
-      "logo": "",
-      "aktiv": true,
-      "national": "bundesliga",
-      "international": {
-        "uefa": null,
-        "wettbewerb": null
-      }
-    },
-    {
       "id": "koeln",
       "name": "1. FC Köln",
       "kurzname": "1. FC Köln",
@@ -121,9 +17,22 @@
       }
     },
     {
-      "id": "leverkusen",
-      "name": "Bayer 04 Leverkusen",
-      "kurzname": "Bayer 04 Leverkusen",
+      "id": "nuernberg",
+      "name": "1. FC Nürnberg",
+      "kurzname": "1. FC Nürnberg",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "2-bundesliga",
+      "international": {
+        "uefa": false,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "union-berlin",
+      "name": "1. FC Union Berlin",
+      "kurzname": "1. FC Union Berlin",
       "land": "Deutschland",
       "logo": "",
       "aktiv": true,
@@ -147,6 +56,71 @@
       }
     },
     {
+      "id": "ac-mailand",
+      "name": "AC Mailand",
+      "kurzname": "AC Mailand",
+      "land": "Italien",
+      "logo": "",
+      "aktiv": true,
+      "national": "serie-a",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "aston-villa",
+      "name": "Aston Villa",
+      "kurzname": "Aston Villa",
+      "land": "England",
+      "logo": "",
+      "aktiv": true,
+      "national": "premier-league",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "leverkusen",
+      "name": "Bayer 04 Leverkusen",
+      "kurzname": "Bayer 04 Leverkusen",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "benfica-lissabon",
+      "name": "Benfica Lissabon",
+      "kurzname": "Benfica Lissabon",
+      "land": "Portugal",
+      "logo": "",
+      "aktiv": true,
+      "national": "primeira-liga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "dortmund",
+      "name": "Borussia Dortmund",
+      "kurzname": "Borussia Dortmund",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
       "id": "moenchengladbach",
       "name": "Borussia Mönchengladbach",
       "kurzname": "Gladbach",
@@ -160,9 +134,9 @@
       }
     },
     {
-      "id": "paderborn",
-      "name": "SC Paderborn 07",
-      "kurzname": "SC Paderborn 07",
+      "id": "frankfurt",
+      "name": "Eintracht Frankfurt",
+      "kurzname": "Eintracht Frankfurt",
       "land": "Deutschland",
       "logo": "",
       "aktiv": true,
@@ -173,13 +147,65 @@
       }
     },
     {
-      "id": "rb-leipzig",
-      "name": "RB Leipzig",
-      "kurzname": "RB Leipzig",
+      "id": "augsburg",
+      "name": "FC Augsburg",
+      "kurzname": "FC Augsburg",
       "land": "Deutschland",
       "logo": "",
       "aktiv": true,
       "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "barcelona",
+      "name": "FC Barcelona",
+      "kurzname": "FC Barcelona",
+      "land": "Spanien",
+      "logo": "",
+      "aktiv": true,
+      "national": "la-liga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "bayern-muenchen",
+      "name": "FC Bayern München",
+      "kurzname": "FC Bayern",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "fc-bologna",
+      "name": "FC Bologna",
+      "kurzname": "FC Bologna",
+      "land": "Italien",
+      "logo": "",
+      "aktiv": true,
+      "national": "serie-a",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "fc-liverpool",
+      "name": "FC Liverpool",
+      "kurzname": "FC Liverpool",
+      "land": "England",
+      "logo": "",
+      "aktiv": true,
+      "national": "premier-league",
       "international": {
         "uefa": null,
         "wettbewerb": null
@@ -199,9 +225,9 @@
       }
     },
     {
-      "id": "stuttgart",
-      "name": "VfB Stuttgart",
-      "kurzname": "VfB Stuttgart",
+      "id": "hamburger-sv",
+      "name": "Hamburger SV",
+      "kurzname": "Hamburger SV",
       "land": "Deutschland",
       "logo": "",
       "aktiv": true,
@@ -212,9 +238,178 @@
       }
     },
     {
-      "id": "union-berlin",
-      "name": "1. FC Union Berlin",
-      "kurzname": "1. FC Union Berlin",
+      "id": "inter-mailand",
+      "name": "Inter Mailand",
+      "kurzname": "Inter Mailand",
+      "land": "Italien",
+      "logo": "",
+      "aktiv": true,
+      "national": "serie-a",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "juventus-turin",
+      "name": "Juventus Turin",
+      "kurzname": "Juventus Turin",
+      "land": "Italien",
+      "logo": "",
+      "aktiv": true,
+      "national": "serie-a",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "manchester-city",
+      "name": "Manchester City",
+      "kurzname": "Manchester City",
+      "land": "England",
+      "logo": "",
+      "aktiv": true,
+      "national": "premier-league",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "manchester-united",
+      "name": "Manchester United",
+      "kurzname": "Manchester United",
+      "land": "England",
+      "logo": "",
+      "aktiv": true,
+      "national": "premier-league",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "nottingham-forest",
+      "name": "Nottingham Forest",
+      "kurzname": "Nottingham Forest",
+      "land": "England",
+      "logo": "",
+      "aktiv": true,
+      "national": "premier-league",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "olympique-marseille",
+      "name": "Olympique Marseille",
+      "kurzname": "Olympique Marseille",
+      "land": "Frankreich",
+      "logo": "",
+      "aktiv": true,
+      "national": "ligue-1",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "paris-saint-germain",
+      "name": "Paris Saint-Germain",
+      "kurzname": "Paris Saint-Germain",
+      "land": "Frankreich",
+      "logo": "",
+      "aktiv": true,
+      "national": "ligue-1",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "rb-leipzig",
+      "name": "RB Leipzig",
+      "kurzname": "RB Leipzig",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "real-madrid",
+      "name": "Real Madrid",
+      "kurzname": "Real Madrid",
+      "land": "Spanien",
+      "logo": "",
+      "aktiv": true,
+      "national": "la-liga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "paderborn",
+      "name": "SC Paderborn 07",
+      "kurzname": "SC Paderborn 07",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "dynamo-dresden",
+      "name": "SG Dynamo Dresden",
+      "kurzname": "Dynamo Dresden",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "2-bundesliga",
+      "international": {
+        "uefa": false,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "freiburg",
+      "name": "Sport-Club Freiburg",
+      "kurzname": "SC Freiburg",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "sporting-lissabon",
+      "name": "Sporting Lissabon",
+      "kurzname": "Sporting Lissabon",
+      "land": "Portugal",
+      "logo": "",
+      "aktiv": true,
+      "national": "primeira-liga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "elversberg",
+      "name": "SV Elversberg",
+      "kurzname": "SV Elversberg",
       "land": "Deutschland",
       "logo": "",
       "aktiv": true,
@@ -228,6 +423,45 @@
       "id": "werder-bremen",
       "name": "SV Werder Bremen",
       "kurzname": "Werder Bremen",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "tottenham-hotspur",
+      "name": "Tottenham Hotspur",
+      "kurzname": "Tottenham Hotspur",
+      "land": "England",
+      "logo": "",
+      "aktiv": true,
+      "national": "premier-league",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "hoffenheim",
+      "name": "TSG Hoffenheim",
+      "kurzname": "TSG Hoffenheim",
+      "land": "Deutschland",
+      "logo": "",
+      "aktiv": true,
+      "national": "bundesliga",
+      "international": {
+        "uefa": null,
+        "wettbewerb": null
+      }
+    },
+    {
+      "id": "stuttgart",
+      "name": "VfB Stuttgart",
+      "kurzname": "VfB Stuttgart",
       "land": "Deutschland",
       "logo": "",
       "aktiv": true,
