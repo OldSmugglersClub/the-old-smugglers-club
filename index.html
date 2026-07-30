@@ -3714,25 +3714,58 @@
 
         const events = Array.isArray(data.ereignisse) ? data.ereignisse : [];
 
+        const defaultLiveDuration = Number.isFinite(Number(data.liveDauerMinuten))
+          ? Number(data.liveDauerMinuten)
+          : 120;
+
         const parsedEvents = events
           .map((event) => {
             const date = typeof event.datum === "string" ? event.datum : "";
             const time = typeof event.anstoss === "string" && event.anstoss ? event.anstoss : "00:00";
             const timestamp = new Date(`${date}T${time}:00`);
-            return { ...event, timestamp };
+            const liveDuration = Number.isFinite(Number(event.liveDauerMinuten))
+              ? Number(event.liveDauerMinuten)
+              : defaultLiveDuration;
+            const endTimestamp = new Date(timestamp.getTime() + liveDuration * 60 * 1000);
+            const isLive = timestamp <= now && endTimestamp > now;
+
+            return { ...event, timestamp, endTimestamp, isLive };
           })
           .filter((event) =>
             !Number.isNaN(event.timestamp.getTime()) &&
-            event.timestamp >= now &&
+            event.endTimestamp >= now &&
             event.timestamp <= endWindow
           )
           .sort((a, b) => a.timestamp - b.timestamp);
 
         if (status) {
-          const countText = parsedEvents.length === 1
-            ? "1 Ereignis"
-            : `${parsedEvents.length} Ereignisse`;
-          status.textContent = data.statusSchild || countText;
+          const customStatus = typeof data.statusSchild === "string"
+            ? data.statusSchild.trim()
+            : "";
+
+          let automaticStatus;
+
+          if (parsedEvents.some((event) => event.isLive)) {
+            automaticStatus = "LIVE";
+          } else if (parsedEvents.length === 0) {
+            automaticStatus = "KEINE TERMINE";
+          } else {
+            const allAreMatches = parsedEvents.every(
+              (event) => event.typ === "spiel" || (event.heim && event.auswaerts)
+            );
+
+            if (allAreMatches) {
+              automaticStatus = parsedEvents.length === 1
+                ? "1 SPIEL"
+                : `${parsedEvents.length} SPIELE`;
+            } else {
+              automaticStatus = parsedEvents.length === 1
+                ? "1 TERMIN"
+                : `${parsedEvents.length} TERMINE`;
+            }
+          }
+
+          status.textContent = customStatus || automaticStatus;
           status.classList.remove("is-hidden");
         }
 
@@ -3824,7 +3857,7 @@
 
                 const eventStatus = document.createElement("span");
                 eventStatus.className = "event-status";
-                eventStatus.textContent = event.status || "";
+                eventStatus.textContent = event.isLive ? "LIVE" : (event.status || "");
 
                 row.append(time, competitionLabel, match, eventStatus);
                 table.appendChild(row);
