@@ -1961,7 +1961,7 @@
       }
     }
 
-    /* Zählerkachel – mechanischer Messing-Chronometer */
+    /* Zählerkachel – Piraten-Chronometer */
     .countdown-panel {
       position: relative;
       isolation: isolate;
@@ -1970,93 +1970,111 @@
       flex-direction: column;
       min-width: 0;
       font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
-      border-color: rgba(191,137,48,.78);
+      border-color: rgba(194,139,48,.82);
       background:
-        radial-gradient(circle at 82% 24%, rgba(190,132,43,.08), transparent 34%),
-        repeating-radial-gradient(
-          ellipse at 44% 48%,
-          rgba(255,255,255,.012) 0 1px,
-          rgba(0,0,0,.026) 1px 3px
+        radial-gradient(ellipse at 20% 72%, rgba(164,92,24,.20), transparent 42%),
+        radial-gradient(ellipse at 82% 25%, rgba(201,145,57,.18), transparent 38%),
+        linear-gradient(135deg, rgba(111,62,20,.18), transparent 34%),
+        repeating-linear-gradient(
+          168deg,
+          transparent 0 28px,
+          rgba(192,126,38,.035) 28px 29px,
+          transparent 29px 58px
         ),
-        linear-gradient(150deg, rgba(27,19,12,.975), rgba(8,6,4,.992));
+        repeating-radial-gradient(
+          ellipse at 42% 48%,
+          rgba(255,255,255,.018) 0 1px,
+          rgba(0,0,0,.035) 1px 3px
+        ),
+        linear-gradient(150deg, rgba(45,29,16,.985), rgba(15,10,6,.995));
       box-shadow:
-        inset 0 1px 0 rgba(245,205,116,.17),
-        inset 0 0 0 1px rgba(174,117,36,.13),
-        inset 0 0 35px rgba(0,0,0,.5),
+        inset 0 1px 0 rgba(245,205,116,.22),
+        inset 0 0 0 1px rgba(174,117,36,.20),
+        inset 0 0 42px rgba(0,0,0,.42),
         var(--shadow);
     }
 
-    .countdown-panel::before {
+    .countdown-panel::before,
+    .countdown-panel::after {
       content: "";
       position: absolute;
       z-index: -1;
-      width: 240px;
-      height: 240px;
-      right: -100px;
-      bottom: -78px;
-      opacity: .22;
-      border: 1px solid rgba(190,132,43,.28);
-      border-radius: 50%;
-      background:
-        conic-gradient(from 0deg,
-          transparent 0 10deg,
-          rgba(190,132,43,.22) 10deg 12deg,
-          transparent 12deg 43deg,
-          rgba(190,132,43,.14) 43deg 45deg,
-          transparent 45deg 88deg,
-          rgba(190,132,43,.22) 88deg 90deg,
-          transparent 90deg 133deg,
-          rgba(190,132,43,.14) 133deg 135deg,
-          transparent 135deg 178deg,
-          rgba(190,132,43,.22) 178deg 180deg,
-          transparent 180deg 223deg,
-          rgba(190,132,43,.14) 223deg 225deg,
-          transparent 225deg 268deg,
-          rgba(190,132,43,.22) 268deg 270deg,
-          transparent 270deg 313deg,
-          rgba(190,132,43,.14) 313deg 315deg,
-          transparent 315deg 358deg,
-          rgba(190,132,43,.22) 358deg 360deg),
-        radial-gradient(circle,
-          transparent 0 24%,
-          rgba(190,132,43,.17) 24.5% 25%,
-          transparent 25.5% 48%,
-          rgba(190,132,43,.13) 48.5% 49%,
-          transparent 49.5%);
-      transform: rotate(-9deg);
+      pointer-events: none;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      filter: sepia(.45) saturate(.88) contrast(1.08);
+    }
+
+    .countdown-panel::before {
+      width: 190px;
+      height: 235px;
+      left: -70px;
+      top: 92px;
+      opacity: .25;
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20360%22%3E%0A%20%20%3Cg%20fill%3D%22none%22%20stroke%3D%22%23c58a32%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M42%20286%20Q160%20340%20278%20286%20L244%20322%20Q160%20352%2076%20322%20Z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M160%2040%20V286%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M160%2068%20L74%20134%20L160%20134%20Z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M160%2082%20L250%20152%20L160%20152%20Z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M160%20150%20L82%20218%20L160%20218%20Z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M160%20164%20L242%20230%20L160%20230%20Z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M108%20262%20H212%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22160%22%20cy%3D%22100%22%20r%3D%2213%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M153%2094%20l14%2012%20m0-12%20l-14%2012%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+      transform: rotate(-4deg);
+    }
+
+    .countdown-panel::after {
+      width: 235px;
+      height: 235px;
+      right: -94px;
+      bottom: -58px;
+      opacity: .27;
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20360%22%3E%0A%20%20%3Cg%20fill%3D%22none%22%20stroke%3D%22%23c58a32%22%20stroke-width%3D%223%22%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%22180%22%20r%3D%22118%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%22180%22%20r%3D%2278%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22180%22%20cy%3D%22180%22%20r%3D%2234%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M180%2042%20V318%20M42%20180%20H318%20M82%2082%20L278%20278%20M278%2082%20L82%20278%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M180%2070%20L204%20156%20L290%20180%20L204%20204%20L180%20290%20L156%20204%20L70%20180%20L156%20156%20Z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M34%20300%20C85%20250%20115%20320%20155%20270%20S250%20285%20326%20240%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M40%2074%20C90%20110%20120%2040%20170%2088%20S258%2078%20320%20110%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+      transform: rotate(8deg);
     }
 
     .countdown-plaque {
+      position: relative;
+      z-index: 2;
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 34px;
-      padding: .34rem .7rem;
+      padding: .38rem .72rem;
       color: #251606;
-      border: 1px solid #d0a351;
-      border-radius: 6px;
+      border: 1px solid #dfb25d;
+      border-radius: 7px;
       text-align: center;
       text-transform: uppercase;
-      letter-spacing: .075em;
+      letter-spacing: .072em;
       font-size: .68rem;
       font-weight: 900;
       line-height: 1.15;
-      text-shadow: 0 1px rgba(255,255,255,.22);
+      text-shadow: 0 1px rgba(255,255,255,.24);
       background:
-        linear-gradient(90deg, rgba(86,52,13,.2), transparent 18% 82%, rgba(86,52,13,.2)),
-        linear-gradient(#d8ad5c, #8e5c1d);
+        linear-gradient(90deg, rgba(86,52,13,.25), transparent 18% 82%, rgba(86,52,13,.25)),
+        linear-gradient(#e0b65f, #98651f);
       box-shadow:
-        inset 0 1px rgba(255,255,255,.32),
-        inset 0 -2px rgba(42,23,5,.40),
-        0 5px 12px rgba(0,0,0,.28);
+        inset 0 1px rgba(255,255,255,.38),
+        inset 0 -2px rgba(42,23,5,.44),
+        0 6px 14px rgba(0,0,0,.30);
     }
+
+    .countdown-plaque::before,
+    .countdown-plaque::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      background: radial-gradient(circle at 35% 30%, #f0c979, #855217 65%, #2b1706);
+      box-shadow: 0 1px 2px rgba(0,0,0,.75);
+    }
+
+    .countdown-plaque::before { left: 9px; }
+    .countdown-plaque::after { right: 9px; }
 
     .countdown-panel .countdown {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: .48rem;
-      margin-top: 1.15rem;
+      margin-top: 1.12rem;
     }
 
     .countdown-panel .flip-unit {
@@ -2068,24 +2086,24 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: .68rem .22rem .48rem;
-      border: 1px solid rgba(220,171,76,.78);
+      padding: .68rem .22rem .50rem;
+      border: 1px solid rgba(224,176,82,.86);
       border-radius: 11px;
       background:
-        linear-gradient(180deg, rgba(63,40,17,.98), rgba(28,18,10,.99) 48%, rgba(10,7,4,.995) 49%, rgba(30,19,10,.99));
+        linear-gradient(180deg, rgba(78,48,19,.98), rgba(37,23,11,.99) 48%, rgba(12,8,4,.995) 49%, rgba(38,23,11,.99));
       box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.12),
-        inset 0 0 0 1px rgba(82,48,13,.55),
-        inset 0 -10px 24px rgba(0,0,0,.3),
+        inset 0 1px 0 rgba(255,255,255,.14),
+        inset 0 0 0 1px rgba(94,55,15,.62),
+        inset 0 -10px 24px rgba(0,0,0,.30),
         0 9px 20px rgba(0,0,0,.34);
     }
 
     .countdown-panel .flip-card::before {
       top: 52%;
-      background: rgba(0,0,0,.88);
+      background: rgba(0,0,0,.90);
       box-shadow:
         0 1px 0 rgba(255,255,255,.055),
-        0 -1px 0 rgba(117,73,24,.18);
+        0 -1px 0 rgba(117,73,24,.20);
     }
 
     .countdown-panel .flip-card::after {
@@ -2093,7 +2111,7 @@
       inset: 7px;
       right: 7px;
       bottom: 7px;
-      border: 1px solid rgba(211,155,52,.16);
+      border: 1px solid rgba(221,165,57,.20);
       border-radius: 7px;
       pointer-events: none;
     }
@@ -2104,8 +2122,8 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: radial-gradient(circle at 35% 30%, #e4bb66, #7e4d13 62%, #2b1706 100%);
-      box-shadow: 0 1px 2px rgba(0,0,0,.7);
+      background: radial-gradient(circle at 35% 30%, #e8c16c, #825116 62%, #2b1706 100%);
+      box-shadow: 0 1px 2px rgba(0,0,0,.72);
       z-index: 3;
     }
 
@@ -2113,65 +2131,67 @@
     .rivet-right { right: 8px; }
 
     .countdown-panel .flip-value {
-      color: #d5a64e;
+      color: #dda94e;
       font-size: clamp(1.9rem, 3.15vw, 2.7rem);
       letter-spacing: .015em;
       text-shadow:
         0 1px 0 #2d1906,
         0 2px 5px rgba(0,0,0,.72),
-        0 0 2px rgba(224,177,84,.28);
+        0 0 3px rgba(224,177,84,.30);
     }
 
     .countdown-panel .flip-label {
       position: relative;
       z-index: 3;
       margin-top: .72rem;
-      color: #dbc184;
+      color: #e0c68b;
       font-size: .62rem;
       letter-spacing: .075em;
       line-height: 1;
-      text-shadow: 0 1px 2px rgba(0,0,0,.8);
+      text-shadow: 0 1px 2px rgba(0,0,0,.82);
     }
 
     .countdown-panel .countdown-rigging {
       position: relative;
-      z-index: 1;
-      margin-top: .9rem;
+      z-index: 2;
+      margin-top: .88rem;
       gap: .55rem;
-      color: rgba(202,146,45,.72);
+      color: rgba(207,151,49,.78);
     }
 
     .countdown-panel .countdown-rigging::before,
     .countdown-panel .countdown-rigging::after {
-      background: linear-gradient(90deg, transparent, rgba(202,146,45,.48), transparent);
+      background: linear-gradient(90deg, transparent, rgba(207,151,49,.52), transparent);
     }
 
     .countdown-panel .hourglass {
       display: grid;
       place-items: center;
-      width: 30px;
-      height: 30px;
-      color: #c99842;
-      border: 1px solid rgba(202,146,45,.34);
+      width: 31px;
+      height: 31px;
+      color: #d1a14a;
+      border: 1px solid rgba(207,151,49,.38);
       border-radius: 50%;
-      font-size: .95rem;
-      background: rgba(16,10,6,.72);
-      box-shadow: inset 0 0 10px rgba(202,146,45,.08);
+      font-size: 1.08rem;
+      background: rgba(21,13,7,.78);
+      box-shadow:
+        inset 0 0 11px rgba(202,146,45,.10),
+        0 4px 9px rgba(0,0,0,.28);
     }
 
     .countdown-message {
       position: relative;
-      z-index: 1;
-      margin-top: .9rem;
-      padding: .9rem .85rem .82rem 1rem;
-      border-left: 4px solid #c9952e;
+      z-index: 2;
+      margin-top: .86rem;
+      padding: .92rem .88rem .86rem 1rem;
+      border-left: 4px solid #cf9a2d;
       border-radius: 8px;
       color: #eadabd;
       background:
-        linear-gradient(135deg, rgba(71,44,18,.48), rgba(24,15,9,.72));
+        linear-gradient(135deg, rgba(91,52,19,.58), rgba(30,18,9,.82));
       box-shadow:
-        inset 0 1px rgba(255,255,255,.035),
-        0 8px 18px rgba(0,0,0,.24);
+        inset 0 1px rgba(255,255,255,.045),
+        0 8px 18px rgba(0,0,0,.26);
     }
 
     .countdown-message strong,
@@ -2180,22 +2200,49 @@
     }
 
     .countdown-message strong {
-      color: #ead8af;
-      font-size: .92rem;
-      line-height: 1.35;
+      color: #f0ddb0;
+      font-size: .90rem;
+      line-height: 1.33;
       font-weight: 700;
     }
 
-    .countdown-message span {
+    .countdown-start-note {
       margin-top: .28rem;
-      color: #c6a769;
-      font-size: .75rem;
-      letter-spacing: .02em;
+      color: #caaa69;
+      font-size: .73rem;
+      letter-spacing: .015em;
+    }
+
+    .countdown-mission-note {
+      margin-top: .48rem !important;
+      padding-top: .46rem;
+      border-top: 1px solid rgba(207,151,49,.20);
+      color: #e1b55a !important;
+      font-size: .76rem !important;
+      font-weight: 700;
+      line-height: 1.32;
     }
 
     @media (max-width: 720px) {
       .countdown-plaque {
-        font-size: .64rem;
+        font-size: .61rem;
+        letter-spacing: .055em;
+      }
+
+      .countdown-panel::before {
+        width: 145px;
+        height: 180px;
+        left: -62px;
+        top: 116px;
+        opacity: .20;
+      }
+
+      .countdown-panel::after {
+        width: 170px;
+        height: 170px;
+        right: -76px;
+        bottom: -36px;
+        opacity: .22;
       }
 
       .countdown-panel .countdown {
@@ -2209,6 +2256,19 @@
 
       .countdown-panel .flip-label {
         font-size: .64rem;
+      }
+
+      .countdown-message {
+        padding: .82rem .78rem .78rem .88rem;
+      }
+
+      .countdown-message strong {
+        font-size: .86rem;
+      }
+
+      .countdown-start-note,
+      .countdown-mission-note {
+        font-size: .72rem !important;
       }
     }
 </style>
@@ -2414,12 +2474,13 @@
         </div>
 
         <div class="countdown-rigging" aria-hidden="true">
-          <span class="hourglass">⌛</span>
+          <span class="hourglass">☸</span>
         </div>
 
         <div class="countdown-message" id="countdown-note">
-          <strong>Die Crew sticht in See, sobald der Zähler Null erreicht.</strong>
-          <span>Bundesliga-Start am 28. August 2026</span>
+          <strong>Der Zähler läuft bis zum offiziellen Bundesliga-Start.</strong>
+          <span class="countdown-start-note">28. August 2026 · Start der Bundesliga-Saison</span>
+          <span class="countdown-mission-note">⚓ Bereits am 09. August 2026 beginnt der Smugglerauftrag „Auftakt“.</span>
         </div>
       </aside>
     </section>
