@@ -3802,17 +3802,23 @@
 
   
     /* ================================================================
-       HALL OF FAME – KORREKTUR OHNE LAYOUTUMBAU
-       Originaler Pokal und bestehende Struktur bleiben erhalten.
+       HALL OF FAME – TEXTFREIER PIRATENHINTERGRUND
+       Keine eingebetteten Schilder oder Schriftzüge.
        ================================================================ */
 
     #hall-of-fame {
       position: relative;
       overflow: hidden;
       background:
-        linear-gradient(rgba(9,5,3,.42), rgba(9,5,3,.60)),
-        radial-gradient(circle at 78% 18%, rgba(193,132,44,.13), transparent 34%),
-        url("./piraten-spieltag-hintergrund.jpg") center 42% / cover no-repeat;
+        radial-gradient(circle at 82% 18%, rgba(177,112,31,.16), transparent 24%),
+        radial-gradient(circle at 18% 76%, rgba(150,89,22,.12), transparent 28%),
+        linear-gradient(rgba(8,5,3,.46), rgba(8,5,3,.66)),
+        repeating-linear-gradient(
+          98deg,
+          rgba(94,54,18,.08) 0 2px,
+          transparent 2px 22px
+        ),
+        linear-gradient(145deg, #21150d 0%, #120b07 48%, #0b0704 100%);
     }
 
     #hall-of-fame::before {
@@ -3820,9 +3826,50 @@
       position: absolute;
       inset: 0;
       pointer-events: none;
+      opacity: .28;
       background:
-        linear-gradient(90deg, rgba(0,0,0,.08), transparent 36%, rgba(0,0,0,.06)),
-        radial-gradient(circle at 18% 76%, rgba(181,119,35,.05), transparent 26%);
+        radial-gradient(circle at 78% 24%, transparent 0 58px, rgba(180,121,37,.22) 59px 61px, transparent 62px),
+        radial-gradient(circle at 78% 24%, transparent 0 86px, rgba(180,121,37,.12) 87px 89px, transparent 90px),
+        conic-gradient(
+          from 0deg at 78% 24%,
+          transparent 0 10deg,
+          rgba(190,128,39,.18) 10deg 12deg,
+          transparent 12deg 43deg,
+          rgba(190,128,39,.18) 43deg 45deg,
+          transparent 45deg 88deg,
+          rgba(190,128,39,.18) 88deg 90deg,
+          transparent 90deg 133deg,
+          rgba(190,128,39,.18) 133deg 135deg,
+          transparent 135deg 178deg,
+          rgba(190,128,39,.18) 178deg 180deg,
+          transparent 180deg 223deg,
+          rgba(190,128,39,.18) 223deg 225deg,
+          transparent 225deg 268deg,
+          rgba(190,128,39,.18) 268deg 270deg,
+          transparent 270deg 313deg,
+          rgba(190,128,39,.18) 313deg 315deg,
+          transparent 315deg 360deg
+        ),
+        linear-gradient(90deg, rgba(0,0,0,.08), transparent 36%, rgba(0,0,0,.06));
+    }
+
+    #hall-of-fame::after {
+      content: "";
+      position: absolute;
+      right: 5%;
+      bottom: 5%;
+      width: 150px;
+      height: 150px;
+      pointer-events: none;
+      opacity: .13;
+      border: 2px solid rgba(191,130,42,.45);
+      border-radius: 50%;
+      box-shadow:
+        inset 0 0 0 12px transparent,
+        inset 0 0 0 14px rgba(191,130,42,.18),
+        inset 0 0 0 34px transparent,
+        inset 0 0 0 36px rgba(191,130,42,.14);
+      transform: rotate(-12deg);
     }
 
     #hall-of-fame > * {
@@ -3835,14 +3882,14 @@
     #hall-of-fame .history-row,
     #hall-of-fame .record-card {
       background:
-        linear-gradient(145deg, rgba(28,16,8,.86), rgba(12,7,4,.91));
+        linear-gradient(145deg, rgba(28,16,8,.88), rgba(12,7,4,.93));
       backdrop-filter: blur(1px);
     }
 
     #hall-of-fame .trophy-stage {
       background:
         radial-gradient(circle at 50% 44%, rgba(184,122,35,.11), transparent 58%),
-        rgba(10,6,3,.46);
+        rgba(10,6,3,.48);
     }
 
     #hall-of-fame .trophy {
