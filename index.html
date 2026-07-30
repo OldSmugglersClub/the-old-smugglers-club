@@ -3397,6 +3397,50 @@
       }
     }
 
+  
+    /* ================================================================
+       SPIELTAGSKACHEL – FINALER FEINSCHLIFF
+       ================================================================ */
+
+    .sm-next-event {
+      grid-template-columns: minmax(210px,.82fr) minmax(145px,.56fr) minmax(0,1.95fr);
+    }
+
+    .sm-event-list {
+      gap: 1rem;
+    }
+
+    .sm-event-row {
+      grid-template-columns: 76px minmax(120px,.55fr) minmax(0,2fr) minmax(76px,auto);
+      gap: .62rem;
+    }
+
+    .sm-event-row__status {
+      justify-self: start;
+      padding-left: .1rem;
+    }
+
+    .sm-event-row[data-competition="Smugglerauftrag"] .sm-event-row__competition {
+      color: #f0cb72;
+      border-color: rgba(222,164,62,.82);
+      background: linear-gradient(#5b3312,#281407);
+      box-shadow: inset 0 0 0 1px rgba(239,190,91,.12);
+    }
+
+    .sm-event-row[data-competition="Smugglerauftrag"] .sm-event-row__match {
+      color: #f0d59a;
+    }
+
+    @media (max-width: 760px) {
+      .sm-next-event {
+        grid-template-columns: 1fr;
+      }
+
+      .sm-event-row {
+        grid-template-columns: 66px 1fr;
+      }
+    }
+
   </style>
 </head>
 
@@ -4200,7 +4244,10 @@
           }).format(nextEvent._start);
 
           if (elements.nextDate) {
-            elements.nextDate.textContent = `${dateText} · ${nextEvent.anstoss}`;
+            const weekdayText = new Intl.DateTimeFormat(locale, {
+              weekday: "short"
+            }).format(nextEvent._start);
+            elements.nextDate.textContent = `${weekdayText} ${dateText} · ${nextEvent.anstoss}`;
           }
           if (elements.nextCompetition) {
             elements.nextCompetition.textContent = nextEvent.wettbewerb || "Ereignis";
@@ -4280,6 +4327,7 @@
           eventsForDay.forEach((event) => {
             const row = document.createElement(event.ereignisLink ? "a" : "div");
             row.className = "sm-event-row";
+            row.dataset.competition = event.wettbewerb || "";
 
             if (event.ereignisLink) {
               row.href = event.ereignisLink;
