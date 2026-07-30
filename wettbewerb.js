@@ -51,8 +51,8 @@
         return safeArray(match.sonderwertungen).includes(filter.value);
       })
       .sort((a, b) => {
-        const first = `${a.datum || "9999-12-31"}T${a.anstoss || "23:59"}`;
-        const second = `${b.datum || "9999-12-31"}T${b.anstoss || "23:59"}`;
+        const first = `${a.datum || a.datumVon || "9999-12-31"}T${a.anstoss || "23:59"}`;
+        const second = `${b.datum || b.datumVon || "9999-12-31"}T${b.anstoss || "23:59"}`;
         return first.localeCompare(second);
       });
   }
@@ -66,7 +66,7 @@
       titel: FILTERS[slug].title,
       anzeigen: true,
       spiele: games.map(match => ({
-        datum: formatDate(match.datum),
+        datum: match.datumAnzeige || formatDate(match.datum || match.datumVon),
         anstoss: match.anstoss || "Uhrzeit offen",
         heim: match.heim || "Heimteam offen",
         trenner: "–",
