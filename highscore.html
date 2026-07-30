@@ -95,7 +95,7 @@
     <div class="hs-panel"><div class="hs-eyebrow">Datenlage</div><h2>Statistikstatus</h2><p class="hs-status">Zeigt transparent, welche Highscore-Module bereits belastbare Saisondaten besitzen.</p><div class="hs-readiness-grid" id="readiness-grid"></div></div>
     <div class="hs-panel"><div class="hs-eyebrow">Saisonbestwerte</div><h2>Rekorde</h2><div class="hs-record-grid" id="record-grid"></div></div>
     <div class="hs-panel"><div class="hs-eyebrow">Auszeichnungen</div><h2>Piratenorden</h2><div class="hs-order-grid" id="order-grid"></div><p class="hs-footnote">Nicht belastbar berechenbare Orden werden bewusst als gesperrt gekennzeichnet. Es werden keine Gewinner geschätzt oder erfunden.</p></div>
-    <div class="hs-panel"><div class="hs-eyebrow">Saisonverlauf</div><h2>Historie</h2><div id="history-grid" class="hs-history"></div></div>
+    <div class="hs-panel"><div class="hs-eyebrow">Saisonverlauf</div><h2>Verlaufskompass</h2><p class="hs-status">Wertet ausschließlich archivierte Rangstände aus. Ohne mindestens zwei bestätigte Stände wird kein Trend behauptet.</p><div id="season-trend" class="hs-season-trend"></div><div id="history-grid" class="hs-history"></div></div>
   </section>
 
   <div class="hs-actions"><a class="hs-btn" href="./index.html#highscore">Zurück zur Startseite</a><a class="hs-btn" href="https://www.kicktipp.de/the-old-smugglers-club/" target="_blank" rel="noopener noreferrer">Zum Kicktipp</a></div>
@@ -114,6 +114,11 @@
         </div>
         <div class="hs-position-grid" id="player-position-grid"></div>
         <p class="hs-position-note" id="player-position-note"></p>
+      </section>
+      <section class="hs-player-trend" id="player-trend" aria-labelledby="player-trend-title">
+        <div class="hs-player-trend-head"><div><span class="hs-eyebrow">Saisonkurs</span><h3 id="player-trend-title">Verlaufsanalyse</h3></div><strong id="player-trend-state">Noch offen</strong></div>
+        <div class="hs-player-trend-grid" id="player-trend-grid"></div>
+        <p class="hs-player-trend-note" id="player-trend-note"></p>
       </section>
       <div class="hs-compare-controls" aria-labelledby="player-compare-title">
         <div>

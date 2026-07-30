@@ -1,3 +1,13 @@
+# Version 2.35 – Highscore Saisonverlauf & Trendprüfung
+
+- Verlaufskompass für archivierte Highscore-Stände ergänzt.
+- Führungswechsel und größte dokumentierte Rangverbesserung werden nur bei mindestens zwei vollständigen Archivständen berechnet.
+- Spielerprofile um eine Verlaufsanalyse mit Rangbewegung, Punktezuwachs und bestem dokumentierten Rang erweitert.
+- Fehlende Historiedaten werden transparent als nicht berechenbar ausgewiesen; es werden keine Trends simuliert.
+- Flexible Unterstützung für archivierte Ranglisten unter `standings`, `overall` oder `players` ergänzt.
+- Darstellung im bestehenden Holz-, Leder- und Messingdesign für Desktop, Tablet und Mobilgeräte ergänzt.
+- Grundlayout, Raster, Kachelgrößen, zentrale JSON-Struktur und übrige Websitebereiche unverändert gelassen.
+
 # Version 2.34 – Highscore Rangabstände & Positionsanalyse
 
 - Spielerprofile um eine datenbasierte Positionsanalyse erweitert.

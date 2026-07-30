@@ -187,6 +187,93 @@ function renderPlayerPositionAnalysis(name) {
   }
 }
 
+
+function historySnapshots() {
+  const rows = Array.isArray(data.history) ? data.history : [];
+  return rows.map((entry, index) => {
+    const rawStandings = Array.isArray(entry?.standings) ? entry.standings
+      : Array.isArray(entry?.overall) ? entry.overall
+      : Array.isArray(entry?.players) ? entry.players
+      : entry?.standings && typeof entry.standings === 'object'
+        ? Object.entries(entry.standings).map(([name, value]) => ({ name, ...(typeof value === 'object' ? value : { totalPoints: value }) }))
+        : [];
+    const standings = rawStandings.map((row, rowIndex) => ({
+      name: String(row?.name ?? row?.player ?? ''),
+      rank: Number(row?.rank ?? row?.position ?? rowIndex + 1),
+      totalPoints: Number(row?.totalPoints ?? row?.points ?? row?.score ?? 0)
+    })).filter(row => row.name);
+    return {
+      label: String(entry?.matchday ?? entry?.label ?? entry?.date ?? `Stand ${index + 1}`),
+      leader: String(entry?.leader ?? standings[0]?.name ?? ''),
+      points: Number(entry?.points ?? entry?.leaderPoints ?? standings[0]?.totalPoints ?? 0),
+      standings
+    };
+  });
+}
+
+function playerTrendAnalysis(name) {
+  const snapshots = historySnapshots().filter(snapshot => snapshot.standings.some(row => row.name === name));
+  if (snapshots.length < 2) return { available: false, snapshots };
+  const first = snapshots[0].standings.find(row => row.name === name);
+  const last = snapshots.at(-1).standings.find(row => row.name === name);
+  if (!first || !last) return { available: false, snapshots };
+  const rankDelta = Number(first.rank) - Number(last.rank);
+  const pointsDelta = Number(last.totalPoints) - Number(first.totalPoints);
+  let bestRank = Infinity;
+  let bestLabel = '';
+  snapshots.forEach(snapshot => {
+    const row = snapshot.standings.find(item => item.name === name);
+    if (row && Number(row.rank) < bestRank) { bestRank = Number(row.rank); bestLabel = snapshot.label; }
+  });
+  return { available: true, snapshots, first, last, rankDelta, pointsDelta, bestRank, bestLabel };
+}
+
+function renderPlayerTrend(name) {
+  const box = document.querySelector('#player-trend');
+  const grid = document.querySelector('#player-trend-grid');
+  const stateEl = document.querySelector('#player-trend-state');
+  const note = document.querySelector('#player-trend-note');
+  if (!box || !grid || !stateEl || !note) return;
+  const trend = playerTrendAnalysis(name);
+  if (!trend.available) {
+    box.classList.add('is-locked');
+    stateEl.textContent = 'Nicht berechenbar';
+    grid.innerHTML = '<article><span>Archivstände</span><strong>' + trend.snapshots.length + '</strong><small>Mindestens zwei vollständige Spielerstände erforderlich</small></article><article><span>Rangbewegung</span><strong>–</strong><small>Keine Bewegung wird simuliert</small></article><article><span>Punktezuwachs</span><strong>–</strong><small>Noch keine belastbare Zeitreihe</small></article>';
+    note.textContent = 'Der aktuelle Export enthält keine ausreichende Spielerhistorie. Erst archivierte Gesamtstände mit Spielernamen, Rang und Punkten erlauben eine seriöse Verlaufsanalyse.';
+    return;
+  }
+  box.classList.remove('is-locked');
+  const direction = trend.rankDelta > 0 ? `${trend.rankDelta} Plätze gestiegen` : trend.rankDelta < 0 ? `${Math.abs(trend.rankDelta)} Plätze gefallen` : 'Rang unverändert';
+  stateEl.textContent = trend.rankDelta > 0 ? 'Auf Kurs' : trend.rankDelta < 0 ? 'Unter Druck' : 'Stabil';
+  grid.innerHTML = `<article><span>Rangbewegung</span><strong>${esc(direction)}</strong><small>Von Rang ${fmt(trend.first.rank)} auf Rang ${fmt(trend.last.rank)}</small></article><article><span>Punktezuwachs</span><strong>+${fmt(trend.pointsDelta)}</strong><small>Zwischen erstem und letztem Archivstand</small></article><article><span>Bester Rang</span><strong>${fmt(trend.bestRank)}</strong><small>${esc(trend.bestLabel)}</small></article>`;
+  note.textContent = `Berechnet aus ${trend.snapshots.length} bestätigten Archivständen. Der Verlauf beschreibt nur dokumentierte Veränderungen und ist keine Prognose.`;
+}
+
+function renderSeasonTrend(historyRows) {
+  const target = document.querySelector('#season-trend');
+  if (!target) return;
+  const snapshots = historySnapshots();
+  const complete = snapshots.filter(snapshot => snapshot.standings.length > 0);
+  if (complete.length < 2) {
+    target.className = 'hs-season-trend is-locked';
+    target.innerHTML = `<article><span>Archivstände</span><strong>${historyRows.length}</strong><small>${complete.length} mit vollständiger Rangliste</small></article><article><span>Führungswechsel</span><strong>–</strong><small>Mindestens zwei vollständige Stände erforderlich</small></article><article><span>Größter Aufstieg</span><strong>–</strong><small>Keine Bewegung wird geschätzt</small></article><article><span>Verlaufsstatus</span><strong>Noch offen</strong><small>Historische Spielerdaten fehlen</small></article>`;
+    return;
+  }
+  let leadChanges = 0;
+  for (let i = 1; i < complete.length; i++) if (complete[i].leader && complete[i - 1].leader && complete[i].leader !== complete[i - 1].leader) leadChanges++;
+  const first = complete[0];
+  const last = complete.at(-1);
+  let climber = null;
+  last.standings.forEach(row => {
+    const start = first.standings.find(item => item.name === row.name);
+    if (!start) return;
+    const gain = Number(start.rank) - Number(row.rank);
+    if (!climber || gain > climber.gain) climber = { name: row.name, gain };
+  });
+  target.className = 'hs-season-trend is-active';
+  target.innerHTML = `<article><span>Archivstände</span><strong>${complete.length}</strong><small>Vollständig auswertbare Ranglisten</small></article><article><span>Führungswechsel</span><strong>${leadChanges}</strong><small>Dokumentierte Wechsel an der Spitze</small></article><article><span>Größter Aufstieg</span><strong>${climber && climber.gain > 0 ? esc(climber.name) : 'Keiner'}</strong><small>${climber && climber.gain > 0 ? `${fmt(climber.gain)} Plätze verbessert` : 'Keine positive Rangbewegung'}</small></article><article><span>Verlaufsstatus</span><strong>Belastbar</strong><small>Nur bestätigte Archivdaten</small></article>`;
+}
+
 function openPlayerProfile(name) {
   const dialog = document.querySelector('#player-dialog');
   if (!dialog) return;
@@ -205,6 +292,7 @@ function openPlayerProfile(name) {
   const noScore = Number(overall?.totalPoints || 0) <= 0 && Number(matchday?.points || 0) <= 0;
   populateComparisonSelect(name);
   renderPlayerPositionAnalysis(name);
+  renderPlayerTrend(name);
   document.querySelector('#player-profile-note').textContent = noScore
     ? 'Noch keine sportliche Wertung vorhanden. Das Profil zeigt ausschließlich bestätigte Exportdaten.'
     : 'Das Profil vergleicht Gesamtwertung und aktuellen Einzelspieltag. Es werden keine fehlenden Werte geschätzt.';
@@ -561,6 +649,8 @@ function renderRecords() {
     orderCard('Admiral des Monats', 'Noch nicht vergeben', 'Freischaltung nach einem vollständigen Kalendermonat.', 'locked')
   ];
   document.querySelector('#order-grid').innerHTML = orders.join('');
+
+  renderSeasonTrend(historyRows);
 
   document.querySelector('#history-grid').innerHTML = historyRows.length
     ? `<div class="hs-history-head"><span>Spieltag</span><span>Führender Spieler</span><span>Punktestand</span></div>${historyRows.map((row, index) => `<div class="hs-history-row"><span>${esc(row.matchday)}</span><strong>${esc(row.leader)}</strong><b>${fmt(row.points)} Punkte</b><i aria-hidden="true">${index + 1}</i></div>`).join('')}`
