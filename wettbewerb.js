@@ -6,6 +6,7 @@
   const jsonUrl = `./${slug}.json`;
   const gameDataUrl = "./spieldaten.json";
   const teamDataUrl = "./teams.json";
+  const bundesligaTableUrl = "./bundesliga-tabelle.json";
 
   const FILTERS = {
     "bundesliga": { type: "wettbewerb", value: "bundesliga", title: "Spiele der Bundesliga" },
@@ -39,6 +40,179 @@
     const hasAwayScore = Number.isFinite(match.auswaertstore);
     if (hasHomeScore && hasAwayScore) return `${match.heimtore}:${match.auswaertstore}`;
     return match.status || "";
+  }
+
+
+  function allCentralGames(data) {
+    return Array.isArray(data && data.saisons)
+      ? data.saisons.flatMap(season => safeArray(season && season.spiele))
+      : safeArray(data && data.spiele);
+  }
+
+  function numericScore(value) {
+    return Number.isFinite(value) ? value : null;
+  }
+
+  function calculateBundesligaTable(gameData, teamData, tableData) {
+    const teamLookup = createTeamLookup(teamData);
+    const games = allCentralGames(gameData).filter(match => match && match.wettbewerb === "bundesliga");
+    const rows = new Map();
+
+    const ensureTeam = (teamId, fallback) => {
+      if (!teamId) return null;
+      if (!rows.has(teamId)) {
+        rows.set(teamId, {
+          id: teamId,
+          name: teamName(teamLookup, teamId, fallback),
+          played: 0,
+          wins: 0,
+          draws: 0,
+          losses: 0,
+          goalsFor: 0,
+          goalsAgainst: 0,
+          points: 0
+        });
+      }
+      return rows.get(teamId);
+    };
+
+    games.forEach(match => {
+      ensureTeam(match.heimTeamId, match.heim);
+      ensureTeam(match.auswaertsTeamId, match.auswaerts);
+
+      const homeGoals = numericScore(match.heimtore);
+      const awayGoals = numericScore(match.auswaertstore);
+      if (homeGoals === null || awayGoals === null) return;
+
+      const home = ensureTeam(match.heimTeamId, match.heim);
+      const away = ensureTeam(match.auswaertsTeamId, match.auswaerts);
+      if (!home || !away) return;
+
+      home.played += 1;
+      away.played += 1;
+      home.goalsFor += homeGoals;
+      home.goalsAgainst += awayGoals;
+      away.goalsFor += awayGoals;
+      away.goalsAgainst += homeGoals;
+
+      if (homeGoals > awayGoals) {
+        home.wins += 1;
+        away.losses += 1;
+        home.points += 3;
+      } else if (homeGoals < awayGoals) {
+        away.wins += 1;
+        home.losses += 1;
+        away.points += 3;
+      } else {
+        home.draws += 1;
+        away.draws += 1;
+        home.points += 1;
+        away.points += 1;
+      }
+    });
+
+    const manualRows = safeArray(tableData && tableData.teams);
+    if (manualRows.length) {
+      manualRows.forEach(team => {
+        if (!team || !team.id) return;
+        rows.set(team.id, {
+          id: team.id,
+          name: teamName(teamLookup, team.id, team.name),
+          played: Number(team.spiele || team.played || 0),
+          wins: Number(team.siege || team.wins || 0),
+          draws: Number(team.unentschieden || team.draws || 0),
+          losses: Number(team.niederlagen || team.losses || 0),
+          goalsFor: Number(team.tore || team.goalsFor || 0),
+          goalsAgainst: Number(team.gegentore || team.goalsAgainst || 0),
+          points: Number(team.punkte || team.points || 0)
+        });
+      });
+    }
+
+    const sorted = [...rows.values()].sort((a, b) => {
+      const pointDiff = b.points - a.points;
+      if (pointDiff) return pointDiff;
+      const goalDiff = (b.goalsFor - b.goalsAgainst) - (a.goalsFor - a.goalsAgainst);
+      if (goalDiff) return goalDiff;
+      const goalsDiff = b.goalsFor - a.goalsFor;
+      if (goalsDiff) return goalsDiff;
+      return a.name.localeCompare(b.name, "de");
+    });
+
+    return {
+      rows: sorted,
+      playedMatches: games.filter(match => numericScore(match.heimtore) !== null && numericScore(match.auswaertstore) !== null).length,
+      status: tableData && tableData.status ? tableData.status : ""
+    };
+  }
+
+  function renderBundesligaTable(gameData, teamData, tableData, root) {
+    const standings = calculateBundesligaTable(gameData, teamData, tableData);
+    const article = document.createElement("section");
+    article.className = "dynamic-section standings-section";
+
+    const headingRow = document.createElement("div");
+    headingRow.className = "section-heading-row";
+    const heading = document.createElement("h2");
+    heading.textContent = "Bundesliga-Tabelle";
+    const badge = document.createElement("span");
+    badge.className = "data-status-badge";
+    badge.textContent = standings.playedMatches
+      ? `${standings.playedMatches} Spiele ausgewertet`
+      : "Saison noch nicht gestartet";
+    headingRow.append(heading, badge);
+    article.appendChild(headingRow);
+
+    if (!standings.rows.length) {
+      const note = document.createElement("p");
+      note.className = "data-note";
+      note.textContent = standings.status || "Die Tabelle erscheint automatisch, sobald Mannschaften und Ergebnisse vorliegen.";
+      article.appendChild(note);
+      root.appendChild(article);
+      return;
+    }
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "table-scroll";
+    const table = document.createElement("table");
+    table.className = "data-table standings-table";
+    table.innerHTML = "<thead><tr><th>Pl.</th><th>Verein</th><th>Sp.</th><th>S</th><th>U</th><th>N</th><th>Tore</th><th>Diff.</th><th>Pkt.</th></tr></thead>";
+    const tbody = document.createElement("tbody");
+
+    standings.rows.forEach((team, index) => {
+      const tr = document.createElement("tr");
+      const goalDifference = team.goalsFor - team.goalsAgainst;
+      const values = [
+        index + 1,
+        team.name,
+        team.played,
+        team.wins,
+        team.draws,
+        team.losses,
+        `${team.goalsFor}:${team.goalsAgainst}`,
+        goalDifference > 0 ? `+${goalDifference}` : String(goalDifference),
+        team.points
+      ];
+      values.forEach((value, columnIndex) => {
+        const cell = document.createElement(columnIndex === 0 ? "th" : "td");
+        if (columnIndex === 0) cell.scope = "row";
+        cell.textContent = value;
+        tr.appendChild(cell);
+      });
+      tbody.appendChild(tr);
+    });
+
+    table.appendChild(tbody);
+    wrapper.appendChild(table);
+    article.appendChild(wrapper);
+
+    const note = document.createElement("p");
+    note.className = "data-note";
+    note.textContent = standings.playedMatches
+      ? "Die Tabelle wird automatisch aus den in spieldaten.json hinterlegten Endergebnissen berechnet."
+      : "Die Mannschaften sind vorbereitet. Ergebnisse und Tabelle werden nach Saisonstart automatisch aus spieldaten.json aufgebaut.";
+    article.appendChild(note);
+    root.appendChild(article);
   }
 
   function centralGamesForPage(data) {
@@ -233,10 +407,13 @@
     root.appendChild(quickActions);
   }
 
-  function renderSections(sections, buttons) {
+  function renderSections(sections, buttons, gameData, teamData, tableData) {
     const root = $("dynamic-sections");
     root.innerHTML = "";
-    if (slug === "bundesliga") renderQuickBackButton(buttons, root);
+    if (slug === "bundesliga") {
+      renderQuickBackButton(buttons, root);
+      renderBundesligaTable(gameData, teamData, tableData, root);
+    }
     safeArray(sections).filter(s => s && s.anzeigen !== false).forEach(section => {
       const article = document.createElement("section");
       article.className = "dynamic-section";
@@ -306,10 +483,11 @@
 
   async function load() {
     try {
-      const [data, centralGameData, teamData] = await Promise.all([
+      const [data, centralGameData, teamData, bundesligaTableData] = await Promise.all([
         fetchJson(jsonUrl, true),
         fetchJson(gameDataUrl, false),
-        fetchJson(teamDataUrl, false)
+        fetchJson(teamDataUrl, false),
+        slug === "bundesliga" ? fetchJson(bundesligaTableUrl, false) : Promise.resolve({ teams: [] })
       ]);
 
       document.title = `${data.titel || "Wettbewerb"} | The Old Smugglers Club`;
@@ -331,7 +509,7 @@
         ? [centralSection, ...safeArray(data.bereiche)]
         : safeArray(data.bereiche);
 
-      renderSections(sections, data.buttons);
+      renderSections(sections, data.buttons, centralGameData, teamData, bundesligaTableData);
       renderButtons(data.buttons);
       text("footer-text", data.fusszeile);
     } catch (error) {

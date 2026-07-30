@@ -2,7 +2,7 @@
   "bereich": "Wettbewerbszentrale",
   "statusSchild": "Vorbereitung",
   "titel": "Bundesliga",
-  "beschreibung": "Hier entsteht die vollständige Bundesliga-Zentrale mit Spieltagsübersicht, Saisonstand, Tippspiel-Link und späteren Statistiken.",
+  "beschreibung": "Die Bundesliga-Zentrale bündelt alle 34 Spieltage, Ergebnisse und die automatisch berechnete Tabelle der Saison 2026/2027.",
   "karten": [
     {
       "titel": "Wertung",
@@ -13,12 +13,12 @@
       "text": "Der erste Spieltag beginnt am 28. August 2026."
     },
     {
-      "titel": "Geplant",
-      "text": "Spieltage, Ergebnisse, Tabellenstand und besondere Saisonrekorde."
+      "titel": "Datenzentrale",
+      "text": "Spieltage, Endergebnisse und Tabellenstand werden zentral aus den Spieldaten aufgebaut. Saisonrekorde folgen später."
     }
   ],
-  "aktuellerStandTitel": "Aktueller Stand:",
-  "aktuellerStand": "Die Unterseite ist technisch aktiv. Ergebnisse und Tabellen werden ergänzt, sobald die Saison läuft.",
+  "aktuellerStandTitel": "Datenmanagement:",
+  "aktuellerStand": "Endergebnisse werden direkt bei den Spielen in spieldaten.json gepflegt. Die Tabelle berechnet sich daraus automatisch; bis zum Saisonstart wird der vorbereitete Tabellenstand angezeigt.",
   "bereiche": [],
   "buttons": [
     {
