@@ -1,24 +1,24 @@
 {
   "bereich": "Wettbewerbszentrale",
-  "statusSchild": "Vorbereitung",
+  "statusSchild": "Ab Achtelfinale",
   "titel": "DFB-Pokal",
-  "beschreibung": "Die Zentrale für alle Pokalrunden, Paarungen, Ergebnisse und Tippstände.",
+  "beschreibung": "Im Tippspiel startet der DFB-Pokal mit dem Achtelfinale. Die konkreten Paarungen werden nach der Auslosung ergänzt.",
   "karten": [
     {
-      "titel": "Modus",
-      "text": "K.-o.-Wettbewerb mit Entscheidungen über Weiterkommen und Ausscheiden."
+      "titel": "Start im Tippspiel",
+      "text": "Gewertet wird der DFB-Pokal ab dem Achtelfinale. Frühere Pokalrunden gehören nicht zu unserem Tippspiel."
     },
     {
-      "titel": "Runden",
-      "text": "Alle Runden vom Auftakt bis zum Finale können hier abgebildet werden."
+      "titel": "Rahmentermin",
+      "text": "Das Achtelfinale ist für den 1. und 2. Dezember 2026 angesetzt."
     },
     {
-      "titel": "Geplant",
-      "text": "Paarungen, Ergebnisse, Tippwertung und besondere Pokalmomente."
+      "titel": "Nächster Schritt",
+      "text": "Sobald die Achtelfinalpaarungen ausgelost sind, werden alle Begegnungen zentral ergänzt."
     }
   ],
   "aktuellerStandTitel": "Aktueller Stand:",
-  "aktuellerStand": "Die Pokaldaten werden eingetragen, sobald die ersten Paarungen feststehen.",
+  "aktuellerStand": "Die Wettbewerbsseite ist vorbereitet. Konkrete Spiele erscheinen nach der Auslosung des Achtelfinales.",
   "bereiche": [],
   "buttons": [
     {
