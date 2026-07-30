@@ -1,24 +1,24 @@
 {
   "bereich": "Wettbewerbszentrale",
-  "statusSchild": "Vorgemerkt",
+  "statusSchild": "1 Spieltag · 4 Spiele",
   "titel": "Relegation",
-  "beschreibung": "Die Relegationszentrale für Hinspiel, Rückspiel, Tippwertung und Entscheidung.",
+  "beschreibung": "Vier Entscheidungsspiele, ein gemeinsamer Tippspieltag: Bundesliga- und Zweitliga-Relegation werden zusammen in der Einzel-Gesamtwertung gewertet.",
   "karten": [
     {
       "titel": "Modus",
-      "text": "Hin- und Rückspiel entscheiden über Aufstieg beziehungsweise Klassenerhalt."
+      "text": "Der Relegations-Tippspieltag besteht aus vier Partien: Hin- und Rückspiel der Bundesliga-Relegation sowie Hin- und Rückspiel der Zweitliga-Relegation. Alle vier Tipps zählen gemeinsam als ein Wertungsspieltag."
     },
     {
-      "titel": "Termin",
-      "text": "Die konkreten Termine werden nach Abschluss der regulären Saison ergänzt."
+      "titel": "Termine",
+      "text": "27.05.2027 und 31.05.2027: Bundesliga-Relegation. 28.05.2027 und 01.06.2027: Relegation zur 2. Bundesliga. Anstoß jeweils 20:30 Uhr."
     },
     {
-      "titel": "Geplant",
-      "text": "Paarungen, Ergebnisse, Gesamtergebnis und Gewinner der Relegation."
+      "titel": "Auswertung",
+      "text": "Sobald Teilnehmer und Ergebnisse feststehen, erscheinen hier die vier Paarungen, Einzelergebnisse, Gesamtergebnisse aus Hin- und Rückspiel sowie die jeweiligen Sieger."
     }
   ],
   "aktuellerStandTitel": "Aktueller Stand:",
-  "aktuellerStand": "Die Teilnehmer stehen erst nach Abschluss der regulären Saison fest.",
+  "aktuellerStand": "Die Termine sind vorgemerkt. Die vier Teilnehmer stehen erst nach Abschluss der regulären Saison 2026/2027 fest.",
   "bereiche": [],
   "buttons": [
     {
