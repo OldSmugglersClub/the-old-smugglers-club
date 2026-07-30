@@ -4067,6 +4067,84 @@
       vertical-align: middle;
     }
 
+  
+    /* ================================================================
+       UNSERE WETTBEWERBE – TEXTFREIER HINTERGRUND
+       Entfernt das eingebettete Schild „GEPLANT“ aus der Hintergrundwirkung.
+       Inhalt, Karten, Größen und Layout bleiben unverändert.
+       ================================================================ */
+
+    #wettbewerbe {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(184,122,36,.16), transparent 26%),
+        radial-gradient(circle at 16% 82%, rgba(145,84,20,.12), transparent 28%),
+        linear-gradient(rgba(8,5,3,.36), rgba(8,5,3,.56)),
+        repeating-linear-gradient(
+          102deg,
+          rgba(96,56,20,.07) 0 2px,
+          transparent 2px 24px
+        ),
+        linear-gradient(145deg, #24170e 0%, #140c07 50%, #0b0704 100%);
+    }
+
+    #wettbewerbe::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .28;
+      background:
+        radial-gradient(circle at 78% 22%, transparent 0 54px, rgba(190,128,39,.18) 55px 57px, transparent 58px),
+        radial-gradient(circle at 78% 22%, transparent 0 82px, rgba(190,128,39,.10) 83px 85px, transparent 86px),
+        conic-gradient(
+          from 0deg at 78% 22%,
+          transparent 0 12deg,
+          rgba(190,128,39,.16) 12deg 14deg,
+          transparent 14deg 44deg,
+          rgba(190,128,39,.16) 44deg 46deg,
+          transparent 46deg 89deg,
+          rgba(190,128,39,.16) 89deg 91deg,
+          transparent 91deg 134deg,
+          rgba(190,128,39,.16) 134deg 136deg,
+          transparent 136deg 179deg,
+          rgba(190,128,39,.16) 179deg 181deg,
+          transparent 181deg 224deg,
+          rgba(190,128,39,.16) 224deg 226deg,
+          transparent 226deg 269deg,
+          rgba(190,128,39,.16) 269deg 271deg,
+          transparent 271deg 314deg,
+          rgba(190,128,39,.16) 314deg 316deg,
+          transparent 316deg 360deg
+        ),
+        linear-gradient(90deg, rgba(0,0,0,.06), transparent 38%, rgba(0,0,0,.05));
+    }
+
+    #wettbewerbe::after {
+      content: "";
+      position: absolute;
+      right: 4%;
+      bottom: 5%;
+      width: 140px;
+      height: 140px;
+      pointer-events: none;
+      opacity: .10;
+      border: 2px solid rgba(191,130,42,.40);
+      border-radius: 50%;
+      box-shadow:
+        inset 0 0 0 11px transparent,
+        inset 0 0 0 13px rgba(191,130,42,.14),
+        inset 0 0 0 31px transparent,
+        inset 0 0 0 33px rgba(191,130,42,.10);
+      transform: rotate(-10deg);
+    }
+
+    #wettbewerbe > * {
+      position: relative;
+      z-index: 1;
+    }
+
   </style>
 </head>
 
