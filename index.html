@@ -3800,6 +3800,57 @@
       background: rgba(17,10,6,.82);
     }
 
+  
+    /* ================================================================
+       HALL OF FAME – KORREKTUR OHNE LAYOUTUMBAU
+       Originaler Pokal und bestehende Struktur bleiben erhalten.
+       ================================================================ */
+
+    #hall-of-fame {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(9,5,3,.42), rgba(9,5,3,.60)),
+        radial-gradient(circle at 78% 18%, rgba(193,132,44,.13), transparent 34%),
+        url("./piraten-spieltag-hintergrund.jpg") center 42% / cover no-repeat;
+    }
+
+    #hall-of-fame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.08), transparent 36%, rgba(0,0,0,.06)),
+        radial-gradient(circle at 18% 76%, rgba(181,119,35,.05), transparent 26%);
+    }
+
+    #hall-of-fame > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    #hall-of-fame .champion-showcase,
+    #hall-of-fame .honour-card,
+    #hall-of-fame .history-row,
+    #hall-of-fame .record-card {
+      background:
+        linear-gradient(145deg, rgba(28,16,8,.86), rgba(12,7,4,.91));
+      backdrop-filter: blur(1px);
+    }
+
+    #hall-of-fame .trophy-stage {
+      background:
+        radial-gradient(circle at 50% 44%, rgba(184,122,35,.11), transparent 58%),
+        rgba(10,6,3,.46);
+    }
+
+    #hall-of-fame .trophy {
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+
   </style>
 </head>
 
@@ -4824,9 +4875,9 @@
 
     async function loadClubData() {
       try {
-        const response = await fetch("./clubdaten.json", { cache: "no-store" });
+        const response = await fetch("./hall-of-fame.json", { cache: "no-store" });
         if (!response.ok) {
-          throw new Error(`clubdaten.json konnte nicht geladen werden: ${response.status}`);
+          throw new Error(`hall-of-fame.json konnte nicht geladen werden: ${response.status}`);
         }
 
         const data = await response.json();
@@ -4911,9 +4962,9 @@
         setText("honours-value", data.ehrenmitglieder?.wert);
         setOpenState("honours-value", Boolean(data.ehrenmitglieder?.offen), "Noch keine Einträge");
 
-        console.info("Clubdaten erfolgreich geladen.");
+        console.info("Hall-of-Fame-Daten erfolgreich geladen.");
       } catch (error) {
-        console.warn("Clubdaten konnten nicht geladen werden. Fallback-Werte bleiben sichtbar.", error);
+        console.warn("Hall-of-Fame-Daten konnten nicht geladen werden. Fallback-Werte bleiben sichtbar.", error);
       }
     }
 
