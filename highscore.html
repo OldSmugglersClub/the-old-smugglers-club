@@ -53,6 +53,12 @@
         <div><div class="hs-eyebrow">Komplette Rangliste</div><h2 id="individual-title">Einzelwertung – Gesamt</h2><p class="hs-status" id="individual-caption"></p></div>
         <label class="hs-search"><span>Spieler suchen</span><input id="player-search" type="search" placeholder="Name eingeben …" autocomplete="off"></label>
       </div>
+      <div class="hs-ranking-toolbar" id="ranking-toolbar" aria-live="polite">
+        <div><span>Ansicht</span><strong id="toolbar-view">Gesamtwertung</strong></div>
+        <div><span>Sortierung</span><strong id="toolbar-sort">Offizielle Rangfolge</strong></div>
+        <div><span>Treffer</span><strong id="toolbar-count">0 Spieler</strong></div>
+        <button class="hs-reset" id="ranking-reset" type="button" hidden>Filter zurücksetzen</button>
+      </div>
       <div class="hs-table-wrap"><table class="hs-table"><caption class="sr-only">Rangliste der Einzelspieler</caption><thead id="individual-head"></thead><tbody id="individual-body"></tbody></table></div>
       <div class="hs-pagination">
         <button class="hs-page-btn" id="page-prev">‹ Zurück</button>

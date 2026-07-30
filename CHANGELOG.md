@@ -1,3 +1,13 @@
+# Version 2.28 – Highscore Ranglisten-Kompass
+
+- Kompakte Statusleiste für aktive Ansicht, Sortierung und Trefferzahl ergänzt.
+- Zentrale Rücksetzfunktion für Suche, Sortierung, Seitengröße und Pagination eingebaut.
+- Leerer Suchzustand als klar gestalteter Schiffsregister-Hinweis mit direkter Rücksetzung umgesetzt.
+- Deaktivierte Seitennavigation visuell und funktional eindeutiger dargestellt.
+- Fehlerhafte Statuslogik beim Orden „Aufholjäger“ korrigiert: Vorhandene Archivstände allein vergeben keinen Orden.
+- Responsive Darstellung der neuen Bedienelemente für Tablet und Mobilgeräte ergänzt.
+- Grundlayout, Raster, Kachelgrößen und alle übrigen Websitebereiche unverändert gelassen.
+
 # Changelog
 
 ## Version 2.24 – Highscore-Podium im Piratendesign

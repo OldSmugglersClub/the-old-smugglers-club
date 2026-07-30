@@ -110,10 +110,32 @@ function rowCell(label, value, className = '') {
   return `<td${className ? ` class="${className}"` : ''} data-label="${label}">${value}</td>`;
 }
 
+function sortDescription() {
+  if (state.sortKey === 'official') return 'Offizielle Rangfolge';
+  const labels = {
+    name: 'Spielername', bonusPoints: 'Bonuspunkte', matchdayWins: 'Spieltagsiege',
+    totalPoints: 'Gesamtpunkte', points: 'Spieltagespunkte', matchdayRank: 'Spieltagsplatz'
+  };
+  return `${labels[state.sortKey] || state.sortKey} · ${state.sortDir === 'asc' ? 'aufsteigend' : 'absteigend'}`;
+}
+
+function updateRankingToolbar(filteredCount) {
+  const view = document.querySelector('#toolbar-view');
+  const sort = document.querySelector('#toolbar-sort');
+  const count = document.querySelector('#toolbar-count');
+  const reset = document.querySelector('#ranking-reset');
+  if (!view || !sort || !count || !reset) return;
+  view.textContent = state.view === 'overall' ? 'Gesamtwertung' : (data.meta?.matchday || 'Einzelspieltag');
+  sort.textContent = sortDescription();
+  count.textContent = `${filteredCount} ${filteredCount === 1 ? 'Spieler' : 'Spieler'}`;
+  reset.hidden = !state.query && state.sortKey === 'official' && state.pageSize === 25;
+}
+
 function renderIndividual() {
   const all = sortedRows(state.view);
   const query = state.query.trim().toLocaleLowerCase('de');
   const filtered = query ? all.filter(row => String(row.name).toLocaleLowerCase('de').includes(query)) : all;
+  updateRankingToolbar(filtered.length);
   const pages = Math.max(1, Math.ceil(filtered.length / state.pageSize));
   state.page = Math.min(state.page, pages);
   const start = (state.page - 1) * state.pageSize;
@@ -134,7 +156,8 @@ function renderIndividual() {
   }
 
   if (!rows.length) {
-    body.innerHTML = `<tr><td colspan="6" class="hs-empty">Für „${esc(state.query)}“ wurde kein Spieler gefunden.</td></tr>`;
+    body.innerHTML = `<tr><td colspan="6" class="hs-empty"><strong>Kein Eintrag im Schiffsregister</strong><span>Für „${esc(state.query)}“ wurde kein Spieler gefunden.</span><button type="button" class="hs-empty-reset" id="empty-reset">Suche löschen</button></td></tr>`;
+    document.querySelector('#empty-reset')?.addEventListener('click', resetRankingControls);
   }
 
   document.querySelectorAll('.hs-sort').forEach(button => button.addEventListener('click', () => {
@@ -227,7 +250,7 @@ function renderRecords() {
   const orders = [
     orderCard('Kapitän der Woche', captain, hasMatchday ? 'Bester Spieler des aktuellen Einzelspieltags.' : 'Freischaltung nach dem ersten gewerteten Spieltag.', hasMatchday ? 'awarded' : 'locked'),
     orderCard('Volltrefferkönig', 'Noch nicht berechenbar', 'Benötigt Detaildaten zu exakten Ergebnistipps.', 'locked'),
-    orderCard('Aufholjäger', 'Noch nicht berechenbar', 'Benötigt mindestens zwei archivierte Rangstände.', historyRows.length >= 2 ? 'awarded' : 'locked'),
+    orderCard('Aufholjäger', 'Noch nicht berechenbar', historyRows.length >= 2 ? 'Archivstände vorhanden, aber Bewegungsdaten fehlen noch.' : 'Benötigt mindestens zwei archivierte Rangstände.', 'locked'),
     orderCard('Heißeste Serie', 'Noch nicht berechenbar', 'Benötigt mehrere abgeschlossene Einzelspieltage.', 'locked'),
     orderCard('Überraschung des Spieltags', 'Noch nicht berechenbar', 'Benötigt Tippdetails und belastbare Marktquoten.', 'locked'),
     orderCard('Admiral des Monats', 'Noch nicht vergeben', 'Freischaltung nach einem vollständigen Kalendermonat.', 'locked')
@@ -237,6 +260,20 @@ function renderRecords() {
   document.querySelector('#history-grid').innerHTML = historyRows.length
     ? `<div class="hs-history-head"><span>Spieltag</span><span>Führender Spieler</span><span>Punktestand</span></div>${historyRows.map((row, index) => `<div class="hs-history-row"><span>${esc(row.matchday)}</span><strong>${esc(row.leader)}</strong><b>${fmt(row.points)} Punkte</b><i aria-hidden="true">${index + 1}</i></div>`).join('')}`
     : '<div class="hs-history-empty"><strong>Logbuch noch leer</strong><p>Die Saisonhistorie wird erst belastbar, wenn Spieltagsstände archiviert werden. Bis dahin wird bewusst kein Verlauf simuliert.</p><span>Benötigt: mindestens einen abgeschlossenen und gespeicherten Spieltag</span></div>';
+}
+
+function resetRankingControls() {
+  state.query = '';
+  state.page = 1;
+  state.pageSize = 25;
+  state.sortKey = 'official';
+  state.sortDir = 'asc';
+  const search = document.querySelector('#player-search');
+  const size = document.querySelector('#page-size');
+  if (search) search.value = '';
+  if (size) size.value = '25';
+  renderIndividual();
+  search?.focus();
 }
 
 function init() {
@@ -290,6 +327,7 @@ function init() {
     state.page = 1;
     renderIndividual();
   });
+  document.querySelector('#ranking-reset').addEventListener('click', resetRankingControls);
   document.querySelector('#page-prev').addEventListener('click', () => {
     if (state.page > 1) {
       state.page--;
