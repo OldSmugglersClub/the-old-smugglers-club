@@ -215,6 +215,253 @@
     root.appendChild(article);
   }
 
+
+  function completedBundesligaGames(gameData) {
+    return allCentralGames(gameData)
+      .filter(match => match && match.wettbewerb === "bundesliga")
+      .filter(match => numericScore(match.heimtore) !== null && numericScore(match.auswaertstore) !== null)
+      .sort((a, b) => `${a.datum || ""}T${a.anstoss || ""}`.localeCompare(`${b.datum || ""}T${b.anstoss || ""}`));
+  }
+
+  function calculateBundesligaStatistics(gameData, teamData) {
+    const games = completedBundesligaGames(gameData);
+    const teamLookup = createTeamLookup(teamData);
+    const teams = new Map();
+
+    const ensure = (id, fallback) => {
+      if (!id) return null;
+      if (!teams.has(id)) {
+        teams.set(id, {
+          id,
+          name: teamName(teamLookup, id, fallback),
+          played: 0,
+          points: 0,
+          goalsFor: 0,
+          goalsAgainst: 0,
+          homePlayed: 0,
+          homePoints: 0,
+          awayPlayed: 0,
+          awayPoints: 0,
+          cleanSheets: 0,
+          currentRunType: null,
+          currentRun: 0,
+          longestWinRun: 0,
+          form: []
+        });
+      }
+      return teams.get(id);
+    };
+
+    let totalGoals = 0;
+    let homeWins = 0;
+    let draws = 0;
+    let awayWins = 0;
+    let biggestWin = null;
+    let highestScoring = null;
+
+    games.forEach(match => {
+      const hg = numericScore(match.heimtore);
+      const ag = numericScore(match.auswaertstore);
+      const home = ensure(match.heimTeamId, match.heim);
+      const away = ensure(match.auswaertsTeamId, match.auswaerts);
+      if (!home || !away) return;
+
+      totalGoals += hg + ag;
+      home.played += 1;
+      away.played += 1;
+      home.homePlayed += 1;
+      away.awayPlayed += 1;
+      home.goalsFor += hg;
+      home.goalsAgainst += ag;
+      away.goalsFor += ag;
+      away.goalsAgainst += hg;
+      if (ag === 0) home.cleanSheets += 1;
+      if (hg === 0) away.cleanSheets += 1;
+
+      let homeResult = "U";
+      let awayResult = "U";
+      if (hg > ag) {
+        homeWins += 1;
+        home.points += 3;
+        home.homePoints += 3;
+        homeResult = "S";
+        awayResult = "N";
+      } else if (hg < ag) {
+        awayWins += 1;
+        away.points += 3;
+        away.awayPoints += 3;
+        homeResult = "N";
+        awayResult = "S";
+      } else {
+        draws += 1;
+        home.points += 1;
+        away.points += 1;
+        home.homePoints += 1;
+        away.awayPoints += 1;
+      }
+
+      [[home, homeResult], [away, awayResult]].forEach(([team, result]) => {
+        team.form.push(result);
+        if (team.form.length > 5) team.form.shift();
+        if (result === "S") {
+          team.currentRun = team.currentRunType === "S" ? team.currentRun + 1 : 1;
+          team.currentRunType = "S";
+          team.longestWinRun = Math.max(team.longestWinRun, team.currentRun);
+        } else {
+          team.currentRunType = result;
+          team.currentRun = 1;
+        }
+      });
+
+      const difference = Math.abs(hg - ag);
+      if (!biggestWin || difference > biggestWin.difference || (difference === biggestWin.difference && hg + ag > biggestWin.totalGoals)) {
+        biggestWin = { match, difference, totalGoals: hg + ag };
+      }
+      if (!highestScoring || hg + ag > highestScoring.totalGoals) {
+        highestScoring = { match, totalGoals: hg + ag };
+      }
+    });
+
+    const teamRows = [...teams.values()];
+    const bestBy = (selector) => teamRows.length
+      ? [...teamRows].sort((a, b) => selector(b) - selector(a) || b.points - a.points || a.name.localeCompare(b.name, "de"))[0]
+      : null;
+
+    return {
+      games,
+      totalGoals,
+      averageGoals: games.length ? totalGoals / games.length : 0,
+      homeWins,
+      draws,
+      awayWins,
+      biggestWin,
+      highestScoring,
+      bestAttack: bestBy(team => team.goalsFor),
+      bestDefense: bestBy(team => -team.goalsAgainst),
+      bestHome: bestBy(team => team.homePlayed ? team.homePoints / team.homePlayed : -1),
+      bestAway: bestBy(team => team.awayPlayed ? team.awayPoints / team.awayPlayed : -1),
+      mostCleanSheets: bestBy(team => team.cleanSheets),
+      longestWinRun: bestBy(team => team.longestWinRun),
+      formRows: [...teamRows].sort((a, b) => b.points - a.points || (b.goalsFor - b.goalsAgainst) - (a.goalsFor - a.goalsAgainst) || a.name.localeCompare(b.name, "de"))
+    };
+  }
+
+  function pairingText(match, teamData) {
+    if (!match) return "–";
+    const lookup = createTeamLookup(teamData);
+    const home = teamName(lookup, match.heimTeamId, match.heim);
+    const away = teamName(lookup, match.auswaertsTeamId, match.auswaerts);
+    return `${home} – ${away} ${match.heimtore}:${match.auswaertstore}`;
+  }
+
+  function createStatCard(label, value, detail = "") {
+    const card = document.createElement("article");
+    card.className = "season-stat-card";
+    const labelEl = document.createElement("span");
+    labelEl.className = "season-stat-label";
+    labelEl.textContent = label;
+    const valueEl = document.createElement("strong");
+    valueEl.textContent = value;
+    card.append(labelEl, valueEl);
+    if (detail) {
+      const detailEl = document.createElement("small");
+      detailEl.textContent = detail;
+      card.appendChild(detailEl);
+    }
+    return card;
+  }
+
+  function renderBundesligaStatistics(gameData, teamData, root) {
+    const stats = calculateBundesligaStatistics(gameData, teamData);
+    const section = document.createElement("section");
+    section.className = "dynamic-section bundesliga-statistics";
+
+    const heading = document.createElement("h2");
+    heading.textContent = "Saisonstatistik und Rekorde";
+    section.appendChild(heading);
+
+    if (!stats.games.length) {
+      const empty = document.createElement("div");
+      empty.className = "statistics-empty";
+      empty.innerHTML = "<strong>Bereit für den Saisonstart</strong><span>Sobald Endergebnisse in spieldaten.json eingetragen sind, erscheinen hier automatisch Torstatistik, Form, Heim-/Auswärtswerte und Saisonrekorde.</span>";
+      section.appendChild(empty);
+      root.appendChild(section);
+      return;
+    }
+
+    const overview = document.createElement("div");
+    overview.className = "season-stat-grid";
+    overview.append(
+      createStatCard("Ausgewertete Spiele", String(stats.games.length)),
+      createStatCard("Tore", String(stats.totalGoals), `${stats.averageGoals.toFixed(2).replace(".", ",")} pro Spiel`),
+      createStatCard("Heimsiege", String(stats.homeWins)),
+      createStatCard("Unentschieden", String(stats.draws)),
+      createStatCard("Auswärtssiege", String(stats.awayWins))
+    );
+    section.appendChild(overview);
+
+    const records = document.createElement("div");
+    records.className = "record-grid";
+    const recordItems = [
+      ["Beste Offensive", stats.bestAttack, stats.bestAttack ? `${stats.bestAttack.goalsFor} Tore` : ""],
+      ["Beste Defensive", stats.bestDefense, stats.bestDefense ? `${stats.bestDefense.goalsAgainst} Gegentore` : ""],
+      ["Heimstärkstes Team", stats.bestHome, stats.bestHome ? `${stats.bestHome.homePoints} Punkte aus ${stats.bestHome.homePlayed} Spielen` : ""],
+      ["Auswärtsstärkstes Team", stats.bestAway, stats.bestAway ? `${stats.bestAway.awayPoints} Punkte aus ${stats.bestAway.awayPlayed} Spielen` : ""],
+      ["Meiste Zu-null-Spiele", stats.mostCleanSheets, stats.mostCleanSheets ? `${stats.mostCleanSheets.cleanSheets}` : ""],
+      ["Längste Siegesserie", stats.longestWinRun, stats.longestWinRun ? `${stats.longestWinRun.longestWinRun} Siege` : ""]
+    ];
+    recordItems.forEach(([label, team, detail]) => records.appendChild(createStatCard(label, team ? team.name : "–", detail)));
+    section.appendChild(records);
+
+    const matchRecords = document.createElement("div");
+    matchRecords.className = "match-records";
+    matchRecords.append(
+      createStatCard("Höchster Sieg", stats.biggestWin ? pairingText(stats.biggestWin.match, teamData) : "–", stats.biggestWin ? `${stats.biggestWin.difference} Tore Unterschied` : ""),
+      createStatCard("Torreichstes Spiel", stats.highestScoring ? pairingText(stats.highestScoring.match, teamData) : "–", stats.highestScoring ? `${stats.highestScoring.totalGoals} Tore` : "")
+    );
+    section.appendChild(matchRecords);
+
+    const formHeading = document.createElement("h3");
+    formHeading.textContent = "Form der letzten fünf Ligaspiele";
+    section.appendChild(formHeading);
+    const formWrapper = document.createElement("div");
+    formWrapper.className = "table-scroll";
+    const table = document.createElement("table");
+    table.className = "data-table form-table";
+    table.innerHTML = "<thead><tr><th>Verein</th><th>Form</th><th>Punkte</th><th>Tore</th></tr></thead>";
+    const tbody = document.createElement("tbody");
+    stats.formRows.forEach(team => {
+      const row = document.createElement("tr");
+      const teamCell = document.createElement("td");
+      teamCell.textContent = team.name;
+      const formCell = document.createElement("td");
+      const form = document.createElement("div");
+      form.className = "form-badges";
+      team.form.forEach(result => {
+        const badge = document.createElement("span");
+        badge.className = `form-badge form-${result.toLowerCase()}`;
+        badge.textContent = result;
+        form.appendChild(badge);
+      });
+      formCell.appendChild(form);
+      const pointsCell = document.createElement("td");
+      pointsCell.textContent = String(team.points);
+      const goalsCell = document.createElement("td");
+      goalsCell.textContent = `${team.goalsFor}:${team.goalsAgainst}`;
+      row.append(teamCell, formCell, pointsCell, goalsCell);
+      tbody.appendChild(row);
+    });
+    table.appendChild(tbody);
+    formWrapper.appendChild(table);
+    section.appendChild(formWrapper);
+
+    const note = document.createElement("p");
+    note.className = "data-note";
+    note.textContent = "Alle Werte werden ausschließlich aus den hinterlegten Bundesliga-Endergebnissen berechnet. Spielerbezogene Daten wie Torjäger oder Karten benötigen später eine eigene Datenquelle.";
+    section.appendChild(note);
+    root.appendChild(section);
+  }
+
   function centralGamesForPage(data) {
     const filter = FILTERS[slug];
     if (!filter) return [];
@@ -421,6 +668,7 @@
     }
     if (slug === "bundesliga") {
       renderBundesligaTable(gameData, teamData, tableData, root);
+      renderBundesligaStatistics(gameData, teamData, root);
     }
     safeArray(sections).filter(s => s && s.anzeigen !== false).forEach(section => {
       const article = document.createElement("section");

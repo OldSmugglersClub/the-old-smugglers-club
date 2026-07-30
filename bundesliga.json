@@ -2,7 +2,7 @@
   "bereich": "Wettbewerbszentrale",
   "statusSchild": "Vorbereitung",
   "titel": "Bundesliga",
-  "beschreibung": "Die Bundesliga-Zentrale bündelt alle 34 Spieltage, Ergebnisse und die automatisch berechnete Tabelle der Saison 2026/2027.",
+  "beschreibung": "Die Bundesliga-Zentrale bündelt alle 34 Spieltage, Ergebnisse, die automatisch berechnete Tabelle sowie kompakte Saisonstatistiken der Saison 2026/2027.",
   "karten": [
     {
       "titel": "Wertung",
@@ -14,11 +14,11 @@
     },
     {
       "titel": "Datenzentrale",
-      "text": "Spieltage, Endergebnisse und Tabellenstand werden zentral aus den Spieldaten aufgebaut. Saisonrekorde folgen später."
+      "text": "Spieltage, Endergebnisse, Tabelle, Formkurven sowie Heim-, Auswärts- und Torstatistiken werden zentral aus den Spieldaten aufgebaut."
     }
   ],
   "aktuellerStandTitel": "Datenmanagement:",
-  "aktuellerStand": "Endergebnisse werden direkt bei den Spielen in spieldaten.json gepflegt. Die Tabelle berechnet sich daraus automatisch; bis zum Saisonstart wird der vorbereitete Tabellenstand angezeigt.",
+  "aktuellerStand": "Endergebnisse werden direkt bei den Spielen in spieldaten.json gepflegt. Tabelle, Form und Saisonrekorde berechnen sich daraus automatisch. Spielerbezogene Statistiken benötigen später eine separate Datenquelle.",
   "bereiche": [],
   "buttons": [
     {

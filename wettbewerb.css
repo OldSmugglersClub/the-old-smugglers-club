@@ -552,3 +552,79 @@ body.page-dynamo-dresden{
     overflow-wrap:anywhere;
   }
 }
+
+/* Bundesliga: kompakte Saisonstatistiken unterhalb der bestehenden Tabelle */
+.bundesliga-statistics h3{
+  margin:22px 0 10px;
+  color:#e7c56f;
+  font-size:1.2rem;
+}
+.statistics-empty{
+  display:grid;
+  gap:6px;
+  padding:18px;
+  border:1px solid rgba(183,122,35,.45);
+  border-radius:9px;
+  background:rgba(17,10,5,.62);
+}
+.statistics-empty strong{color:#e8c878;font-size:1.1rem}
+.statistics-empty span{color:var(--muted);line-height:1.5}
+.season-stat-grid,
+.record-grid,
+.match-records{
+  display:grid;
+  gap:12px;
+  margin-top:12px;
+}
+.season-stat-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+.record-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.match-records{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:12px}
+.season-stat-card{
+  display:flex;
+  min-width:0;
+  flex-direction:column;
+  gap:5px;
+  padding:14px;
+  border:1px solid rgba(183,122,35,.45);
+  border-radius:9px;
+  background:linear-gradient(145deg,rgba(42,25,13,.86),rgba(17,10,5,.9));
+}
+.season-stat-label{
+  color:var(--muted);
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+.season-stat-card strong{
+  overflow-wrap:anywhere;
+  color:#edcf87;
+  font-size:1.15rem;
+  line-height:1.25;
+}
+.season-stat-card small{color:#c9ae75;line-height:1.35}
+.form-table{min-width:620px}
+.form-table th:not(:first-child),.form-table td:not(:first-child){text-align:center}
+.form-badges{display:flex;justify-content:center;gap:5px}
+.form-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  border:1px solid rgba(232,200,120,.45);
+  font-size:.76rem;
+  font-weight:900;
+}
+.form-s{background:rgba(71,118,58,.55);color:#e5f3d7}
+.form-u{background:rgba(137,105,44,.55);color:#fff0bd}
+.form-n{background:rgba(126,53,41,.55);color:#ffd9cf}
+@media(max-width:1000px){
+  .season-stat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .record-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:650px){
+  .season-stat-grid,.record-grid,.match-records{grid-template-columns:1fr}
+  .season-stat-card{padding:12px}
+}
