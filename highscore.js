@@ -2,7 +2,7 @@ const fmt = n => Number(n || 0).toLocaleString('de-DE', { maximumFractionDigits:
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 let data = {};
-const STORAGE_KEY = 'tosmc-highscore-state-v231';
+const STORAGE_KEY = 'tosmc-highscore-state-v232';
 const state = {
   view: 'overall',
   page: 1,
@@ -11,6 +11,80 @@ const state = {
   sortKey: 'official',
   sortDir: 'asc'
 };
+
+function parseGermanDate(value) {
+  const match = String(value || '').match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/);
+  if (!match) return null;
+  const date = new Date(Number(match[3]), Number(match[2]) - 1, Number(match[1]));
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function dataAgeInfo() {
+  const date = parseGermanDate(data.meta?.exportDate);
+  if (!date) return { label: 'Unbekannt', state: 'unknown', note: 'Exportdatum nicht lesbar' };
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const days = Math.max(0, Math.floor((today - date) / 86400000));
+  if (days <= 1) return { label: 'Aktuell', state: 'fresh', note: days === 0 ? 'Export von heute' : 'Export von gestern' };
+  if (days <= 7) return { label: `${days} Tage alt`, state: 'recent', note: 'Noch innerhalb des Wochenfensters' };
+  return { label: `${days} Tage alt`, state: 'stale', note: 'Neuer Kicktipp-Export empfohlen' };
+}
+
+function datasetAudit() {
+  const overall = data.individual?.overall || [];
+  const matchday = data.individual?.matchday || [];
+  const overallNames = new Set(overall.map(row => String(row.name)));
+  const matchdayNames = new Set(matchday.map(row => String(row.name)));
+  const duplicates = overall.length - overallNames.size + matchday.length - matchdayNames.size;
+  const missing = [...overallNames].filter(name => !matchdayNames.has(name)).length + [...matchdayNames].filter(name => !overallNames.has(name)).length;
+  const invalid = [...overall, ...matchday].filter(row => !row.name || !Number.isFinite(Number(row.rank))).length;
+  return { duplicates, missing, invalid, clean: duplicates === 0 && missing === 0 && invalid === 0 };
+}
+
+function renderDataCompass() {
+  const host = document.querySelector('#data-compass');
+  if (!host) return;
+  const age = dataAgeInfo();
+  const audit = datasetAudit();
+  const count = data.individual?.overall?.length || 0;
+  const statusText = audit.clean ? 'Struktur geprüft' : `${audit.duplicates + audit.missing + audit.invalid} Hinweise`;
+  host.className = `hs-data-compass is-${age.state}${audit.clean ? ' is-clean' : ' has-warning'}`;
+  host.innerHTML = `
+    <div><span>Datenquelle</span><strong>${esc(data.meta?.source || 'Nicht angegeben')}</strong><small>${esc(data.meta?.privacy || 'Nur öffentliche Ranglistendaten')}</small></div>
+    <div><span>Aktualität</span><strong>${esc(age.label)}</strong><small>${esc(age.note)}</small></div>
+    <div><span>Registerumfang</span><strong>${count} Spieler</strong><small>Gesamt- und Spieltagswertung abgeglichen</small></div>
+    <div><span>Datenprüfung</span><strong>${esc(statusText)}</strong><small>${audit.clean ? 'Keine Dubletten oder Namensabweichungen' : `Dubletten ${audit.duplicates} · Abweichungen ${audit.missing} · ungültig ${audit.invalid}`}</small></div>`;
+}
+
+function playerByName(name, view) {
+  return (data.individual?.[view] || []).find(row => String(row.name) === String(name));
+}
+
+function openPlayerProfile(name) {
+  const dialog = document.querySelector('#player-dialog');
+  if (!dialog) return;
+  const overall = playerByName(name, 'overall');
+  const matchday = playerByName(name, 'matchday');
+  document.querySelector('#player-dialog-title').textContent = name;
+  document.querySelector('#player-dialog-status').textContent = `${data.meta?.season || 'Saison'} · ${data.meta?.matchday || 'aktueller Spieltag'}`;
+  document.querySelector('#player-profile-grid').innerHTML = `
+    <article><span>Gesamtrang</span><strong>${esc(overall?.rank ?? '–')}</strong><small>${fmt(overall?.totalPoints)} Gesamtpunkte</small></article>
+    <article><span>Bonuspunkte</span><strong>${fmt(overall?.bonusPoints)}</strong><small>Anteil an der Gesamtwertung</small></article>
+    <article><span>Spieltagsiege</span><strong>${fmt(overall?.matchdayWins)}</strong><small>Gewonnene Einzelspieltage</small></article>
+    <article><span>Aktueller Spieltag</span><strong>${fmt(matchday?.points)} Punkte</strong><small>Rang ${esc(matchday?.matchdayRank ?? matchday?.rank ?? '–')}</small></article>
+    <article><span>Spieltag-Bonus</span><strong>${fmt(matchday?.bonusPoints)}</strong><small>Im aktuellen Export</small></article>
+    <article><span>Datenstand</span><strong>${esc(data.meta?.exportDate || '–')}</strong><small>${esc(data.meta?.source || 'Zentrale Highscore-Datei')}</small></article>`;
+  const noScore = Number(overall?.totalPoints || 0) <= 0 && Number(matchday?.points || 0) <= 0;
+  document.querySelector('#player-profile-note').textContent = noScore
+    ? 'Noch keine sportliche Wertung vorhanden. Das Profil zeigt ausschließlich bestätigte Exportdaten.'
+    : 'Das Profil vergleicht Gesamtwertung und aktuellen Einzelspieltag. Es werden keine fehlenden Werte geschätzt.';
+  if (typeof dialog.showModal === 'function') dialog.showModal();
+  else dialog.setAttribute('open', '');
+}
+
+function profileButton(name) {
+  return `<button class="hs-player-link" type="button" data-player-profile="${esc(name)}" aria-label="Spielerprofil von ${esc(name)} öffnen">${esc(name)}</button>`;
+}
 
 function loadSavedState() {
   try {
@@ -172,7 +246,7 @@ function renderPodium() {
       <div class="hs-card-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
       <div class="hs-rank-seal" aria-hidden="true"><span>${status.open ? '–' : place}</span></div>
       <div class="hs-place-label">${label}</div>
-      <strong>${esc(row.name)}</strong>
+      <strong>${profileButton(row.name)}</strong>
       <div class="hs-podium-divider" aria-hidden="true"></div>
       <div class="hs-podium-points">${fmt(scoreOf(row, state.view))} Punkte</div>
       ${state.view === 'overall' ? `<small>${fmt(row.matchdayWins)} Spieltagssiege</small>` : ''}
@@ -180,6 +254,7 @@ function renderPodium() {
       <div class="hs-pedestal-face" aria-hidden="true"><span>${status.open ? '–' : place}</span></div>
     </article>`;
   }).join('')}<div class="hs-podium-deck" aria-hidden="true"><span></span></div>`;
+  el.querySelectorAll('[data-player-profile]').forEach(button => button.addEventListener('click', () => openPlayerProfile(button.dataset.playerProfile)));
 }
 
 function sortButton(label, key) {
@@ -230,12 +305,12 @@ function renderIndividual() {
 
   if (state.view === 'overall') {
     head.innerHTML = `<tr><th>${sortButton('Rang', 'official')}</th><th>${sortButton('Spieler', 'name')}</th><th>${sortButton('Bonuspunkte', 'bonusPoints')}</th><th>${sortButton('Spieltagsiege', 'matchdayWins')}</th><th>${sortButton('Gesamtpunkte', 'totalPoints')}</th></tr>`;
-    body.innerHTML = rows.map(row => `<tr>${rowCell('Rang', esc(row.rank), 'hs-rank')}${rowCell('Spieler', esc(row.name), 'hs-player')}${rowCell('Bonuspunkte', fmt(row.bonusPoints))}${rowCell('Spieltagsiege', fmt(row.matchdayWins))}${rowCell('Gesamtpunkte', fmt(row.totalPoints), 'hs-total')}</tr>`).join('');
+    body.innerHTML = rows.map(row => `<tr>${rowCell('Rang', esc(row.rank), 'hs-rank')}${rowCell('Spieler', profileButton(row.name), 'hs-player')}${rowCell('Bonuspunkte', fmt(row.bonusPoints))}${rowCell('Spieltagsiege', fmt(row.matchdayWins))}${rowCell('Gesamtpunkte', fmt(row.totalPoints), 'hs-total')}</tr>`).join('');
     document.querySelector('#individual-title').textContent = 'Einzelwertung – Gesamt';
     document.querySelector('#individual-caption').textContent = 'Gesamtübersicht aller Einzelspieler. Spalten können sortiert werden.';
   } else {
     head.innerHTML = `<tr><th>${sortButton('Rang', 'official')}</th><th>${sortButton('Spieler', 'name')}</th><th>${sortButton('Punkte', 'points')}</th><th>${sortButton('Bonus', 'bonusPoints')}</th><th>${sortButton('Gesamtpunkte', 'totalPoints')}</th><th>${sortButton('Spieltagsplatz', 'matchdayRank')}</th></tr>`;
-    body.innerHTML = rows.map(row => `<tr>${rowCell('Rang', esc(row.rank), 'hs-rank')}${rowCell('Spieler', esc(row.name), 'hs-player')}${rowCell('Punkte', fmt(row.points))}${rowCell('Bonus', fmt(row.bonusPoints))}${rowCell('Gesamtpunkte', fmt(row.totalPoints), 'hs-total')}${rowCell('Spieltagsplatz', esc(row.matchdayRank))}</tr>`).join('');
+    body.innerHTML = rows.map(row => `<tr>${rowCell('Rang', esc(row.rank), 'hs-rank')}${rowCell('Spieler', profileButton(row.name), 'hs-player')}${rowCell('Punkte', fmt(row.points))}${rowCell('Bonus', fmt(row.bonusPoints))}${rowCell('Gesamtpunkte', fmt(row.totalPoints), 'hs-total')}${rowCell('Spieltagsplatz', esc(row.matchdayRank))}</tr>`).join('');
     document.querySelector('#individual-title').textContent = 'Einzelwertung – Spieltag';
     document.querySelector('#individual-caption').textContent = `${data.meta?.matchday || 'Ausgewählter Einzelspieltag'} · Spalten können sortiert werden.`;
   }
@@ -259,6 +334,8 @@ function renderIndividual() {
     state.page = 1;
     renderIndividual();
   }));
+
+  document.querySelectorAll('[data-player-profile]').forEach(button => button.addEventListener('click', () => openPlayerProfile(button.dataset.playerProfile)));
 
   document.querySelector('#page-info').textContent = `Seite ${state.page} von ${pages} · ${filtered.length} Spieler`;
   document.querySelector('#page-prev').disabled = state.page <= 1;
@@ -397,6 +474,11 @@ function init() {
   renderTeam('Old Smugglers Team');
   renderTeam('New Smugglers Team');
   renderRecords();
+  renderDataCompass();
+
+  const profileDialog = document.querySelector('#player-dialog');
+  document.querySelector('#player-dialog-close')?.addEventListener('click', () => profileDialog?.close());
+  profileDialog?.addEventListener('click', event => { if (event.target === profileDialog) profileDialog.close(); });
 
   document.querySelectorAll('.hs-main-tab').forEach(tab => {
     tab.addEventListener('click', () => setSection(tab.dataset.section));

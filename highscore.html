@@ -50,6 +50,7 @@
         </div>
       </div>
       <div class="hs-ranking-notice" id="ranking-notice" role="status" aria-live="polite"></div>
+      <div class="hs-data-compass" id="data-compass" aria-label="Datenherkunft und Aktualität"></div>
       <div class="hs-podium" id="podium"></div>
     </div>
 
@@ -98,6 +99,17 @@
   </section>
 
   <div class="hs-actions"><a class="hs-btn" href="./index.html#highscore">Zurück zur Startseite</a><a class="hs-btn" href="https://www.kicktipp.de/the-old-smugglers-club/" target="_blank" rel="noopener noreferrer">Zum Kicktipp</a></div>
+
+  <dialog class="hs-player-dialog" id="player-dialog" aria-labelledby="player-dialog-title">
+    <div class="hs-dialog-frame">
+      <button class="hs-dialog-close" id="player-dialog-close" type="button" aria-label="Spielerprofil schließen">×</button>
+      <div class="hs-eyebrow">Spielerprofil</div>
+      <h2 id="player-dialog-title">Spieler</h2>
+      <p class="hs-status" id="player-dialog-status"></p>
+      <div class="hs-profile-grid" id="player-profile-grid"></div>
+      <p class="hs-profile-note" id="player-profile-note"></p>
+    </div>
+  </dialog>
 </main>
 <script src="./highscore.js" defer></script>
 </body>

@@ -1,3 +1,14 @@
+# Version 2.32 – Highscore Datenkompass & Spielerprofile
+
+## Geändert
+- Datenkompass für Quelle, Aktualität, Registerumfang und strukturelle Datenprüfung ergänzt.
+- Exportalter wird automatisch bewertet; veraltete Datenstände werden sichtbar gekennzeichnet.
+- Gesamt- und Spieltagslisten werden auf Dubletten, Namensabweichungen und ungültige Rangwerte geprüft.
+- Spielernamen in Podium und Rangliste öffnen nun ein barrierearmes Detailprofil.
+- Spielerprofile vergleichen bestätigte Gesamt-, Bonus- und Spieltagswerte, ohne fehlende Daten zu schätzen.
+- Dialogdarstellung für Desktop, Tablet und Mobilgeräte im bestehenden Holz-, Leder- und Messingstil ergänzt.
+- Grundlayout, Raster, Kachelgrößen und übrige Websitebereiche bleiben unverändert.
+
 # Changelog
 
 ## Version 2.31 – Highscore Registerausgabe & Zustandsübernahme
