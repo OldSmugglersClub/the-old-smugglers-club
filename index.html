@@ -2578,6 +2578,31 @@
         linear-gradient(#e3bd69, #a76b20);
     }
 
+    #matchday-kicktipp-link {
+      position: relative;
+      padding-inline: 2.25rem;
+    }
+
+    #matchday-kicktipp-link::before,
+    #matchday-kicktipp-link::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      background:
+        radial-gradient(circle at 35% 30%, #f5d985 0 15%, #ad741f 42%, #68400e 72%, #2b1804 100%);
+      box-shadow:
+        inset 0 1px 1px rgba(255,255,255,.48),
+        0 1px 2px rgba(0,0,0,.82);
+      pointer-events: none;
+    }
+
+    #matchday-kicktipp-link::before { left: 12px; }
+    #matchday-kicktipp-link::after { right: 12px; }
+
     .matchday-actions .button-secondary {
       color: #e7ca89;
       background: linear-gradient(rgba(26,18,12,.94), rgba(10,8,6,.96));

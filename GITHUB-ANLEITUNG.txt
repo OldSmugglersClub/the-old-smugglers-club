@@ -1,19 +1,14 @@
-GITHUB-UPLOAD – KORREKTUR WETTBEWERBSSCHILD
+GITHUB-UPLOAD – NIETEN AM KICKTIPP-BUTTON
 
-Bitte diese beiden Dateien im Hauptverzeichnis des GitHub-Repositories ersetzen:
+Bitte nur diese Datei im Hauptverzeichnis des GitHub-Repositories ersetzen:
 
 1. index.html
-2. spieltag.json
 
 Änderung:
-- Solange das konkrete Ereignis noch nicht feststeht, zeigt das Schild links oben
-  „AKTUELLER TIPPTERMIN“ statt „SMUGGLERAUFTRAG“.
-- Sobald ein konkretes Ereignis eingetragen wird, kann das Feld „wettbewerb“
-  in spieltag.json passend gesetzt werden, zum Beispiel:
-  „Bundesliga“, „DFB-Pokal“, „Champions League“, „Smugglerauftrag“,
-  „Piratenkodex“, „Relegation“ oder „Sonderevent“.
+- Der Button „Jetzt bei Kicktipp tippen“ besitzt nun links und rechts jeweils eine passende Messingniete.
+- Link, Funktion, Größe und übriges Layout bleiben unverändert.
 
 Nach dem Upload:
-- Änderungen committen.
+- Änderung committen.
 - GitHub Pages 30–90 Sekunden aktualisieren lassen.
-- Seite mit Strg+F5 neu laden, damit keine alte JSON-Datei aus dem Browser-Cache verwendet wird.
+- Seite bei Bedarf mit Strg+F5 neu laden.
