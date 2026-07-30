@@ -4195,6 +4195,7 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="./highscore.css">
 </head>
 
 <body>
@@ -4332,6 +4333,7 @@
           <li><a href="#start">Start</a></li>
           <li><a href="#wettbewerbe">Wettbewerbe</a></li>
           <li><a href="./saison-2026-2027.html">Saisonübersicht</a></li>
+          <li><a href="./highscore.html">Highscore</a></li>
           <li><a href="#auftraege">Smuggleraufträge</a></li>
           <li><a href="#hall-of-fame">Hall of Fame</a></li>
           <li><a href="#piratenkodex">Piratenkodex</a></li>
@@ -4437,6 +4439,29 @@
            href="https://www.kicktipp.de/the-old-smugglers-club/"
            target="_blank" rel="noopener noreferrer">Jetzt bei Kicktipp tippen</a>
       </footer>
+    </section>
+
+<section class="section panel highscore-teaser" id="highscore">
+      <div class="section-title"><span class="highscore-crown" aria-hidden="true">♛</span><h2>Highscore</h2></div>
+      <p class="lead">Einzelwertung, Spieltagsrangliste und der direkte Vergleich der beiden Smuggler-Teams.</p>
+      <div class="highscore-teaser-grid" aria-label="Aktueller Highscore">
+        <article class="highscore-teaser-card">
+          <span>Einzelwertung</span>
+          <strong id="hs-leader-name">Saisonstart</strong>
+          <small id="hs-leader-points">Alle starten bei 0 Punkten</small>
+        </article>
+        <article class="highscore-teaser-card">
+          <span>Letzter Spieltag</span>
+          <strong id="hs-matchday-name">Smugglerauftrag Auftakt</strong>
+          <small id="hs-matchday-winner">Noch ohne Wertung</small>
+        </article>
+        <article class="highscore-teaser-card">
+          <span>Teamduell</span>
+          <strong id="hs-team-leader">Gleichstand</strong>
+          <small id="hs-team-points">Old vs. New Smugglers Team</small>
+        </article>
+      </div>
+      <p class="highscore-teaser-action"><a class="button button-primary" href="./highscore.html">Highscore öffnen</a></p>
     </section>
 
 <section class="section panel" id="wettbewerbe">
@@ -5288,5 +5313,6 @@
       }, 1100);
     });
   </script>
+  <script src="./highscore-teaser.js" defer></script>
 </body>
 </html>
