@@ -111,6 +111,82 @@ function populateComparisonSelect(currentName) {
   if (comparison) comparison.hidden = true;
 }
 
+function playerPositionAnalysis(name) {
+  const rows = officialRows('overall');
+  const player = rows.find(row => String(row.name) === String(name));
+  const scoredRows = rows.filter(row => Number(row.totalPoints || 0) > 0);
+  const total = rows.length;
+  const hasCompetition = scoredRows.length > 0;
+  if (!player || !total) return null;
+
+  const score = Number(player.totalPoints || 0);
+  const leaderScore = hasCompetition ? Math.max(...scoredRows.map(row => Number(row.totalPoints || 0))) : 0;
+  const distinctScores = [...new Set(scoredRows.map(row => Number(row.totalPoints || 0)))].sort((a, b) => b - a);
+  const higherScore = distinctScores.filter(value => value > score).sort((a, b) => a - b)[0];
+  const lowerScore = distinctScores.filter(value => value < score).sort((a, b) => b - a)[0];
+  const tied = rows.filter(row => Number(row.totalPoints || 0) === score);
+  const officialIndex = rows.findIndex(row => String(row.name) === String(name));
+  const position = Math.max(1, Number(player.rank || officialIndex + 1));
+  const fieldShare = total > 1 ? Math.round(((total - position) / (total - 1)) * 100) : 100;
+
+  let zone = 'Noch ohne Wertung';
+  if (hasCompetition && score > 0) {
+    if (position === 1) zone = 'Spitzengruppe';
+    else if (position <= 3) zone = 'Podiumszone';
+    else if (position <= Math.max(10, Math.ceil(total * .2))) zone = 'Vorderes Feld';
+    else if (position <= Math.ceil(total * .65)) zone = 'Mittelfeld';
+    else zone = 'Verfolgerfeld';
+  }
+
+  return {
+    player, total, score, hasCompetition, leaderScore, position, zone, fieldShare,
+    gapToLeader: Math.max(0, leaderScore - score),
+    pointsToOvertake: higherScore === undefined ? 0 : Math.max(0, higherScore - score + 1),
+    cushion: lowerScore === undefined ? 0 : Math.max(0, score - lowerScore),
+    tiedNames: tied.map(row => String(row.name)).filter(playerName => playerName !== String(name)),
+    tiedCount: tied.length
+  };
+}
+
+function renderPlayerPositionAnalysis(name) {
+  const host = document.querySelector('#player-position-analysis');
+  const grid = document.querySelector('#player-position-grid');
+  const status = document.querySelector('#player-position-status');
+  const note = document.querySelector('#player-position-note');
+  const analysis = playerPositionAnalysis(name);
+  if (!host || !grid || !status || !note || !analysis) { if (host) host.hidden = true; return; }
+
+  host.hidden = false;
+  if (!analysis.hasCompetition || analysis.score <= 0) {
+    status.textContent = 'Noch keine belastbare Ranglage';
+    grid.innerHTML = `
+      <article><span>Lage im Feld</span><strong>Offen</strong><small>${analysis.total} registrierte Spieler</small></article>
+      <article><span>Abstand zur Spitze</span><strong>–</strong><small>Noch keine Punkte vergeben</small></article>
+      <article><span>Nächster Angriff</span><strong>–</strong><small>Erst nach einer Wertung berechenbar</small></article>
+      <article><span>Absicherung</span><strong>–</strong><small>Keine Rangabstände vorhanden</small></article>`;
+    note.textContent = 'Die Positionsanalyse wird automatisch aktiv, sobald der erste belastbare Punktestand vorliegt. Bis dahin wird keine Rangentwicklung simuliert.';
+    return;
+  }
+
+  status.textContent = `${analysis.zone} · Platz ${analysis.position} von ${analysis.total}`;
+  const leaderText = analysis.gapToLeader === 0 ? 'Führung' : `${fmt(analysis.gapToLeader)} Punkte`;
+  const attackText = analysis.pointsToOvertake > 0 ? `${fmt(analysis.pointsToOvertake)} Punkte` : 'Kein Ziel davor';
+  const cushionText = analysis.cushion > 0 ? `${fmt(analysis.cushion)} Punkte` : 'Kein Abstand';
+  grid.innerHTML = `
+    <article><span>Lage im Feld</span><strong>${esc(analysis.zone)}</strong><small>${analysis.fieldShare}% des Feldes hinter dieser Position</small></article>
+    <article><span>Abstand zur Spitze</span><strong>${leaderText}</strong><small>${analysis.gapToLeader === 0 ? 'Aktuell an der Spitze' : `Spitzenwert ${fmt(analysis.leaderScore)} Punkte`}</small></article>
+    <article><span>Nächster Angriff</span><strong>${attackText}</strong><small>${analysis.pointsToOvertake > 0 ? 'Zum Überholen der nächsten Punktestufe' : 'Keine höhere Punktestufe vorhanden'}</small></article>
+    <article><span>Absicherung</span><strong>${cushionText}</strong><small>${analysis.cushion > 0 ? 'Vorsprung auf die nächste Punktestufe' : 'Direkter Gleichstand oder Tabellenende'}</small></article>`;
+
+  if (analysis.tiedCount > 1) {
+    const names = analysis.tiedNames.slice(0, 4).join(', ');
+    const remaining = Math.max(0, analysis.tiedNames.length - 4);
+    note.textContent = `Punktgleich mit ${names}${remaining ? ` und ${remaining} weiteren Spielern` : ''}. Die offizielle Rangfolge aus dem Export bleibt maßgeblich.`;
+  } else {
+    note.textContent = 'Alle Abstände werden ausschließlich aus dem aktuell geladenen Gesamtstand berechnet. Historische Form oder nicht vorhandene Zwischenstände werden nicht geschätzt.';
+  }
+}
+
 function openPlayerProfile(name) {
   const dialog = document.querySelector('#player-dialog');
   if (!dialog) return;
@@ -128,6 +204,7 @@ function openPlayerProfile(name) {
     <article><span>Datenstand</span><strong>${esc(data.meta?.exportDate || '–')}</strong><small>${esc(data.meta?.source || 'Zentrale Highscore-Datei')}</small></article>`;
   const noScore = Number(overall?.totalPoints || 0) <= 0 && Number(matchday?.points || 0) <= 0;
   populateComparisonSelect(name);
+  renderPlayerPositionAnalysis(name);
   document.querySelector('#player-profile-note').textContent = noScore
     ? 'Noch keine sportliche Wertung vorhanden. Das Profil zeigt ausschließlich bestätigte Exportdaten.'
     : 'Das Profil vergleicht Gesamtwertung und aktuellen Einzelspieltag. Es werden keine fehlenden Werte geschätzt.';

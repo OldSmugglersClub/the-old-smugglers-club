@@ -425,3 +425,17 @@
 @media(max-width:700px){.hs-compare-controls{align-items:stretch;flex-direction:column}.hs-compare-action{min-width:0;width:100%}.hs-comparison-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:440px){.hs-compare-action{align-items:stretch;flex-direction:column}.hs-comparison-grid{grid-template-columns:1fr}.hs-comparison-head{gap:8px}.hs-comparison-head strong{font-size:1rem}}
 @media print{.hs-compare-controls,.hs-player-comparison{display:none!important}}
+
+
+/* Version 2.34 – Rangabstände und Positionsanalyse */
+.hs-position-analysis{position:relative;margin-top:16px;padding:16px;border:1px solid rgba(190,143,61,.42);background:radial-gradient(circle at 15% 0,rgba(192,142,57,.1),transparent 42%),linear-gradient(180deg,rgba(48,31,17,.94),rgba(15,9,5,.98));box-shadow:inset 0 0 0 3px rgba(0,0,0,.22)}
+.hs-position-analysis::before,.hs-position-analysis::after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:#8c6630;box-shadow:0 1px 3px #000}.hs-position-analysis::before{left:9px;top:9px}.hs-position-analysis::after{right:9px;bottom:9px}
+.hs-position-head{display:flex;align-items:end;justify-content:space-between;gap:16px;padding-bottom:12px;border-bottom:1px solid rgba(190,143,61,.28)}
+.hs-position-head h3{margin:3px 0 0;color:#edd19a;font:700 1.3rem Georgia,serif}.hs-position-head p{margin:0;color:#b9a479;font-size:.76rem;text-align:right}
+.hs-position-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-top:13px}
+.hs-position-grid article{min-width:0;padding:13px;border:1px solid rgba(177,130,52,.32);background:linear-gradient(180deg,rgba(27,16,8,.74),rgba(13,8,4,.9))}
+.hs-position-grid span{display:block;color:#95815f;text-transform:uppercase;letter-spacing:.085em;font-size:.57rem;font-weight:800}.hs-position-grid strong{display:block;margin-top:6px;color:#efd39a;font:700 1.02rem/1.25 Georgia,serif;overflow-wrap:anywhere}.hs-position-grid small{display:block;margin-top:5px;color:#9e8b68;font-size:.67rem;line-height:1.35}
+.hs-position-note{margin:12px 0 0;color:#aa9875;font-size:.73rem;line-height:1.45}
+@media(max-width:760px){.hs-position-grid{grid-template-columns:1fr 1fr}.hs-position-head{align-items:flex-start;flex-direction:column}.hs-position-head p{text-align:left}}
+@media(max-width:440px){.hs-position-grid{grid-template-columns:1fr}}
+@media print{.hs-position-analysis{display:none!important}}

@@ -1,3 +1,12 @@
+# Version 2.34 – Highscore Rangabstände & Positionsanalyse
+
+- Spielerprofile um eine datenbasierte Positionsanalyse erweitert.
+- Rangzone, Feldposition, Abstand zur Spitze, nächstes Angriffsziel und Absicherung werden aus dem aktuellen Gesamtstand berechnet.
+- Punktgleiche Spieler werden transparent ausgewiesen; die offizielle Rangfolge des Exports bleibt maßgeblich.
+- Bei noch fehlender sportlicher Wertung bleibt die Analyse bewusst inaktiv und simuliert keine Entwicklung.
+- Darstellung im bestehenden Holz-, Leder- und Messingdesign für Desktop, Tablet und Mobilgeräte ergänzt.
+- Grundlayout, Raster, Kachelgrößen, zentrale JSON-Struktur und übrige Websitebereiche unverändert gelassen.
+
 # Version 2.33 – Highscore Spieler-Direktvergleich
 
 - Spielerprofile um einen direkten Vergleich mit jedem anderen registrierten Spieler ergänzt.
