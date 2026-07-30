@@ -159,11 +159,38 @@ function renderIndividual() {
 }
 
 function renderTeam(name) {
-  const overall = (data.teams?.overall || []).find(row => row.name === name);
+  const overallRows = [...(data.teams?.overall || [])].sort((a, b) => Number(b.totalPoints || 0) - Number(a.totalPoints || 0));
+  const overall = overallRows.find(row => row.name === name);
+  const opponent = overallRows.find(row => row.name !== name);
   const matchday = (data.teams?.matchday || []).find(row => row.name === name);
+  const opponentMatchday = (data.teams?.matchday || []).find(row => row.name !== name);
   const host = document.querySelector(`[data-team-name="${CSS.escape(name)}"]`);
   if (!host) return;
-  host.innerHTML = `<div class="hs-team-hero"><div><div class="hs-eyebrow">Gruppierung</div><h2>${esc(name)}</h2><p class="hs-status">Gesamt- und Spieltagswertung dieser Gruppierung.</p></div><div class="hs-team-score">${fmt(overall?.totalPoints)}<small>Gesamtpunkte</small></div></div><div class="hs-team-stats"><article><span>Gesamtrang</span><strong>${esc(overall?.rank ?? '–')}</strong></article><article><span>Spieltagsiege</span><strong>${fmt(overall?.matchdayWins)}</strong></article><article><span>Bonuspunkte</span><strong>${fmt(overall?.bonusPoints)}</strong></article><article><span>Aktueller Spieltag</span><strong>${fmt(matchday?.points)} Punkte</strong></article><article><span>Spieltagsrang</span><strong>${esc(matchday?.matchdayRank ?? '–')}</strong></article><article><span>Tippspieltag</span><strong>${esc(data.meta?.matchday || '–')}</strong></article></div>`;
+
+  const ownPoints = Number(overall?.totalPoints || 0);
+  const opponentPoints = Number(opponent?.totalPoints || 0);
+  const total = ownPoints + opponentPoints;
+  const share = total > 0 ? Math.round((ownPoints / total) * 100) : 50;
+  const delta = ownPoints - opponentPoints;
+  const open = total <= 0;
+  const duelState = open ? 'Mannschaftsduell noch ohne Wertung' : delta === 0 ? 'Punktgleiches Mannschaftsduell' : delta > 0 ? `${fmt(delta)} Punkte Vorsprung` : `${fmt(Math.abs(delta))} Punkte Rückstand`;
+  const rankLabel = open ? '–' : overall?.rank ?? '–';
+
+  host.innerHTML = `<div class="hs-team-hero"><div><div class="hs-eyebrow">Gruppierung</div><h2>${esc(name)}</h2><p class="hs-status">Gesamt- und Spieltagswertung dieser Gruppierung.</p></div><div class="hs-team-score">${fmt(ownPoints)}<small>Gesamtpunkte</small></div></div>
+    <div class="hs-team-duel${open ? ' is-open' : ''}">
+      <div class="hs-team-duel-head"><span>Mannschaftsduell</span><strong>${esc(duelState)}</strong></div>
+      <div class="hs-team-duel-track" role="img" aria-label="${esc(name)}: ${share} Prozent der gemeinsamen Teampunkte"><span style="width:${share}%"></span></div>
+      <div class="hs-team-duel-labels"><b>${esc(name)}</b><b>${esc(opponent?.name || 'Gegnerteam')}</b></div>
+    </div>
+    <div class="hs-team-stats"><article><span>Gesamtrang</span><strong>${esc(rankLabel)}</strong><small>${open ? 'Noch nicht gewertet' : 'Aktuelle Teamwertung'}</small></article><article><span>Spieltagsiege</span><strong>${fmt(overall?.matchdayWins)}</strong><small>Gewonnene Einzelspieltage</small></article><article><span>Bonuspunkte</span><strong>${fmt(overall?.bonusPoints)}</strong><small>Anteil an der Gesamtwertung</small></article><article><span>Aktueller Spieltag</span><strong>${fmt(matchday?.points)} Punkte</strong><small>${esc(data.meta?.matchday || 'Noch nicht festgelegt')}</small></article><article><span>Spieltagsrang</span><strong>${open ? '–' : esc(matchday?.matchdayRank ?? '–')}</strong><small>${Number(matchday?.points || 0) > Number(opponentMatchday?.points || 0) ? 'Aktuell vorn' : Number(matchday?.points || 0) < Number(opponentMatchday?.points || 0) ? 'Aktuell hinten' : 'Aktuell punktgleich'}</small></article><article><span>Abstand zum Gegner</span><strong>${open ? 'Noch offen' : `${fmt(Math.abs(delta))} Punkte`}</strong><small>${open || delta === 0 ? 'Kein Abstand' : delta > 0 ? 'Vorsprung' : 'Rückstand'}</small></article></div>`;
+}
+
+function recordCard(label, value, note, available) {
+  return `<article class="hs-record-card ${available ? 'is-available' : 'is-pending'}"><span>${esc(label)}</span><strong>${esc(value)}</strong><small>${esc(note)}</small></article>`;
+}
+
+function orderCard(title, holder, note, state) {
+  return `<article class="hs-order-card is-${state}"><span>${esc(title)}</span><strong>${esc(holder)}</strong><small>${esc(note)}</small><b class="hs-order-state">${state === 'awarded' ? 'Vergeben' : 'Gesperrt'}</b></article>`;
 }
 
 function renderRecords() {
@@ -171,31 +198,45 @@ function renderRecords() {
   const matchday = officialRows('matchday');
   const teams = [...(data.teams?.overall || [])].sort((a, b) => Number(b.totalPoints || 0) - Number(a.totalPoints || 0));
   const records = data.records || {};
+  const historyRows = Array.isArray(data.history) ? data.history : [];
   const open = competitionStatus('overall').open;
-  const values = [
-    ['Tabellenführer', open ? 'Noch offen' : `${individuals[0].name} · ${fmt(individuals[0].totalPoints)}`],
-    ['Höchster Spieltag', records.highestMatchdayScore ? `${records.highestMatchdayScore.name} · ${fmt(records.highestMatchdayScore.points)}` : 'Noch offen'],
-    ['Meiste Spieltagssiege', records.mostMatchdayWins ? `${records.mostMatchdayWins.name} · ${fmt(records.mostMatchdayWins.wins)}` : 'Noch offen'],
-    ['Vorsprung an der Spitze', open ? 'Noch offen' : `${fmt(records.leadMargin)} Punkte`],
-    ['Bestes Team', records.bestTeam ? `${records.bestTeam.name} · ${fmt(records.bestTeam.points)}` : 'Gleichstand'],
-    ['Teilnehmer', `${individuals.length} Spieler`]
-  ];
-  document.querySelector('#record-grid').innerHTML = values.map(item => `<article class="hs-record-card"><span>${esc(item[0])}</span><strong>${esc(item[1])}</strong></article>`).join('');
+  const hasMatchday = matchday.some(row => Number(row.points || 0) > 0);
+  const teamsScored = teams.some(row => Number(row.totalPoints || 0) > 0);
 
+  const readiness = [
+    ['Gesamtwertung', !open, !open ? 'Aktiv' : 'Wartet auf erste Punkte'],
+    ['Spieltagswertung', hasMatchday, hasMatchday ? 'Aktiv' : 'Wartet auf ersten Spieltag'],
+    ['Teamwertung', teamsScored, teamsScored ? 'Aktiv' : 'Wartet auf Teampunkte'],
+    ['Saisonhistorie', historyRows.length > 0, historyRows.length ? `${historyRows.length} archivierte Stände` : 'Noch kein Archivstand'],
+    ['Detailorden', Boolean(data.orders || data.tipDetails), data.orders || data.tipDetails ? 'Detaildaten vorhanden' : 'Detaildaten fehlen'],
+    ['Datenexport', Boolean(data.meta?.exportDate), data.meta?.exportDate ? `Stand ${data.meta.exportDate}` : 'Exportdatum fehlt']
+  ];
+  document.querySelector('#readiness-grid').innerHTML = readiness.map(([label, ready, text]) => `<article class="hs-readiness-card ${ready ? 'is-ready' : 'is-waiting'}"><span>${esc(label)}</span><strong>${ready ? 'Bereit' : 'Wartet'}</strong><small>${esc(text)}</small><i aria-hidden="true"></i></article>`).join('');
+
+  const recordHtml = [
+    recordCard('Tabellenführer', open ? 'Noch offen' : `${individuals[0].name} · ${fmt(individuals[0].totalPoints)}`, open ? 'Wird nach den ersten Punkten vergeben.' : 'Aktueller Spitzenreiter der Gesamtwertung.', !open),
+    recordCard('Höchster Spieltag', records.highestMatchdayScore ? `${records.highestMatchdayScore.name} · ${fmt(records.highestMatchdayScore.points)}` : 'Noch offen', records.highestMatchdayScore ? 'Bester bisheriger Einzelspieltag.' : 'Benötigt einen abgeschlossenen Spieltag.', Boolean(records.highestMatchdayScore)),
+    recordCard('Meiste Spieltagssiege', records.mostMatchdayWins ? `${records.mostMatchdayWins.name} · ${fmt(records.mostMatchdayWins.wins)}` : 'Noch offen', records.mostMatchdayWins ? 'Meiste gewonnene Einzelspieltage.' : 'Wird mit den Spieltagsergebnissen aufgebaut.', Boolean(records.mostMatchdayWins)),
+    recordCard('Vorsprung an der Spitze', open ? 'Noch offen' : `${fmt(records.leadMargin)} Punkte`, open ? 'Noch keine belastbare Rangfolge.' : 'Abstand zwischen Platz 1 und Platz 2.', !open),
+    recordCard('Bestes Team', records.bestTeam ? `${records.bestTeam.name} · ${fmt(records.bestTeam.points)}` : teamsScored ? 'Gleichstand' : 'Noch offen', records.bestTeam ? 'Führende Gruppierung.' : teamsScored ? 'Beide Teams sind punktgleich.' : 'Noch keine Teampunkte vorhanden.', Boolean(records.bestTeam) || teamsScored),
+    recordCard('Teilnehmer', `${individuals.length} Spieler`, 'Aktuell im Highscore geführte Einzelspieler.', individuals.length > 0)
+  ].join('');
+  document.querySelector('#record-grid').innerHTML = recordHtml;
+
+  const captain = matchday[0] && Number(matchday[0].points) > 0 ? `${matchday[0].name} · ${fmt(matchday[0].points)} Punkte` : 'Noch nicht vergeben';
   const orders = [
-    ['Kapitän der Woche', matchday[0] && Number(matchday[0].points) > 0 ? `${matchday[0].name} · ${fmt(matchday[0].points)} Punkte` : 'Noch nicht vergeben'],
-    ['Volltrefferkönig', 'Benötigt Detaildaten zu exakten Tipps'],
-    ['Aufholjäger', 'Benötigt Rangverlauf mehrerer Spieltage'],
-    ['Heißeste Serie', 'Benötigt mehrere abgeschlossene Spieltage'],
-    ['Überraschung des Spieltags', 'Benötigt Tipp- und Quotendetails'],
-    ['Admiral des Monats', 'Wird nach dem ersten vollständigen Monat vergeben']
+    orderCard('Kapitän der Woche', captain, hasMatchday ? 'Bester Spieler des aktuellen Einzelspieltags.' : 'Freischaltung nach dem ersten gewerteten Spieltag.', hasMatchday ? 'awarded' : 'locked'),
+    orderCard('Volltrefferkönig', 'Noch nicht berechenbar', 'Benötigt Detaildaten zu exakten Ergebnistipps.', 'locked'),
+    orderCard('Aufholjäger', 'Noch nicht berechenbar', 'Benötigt mindestens zwei archivierte Rangstände.', historyRows.length >= 2 ? 'awarded' : 'locked'),
+    orderCard('Heißeste Serie', 'Noch nicht berechenbar', 'Benötigt mehrere abgeschlossene Einzelspieltage.', 'locked'),
+    orderCard('Überraschung des Spieltags', 'Noch nicht berechenbar', 'Benötigt Tippdetails und belastbare Marktquoten.', 'locked'),
+    orderCard('Admiral des Monats', 'Noch nicht vergeben', 'Freischaltung nach einem vollständigen Kalendermonat.', 'locked')
   ];
-  document.querySelector('#order-grid').innerHTML = orders.map(item => `<article class="hs-order-card"><span>${esc(item[0])}</span><strong>${esc(item[1])}</strong></article>`).join('');
+  document.querySelector('#order-grid').innerHTML = orders.join('');
 
-  const historyRows = data.history || [];
   document.querySelector('#history-grid').innerHTML = historyRows.length
-    ? historyRows.map(row => `<div class="hs-history-row"><span>${esc(row.matchday)}</span><strong>${esc(row.leader)}</strong><b>${fmt(row.points)} Punkte</b></div>`).join('')
-    : '<p class="hs-empty">Die Saisonhistorie beginnt automatisch, sobald mehrere Spieltagsstände archiviert wurden.</p>';
+    ? `<div class="hs-history-head"><span>Spieltag</span><span>Führender Spieler</span><span>Punktestand</span></div>${historyRows.map((row, index) => `<div class="hs-history-row"><span>${esc(row.matchday)}</span><strong>${esc(row.leader)}</strong><b>${fmt(row.points)} Punkte</b><i aria-hidden="true">${index + 1}</i></div>`).join('')}`
+    : '<div class="hs-history-empty"><strong>Logbuch noch leer</strong><p>Die Saisonhistorie wird erst belastbar, wenn Spieltagsstände archiviert werden. Bis dahin wird bewusst kein Verlauf simuliert.</p><span>Benötigt: mindestens einen abgeschlossenen und gespeicherten Spieltag</span></div>';
 }
 
 function init() {

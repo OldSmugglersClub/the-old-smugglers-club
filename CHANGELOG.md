@@ -62,3 +62,14 @@
 - Tastaturbedienung, Fokusdarstellung und ARIA-Zustände der Highscore-Reiter verbessert.
 - Der gewählte Highscore-Bereich wird in der URL gespeichert und kann direkt verlinkt werden.
 - Grundlayout, Kachelgrößen, Raster und alle übrigen Websitebereiche unverändert gelassen.
+
+## Version 2.27 – Highscore Statistikmodule
+
+- Teamseiten um ein datenbasiertes Mannschaftsduell mit Vorsprung/Rückstand und Vergleichsbalken ergänzt.
+- Teamkennzahlen um klare Erläuterungen und belastbare Nullstand-Anzeigen erweitert.
+- Neuer Statistikstatus zeigt transparent die Datenreife aller Highscore-Module.
+- Rekordkarten unterscheiden nun sichtbar zwischen verfügbaren und noch offenen Bestwerten.
+- Piratenorden besitzen eindeutige Zustände „Vergeben“ oder „Gesperrt“; fehlende Daten werden nicht geschätzt.
+- Historie als Logbuch-Zeitleiste überarbeitet und um einen sachlichen Leerzustand ergänzt.
+- Desktop- und Mobile-Darstellung der neuen Module angepasst.
+- Grundlayout, Kachelraster und übrige Websitebereiche unverändert belassen.
