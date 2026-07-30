@@ -1,3 +1,16 @@
+# Changelog
+
+## Version 2.29 – Highscore Statistikregister & Detailhierarchie
+
+- Kopfregister für Saison, Berechnungsgrundlage, Exportstand und aktive Statistikmodule ergänzt.
+- Rekordkarten in einheitliche gravierte Registertafeln mit eindeutigen Zuständen „Aktiv“ und „Noch offen“ überführt.
+- Piratenorden gestalterisch vereinheitlicht und ihre Zustände klarer in die Kartenhierarchie integriert.
+- Lesbarkeit, Abstände und visuelle Gewichtung innerhalb der Rekord- und Ordenmodule verbessert.
+- Historienzeilen um dezente, nicht aufdringliche Interaktionsrückmeldung ergänzt.
+- Responsive Darstellung des neuen Statistikregisters für Tablet und Mobilgeräte ergänzt.
+- Keine Bildassets, Cliparts, Emojis oder Standardicons hinzugefügt.
+- Grundlayout, Raster, Kachelgrößen und alle übrigen Websitebereiche unverändert gelassen.
+
 # Version 2.28 – Highscore Ranglisten-Kompass
 
 - Kompakte Statusleiste für aktive Ansicht, Sortierung und Trefferzahl ergänzt.

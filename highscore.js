@@ -209,11 +209,18 @@ function renderTeam(name) {
 }
 
 function recordCard(label, value, note, available) {
-  return `<article class="hs-record-card ${available ? 'is-available' : 'is-pending'}"><span>${esc(label)}</span><strong>${esc(value)}</strong><small>${esc(note)}</small></article>`;
+  return `<article class="hs-record-card ${available ? 'is-available' : 'is-pending'}">
+    <div class="hs-record-head"><span>${esc(label)}</span><b>${available ? 'Aktiv' : 'Noch offen'}</b></div>
+    <strong>${esc(value)}</strong><small>${esc(note)}</small><i aria-hidden="true"></i>
+  </article>`;
 }
 
 function orderCard(title, holder, note, state) {
-  return `<article class="hs-order-card is-${state}"><span>${esc(title)}</span><strong>${esc(holder)}</strong><small>${esc(note)}</small><b class="hs-order-state">${state === 'awarded' ? 'Vergeben' : 'Gesperrt'}</b></article>`;
+  return `<article class="hs-order-card is-${state}">
+    <span>${esc(title)}</span><strong>${esc(holder)}</strong><small>${esc(note)}</small>
+    <b class="hs-order-state">${state === 'awarded' ? 'Vergeben' : 'Gesperrt'}</b>
+    <i class="hs-order-rivet" aria-hidden="true"></i>
+  </article>`;
 }
 
 function renderRecords() {
@@ -235,6 +242,12 @@ function renderRecords() {
     ['Datenexport', Boolean(data.meta?.exportDate), data.meta?.exportDate ? `Stand ${data.meta.exportDate}` : 'Exportdatum fehlt']
   ];
   document.querySelector('#readiness-grid').innerHTML = readiness.map(([label, ready, text]) => `<article class="hs-readiness-card ${ready ? 'is-ready' : 'is-waiting'}"><span>${esc(label)}</span><strong>${ready ? 'Bereit' : 'Wartet'}</strong><small>${esc(text)}</small><i aria-hidden="true"></i></article>`).join('');
+  const activeModules = readiness.filter(([, ready]) => ready).length;
+  const exportLabel = data.meta?.exportDate || 'Noch offen';
+  const exportEl = document.querySelector('#records-export');
+  const modulesEl = document.querySelector('#records-active-modules');
+  if (exportEl) exportEl.textContent = exportLabel;
+  if (modulesEl) modulesEl.textContent = `${activeModules} von ${readiness.length}`;
 
   const recordHtml = [
     recordCard('Tabellenführer', open ? 'Noch offen' : `${individuals[0].name} · ${fmt(individuals[0].totalPoints)}`, open ? 'Wird nach den ersten Punkten vergeben.' : 'Aktueller Spitzenreiter der Gesamtwertung.', !open),
