@@ -386,14 +386,16 @@
     }
 
     .welcome-title {
-      max-width: 720px;
+      width: 100%;
+      max-width: none;
       margin: .12rem 0 .35rem;
       color: #c89546;
       font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
-      font-size: clamp(1.72rem, 3.35vw, 2.55rem);
+      font-size: clamp(1.70rem, 2.85vw, 2.35rem);
       font-weight: 700;
-      letter-spacing: -.018em;
+      letter-spacing: -.020em;
       line-height: 1.04;
+      white-space: nowrap;
       text-shadow:
         0 1px 0 #2b1908,
         0 2px 4px rgba(0,0,0,.58),
@@ -410,7 +412,7 @@
       align-items: center;
       width: min(360px, 64%);
       gap: .48rem;
-      margin: .62rem 0 .92rem;
+      margin: .58rem 0 1.02rem;
       color: rgba(197,143,50,.60);
     }
 
@@ -433,11 +435,13 @@
     .welcome-copy {
       position: relative;
       z-index: 1;
-      max-width: 705px;
+      width: 100%;
+      max-width: 760px;
       margin: 0;
+      padding-left: 0;
       color: #e7d7ba;
-      font-size: 1.02rem;
-      line-height: 1.60;
+      font-size: 1.03rem;
+      line-height: 1.56;
       text-shadow: 0 1px 2px rgba(0,0,0,.72);
     }
 
@@ -502,7 +506,8 @@
       }
 
       .welcome-title {
-        font-size: clamp(1.62rem, 7.4vw, 2.15rem);
+        font-size: clamp(1.55rem, 7vw, 2.05rem);
+        white-space: normal;
       }
 
       .welcome-divider {
@@ -1883,74 +1888,14 @@
     }
 
   
-    /* Finale bildbasierte Willkommen-Kachel */
-    .welcome-panel {
-      position: relative;
-      padding: 0;
-      overflow: hidden;
-      background: #0b0704;
-      min-height: 420px;
-    }
-
-    .welcome-panel::before,
-    .welcome-panel::after {
-      display: none !important;
-    }
-
-    .welcome-image-card {
-      position: absolute;
-      inset: 0;
-      background: url("./willkommen-kachel-final.jpg") center center / 100% 100% no-repeat;
-    }
-
-    .welcome-hotspot {
-      position: absolute;
-      display: block;
-      z-index: 4;
-      border-radius: 10px;
-      outline: none;
-    }
-
-    .welcome-hotspot:focus-visible {
-      box-shadow: 0 0 0 3px rgba(255, 210, 98, .85);
-    }
-
-    .welcome-hotspot-kicktipp {
-      left: 5.3%;
-      bottom: 7.4%;
-      width: 27.4%;
-      height: 11.8%;
-    }
-
-    .welcome-hotspot-wettbewerbe {
-      left: 35.6%;
-      bottom: 7.4%;
-      width: 31.7%;
-      height: 11.8%;
-    }
-
-    @media (max-width: 720px) {
-      .welcome-panel {
-        min-height: 330px;
+    @media (min-width: 721px) and (max-width: 1180px) {
+      .welcome-title {
+        font-size: clamp(1.55rem, 2.55vw, 2.08rem);
       }
 
-      .welcome-image-card {
-        background-size: cover;
-        background-position: center;
-      }
-
-      .welcome-hotspot-kicktipp {
-        left: 5%;
-        bottom: 6.8%;
-        width: 29%;
-        height: 12.5%;
-      }
-
-      .welcome-hotspot-wettbewerbe {
-        left: 36%;
-        bottom: 6.8%;
-        width: 34%;
-        height: 12.5%;
+      .welcome-copy {
+        max-width: 100%;
+        font-size: 1rem;
       }
     }
 </style>
@@ -2102,15 +2047,34 @@
   <main>
     <section class="hero-grid">
       <article class="panel welcome-panel">
-        <div class="welcome-image-card" role="img" aria-label="Willkommen in der Zentrale der Crew">
-          <a class="welcome-hotspot welcome-hotspot-kicktipp"
+        <div class="welcome-season">Saison 2026/2027</div>
+        <h2 class="welcome-title">Willkommen in der Zentrale der Crew</h2>
+        <div class="welcome-divider" aria-hidden="true">
+          <span></span>
+          <svg class="pirate-icon"><use href="#icon-star-compass"></use></svg>
+          <span></span>
+        </div>
+
+        <p class="lead welcome-copy">
+          Willkommen im <strong>Hauptquartier der Crew</strong>. Hier werden
+          Bundesliga, DFB-Pokal, Champions League, Relegation und die legendären
+          <strong>Smuggleraufträge</strong> gemeinsam ausgespielt. Alle Informationen,
+          Missionen und Ergebnisse – für eine Saison voller Ruhm, Ehre und
+          unvergesslicher Duelle.
+        </p>
+
+        <div class="actions welcome-actions">
+          <a class="button button-primary welcome-primary"
              href="https://www.kicktipp.de/the-old-smugglers-club/"
              target="_blank"
-             rel="noopener noreferrer"
-             aria-label="Zum Kicktipp"></a>
-          <a class="welcome-hotspot welcome-hotspot-wettbewerbe"
-             href="#wettbewerbe"
-             aria-label="Wettbewerbe ansehen"></a>
+             rel="noopener noreferrer">
+            <svg class="pirate-icon" aria-hidden="true"><use href="#icon-skull"></use></svg>
+            Zum Kicktipp
+          </a>
+          <a class="button button-secondary welcome-secondary" href="#wettbewerbe">
+            Wettbewerbe ansehen
+            <svg class="pirate-icon" aria-hidden="true"><use href="#icon-anchor"></use></svg>
+          </a>
         </div>
       </article>
 
