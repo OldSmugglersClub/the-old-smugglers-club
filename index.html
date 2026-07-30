@@ -3771,6 +3771,35 @@
       box-sizing: border-box;
     }
 
+  
+    /* ================================================================
+       SMUGGLERAUFTRÄGE – SICHTBARER PIRATENHINTERGRUND
+       ================================================================ */
+
+    .smuggler-panel {
+      background:
+        linear-gradient(rgba(10,6,3,.50), rgba(10,6,3,.67)),
+        radial-gradient(circle at 76% 28%, rgba(181,119,35,.10), transparent 34%),
+        url("./piraten-spieltag-hintergrund.jpg") center 44% / cover no-repeat;
+    }
+
+    .smuggler-panel::before {
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.10), transparent 34%, rgba(0,0,0,.08)),
+        radial-gradient(circle at 18% 78%, rgba(181,119,35,.04), transparent 24%);
+    }
+
+    .smuggler-card,
+    .smuggler-sidecard {
+      background:
+        linear-gradient(145deg, rgba(31,17,9,.89), rgba(13,8,5,.93));
+      backdrop-filter: blur(1px);
+    }
+
+    .smuggler-stats > div {
+      background: rgba(17,10,6,.82);
+    }
+
   </style>
 </head>
 
