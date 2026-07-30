@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "datenVersion": 7,
+  "datenVersion": 8,
   "aktualisiert": "2026-07-30",
   "aktiveSaison": "2026-27",
   "hinweis": "Zentrale saisonfähige Spieldaten. Mannschaften werden über IDs aus teams.json referenziert.",
@@ -7347,6 +7347,106 @@
           "quelleStand": "2026-07-30",
           "heimTeamId": "fc-bologna",
           "auswaertsTeamId": "juventus-turin"
+        },
+        {
+          "id": "rel-2026-27-bl-hin",
+          "wettbewerb": "relegation",
+          "wettbewerbAnzeige": "Relegation",
+          "saison": "2026/2027",
+          "runde": "Relegation",
+          "spieltagNummer": 1,
+          "spielNummer": 1,
+          "datum": "2027-05-27",
+          "datumVon": "2027-05-27",
+          "datumBis": "2027-05-27",
+          "datumAnzeige": "27.05.2027",
+          "anstoss": "20:30",
+          "terminBestaetigt": true,
+          "heimtore": null,
+          "auswaertstore": null,
+          "status": "terminiert",
+          "sonderwertungen": [
+            "relegation"
+          ],
+          "notiz": "Bundesliga-Relegation, Hinspiel",
+          "quelleStand": "2026-07-30",
+          "heim": "16. der 1. Liga",
+          "auswaerts": "Dritter der 2. Liga"
+        },
+        {
+          "id": "rel-2026-27-2bl-hin",
+          "wettbewerb": "relegation",
+          "wettbewerbAnzeige": "Relegation",
+          "saison": "2026/2027",
+          "runde": "Relegation",
+          "spieltagNummer": 1,
+          "spielNummer": 2,
+          "datum": "2027-05-28",
+          "datumVon": "2027-05-28",
+          "datumBis": "2027-05-28",
+          "datumAnzeige": "28.05.2027",
+          "anstoss": "20:30",
+          "terminBestaetigt": true,
+          "heimtore": null,
+          "auswaertstore": null,
+          "status": "terminiert",
+          "sonderwertungen": [
+            "relegation"
+          ],
+          "notiz": "Relegation 2. Bundesliga, Hinspiel",
+          "quelleStand": "2026-07-30",
+          "heim": "Dritter der 3. Liga",
+          "auswaerts": "16. der 2. Liga"
+        },
+        {
+          "id": "rel-2026-27-bl-rueck",
+          "wettbewerb": "relegation",
+          "wettbewerbAnzeige": "Relegation",
+          "saison": "2026/2027",
+          "runde": "Relegation",
+          "spieltagNummer": 1,
+          "spielNummer": 3,
+          "datum": "2027-05-31",
+          "datumVon": "2027-05-31",
+          "datumBis": "2027-05-31",
+          "datumAnzeige": "31.05.2027",
+          "anstoss": "20:30",
+          "terminBestaetigt": true,
+          "heimtore": null,
+          "auswaertstore": null,
+          "status": "terminiert",
+          "sonderwertungen": [
+            "relegation"
+          ],
+          "notiz": "Bundesliga-Relegation, Rückspiel",
+          "quelleStand": "2026-07-30",
+          "heim": "Dritter der 2. Liga",
+          "auswaerts": "16. der 1. Liga"
+        },
+        {
+          "id": "rel-2026-27-2bl-rueck",
+          "wettbewerb": "relegation",
+          "wettbewerbAnzeige": "Relegation",
+          "saison": "2026/2027",
+          "runde": "Relegation",
+          "spieltagNummer": 1,
+          "spielNummer": 4,
+          "datum": "2027-06-01",
+          "datumVon": "2027-06-01",
+          "datumBis": "2027-06-01",
+          "datumAnzeige": "01.06.2027",
+          "anstoss": "20:30",
+          "terminBestaetigt": true,
+          "heimtore": null,
+          "auswaertstore": null,
+          "status": "terminiert",
+          "sonderwertungen": [
+            "relegation"
+          ],
+          "notiz": "Relegation 2. Bundesliga, Rückspiel",
+          "quelleStand": "2026-07-30",
+          "heim": "16. der 2. Liga",
+          "auswaerts": "Dritter der 3. Liga"
         }
       ]
     }

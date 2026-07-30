@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 1,
-  "datenVersion": 1,
+  "schemaVersion": 2,
+  "datenVersion": 2,
   "aktualisiert": "2026-07-30",
   "aktiveSaison": "2026-27",
   "hinweis": "Zentrale 1:1-Abbildung der in Kicktipp angelegten Wertungsspieltage. Ein Tippspieltag kann ein oder mehrere reale Spiele enthalten.",
@@ -1053,13 +1053,20 @@
           "name": "1. Spieltag - Relegation",
           "saison": "2026/2027",
           "aktiv": true,
-          "status": "geplant",
+          "status": "terminiert",
           "typ": "relegation",
           "spielAuswahl": {
             "wettbewerb": "relegation",
             "runde": "Relegation",
             "erwarteteSpielanzahl": 4
-          }
+          },
+          "spielIds": [
+            "rel-2026-27-bl-hin",
+            "rel-2026-27-2bl-hin",
+            "rel-2026-27-bl-rueck",
+            "rel-2026-27-2bl-rueck"
+          ],
+          "hinweis": "Alle vier Relegationsspiele werden gemeinsam als ein Kicktipp-Spieltag gewertet."
         },
         {
           "nummer": 86,
@@ -1072,5 +1079,17 @@
         }
       ]
     }
-  ]
+  ],
+  "fuehrendeDatei": true,
+  "rolle": "Verbindliche Gruppierung und Reihenfolge aller Kicktipp-Wertungsspieltage. spieldaten.json enthält die einzelnen Spiele.",
+  "wettbewerbsumfang": {
+    "bundesliga": "34 Spieltage mit allen Partien",
+    "smugglerauftraege": "34 Wertungsspieltage; je das Dynamo-Dresden-Spiel des entsprechenden Spieltags der 2. Bundesliga",
+    "champions-league": "Gemäß angelegter Kicktipp-Runden und -Spieltage",
+    "dfb-pokal": "Ausschließlich ab Achtelfinale",
+    "europa-league": "Ausschließlich ab Achtelfinale",
+    "piratenkodex": "Je ein ausgewähltes reales Spiel pro Wertungsspieltag",
+    "weihnachtsregatta": "Ein Wertungsspieltag mit fünf Spielen",
+    "relegation": "Ein Wertungsspieltag mit vier Spielen"
+  }
 }
