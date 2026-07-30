@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "datenVersion": 1,
+  "aktualisiert": "2026-07-30",
+  "saison": "2026/2027",
+  "titel": "Saisonübersicht 2026/2027",
+  "untertitel": "Die vollständige Wettbewerbs- und Wertungszentrale des Old Smugglers Club.",
+  "wettbewerbe": [
+    {
+      "id": "bundesliga",
+      "name": "Bundesliga",
+      "seite": "bundesliga.html",
+      "tippspieltageZiel": 34,
+      "spieleZiel": 306,
+      "zeitraum": "28.08.2026 – 22.05.2027",
+      "status": "geplant",
+      "filter": { "feld": "wettbewerb", "wert": "bundesliga" }
+    },
+    {
+      "id": "smugglerauftraege",
+      "name": "Smuggleraufträge",
+      "seite": "dynamo-dresden.html",
+      "tippspieltageZiel": 34,
+      "spieleZiel": 34,
+      "zeitraum": "09.08.2026 – Mai 2027",
+      "status": "vorbereitet",
+      "filter": { "feld": "sonderwertungen", "wert": "smugglerauftrag" }
+    },
+    {
+      "id": "champions-league",
+      "name": "Champions League",
+      "seite": "champions-league.html",
+      "tippspieltageZiel": null,
+      "spieleZiel": null,
+      "zeitraum": "Ligaphase bis Finale",
+      "status": "wartet auf Spielplan",
+      "filter": { "feld": "wettbewerb", "wert": "champions-league" }
+    },
+    {
+      "id": "europa-league",
+      "name": "Europa League",
+      "seite": "europa-league.html",
+      "tippspieltageZiel": null,
+      "spieleZiel": null,
+      "zeitraum": "Ab Achtelfinale",
+      "status": "wartet auf Achtelfinale",
+      "filter": { "feld": "wettbewerb", "wert": "europa-league" }
+    },
+    {
+      "id": "dfb-pokal",
+      "name": "DFB-Pokal",
+      "seite": "dfb-pokal.html",
+      "tippspieltageZiel": 4,
+      "spieleZiel": 15,
+      "zeitraum": "01.12.2026 – 29.05.2027",
+      "status": "wartet auf Achtelfinale",
+      "filter": { "feld": "wettbewerb", "wert": "dfb-pokal" }
+    },
+    {
+      "id": "piratenkodex",
+      "name": "Piratenkodex",
+      "seite": "piratenkodex.html",
+      "tippspieltageZiel": 8,
+      "spieleZiel": 8,
+      "zeitraum": "Saison 2026/2027",
+      "status": "6 von 8 vorbereitet",
+      "filter": { "feld": "sonderwertungen", "wert": "piratenkodex" }
+    },
+    {
+      "id": "weihnachtsregatta",
+      "name": "Weihnachtsregatta",
+      "seite": "weihnachtsregatta.html",
+      "tippspieltageZiel": 1,
+      "spieleZiel": 5,
+      "zeitraum": "26.12.2026 – 03.01.2027",
+      "status": "vorbereitet",
+      "filter": { "feld": "sonderwertungen", "wert": "weihnachtsregatta" }
+    },
+    {
+      "id": "relegation",
+      "name": "Relegation",
+      "seite": "relegation.html",
+      "tippspieltageZiel": 1,
+      "spieleZiel": 4,
+      "zeitraum": "Mai 2027",
+      "status": "Teilnehmer noch offen",
+      "filter": { "feld": "wettbewerb", "wert": "relegation" }
+    }
+  ]
+}
