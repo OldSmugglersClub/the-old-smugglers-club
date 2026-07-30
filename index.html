@@ -953,12 +953,14 @@
       transition: transform .2s ease, border-color .2s ease;
     }
 
-    .competition-link:last-child {
-      grid-column: 2 / 3;
+    /* Neun Wettbewerbe: vollständiges, symmetrisches 3x3-Raster. */
+    #wettbewerbe .competition-grid > .competition-link:last-child {
+      grid-column: auto;
+      width: auto;
+      justify-self: stretch;
     }
 
-
-    /* Acht Wettbewerbe: keine Sonderzentrierung der letzten Kachel. */
+    /* Kompatibilität für ältere Rastervarianten. */
     .competition-grid--even .competition-link:last-child {
       grid-column: auto;
       width: auto;

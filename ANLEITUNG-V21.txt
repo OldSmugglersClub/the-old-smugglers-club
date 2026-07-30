@@ -1,14 +1,26 @@
-VERSION 23 – FINALER KAPITÄNSTISCH-HINTERGRUND
+THE OLD SMUGGLERS CLUB – WEBSITE VERSION 21
 
-Geändert wurden ausschließlich:
-- neue Hintergrundgrafik: kapitaenstisch-final.jpg
-- die body-Hintergrundreferenz in allen HTML-Dateien
+Mobile Optimierung:
+- stabileres Hamburger-Menü
+- Menü auf Smartphones einspaltig und mit größeren Touch-Flächen
+- Schließen des Menüs durch Auswahl, Klick außerhalb oder Escape-Taste
+- größere Buttons mit mindestens 52 Pixel Höhe
+- kompaktere und gleichmäßigere Abstände
+- Wettbewerbskacheln und Inhaltsbereiche einspaltig
+- Countdown, Hall of Fame, Piratenkodex und Kummerkasten mobil angepasst
+- Unterseiten mit kompakterem Header
+- bessere Darstellung auf sehr schmalen Geräten
 
-Unverändert bleiben Layout, Kacheln, Banner, Navigation, Texte,
-Abstände, Größen und Funktionen.
+Schnelleres Laden:
+- Banner erhält hohe Ladepriorität
+- Bilder werden asynchron dekodiert
+- Pokal wird erst bei Bedarf geladen
+- feste Hintergrunddarstellung auf Smartphones deaktiviert
+- keine zusätzlichen Dateien oder Bibliotheken erforderlich
 
-GitHub:
-1. Alle HTML-Dateien hochladen und ersetzen.
-2. kapitaenstisch-final.jpg ins Hauptverzeichnis hochladen.
-3. Commit durchführen.
-4. Nach kurzer Wartezeit Strg+F5 drücken.
+Installation:
+1. ZIP entpacken.
+2. Alle acht HTML-Dateien gemeinsam in das GitHub-Hauptverzeichnis hochladen.
+3. Vorhandene Dateien ersetzen.
+4. GitHub Pages abwarten.
+5. Auf dem Handy Browser-Cache leeren oder die Seite in einem privaten Tab testen.
