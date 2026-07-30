@@ -2245,6 +2245,321 @@
         opacity: .44;
       }
     }
+
+    /* Aktueller Tipptermin – Piraten-Design */
+    .matchday-panel {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      margin-top: 1.3rem;
+      border-color: rgba(196,141,46,.88);
+      background:
+        linear-gradient(rgba(7,5,3,.20), rgba(5,3,2,.46)),
+        url("./piraten-spieltag-hintergrund.jpg") center / cover no-repeat;
+      box-shadow:
+        inset 0 1px 0 rgba(255,220,139,.20),
+        inset 0 0 0 1px rgba(113,70,18,.48),
+        inset 0 0 48px rgba(0,0,0,.70),
+        var(--shadow);
+    }
+
+    .matchday-panel::before {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      z-index: -1;
+      border: 1px solid rgba(208,151,48,.48);
+      border-radius: 13px;
+      box-shadow:
+        inset 0 0 0 2px rgba(0,0,0,.45),
+        inset 0 0 24px rgba(0,0,0,.42);
+      pointer-events: none;
+    }
+
+    .matchday-panel::after {
+      content: "";
+      position: absolute;
+      right: -70px;
+      top: 72px;
+      z-index: -1;
+      width: 260px;
+      height: 260px;
+      border: 1px solid rgba(190,132,43,.18);
+      border-radius: 50%;
+      opacity: .55;
+      background:
+        conic-gradient(from 0deg,
+          transparent 0 8deg, rgba(188,128,38,.18) 8deg 10deg,
+          transparent 10deg 43deg, rgba(188,128,38,.11) 43deg 45deg,
+          transparent 45deg 88deg, rgba(188,128,38,.18) 88deg 90deg,
+          transparent 90deg 133deg, rgba(188,128,38,.11) 133deg 135deg,
+          transparent 135deg 178deg, rgba(188,128,38,.18) 178deg 180deg,
+          transparent 180deg 223deg, rgba(188,128,38,.11) 223deg 225deg,
+          transparent 225deg 268deg, rgba(188,128,38,.18) 268deg 270deg,
+          transparent 270deg 313deg, rgba(188,128,38,.11) 313deg 315deg,
+          transparent 315deg 358deg, rgba(188,128,38,.18) 358deg 360deg),
+        radial-gradient(circle,
+          transparent 0 20%, rgba(188,128,38,.16) 20.5% 21%,
+          transparent 21.5% 43%, rgba(188,128,38,.12) 43.5% 44%,
+          transparent 44.5%);
+      transform: rotate(-8deg);
+      pointer-events: none;
+    }
+
+    .matchday-head {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: .9rem;
+      margin-bottom: 1rem;
+    }
+
+    .matchday-panel .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      min-height: 34px;
+      padding: .35rem .78rem;
+      color: #241506;
+      border: 1px solid #d0a351;
+      border-radius: 7px;
+      background:
+        linear-gradient(90deg, rgba(86,52,13,.18), transparent 20% 80%, rgba(86,52,13,.18)),
+        linear-gradient(#d8ad5c, #8e5c1d);
+      box-shadow:
+        inset 0 1px rgba(255,255,255,.32),
+        inset 0 -2px rgba(42,23,5,.40),
+        0 5px 12px rgba(0,0,0,.28);
+      letter-spacing: .10em;
+      font-size: .72rem;
+    }
+
+    .matchday-panel .eyebrow::before,
+    .matchday-panel .eyebrow::after {
+      content: "⚓";
+      color: #4b2c0d;
+      font-size: .85rem;
+    }
+
+    .matchday-head h2 {
+      margin: .75rem 0 0;
+      color: #d3a14d;
+      font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.05;
+      text-shadow:
+        0 1px 0 #2b1908,
+        0 3px 8px rgba(0,0,0,.65);
+    }
+
+    .matchday-status {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      min-height: 36px;
+      padding: .4rem .78rem;
+      border: 1px solid #c58a2c;
+      border-radius: 999px;
+      color: #251606;
+      background: linear-gradient(#e0b55d, #8a5718);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.38),
+        0 5px 12px rgba(0,0,0,.34);
+      font-size: .78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .matchday-panel .lead {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      color: #e8d8bc;
+      text-shadow: 0 1px 2px rgba(0,0,0,.75);
+    }
+
+    .match-list {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: .75rem;
+      margin-top: 1rem;
+    }
+
+    .match-row {
+      display: grid;
+      grid-template-columns: 180px 1fr 160px;
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem 1.05rem;
+      border: 1px solid rgba(199,140,47,.66);
+      border-radius: 12px;
+      background:
+        linear-gradient(180deg, rgba(35,21,10,.90), rgba(11,7,4,.94));
+      box-shadow:
+        inset 0 0 0 1px rgba(0,0,0,.46),
+        inset 0 1px rgba(255,255,255,.035),
+        0 9px 18px rgba(0,0,0,.28);
+    }
+
+    .match-time {
+      color: #d8b76f;
+      font-size: .92rem;
+      line-height: 1.35;
+    }
+
+    .match-time strong {
+      display: block;
+      color: #f0d58f;
+      font-size: 1rem;
+    }
+
+    .match-time small {
+      display: block;
+      margin-top: .15rem;
+      color: #bfa36d;
+    }
+
+    .match-teams {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: .7rem;
+      align-items: center;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .match-team {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      min-width: 0;
+      color: #eadabd;
+    }
+
+    .team-placeholder {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 42px;
+      flex: 0 0 auto;
+      border: 1px solid #b57b28;
+      clip-path: polygon(50% 0, 92% 14%, 84% 72%, 50% 100%, 16% 72%, 8% 14%);
+      color: #d0a14c;
+      background: linear-gradient(#2a190c, #0e0905);
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    .match-score {
+      min-width: 58px;
+      color: #d8aa50;
+      font-size: 1.35rem;
+      text-shadow: 0 2px 5px rgba(0,0,0,.65);
+    }
+
+    .match-deadline {
+      color: #c8aa70;
+      font-size: .84rem;
+      text-align: right;
+    }
+
+    .match-deadline strong {
+      display: block;
+      color: #e0c17d;
+      font-size: .9rem;
+    }
+
+    .matchday-actions {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-top: 1.05rem;
+    }
+
+    .matchday-actions .button {
+      min-width: 220px;
+      border-radius: 8px;
+    }
+
+    .matchday-actions .button-primary {
+      color: #1c1005;
+      background:
+        linear-gradient(90deg, rgba(104,61,12,.12), transparent 25% 75%, rgba(104,61,12,.12)),
+        linear-gradient(#e3bd69, #a76b20);
+    }
+
+    .matchday-actions .button-secondary {
+      color: #e7ca89;
+      background: linear-gradient(rgba(26,18,12,.94), rgba(10,8,6,.96));
+    }
+
+    @media (max-width: 820px) {
+      .matchday-head {
+        align-items: stretch;
+      }
+
+      .matchday-status {
+        align-self: flex-start;
+      }
+
+      .match-row {
+        grid-template-columns: 1fr;
+        gap: .7rem;
+        text-align: center;
+      }
+
+      .match-time,
+      .match-deadline {
+        text-align: center;
+      }
+
+      .match-teams {
+        grid-template-columns: 1fr auto 1fr;
+      }
+
+      .matchday-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .matchday-actions .button {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .matchday-panel::after {
+        right: -120px;
+        top: 120px;
+        opacity: .35;
+      }
+
+      .matchday-panel .eyebrow {
+        font-size: .64rem;
+      }
+
+      .matchday-head h2 {
+        font-size: clamp(1.75rem, 10vw, 2.35rem);
+      }
+
+      .match-teams {
+        grid-template-columns: 1fr;
+      }
+
+      .match-score {
+        min-width: 0;
+      }
+    }
+
 </style>
 </head>
 
@@ -2462,22 +2777,39 @@
     <section class="section panel matchday-panel" id="aktueller-spieltag">
       <div class="matchday-head">
         <div>
-          <div class="eyebrow" id="matchday-competition">Bundesliga</div>
-          <h2 id="matchday-title">1. Spieltag · Saison 2026/2027</h2>
+          <div class="eyebrow" id="matchday-competition">Smugglerauftrag</div>
+          <h2 id="matchday-title">Auftakt · Saison 2026/2027</h2>
         </div>
         <div class="matchday-status" id="matchday-status">Geplant</div>
       </div>
 
       <p class="lead" id="matchday-note">
-        Die offiziellen Paarungen und Anstoßzeiten werden eingetragen, sobald der vollständige Spielplan vorliegt.
+        Der erste Auftrag der neuen Saison beginnt am 09. August 2026. Paarung, Anstoßzeit und Tippfrist werden aus dem Tippkalender übernommen.
       </p>
 
       <div class="match-list" id="match-list">
-        <div class="match-empty">Spieltagdaten werden geladen …</div>
+        <div class="match-row">
+          <div class="match-time">
+            <strong>So., 09.08.2026</strong>
+            <small>Uhrzeit offen</small>
+          </div>
+          <div class="match-teams">
+            <span class="match-team"><span class="team-placeholder">?</span><span>Noch offen</span></span>
+            <span class="match-score">–</span>
+            <span class="match-team"><span>Noch offen</span><span class="team-placeholder">?</span></span>
+          </div>
+          <div class="match-deadline">
+            <strong>Tippfrist</strong>
+            Wird noch bekannt gegeben
+          </div>
+        </div>
       </div>
 
-      <div class="actions">
-        <a class="button button-secondary" href="./bundesliga.html">Zur Bundesliga-Seite</a>
+      <div class="matchday-actions">
+        <a class="button button-secondary" id="matchday-page-link" href="./dynamo-dresden.html">Zum Smugglerauftrag</a>
+        <a class="button button-primary" id="matchday-kicktipp-link"
+           href="https://www.kicktipp.de/the-old-smugglers-club/"
+           target="_blank" rel="noopener noreferrer">Jetzt bei Kicktipp tippen</a>
       </div>
     </section>
 
@@ -2882,16 +3214,24 @@
       container.innerHTML = matches.map(match => {
         const hasScore = Number.isInteger(match.heimtore) && Number.isInteger(match.auswaertstore);
         const score = hasScore ? `${match.heimtore}:${match.auswaertstore}` : "–";
+        const timeLabel = match.uhrzeit ? match.uhrzeit : "Uhrzeit offen";
+        const deadline = match.tippfrist || "Wird noch bekannt gegeben";
 
         return `
           <div class="match-row">
-            <div class="match-time">${formatDate(match.datum, match.uhrzeit)}</div>
-            <div class="match-teams">
-              <span>${match.heim ?? "Noch offen"}</span>
-              <span class="match-score">${score}</span>
-              <span>${match.auswaerts ?? "Noch offen"}</span>
+            <div class="match-time">
+              <strong>${formatDate(match.datum, "")}</strong>
+              <small>${timeLabel}</small>
             </div>
-            <div class="matchday-status">${match.status ?? "geplant"}</div>
+            <div class="match-teams">
+              <span class="match-team"><span class="team-placeholder">?</span><span>${match.heim ?? "Noch offen"}</span></span>
+              <span class="match-score">${score}</span>
+              <span class="match-team"><span>${match.auswaerts ?? "Noch offen"}</span><span class="team-placeholder">?</span></span>
+            </div>
+            <div class="match-deadline">
+              <strong>Tippfrist</strong>
+              ${deadline}
+            </div>
           </div>
         `;
       }).join("");
@@ -2907,20 +3247,26 @@
         setText("matchday-competition", data.wettbewerb);
         setText(
           "matchday-title",
-          `${data.spieltag}. Spieltag · Saison ${data.saison}`
+          [data.titel, data.saison ? `Saison ${data.saison}` : ""].filter(Boolean).join(" · ")
         );
         setText("matchday-status", data.status);
         setText("matchday-note", data.hinweis);
         renderMatches(data.spiele);
 
-        console.info("Spieltagdaten erfolgreich geladen.");
-      } catch (error) {
-        console.warn("Spieltagdaten konnten nicht geladen werden.", error);
-        const container = document.getElementById("match-list");
-        if (container) {
-          container.innerHTML =
-            '<div class="match-empty">Spieltagdaten konnten nicht geladen werden. Die übrige Website funktioniert weiter.</div>';
+        const pageLink = document.getElementById("matchday-page-link");
+        if (pageLink) {
+          pageLink.href = data.zielseite || "./dynamo-dresden.html";
+          pageLink.textContent = data.buttonText || "Zum aktuellen Tipptermin";
         }
+
+        const kicktippLink = document.getElementById("matchday-kicktipp-link");
+        if (kicktippLink) {
+          kicktippLink.href = data.kicktippLink || "https://www.kicktipp.de/the-old-smugglers-club/";
+        }
+
+        console.info("Tippkalenderdaten erfolgreich geladen.");
+      } catch (error) {
+        console.warn("Tippkalenderdaten konnten nicht geladen werden.", error);
       }
     }
 

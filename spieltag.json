@@ -1,21 +1,20 @@
 {
-  "version": 1,
-  "aktualisiertAm": "2026-07-29T15:53:00+02:00",
-  "wettbewerb": "Bundesliga",
+  "wettbewerb": "Smugglerauftrag",
+  "titel": "Auftakt",
   "saison": "2026/2027",
-  "spieltag": 1,
-  "status": "geplant",
-  "hinweis": "Die offiziellen Paarungen und Anstoßzeiten werden eingetragen, sobald der vollständige Spielplan vorliegt.",
+  "status": "Geplant",
+  "hinweis": "Der erste Auftrag der neuen Saison beginnt am 09. August 2026. Paarung, Anstoßzeit und Tippfrist werden aus dem Tippkalender übernommen.",
+  "zielseite": "./dynamo-dresden.html",
+  "buttonText": "Zum Smugglerauftrag",
+  "kicktippLink": "https://www.kicktipp.de/the-old-smugglers-club/",
   "spiele": [
     {
-      "id": "bl-2026-27-01-01",
-      "datum": "2026-08-28",
-      "uhrzeit": "20:30",
+      "datum": "2026-08-09",
+      "uhrzeit": "",
       "heim": "Noch offen",
       "auswaerts": "Noch offen",
-      "heimtore": null,
-      "auswaertstore": null,
-      "status": "geplant"
+      "tippfrist": "Wird noch bekannt gegeben",
+      "status": "Geplant"
     }
   ]
 }
