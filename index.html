@@ -3679,6 +3679,98 @@
       }
     }
 
+  
+    /* ================================================================
+       SMUGGLERAUFTRÄGE – PIRATENHINTERGRUND & CSS-SANDUHR
+       ================================================================ */
+
+    .smuggler-panel {
+      background:
+        linear-gradient(rgba(12,7,4,.78), rgba(10,6,3,.90)),
+        radial-gradient(circle at 76% 28%, rgba(181,119,35,.14), transparent 34%),
+        url("./piraten-spieltag-hintergrund.jpg") center / cover no-repeat;
+    }
+
+    .smuggler-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.20), transparent 38%, rgba(0,0,0,.16)),
+        radial-gradient(circle at 18% 78%, rgba(181,119,35,.06), transparent 24%);
+      mix-blend-mode: normal;
+    }
+
+    .smuggler-panel > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .smuggler-sidecard__seal {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .smuggler-sidecard__seal::before,
+    .smuggler-sidecard__seal::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      width: 28px;
+      height: 4px;
+      transform: translateX(-50%);
+      border: 1px solid rgba(242,203,112,.78);
+      border-radius: 3px;
+      background: linear-gradient(#d9a84f,#6f4417);
+      box-shadow: 0 1px 2px rgba(0,0,0,.55);
+    }
+
+    .smuggler-sidecard__seal::before {
+      top: 17px;
+    }
+
+    .smuggler-sidecard__seal::after {
+      bottom: 17px;
+    }
+
+    .smuggler-hourglass {
+      position: relative;
+      display: block;
+      width: 22px;
+      height: 26px;
+      margin: auto;
+    }
+
+    .smuggler-hourglass::before,
+    .smuggler-hourglass::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      width: 0;
+      height: 0;
+      transform: translateX(-50%);
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,.55));
+    }
+
+    .smuggler-hourglass::before {
+      top: 1px;
+      border-top: 11px solid #e5bd63;
+    }
+
+    .smuggler-hourglass::after {
+      bottom: 1px;
+      border-bottom: 11px solid #b77a28;
+    }
+
+    .smuggler-hourglass {
+      border-left: 2px solid #d7a849;
+      border-right: 2px solid #d7a849;
+      box-sizing: border-box;
+    }
+
   </style>
 </head>
 
@@ -4003,7 +4095,9 @@
           <p id="smuggler-side-text">
             Sobald ein Auftrag festgelegt ist, erscheinen hier Status und Fortschritt.
           </p>
-          <div class="smuggler-sidecard__seal" aria-hidden="true">⚓</div>
+          <div class="smuggler-sidecard__seal" aria-hidden="true">
+            <span class="smuggler-hourglass"></span>
+          </div>
         </aside>
       </div>
     </section>
