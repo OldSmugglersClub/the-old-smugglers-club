@@ -1,0 +1,28 @@
+GITHUB-UPLOAD – SPIELTAGSKACHEL FINAL
+
+Folgende Dateien in das Hauptverzeichnis des GitHub-Repositories kopieren:
+
+1. index.html
+   Vorhandene Datei ersetzen.
+
+2. spieltag.json
+   Vorhandene Datei ersetzen.
+
+3. piraten-spieltag-hintergrund.jpg
+   Nur hochladen, falls die Datei noch nicht vorhanden ist.
+
+4. piraten-chronometer-hintergrund.jpg
+   Nur hochladen, falls die Datei noch nicht vorhanden ist.
+
+Umgesetzte Änderungen:
+- Billige Anker-Icons am Schild entfernt.
+- SMUGGLERAUFTRAG als Messingschild mit Nieten umgesetzt.
+- GEPLANT durch TERMIN FIX ersetzt.
+- TERMIN FIX als Messingschild mit Nieten umgesetzt.
+- Tippfrist vollständig aus der Kachel und JSON entfernt.
+- Freier Bereich durch eine geprägte OSC-Crew-Plakette ersetzt.
+
+Nach dem Upload:
+- Änderungen committen.
+- GitHub Pages 30–90 Sekunden aktualisieren lassen.
+- Seite bei Bedarf mit Strg+F5 neu laden.

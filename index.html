@@ -1419,6 +1419,10 @@
         text-align: center;
       }
 
+      .match-emblem {
+        justify-self: center;
+      }
+
       .match-teams {
         grid-template-columns: 1fr;
       }
@@ -2337,12 +2341,29 @@
       font-size: .72rem;
     }
 
+    .matchday-panel .eyebrow {
+      position: relative;
+      padding-inline: 2.15rem;
+    }
+
     .matchday-panel .eyebrow::before,
     .matchday-panel .eyebrow::after {
-      content: "⚓";
-      color: #4b2c0d;
-      font-size: .85rem;
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      background:
+        radial-gradient(circle at 35% 30%, #f3ce73 0 15%, #a66a1e 42%, #60370d 72%, #241304 100%);
+      box-shadow:
+        inset 0 1px 1px rgba(255,255,255,.45),
+        0 1px 2px rgba(0,0,0,.78);
     }
+
+    .matchday-panel .eyebrow::before { left: 12px; }
+    .matchday-panel .eyebrow::after { right: 12px; }
 
     .matchday-head h2 {
       margin: .75rem 0 0;
@@ -2356,23 +2377,46 @@
     }
 
     .matchday-status {
+      position: relative;
       display: inline-flex;
       align-items: center;
-      gap: .4rem;
-      min-height: 36px;
-      padding: .4rem .78rem;
-      border: 1px solid #c58a2c;
-      border-radius: 999px;
-      color: #251606;
-      background: linear-gradient(#e0b55d, #8a5718);
+      justify-content: center;
+      min-height: 38px;
+      padding: .42rem 2rem;
+      border: 1px solid #d0a351;
+      border-radius: 7px;
+      color: #241506;
+      background:
+        linear-gradient(90deg, rgba(86,52,13,.18), transparent 20% 80%, rgba(86,52,13,.18)),
+        linear-gradient(#d8ad5c, #8e5c1d);
       box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.38),
+        inset 0 1px rgba(255,255,255,.32),
+        inset 0 -2px rgba(42,23,5,.40),
         0 5px 12px rgba(0,0,0,.34);
       font-size: .78rem;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: .08em;
     }
+
+    .matchday-status::before,
+    .matchday-status::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      background:
+        radial-gradient(circle at 35% 30%, #f3ce73 0 15%, #a66a1e 42%, #60370d 72%, #241304 100%);
+      box-shadow:
+        inset 0 1px 1px rgba(255,255,255,.45),
+        0 1px 2px rgba(0,0,0,.78);
+    }
+
+    .matchday-status::before { left: 11px; }
+    .matchday-status::after { right: 11px; }
 
     .matchday-panel .lead {
       position: relative;
@@ -2463,16 +2507,50 @@
       text-shadow: 0 2px 5px rgba(0,0,0,.65);
     }
 
-    .match-deadline {
-      color: #c8aa70;
-      font-size: .84rem;
-      text-align: right;
+    .match-emblem {
+      display: grid;
+      place-items: center;
+      justify-self: end;
+      width: 92px;
+      height: 92px;
+      border: 1px solid rgba(202,145,47,.64);
+      border-radius: 50%;
+      color: #c99a45;
+      background:
+        radial-gradient(circle, rgba(82,48,15,.22) 0 28%, rgba(8,5,3,.30) 29% 56%, transparent 57%),
+        conic-gradient(from 0deg,
+          transparent 0 11deg, rgba(198,139,44,.24) 11deg 13deg,
+          transparent 13deg 43deg, rgba(198,139,44,.15) 43deg 45deg,
+          transparent 45deg 88deg, rgba(198,139,44,.24) 88deg 90deg,
+          transparent 90deg 133deg, rgba(198,139,44,.15) 133deg 135deg,
+          transparent 135deg 178deg, rgba(198,139,44,.24) 178deg 180deg,
+          transparent 180deg 223deg, rgba(198,139,44,.15) 223deg 225deg,
+          transparent 225deg 268deg, rgba(198,139,44,.24) 268deg 270deg,
+          transparent 270deg 313deg, rgba(198,139,44,.15) 313deg 315deg,
+          transparent 315deg 358deg, rgba(198,139,44,.24) 358deg 360deg);
+      box-shadow:
+        inset 0 0 0 5px rgba(0,0,0,.30),
+        inset 0 0 0 7px rgba(178,119,34,.12),
+        0 8px 18px rgba(0,0,0,.32);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .08em;
     }
 
-    .match-deadline strong {
+    .match-emblem strong {
       display: block;
-      color: #e0c17d;
-      font-size: .9rem;
+      font-size: 1.15rem;
+      line-height: 1;
+      text-shadow: 0 2px 4px rgba(0,0,0,.72);
+    }
+
+    .match-emblem small {
+      display: block;
+      margin-top: .18rem;
+      color: #b88a3e;
+      font-size: .52rem;
+      font-weight: 800;
+      letter-spacing: .16em;
     }
 
     .matchday-actions {
@@ -2517,8 +2595,12 @@
       }
 
       .match-time,
-      .match-deadline {
+      .match-emblem {
         text-align: center;
+      }
+
+      .match-emblem {
+        justify-self: center;
       }
 
       .match-teams {
@@ -2780,11 +2862,11 @@
           <div class="eyebrow" id="matchday-competition">Smugglerauftrag</div>
           <h2 id="matchday-title">Auftakt · Saison 2026/2027</h2>
         </div>
-        <div class="matchday-status" id="matchday-status">Geplant</div>
+        <div class="matchday-status" id="matchday-status">Termin fix</div>
       </div>
 
       <p class="lead" id="matchday-note">
-        Der erste Auftrag der neuen Saison beginnt am 09. August 2026. Paarung, Anstoßzeit und Tippfrist werden aus dem Tippkalender übernommen.
+        Der erste Auftrag der neuen Saison beginnt am 09. August 2026. Paarung und Anstoßzeit werden aus dem Tippkalender übernommen.
       </p>
 
       <div class="match-list" id="match-list">
@@ -2798,9 +2880,8 @@
             <span class="match-score">–</span>
             <span class="match-team"><span>Noch offen</span><span class="team-placeholder">?</span></span>
           </div>
-          <div class="match-deadline">
-            <strong>Tippfrist</strong>
-            Wird noch bekannt gegeben
+          <div class="match-emblem" aria-hidden="true">
+            <div><strong>OSC</strong><small>CREW</small></div>
           </div>
         </div>
       </div>
@@ -3215,7 +3296,7 @@
         const hasScore = Number.isInteger(match.heimtore) && Number.isInteger(match.auswaertstore);
         const score = hasScore ? `${match.heimtore}:${match.auswaertstore}` : "–";
         const timeLabel = match.uhrzeit ? match.uhrzeit : "Uhrzeit offen";
-        const deadline = match.tippfrist || "Wird noch bekannt gegeben";
+
 
         return `
           <div class="match-row">
@@ -3228,9 +3309,8 @@
               <span class="match-score">${score}</span>
               <span class="match-team"><span>${match.auswaerts ?? "Noch offen"}</span><span class="team-placeholder">?</span></span>
             </div>
-            <div class="match-deadline">
-              <strong>Tippfrist</strong>
-              ${deadline}
+            <div class="match-emblem" aria-hidden="true">
+              <div><strong>OSC</strong><small>CREW</small></div>
             </div>
           </div>
         `;
