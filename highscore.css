@@ -118,3 +118,111 @@
 
 @media(max-width:900px){.hs-summary{grid-template-columns:repeat(2,1fr)}.hs-main-tabs{grid-template-columns:repeat(2,1fr)}.hs-team-stats,.hs-record-grid,.hs-order-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.hs-page{padding:12px}.hs-hero{padding:20px}.hs-hero-top{align-items:flex-start;gap:14px}.hs-emblem{width:76px;height:76px;flex-basis:76px}.hs-hero h1{font-size:3.2rem}.hs-summary{grid-template-columns:1fr}.hs-main-tabs{position:static;grid-template-columns:1fr 1fr}.hs-main-tab{font-size:.78rem;padding:12px 8px}.hs-panel{padding:16px}.hs-panel-head,.hs-panel-head-tools,.hs-team-hero{display:grid}.hs-search{min-width:0;width:100%}.hs-podium{grid-template-columns:1fr;min-height:0;padding:72px 4px 54px;gap:76px}.hs-podium::before,.hs-podium::after,.hs-podium-rigging{display:none}.hs-podium-card.place-1,.hs-podium-card.place-2,.hs-podium-card.place-3{order:initial;min-height:300px;transform:none}.hs-podium-card{padding-left:18px;padding-right:18px}.hs-podium-deck{display:none}.hs-pagination{grid-template-columns:1fr 1fr}.hs-pagination>span{grid-column:1/-1;grid-row:1}.hs-pagination label{justify-content:flex-end}.hs-team-stats,.hs-record-grid,.hs-order-grid{grid-template-columns:1fr}.hs-actions{flex-direction:column}.hs-btn{text-align:center}}
+
+/* =========================================================
+   Version 2.25 – Highscore Professional
+   Bestehendes Raster bleibt unverändert; rein gestalterische
+   Veredelung der Highscore-Module im freigegebenen Piratenstil.
+   ========================================================= */
+
+.hs-hero,.hs-panel,.hs-main-tabs{
+  position:relative;
+  border-color:rgba(194,148,67,.72);
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.018),transparent 18%,transparent 82%,rgba(0,0,0,.2)),
+    repeating-linear-gradient(0deg,rgba(49,33,19,.97) 0 71px,rgba(25,16,9,.99) 72px 74px),
+    var(--hs-panel);
+  box-shadow:inset 0 0 0 4px rgba(7,4,2,.42),inset 0 0 0 5px rgba(229,193,111,.08),0 18px 50px rgba(0,0,0,.44)
+}
+.hs-hero::before,.hs-panel::before,.hs-main-tabs::before{
+  content:"";position:absolute;inset:8px;pointer-events:none;border:1px solid rgba(229,193,111,.10);border-radius:9px
+}
+.hs-hero>* ,.hs-panel>* ,.hs-main-tabs>*{position:relative;z-index:1}
+.hs-hero::after{
+  content:"THE OLD SMUGGLERS CLUB";position:absolute;right:28px;top:22px;color:rgba(229,193,111,.12);font:800 .68rem/1 Georgia,serif;letter-spacing:.24em;transform:rotate(-2deg);pointer-events:none
+}
+
+.hs-stat-card{
+  position:relative;overflow:hidden;border-radius:6px;border-color:rgba(184,138,61,.72);
+  background:
+    linear-gradient(135deg,rgba(229,193,111,.08),transparent 28%),
+    repeating-linear-gradient(0deg,#382516 0 34px,#21150c 35px 37px);
+  box-shadow:inset 0 0 0 3px rgba(0,0,0,.34),0 10px 24px rgba(0,0,0,.32)
+}
+.hs-stat-card::before{content:"";position:absolute;left:12px;right:12px;top:9px;height:1px;background:linear-gradient(90deg,transparent,rgba(229,193,111,.65),transparent)}
+.hs-stat-card::after{content:"•";position:absolute;right:12px;bottom:7px;color:#a77731;font-size:1rem;text-shadow:0 1px 2px #000}
+.hs-stat-card strong{font-family:Georgia,serif;color:#f6dfaa;text-shadow:0 2px 0 #3f270f}
+
+.hs-main-tabs{background:linear-gradient(180deg,rgba(34,22,12,.98),rgba(13,8,4,.99));gap:10px}
+.hs-main-tab,.hs-chip,.hs-page-btn,.hs-btn{
+  position:relative;overflow:hidden;border-radius:5px;border-color:rgba(181,132,54,.75);
+  background:linear-gradient(180deg,#3e2916 0,#211308 54%,#140b05 100%);
+  box-shadow:inset 0 1px rgba(255,237,181,.08),inset 0 -2px rgba(0,0,0,.55),0 4px 10px rgba(0,0,0,.22)
+}
+.hs-main-tab::before,.hs-chip::before,.hs-page-btn::before,.hs-btn::before{content:"";position:absolute;inset:4px;border:1px solid rgba(229,193,111,.10);pointer-events:none}
+.hs-main-tab:hover,.hs-chip:hover,.hs-page-btn:hover,.hs-btn:hover{border-color:#d0a04d;color:#ffe7ad;filter:brightness(1.08)}
+.hs-main-tab.is-active,.hs-chip.is-active{
+  background:linear-gradient(180deg,#6b4b22,#3e260f 58%,#241407);
+  color:#fff0c1;border-color:#e0b35a;box-shadow:inset 0 0 0 2px rgba(17,9,3,.55),inset 0 1px rgba(255,245,204,.16),0 5px 14px rgba(0,0,0,.36)
+}
+.hs-main-tab.is-active::after,.hs-chip.is-active::after{content:"";position:absolute;left:18%;right:18%;bottom:4px;height:1px;background:linear-gradient(90deg,transparent,#f0c66d,transparent)}
+
+.hs-panel-head{padding-bottom:13px;border-bottom:1px solid rgba(184,138,61,.28)}
+.hs-panel-head::after{content:"";position:absolute;left:0;bottom:-2px;width:100px;height:3px;background:linear-gradient(90deg,#c08d3d,transparent)}
+.hs-panel h2{font-family:Georgia,serif;letter-spacing:.025em;text-shadow:0 2px 0 #38220e}
+.hs-eyebrow{position:relative;padding-left:20px}
+.hs-eyebrow::before{content:"";position:absolute;left:0;top:50%;width:12px;height:12px;transform:translateY(-50%) rotate(45deg);border:1px solid #b8893d;background:#2b1a0b;box-shadow:inset 0 0 0 2px rgba(229,193,111,.16)}
+
+/* Rangliste als altes Schiffsregister statt Standardtabelle */
+.hs-table-wrap{
+  position:relative;border-radius:5px;border-color:rgba(196,148,65,.72);
+  background:linear-gradient(180deg,#21160d,#100a05);
+  box-shadow:inset 0 0 0 4px rgba(4,2,1,.42),0 12px 28px rgba(0,0,0,.3)
+}
+.hs-table-wrap::before{content:"SCHIFFSREGISTER";position:absolute;right:16px;top:13px;z-index:3;color:rgba(244,219,164,.17);font:800 .68rem Georgia,serif;letter-spacing:.22em;pointer-events:none}
+.hs-table{font-variant-numeric:tabular-nums}
+.hs-table th{
+  background:
+    linear-gradient(180deg,rgba(119,78,30,.72),rgba(48,29,12,.96)),
+    repeating-linear-gradient(90deg,transparent 0 100px,rgba(0,0,0,.15) 101px 103px);
+  color:#f0d292;border-bottom:3px double rgba(214,166,78,.72);text-shadow:0 1px 2px #000
+}
+.hs-table th+th{border-left:1px solid rgba(229,193,111,.10)}
+.hs-table td{background:rgba(38,25,14,.72);border-bottom-color:rgba(184,138,61,.24);color:#dfcfad}
+.hs-table tbody tr:nth-child(even) td{background:rgba(24,15,8,.82)}
+.hs-table tbody tr:hover td{background:rgba(103,69,28,.34)}
+.hs-table td:first-child{width:70px;text-align:center}
+.hs-table td:nth-child(2){font-family:Georgia,serif;font-weight:700;color:#f4dfad}
+.hs-rank{font-family:Georgia,serif;font-size:1.03rem;color:#f0c86f!important;text-shadow:0 2px 0 #3b240e}
+.hs-rank::before{content:"№ ";color:#9f7130;font-size:.72em}
+
+.hs-search input,.hs-pagination select{
+  border-radius:4px;background:linear-gradient(180deg,#21150b,#0e0804);box-shadow:inset 0 2px 7px rgba(0,0,0,.55);font-family:Georgia,serif
+}
+.hs-pagination{padding:12px 14px;border:1px solid rgba(184,138,61,.28);background:rgba(19,12,6,.72);border-radius:4px}
+
+/* Team-, Rekord- und Ordenskarten als eingelassene Holz-/Messingtafeln */
+.hs-team-stats article,.hs-record-card,.hs-order-card{
+  position:relative;overflow:hidden;border-radius:5px;border-color:rgba(190,143,61,.7);
+  background:
+    linear-gradient(135deg,rgba(229,193,111,.07),transparent 33%),
+    repeating-linear-gradient(0deg,#3b2818 0 42px,#25170d 43px 46px);
+  box-shadow:inset 0 0 0 4px rgba(4,2,1,.38),inset 0 0 0 5px rgba(229,193,111,.06),0 8px 18px rgba(0,0,0,.28)
+}
+.hs-team-stats article::after,.hs-record-card::after,.hs-order-card::after{content:"";position:absolute;width:7px;height:7px;right:10px;bottom:10px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f2cf7a,#805019 72%);box-shadow:0 1px 3px #000}
+.hs-team-stats strong,.hs-record-card strong,.hs-order-card strong{font-family:Georgia,serif;color:#f2d99f;text-shadow:0 2px 0 #38220e}
+.hs-order-card{padding-left:78px;min-height:138px}
+.hs-order-card::before{content:"ORDEN";left:18px;right:auto;top:30px;width:45px;height:45px;display:grid;place-items:center;border:2px double #c18d39;border-radius:50%;background:radial-gradient(circle,#69441d,#201207 68%);color:#e7c474;font:800 .58rem Georgia,serif;letter-spacing:.08em;box-shadow:0 0 0 4px rgba(0,0,0,.4),0 5px 12px rgba(0,0,0,.4)}
+
+.hs-history{border:1px solid rgba(184,138,61,.35);padding:10px;background:rgba(13,8,4,.65);box-shadow:inset 0 0 18px rgba(0,0,0,.35)}
+.hs-history-row{position:relative;background:rgba(51,34,19,.5);border:1px solid rgba(184,138,61,.16);border-left:4px solid rgba(184,138,61,.55)}
+.hs-history-row::after{content:"";position:absolute;right:10px;top:50%;width:6px;height:6px;transform:translateY(-50%) rotate(45deg);background:#9b6c2e}
+
+.hs-actions .hs-btn{min-width:210px;text-align:center;text-transform:uppercase;letter-spacing:.06em;font-weight:800}
+
+@media(max-width:700px){
+  .hs-hero::after,.hs-table-wrap::before{display:none}
+  .hs-order-card{padding-left:72px}
+  .hs-main-tab::before,.hs-chip::before,.hs-page-btn::before,.hs-btn::before{inset:3px}
+  .hs-table th,.hs-table td{padding:11px 12px}
+}

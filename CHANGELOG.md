@@ -37,3 +37,16 @@
 - `highscore.js`
 - `VERSION.txt`
 - `CHANGELOG.md`
+
+## Version 2.25 – Highscore Professional
+
+- Highscore-Navigation in dunkler Holz- und Messingoptik vereinheitlicht.
+- Statistikfelder als eingelassene Schiffstafeln gestaltet.
+- Rangliste optisch zu einem historischen Schiffsregister weiterentwickelt.
+- Tabellenkopf, Tabellenzeilen, Rangdarstellung und Suchbereich hochwertiger gestaltet.
+- Rekord-, Team- und Ordenkarten an die freigegebene Piratendesign-Sprache angepasst.
+- Historienbereich und Seitennavigation gestalterisch vereinheitlicht.
+- Vorhandenes Podium aus Version 2.24 vollständig beibehalten und in das Gesamtbild eingebunden.
+- Keine Bildassets, Cliparts, Emojis oder Standardicons ergänzt.
+- Grundlayout, Raster, Kachelgrößen und Seitenaufbau unverändert gelassen.
+- Mobile Darstellung berücksichtigt.
