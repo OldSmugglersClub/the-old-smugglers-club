@@ -3898,6 +3898,93 @@
       object-position: center;
     }
 
+  
+    /* ================================================================
+       PIRATENKODEX – TEXTFREIER PIRATENHINTERGRUND
+       Nur Hintergrundanpassung; Inhalt und Layout bleiben unverändert.
+       ================================================================ */
+
+    #piratenkodex {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 84% 18%, rgba(184,122,36,.16), transparent 26%),
+        radial-gradient(circle at 16% 82%, rgba(145,84,20,.12), transparent 28%),
+        linear-gradient(rgba(8,5,3,.42), rgba(8,5,3,.62)),
+        repeating-linear-gradient(
+          102deg,
+          rgba(96,56,20,.08) 0 2px,
+          transparent 2px 24px
+        ),
+        linear-gradient(145deg, #24170e 0%, #140c07 50%, #0b0704 100%);
+    }
+
+    #piratenkodex::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .30;
+      background:
+        radial-gradient(circle at 78% 22%, transparent 0 54px, rgba(190,128,39,.20) 55px 57px, transparent 58px),
+        radial-gradient(circle at 78% 22%, transparent 0 82px, rgba(190,128,39,.11) 83px 85px, transparent 86px),
+        conic-gradient(
+          from 0deg at 78% 22%,
+          transparent 0 12deg,
+          rgba(190,128,39,.18) 12deg 14deg,
+          transparent 14deg 44deg,
+          rgba(190,128,39,.18) 44deg 46deg,
+          transparent 46deg 89deg,
+          rgba(190,128,39,.18) 89deg 91deg,
+          transparent 91deg 134deg,
+          rgba(190,128,39,.18) 134deg 136deg,
+          transparent 136deg 179deg,
+          rgba(190,128,39,.18) 179deg 181deg,
+          transparent 181deg 224deg,
+          rgba(190,128,39,.18) 224deg 226deg,
+          transparent 226deg 269deg,
+          rgba(190,128,39,.18) 269deg 271deg,
+          transparent 271deg 314deg,
+          rgba(190,128,39,.18) 314deg 316deg,
+          transparent 316deg 360deg
+        ),
+        linear-gradient(90deg, rgba(0,0,0,.08), transparent 38%, rgba(0,0,0,.06));
+    }
+
+    #piratenkodex::after {
+      content: "";
+      position: absolute;
+      left: 4%;
+      bottom: 5%;
+      width: 132px;
+      height: 132px;
+      pointer-events: none;
+      opacity: .12;
+      border: 2px solid rgba(191,130,42,.42);
+      border-radius: 50%;
+      box-shadow:
+        inset 0 0 0 11px transparent,
+        inset 0 0 0 13px rgba(191,130,42,.16),
+        inset 0 0 0 30px transparent,
+        inset 0 0 0 32px rgba(191,130,42,.12);
+      transform: rotate(10deg);
+    }
+
+    #piratenkodex > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    #piratenkodex .kodex-card,
+    #piratenkodex .codex-card,
+    #piratenkodex .rule-card,
+    #piratenkodex .kodex-footer,
+    #piratenkodex .codex-footer {
+      background:
+        linear-gradient(145deg, rgba(29,16,8,.88), rgba(12,7,4,.93));
+      backdrop-filter: blur(1px);
+    }
+
   </style>
 </head>
 
