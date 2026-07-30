@@ -1,17 +1,17 @@
 {
   "bereich": "Sondermissionen",
   "titel": "Smuggleraufträge",
-  "status": "IN VORBEREITUNG",
-  "einleitung": "Spezialmissionen außerhalb der regulären Wettbewerbe. Aktuell bestehen die Smuggleraufträge ausschließlich aus ausgewählten Spielen von Dynamo Dresden.",
+  "status": "34 AUFTRÄGE · SAISON 2026/2027",
+  "einleitung": "Die Smuggleraufträge bestehen aus 34 ausgewählten Spielen von Dynamo Dresden. Jeder Auftrag bildet einen eigenen Kicktipp-Spieltag und zählt vollständig zur Einzel-Gesamtwertung des The Old Smugglers Club.",
   "team": "Dynamo Dresden",
-  "untertitel": "Ausgewählte Spiele werden als eigene Smuggleraufträge aufgenommen und separat gewertet.",
-  "aktuellerAuftrag": "Noch offen",
-  "naechsterAuftrag": "Auftakt",
+  "untertitel": "Ein Dynamo-Spiel, ein eigener Tippspieltag, ein Smugglerauftrag – insgesamt 34 Missionen über die gesamte Saison.",
+  "aktuellerAuftrag": "Auftakt",
+  "naechsterAuftrag": "Auftrag 2 nach Saisonplan",
   "abgeschlossen": 0,
-  "gesamt": 1,
-  "beschreibung": "Der erste Smugglerauftrag startet am 09. August 2026. Weitere Aufträge werden im Saisonverlauf ergänzt.",
-  "buttonText": "Zu den Dynamo-Aufträgen",
+  "gesamt": 34,
+  "beschreibung": "Der erste Smugglerauftrag „Auftakt“ findet am 09. August 2026 statt. Die weiteren 33 Aufträge folgen dem festgelegten Dynamo-Spielplan und werden zentral über die Spieldaten gepflegt.",
+  "buttonText": "Zu allen Dynamo-Aufträgen",
   "link": "./dynamo-dresden.html",
   "logbuchTitel": "Piratenlogbuch",
-  "logbuchText": "Auftrag „Auftakt“ ist vorbereitet. Status und Fortschritt werden hier künftig automatisch aus der JSON-Datei angezeigt."
+  "logbuchText": "Alle 34 Smuggleraufträge werden mit Gegner, Termin, Tipp, Ergebnis, Punkten und Status dokumentiert. Abgeschlossene Missionen bleiben dauerhaft als Saisonchronik sichtbar."
 }
