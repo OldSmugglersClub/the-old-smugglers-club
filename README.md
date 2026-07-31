@@ -1,4 +1,4 @@
-# The Old Smugglers Club – Version 4.3.8
+# The Old Smugglers Club – Version 4.4.0
 
 Öffentliche GitHub-Pages-Website der Tipprunde **The Old Smugglers Club**.
 
@@ -8,32 +8,40 @@ Der vollständige Inhalt dieses Verzeichnisses gehört direkt in das Hauptverzei
 
 ## Aktueller Stand
 
-- öffentliches Spielerportal ohne veröffentlichte Administration
+- öffentliche Website mit freigegebenem Desktop- und Mobildesign
 - Bundesliga, DFB-Pokal, Champions League, Europa League und Sonderwettbewerbe
 - Smuggleraufträge für reale Spiele der SG Dynamo Dresden
-- Highscore, Hall of Fame, Piratenkodex und Saisonübersicht
-- Bundesliga-Chronometer bis zum Saisonstart am 28.08.2026
-- zentrale Statusangaben für Saison, nächste Mission und aktuellen Champion
-- responsive Darstellung für Desktop und Mobilgeräte
+- Highscore, Hall of Fame, Piratenkodex, Bonuswettbewerb und Saisonübersicht
+- zentrale Datenbausteine über JSON und `datenregister.json`
+- vollständige technische Bestandsaufnahme in `ARCHITEKTUR.md`
+
+## Version 4.4.0
+
+Version 4.4.0 ist ein reines Dokumentationsrelease. Es verändert keine öffentliche Seite und keine Datenlogik.
+
+Neu ist `ARCHITEKTUR.md`. Das Dokument beschreibt den tatsächlichen Ist-Zustand und bildet die Grundlage für die spätere Zentralisierung der Datenhaltung.
 
 ## Aktualisierung über die GitHub-Webseite
 
-Für Version 4.3.8 gilt die Datei `GITHUB-UPDATE-4.3.8.md`. Gleichnamige Dateien werden beim Hochladen ersetzt. Es müssen keine Dateien gelöscht werden.
+Für Version 4.4.0 gilt die Datei `GITHUB-UPDATE-4.4.0.md`.
 
 ## Wichtige Dateien
 
 - `index.html` – Startseite
-- `site-data.json` – Saison und Bundesliga-Start
-- `smugglerauftraege.json` – aktuelle Mission
-- `hall-of-fame.json` – Champion und Titelträger
+- `datenregister.json` – Register gemeinsam genutzter Datenquellen
+- `spieldaten.json` – zentrale Spielliste
+- `wettbewerbe.json` – Wettbewerbsdefinitionen
+- `ARCHITEKTUR.md` – technische Bestandsaufnahme und Zielarchitektur
+- `PromptManual/PROJECT_MANUAL.md` – verbindliche Projektanweisungen
 - `VERSION.txt` – aktuelle Versionsnummer
 - `CHANGELOG.md` – Versionshistorie
-- `RELEASE_NOTES_v4.3.8.md` – Änderungen dieses Releases
-- `GITHUB-UPDATE-4.3.8.md` – konkrete Upload-Liste
+- `RELEASE_NOTES_v4.4.0.md` – Änderungen dieses Releases
+- `GITHUB-UPDATE-4.4.0.md` – konkrete Upload-Liste
 
 ## Projektregeln
 
-- freigegebenes Grundlayout, Raster, Kachelgrößen und Abstände beibehalten
-- nur Inhalte und Gestaltung innerhalb bestehender Bereiche optimieren
-- keine Emojis, Cliparts oder generischen Symbole
-- keine internen Verwaltungswerkzeuge im öffentlichen Paket
+- freigegebenes Grundlayout, Raster, Kachelgrößen und Navigation beibehalten
+- nur innerhalb bestehender Komponenten arbeiten
+- keine Bildgenerierung für HTML-, CSS-, JavaScript- oder Dateianpassungen
+- keine Emojis, Cliparts, Comicgrafiken oder generischen Symbole
+- Änderungen erst nach Analyse, Auswirkungsbewertung, Vorschlag und Freigabe umsetzen

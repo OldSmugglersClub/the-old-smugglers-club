@@ -1,5 +1,34 @@
 # CHANGELOG
 
+## Version 4.4.0 – Architekturdokumentation – 31.07.2026
+
+### Neu
+
+- `ARCHITEKTUR.md` mit einer Bestandsaufnahme der öffentlichen Seiten, Wettbewerbslogik, zentralen Datenquellen, Adminwerkzeuge und bekannten Architektur-Risiken.
+- Zielbild für die spätere zentrale Datenhaltung dokumentiert.
+- Verbindlicher nächster Schritt als Feld-für-Feld-Migrationsmatrix festgelegt.
+
+### Geändert
+
+- `PromptManual/PROJECT_MANUAL.md` auf den zuletzt freigegebenen Stand mit dem Hinweis für KI-Assistenten aktualisiert.
+- Versions- und Projektdokumentation auf Version 4.4.0 angehoben.
+
+### Unverändert
+
+- Keine Änderung an HTML, CSS, JavaScript, JSON-Daten, Kachelgrößen, Grid, Navigation oder öffentlicher Darstellung.
+
+### Betroffene Dateien
+
+- `ARCHITEKTUR.md`
+- `PromptManual/PROJECT_MANUAL.md`
+- `VERSION.txt`
+- `CHANGELOG.md`
+- `README.md`
+- `RELEASE_NOTES_v4.4.0.md`
+- `GITHUB-UPDATE-4.4.0.md`
+
+# Änderungsverlauf
+
 ## Version 4.3.8 – Starttitel auf einer Zeile – 31.07.2026
 
 ### Behoben
