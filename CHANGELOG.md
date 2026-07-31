@@ -1,5 +1,23 @@
 # Changelog
 
+## Version 4.3.6 – Schmugglerrat – 31.07.2026
+
+### Geändert
+- Überschrift der Startzentrale von „Zentrale der Crew“ in „Schmugglerrat“ geändert.
+- Einleitungstext ersetzt durch: „Hier werden Kurse gesetzt, Missionen vorbereitet und alle Wettbewerbe des Old Smugglers Club koordiniert.“
+
+### Unverändert
+- Kachelgröße, Grundlayout, Grid, Navigation und Datenlogik bleiben unverändert.
+- Keine Bilder erstellt oder verändert.
+
+### Betroffene Dateien
+- `index.html`
+- `VERSION.txt`
+- `CHANGELOG.md`
+- `README.md`
+- `RELEASE_NOTES_v4.3.6.md`
+- `GITHUB-UPDATE-4.3.6.md`
+
 ## Version 4.3.5 – Trennerkorrektur Startzentrale – 31.07.2026
 
 - CSS-Konflikt im Trenner unter „Zentrale der Crew“ behoben.
