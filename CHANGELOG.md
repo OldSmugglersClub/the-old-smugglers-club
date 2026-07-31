@@ -271,3 +271,12 @@
 - Unterstützung reduzierter Bewegungen erweitert.
 - Doppelte Initialisierung gemeinsamer Module defensiv verhindert.
 - Keine Änderungen an Grundlayout, Kachelgrößen oder freigegebenen Inhalten.
+
+## Version 2.48 – Gesamtprüfung & Release-Audit
+
+- Reproduzierbares Prüfskript `scripts/release_audit.py` ergänzt.
+- Lokale HTML- und JavaScript-Dateireferenzen werden auf fehlende Ziele geprüft.
+- Sämtliche JSON-Dateien werden strukturell validiert.
+- Pflichtdateien und Versionsstand werden kontrolliert.
+- Maschinenlesbares Prüfergebnis `RELEASE-AUDIT.json` ergänzt.
+- Grundlayout, Raster, Kachelgrößen und freigegebene Inhalte unverändert belassen.
