@@ -332,3 +332,13 @@
 - Systembericht als JSON exportierbar.
 - Wartungspanel der Wettbewerbsseiten um direkten Administrationslink ergänzt.
 - Datenregister auf Datenversion 4 aktualisiert.
+
+## Version 3.3 – Benutzeroberfläche, Barrierefreiheit und Responsive Feinschliff – 31.07.2026
+
+- Gemeinsame, tastaturfreundliche Fokusdarstellung für interaktive Elemente ergänzt.
+- Fehlenden Seiten automatisch einen Sprunglink zum Hauptinhalt hinzugefügt.
+- Breite Tabellen erhalten bei Bedarf einen fokussierbaren horizontalen Scrollbereich.
+- Touch-Ziele und Formulare auf kleinen Bildschirmen verbessert.
+- Unterstützung für reduzierte Bewegungen und erhöhten Kontrast erweitert.
+- Externe Links mit neuem Tab werden defensiv mit `noopener` und `noreferrer` abgesichert.
+- Grundlayout, Raster, Kachelgrößen, Navigation und freigegebene Inhalte unverändert belassen.

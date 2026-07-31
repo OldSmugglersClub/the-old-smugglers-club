@@ -1,7 +1,7 @@
 {
-  "manifestVersion": "3.2",
-  "generatedAtUtc": "2026-07-31T07:10:59.110205+00:00",
-  "fileCount": 75,
+  "manifestVersion": "3.3",
+  "generatedAtUtc": "2026-07-31T09:06:52.233337+00:00",
+  "fileCount": 79,
   "files": [
     {
       "path": "ADMIN-HANDBUCH.md",
@@ -20,8 +20,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 20772,
-      "sha256": "016a5a74c921b521668216ec0246ada83e7033022863880215d3ee2d15abf52a"
+      "bytes": 21457,
+      "sha256": "71106ba1999ef310018379f219291a39acce6f327e584fa9eca5767e48e2fcac"
     },
     {
       "path": "CNAME",
@@ -59,6 +59,11 @@
       "sha256": "dc1d4df5cdbc70d864f38df82205140b6687b902f2746eadefd6eeb18ab12f38"
     },
     {
+      "path": "GITHUB-UPDATE-3.3.md",
+      "bytes": 707,
+      "sha256": "b8873b3cbb084d6856b000d01401f84c7d945684521841c059763f8801c98f18"
+    },
+    {
       "path": "INSTALLATION.md",
       "bytes": 57,
       "sha256": "b4a4c4d1a581d34fd05a9e9d6c9a74e76bd5da4c67427e9066377e6d2940b8bd"
@@ -70,13 +75,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 1123,
-      "sha256": "3aaf1fe637982a0f9910c8fc78d429e8465512ae34305de473abcb9bfb76c224"
+      "bytes": 1151,
+      "sha256": "24eda315e5951872381604fce74ceb70301d8c22826fc23ef18d75a5118ae8b7"
     },
     {
       "path": "RELEASE-AUDIT.json",
-      "bytes": 304,
-      "sha256": "c6ac2564f30d2ea3aba94b6e63c5c407cbc6df029a6c26f884760ae9a29079b3"
+      "bytes": 305,
+      "sha256": "69eca6a9e21fbd8a2194b28888ddeb6b9e195af2f77f51469e45ce18be35dc4c"
     },
     {
       "path": "RELEASE_NOTES_v3.0.1.md",
@@ -104,9 +109,24 @@
       "sha256": "d5a828ffd82ad59a4de2a44a78735b64ddbc658bafd8d1aeeec1b71d941d7642"
     },
     {
+      "path": "RELEASE_NOTES_v3.3.md",
+      "bytes": 728,
+      "sha256": "3446988d4da34cefdb884ac7414b31cc3bfe881b4cb23402089b9119df8fa710"
+    },
+    {
       "path": "VERSION.txt",
       "bytes": 4,
-      "sha256": "81824dba6d71d2996baef3cc5f77008ebc34656848b502292277b3feffab5d82"
+      "sha256": "8b4feb2571a161ee126fd279ba612bfa883f66762b18ef21c1557ebcd3f841c2"
+    },
+    {
+      "path": "accessibility-v33.css",
+      "bytes": 1922,
+      "sha256": "eceff6c9d6e880f101fb16820dbd408dd1e44c77011db0b285d630a0b1aefb45"
+    },
+    {
+      "path": "accessibility-v33.js",
+      "bytes": 1583,
+      "sha256": "2e7c7639c963fb8f1bd5d3790be32f537cd84017d7c4e9623f71b56652f531f4"
     },
     {
       "path": "admin.css",
@@ -115,8 +135,8 @@
     },
     {
       "path": "admin.html",
-      "bytes": 2059,
-      "sha256": "076b3a766e77ff8552732b9d80e28ba88da48f14b90ab72dce72310f37851059"
+      "bytes": 2171,
+      "sha256": "82aa0455ae67174311c0f56d907eeafdb8db6ab7bc7f80988a9fcd7b7632c7cd"
     },
     {
       "path": "admin.js",
@@ -135,8 +155,8 @@
     },
     {
       "path": "bundesliga.html",
-      "bytes": 1326,
-      "sha256": "ca337f60a96c8ca67ea3b19861deff91bfbf6b1e37cac025f1d6e6e1e3e366e0"
+      "bytes": 1438,
+      "sha256": "572172a99d35555db49cd891383af430268916efb77ed4d6601470c9d4d5138b"
     },
     {
       "path": "champion-trophy.jpeg",
@@ -145,8 +165,8 @@
     },
     {
       "path": "champions-league.html",
-      "bytes": 1326,
-      "sha256": "ca337f60a96c8ca67ea3b19861deff91bfbf6b1e37cac025f1d6e6e1e3e366e0"
+      "bytes": 1438,
+      "sha256": "572172a99d35555db49cd891383af430268916efb77ed4d6601470c9d4d5138b"
     },
     {
       "path": "club-crest.svg",
@@ -171,22 +191,22 @@
     {
       "path": "datenregister.json",
       "bytes": 732,
-      "sha256": "e62e288e9b1995a6abd592e63f83bdc01ccd58e863a71f9e72f089fb82218aae"
+      "sha256": "6047313fbc19d4a08c7c50951b50bd7d77d9aade6af8454a5f0faa88703d2ae5"
     },
     {
       "path": "dfb-pokal.html",
-      "bytes": 1326,
-      "sha256": "ca337f60a96c8ca67ea3b19861deff91bfbf6b1e37cac025f1d6e6e1e3e366e0"
+      "bytes": 1438,
+      "sha256": "572172a99d35555db49cd891383af430268916efb77ed4d6601470c9d4d5138b"
     },
     {
       "path": "dynamo-dresden.html",
-      "bytes": 1372,
-      "sha256": "a0028354f17823ba5c80e80feb1644d1a7a7dc0b892ca89c412d9fa2b29193fe"
+      "bytes": 1484,
+      "sha256": "23dce739cf6c53ff698ba207eb2ba4456929c892e0a2cd841cf8784de4defe67"
     },
     {
       "path": "europa-league.html",
-      "bytes": 1320,
-      "sha256": "a1e195222a4ebb119426a4fc6b96820d21ea04b5c4922e6776e260d79de9591c"
+      "bytes": 1432,
+      "sha256": "9621771f6ab3ca5e0679fd05a741daf799ae1c67d0f30555fe96f536eee24e18"
     },
     {
       "path": "favicon.jpeg",
@@ -210,8 +230,8 @@
     },
     {
       "path": "highscore.html",
-      "bytes": 12134,
-      "sha256": "1b6403b20f67352afdbfc1843f6d89950763f4f38e3785b4bd8d366338ca5234"
+      "bytes": 12246,
+      "sha256": "e89307a245f4d2109ad53d9062340152b472196aa6797e2a764936d3361fc9c1"
     },
     {
       "path": "highscore.js",
@@ -225,8 +245,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 156514,
-      "sha256": "60ea1e27e0e3daa3b9401874c150a544e6ed3a639c37c7a18b2be18b96b67c57"
+      "bytes": 156626,
+      "sha256": "4435a41ad2daffd23047fca695f4187848a4bfdc0bd48990784ecd0be6bb30ef"
     },
     {
       "path": "kapitaenstisch-final.jpg",
@@ -265,18 +285,18 @@
     },
     {
       "path": "piratenkodex.html",
-      "bytes": 1326,
-      "sha256": "ca337f60a96c8ca67ea3b19861deff91bfbf6b1e37cac025f1d6e6e1e3e366e0"
+      "bytes": 1438,
+      "sha256": "572172a99d35555db49cd891383af430268916efb77ed4d6601470c9d4d5138b"
     },
     {
       "path": "relegation.html",
-      "bytes": 1326,
-      "sha256": "ca337f60a96c8ca67ea3b19861deff91bfbf6b1e37cac025f1d6e6e1e3e366e0"
+      "bytes": 1438,
+      "sha256": "572172a99d35555db49cd891383af430268916efb77ed4d6601470c9d4d5138b"
     },
     {
       "path": "saison-2026-2027.html",
-      "bytes": 3355,
-      "sha256": "052be90283972c6d94dd5072373966488a72956371ac4864acbb36c0a5297f2c"
+      "bytes": 3467,
+      "sha256": "0c03c2cfef4587474c3dac6f1c5031495a76048041eaa141f44d01eebb346383"
     },
     {
       "path": "saison-2026-2027.json",
@@ -296,12 +316,12 @@
     {
       "path": "scripts/build_release_manifest.py",
       "bytes": 950,
-      "sha256": "6ba2b6ddfa54d73517f03eeba3cdc07e7afe0c225399b7a7927526017de2fb88"
+      "sha256": "e7727ede528a2dc6cbd58148c6a82343ad31e08c17e33e30b0fb2f3017e842a8"
     },
     {
       "path": "scripts/release_audit.py",
       "bytes": 2562,
-      "sha256": "7906f8f38fb25356398f7846aeb51b54f576a913a6b3b2ef7524c7eb038d1a45"
+      "sha256": "15a13e36d5b5025c940903780ccf7b7db01ac08e37662e028ca91bdced6c448a"
     },
     {
       "path": "scripts/update_data.py",
@@ -331,7 +351,7 @@
     {
       "path": "systemstatus.json",
       "bytes": 699,
-      "sha256": "a2bb8e3aab35be2141719bae5bd883e7a3e6c0b3693f4fe2dd0ab1c1bf6b1ea4"
+      "sha256": "0bc193e7700ed4049c22a43d52d837bf051db5be36df7f5f7bd8d9bf1962bc35"
     },
     {
       "path": "teams.json",
@@ -355,8 +375,8 @@
     },
     {
       "path": "weihnachtsregatta.html",
-      "bytes": 1326,
-      "sha256": "ca337f60a96c8ca67ea3b19861deff91bfbf6b1e37cac025f1d6e6e1e3e366e0"
+      "bytes": 1438,
+      "sha256": "572172a99d35555db49cd891383af430268916efb77ed4d6601470c9d4d5138b"
     },
     {
       "path": "wettbewerb.css",
