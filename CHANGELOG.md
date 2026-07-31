@@ -1,3 +1,11 @@
+# Version 3.0.1 – Repository Cleanup (31.07.2026)
+
+- GitHub-Paket auf direkte Root-Struktur bereinigt.
+- Alte Versions-READMEs, Upload-Anleitungen und Testdateien entfernt.
+- Nicht referenzierte Zwischenstände von Bildern, CSS, JavaScript und JSON entfernt.
+- Explizite Dateiänderungsliste für GitHub ergänzt.
+- Keine Änderung an Layout, Kachelgrößen, Navigation oder produktiven Website-Funktionen.
+
 # Changelog
 
 ## Version 2.43 – Zentrale Wettbewerbs- und Saisonmetadaten

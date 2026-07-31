@@ -1,22 +1,22 @@
 # The Old Smugglers Club
 
-Aktueller Paketstand: **Version 2.50 – Release Candidate**.
+Offizielle Website der Tipprunde **The Old Smugglers Club**.
 
-Dieses Repository enthält den vollständigen Stand der Website einschließlich zentralem Datenmodell, Wettbewerbsseiten, Highscore, Hall of Fame, Diagnosefunktionen und Release-Dokumentation.
+## Version
 
-## Zentrale Release-Dateien
+Aktueller Stand: **3.0.1 – Repository Cleanup**
 
-- `VERSION.txt`
-- `CHANGELOG.md`
-- `README-V50.md`
-- `RELEASE-CANDIDATE.md`
-- `FINAL-CHECKLIST.md`
-- `RELEASE-AUDIT.json`
-- `RELEASE-MANIFEST.json`
+## Veröffentlichung auf GitHub Pages
 
-## Prüfung
+Der gesamte Inhalt dieses Verzeichnisses gehört direkt in das Hauptverzeichnis des GitHub-Repositories. `index.html` darf nicht in einem zusätzlichen Unterordner liegen.
 
-```bash
-python3 scripts/release_audit.py
-python3 scripts/build_release_manifest.py
-```
+Für Updates muss nicht zwingend das komplette Paket erneut hochgeladen werden. Die Datei `GITHUB-AENDERUNGEN-V3.0.1.md` nennt exakt, welche Dateien ersetzt, neu hinzugefügt oder gelöscht werden müssen.
+
+## Zentrale Dokumentation
+
+- `CHANGELOG.md` – Versionshistorie
+- `INSTALLATION.md` – Installation und Veröffentlichung
+- `ADMIN-HANDBUCH.md` – Pflegehinweise
+- `DATENSTRUKTUR.md` – Datenquellen und Struktur
+- `BACKUP_RESTORE.md` – Sicherung und Wiederherstellung
+- `RELEASE_NOTES_v3.0.1.md` – Hinweise zu diesem Release

@@ -1,15 +1,12 @@
 {
-  "auditVersion": "2.50",
-  "generatedAtUtc": "2026-07-31T06:28:38.353766+00:00",
-  "status": "OK",
-  "version": "2.50",
-  "counts": {
-    "html": 12,
-    "javascript": 9,
-    "json": 25,
-    "referencesChecked": 79
-  },
-  "missingRequiredFiles": [],
-  "missingLocalReferences": [],
-  "jsonErrors": []
+  "version": "3.0.1",
+  "status": "PASS",
+  "html_files": 11,
+  "javascript_files": 7,
+  "css_files": 3,
+  "json_files": 17,
+  "local_references_checked": 79,
+  "missing_local_references": [],
+  "json_errors": [],
+  "missing_required_files": []
 }
