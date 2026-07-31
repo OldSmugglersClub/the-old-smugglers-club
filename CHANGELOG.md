@@ -1,3 +1,10 @@
+## Version 4.0.6 – Mobile Spieltagskachel – 31.07.2026
+
+- Darstellungsfehler der Spieltagskachel auf schmalen Smartphone-Displays korrigiert.
+- Titel erhält auf Mobilgeräten wieder die volle Kachelbreite und wird nicht mehr mitten im Wort getrennt.
+- Statusschild zeigt Angaben wie „1 SPIEL“ zusammenhängend statt buchstabenweise untereinander.
+- Desktop-Darstellung, Datenlogik, Kachelmaße und übrige mobile Bereiche bleiben unverändert.
+
 # Changelog
 
 ## 4.0.5 – Bereinigung des öffentlichen Spielerbereichs

@@ -3366,7 +3366,50 @@
 
     @media (max-width: 760px) {
       .sm-schedule__header {
-        align-items: stretch;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: start;
+        gap: .72rem .8rem;
+      }
+
+      .sm-schedule__heading {
+        display: contents;
+      }
+
+      .sm-schedule__heading .eyebrow {
+        grid-column: 1;
+        min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
+        white-space: normal;
+        overflow-wrap: normal;
+        word-break: normal;
+        hyphens: none;
+      }
+
+      .sm-schedule__heading h2 {
+        grid-column: 1 / -1;
+        min-width: 0;
+        width: 100%;
+        margin-top: 0;
+        font-size: clamp(2rem, 10vw, 3rem);
+        line-height: 1.02;
+        white-space: normal;
+        overflow-wrap: normal;
+        word-break: normal;
+        hyphens: none;
+      }
+
+      .sm-schedule__header .matchday-status {
+        grid-column: 2;
+        align-self: stretch;
+        min-width: 92px;
+        max-width: 38vw;
+        padding-inline: 1.55rem;
+        white-space: nowrap;
+        word-break: normal;
+        overflow-wrap: normal;
+        hyphens: none;
       }
 
       .sm-next-event {
