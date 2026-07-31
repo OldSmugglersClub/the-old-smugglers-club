@@ -720,3 +720,12 @@
 - Mobile Darstellung als stabile Einspaltenansicht umgesetzt.
 - Kachelgröße, Grundraster und Navigation unverändert belassen.
 - Keine Bilderstellung und keine neuen Bilddateien.
+
+## Version 4.2.1 – Zentrale Saisoninformationen – 31.07.2026
+
+- Saison und Bundesliga-Start der Startseite an `site-data.json` angebunden.
+- Nächste Mission der Startzentrale an `smugglerauftraege.json` angebunden.
+- Aktuellen Champion der Startzentrale an `hall-of-fame.json` angebunden.
+- Mehrfach gepflegte sichtbare Angaben auf der Startseite reduziert.
+- Fallback-Werte für den Fall eines Ladefehlers beibehalten.
+- Keine sichtbare Layoutänderung, keine Bilderstellung und keine neuen Bilddateien.

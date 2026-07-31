@@ -5048,7 +5048,7 @@
       <article class="panel welcome-panel">
         <div class="welcome-command-center" aria-labelledby="welcome-command-title">
           <div class="welcome-command-copy">
-            <span class="welcome-season-badge">Saison 2026/2027</span>
+            <span class="welcome-season-badge" id="welcome-season-badge">Saison 2026/2027</span>
             <h1 id="welcome-command-title">Zentrale der Crew</h1>
             <div class="welcome-divider" aria-hidden="true"><span></span></div>
             <p class="welcome-intro">
@@ -5061,15 +5061,15 @@
           <div class="welcome-status" aria-label="Aktueller Saisonstatus">
             <div class="welcome-status-item">
               <svg aria-hidden="true"><use href="#icon-map"></use></svg>
-              <span><small>Aktuelle Saison</small><strong>2026/2027</strong></span>
+              <span><small>Aktuelle Saison</small><strong id="welcome-season">2026/2027</strong></span>
             </div>
             <div class="welcome-status-item">
               <svg aria-hidden="true"><use href="#icon-anchor"></use></svg>
-              <span><small>Nächste Mission</small><strong>09.08.2026</strong></span>
+              <span><small>Nächste Mission</small><strong id="welcome-next-mission">09.08.2026</strong></span>
             </div>
             <div class="welcome-status-item">
               <svg aria-hidden="true"><use href="#icon-trophy"></use></svg>
-              <span><small>Aktueller Champion</small><strong>ZweikampfGott</strong></span>
+              <span><small>Aktueller Champion</small><strong id="welcome-champion">ZweikampfGott</strong></span>
             </div>
           </div>
 
@@ -5584,7 +5584,8 @@
       });
     });
 
-    const target = new Date("2026-08-28T20:30:00+02:00").getTime();
+    let countdownTarget = new Date("2026-08-28T20:30:00+02:00").getTime();
+    let countdownSeason = "2026/2027";
 
     function setFlipValue(id, value) {
       const element = document.getElementById(id);
@@ -5603,7 +5604,7 @@
     }
 
     function updateCountdown() {
-      const distance = target - Date.now();
+      const distance = countdownTarget - Date.now();
 
       if (distance <= 0) {
         setFlipValue("days", 0);
@@ -5611,9 +5612,9 @@
         setFlipValue("minutes", 0);
         setFlipValue("seconds", 0);
         const plaque = document.getElementById("countdown-plaque");
-        if (plaque) plaque.textContent = "Bundesliga-Saison 2026/2027 · gestartet";
+        if (plaque) plaque.textContent = `Bundesliga-Saison ${countdownSeason} · gestartet`;
         document.getElementById("countdown-note").innerHTML =
-          "<strong>Die Bundesliga-Saison 2026/2027 hat begonnen.</strong><span>Der Chronometer hat sein Ziel erreicht. Die nächsten Termine stehen im Spieltagslogbuch.</span>";
+          `<strong>Die Bundesliga-Saison ${countdownSeason} hat begonnen.</strong><span>Der Chronometer hat sein Ziel erreicht. Die nächsten Termine stehen im Spieltagslogbuch.</span>`;
         return;
       }
 
@@ -5626,7 +5627,27 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    
+
+    async function loadSiteData() {
+      try {
+        const response = await fetch("./site-data.json", { cache: "no-store" });
+        if (!response.ok) throw new Error(`site-data.json: ${response.status}`);
+        const data = await response.json();
+
+        const season = String(data.season || "2026/2027");
+        countdownSeason = season;
+        setText("welcome-season", season);
+        setText("welcome-season-badge", `Saison ${season}`);
+
+        if (data.kickoff) {
+          const parsedTarget = new Date(data.kickoff).getTime();
+          if (Number.isFinite(parsedTarget)) countdownTarget = parsedTarget;
+        }
+      } catch (error) {
+        console.error("Seitendaten konnten nicht geladen werden:", error);
+      }
+    }
+
     function closeMobileMenu() {
       navigation.classList.remove("open");
       menuButton.setAttribute("aria-expanded", "false");
@@ -5962,6 +5983,8 @@
         setText("smuggler-status", data.status, "IN VORBEREITUNG");
         setText("smuggler-intro", data.einleitung, "Spezialmissionen außerhalb der regulären Wettbewerbe.");
         const mission = data.mission || {};
+        const missionDate = String(mission.termin || "").split("·")[0].trim();
+        setText("welcome-next-mission", missionDate || "Noch offen");
         setText("smuggler-current", mission.titel || data.aktuellerAuftrag, "Operation „Auftakt“");
         setText("smuggler-subtitle", mission.untertitel, "Smugglerauftrag 1 · 2. Bundesliga");
         setText("smuggler-home", mission.heim, "1. FC Nürnberg");
@@ -6002,6 +6025,7 @@
         const data = await response.json();
 
         setText("champion-name", data.aktuellerChampion?.name);
+        setText("welcome-champion", data.aktuellerChampion?.name || "Noch offen");
         setText(
           "champion-meta",
           [data.aktuellerChampion?.wettbewerb, data.aktuellerChampion?.titel, data.aktuellerChampion?.jahr]
@@ -6102,6 +6126,7 @@
       }
     }
 
+    loadSiteData();
     loadSmugglerData();
     loadClubData();
     loadMatchdayData();
