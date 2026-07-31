@@ -1,3 +1,11 @@
+# Version 3.22 – Tippfristen- und Abgabekontrolle
+
+- Zentrale Fristenübersicht mit 24-Stunden-Warnung ergänzt.
+- Aktive Teilnehmer und vorhandene Tippabgaben werden je Spiel abgeglichen.
+- Unbestätigte Anstoßzeiten bleiben ausdrücklich als unsicher markiert.
+- JSON- und CSV-Export ergänzt.
+- Öffentliches Layout unverändert.
+
 # Version 3.21 – Saisonarchiv und Hall of Fame
 
 - Zentrale Archivseite für abgeschlossene Saisons, Wettbewerbe und Titelträger ergänzt.

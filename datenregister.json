@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "datenVersion": 21,
+  "datenVersion": 22,
   "aktualisiert": "2026-07-31",
   "saison": "2026/2027",
   "beschreibung": "Zentrales Register der gemeinsam genutzten Datenquellen der Website.",
@@ -30,7 +30,8 @@
     "wettbewerbspunkte": "wettbewerbspunkte.json",
     "spieltagpunkte": "spieltagpunkte.json",
     "ranglistenverlauf": "ranglistenverlauf.json",
-    "saisonarchiv": "saisonarchiv.json"
+    "saisonarchiv": "saisonarchiv.json",
+    "tippfristen": "tippfristen.json"
   },
-  "websiteVersion": "3.21"
+  "websiteVersion": "3.22"
 }

@@ -86,3 +86,8 @@ Der neue Ranglistenverlauf stellt Punkte, Platzierungen und die Form der letzten
 ## Saisonarchiv und Hall of Fame (3.21)
 
 `saisonarchiv.html` bündelt abgeschlossene Spielzeiten, Titelträger und Rekorde. Die zentrale Datei `saisonarchiv.json` kann als JSON oder CSV exportiert werden.
+
+
+## Version 3.22
+
+Die Tippfristen-Kontrolle befindet sich in `tippfristen.html` und prüft bestätigte Anstoßzeiten sowie fehlende Abgaben.

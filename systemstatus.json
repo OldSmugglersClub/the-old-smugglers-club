@@ -1,7 +1,7 @@
 {
-  "version": "3.21",
+  "version": "3.22",
   "modus": "Plan B · datengetrieben",
-  "aktualisiertAm": "2026-07-31T12:53:00+02:00",
+  "aktualisiertAm": "2026-07-31T12:55:00+02:00",
   "module": [
     {
       "name": "Clubdaten",
@@ -122,8 +122,13 @@
       "name": "Saisonarchiv und Hall of Fame",
       "datei": "saisonarchiv.html",
       "status": "aktiv"
+    },
+    {
+      "name": "Tippfristen- und Abgabekontrolle",
+      "datei": "tippfristen.html",
+      "status": "aktiv"
     }
   ],
   "releaseStatus": "stabil",
-  "datenregisterVersion": 21
+  "datenregisterVersion": 22
 }

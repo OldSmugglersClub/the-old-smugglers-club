@@ -1,7 +1,7 @@
 {
-  "manifestVersion": "3.21",
-  "generatedAtUtc": "2026-07-31T10:54:59.408135+00:00",
-  "fileCount": 175,
+  "manifestVersion": "3.22",
+  "generatedAtUtc": "2026-07-31T10:58:08.937639+00:00",
+  "fileCount": 181,
   "files": [
     {
       "path": "ADMIN-HANDBUCH.md",
@@ -20,8 +20,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 29590,
-      "sha256": "b530222735ab4d47f8f70a7133effae0cd6738268663c9cac1872976c3df4647"
+      "bytes": 29927,
+      "sha256": "b6f548831d5e0a09e243a359b4a1109b1b3b1625e0aab02e94b78f12ab774d39"
     },
     {
       "path": "CNAME",
@@ -119,6 +119,11 @@
       "sha256": "45aad456de2fd97d34b96eb4ecc210926985cbbd3ce4938d82b59054c03499d3"
     },
     {
+      "path": "GITHUB-UPDATE-3.22.md",
+      "bytes": 395,
+      "sha256": "f024bf58aecd297ff7e3e0e5234d6e36093be69265a754e49c1ced37576ccd39"
+    },
+    {
       "path": "GITHUB-UPDATE-3.3.md",
       "bytes": 707,
       "sha256": "b8873b3cbb084d6856b000d01401f84c7d945684521841c059763f8801c98f18"
@@ -180,13 +185,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 3913,
-      "sha256": "7c4a97c363ba70e70dc5dfae6501e76a07184b641aa092c08d99996ce2daf561"
+      "bytes": 4055,
+      "sha256": "3f58dbbaada088528407a3cbcf3c241ebdba202ff500952d89f48c1aae1287f6"
     },
     {
       "path": "RELEASE-AUDIT.json",
       "bytes": 308,
-      "sha256": "59bb444cc0a69f1afddb3de67be151cc1161b7244c614fb30a28ce1c7027297d"
+      "sha256": "59425ce1e759ffbf992746caa47e48f1aeb0ce4a692d770163aa29cadd2c9385"
     },
     {
       "path": "RELEASE_NOTES_v3.0.1.md",
@@ -274,6 +279,11 @@
       "sha256": "8680b131d8a14f6dfa58c74775f58ffaca76f31ae9d0410ef7addc7be0b23a2d"
     },
     {
+      "path": "RELEASE_NOTES_v3.22.md",
+      "bytes": 545,
+      "sha256": "6a30884d5f2851852feb542bcc2e2bfe97e40e33e89ee21202e1e04b964aa72d"
+    },
+    {
       "path": "RELEASE_NOTES_v3.3.md",
       "bytes": 728,
       "sha256": "3446988d4da34cefdb884ac7414b31cc3bfe881b4cb23402089b9119df8fa710"
@@ -326,7 +336,7 @@
     {
       "path": "VERSION.txt",
       "bytes": 5,
-      "sha256": "b5b0dfc4915572e86c15f7a1584ffb8928c94a94a9b05ca6a5c6f2270b946bb8"
+      "sha256": "a39605a62e6891761b7917a9eec1eb563ba870b345f5ba9c851cf47c60d83bfe"
     },
     {
       "path": "accessibility-v33.css",
@@ -345,8 +355,8 @@
     },
     {
       "path": "admin.html",
-      "bytes": 4971,
-      "sha256": "3b1b8a822d520d2abda1a08904c4bbc47ac7adfaf16fa791d59b291b24e29ada"
+      "bytes": 5053,
+      "sha256": "42bce23c46ceaaceec7d899b3e06d840ce0cc7873b2ffb52d9d1de3c22a84469"
     },
     {
       "path": "admin.js",
@@ -440,8 +450,8 @@
     },
     {
       "path": "datenregister.json",
-      "bytes": 1277,
-      "sha256": "a966611b1c5121026c417db4bd995a5a5b7779863ec1820da10ed2381d95c010"
+      "bytes": 1316,
+      "sha256": "ef6c6f04ad1c66a6a326a6abe576c35a27a02781e0c4fb08283d3753e2a77876"
     },
     {
       "path": "dfb-pokal.html",
@@ -626,12 +636,12 @@
     {
       "path": "scripts/build_release_manifest.py",
       "bytes": 951,
-      "sha256": "6b845eaea8d8f50eabab10ab1b58435e7099d96a94ed115a7b983fa865e90ecc"
+      "sha256": "2ce56eca01d7c57fb2fb32f8cb0449021f78a7d46db61897aef69365f65a8bfd"
     },
     {
       "path": "scripts/release_audit.py",
-      "bytes": 3661,
-      "sha256": "29a70ef2d3d9c10c4801a534a57d65961b9ee5b19bae0c9c1b0a13bf747df2fe"
+      "bytes": 3738,
+      "sha256": "7a7772277de6ea2cc05a05e08ef4e7182d13628ed941bc87aa7d509a7f8f8497"
     },
     {
       "path": "scripts/update_data.py",
@@ -730,8 +740,8 @@
     },
     {
       "path": "systemstatus.json",
-      "bytes": 2905,
-      "sha256": "cd71af646ed2237bbb9f788592d3077b58916df0bfe9d18f6c1a939189949415"
+      "bytes": 3027,
+      "sha256": "a3331befaebe04ab79fd11d4664f8e883cf03200edf7dc0b6a202d7555a25a63"
     },
     {
       "path": "team-teilnehmerpflege.css",
@@ -777,6 +787,26 @@
       "path": "teilnehmer.json",
       "bytes": 18624,
       "sha256": "5bc43b0a5bf08fb7e45114665909f2ea429d211a224a44e420436a4b07c6757e"
+    },
+    {
+      "path": "tippfristen.css",
+      "bytes": 907,
+      "sha256": "34a46c8c4922ee4ea85067c9fa0420a7c1d923a3c8a6186fca52d0f2de09e096"
+    },
+    {
+      "path": "tippfristen.html",
+      "bytes": 3071,
+      "sha256": "aeddc5bf968911857277ad3d6443d9d0b8699779abf7b4db1d3dec5c885a5aaf"
+    },
+    {
+      "path": "tippfristen.js",
+      "bytes": 5330,
+      "sha256": "6f02f1374d1d5a368fdbba219fce1c2b028f1777729cea7728a4b7e7efe7a921"
+    },
+    {
+      "path": "tippfristen.json",
+      "bytes": 258,
+      "sha256": "689b7e812baee1391864c4fd8bd62d177b2efddf2f95581b10e3357b4cbd21d0"
     },
     {
       "path": "tipppflege.css",
