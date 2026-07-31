@@ -658,3 +658,12 @@
 - alte Update-Anleitungen, Release-Notizen, Löschlisten und lokale Python-Hilfsskripte entfernt
 - keine Änderung an Layout, Datenlogik oder mobiler Darstellung
 - ausführliche GitHub-Desktop-Anleitung ergänzt
+
+## Version 4.1.4 – Bundesliga-Chronometer – 31.07.2026
+
+- Countdown-Kachel ohne Änderung ihrer Abmessungen bereinigt.
+- Sichtbare Emoji-Sanduhr durch ein CSS-basiertes Messingornament ersetzt.
+- Missionshinweis mit neutralem Messingmarker statt Zeichen-Fallback umgesetzt.
+- Statusplakette und Abschlusstext reagieren nach Erreichen des Saisonstarts automatisch.
+- Countdown-Ziel bleibt der 28.08.2026 um 20:30 Uhr.
+- Keine Bilderstellung, keine neuen Bilddateien und keine Änderungen am Grundraster.
