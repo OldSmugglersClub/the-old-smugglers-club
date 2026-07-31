@@ -1,7 +1,7 @@
 {
-  "version": "3.4",
+  "version": "3.5",
   "modus": "Plan B · datengetrieben",
-  "aktualisiertAm": "2026-07-31T11:09:00+02:00",
+  "aktualisiertAm": "2026-07-31T11:12:00+02:00",
   "module": [
     {
       "name": "Clubdaten",
@@ -32,8 +32,13 @@
       "name": "Datensicherung",
       "datei": "admin.html",
       "status": "aktiv"
+    },
+    {
+      "name": "Wiederherstellungsprüfung",
+      "datei": "admin.html",
+      "status": "aktiv"
     }
   ],
   "releaseStatus": "stabil",
-  "datenregisterVersion": 5
+  "datenregisterVersion": 6
 }

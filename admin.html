@@ -19,6 +19,7 @@
         <button class="admin-button" id="refreshButton" type="button">Prüfung neu starten</button>
         <button class="admin-button" id="downloadButton" type="button" disabled>Systembericht herunterladen</button>
         <button class="admin-button" id="backupButton" type="button" disabled>Datenbestand sichern</button>
+        <label class="admin-button admin-file-button" for="restoreFile">Sicherung prüfen<input id="restoreFile" type="file" accept="application/json,.json"></label>
       </nav>
     </header>
 
@@ -36,6 +37,18 @@
       <div class="admin-heading-row"><h2 id="validationHeading">Datenkonsistenz</h2><span id="validationBadge" class="admin-badge">Prüfung läuft</span></div>
       <div id="validationGrid" class="admin-grid" aria-live="polite"></div>
       <div id="validationDetails" class="admin-notices"></div>
+    </section>
+
+
+    <section class="admin-section" aria-labelledby="restoreHeading">
+      <div class="admin-heading-row"><h2 id="restoreHeading">Wiederherstellungsprüfung</h2><span id="restoreBadge" class="admin-badge">Keine Datei gewählt</span></div>
+      <p class="admin-explanation">Eine lokale Sicherungsdatei wird ausschließlich im Browser geprüft. Es werden keine GitHub-Dateien automatisch überschrieben.</p>
+      <div id="restoreGrid" class="admin-grid" aria-live="polite"></div>
+      <div id="restoreDetails" class="admin-notices"><p>Wähle über „Sicherung prüfen“ eine zuvor exportierte OSC-Datensicherung aus.</p></div>
+      <div class="admin-actions">
+        <button class="admin-button" id="planButton" type="button" disabled>Importplan herunterladen</button>
+        <button class="admin-button" id="verifiedBackupButton" type="button" disabled>Geprüfte Sicherung herunterladen</button>
+      </div>
     </section>
 
     <section class="admin-section" aria-labelledby="notesHeading">

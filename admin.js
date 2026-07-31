@@ -3,6 +3,7 @@
   const $ = id => document.getElementById(id);
   let latestReport = null;
   let latestBackup = null;
+  let restoreResult = null;
 
   async function timedFetch(name, file, type = "json") {
     const started = performance.now();
@@ -94,6 +95,76 @@
     $("refreshButton").disabled = false; $("downloadButton").disabled = false; $("backupButton").disabled = !Object.keys(latestBackup.sources).length;
   }
 
+  function validateBackupDocument(document) {
+    const errors = [];
+    const warnings = [];
+    if (!document || typeof document !== "object" || Array.isArray(document)) errors.push("Die Datei enthält kein gültiges Sicherungsobjekt.");
+    const sources = document?.sources;
+    if (!sources || typeof sources !== "object" || Array.isArray(sources)) errors.push("Das Feld ‚sources‘ fehlt oder ist ungültig.");
+    const entries = sources && typeof sources === "object" && !Array.isArray(sources) ? Object.entries(sources) : [];
+    const invalidSources = entries.filter(([file, payload]) => !/^[\wÄÖÜäöüß.() -]+\.json$/i.test(file) || payload === undefined);
+    if (invalidSources.length) errors.push(`${invalidSources.length} Quelldateien haben einen ungültigen Dateinamen oder Inhalt.`);
+    if (!entries.length && !errors.length) warnings.push("Die Sicherung enthält keine Datenquellen.");
+    if (!document.backupVersion) warnings.push("Eine Backup-Versionsnummer fehlt.");
+    if (!document.generatedAt) warnings.push("Ein Erstellungszeitpunkt fehlt.");
+    const registered = new Set(Object.values(window.OSCDataRegistry.current?.quellen || {}).filter(file => /\.json$/i.test(file)));
+    const unknown = entries.map(([file]) => file).filter(file => !registered.has(file));
+    const missing = [...registered].filter(file => !entries.some(([entry]) => entry === file));
+    if (unknown.length) warnings.push(`Nicht registrierte Quellen: ${unknown.join(", ")}`);
+    if (missing.length) warnings.push(`Nicht enthaltene registrierte Quellen: ${missing.join(", ")}`);
+    return { status: errors.length ? "error" : warnings.length ? "warning" : "ok", errors, warnings, sourceCount: entries.length, unknown, missing, document };
+  }
+
+  function renderRestore(result) {
+    const badge = $("restoreBadge");
+    badge.textContent = result.status === "ok" ? "Sicherung gültig" : result.status === "warning" ? `${result.warnings.length} Hinweise` : `${result.errors.length} Fehler`;
+    badge.className = `admin-badge ${result.status === "ok" ? "ok" : result.status === "warning" ? "warn" : "error"}`;
+    $("restoreGrid").replaceChildren(
+      card("Backup-Version", result.document?.backupVersion || "–"),
+      card("Website-Version", result.document?.websiteVersion || "–"),
+      card("Datenversion", result.document?.dataVersion ?? "–"),
+      card("Enthaltene Quellen", result.sourceCount),
+      card("Fehler", result.errors.length),
+      card("Hinweise", result.warnings.length)
+    );
+    const messages = [...result.errors.map(text => ({type:"error", text})), ...result.warnings.map(text => ({type:"warn", text}))];
+    if (!messages.length) messages.push({type:"ok", text:"Struktur, Dateinamen und registrierte Quellen sind für einen manuellen Wiederherstellungsablauf geeignet."});
+    $("restoreDetails").replaceChildren(...messages.map(item => { const p=document.createElement("p"); p.className=`admin-notice ${item.type}`; p.textContent=item.text; return p; }));
+    $("planButton").disabled = result.status === "error";
+    $("verifiedBackupButton").disabled = result.status === "error";
+  }
+
+  async function inspectRestoreFile(file) {
+    try {
+      const text = await file.text();
+      const document = JSON.parse(text);
+      restoreResult = validateBackupDocument(document);
+      restoreResult.fileName = file.name;
+      restoreResult.checkedAt = new Date().toISOString();
+      renderRestore(restoreResult);
+    } catch (error) {
+      restoreResult = { status:"error", errors:[`Datei konnte nicht gelesen werden: ${error.message || error}`], warnings:[], sourceCount:0, document:null };
+      renderRestore(restoreResult);
+    }
+  }
+
+  function buildImportPlan(result) {
+    const files = Object.keys(result.document.sources || {});
+    return {
+      planVersion: 1, generatedAt: new Date().toISOString(), sourceBackup: result.fileName || null,
+      backupWebsiteVersion: result.document.websiteVersion || null, currentWebsiteVersion: latestReport?.websiteVersion || null,
+      replace: files.filter(file => !result.unknown.includes(file)),
+      reviewBeforeAdding: result.unknown,
+      missingFromBackup: result.missing,
+      instructions: [
+        "Vor Änderungen das aktuelle vollständige GitHub-Paket sichern.",
+        "Die unter replace genannten JSON-Dateien aus dem Feld sources einzeln erzeugen und im Repository ersetzen.",
+        "Nicht registrierte Quellen nicht ungeprüft hochladen.",
+        "Nach dem Upload admin.html öffnen und Datenkonsistenz erneut prüfen."
+      ]
+    };
+  }
+
   function saveJson(data, filename) {
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json;charset=utf-8" });
     const url = URL.createObjectURL(blob); const link = document.createElement("a");
@@ -102,5 +173,8 @@
   $("refreshButton").addEventListener("click", run);
   $("downloadButton").addEventListener("click", () => latestReport && saveJson(latestReport, `osc-systembericht-${new Date().toISOString().slice(0,10)}.json`));
   $("backupButton").addEventListener("click", () => latestBackup && saveJson(latestBackup, `osc-datensicherung-${new Date().toISOString().slice(0,10)}.json`));
+  $("restoreFile").addEventListener("change", event => { const file = event.target.files?.[0]; if (file) inspectRestoreFile(file); });
+  $("planButton").addEventListener("click", () => restoreResult && saveJson(buildImportPlan(restoreResult), `osc-importplan-${new Date().toISOString().slice(0,10)}.json`));
+  $("verifiedBackupButton").addEventListener("click", () => restoreResult?.document && saveJson(restoreResult.document, `osc-gepruefte-datensicherung-${new Date().toISOString().slice(0,10)}.json`));
   run();
 })();

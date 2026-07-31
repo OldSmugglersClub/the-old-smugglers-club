@@ -1,3 +1,11 @@
+# Version 3.5 – Datenimport und Wiederherstellung
+
+- Lokale Prüfung zuvor exportierter OSC-Datensicherungen im Administrationszentrum.
+- Struktur-, Quellen- und Versionskontrolle vor einer manuellen Wiederherstellung.
+- Export eines nachvollziehbaren Importplans mit Ersetzen-, Prüf- und Fehlstellenliste.
+- Erneuter Download einer erfolgreich geprüften Sicherung.
+- Keine automatische Änderung von GitHub-Dateien und keine Layoutänderungen.
+
 # Version 3.4 – Zentrale Datenpflege und Update-Sicherheit
 
 - Administrationszentrum um automatische Datenkonsistenzprüfung erweitert.
