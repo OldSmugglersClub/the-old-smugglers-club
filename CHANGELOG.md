@@ -1,3 +1,10 @@
+# Version 3.2 – Statistik- und Highscore-Erweiterung
+
+- Feldanalyse mit Durchschnitt, Median, Punktespanne und Streuung ergänzt.
+- Leistungszonen für den bestätigten Gesamtstand ergänzt.
+- Transparenter Bereitschaftsmodus ohne simulierte Werte.
+- Keine Änderungen an Grundlayout, Kachelgrößen oder Navigation.
+
 # Version 3.0.1 – Repository Cleanup (31.07.2026)
 
 - GitHub-Paket auf direkte Root-Struktur bereinigt.

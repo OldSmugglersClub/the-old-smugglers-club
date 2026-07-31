@@ -94,6 +94,13 @@
     </div>
     <div class="hs-panel"><div class="hs-eyebrow">Datenlage</div><h2>Statistikstatus</h2><p class="hs-status">Zeigt transparent, welche Highscore-Module bereits belastbare Saisondaten besitzen.</p><div class="hs-readiness-grid" id="readiness-grid"></div></div>
     <div class="hs-panel"><div class="hs-eyebrow">Saisonbestwerte</div><h2>Rekorde</h2><div class="hs-record-grid" id="record-grid"></div></div>
+    <div class="hs-panel hs-field-analysis-panel">
+      <div class="hs-panel-head"><div><div class="hs-eyebrow">Statistikmodul</div><h2>Feldanalyse</h2><p class="hs-status">Verdichtet den bestätigten Tabellenstand zu Verteilung, Abständen und Leistungszonen. Ohne Wertungen bleibt das Modul bewusst im Bereitschaftsmodus.</p></div></div>
+      <div class="hs-field-status" id="field-analysis-status" role="status" aria-live="polite"></div>
+      <div class="hs-field-metrics" id="field-analysis-metrics"></div>
+      <div class="hs-zone-chart" id="field-zone-chart" aria-label="Verteilung der Spieler nach Leistungszonen"></div>
+      <p class="hs-footnote" id="field-analysis-note"></p>
+    </div>
     <div class="hs-panel"><div class="hs-eyebrow">Clubchronik</div><h2>Saisonarchiv & Bestmarken</h2><p class="hs-status">Verknüpft die aktuelle Highscore ausschließlich mit bestätigten Einträgen aus der zentralen Hall of Fame.</p><div class="hs-legacy-grid" id="legacy-grid"></div><p class="hs-footnote" id="legacy-note">Chronikdaten werden separat geladen und nicht aus dem aktuellen Tabellenstand abgeleitet.</p></div>
     <div class="hs-panel"><div class="hs-eyebrow">Auszeichnungen</div><h2>Piratenorden</h2><div class="hs-order-grid" id="order-grid"></div><p class="hs-footnote">Nicht belastbar berechenbare Orden werden bewusst als gesperrt gekennzeichnet. Es werden keine Gewinner geschätzt oder erfunden.</p></div>
     <div class="hs-panel"><div class="hs-eyebrow">Saisonverlauf</div><h2>Verlaufskompass</h2><p class="hs-status">Wertet ausschließlich archivierte Rangstände aus. Ohne mindestens zwei bestätigte Stände wird kein Trend behauptet.</p><div id="season-trend" class="hs-season-trend"></div><div id="history-grid" class="hs-history"></div></div>

@@ -704,6 +704,67 @@ function renderRecords() {
     : '<div class="hs-history-empty"><strong>Logbuch noch leer</strong><p>Die Saisonhistorie wird erst belastbar, wenn Spieltagsstände archiviert werden. Bis dahin wird bewusst kein Verlauf simuliert.</p><span>Benötigt: mindestens einen abgeschlossenen und gespeicherten Spieltag</span></div>';
 }
 
+function calculateFieldAnalysis() {
+  const rows = officialRows('overall');
+  const scored = rows.filter(row => Number(row.totalPoints || 0) > 0);
+  const scores = scored.map(row => Number(row.totalPoints || 0)).sort((a, b) => a - b);
+  const total = rows.length;
+  if (!scored.length) return { ready: false, total, scored: 0, zones: [] };
+
+  const sum = scores.reduce((acc, value) => acc + value, 0);
+  const average = sum / scores.length;
+  const middle = Math.floor(scores.length / 2);
+  const median = scores.length % 2 ? scores[middle] : (scores[middle - 1] + scores[middle]) / 2;
+  const leader = Math.max(...scores);
+  const last = Math.min(...scores);
+  const variance = scores.reduce((acc, value) => acc + ((value - average) ** 2), 0) / scores.length;
+  const deviation = Math.sqrt(variance);
+  const sorted = [...scored].sort((a, b) => Number(b.totalPoints || 0) - Number(a.totalPoints || 0));
+  const topLimit = Math.max(1, Math.ceil(sorted.length * .1));
+  const frontLimit = Math.max(topLimit + 1, Math.ceil(sorted.length * .35));
+  const middleLimit = Math.max(frontLimit + 1, Math.ceil(sorted.length * .7));
+  const zones = [
+    { label: 'Spitzengruppe', count: sorted.slice(0, topLimit).length },
+    { label: 'Vorderes Feld', count: sorted.slice(topLimit, frontLimit).length },
+    { label: 'Mittelfeld', count: sorted.slice(frontLimit, middleLimit).length },
+    { label: 'Verfolgerfeld', count: sorted.slice(middleLimit).length }
+  ].filter(zone => zone.count > 0);
+  return { ready: true, total, scored: scored.length, average, median, leader, last, spread: leader - last, deviation, zones };
+}
+
+function renderFieldAnalysis() {
+  const status = document.querySelector('#field-analysis-status');
+  const metrics = document.querySelector('#field-analysis-metrics');
+  const chart = document.querySelector('#field-zone-chart');
+  const note = document.querySelector('#field-analysis-note');
+  if (!status || !metrics || !chart || !note) return;
+  const analysis = calculateFieldAnalysis();
+  if (!analysis.ready) {
+    status.className = 'hs-field-status is-waiting';
+    status.innerHTML = `<strong>Bereit für den Saisonstart</strong><span>${analysis.total} registrierte Spieler, aber noch keine bestätigten Punkte.</span>`;
+    metrics.innerHTML = [
+      ['Gewertete Spieler', '0', `${analysis.total} im Register`],
+      ['Durchschnitt', '–', 'Noch nicht berechenbar'],
+      ['Median', '–', 'Noch nicht berechenbar'],
+      ['Punktespanne', '–', 'Noch keine Rangabstände']
+    ].map(([label,value,small]) => `<article><span>${label}</span><strong>${value}</strong><small>${small}</small></article>`).join('');
+    chart.innerHTML = '<div class="hs-zone-empty"><strong>Noch keine Leistungsverteilung</strong><span>Das Diagramm wird nach der ersten Punktevergabe automatisch aktiviert.</span></div>';
+    note.textContent = 'Es werden keine Zonen, Mittelwerte oder Abstände simuliert. Grundlage sind ausschließlich bestätigte Werte aus highscore.json.';
+    return;
+  }
+  status.className = 'hs-field-status is-ready';
+  status.innerHTML = `<strong>${analysis.scored} von ${analysis.total} Spielern gewertet</strong><span>Die Kennzahlen basieren auf dem aktuellen bestätigten Gesamtstand.</span>`;
+  metrics.innerHTML = [
+    ['Durchschnitt', `${fmt(analysis.average)} Pkt.`, 'Arithmetisches Mittel'],
+    ['Median', `${fmt(analysis.median)} Pkt.`, 'Mitte des Feldes'],
+    ['Punktespanne', `${fmt(analysis.spread)} Pkt.`, `${fmt(analysis.last)} bis ${fmt(analysis.leader)}`],
+    ['Streuung', `${fmt(analysis.deviation)} Pkt.`, 'Standardabweichung']
+  ].map(([label,value,small]) => `<article><span>${label}</span><strong>${value}</strong><small>${small}</small></article>`).join('');
+  const max = Math.max(...analysis.zones.map(zone => zone.count), 1);
+  chart.innerHTML = analysis.zones.map(zone => `<div class="hs-zone-row"><span>${esc(zone.label)}</span><div><i style="--zone-width:${Math.max(8, Math.round(zone.count / max * 100))}%"></i></div><strong>${zone.count}</strong></div>`).join('');
+  note.textContent = 'Die Leistungszonen teilen ausschließlich die aktuell gewerteten Spieler nach ihrer Position im Feld ein; sie sind keine Prognose.';
+}
+
 function resetRankingControls() {
   state.query = '';
   state.page = 1;
@@ -741,6 +802,7 @@ function init() {
   renderTeam('Old Smugglers Team');
   renderTeam('New Smugglers Team');
   renderRecords();
+  renderFieldAnalysis();
   renderDataCompass();
 
   const profileDialog = document.querySelector('#player-dialog');
