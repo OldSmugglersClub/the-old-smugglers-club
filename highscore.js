@@ -813,11 +813,11 @@ function classListToggle(element, active) {
 function loadHighscoreData() {
   setSystemStatus('loading', 'Daten werden geladen', 'Das Highscore-Register wird vorbereitet.');
   Promise.all([
-    fetch('./highscore.json', { cache: 'no-store' }).then(response => {
+    (window.OSCDataRegistry ? window.OSCDataRegistry.url('highscore') : Promise.resolve('./highscore.json')).then(url => fetch(url, { cache: 'no-store' })).then(response => {
       if (!response.ok) throw Error(`highscore.json: HTTP ${response.status}`);
       return response.json();
     }),
-    fetch('./hall-of-fame.json', { cache: 'no-store' }).then(response => response.ok ? response.json() : {})
+    (window.OSCDataRegistry ? window.OSCDataRegistry.url('hallOfFame') : Promise.resolve('./hall-of-fame.json')).then(url => fetch(url, { cache: 'no-store' })).then(response => response.ok ? response.json() : {})
   ])
     .then(([payload, hallPayload]) => {
       const issues = validatePayload(payload);

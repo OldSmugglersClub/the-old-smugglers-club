@@ -4,11 +4,11 @@
   const fileName = location.pathname.split("/").pop() || "bundesliga.html";
   const slug = fileName.replace(/\.html?$/i, "") || "bundesliga";
   const jsonUrl = `./${slug}.json`;
-  const gameDataUrl = "./spieldaten.json";
-  const teamDataUrl = "./teams.json";
-  const bundesligaTableUrl = "./bundesliga-tabelle.json";
+  let gameDataUrl = "./spieldaten.json";
+  let teamDataUrl = "./teams.json";
+  let bundesligaTableUrl = "./bundesliga-tabelle.json";
 
-  const competitionConfigUrl = "./wettbewerbe.json";
+  let competitionConfigUrl = "./wettbewerbe.json";
   const DEFAULT_COMPETITIONS = [
     { id: "bundesliga", label: "Bundesliga", page: "bundesliga.html", filter: { type: "wettbewerb", value: "bundesliga" }, scheduleTitle: "Spiele der Bundesliga" },
     { id: "dfb-pokal", label: "DFB-Pokal", page: "dfb-pokal.html", filter: { type: "wettbewerb", value: "dfb-pokal" }, scheduleTitle: "Spiele des DFB-Pokals" },
@@ -1177,6 +1177,14 @@
 
   async function load() {
     try {
+      if (window.OSCDataRegistry) {
+        [gameDataUrl, teamDataUrl, bundesligaTableUrl, competitionConfigUrl] = await Promise.all([
+          window.OSCDataRegistry.url("spiele"),
+          window.OSCDataRegistry.url("teams"),
+          window.OSCDataRegistry.url("bundesligaTabelle"),
+          window.OSCDataRegistry.url("wettbewerbe")
+        ]);
+      }
       const [data, centralGameData, teamData, bundesligaTableData, competitionConfig] = await Promise.all([
         fetchJson(jsonUrl, true),
         fetchJson(gameDataUrl, false),

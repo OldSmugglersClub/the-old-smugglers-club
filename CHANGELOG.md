@@ -221,3 +221,11 @@
 - Datenqualitätsprüfung für fehlende Teamreferenzen, Datumsangaben und Quellenstände ergänzt.
 - Mobile Darstellung der neuen Filter und Statusinformationen angepasst.
 - Grundlayout, Raster und Kachelgrößen unverändert gelassen.
+
+## 2.42 – 2026-07-31
+
+- Neues zentrales `datenregister.json` für gemeinsam genutzte Datenquellen.
+- Neuer gemeinsamer Loader `datenregister.js` mit Rückfallpfaden.
+- Wettbewerbsseiten, Saisonübersicht, Highscore und Startseiten-Highscore-Teaser an das Register angebunden.
+- Dateipfade müssen künftig nicht mehr in mehreren JavaScript-Modulen parallel geändert werden.
+- Grundlayout, Kachelgrößen, Abstände und freigegebene Inhalte unverändert belassen.

@@ -46,10 +46,14 @@
 
   async function init() {
     try {
+      const registry = window.OSCDataRegistry;
+      const [overviewUrl, gamesUrl, matchdaysUrl] = registry
+        ? await Promise.all([registry.url("saisonuebersicht"), registry.url("spiele"), registry.url("tippspieltage")])
+        : ["./saison-2026-2027.json", "./spieldaten.json", "./tippspieltage.json"];
       const [overviewResponse, gamesResponse, matchdaysResponse] = await Promise.all([
-        fetch("./saison-2026-2027.json", { cache: "no-store" }),
-        fetch("./spieldaten.json", { cache: "no-store" }),
-        fetch("./tippspieltage.json", { cache: "no-store" })
+        fetch(overviewUrl, { cache: "no-store" }),
+        fetch(gamesUrl, { cache: "no-store" }),
+        fetch(matchdaysUrl, { cache: "no-store" })
       ]);
       if (!overviewResponse.ok || !gamesResponse.ok || !matchdaysResponse.ok) throw new Error("Saisondaten konnten nicht vollständig geladen werden.");
 
