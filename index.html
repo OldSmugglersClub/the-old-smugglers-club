@@ -4391,6 +4391,111 @@
         line-height: 1.4 !important;
       }
     }
+
+    /* Version 4.1.1 – Hall of Fame als öffentliches Ehrenlogbuch */
+    #hall-of-fame .hall-intro-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    #hall-of-fame .hall-intro-row .lead {
+      margin: 0;
+      max-width: 760px;
+    }
+
+    #hall-of-fame .hall-archive-link {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: .72rem 1rem;
+      border: 1px solid rgba(221,174,77,.72);
+      border-radius: 9px;
+      color: #f4d78e;
+      background: linear-gradient(180deg, rgba(100,65,25,.82), rgba(43,27,13,.94));
+      box-shadow: inset 0 1px rgba(255,255,255,.08), 0 8px 20px rgba(0,0,0,.24);
+      font-weight: 800;
+      letter-spacing: .035em;
+      text-decoration: none;
+    }
+
+    #hall-of-fame .hall-archive-link:hover,
+    #hall-of-fame .hall-archive-link:focus-visible {
+      border-color: #f0c869;
+      color: #fff0b8;
+      transform: translateY(-1px);
+    }
+
+    #hall-of-fame .champion-kicker {
+      margin: 0 0 .3rem;
+      color: #c8a35d;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    #hall-of-fame .hall-logbook {
+      margin-top: 1rem;
+      padding: 1rem 1.05rem;
+      border: 1px solid rgba(188,137,53,.45);
+      border-radius: 12px;
+      background: linear-gradient(145deg, rgba(56,36,19,.82), rgba(20,12,7,.92));
+      box-shadow: inset 0 1px rgba(255,255,255,.04);
+    }
+
+    #hall-of-fame .hall-logbook p {
+      margin: .35rem 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    #hall-of-fame .hall-logbook strong {
+      color: #efd087;
+    }
+
+    #hall-of-fame .trophy-fallback {
+      display: grid;
+      place-items: center;
+      width: 170px;
+      min-height: 170px;
+      margin: auto;
+      border: 1px solid rgba(213,161,59,.48);
+      border-radius: 50%;
+      color: #e8c66f;
+      background: radial-gradient(circle, rgba(130,86,31,.5), rgba(25,15,8,.92) 68%);
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 700px) {
+      #hall-of-fame .hall-intro-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: stretch;
+      }
+
+      #hall-of-fame .hall-archive-link {
+        width: 100%;
+      }
+
+      #hall-of-fame .honour-card strong,
+      #hall-of-fame .honour-card small,
+      #hall-of-fame .history-row span,
+      #hall-of-fame .history-row strong,
+      #hall-of-fame .record-card span,
+      #hall-of-fame .record-card strong {
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: none;
+      }
+    }
+
   </style>
   <link rel="stylesheet" href="./highscore.css?v=4.0.1">
   <link rel="stylesheet" href="./accessibility-v33.css">
@@ -4771,10 +4876,13 @@
     <section class="section panel" id="hall-of-fame">
       <div class="section-title"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-trophy"></use></svg><h2>Hall of Fame</h2></div>
 
-      <p class="lead">
-        Die Ehrenhalle des Old Smugglers Club dokumentiert Champions, Saisonssieger,
-        Sonderwertungen und Rekorde dauerhaft und nachvollziehbar.
-      </p>
+      <div class="hall-intro-row">
+        <p class="lead">
+          Hier werden Champions, Saisonssieger, Sonderwertungen und Rekorde der Crew
+          dauerhaft im Ehrenlogbuch festgehalten.
+        </p>
+        <a class="hall-archive-link" href="./hall-of-fame.html">Ehrenlogbuch öffnen</a>
+      </div>
 
       <div class="hall-hero">
         <article class="champion-showcase">
@@ -4792,10 +4900,11 @@
                    else if(this.dataset.tried==='2'){this.dataset.tried='3';this.src=fallbacks[1];}
                    else{this.style.display='none';this.nextElementSibling.hidden=false;}
                  " loading="lazy" decoding="async">
-            <div class="trophy-fallback" hidden aria-label="Pokal">🏆</div>
+            <div class="trophy-fallback" hidden aria-label="Pokal">Pokal</div>
           </div>
 
           <div>
+            <p class="champion-kicker">Titelträger der letzten abgeschlossenen Mission</p>
             <h3 class="champion-name" id="champion-name">ZweikampfGott</h3>
             <p class="champion-meta" id="champion-meta">Weltmeisterschaft · Champion 2026</p>
             <div class="champion-season" id="champion-label">Old Smugglers Champion</div>
@@ -4887,6 +4996,11 @@
       <div class="history-row">
         <span id="honours-label">Status</span>
         <strong class="status-open" id="honours-value">Noch keine Einträge</strong>
+      </div>
+
+      <div class="hall-logbook">
+        <strong>Ehrenlogbuch</strong>
+        <p>Jeder bestätigte Titel und Rekord bleibt erhalten. Offene Wettbewerbe werden erst nach ihrer offiziellen Auswertung in die Ehrenhalle übernommen.</p>
       </div>
     </section>
 

@@ -1,3 +1,13 @@
+# Version 4.1.1 – Hall of Fame Ehrenlogbuch
+
+- Hall-of-Fame-Bereich auf der Startseite als öffentliches Ehrenlogbuch geschärft.
+- Neue Detailseite `hall-of-fame.html` mit Titelkabinett, Meisterchronik, Rekordtafel und besonderen Leistungen.
+- Bestehende bestätigte Titel und Rekorde unverändert übernommen.
+- Offene Wettbewerbe weiterhin klar gekennzeichnet.
+- Emoji-Pokal-Fallback durch eine neutrale Gestaltung im Piratendesign ersetzt.
+- Mobile Wortumbrüche und Bedienflächen im Hall-of-Fame-Bereich stabilisiert.
+- Keine Änderungen an Grundraster, Kachelgrößen oder Navigation.
+
 # Changelog
 
 ## Version 4.1.0 – Smugglerauftrag Missionsakte

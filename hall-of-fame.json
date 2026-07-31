@@ -68,5 +68,27 @@
     "label": "Status",
     "wert": "Noch keine Einträge",
     "offen": true
-  }
+  },
+  "meta": {
+    "titel": "Ehrenlogbuch des Old Smugglers Club",
+    "stand": "31.07.2026",
+    "hinweis": "Nur bestätigte Titel und Rekorde werden dauerhaft eingetragen."
+  },
+  "kategorien": [
+    {
+      "id": "champions",
+      "titel": "Champions",
+      "beschreibung": "Sieger abgeschlossener Haupt- und Sonderwettbewerbe."
+    },
+    {
+      "id": "chronik",
+      "titel": "Meisterchronik",
+      "beschreibung": "Saisonweise Übersicht der bestätigten Meister."
+    },
+    {
+      "id": "rekorde",
+      "titel": "Rekordtafel",
+      "beschreibung": "Bestleistungen der Crew nach den vorhandenen Auswertungen."
+    }
+  ]
 }
