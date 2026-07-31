@@ -1,5 +1,35 @@
 # CHANGELOG
 
+## Version 4.4.2 – Analyse des lokalen Adminsystems – 31.07.2026
+
+### Neu
+
+- `ADMIN-SYSTEMANALYSE.md` mit vollständiger Bestandsaufnahme des lokalen Adminbereichs v4.0.5.
+- Module, Datenflüsse, Exportdateien, Stärken, Risiken und empfohlene weitere Schritte dokumentiert.
+
+### Geändert
+
+- `ARCHITEKTUR.md` um die reale lokale Administration als eigenständige zweite Anwendung ergänzt.
+- `ROADMAP.md` an den geprüften Adminstand und die nächste Dokumentationsphase angepasst.
+- `README.md` und `VERSION.txt` auf Version 4.4.2 aktualisiert.
+
+### Behoben
+
+- keine funktionalen Fehler; reine Dokumentations- und Analyseversion.
+
+### Betroffene Dateien
+
+- `ADMIN-SYSTEMANALYSE.md`
+- `ARCHITEKTUR.md`
+- `ROADMAP.md`
+- `README.md`
+- `VERSION.txt`
+- `CHANGELOG.md`
+- `RELEASE_NOTES_v4.4.2.md`
+- `GITHUB-UPDATE-4.4.2.md`
+
+---
+
 ## Version 4.4.1 – Verbindliche Projektroadmap – 31.07.2026
 
 ### Neu

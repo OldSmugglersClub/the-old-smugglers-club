@@ -76,7 +76,8 @@ Die öffentlichen Bereiche sind produktionsreif. Die verbleibenden Arbeiten betr
 ### Noch offen innerhalb 4.4.x
 
 - [ ] `DESIGN_GUIDE.md` aus dem freigegebenen Ist-Zustand ableiten
-- [ ] Grundgerüst für `ADMIN_HANDBUCH.md` erstellen
+- [x] lokalen Adminbereich v4.0.5 vollständig analysieren (`ADMIN-SYSTEMANALYSE.md`)
+- [ ] vollständiges `ADMIN_HANDBUCH.md` auf Basis des realen Systems erstellen
 - [ ] bestehendes `CHANGELOG.md` langfristig in eine konsistente Struktur überführen
 - [ ] Feld-für-Feld-Migrationsmatrix für redundante JSON-Daten erstellen
 
@@ -234,6 +235,4 @@ Ideen werden gesammelt, aber erst nach einer stabilen 5.x-Phase bewertet. Änder
 
 ## 12. Nächster verbindlicher Arbeitsschritt
 
-Nach Version 4.4.1 folgt die Dokumentation des bestehenden Designs in `DESIGN_GUIDE.md`.
-
-Dabei wird kein neues Design entwickelt. Dokumentiert werden ausschließlich bereits freigegebene Farben, Materialien, Typografie, Abstände, Komponenten und Responsive-Regeln.
+Nach Version 4.4.2 folgt das vollständige `ADMIN_HANDBUCH.md` auf Basis des geprüften lokalen Adminsystems v4.0.5. Anschließend wird der bestehende Designzustand in `DESIGN_GUIDE.md` dokumentiert. Beide Schritte verändern weder öffentliche Website noch Datenlogik.

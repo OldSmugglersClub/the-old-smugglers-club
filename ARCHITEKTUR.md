@@ -2,7 +2,7 @@
 
 ## 1. Zweck dieses Dokuments
 
-Dieses Dokument beschreibt den tatsächlich vorhandenen technischen Aufbau der Website auf Basis von **Version 4.3.8**. Es dient als verbindliche Bestandsaufnahme vor der geplanten Zentralisierung der Datenhaltung.
+Dieses Dokument beschreibt den tatsächlich vorhandenen technischen Aufbau der Website auf Basis der öffentlichen Projektversion **4.4.1** und der ergänzend geprüften lokalen Administration **v4.0.5**. Es dient als verbindliche Bestandsaufnahme vor der geplanten Zentralisierung der Datenhaltung.
 
 Es dokumentiert den Ist-Zustand. Es nimmt noch keine Datenmigration und keine Änderung an öffentlichen Seiten vor.
 
@@ -224,44 +224,34 @@ Fachliche Festlegung:
 
 ---
 
-## 9. Admin- und Pflegebereich
+## 9. Lokaler Adminbereich
 
-Der Adminbereich ist technisch vorhanden, aber nicht Bestandteil der öffentlichen Navigation.
-
-Zentrale Einstiegsseite:
+Der lokale Adminbereich wurde in Version 4.4.2 erstmals vollständig als eigenständige zweite Anwendung geprüft. Grundlage ist das Paket `the-old-smugglers-club-admin-v4.0.5-lokal.zip`.
 
 ```text
-admin.html
-├── admin.css
-├── admin.js
-├── datenregister.js
-└── datenmodell.js
+Öffentliche Website (GitHub Pages)
+        ▲
+        │ gezielter manueller Upload exportierter JSON-Dateien
+        │
+Lokaler Adminbereich (localhost:8765)
+├── Pflege: Spiele, Wettbewerbe, Teilnehmer, Tipps, Bonus, Smuggleraufträge
+├── Berechnung: Gesamt-, Team-, Wettbewerb-, Spieltag- und Smugglerwertung
+├── Kontrolle: Datenqualität, Fristen, Erinnerungen, Zuverlässigkeit
+└── Export: vollständige JSON- und teilweise CSV-Dateien
 ```
 
-Weitere Pflege- und Prüfseiten:
+Zentrale Einstiegsseite ist `admin.html`; gestartet wird die Anwendung über `ADMIN_STARTEN.bat`. Der Adminbereich verändert weder lokale Ausgangsdateien noch GitHub automatisch. Exportierte Dateien müssen kontrolliert ersetzt und anschließend gezielt veröffentlicht werden.
 
-- `bonuspflege.html`
-- `daten-cockpit.html`
-- `spielpflege.html`
-- `tipppflege.html`
-- `wettbewerbspflege.html`
-- `team-teilnehmerpflege.html`
-- `smugglerpflege.html`
-- `punkteberechnung.html`
-- `spieltagwertung.html`
-- `wettbewerbswertung.html`
-- `teamwertung.html`
-- `smugglerwertung.html`
-- `tippfristen.html`
-- `abgabe-erinnerungen.html`
-- `abgabezuverlaessigkeit.html`
-- `erinnerungsprotokoll.html`
-- `ranglistenverlauf.html`
-- `saisonarchiv.html`
+Die vollständige Bestandsaufnahme, Modulzuordnung, Datenflüsse, Stärken, Risiken und empfohlene weitere Schritte stehen in `ADMIN-SYSTEMANALYSE.md`.
 
-Diese Seiten verwenden jeweils gleichnamige CSS- und JavaScript-Dateien sowie Daten aus `datenregister.json` und den zugehörigen JSON-Dateien.
+Wesentliche Architekturmerkmale:
 
----
+- eigenständige lokale Anwendung mit 223 Dateien
+- Trennung von Pflege-, Berechnungs- und Kontrollmodulen
+- zentrale JSON-Daten und stabile IDs
+- manuelle Export- und Veröffentlichungskette
+- teilweise zentrale Pfade über `datenregister.json`, teilweise direkte Fallbackpfade
+- relevante Versions- und Dokumentationsabweichungen innerhalb des Adminpakets
 
 ## 10. Gemeinsame JavaScript-Bausteine
 
