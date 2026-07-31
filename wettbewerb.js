@@ -896,10 +896,13 @@
     const model = centralModel || {};
     const validation = centralValidation || { status: "unknown", counts: {}, errors: [], warnings: [] };
     return {
-      reportVersion: 1,
+      reportVersion: 2,
       generatedAt: new Date().toISOString(),
       season: model.competitionData && model.competitionData.saison || "2026/2027",
       currentPage: slug,
+      websiteVersion: model.diagnostics && model.diagnostics.registry && model.diagnostics.registry.websiteVersion || "Nicht angegeben",
+      registryStatus: model.diagnostics && model.diagnostics.registry || null,
+      sourceDiagnostics: model.diagnostics && model.diagnostics.sources || {},
       status: validation.status,
       counts: validation.counts || {},
       sourceDates: {
@@ -939,11 +942,16 @@
     heading.textContent = "Datenpflege & Prüfprotokoll";
     const badge = document.createElement("span");
     badge.className = "data-status-badge";
-    badge.textContent = "Pflegebereit";
+    const registryStatus = model.diagnostics && model.diagnostics.registry;
+    const failedSources = model.diagnostics && model.diagnostics.fallbackSources || [];
+    badge.textContent = failedSources.length ? `${failedSources.length} Quelle(n) im Rückfallmodus` : `Version ${registryStatus && registryStatus.websiteVersion || "unbekannt"}`;
+    badge.classList.toggle("data-status-warning", failedSources.length > 0);
     headingRow.append(heading, badge);
     section.appendChild(headingRow);
 
     const sources = [
+      ["Website", "VERSION.txt", registryStatus && registryStatus.websiteVersion],
+      ["Datenregister", "datenregister.json", `Schema ${registryStatus && registryStatus.schemaVersion || "?"} · Daten ${registryStatus && registryStatus.datenVersion || "?"}`],
       ["Wettbewerbe", "wettbewerbe.json", model.competitionData && model.competitionData.aktualisiert],
       ["Spiele", "spieldaten.json", model.gameData && model.gameData.aktualisiert],
       ["Teams", "teams.json", model.teamData && model.teamData.aktualisiert],
@@ -959,7 +967,7 @@
       const name = document.createElement("code");
       name.textContent = file;
       const date = document.createElement("span");
-      date.textContent = `Datenstand: ${maintenanceDate(updated)}`;
+      date.textContent = label === "Website" ? `Version: ${updated || "Nicht angegeben"}` : label === "Datenregister" ? String(updated || "Nicht angegeben") : `Datenstand: ${maintenanceDate(updated)}`;
       card.append(title, name, date);
       grid.appendChild(card);
     });
@@ -974,7 +982,7 @@
     download.addEventListener("click", downloadMaintenanceReport);
     const note = document.createElement("p");
     note.className = "data-note";
-    note.textContent = "Das Protokoll enthält nur Strukturstatus, Datenstände und erkannte Widersprüche. Spieldaten werden nicht verändert.";
+    note.textContent = failedSources.length ? "Mindestens eine zentrale Quelle konnte nicht geladen werden. Die Seite verwendet für diese Quelle sichere Rückfalldaten; Einzelheiten stehen im Prüfprotokoll." : "Version, Datenregister, Quellenstände und Strukturstatus wurden geladen. Das Prüfprotokoll verändert keine Website-Daten.";
     controls.append(download, note);
     section.appendChild(controls);
     root.appendChild(section);

@@ -309,3 +309,12 @@
 
 ## Version 3.0 FINAL
 - Offizieller Final-Release auf Basis des Release Candidates 2.50.
+## Version 3.0.2 – Daten- und Wartungsoptimierung – 31.07.2026
+
+- Website-, Schema- und Datenversion im zentralen Datenregister vereinheitlicht.
+- Diagnosezustand und Ladezeit zentraler Datenquellen im gemeinsamen Datenmodell ergänzt.
+- Wartungspanel um Versionsanzeige, Registerstand und Rückfallstatus erweitert.
+- Exportiertes Prüfprotokoll um Registry- und Quelldiagnosen erweitert.
+- Loader gegen doppelte Initialisierung abgesichert und Reset-Funktion ergänzt.
+- Layout, Raster, Kachelgrößen, Navigation und freigegebene Inhalte unverändert belassen.
+

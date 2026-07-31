@@ -1,6 +1,7 @@
 {
-  "version": "3.0.1",
-  "file_count": 66,
+  "manifestVersion": "3.0.2",
+  "generatedAtUtc": "2026-07-31T06:52:52.025076+00:00",
+  "fileCount": 68,
   "files": [
     {
       "path": "ADMIN-HANDBUCH.md",
@@ -19,8 +20,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 19534,
-      "sha256": "b43bf153bb023de6754812ed142b792aac777d134cb2c70d31fa7ea932ae9d62"
+      "bytes": 20103,
+      "sha256": "2ee5c73df49a5ca1becb4c67163b040f1fcb4372ace6b0ffe9f4578f50774baf"
     },
     {
       "path": "CNAME",
@@ -43,6 +44,11 @@
       "sha256": "8bd9354984aa2b8e3ea6d23080907dd7768e59b44dde90059bd3b7be559ee028"
     },
     {
+      "path": "GITHUB-UPDATE-3.0.2.md",
+      "bytes": 563,
+      "sha256": "43a29a331691b5d571c40ae60b5e1be9637f7c0461c68329b1d4bacc0e755eff"
+    },
+    {
       "path": "INSTALLATION.md",
       "bytes": 57,
       "sha256": "b4a4c4d1a581d34fd05a9e9d6c9a74e76bd5da4c67427e9066377e6d2940b8bd"
@@ -54,18 +60,23 @@
     },
     {
       "path": "README.md",
-      "bytes": 903,
-      "sha256": "0a5ba4b97fcc6337531283e27a57cb2204e8de929f10a023a976a1160df0e642"
+      "bytes": 909,
+      "sha256": "13657a82000f0f67d9fb0da01e58e8ed4e008854e5eb837720cfbbb5c1f8fcaa"
     },
     {
       "path": "RELEASE-AUDIT.json",
-      "bytes": 248,
-      "sha256": "db9fc478c05abbfeb2d396c5f1c91d717a88ab4d3c9c5cc66ad304e55867288a"
+      "bytes": 308,
+      "sha256": "41c025abcc28b3382e683fde6eaf8bca107899485bc9f2153fc7975f986f0e0e"
     },
     {
       "path": "RELEASE_NOTES_v3.0.1.md",
       "bytes": 638,
       "sha256": "0173437643efe503f87da49c662522c561a3697808804466d69b59449d8596a4"
+    },
+    {
+      "path": "RELEASE_NOTES_v3.0.2.md",
+      "bytes": 566,
+      "sha256": "8f8fdf7a344ac5c779bbe986196fcdcfcd6e988972f217e1e2e98f000086bbe3"
     },
     {
       "path": "RELEASE_NOTES_v3.0.md",
@@ -75,7 +86,7 @@
     {
       "path": "VERSION.txt",
       "bytes": 6,
-      "sha256": "06e3fe4a7a1884d20d81cc7065ca8cfd4c394ec602c4d180ddc39bbd4f7da521"
+      "sha256": "3fc0bf8d7ddbfe77eb4074c0b03d6567d7874a25ea4144aadea6686fcd5f6feb"
     },
     {
       "path": "banner.png",
@@ -114,18 +125,18 @@
     },
     {
       "path": "datenmodell.js",
-      "bytes": 7760,
-      "sha256": "d0e52b46f24f3003d644bffcc055f42643e3553c8ca6d7a7cce4a728feaa1489"
+      "bytes": 8536,
+      "sha256": "485c6fce777c219169a441abd88d5d093ecf454d5a38857565bda34a26e4ebf7"
     },
     {
       "path": "datenregister.js",
-      "bytes": 1224,
-      "sha256": "50d3476adedc3f9b73c2f9421aebf18f1a3118827c21b12e2ad0edaec9e98feb"
+      "bytes": 2142,
+      "sha256": "2b570a511ae7fd78c4cc380ce5091911fc1aa9fe2356c732716188d1f846e60f"
     },
     {
       "path": "datenregister.json",
-      "bytes": 633,
-      "sha256": "aa932668b4cdfcaa953d1fadba7c2266ce32b08dd02e16350d39e4b40b10f31a"
+      "bytes": 734,
+      "sha256": "607854a6b8d42a17b263ff4f973fa0f4bb56f916d9eddd2c1eaffc60b86dfb39"
     },
     {
       "path": "dfb-pokal.html",
@@ -249,13 +260,13 @@
     },
     {
       "path": "scripts/build_release_manifest.py",
-      "bytes": 951,
-      "sha256": "5365121380a2f221c96921008dd65c432634a112a22596f1c8cae45ee9061c9f"
+      "bytes": 952,
+      "sha256": "598741f2dc1f2e59a44e76d48f46c296e47f3eaffa8fdd343770568e277cbc84"
     },
     {
       "path": "scripts/release_audit.py",
-      "bytes": 2525,
-      "sha256": "3574b31ba7cfc7bc9c2599fda5b38f487da2ee6969807c0d0a6266f15ca1a774"
+      "bytes": 2527,
+      "sha256": "f35a69eab1c25ead410666dfdb0c17df35eab19195f31446eb397ae204e5c5c2"
     },
     {
       "path": "scripts/update_data.py",
@@ -284,8 +295,8 @@
     },
     {
       "path": "systemstatus.json",
-      "bytes": 535,
-      "sha256": "c4b59017206aaf35db5b1f643619fa19ced48ee465f18b482f80f385c7330470"
+      "bytes": 595,
+      "sha256": "6ecbdd254cb446e53226f509344f7ed4157c8d7f0cb4376dcc6645149c2b8922"
     },
     {
       "path": "teams.json",
@@ -319,8 +330,8 @@
     },
     {
       "path": "wettbewerb.js",
-      "bytes": 59821,
-      "sha256": "17785b8c772d64f403915a101d8a08c1c54d342cec9d685ae2a6d7d85dbfaaf8"
+      "bytes": 61087,
+      "sha256": "09fa160d30b2dabb4751c9425e52385fc31b0125d53eeccd79809ac6ca1f11b3"
     },
     {
       "path": "wettbewerbe.json",

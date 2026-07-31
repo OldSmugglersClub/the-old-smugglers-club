@@ -1,12 +1,15 @@
 {
-  "version": "3.0.1",
-  "status": "PASS",
-  "html_files": 11,
-  "javascript_files": 7,
-  "css_files": 3,
-  "json_files": 17,
-  "local_references_checked": 79,
-  "missing_local_references": [],
-  "json_errors": [],
-  "missing_required_files": []
+  "auditVersion": "3.0.2",
+  "generatedAtUtc": "2026-07-31T06:52:52.550712+00:00",
+  "status": "OK",
+  "version": "3.0.2",
+  "counts": {
+    "html": 11,
+    "javascript": 7,
+    "json": 17,
+    "referencesChecked": 77
+  },
+  "missingRequiredFiles": [],
+  "missingLocalReferences": [],
+  "jsonErrors": []
 }

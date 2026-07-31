@@ -1,6 +1,7 @@
 (() => {
   "use strict";
   let cache;
+  const sourceState = new Map();
   const safeArray = value => Array.isArray(value) ? value : [];
   const gamesFrom = data => safeArray(data && data.saisons).flatMap(s => safeArray(s && s.spiele)).concat(safeArray(data && data.spiele));
   const matchdaysFrom = data => safeArray(data && data.saisons).flatMap(s => safeArray(s && s.tippspieltage)).concat(safeArray(data && data.tippspieltage));
@@ -94,8 +95,18 @@
   }
 
   async function fetchJson(url, fallback) {
-    try { const response = await fetch(url, {cache:"no-store"}); if (!response.ok) throw new Error(`HTTP ${response.status}`); return await response.json(); }
-    catch (error) { console.warn(`Zentrale Datenquelle nicht verfügbar: ${url}`, error); return fallback; }
+    const startedAt = performance.now();
+    try {
+      const response = await fetch(url, { cache: "no-store" });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+      sourceState.set(url, { ok: true, durationMs: Math.round(performance.now() - startedAt), error: "" });
+      return data;
+    } catch (error) {
+      sourceState.set(url, { ok: false, durationMs: Math.round(performance.now() - startedAt), error: String(error.message || error) });
+      console.warn(`Zentrale Datenquelle nicht verfügbar: ${url}`, error);
+      return fallback;
+    }
   }
 
   async function load() {
@@ -112,11 +123,18 @@
       const matchdays = matchdaysFrom(matchdayData);
       const summaries = Object.fromEntries(competitions.map(item => [item.id, summarize(item, games, matchdays)]));
       const validation = validate({ competitions, games, teams, matchdays });
-      return { competitionData, competitions, gameData, games, teamData, teams, matchdayData, matchdays, summaries, validation, updated: competitionData.aktualisiert || gameData.aktualisiert || "" };
+      const registryStatus = registry && registry.status ? await registry.status() : null;
+      const diagnostics = {
+        loadedAt: new Date().toISOString(),
+        registry: registryStatus,
+        sources: Object.fromEntries(sourceState),
+        fallbackSources: [...sourceState.entries()].filter(([, state]) => !state.ok).map(([url]) => url)
+      };
+      return { competitionData, competitions, gameData, games, teamData, teams, matchdayData, matchdays, summaries, validation, diagnostics, updated: competitionData.aktualisiert || gameData.aktualisiert || "" };
     })();
     return cache;
   }
 
-  function reset() { cache = undefined; }
+  function reset() { cache = undefined; sourceState.clear(); }
   window.OSCDataModel = { load, reset, summarize, matches, validate };
 })();

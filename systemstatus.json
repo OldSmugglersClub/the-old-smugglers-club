@@ -1,7 +1,7 @@
 {
-  "version": "30.0",
+  "version": "3.0.2",
   "modus": "Plan B · datengetrieben",
-  "aktualisiertAm": "2026-07-29T16:00:00+02:00",
+  "aktualisiertAm": "2026-07-31T08:00:00+02:00",
   "module": [
     {
       "name": "Clubdaten",
@@ -23,5 +23,7 @@
       "datei": "topspieler.json",
       "status": "aktiv"
     }
-  ]
+  ],
+  "releaseStatus": "stabil",
+  "datenregisterVersion": 3
 }
