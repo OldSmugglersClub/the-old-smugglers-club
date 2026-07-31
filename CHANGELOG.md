@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 4.3.5 – Trennerkorrektur Startzentrale – 31.07.2026
+
+- CSS-Konflikt im Trenner unter „Zentrale der Crew“ behoben.
+- Das mittlere Rautenelement besitzt nun eine feste Breite und kann nicht mehr durch eine ältere `flex: 1`-Regel diagonal aufgezogen werden.
+- Geerbten Hintergrundverlauf des Rautenelements entfernt.
+- Keine Änderungen an Kachelgröße, Inhalten, Datenlogik oder mobiler Struktur.
+- Keine Bilder erstellt oder verändert.
+
 ## 4.3.3 – Bonuswettbewerb
 - Tippspieltag Nr. 1 als saisonbegleitenden Bonuswettbewerb mit 25 Fragen ergänzt.
 - Jede richtige Antwort bringt 5 Punkte; maximal sind 125 Bonuspunkte möglich.
