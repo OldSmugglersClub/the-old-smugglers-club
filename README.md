@@ -68,3 +68,7 @@ Vier vektorbasierte Pilotsiegel und eine isolierte responsive Vergleichsansicht 
 ## Schmugglers Design System – Version 4.4.8
 
 Die vollständige technische Schmugglersiegel-Bibliothek umfasst aktuell 52 SVG-Dateien. Sie ist noch nicht in öffentliche Seiten integriert. Zentrale Zuordnung: `assets/smugglers-design-system/schmugglersiegel/schmugglersiegel-register.json`.
+
+## SDS-Integrationsprobe
+
+Die nichtöffentliche Testseite `assets/smugglers-design-system/integrationsprobe.html` prüft die Zuordnung der Schmugglersiegel über Team-IDs und den technischen Fallback. Sie ist nicht in der öffentlichen Navigation verlinkt.

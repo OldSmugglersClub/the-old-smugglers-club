@@ -277,3 +277,12 @@ Keine Integration in öffentliche Seiten vor ausdrücklicher Freigabe.
 - [x] isolierte Gesamtvorschau erstellt
 - [ ] nichtkritische Integrationsprobe
 - [ ] Serienabnahme vor öffentlicher Einbindung
+
+### SDS – Integrationsprobe (Version 4.4.9)
+
+- [x] Schmugglersiegel dynamisch über Team-ID auflösen
+- [x] neutrales Fallback bei fehlendem oder defektem Siegel
+- [x] Darstellung in mehreren Größen prüfen
+- [x] responsive Testansicht ohne Änderung öffentlicher Seiten
+- [ ] visuelle Abnahme der Pilotintegration durch den Projektleiter
+- [ ] danach gezielte Integration in genau einen freigegebenen öffentlichen Bereich

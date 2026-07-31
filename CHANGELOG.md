@@ -1067,3 +1067,27 @@
 - Alte Pseudo-Elemente bleiben deaktiviert.
 - Inhalt, Maße, Statusfelder, Hauptbutton sowie Desktop- und Mobilstruktur unverändert.
 - Keine Bilderstellung und keine Bilddateien verändert.
+
+## Version 4.4.9 – SDS-Integrationsprobe
+
+### Neu
+
+- Nichtöffentliche Integrationsprobe für Schmugglersiegel erstellt.
+- Dynamische Zuordnung über `teams.json` und `schmugglersiegel-register.json`.
+- Neutraler Kürzel-Fallback für fehlende oder nicht ladbare Siegel.
+- Responsive Prüfung bei 32, 48, 64 und 96 Pixeln.
+
+### Geändert
+
+- Projektversionsangabe im Schmugglersiegel-Register auf 4.4.9 aktualisiert.
+- Roadmap und SDS-Dokumentation um den abgeschlossenen Integrationsschritt ergänzt.
+
+### Betroffene Dateien
+
+- `assets/smugglers-design-system/integrationsprobe.html`
+- `assets/smugglers-design-system/integrationsprobe.css`
+- `assets/smugglers-design-system/integrationsprobe.js`
+- `assets/smugglers-design-system/schmugglersiegel/schmugglersiegel-register.json`
+- `ROADMAP.md`
+- `README.md`
+- `VERSION.txt`

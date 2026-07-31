@@ -247,3 +247,11 @@ Die Vereinsnamen bleiben unverändert in `teams.json`. Das Register ergänzt aus
 ## 16. Nächster Schritt
 
 Phase 4 beginnt mit einer nichtkritischen, isolierten Integrationsprobe. Vor einer flächendeckenden Einbindung müssen Fallback-Verhalten, Ladefehler, Desktopdarstellung und Mobilansicht geprüft werden.
+
+## Integrationsregel ab Projektversion 4.4.9
+
+Schmugglersiegel werden ausschließlich über die `teamId` aus `teams.json` und das zentrale `schmugglersiegel-register.json` zugeordnet.
+
+Falls kein Registereintrag vorhanden ist oder eine SVG-Datei nicht geladen werden kann, muss die Oberfläche ein neutrales Kürzel-Fallback darstellen. Defekte Bildsymbole oder leere Flächen sind nicht zulässig.
+
+Die erste technische Prüfung erfolgt isoliert über `assets/smugglers-design-system/integrationsprobe.html`. Öffentliche Seiten werden erst nach visueller Freigabe angepasst.
