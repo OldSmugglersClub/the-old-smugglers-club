@@ -52,6 +52,11 @@ Für Version 4.4.5 gilt die Datei `GITHUB-UPDATE-4.4.6.md`.
 
 Die öffentlichen Seiten verlinken im Footer auf `impressum.html` und `datenschutz.html`. Die Rechtstexte beschreiben den in Version 4.4.3 geprüften technischen Stand und müssen bei neuen externen Diensten oder Formularen erneut geprüft werden.
 
-### Version 4.4.7
+### Version 4.4.8
 
 Die zwei Pilot-Schmugglersiegel wurden auf bessere Wiedererkennbarkeit überarbeitet. Im Zentrum stehen nun die klar lesbaren Kürzel `FCN` und `SGD`; Vereinsfarben sind kräftiger, nautische Details dezenter. Das bestehende Website-Layout wurde nicht verändert.
+
+
+## Schmugglersiegel ab Version 4.4.8
+
+Die vollständige Bibliothek umfasst alle 52 aktiven Teams aus `teams.json`. Die zentrale Komponente `team-badge.js` lädt das Register und stellt Siegel mit neutralem Kürzel-Fallback dar. Es werden keine offiziellen Vereinswappen verwendet.

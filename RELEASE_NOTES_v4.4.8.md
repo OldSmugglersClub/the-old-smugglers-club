@@ -1,15 +1,5 @@
 # Release Notes – Version 4.4.8
 
-## Zweck
+Version 4.4.8 vervollständigt die Schmugglersiegel-Bibliothek für alle 52 aktiven Mannschaften und führt eine zentrale JavaScript-Komponente für Darstellung und Fallback ein.
 
-Technische Fertigstellung der Vereinsbibliothek des Smugglers Design System.
-
-## Neu
-
-- 52 vollständig vektorbasierte Schmugglersiegel
-- zentrales Assetregister
-- responsive Gesamtvorschau
-
-## Abgrenzung
-
-Keine öffentliche Website-Seite wurde verändert. Eine Integration erfolgt erst nach separater Freigabe.
+Die öffentliche Integration bleibt zunächst auf „Aktueller Spieltag“ beschränkt. Layout, Grid, Navigation und Spieldaten wurden nicht verändert.

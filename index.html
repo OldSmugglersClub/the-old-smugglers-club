@@ -5719,6 +5719,7 @@
 
   <script src="./datenregister.js"></script>
   <script src="./datenmodell.js"></script>
+  <script src="./team-badge.js"></script>
   <script>
     const menuButton = document.querySelector(".menu-button");
     const navigation = document.getElementById("navigation");
@@ -5960,29 +5961,17 @@
         const liveMinutesDefault = Math.max(1, Number(data.liveDauerMinuten) || 120);
         const teamLookup = new Map((Array.isArray(teamData.teams) ? teamData.teams : []).map(team => [team.id, team]));
         const resolveTeamName = (teamId, fallback) => teamLookup.get(teamId)?.name || fallback || "Team offen";
-        const resolveSealPath = (teamId) => teamId
-          ? `./assets/smugglers-design-system/schmugglersiegel/${teamId}.svg`
-          : "";
-        const teamInitials = (teamId, teamName) => {
-          const fixed = { "dynamo-dresden": "DD", "nuernberg": "FCN" };
-          if (fixed[teamId]) return fixed[teamId];
-          const ignored = new Set(["fc", "sc", "sv", "vfl", "vfb", "tsg", "1.", "04", "05", "09"]);
-          const parts = String(teamName || "").split(/\s+/).filter(Boolean).filter(part => !ignored.has(part.toLowerCase()));
-          return (parts.map(part => part[0]).join("").slice(0, 3) || "TEAM").toUpperCase();
-        };
+        const badgeSystem = window.OSCTeamBadge;
+        if (badgeSystem) await badgeSystem.load();
         const renderTeamSeal = (element, teamId, teamName) => {
+          if (badgeSystem) {
+            badgeSystem.render(element, teamId, teamName);
+            return;
+          }
           if (!element) return;
-          element.replaceChildren();
           const fallback = document.createElement("span");
-          fallback.textContent = teamInitials(teamId, teamName);
-          element.appendChild(fallback);
-          const path = resolveSealPath(teamId);
-          if (!path) return;
-          const image = document.createElement("img");
-          image.alt = "";
-          image.decoding = "async";
-          image.src = path;
-          image.addEventListener("load", () => element.replaceChildren(image), { once: true });
+          fallback.textContent = String(teamName || teamId || "TEAM").slice(0, 4).toUpperCase();
+          element.replaceChildren(fallback);
         };
 
         const simulatedNow = typeof data.testJetzt === "string" && data.testJetzt.trim() ? new Date(data.testJetzt) : null;

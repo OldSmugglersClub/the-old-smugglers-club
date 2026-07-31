@@ -1,5 +1,36 @@
 # CHANGELOG
 
+## Version 4.4.8 – Vollständige Schmugglersiegel-Bibliothek und zentrale Komponente
+
+### Neu
+- 52 eigene SVG-Schmugglersiegel für alle aktuell aktiven Vereine aus `teams.json`
+- zentrales Register `schmugglersiegel-register.json` mit Team-ID, Kürzel, Farben und Dateipfad
+- zentrale JavaScript-Komponente `team-badge.js` für Auflösung, Darstellung und Fallback
+
+### Geändert
+- die Kachel „Aktueller Spieltag“ verwendet die zentrale Komponente statt lokaler Sonderlogik
+- der freigegebene v2-Stil mit dominanten Kürzeln und kräftigen Vereinsfarben wurde auf die vollständige Bibliothek übertragen
+- Projekt- und SDS-Dokumentation auf Version 4.4.8 aktualisiert
+
+### Unverändert
+- keine Änderung an Kachelgrößen, Grid, Navigation, Grundlayout oder Spieldaten
+- keine offiziellen Vereinswappen und keine Bildgenerierung
+
+### Betroffene Dateien
+- `index.html`
+- `team-badge.js`
+- `assets/smugglers-design-system/schmugglersiegel/*.svg`
+- `assets/smugglers-design-system/schmugglersiegel/schmugglersiegel-register.json`
+- `VERSION.txt`
+- `CHANGELOG.md`
+- `README.md`
+- `ROADMAP.md`
+- `assets/smugglers-design-system/dokumentation/SMUGGLERS_DESIGN_SYSTEM.md`
+- `RELEASE_NOTES_v4.4.8.md`
+- `GITHUB-UPDATE-4.4.8.md`
+
+---
+
 ## Version 4.4.6 – Farbige Schmugglersiegel in „Aktueller Spieltag“
 
 ### Neu
