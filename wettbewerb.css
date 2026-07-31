@@ -643,3 +643,64 @@ body.page-dynamo-dresden{
 .competition-stat-card small{color:#c9ae75;line-height:1.35;overflow-wrap:anywhere}
 @media(max-width:950px){.competition-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.competition-links{display:grid;grid-template-columns:1fr 1fr}.competition-link{justify-content:center;text-align:center}.competition-stat-grid{grid-template-columns:1fr}}
+
+/* Version 2.38: einheitlicher Terminstatus, Datenqualitaet und Spielplanfilter */
+.quality-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:12px}
+.quality-card{display:flex;min-width:0;flex-direction:column;gap:5px;padding:14px;border:1px solid rgba(183,122,35,.45);border-radius:9px;background:linear-gradient(145deg,rgba(42,25,13,.86),rgba(17,10,5,.9))}
+.quality-card>span{color:var(--muted);font-size:.76rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.quality-card strong{color:#edcf87;font-size:1.15rem;line-height:1.2;overflow-wrap:anywhere}
+.quality-card small{color:#c9ae75;line-height:1.35}
+.data-status-warning{border-color:rgba(191,137,47,.9);color:#f0ce82}
+.schedule-toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 14px}
+.schedule-filter{min-height:38px;padding:.45rem .72rem;border:1px solid rgba(183,122,35,.48);border-radius:7px;color:#d9bd7b;background:rgba(18,11,6,.74);font:700 .9rem Georgia,"Times New Roman",serif;cursor:pointer}
+.schedule-filter:hover,.schedule-filter:focus-visible{border-color:#d19b39;background:rgba(67,39,15,.88);outline:none}
+.schedule-filter.is-active{color:#241506;border-color:#d8ad5c;background:linear-gradient(#e2bc67,#9c621c)}
+.match-result-wrap{display:flex;align-items:center;justify-content:flex-end;gap:8px;min-width:0}
+.match-state-badge{display:inline-flex;align-items:center;justify-content:center;min-width:78px;padding:.22rem .42rem;border:1px solid rgba(205,164,81,.45);border-radius:999px;font-size:.7rem;font-weight:900;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap}
+.match-state-badge-completed{background:rgba(67,108,55,.48);color:#e3f0d8}
+.match-state-badge-scheduled{background:rgba(128,91,31,.5);color:#ffe9b1}
+.match-state-badge-open{background:rgba(96,72,50,.55);color:#d7c4a3}
+.schedule-empty{padding:14px;border:1px dashed rgba(183,122,35,.5);border-radius:8px;color:var(--muted);text-align:center}
+.match-row[hidden]{display:none!important}
+@media(max-width:950px){.quality-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.quality-grid{grid-template-columns:1fr}.schedule-toolbar{display:grid;grid-template-columns:1fr 1fr}.schedule-filter{width:100%}.match-result-wrap{justify-content:center;flex-wrap:wrap}.match-state-badge{min-width:0}}
+
+/* Version 2.39: einheitliches Wettbewerbslagebild */
+.situation-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+.situation-card{
+  min-width:0;
+  padding:16px;
+  border:1px solid rgba(190,132,49,.48);
+  border-radius:9px;
+  background:linear-gradient(145deg,rgba(54,32,14,.72),rgba(17,10,5,.88));
+  box-shadow:inset 0 1px rgba(255,255,255,.035);
+}
+.situation-card>span{
+  display:block;
+  margin-bottom:.45rem;
+  color:var(--muted);
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.situation-card>strong{
+  display:block;
+  color:#edcf87;
+  font-size:1.05rem;
+  line-height:1.35;
+  overflow-wrap:anywhere;
+}
+.situation-card>small{
+  display:block;
+  margin-top:.45rem;
+  color:#c9ad78;
+  line-height:1.45;
+}
+@media(max-width:700px){
+  .situation-grid{grid-template-columns:1fr}
+}

@@ -1,5 +1,16 @@
 # Changelog
 
+## Version 2.39 – Wettbewerbs-Lagebild
+
+- Einheitliches aktuelles Lagebild auf allen acht Wettbewerbsseiten ergänzt.
+- Letztes bestätigtes Ergebnis wird mit Termin und Resultat ausgewiesen.
+- Nächste bestätigte Partie wird getrennt von noch offenen Einträgen angezeigt.
+- Wettbewerbsfortschritt wird ausschließlich aus zentral erfassten Spielen und Endergebnissen berechnet.
+- Anzahl der erfassten Runden beziehungsweise Abschnitte wird transparent dargestellt.
+- Fehlende Termine, Paarungen und Ergebnisse bleiben ausdrücklich als offen markiert.
+- Responsive Darstellung für Desktop, Tablet und Mobilgeräte ergänzt.
+- Grundlayout, Raster, Kachelgrößen und bereits freigegebene Bereiche bleiben unverändert.
+
 ## Version 2.37 – Wettbewerbs-Navigator & Datenkompass
 
 - Alle acht Wettbewerbsseiten besitzen jetzt einen gemeinsamen, responsiven Wettbewerbs-Navigator.

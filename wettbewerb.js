@@ -510,8 +510,13 @@
         ergebnis: formatResult(match),
         status: match.status || "",
         runde: match.runde || "Spiele",
-        spieltagNummer: Number.isFinite(match.spieltagNummer) ? match.spieltagNummer : null
-      }))
+        spieltagNummer: Number.isFinite(match.spieltagNummer) ? match.spieltagNummer : null,
+        terminBestaetigt: match.terminBestaetigt === true,
+        abgeschlossen: numericScore(match.heimtore) !== null && numericScore(match.auswaertstore) !== null,
+        datumIso: match.datum || match.datumVon || null,
+        quelleStand: match.quelleStand || ""
+      })),
+      zentral: true
     };
   }
 
@@ -607,6 +612,125 @@
     root.appendChild(article);
   }
 
+  function renderCompetitionSituation(gameData, teamData, root) {
+    const games = centralGamesForPage(gameData);
+    const teams = createTeamLookup(teamData);
+    const now = new Date();
+    const enriched = games.map(match => ({ match, date: gameTimestamp(match) }));
+    const completed = enriched
+      .filter(item => numericScore(item.match.heimtore) !== null && numericScore(item.match.auswaertstore) !== null)
+      .sort((a, b) => (b.date || 0) - (a.date || 0));
+    const confirmedUpcoming = enriched
+      .filter(item => item.date && item.date >= now && item.match.terminBestaetigt === true && numericScore(item.match.heimtore) === null)
+      .sort((a, b) => a.date - b.date);
+    const openUpcoming = enriched
+      .filter(item => numericScore(item.match.heimtore) === null && item.match.terminBestaetigt !== true)
+      .sort((a, b) => {
+        if (!a.date && !b.date) return 0;
+        if (!a.date) return 1;
+        if (!b.date) return -1;
+        return a.date - b.date;
+      });
+    const rounds = [...new Set(games.map(match => match.runde).filter(Boolean))];
+
+    const pairing = match => match
+      ? `${teamName(teams, match.heimTeamId, match.heim)} – ${teamName(teams, match.auswaertsTeamId, match.auswaerts)}`
+      : "Keine Partie hinterlegt";
+    const dateLabel = match => match
+      ? [formatDate(match.datum || match.datumVon), match.anstoss].filter(Boolean).join(" · ")
+      : "Noch offen";
+
+    const section = document.createElement("section");
+    section.className = "dynamic-section competition-situation";
+    const headingRow = document.createElement("div");
+    headingRow.className = "section-heading-row";
+    const heading = document.createElement("h2");
+    heading.textContent = "Aktuelles Wettbewerbslagebild";
+    const badge = document.createElement("span");
+    badge.className = "data-status-badge";
+    badge.textContent = games.length ? `${rounds.length || 1} Abschnitte erfasst` : "Noch ohne Spielplan";
+    headingRow.append(heading, badge);
+    section.appendChild(headingRow);
+
+    const grid = document.createElement("div");
+    grid.className = "situation-grid";
+    const cards = [
+      ["Letztes Ergebnis", completed[0] && pairing(completed[0].match), completed[0] ? `${dateLabel(completed[0].match)} · ${formatResult(completed[0].match)}` : "Noch kein Endergebnis vorhanden"],
+      ["Nächste bestätigte Partie", confirmedUpcoming[0] && pairing(confirmedUpcoming[0].match), confirmedUpcoming[0] ? dateLabel(confirmedUpcoming[0].match) : "Noch kein bestätigter Termin"],
+      ["Nächster offener Eintrag", openUpcoming[0] && pairing(openUpcoming[0].match), openUpcoming[0] ? `${openUpcoming[0].match.runde || "Runde offen"} · Termin noch nicht bestätigt` : "Keine offene Paarung vorhanden"],
+      ["Wettbewerbsfortschritt", games.length ? `${completed.length} von ${games.length}` : "0 von 0", games.length ? `${Math.round((completed.length / games.length) * 100)} % der erfassten Spiele beendet` : "Fortschritt noch nicht berechenbar"]
+    ];
+
+    cards.forEach(([label, value, detail]) => {
+      const card = document.createElement("article");
+      card.className = "situation-card";
+      const small = document.createElement("span");
+      small.textContent = label;
+      const strong = document.createElement("strong");
+      strong.textContent = value || "Noch offen";
+      const note = document.createElement("small");
+      note.textContent = detail;
+      card.append(small, strong, note);
+      grid.appendChild(card);
+    });
+
+    section.appendChild(grid);
+    const note = document.createElement("p");
+    note.className = "data-note";
+    note.textContent = "Das Lagebild verwendet ausschließlich bestätigte Termine und hinterlegte Endergebnisse. Offene Angaben werden sichtbar als offen geführt.";
+    section.appendChild(note);
+    root.appendChild(section);
+  }
+
+  function renderCompetitionDataQuality(gameData, root) {
+    const games = centralGamesForPage(gameData);
+    const missingTeams = games.filter(match => !match.heimTeamId || !match.auswaertsTeamId).length;
+    const missingDates = games.filter(match => !(match.datum || match.datumVon)).length;
+    const confirmed = games.filter(match => match.terminBestaetigt === true).length;
+    const sourceDates = games.map(match => match.quelleStand).filter(Boolean).sort();
+    const latestSource = sourceDates[sourceDates.length - 1] || (gameData && gameData.aktualisiert) || "";
+    const issues = missingTeams + missingDates;
+
+    const section = document.createElement("section");
+    section.className = "dynamic-section competition-quality";
+    const headingRow = document.createElement("div");
+    headingRow.className = "section-heading-row";
+    const heading = document.createElement("h2");
+    heading.textContent = "Terminstatus & Datenqualität";
+    const badge = document.createElement("span");
+    badge.className = `data-status-badge${issues ? " data-status-warning" : ""}`;
+    badge.textContent = issues ? `${issues} offene Datenfelder` : "Struktur vollständig";
+    headingRow.append(heading, badge);
+    section.appendChild(headingRow);
+
+    const grid = document.createElement("div");
+    grid.className = "quality-grid";
+    const values = [
+      ["Zeitgenau bestätigt", `${confirmed} von ${games.length}`, "Datum und Anstoß offiziell hinterlegt"],
+      ["Offene Teamangaben", String(missingTeams), missingTeams ? "Paarungen noch nicht vollständig" : "alle Teams referenziert"],
+      ["Offene Zeiträume", String(missingDates), missingDates ? "mindestens ein Datum fehlt" : "alle Spiele zeitlich eingeordnet"],
+      ["Quellenstand", latestSource ? formatDate(String(latestSource).slice(0, 10)) : "Nicht angegeben", "jüngster hinterlegter Quellenstand"]
+    ];
+    values.forEach(([label, value, detail]) => {
+      const card = document.createElement("div");
+      card.className = "quality-card";
+      const small = document.createElement("span");
+      small.textContent = label;
+      const strong = document.createElement("strong");
+      strong.textContent = value;
+      const note = document.createElement("small");
+      note.textContent = detail;
+      card.append(small, strong, note);
+      grid.appendChild(card);
+    });
+    section.appendChild(grid);
+    const note = document.createElement("p");
+    note.className = "data-note";
+    note.textContent = "Die Prüfung bewertet nur die vorhandene Datenstruktur. Sie ersetzt keine externe Termin- oder Ergebnisprüfung.";
+    section.appendChild(note);
+    root.appendChild(section);
+  }
+
   function renderCards(cards) {
     const root = $("info-cards");
     root.innerHTML = "";
@@ -659,23 +783,94 @@
     root.appendChild(wrapper);
   }
 
-  function createMatchList(matches) {
+  function matchState(match) {
+    if (match && match.abgeschlossen) return "completed";
+    if (match && match.terminBestaetigt) return "scheduled";
+    return "open";
+  }
+
+  function createMatchList(matches, options = {}) {
     const list = document.createElement("div");
     list.className = "match-list";
     safeArray(matches).forEach(match => {
+      const state = matchState(match);
       const row = document.createElement("div");
-      row.className = "match-row";
+      row.className = `match-row match-state-${state}`;
+      row.dataset.matchState = state;
+
       const meta = document.createElement("span");
+      meta.className = "match-meta";
       meta.textContent = [match.datum, match.anstoss].filter(Boolean).join(" · ");
+
       const pairing = document.createElement("strong");
       pairing.textContent = [match.heim, match.trenner || "–", match.auswaerts].filter(Boolean).join(" ");
+
+      const resultWrap = document.createElement("span");
+      resultWrap.className = "match-result-wrap";
+      const stateBadge = document.createElement("span");
+      stateBadge.className = `match-state-badge match-state-badge-${state}`;
+      stateBadge.textContent = state === "completed" ? "Beendet" : state === "scheduled" ? "Terminiert" : "Termin offen";
       const result = document.createElement("span");
       result.className = "result";
       result.textContent = match.ergebnis || match.status || "";
-      row.append(meta, pairing, result);
+      resultWrap.append(stateBadge, result);
+
+      row.append(meta, pairing, resultWrap);
       list.appendChild(row);
     });
+    if (options.className) list.classList.add(options.className);
     return list;
+  }
+
+  function renderScheduleFilter(section, root) {
+    const matches = safeArray(section.spiele);
+    const counts = matches.reduce((result, match) => {
+      result[matchState(match)] += 1;
+      return result;
+    }, { completed: 0, scheduled: 0, open: 0 });
+
+    const toolbar = document.createElement("div");
+    toolbar.className = "schedule-toolbar";
+    toolbar.setAttribute("aria-label", "Spielplan filtern");
+
+    const controls = [
+      ["all", "Alle", matches.length],
+      ["scheduled", "Terminiert", counts.scheduled],
+      ["open", "Termin offen", counts.open],
+      ["completed", "Beendet", counts.completed]
+    ];
+
+    const list = createMatchList(matches, { className: "central-match-list" });
+    controls.forEach(([filter, label, count], index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = `schedule-filter${index === 0 ? " is-active" : ""}`;
+      button.dataset.filter = filter;
+      button.setAttribute("aria-pressed", index === 0 ? "true" : "false");
+      button.textContent = `${label} (${count})`;
+      button.addEventListener("click", () => {
+        toolbar.querySelectorAll(".schedule-filter").forEach(item => {
+          const active = item === button;
+          item.classList.toggle("is-active", active);
+          item.setAttribute("aria-pressed", active ? "true" : "false");
+        });
+        let visible = 0;
+        list.querySelectorAll(".match-row").forEach(row => {
+          const show = filter === "all" || row.dataset.matchState === filter;
+          row.hidden = !show;
+          if (show) visible += 1;
+        });
+        empty.hidden = visible !== 0;
+      });
+      toolbar.appendChild(button);
+    });
+
+    const empty = document.createElement("p");
+    empty.className = "schedule-empty";
+    empty.textContent = "Für diesen Status sind derzeit keine Spiele hinterlegt.";
+    empty.hidden = true;
+
+    root.append(toolbar, list, empty);
   }
 
   function renderBundesligaMatchdays(section, root) {
@@ -727,6 +922,10 @@
   }
 
   function renderMatches(section, root) {
+    if (section.zentral && slug !== "bundesliga") {
+      renderScheduleFilter(section, root);
+      return;
+    }
     if (slug === "bundesliga") {
       renderBundesligaMatchdays(section, root);
       return;
@@ -758,6 +957,8 @@
     document.body.classList.add(`page-${slug}`);
     renderCompetitionNavigator(root);
     renderCompetitionDataCockpit(gameData, teamData, root);
+    renderCompetitionSituation(gameData, teamData, root);
+    renderCompetitionDataQuality(gameData, root);
     if (slug === "bundesliga" || slug === "dynamo-dresden") {
       renderQuickBackButton(buttons, root);
     }
