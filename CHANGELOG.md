@@ -1,3 +1,13 @@
+# Changelog
+
+## Version 4.1.0 – Smugglerauftrag Missionsakte
+
+- Startseitenkachel „Smuggleraufträge“ zur aktuellen Mission „Operation Auftakt“ ausgebaut.
+- Spielpaarung 1. FC Nürnberg – Dynamo Dresden, Termin, Status und Wertung direkt sichtbar.
+- Neue Detailseite `smugglerauftrag-auftakt.html` angelegt.
+- Mobile Darstellung der Missionskachel angepasst.
+- Keine Änderung an Grundraster, Kachelgrößen oder Navigation.
+
 ## Version 4.0.6 – Mobile Spieltagskachel – 31.07.2026
 
 - Darstellungsfehler der Spieltagskachel auf schmalen Smartphone-Displays korrigiert.

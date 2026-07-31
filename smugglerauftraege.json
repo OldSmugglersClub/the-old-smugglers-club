@@ -1,19 +1,19 @@
 {
-  "schemaVersion": 2,
-  "datenVersion": 15,
+  "schemaVersion": 3,
+  "datenVersion": 16,
   "aktualisiert": "2026-07-31",
   "saison": "2026/2027",
   "bereich": "Sondermissionen",
   "titel": "Smuggleraufträge",
   "status": "34 AUFTRÄGE · SAISON 2026/2027",
-  "einleitung": "Die Smuggleraufträge bestehen aus 34 ausgewählten Spielen von Dynamo Dresden. Jeder Auftrag bildet einen eigenen Kicktipp-Spieltag und zählt vollständig zur Einzel-Gesamtwertung des The Old Smugglers Club.",
+  "einleitung": "34 Spiele von Dynamo Dresden, jeweils als eigener Kicktipp-Spieltag und vollständig Teil der Einzel-Gesamtwertung.",
   "team": "Dynamo Dresden",
   "untertitel": "Ein Dynamo-Spiel, ein eigener Tippspieltag, ein Smugglerauftrag – insgesamt 34 Missionen über die gesamte Saison.",
   "aktuellerAuftrag": "Auftakt",
   "naechsterAuftrag": "Smugglerauftrag 2",
   "abgeschlossen": 0,
   "gesamt": 34,
-  "beschreibung": "Der erste Smugglerauftrag „Auftakt“ findet am 09. August 2026 statt. Die weiteren Aufträge folgen dem zentralen Dynamo-Spielplan.",
+  "beschreibung": "Operation „Auftakt“ eröffnet die Saison der Smuggleraufträge. Die erste Reise führt am 09. August 2026 zum 1. FC Nürnberg.",
   "buttonText": "Zu allen Dynamo-Aufträgen",
   "link": "./dynamo-dresden.html",
   "logbuchTitel": "Piratenlogbuch",
@@ -325,5 +325,16 @@
       "kicktippSpieltag": "Smugglerauftrag 34",
       "notiz": "Smugglerauftrag zum 34. Spieltag der 2. Bundesliga."
     }
-  ]
+  ],
+  "mission": {
+    "titel": "Operation „Auftakt“",
+    "untertitel": "Smugglerauftrag 1 · 2. Bundesliga",
+    "heim": "1. FC Nürnberg",
+    "auswaerts": "Dynamo Dresden",
+    "termin": "09.08.2026 · 13:30 Uhr",
+    "statusText": "Auftrag offen",
+    "wertung": "2 / 3 / 5 Punkte",
+    "link": "./smugglerauftrag-auftakt.html",
+    "buttonText": "Missionsakte öffnen"
+  }
 }
