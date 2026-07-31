@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 4.0.2 – Highscore-Teilnehmerabgleich
+
+- Highscore-Rückfallquelle `highscore.json` mit der zentralen Teilnehmerliste synchronisiert.
+- Fehlende Teilnehmer `Eckes2359` und `Stevie26` in Gesamt- und Spieltagswertung ergänzt.
+- Highscore zeigt nun alle 100 aktiven Mitglieder.
+- Punkte, Platzierung, Layout und mobile Darstellung bleiben unverändert.
+
 ## Version 4.0.1 – Desktop-Highscore-Kachel
 
 - Highscore-Kachel der Desktop-Startseite optisch aufgewertet.

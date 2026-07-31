@@ -1,5 +1,5 @@
 {
-  "version": "4.0",
+  "version": "4.0.2",
   "modus": "Plan B · datengetrieben",
   "aktualisiertAm": "2026-07-31T13:15:00+02:00",
   "module": [
@@ -155,5 +155,6 @@
     }
   ],
   "releaseStatus": "produktionsbereit",
-  "datenregisterVersion": 40
+  "datenregisterVersion": 40,
+  "aktualisiert": "2026-07-31"
 }

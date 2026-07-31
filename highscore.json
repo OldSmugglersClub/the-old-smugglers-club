@@ -2,9 +2,10 @@
   "meta": {
     "season": "2026/2027",
     "matchday": "Smugglerauftrag Auftakt",
-    "exportDate": "30.07.2026",
-    "source": "Kicktipp-CSV-Export",
-    "privacy": "E-Mail-Adressen werden nicht übernommen."
+    "exportDate": "31.07.2026",
+    "source": "Kicktipp-Mitgliederexport 31.07.2026 / synchronisierte Teilnehmerbasis",
+    "privacy": "E-Mail-Adressen werden nicht übernommen.",
+    "participantCount": 100
   },
   "individual": {
     "overall": [
@@ -165,6 +166,13 @@
       {
         "rank": 1,
         "name": "dominik1966",
+        "bonusPoints": 0.0,
+        "matchdayWins": 0.0,
+        "totalPoints": 0.0
+      },
+      {
+        "rank": 1,
+        "name": "Eckes2359",
         "bonusPoints": 0.0,
         "matchdayWins": 0.0,
         "totalPoints": 0.0
@@ -620,6 +628,13 @@
       {
         "rank": 1,
         "name": "Steff77",
+        "bonusPoints": 0.0,
+        "matchdayWins": 0.0,
+        "totalPoints": 0.0
+      },
+      {
+        "rank": 1,
+        "name": "Stevie26",
         "bonusPoints": 0.0,
         "matchdayWins": 0.0,
         "totalPoints": 0.0
@@ -928,6 +943,13 @@
       },
       {
         "rank": 1,
+        "name": "Eckes2359",
+        "bonusPoints": 0.0,
+        "matchdayWins": 0.0,
+        "totalPoints": 0.0
+      },
+      {
+        "rank": 1,
         "name": "Erik",
         "points": 0.0,
         "bonusPoints": 0.0,
@@ -1575,6 +1597,13 @@
         "totalPoints": 0.0,
         "matchdayWins": 0.0,
         "matchdayRank": 1
+      },
+      {
+        "rank": 1,
+        "name": "Stevie26",
+        "bonusPoints": 0.0,
+        "matchdayWins": 0.0,
+        "totalPoints": 0.0
       },
       {
         "rank": 1,
