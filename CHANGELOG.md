@@ -1,3 +1,11 @@
+# Version 3.21 – Saisonarchiv und Hall of Fame
+
+- Zentrale Archivseite für abgeschlossene Saisons, Wettbewerbe und Titelträger ergänzt.
+- Bestehende Hall-of-Fame-Daten in ein strukturiertes Saisonarchiv überführt.
+- Rekordtafel sowie JSON- und CSV-Export ergänzt.
+- Administrationszentrum und Datenregister erweitert.
+- Öffentliches Grundlayout und Kachelgrößen unverändert.
+
 # Changelog
 
 ## Version 3.20 – Ranglistenverlauf und Formkurve

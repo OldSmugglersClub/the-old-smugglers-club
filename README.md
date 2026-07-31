@@ -4,7 +4,7 @@ Offizielle Website der Tipprunde **The Old Smugglers Club**.
 
 ## Version
 
-Aktueller Stand: **3.19 – Spieltag-Einzelwertungen**
+Aktueller Stand: **3.21 – Saisonarchiv und Hall of Fame**
 
 ## Veröffentlichung auf GitHub Pages
 
@@ -81,3 +81,8 @@ Die Seite `smugglerwertung.html` berechnet eine eigenständige Rangliste für al
 ## Version 3.20
 
 Der neue Ranglistenverlauf stellt Punkte, Platzierungen und die Form der letzten fünf Wertungsabschnitte datengetrieben dar.
+
+
+## Saisonarchiv und Hall of Fame (3.21)
+
+`saisonarchiv.html` bündelt abgeschlossene Spielzeiten, Titelträger und Rekorde. Die zentrale Datei `saisonarchiv.json` kann als JSON oder CSV exportiert werden.
