@@ -368,3 +368,9 @@
 - Unterstützung für reduzierte Bewegungen und erhöhten Kontrast erweitert.
 - Externe Links mit neuem Tab werden defensiv mit `noopener` und `noreferrer` abgesichert.
 - Grundlayout, Raster, Kachelgrößen, Navigation und freigegebene Inhalte unverändert belassen.
+
+## Version 3.7.1 – Mobile Highscore-Korrektur
+- Darstellungsfehler im Highscore-Teaser der Startseite auf Mobilgeräten behoben.
+- Karteninhalte bleiben innerhalb ihrer Kacheln; Überschriften und Werte umbrechen kontrolliert.
+- Abstände, Schriftgrößen und Innenränder für schmale Ansichten angepasst.
+- Desktop-Layout und bestehende Kachelgrößen bleiben unverändert.
