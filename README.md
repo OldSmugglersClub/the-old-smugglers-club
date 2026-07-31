@@ -1,4 +1,4 @@
-# The Old Smugglers Club – Version 4.1.6
+# The Old Smugglers Club – Version 4.1.7
 
 Öffentliche GitHub-Pages-Website der Tipprunde **The Old Smugglers Club**.
 
@@ -9,7 +9,7 @@ Der vollständige Inhalt dieses Verzeichnisses gehört direkt in das Hauptverzei
 ## Aktueller Stand
 
 - öffentliches Spielerportal ohne veröffentlichte Administration
-- Bundesliga, DFB-Pokal, Champions League und Sonderwettbewerbe
+- Bundesliga, DFB-Pokal, Champions League, Europa League und Sonderwettbewerbe
 - Smuggleraufträge für reale Spiele der SG Dynamo Dresden
 - Highscore, Hall of Fame, Piratenkodex und Saisonübersicht
 - Bundesliga-Chronometer bis zum Saisonstart am 28.08.2026
@@ -17,15 +17,15 @@ Der vollständige Inhalt dieses Verzeichnisses gehört direkt in das Hauptverzei
 
 ## Aktualisierung über die GitHub-Webseite
 
-Für Version 4.1.6 gilt die Datei `GITHUB-UPDATE-4.1.5.md`. Gleichnamige Dateien werden beim Hochladen ersetzt. Es müssen keine Dateien gelöscht werden.
+Für Version 4.1.7 gilt die Datei `GITHUB-UPDATE-4.1.7.md`. Gleichnamige Dateien werden beim Hochladen ersetzt. Es müssen keine Dateien gelöscht werden.
 
 ## Wichtige Dateien
 
 - `index.html` – Startseite
 - `VERSION.txt` – aktuelle Versionsnummer
 - `CHANGELOG.md` – Versionshistorie
-- `RELEASE_NOTES_v4.1.5.md` – Änderungen dieses Releases
-- `GITHUB-UPDATE-4.1.5.md` – konkrete Upload-Liste
+- `RELEASE_NOTES_v4.1.7.md` – Änderungen dieses Releases
+- `GITHUB-UPDATE-4.1.7.md` – konkrete Upload-Liste
 
 ## Projektregeln
 

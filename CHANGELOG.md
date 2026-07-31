@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.1.7 – Startzentrale bereinigt
+
+- Die in Version 4.1.5 zusätzlich eingeblendeten Schnellzugriffs-Buttons entfernt.
+- Die bereits im Kachelmotiv vorhandenen Schaltflächen bleiben alleinige Bedienflächen.
+- Die unsichtbaren Klickbereiche für „Zum Kicktipp“ und „Wettbewerbe ansehen“ bleiben erhalten.
+- Keine Änderung an Bilddateien, Kachelgröße, Grundraster oder Navigation.
+- Desktop- und Mobile-Darstellung wieder überlagerungsfrei.
+
 ## 4.1.5 – Startzentrale
 
 - Willkommen-Kachel um zwei sichtbare Schnellzugriffe ergänzt.
