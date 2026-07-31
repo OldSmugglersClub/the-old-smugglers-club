@@ -4588,6 +4588,35 @@
       }
     }
 
+
+    /* Version 4.1.6 – zusätzliche Ehrentitel, mobil stabil */
+    #hall-of-fame .honours-overview {
+      align-content: start;
+    }
+
+    #hall-of-fame .honour-card > div:last-child {
+      min-width: 0;
+    }
+
+    @media (max-width: 700px) {
+      #hall-of-fame .honours-overview {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      #hall-of-fame .honour-card {
+        width: 100%;
+        min-width: 0;
+      }
+
+      #hall-of-fame .honour-card strong,
+      #hall-of-fame .honour-card small {
+        display: block;
+        max-width: 100%;
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
+    }
+
   </style>
   <link rel="stylesheet" href="./highscore.css?v=4.0.1">
   <link rel="stylesheet" href="./accessibility-v33.css">
@@ -5030,6 +5059,22 @@
             <div>
               <strong id="cl-title">Champions League 2025/2026</strong>
               <small id="cl-name">ZweikampfGott</small>
+            </div>
+          </div>
+
+          <div class="honour-card">
+            <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-football"></use></svg></div>
+            <div>
+              <strong id="el-title">Europa League 2026/2027</strong>
+              <small class="status-open" id="el-name">Sieger noch offen</small>
+            </div>
+          </div>
+
+          <div class="honour-card">
+            <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-map"></use></svg></div>
+            <div>
+              <strong id="smugglerwertung-title">Smuggleraufträge 2026/2027</strong>
+              <small class="status-open" id="smugglerwertung-name">Sieger noch offen</small>
             </div>
           </div>
 
@@ -5671,6 +5716,21 @@
         setText("cl-title", `Champions League ${data.championsLeague?.saison ?? ""}`.trim());
         setText("cl-name", data.championsLeague?.name);
         setOpenState("cl-name", Boolean(data.championsLeague?.offen), "Noch offen");
+
+        setText("el-title", `Europa League ${data.europaLeague?.saison ?? ""}`.trim());
+        setText("el-name", data.europaLeague?.name);
+        setOpenState("el-name", Boolean(data.europaLeague?.offen), "Sieger noch offen");
+
+        setText(
+          "smugglerwertung-title",
+          `Smuggleraufträge ${data.smugglerauftraege?.saison ?? ""}`.trim()
+        );
+        setText("smugglerwertung-name", data.smugglerauftraege?.name);
+        setOpenState(
+          "smugglerwertung-name",
+          Boolean(data.smugglerauftraege?.offen),
+          "Sieger noch offen"
+        );
 
         setText(
           "weihnachtsregatta-title",

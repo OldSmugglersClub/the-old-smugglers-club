@@ -90,5 +90,15 @@
       "titel": "Rekordtafel",
       "beschreibung": "Bestleistungen der Crew nach den vorhandenen Auswertungen."
     }
-  ]
+  ],
+  "europaLeague": {
+    "saison": "2026/2027",
+    "name": "Sieger noch offen",
+    "offen": true
+  },
+  "smugglerauftraege": {
+    "saison": "2026/2027",
+    "name": "Sieger noch offen",
+    "offen": true
+  }
 }

@@ -674,3 +674,12 @@
 - Statusplakette und Abschlusstext reagieren nach Erreichen des Saisonstarts automatisch.
 - Countdown-Ziel bleibt der 28.08.2026 um 20:30 Uhr.
 - Keine Bilderstellung, keine neuen Bilddateien und keine Änderungen am Grundraster.
+
+## Version 4.1.6 – Hall of Fame: Europa League und Smuggleraufträge
+
+- Europa League 2026/2027 als eigener Eintrag in der Hall of Fame ergänzt.
+- Smuggleraufträge 2026/2027 als eigene Saisonwertung ergänzt.
+- Beide Einträge werden aus `hall-of-fame.json` geladen und können dort später mit den bestätigten Siegern befüllt werden.
+- Das Ehrenlogbuch `hall-of-fame.html` zeigt beide Kategorien ebenfalls an.
+- Mobile Umbrüche und Kartenbreiten für die erweiterte Titelliste stabilisiert.
+- Keine Bilddateien erstellt oder verändert.
