@@ -1,3 +1,14 @@
+# Changelog
+
+## Version 3.23 – Abgabe-Erinnerungen
+
+- Neue Verwaltungsseite `abgabe-erinnerungen.html`.
+- Offene Tippabgaben werden nach Teilnehmer, Wettbewerb und Zeitraum gebündelt.
+- Vorbereitete Erinnerungstexte können einzeln kopiert werden.
+- Export als JSON, CSV und Textliste.
+- Keine automatische Zustellung und keine Veränderung von Website-Daten.
+- Neues Exportziel `abgabe-erinnerungen.json`.
+
 # Version 3.22 – Tippfristen- und Abgabekontrolle
 
 - Zentrale Fristenübersicht mit 24-Stunden-Warnung ergänzt.

@@ -4,7 +4,7 @@ Offizielle Website der Tipprunde **The Old Smugglers Club**.
 
 ## Version
 
-Aktueller Stand: **3.21 – Saisonarchiv und Hall of Fame**
+Aktueller Stand: **3.23 – Abgabe-Erinnerungen**
 
 ## Veröffentlichung auf GitHub Pages
 
@@ -91,3 +91,8 @@ Der neue Ranglistenverlauf stellt Punkte, Platzierungen und die Form der letzten
 ## Version 3.22
 
 Die Tippfristen-Kontrolle befindet sich in `tippfristen.html` und prüft bestätigte Anstoßzeiten sowie fehlende Abgaben.
+
+
+## Version 3.23
+
+`abgabe-erinnerungen.html` erzeugt aus fehlenden Tippabgaben vorbereitete, kopierbare Erinnerungstexte. Ein automatischer Versand findet nicht statt.

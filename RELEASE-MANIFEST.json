@@ -1,7 +1,7 @@
 {
-  "manifestVersion": "3.22",
-  "generatedAtUtc": "2026-07-31T10:58:08.937639+00:00",
-  "fileCount": 181,
+  "manifestVersion": "3.23",
+  "generatedAtUtc": "2026-07-31T11:02:04.720542+00:00",
+  "fileCount": 187,
   "files": [
     {
       "path": "ADMIN-HANDBUCH.md",
@@ -20,8 +20,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 29927,
-      "sha256": "b6f548831d5e0a09e243a359b4a1109b1b3b1625e0aab02e94b78f12ab774d39"
+      "bytes": 30338,
+      "sha256": "8e66aee9db63113ed96f5d7228dc3e092bb9ed46a57dbfc331e8a94b34f77e3b"
     },
     {
       "path": "CNAME",
@@ -124,6 +124,11 @@
       "sha256": "f024bf58aecd297ff7e3e0e5234d6e36093be69265a754e49c1ced37576ccd39"
     },
     {
+      "path": "GITHUB-UPDATE-3.23.md",
+      "bytes": 447,
+      "sha256": "225b02b410eea7ce9a2af3673b976c12d0ff8e68c9d784340988f446edd58c54"
+    },
+    {
       "path": "GITHUB-UPDATE-3.3.md",
       "bytes": 707,
       "sha256": "b8873b3cbb084d6856b000d01401f84c7d945684521841c059763f8801c98f18"
@@ -185,13 +190,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 4055,
-      "sha256": "3f58dbbaada088528407a3cbcf3c241ebdba202ff500952d89f48c1aae1287f6"
+      "bytes": 4214,
+      "sha256": "7ebc787b5e66b02b5943318159a8b45620ec28ed794d8f399792539850589263"
     },
     {
       "path": "RELEASE-AUDIT.json",
       "bytes": 308,
-      "sha256": "59425ce1e759ffbf992746caa47e48f1aeb0ce4a692d770163aa29cadd2c9385"
+      "sha256": "0fc59f21da1012704c315cbc695aae1e2547c7bd51c778fdf90c90c3a4870a62"
     },
     {
       "path": "RELEASE_NOTES_v3.0.1.md",
@@ -284,6 +289,11 @@
       "sha256": "6a30884d5f2851852feb542bcc2e2bfe97e40e33e89ee21202e1e04b964aa72d"
     },
     {
+      "path": "RELEASE_NOTES_v3.23.md",
+      "bytes": 350,
+      "sha256": "bdfcc36705f3fdbd6f80218d27d2ddb9fd2b865d097db80988d19a67ac20dff8"
+    },
+    {
       "path": "RELEASE_NOTES_v3.3.md",
       "bytes": 728,
       "sha256": "3446988d4da34cefdb884ac7414b31cc3bfe881b4cb23402089b9119df8fa710"
@@ -336,7 +346,27 @@
     {
       "path": "VERSION.txt",
       "bytes": 5,
-      "sha256": "a39605a62e6891761b7917a9eec1eb563ba870b345f5ba9c851cf47c60d83bfe"
+      "sha256": "b4de32232be74d6dd5e90cd8655013c0bd25cead146cd52b10bb7b83a902c794"
+    },
+    {
+      "path": "abgabe-erinnerungen.css",
+      "bytes": 1292,
+      "sha256": "706add8ce3feab70a8a823518c15f0d5121c8584479b9bf227a9a49ca8af1def"
+    },
+    {
+      "path": "abgabe-erinnerungen.html",
+      "bytes": 2681,
+      "sha256": "c2055479c91228eccbeadccd7e87856dbad44f8cb4a07cc44ad8ffea2d61fbf9"
+    },
+    {
+      "path": "abgabe-erinnerungen.js",
+      "bytes": 6262,
+      "sha256": "c6bcd5e479f0e1ceeac90c7f6b754a3f7f4c60fbb0ac79ef34f50315cd8a3a61"
+    },
+    {
+      "path": "abgabe-erinnerungen.json",
+      "bytes": 239,
+      "sha256": "9263c8a755e49b372dbab9dffb2c7a6e622b8b5f1d76b9633fcd277b18b7a970"
     },
     {
       "path": "accessibility-v33.css",
@@ -355,8 +385,8 @@
     },
     {
       "path": "admin.html",
-      "bytes": 5053,
-      "sha256": "42bce23c46ceaaceec7d899b3e06d840ce0cc7873b2ffb52d9d1de3c22a84469"
+      "bytes": 5141,
+      "sha256": "954d8200062d997d5d419ddba8c7bc4538990d109ef9bfa6680e35937e55dba0"
     },
     {
       "path": "admin.js",
@@ -450,8 +480,8 @@
     },
     {
       "path": "datenregister.json",
-      "bytes": 1316,
-      "sha256": "ef6c6f04ad1c66a6a326a6abe576c35a27a02781e0c4fb08283d3753e2a77876"
+      "bytes": 1370,
+      "sha256": "a7f4bfec528f24427638e9e0391406552f87758511119a153c54332e999920f2"
     },
     {
       "path": "dfb-pokal.html",
@@ -636,12 +666,12 @@
     {
       "path": "scripts/build_release_manifest.py",
       "bytes": 951,
-      "sha256": "2ce56eca01d7c57fb2fb32f8cb0449021f78a7d46db61897aef69365f65a8bfd"
+      "sha256": "4743bfbbe735e20d8f17f836809291be6231a6f4613db62cca3b49060086033a"
     },
     {
       "path": "scripts/release_audit.py",
-      "bytes": 3738,
-      "sha256": "7a7772277de6ea2cc05a05e08ef4e7182d13628ed941bc87aa7d509a7f8f8497"
+      "bytes": 3847,
+      "sha256": "346a10130a097c93ab59bf232f28dcdd7a2786bb4e21a34aed98a0aea2126848"
     },
     {
       "path": "scripts/update_data.py",
@@ -740,8 +770,8 @@
     },
     {
       "path": "systemstatus.json",
-      "bytes": 3027,
-      "sha256": "a3331befaebe04ab79fd11d4664f8e883cf03200edf7dc0b6a202d7555a25a63"
+      "bytes": 3144,
+      "sha256": "5f07799cf5beb52cc41bd5003473468e606919adf945e92e43700466d7c1e192"
     },
     {
       "path": "team-teilnehmerpflege.css",
