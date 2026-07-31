@@ -286,3 +286,12 @@ Keine Integration in öffentliche Seiten vor ausdrücklicher Freigabe.
 - [x] responsive Testansicht ohne Änderung öffentlicher Seiten
 - [ ] visuelle Abnahme der Pilotintegration durch den Projektleiter
 - [ ] danach gezielte Integration in genau einen freigegebenen öffentlichen Bereich
+
+
+### Version 4.4.10 – öffentliche Pilotintegration
+
+- [x] Schmugglersiegel in „Aktueller Spieltag“ integriert
+- [x] Fallback für fehlende oder nicht ladbare Siegel
+- [x] Desktop- und Mobilregeln ergänzt
+- [ ] Optische Abnahme durch den Projektleiter
+- [ ] Erst nach Abnahme weitere öffentliche Bereiche integrieren

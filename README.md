@@ -72,3 +72,8 @@ Die vollständige technische Schmugglersiegel-Bibliothek umfasst aktuell 52 SVG-
 ## SDS-Integrationsprobe
 
 Die nichtöffentliche Testseite `assets/smugglers-design-system/integrationsprobe.html` prüft die Zuordnung der Schmugglersiegel über Team-IDs und den technischen Fallback. Sie ist nicht in der öffentlichen Navigation verlinkt.
+
+
+## Schmugglersiegel – öffentliche Pilotintegration
+
+Seit Version 4.4.10 werden die Schmugglersiegel erstmals kontrolliert in der Kachel „Aktueller Spieltag“ verwendet. Bei fehlenden Assets bleibt die Mannschaftsbezeichnung erhalten und ein neutrales Kürzel wird angezeigt.

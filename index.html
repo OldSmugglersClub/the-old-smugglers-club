@@ -4928,7 +4928,58 @@
         radial-gradient(ellipse at 76% 86%, rgba(132,78,22,.055), transparent 34%),
         linear-gradient(105deg, #160e08 0 68%, #090604 100%) !important;
     }
-  </style>
+  
+
+    /* SDS 4.4.10: Schmugglersiegel im aktuellen Spieltag */
+    .sm-team-inline {
+      display: inline-flex;
+      align-items: center;
+      gap: .42rem;
+      min-width: 0;
+    }
+    .sm-team-inline--away { justify-content: flex-end; }
+    .sm-team-seal {
+      width: 30px;
+      height: 30px;
+      flex: 0 0 30px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 3px rgba(0,0,0,.45));
+    }
+    .sm-team-seal-fallback {
+      width: 30px;
+      height: 30px;
+      flex: 0 0 30px;
+      display: inline-grid;
+      place-items: center;
+      border: 1px solid rgba(205,166,87,.72);
+      border-radius: 50%;
+      background: radial-gradient(circle at 38% 32%, #765c2d, #2b2114 72%);
+      color: #ead49c;
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .03em;
+      line-height: 1;
+      box-shadow: inset 0 0 0 2px rgba(25,16,8,.6), 0 2px 3px rgba(0,0,0,.42);
+    }
+    .sm-next-event__match--with-seals,
+    .sm-event-row__match--with-seals {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
+      align-items: center;
+      gap: .48rem;
+    }
+    .sm-next-event__match--with-seals .sm-team-inline:first-child,
+    .sm-event-row__match--with-seals .sm-team-inline:first-child { justify-content: flex-start; }
+    .sm-next-event__match--with-seals .sm-team-inline:last-child,
+    .sm-event-row__match--with-seals .sm-team-inline:last-child { justify-content: flex-end; text-align: right; }
+    .sm-match-separator { color: rgba(234,212,156,.82); }
+    @media (max-width: 640px) {
+      .sm-team-seal, .sm-team-seal-fallback { width: 26px; height: 26px; flex-basis: 26px; }
+      .sm-next-event__match--with-seals,
+      .sm-event-row__match--with-seals { gap: .3rem; }
+      .sm-team-inline { gap: .28rem; }
+    }
+</style>
   <link rel="stylesheet" href="./legal.css">
 </head>
 
@@ -5811,24 +5862,27 @@
 
       try {
         const registry = window.OSCDataRegistry;
-        const [configUrl, gamesUrl, teamsUrl, matchdaysUrl] = registry
+        const [configUrl, gamesUrl, teamsUrl, matchdaysUrl, sealsUrl] = registry
           ? await Promise.all([
               registry.url("spieltag"), registry.url("spiele"),
-              registry.url("teams"), registry.url("tippspieltage")
+              registry.url("teams"), registry.url("tippspieltage"),
+              "./assets/smugglers-design-system/schmugglersiegel/schmugglersiegel-register.json"
             ])
-          : ["./spieltag.json", "./spieldaten.json", "./teams.json", "./tippspieltage.json"];
-        const [configResponse, gamesResponse, teamsResponse, matchdaysResponse] = await Promise.all([
+          : ["./spieltag.json", "./spieldaten.json", "./teams.json", "./tippspieltage.json", "./assets/smugglers-design-system/schmugglersiegel/schmugglersiegel-register.json"];
+        const [configResponse, gamesResponse, teamsResponse, matchdaysResponse, sealsResponse] = await Promise.all([
           fetch(configUrl, { cache: "no-store" }),
           fetch(gamesUrl, { cache: "no-store" }),
           fetch(teamsUrl, { cache: "no-store" }),
-          fetch(matchdaysUrl, { cache: "no-store" })
+          fetch(matchdaysUrl, { cache: "no-store" }),
+          fetch(sealsUrl, { cache: "no-store" })
         ]);
 
         for (const [name, response] of [
           ["Spieltag-Konfiguration", configResponse],
           ["zentrale Spieldaten", gamesResponse],
           ["zentrales Teamregister", teamsResponse],
-          ["zentrale Tippspieltage", matchdaysResponse]
+          ["zentrale Tippspieltage", matchdaysResponse],
+          ["Schmugglersiegel-Register", sealsResponse]
         ]) {
           if (!response.ok) throw new Error(`${name} konnte nicht geladen werden (${response.status})`);
         }
@@ -5837,10 +5891,54 @@
         const gameData = await gamesResponse.json();
         const teamData = await teamsResponse.json();
         const matchdayData = await matchdaysResponse.json();
+        const sealsData = await sealsResponse.json();
         const locale = data.locale || "de-DE";
         const liveMinutesDefault = Math.max(1, Number(data.liveDauerMinuten) || 120);
         const teamLookup = new Map((Array.isArray(teamData.teams) ? teamData.teams : []).map(team => [team.id, team]));
+        const sealEntries = Array.isArray(sealsData.siegel) ? sealsData.siegel : (Array.isArray(sealsData.teams) ? sealsData.teams : []);
+        const sealLookup = new Map(sealEntries.map(entry => [entry.teamId || entry.id, entry]));
         const resolveTeamName = (teamId, fallback) => teamLookup.get(teamId)?.name || fallback || "Team offen";
+        const teamInitials = (name = "") => name.split(/\s+/).filter(Boolean).map(part => part.replace(/[^A-Za-z0-9ÄÖÜäöüß]/g, "")[0]).filter(Boolean).join("").slice(0, 3).toUpperCase() || "?";
+        const makeSeal = (teamId, teamName, side = "home") => {
+          const entry = sealLookup.get(teamId);
+          const wrap = document.createElement("span");
+          wrap.className = `sm-team-inline ${side === "away" ? "sm-team-inline--away" : ""}`;
+          const label = document.createElement("span");
+          label.textContent = teamName;
+          const seal = entry?.datei || entry?.pfad || entry?.src;
+          let emblem;
+          if (seal) {
+            emblem = document.createElement("img");
+            emblem.className = "sm-team-seal";
+            emblem.src = seal.startsWith(".") ? seal : `./${seal}`;
+            emblem.alt = "";
+            emblem.setAttribute("aria-hidden", "true");
+            emblem.addEventListener("error", () => {
+              const fallback = document.createElement("span");
+              fallback.className = "sm-team-seal-fallback";
+              fallback.textContent = entry?.kuerzel || entry?.kürzel || teamInitials(teamName);
+              fallback.setAttribute("aria-hidden", "true");
+              emblem.replaceWith(fallback);
+            }, { once: true });
+          } else {
+            emblem = document.createElement("span");
+            emblem.className = "sm-team-seal-fallback";
+            emblem.textContent = entry?.kuerzel || entry?.kürzel || teamInitials(teamName);
+            emblem.setAttribute("aria-hidden", "true");
+          }
+          if (side === "away") wrap.append(label, emblem);
+          else wrap.append(emblem, label);
+          return wrap;
+        };
+        const renderMatchWithSeals = (container, game, className) => {
+          if (!container) return;
+          container.replaceChildren();
+          container.classList.add(className);
+          const separator = document.createElement("span");
+          separator.className = "sm-match-separator";
+          separator.textContent = game.trenner || "–";
+          container.append(makeSeal(game.heimTeamId, game.heim, "home"), separator, makeSeal(game.auswaertsTeamId, game.auswaerts, "away"));
+        };
 
         const simulatedNow = typeof data.testJetzt === "string" && data.testJetzt.trim() ? new Date(data.testJetzt) : null;
         const now = simulatedNow && !Number.isNaN(simulatedNow.getTime()) ? simulatedNow : new Date();
@@ -5932,7 +6030,7 @@
           const firstDate = new Intl.DateTimeFormat(locale, { weekday: "short", day: "2-digit", month: "2-digit", year: "numeric" }).format(firstGame._start);
           if (elements.nextDate) elements.nextDate.textContent = `${firstDate} · ${firstGame.anstoss || "--:--"}`;
           if (elements.nextCompetition) elements.nextCompetition.textContent = selectedMatchday.name || firstGame.wettbewerbAnzeige || "Tippspieltag";
-          if (elements.nextMatch) elements.nextMatch.textContent = `${firstGame.heim} ${firstGame.trenner || "–"} ${firstGame.auswaerts}`;
+          renderMatchWithSeals(elements.nextMatch, firstGame, "sm-next-event__match--with-seals");
           if (elements.next && firstGame.ereignisLink) elements.next.href = firstGame.ereignisLink;
           else elements.next?.removeAttribute("href");
 
@@ -5968,7 +6066,7 @@
                 competition.textContent = game.wettbewerbAnzeige || game.wettbewerb || "Ereignis";
                 const match = document.createElement("span");
                 match.className = "sm-event-row__match";
-                match.textContent = `${game.heim} ${game.trenner || "–"} ${game.auswaerts}`;
+                renderMatchWithSeals(match, game, "sm-event-row__match--with-seals");
                 const rowStatus = document.createElement("span");
                 rowStatus.className = "sm-event-row__status";
                 rowStatus.textContent = game._start <= now && game._end > now ? "LIVE" : (game.status || "");

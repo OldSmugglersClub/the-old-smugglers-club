@@ -1,5 +1,30 @@
 # CHANGELOG
 
+## Version 4.4.10
+
+### Neu
+
+- Erste kontrollierte öffentliche Integration der Schmugglersiegel in der Kachel „Aktueller Spieltag“.
+- Dynamische Zuordnung über Team-ID und zentrales Schmugglersiegel-Register.
+- Neutraler Kürzel-Fallback bei fehlendem oder nicht ladbarem SVG.
+
+### Geändert
+
+- Mannschaftspaarungen im nächsten Ereignis und in der Ereignisliste zeigen nun die vorbereiteten Schmugglersiegel.
+- Responsive Größen für Desktop und Mobil ergänzt.
+
+### Unverändert
+
+- Kachelgröße, Grid, Navigation, Datenlogik und alle anderen öffentlichen Bereiche.
+
+### Betroffene Dateien
+
+- index.html
+- VERSION.txt
+- CHANGELOG.md
+- README.md
+- ROADMAP.md
+
 ## Version 4.4.8
 
 ### Neu
