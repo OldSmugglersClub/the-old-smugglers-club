@@ -1,7 +1,7 @@
 {
-  "version": "3.13",
+  "version": "3.14",
   "modus": "Plan B · datengetrieben",
-  "aktualisiertAm": "2026-07-31T12:22:00+02:00",
+  "aktualisiertAm": "2026-07-31T12:25:00+02:00",
   "module": [
     {
       "name": "Clubdaten",
@@ -82,8 +82,13 @@
       "name": "Automatische Highscore-Auswertung",
       "datei": "highscore.html",
       "status": "aktiv"
+    },
+    {
+      "name": "Bonusfragen und Sonderpunkte",
+      "datei": "bonuspflege.html",
+      "status": "aktiv"
     }
   ],
   "releaseStatus": "stabil",
-  "datenregisterVersion": 13
+  "datenregisterVersion": 14
 }

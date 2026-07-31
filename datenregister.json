@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "datenVersion": 13,
+  "datenVersion": 14,
   "aktualisiert": "2026-07-31",
   "saison": "2026/2027",
   "beschreibung": "Zentrales Register der gemeinsam genutzten Datenquellen der Website.",
@@ -21,7 +21,9 @@
     "teilnehmer": "teilnehmer.json",
     "tipps": "tipps.json",
     "wertungsregeln": "wertungsregeln.json",
-    "punkte": "punkte.json"
+    "punkte": "punkte.json",
+    "bonusfragen": "bonusfragen.json",
+    "bonusantworten": "bonusantworten.json"
   },
-  "websiteVersion": "3.13"
+  "websiteVersion": "3.14"
 }

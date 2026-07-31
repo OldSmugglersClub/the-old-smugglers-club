@@ -1,7 +1,7 @@
 {
-  "manifestVersion": "3.13",
-  "generatedAtUtc": "2026-07-31T10:24:41.574644+00:00",
-  "fileCount": 130,
+  "manifestVersion": "3.14",
+  "generatedAtUtc": "2026-07-31T10:28:42.474868+00:00",
+  "fileCount": 137,
   "files": [
     {
       "path": "ADMIN-HANDBUCH.md",
@@ -20,8 +20,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 26738,
-      "sha256": "fb785951aab10ee355b9547e4fdd7b5329fb738b72530c2027cf7cbeba11fb82"
+      "bytes": 26666,
+      "sha256": "eadb92c3c4e9299ce17d4de471747db9ae4450046640eb501d7dcd1b423c2b7e"
     },
     {
       "path": "CNAME",
@@ -72,6 +72,11 @@
       "path": "GITHUB-UPDATE-3.13.md",
       "bytes": 382,
       "sha256": "d1d2288080aeaaa014b5ed822b181963126c7e022ee407dfc1b9ded79ef57b40"
+    },
+    {
+      "path": "GITHUB-UPDATE-3.14.md",
+      "bytes": 514,
+      "sha256": "0f20a9c0f85a63c00a532491ffa508fa667c699bf7b0c337805688537f2f8103"
     },
     {
       "path": "GITHUB-UPDATE-3.2.md",
@@ -140,13 +145,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 2553,
-      "sha256": "6b9abb5e1ef253349d0825a64a56274eb35081e3dd1235ef3f95f3bf0e7fb2c0"
+      "bytes": 2494,
+      "sha256": "b8a2e8953fc08d60077c3223cf8ae916cdee61d4c1a45cb0011f3e3ffaf265f4"
     },
     {
       "path": "RELEASE-AUDIT.json",
       "bytes": 308,
-      "sha256": "dbdc6904eef315b16c862ae08fd33270a05dd2b589ba52b06fe932d775b14ed7"
+      "sha256": "718994d96a5eda75cc98333876bed47e69ef4cb33c57b2c28ef2be95bb28e1b8"
     },
     {
       "path": "RELEASE_NOTES_v3.0.1.md",
@@ -187,6 +192,11 @@
       "path": "RELEASE_NOTES_v3.13.md",
       "bytes": 471,
       "sha256": "17a8b4bd73df93bb079229dec11df53a3788f3e5bcd1124ea9815c917c68d5e7"
+    },
+    {
+      "path": "RELEASE_NOTES_v3.14.md",
+      "bytes": 320,
+      "sha256": "a1c2e7d0a3c3a21d2c9fbe1405b1be9a4a6be00205f3e8ba4f525cc061d254c3"
     },
     {
       "path": "RELEASE_NOTES_v3.2.md",
@@ -246,7 +256,7 @@
     {
       "path": "VERSION.txt",
       "bytes": 5,
-      "sha256": "02e735b3dfe1c32833eb550b7ff8ffa17f5f2bc3fa1e7bae61a8f5a3883ce398"
+      "sha256": "a876e0b10411037a012498b9fe18d9bc1df32ed8b722a13564dc944ddcfd9135"
     },
     {
       "path": "accessibility-v33.css",
@@ -265,8 +275,8 @@
     },
     {
       "path": "admin.html",
-      "bytes": 4390,
-      "sha256": "a0111910ee2f8084f4073f9848d66a8eaec0ed6345c17b9f396ad1802aa1b348"
+      "bytes": 4395,
+      "sha256": "a4a39579820875a2c9a6bcdfdc04226836457d67a5438d3d99892bb1e8dc2501"
     },
     {
       "path": "admin.js",
@@ -277,6 +287,31 @@
       "path": "banner.png",
       "bytes": 2509448,
       "sha256": "77a7d2edf755d724c48672062916da1aedb91263d37b35b1ff68ee7d501e296c"
+    },
+    {
+      "path": "bonusantworten.json",
+      "bytes": 185,
+      "sha256": "23d1e092da719c0f4d667144038edc1acd96d9b504e0ed8eca90108a870334fd"
+    },
+    {
+      "path": "bonusfragen.json",
+      "bytes": 187,
+      "sha256": "3a0dcb5986ad97040934f0ac9863699a1c45b892a5ba3013654255df473656c2"
+    },
+    {
+      "path": "bonuspflege.css",
+      "bytes": 810,
+      "sha256": "0f34aa740ec7c97a9b2dabf193d998b68d6f2e7049f94a0d81ce8f9e1fb627ad"
+    },
+    {
+      "path": "bonuspflege.html",
+      "bytes": 2473,
+      "sha256": "e0d3c403680db6680ed28e81fea4d5765397591a8ba04fe591cd33f6d20cd9dd"
+    },
+    {
+      "path": "bonuspflege.js",
+      "bytes": 5946,
+      "sha256": "0f45733e6e65d633c2e6d2cc0c826d033cf6bd170c6823168da4e58b74ea86c3"
     },
     {
       "path": "bundesliga-tabelle.json",
@@ -335,8 +370,8 @@
     },
     {
       "path": "datenregister.json",
-      "bytes": 872,
-      "sha256": "16be786fbc315b2608642cb8d04eee094ac482424f1736ddeaecde67faa0e16f"
+      "bytes": 956,
+      "sha256": "e7c7084dd4bcc997cae4a72ce8cf7fe1df91259f70d1d8e05687df7c1e2b067a"
     },
     {
       "path": "dfb-pokal.html",
@@ -445,13 +480,13 @@
     },
     {
       "path": "punkteberechnung.html",
-      "bytes": 2755,
-      "sha256": "2920ac76688a8dcb6c82d3aa4279cc2c556f3aaf2af2b1e96c2de67f5517b0a3"
+      "bytes": 2774,
+      "sha256": "8361ffa279ce414d257d0922dd8c735f70a8a0842351e33083ff29f153ef8ad0"
     },
     {
       "path": "punkteberechnung.js",
-      "bytes": 7704,
-      "sha256": "f491babd8c54f46dc94c303bb91edeefc0838c1da0f36f4f9152f9646aeb71a4"
+      "bytes": 9068,
+      "sha256": "eab00047c21952f145b5428f54a8cb22dfcc6b13ce72585d84d1452bfae2522a"
     },
     {
       "path": "relegation.html",
@@ -496,12 +531,12 @@
     {
       "path": "scripts/build_release_manifest.py",
       "bytes": 951,
-      "sha256": "102514fc1a86c893842a35f89f26fdd042c1454c85c79e45ce78f2d9fd1923ca"
+      "sha256": "d1f774659eae7858ca952ea0a17f0755212a7ebad1f56a675e1e78feaadfd4a4"
     },
     {
       "path": "scripts/release_audit.py",
-      "bytes": 2923,
-      "sha256": "e5f048710932753bda1ffab2574566ebdf56aaf14f07334fd5cc49f4c0077029"
+      "bytes": 3023,
+      "sha256": "c5c602caca71b282950282f5274103f6fdd784d083f192011421d86fe9c9830b"
     },
     {
       "path": "scripts/update_data.py",
@@ -545,8 +580,8 @@
     },
     {
       "path": "systemstatus.json",
-      "bytes": 1944,
-      "sha256": "04ffa0e80f6b6f25ede521e4dceaa7f6695aa1d18a319576629cf73243bf0f2a"
+      "bytes": 2062,
+      "sha256": "578e0cc612ec3fba74ebcefd6a10def863b77b48c6368c32c5e0e43997785459"
     },
     {
       "path": "team-teilnehmerpflege.css",

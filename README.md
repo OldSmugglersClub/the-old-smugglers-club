@@ -48,6 +48,6 @@ Die lokale Wettbewerbsverwaltung erzeugt nach Prüfung eine vollständige `wettb
 
 Die zentrale Punkteberechnung steht unter `punkteberechnung.html` bereit. Sie wertet `tipps.json` gegen abgeschlossene Spiele in `spieldaten.json` aus und verwendet die Regeln aus `wertungsregeln.json`.
 
+## Version 3.14
 
-## Version 3.13
-Die öffentliche Highscore-Seite kann nun die von `punkteberechnung.html` exportierte `punkte.json` automatisch übernehmen. Solange diese Datei keine Rangliste enthält, wird weiterhin der bestätigte Stand aus `highscore.json` angezeigt.
+`bonuspflege.html` verwaltet Bonusfragen, Lösungen und Teilnehmerantworten. Gewertete richtige Antworten fließen über `punkteberechnung.html` in den automatischen Highscore ein.
