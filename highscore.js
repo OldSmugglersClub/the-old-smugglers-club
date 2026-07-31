@@ -3,6 +3,9 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 
 let data = {};
 let hallOfFame = {};
+let pointsData = {};
+let participantsData = {};
+let highscoreSourceMode = "register";
 const STORAGE_KEY = 'tosmc-highscore-state-v233';
 const state = {
   view: 'overall',
@@ -12,6 +15,75 @@ const state = {
   sortKey: 'official',
   sortDir: 'asc'
 };
+
+
+function formatIsoDateGerman(value) {
+  const match = String(value || '').match(/^(\d{4})-(\d{2})-(\d{2})/);
+  return match ? `${match[3]}.${match[2]}.${match[1]}` : '';
+}
+
+function mergeCalculatedRanking(base, pointsPayload, participantPayload) {
+  const ranking = Array.isArray(pointsPayload?.rangliste) ? pointsPayload.rangliste : [];
+  if (!ranking.length) return { payload: base, active: false, count: 0 };
+  const participants = Array.isArray(participantPayload?.teilnehmer) ? participantPayload.teilnehmer : [];
+  const byId = new Map(participants.map(row => [String(row.id), row]));
+  const existing = new Map((base.individual?.overall || []).map(row => [String(row.name), row]));
+  const calculated = ranking.map(row => {
+    const participant = byId.get(String(row.teilnehmerId)) || {};
+    const name = String(row.teilnehmer || participant.name || participant.profil?.anzeigename || row.teilnehmerId || 'Unbekannt');
+    const previous = existing.get(name) || {};
+    return {
+      rank: Number(row.platz || 0),
+      name,
+      participantId: String(row.teilnehmerId || participant.id || ''),
+      bonusPoints: Number(previous.bonusPoints || 0),
+      matchdayWins: Number(previous.matchdayWins || 0),
+      totalPoints: Number(row.punkte || 0),
+      exactHits: Number(row.exakt || 0),
+      differenceHits: Number(row.differenz || 0),
+      tendencyHits: Number(row.tendenz || 0),
+      evaluatedTips: Number(row.gewertet || 0),
+      team: participant.team || previous.team || null
+    };
+  });
+  const seen = new Set(calculated.map(row => row.name));
+  participants.filter(row => row?.aktiv !== false).forEach(participant => {
+    const name = String(participant.name || participant.profil?.anzeigename || '');
+    if (!name || seen.has(name)) return;
+    calculated.push({ rank: calculated.length ? calculated.length + 1 : 1, name, participantId: String(participant.id || ''), bonusPoints: 0, matchdayWins: 0, totalPoints: 0, exactHits: 0, differenceHits: 0, tendencyHits: 0, evaluatedTips: 0, team: participant.team || null });
+  });
+  calculated.sort((a,b) => b.totalPoints-a.totalPoints || b.exactHits-a.exactHits || b.differenceHits-a.differenceHits || a.name.localeCompare(b.name,'de'));
+  let rank=0, last='';
+  calculated.forEach((row,index) => {
+    const key=`${row.totalPoints}:${row.exactHits}:${row.differenceHits}`;
+    if (key !== last) rank=index+1;
+    row.rank=rank; last=key;
+  });
+  const updated = structuredClone(base);
+  updated.individual = updated.individual || {};
+  updated.individual.overall = calculated;
+  updated.meta = updated.meta || {};
+  updated.meta.source = 'Zentrale Punkteberechnung';
+  updated.meta.exportDate = formatIsoDateGerman(pointsPayload.berechnetAm || pointsPayload.aktualisiert) || updated.meta.exportDate;
+  updated.meta.privacy = 'Punkte aus tipps.json, spieldaten.json und teilnehmer.json; keine E-Mail-Daten.';
+  return { payload: updated, active: true, count: ranking.length };
+}
+
+function renderHighscoreSource() {
+  const label=document.querySelector('#hs-source-label');
+  const detail=document.querySelector('#hs-source-detail');
+  const strip=document.querySelector('#hs-source-strip');
+  if(!label||!detail||!strip) return;
+  if(highscoreSourceMode==='calculated'){
+    label.textContent='Automatisch berechnete Rangliste';
+    detail.textContent=`${pointsData.rangliste?.length || 0} gewertete Teilnehmer · Stand ${data.meta?.exportDate || 'unbekannt'} · Regeln ${pointsData.regeln?.tendenz ?? 2}/${pointsData.regeln?.differenz ?? 3}/${pointsData.regeln?.ergebnis ?? 5}`;
+    strip.dataset.source='calculated';
+  } else {
+    label.textContent='Highscore-Register';
+    detail.textContent='Noch keine berechnete Rangliste in punkte.json vorhanden; highscore.json bleibt die aktive Rückfallquelle.';
+    strip.dataset.source='fallback';
+  }
+}
 
 function parseGermanDate(value) {
   const match = String(value || '').match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/);
@@ -804,6 +876,7 @@ function init() {
   renderRecords();
   renderFieldAnalysis();
   renderDataCompass();
+  renderHighscoreSource();
 
   const profileDialog = document.querySelector('#player-dialog');
   const compareSelect = document.querySelector('#player-compare-select');
@@ -879,16 +952,22 @@ function loadHighscoreData() {
       if (!response.ok) throw Error(`highscore.json: HTTP ${response.status}`);
       return response.json();
     }),
-    (window.OSCDataRegistry ? window.OSCDataRegistry.url('hallOfFame') : Promise.resolve('./hall-of-fame.json')).then(url => fetch(url, { cache: 'no-store' })).then(response => response.ok ? response.json() : {})
+    (window.OSCDataRegistry ? window.OSCDataRegistry.url('hallOfFame') : Promise.resolve('./hall-of-fame.json')).then(url => fetch(url, { cache: 'no-store' })).then(response => response.ok ? response.json() : {}),
+    (window.OSCDataRegistry ? window.OSCDataRegistry.url('punkte') : Promise.resolve('./punkte.json')).then(url => fetch(url, { cache: 'no-store' })).then(response => response.ok ? response.json() : {}).catch(() => ({})),
+    (window.OSCDataRegistry ? window.OSCDataRegistry.url('teilnehmer') : Promise.resolve('./teilnehmer.json')).then(url => fetch(url, { cache: 'no-store' })).then(response => response.ok ? response.json() : {}).catch(() => ({}))
   ])
-    .then(([payload, hallPayload]) => {
+    .then(([payload, hallPayload, pointsPayload, participantPayload]) => {
       const issues = validatePayload(payload);
       if (issues.length) throw Error(issues.join(' · '));
-      data = payload;
+      pointsData = pointsPayload && typeof pointsPayload === 'object' ? pointsPayload : {};
+      participantsData = participantPayload && typeof participantPayload === 'object' ? participantPayload : {};
+      const merged = mergeCalculatedRanking(payload, pointsData, participantsData);
+      data = merged.payload;
+      highscoreSourceMode = merged.active ? 'calculated' : 'register';
       hallOfFame = hallPayload && typeof hallPayload === 'object' ? hallPayload : {};
       init();
       const count = data.individual?.overall?.length || 0;
-      setSystemStatus('ready', 'Highscore geladen', `${count} Spieler und alle verfügbaren Statistikmodule wurden eingelesen.`);
+      setSystemStatus('ready', highscoreSourceMode === 'calculated' ? 'Highscore automatisch berechnet' : 'Highscore geladen', `${count} Spieler und alle verfügbaren Statistikmodule wurden eingelesen.`);
       window.setTimeout(() => {
         const el = document.querySelector('#hs-system-status');
         if (el?.classList.contains('is-ready')) el.hidden = true;

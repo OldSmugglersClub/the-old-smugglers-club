@@ -433,3 +433,13 @@
 - Eindeutige IDs, Aktivstatus, Teamzuordnung und lokale JSON-Exporte ergänzt.
 - Doppelte IDs und Namen werden vor dem Export erkannt.
 - Keine Änderungen an Grundlayout, Kachelgrößen oder öffentlicher Navigation.
+
+
+## Version 3.13 – Automatische Highscore-Auswertung – 31.07.2026
+
+- `highscore.html` liest zusätzlich `punkte.json` und `teilnehmer.json`.
+- Eine vorhandene berechnete Rangliste ersetzt automatisch die statische Gesamtwertung aus `highscore.json`.
+- Ohne berechnete Punkte bleibt `highscore.json` als transparente Rückfallquelle aktiv.
+- Rangfolge berücksichtigt Punkte, exakte Treffer und Differenztreffer.
+- Herkunft und Wertungsstand werden im Highscore sichtbar ausgewiesen.
+- Grundlayout, Raster und Kachelgrößen bleiben unverändert.

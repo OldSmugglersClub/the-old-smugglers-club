@@ -1,7 +1,7 @@
 {
-  "version": "3.12",
+  "version": "3.13",
   "modus": "Plan B · datengetrieben",
-  "aktualisiertAm": "2026-07-31T11:30:00+02:00",
+  "aktualisiertAm": "2026-07-31T12:22:00+02:00",
   "module": [
     {
       "name": "Clubdaten",
@@ -77,8 +77,13 @@
       "name": "Zentrale Punkteberechnung",
       "datei": "punkteberechnung.html",
       "status": "aktiv"
+    },
+    {
+      "name": "Automatische Highscore-Auswertung",
+      "datei": "highscore.html",
+      "status": "aktiv"
     }
   ],
   "releaseStatus": "stabil",
-  "datenregisterVersion": 11
+  "datenregisterVersion": 13
 }
