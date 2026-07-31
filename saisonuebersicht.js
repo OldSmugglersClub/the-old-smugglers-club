@@ -63,9 +63,10 @@
       if (responses.some(response => !response.ok)) throw new Error("Saisondaten konnten nicht vollständig geladen werden.");
 
       const [overview, competitionData, gameData, matchdayData] = await Promise.all(responses.map(response => response.json()));
-      const competitions = safeArray(competitionData.wettbewerbe).filter(item => item && item.saison);
-      const games = centralGames(gameData);
-      const matchdays = centralMatchdays(matchdayData);
+      const sharedModel = window.OSCDataModel ? await window.OSCDataModel.load() : null;
+      const competitions = safeArray((sharedModel && sharedModel.competitions) || competitionData.wettbewerbe).filter(item => item && item.saison);
+      const games = sharedModel ? sharedModel.games : centralGames(gameData);
+      const matchdays = sharedModel ? sharedModel.matchdays : centralMatchdays(matchdayData);
 
       $("season-title").textContent = overview.titel || "Saisonübersicht 2026/2027";
       $("season-subtitle").textContent = overview.untertitel || "";

@@ -239,3 +239,10 @@
 - Wettbewerbsseiten, Saisonübersicht, Highscore und Startseiten-Highscore-Teaser an das Register angebunden.
 - Dateipfade müssen künftig nicht mehr in mehreren JavaScript-Modulen parallel geändert werden.
 - Grundlayout, Kachelgrößen, Abstände und freigegebene Inhalte unverändert belassen.
+
+## 2.44 – 31.07.2026
+- Gemeinsames Laufzeit-Datenmodell `datenmodell.js` eingeführt.
+- Wettbewerbe, Spiele, Teams und Tippspieltage werden zentral geladen und normalisiert.
+- Saisonübersicht und Wettbewerbsseiten verwenden dieselbe Wettbewerbsdefinition.
+- Zentrale Statussummen je Wettbewerb vorbereitet.
+- Sichere Rückfalllogik und bestehendes Layout beibehalten.

@@ -1193,7 +1193,8 @@
         fetchJson(competitionConfigUrl, false)
       ]);
 
-      const configuredCompetitions = safeArray(competitionConfig && competitionConfig.wettbewerbe)
+      const sharedModel = window.OSCDataModel ? await window.OSCDataModel.load() : null;
+      const configuredCompetitions = safeArray((sharedModel && sharedModel.competitions) || (competitionConfig && competitionConfig.wettbewerbe))
         .filter(item => item && item.id && item.label && item.filter && item.filter.type && item.filter.value);
       competitionDefinitions = configuredCompetitions.length ? configuredCompetitions : DEFAULT_COMPETITIONS;
 
