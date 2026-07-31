@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 3.20 – Ranglistenverlauf und Formkurve
+
+- Neue Auswertung der kumulierten Punkte- und Platzierungsentwicklung über alle zentral erfassten Spieltage.
+- Wettbewerbsfilter, Teilnehmervergleich, Formwert der letzten fünf Abschnitte sowie JSON- und CSV-Export ergänzt.
+- Öffentliches Grundlayout und bestehende Kachelgrößen unverändert belassen.
+
+
 ## 3.19 – Spieltag-Einzelwertungen
 
 - Eigene Rangliste für jeden zentral erfassten Spieltag ergänzt.

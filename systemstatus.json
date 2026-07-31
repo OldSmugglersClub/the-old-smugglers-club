@@ -1,7 +1,7 @@
 {
-  "version": "3.19",
+  "version": "3.20",
   "modus": "Plan B · datengetrieben",
-  "aktualisiertAm": "2026-07-31T12:46:00+02:00",
+  "aktualisiertAm": "2026-07-31T12:49:00+02:00",
   "module": [
     {
       "name": "Clubdaten",
@@ -112,8 +112,13 @@
       "name": "Spieltag-Einzelwertungen",
       "datei": "spieltagwertung.html",
       "status": "aktiv"
+    },
+    {
+      "name": "Ranglistenverlauf und Formkurve",
+      "datei": "ranglistenverlauf.html",
+      "status": "aktiv"
     }
   ],
   "releaseStatus": "stabil",
-  "datenregisterVersion": 19
+  "datenregisterVersion": 20
 }

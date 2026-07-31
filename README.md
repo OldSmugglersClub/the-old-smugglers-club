@@ -76,3 +76,8 @@ Die Seite `smugglerwertung.html` berechnet eine eigenständige Rangliste für al
 ## Spieltag-Einzelwertungen (3.19)
 
 `spieltagwertung.html` erstellt für jeden in `spieldaten.json` erfassten Spieltag eine getrennte Rangliste. Der Export `spieltagpunkte.json` kann anschließend manuell im Repository ersetzt werden.
+
+
+## Version 3.20
+
+Der neue Ranglistenverlauf stellt Punkte, Platzierungen und die Form der letzten fünf Wertungsabschnitte datengetrieben dar.

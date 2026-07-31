@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "datenVersion": 19,
+  "datenVersion": 20,
   "aktualisiert": "2026-07-31",
   "saison": "2026/2027",
   "beschreibung": "Zentrales Register der gemeinsam genutzten Datenquellen der Website.",
@@ -28,7 +28,8 @@
     "smugglerpunkte": "smugglerpunkte.json",
     "teampunkte": "teampunkte.json",
     "wettbewerbspunkte": "wettbewerbspunkte.json",
-    "spieltagpunkte": "spieltagpunkte.json"
+    "spieltagpunkte": "spieltagpunkte.json",
+    "ranglistenverlauf": "ranglistenverlauf.json"
   },
-  "websiteVersion": "3.19"
+  "websiteVersion": "3.20"
 }

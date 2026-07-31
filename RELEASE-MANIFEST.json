@@ -1,7 +1,7 @@
 {
-  "manifestVersion": "3.19",
-  "generatedAtUtc": "2026-07-31T10:48:53.917363+00:00",
-  "fileCount": 163,
+  "manifestVersion": "3.20",
+  "generatedAtUtc": "2026-07-31T10:52:22.620601+00:00",
+  "fileCount": 169,
   "files": [
     {
       "path": "ADMIN-HANDBUCH.md",
@@ -20,8 +20,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 28839,
-      "sha256": "3a44fed2065b3352e0524778e6cb2aab76b296bda71ae57e98785728c5ef5422"
+      "bytes": 29202,
+      "sha256": "67a33a19d627adfd3277bfaa81c216fe3de01705e15fc9fdcb57f888a6ebf62c"
     },
     {
       "path": "CNAME",
@@ -109,6 +109,11 @@
       "sha256": "dc1d4df5cdbc70d864f38df82205140b6687b902f2746eadefd6eeb18ab12f38"
     },
     {
+      "path": "GITHUB-UPDATE-3.20.md",
+      "bytes": 466,
+      "sha256": "eec14e4a68273cffea5cd082f02c63b82387a3cf8374e7983333beb42c4a28a7"
+    },
+    {
       "path": "GITHUB-UPDATE-3.3.md",
       "bytes": 707,
       "sha256": "b8873b3cbb084d6856b000d01401f84c7d945684521841c059763f8801c98f18"
@@ -170,13 +175,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 3556,
-      "sha256": "b5f50056789d10595b8e6048bb8f4532091cc84333a3ce6146a8b65b710f8933"
+      "bytes": 3701,
+      "sha256": "964764b74b35bad5f095c12951cdc020896f227d1bd82535c3aae3911ff5c1b2"
     },
     {
       "path": "RELEASE-AUDIT.json",
       "bytes": 308,
-      "sha256": "e2e611c66653070b6f4939cf29557faa3b711ff9a776aa9d1af94080ee537e11"
+      "sha256": "c63365b9963f4263f0c19f8aaeb21999009efada96db82124b750069476dd7f1"
     },
     {
       "path": "RELEASE_NOTES_v3.0.1.md",
@@ -254,6 +259,11 @@
       "sha256": "d5a828ffd82ad59a4de2a44a78735b64ddbc658bafd8d1aeeec1b71d941d7642"
     },
     {
+      "path": "RELEASE_NOTES_v3.20.md",
+      "bytes": 440,
+      "sha256": "517494362aefeefda46da40ae595e05d33ca448b3779468e308a905aeecc37dd"
+    },
+    {
       "path": "RELEASE_NOTES_v3.3.md",
       "bytes": 728,
       "sha256": "3446988d4da34cefdb884ac7414b31cc3bfe881b4cb23402089b9119df8fa710"
@@ -306,7 +316,7 @@
     {
       "path": "VERSION.txt",
       "bytes": 5,
-      "sha256": "d707194fcf20788924e22b23ee74e14d41a7fd97719ea5ee57e997b3b77bfd63"
+      "sha256": "14d21a17b3e1feebf4a83a692acf55d674ef6f73c82af16729d9414de2caeb41"
     },
     {
       "path": "accessibility-v33.css",
@@ -325,8 +335,8 @@
     },
     {
       "path": "admin.html",
-      "bytes": 4798,
-      "sha256": "b3d74ce569898d444eedda146444b5bcec22c8a428e4c7c4d1eb856b34e2d41c"
+      "bytes": 4882,
+      "sha256": "8b99fec008d2fb73d5176780f944852977aabc7da25bd2cf7bffb92520e380dd"
     },
     {
       "path": "admin.js",
@@ -420,8 +430,8 @@
     },
     {
       "path": "datenregister.json",
-      "bytes": 1185,
-      "sha256": "2a6206d9b009383441f4eb90617388af719912c6bcbef04554016b443b0da55d"
+      "bytes": 1236,
+      "sha256": "98d60cf97eb7461cd1c1833d4f83b86016552fa6f5c004d4738393a7d69e2f9b"
     },
     {
       "path": "dfb-pokal.html",
@@ -539,6 +549,26 @@
       "sha256": "eab00047c21952f145b5428f54a8cb22dfcc6b13ce72585d84d1452bfae2522a"
     },
     {
+      "path": "ranglistenverlauf.css",
+      "bytes": 1055,
+      "sha256": "f47903bdd80b5962e744d4fc6181f7ba7f7d9ac905567728d5bd28d2cf9452e7"
+    },
+    {
+      "path": "ranglistenverlauf.html",
+      "bytes": 2872,
+      "sha256": "6d1010c0f2fbeeb40368f045c538c076aee1caaaffdf2062446d134d10b9ab9a"
+    },
+    {
+      "path": "ranglistenverlauf.js",
+      "bytes": 8086,
+      "sha256": "0bd545354c7f10b4195d19b6af6922a6a62169c1fc70418b830c8dd7820ba0f1"
+    },
+    {
+      "path": "ranglistenverlauf.json",
+      "bytes": 211,
+      "sha256": "0d0b6cca9bcd0a4aad2a81d89783ca175bc40319df42361f128c9032e9010326"
+    },
+    {
       "path": "relegation.html",
       "bytes": 1438,
       "sha256": "572172a99d35555db49cd891383af430268916efb77ed4d6601470c9d4d5138b"
@@ -566,12 +596,12 @@
     {
       "path": "scripts/build_release_manifest.py",
       "bytes": 951,
-      "sha256": "f283fccfc1679bf46036cee5cfdd50fe2c468d75b91d929d9b1f3d590013f1e1"
+      "sha256": "c84e3c22d5ec4b37afd2738e7546caa7e3aee55dcbf501516335cc5e1c837b77"
     },
     {
       "path": "scripts/release_audit.py",
-      "bytes": 3479,
-      "sha256": "3771588a26927d470f364734c57647e59fd990e3fc6c176c14aa7d9e859703a3"
+      "bytes": 3580,
+      "sha256": "574830205e44484e7e0598e9a56b41c7350d566dc07e552c6c9b124a06624ca8"
     },
     {
       "path": "scripts/update_data.py",
@@ -670,8 +700,8 @@
     },
     {
       "path": "systemstatus.json",
-      "bytes": 2658,
-      "sha256": "bf5c28551cacfadc90ac534c7e9e6551a816d41c0391dc3cb7704b5c11b54b08"
+      "bytes": 2785,
+      "sha256": "ffd86964a18e7224bd0ae2990ae2874f9bf9b0327d7b5fa4aa1e5f65b88ebd9f"
     },
     {
       "path": "team-teilnehmerpflege.css",
