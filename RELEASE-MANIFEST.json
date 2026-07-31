@@ -1,7 +1,7 @@
 {
-  "manifestVersion": "3.10",
-  "generatedAtUtc": "2026-07-31T10:11:36.219109+00:00",
-  "fileCount": 112,
+  "manifestVersion": "3.11",
+  "generatedAtUtc": "2026-07-31T10:14:36.555177+00:00",
+  "fileCount": 121,
   "files": [
     {
       "path": "ADMIN-HANDBUCH.md",
@@ -20,8 +20,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 25189,
-      "sha256": "ffc5f14d03c7a0798d37c16940bf63c0964634b5e3c0b8fbfa21bac7db43b739"
+      "bytes": 25655,
+      "sha256": "3ece13798823dd34f9aa8384418804a2c9970a0e65b73ab3203a655fa0cbd2c7"
     },
     {
       "path": "CNAME",
@@ -57,6 +57,11 @@
       "path": "GITHUB-UPDATE-3.10.md",
       "bytes": 424,
       "sha256": "a0965156114e1c8543453a34eb4ab58c8b890609b8c93859265b46d6668f2710"
+    },
+    {
+      "path": "GITHUB-UPDATE-3.11.md",
+      "bytes": 387,
+      "sha256": "2a86d05904ef3da7167b32c8a783aa7529b9ec205de35295312da7d4393432c6"
     },
     {
       "path": "GITHUB-UPDATE-3.2.md",
@@ -125,13 +130,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 1876,
-      "sha256": "02a4f52bbda53086c9482dcbcf95ab862022774791cc4414f9dd509424b4fbab"
+      "bytes": 2073,
+      "sha256": "02c242b2f6ba3c3217436f7889e27084e1cdaf73733bd28d59954692d0468b18"
     },
     {
       "path": "RELEASE-AUDIT.json",
-      "bytes": 306,
-      "sha256": "34bed02fcf8e0a6382e27138a3621e263cb3d549c91952cbde2b73db1a1f0e83"
+      "bytes": 308,
+      "sha256": "c8a669657b296181e35846004482761c104d332bc04eeaeab90398505d281190"
     },
     {
       "path": "RELEASE_NOTES_v3.0.1.md",
@@ -157,6 +162,11 @@
       "path": "RELEASE_NOTES_v3.10.md",
       "bytes": 229,
       "sha256": "a17f87086a2a23ca7b6166a4a7253a6ae58c942bca4aa392b850e8f437952224"
+    },
+    {
+      "path": "RELEASE_NOTES_v3.11.md",
+      "bytes": 190,
+      "sha256": "dac7199e17af404da7dcbf1c3924a1fc29e8bd4cdbe7b6764ac5d4b4db966f45"
     },
     {
       "path": "RELEASE_NOTES_v3.2.md",
@@ -216,7 +226,7 @@
     {
       "path": "VERSION.txt",
       "bytes": 5,
-      "sha256": "7a41a41354ab8049091ef1a00253ca00567f5a1d3f9aef5502c0b4b5ce9ae707"
+      "sha256": "49a506dd32096b010d75205acf3430c9ae6c40351888129499e5a5e487126c93"
     },
     {
       "path": "accessibility-v33.css",
@@ -235,8 +245,8 @@
     },
     {
       "path": "admin.html",
-      "bytes": 4148,
-      "sha256": "e5313b1257a5ef265fecd3469a2c5f7c621ca30127150e3d14bd7b6ee193994e"
+      "bytes": 4226,
+      "sha256": "96b416e0c429dfe175b3ee6a04b2b7b4696863e788838c1af032d9074768d2db"
     },
     {
       "path": "admin.js",
@@ -305,8 +315,8 @@
     },
     {
       "path": "datenregister.json",
-      "bytes": 771,
-      "sha256": "c2e8612443f36f13249799a2e8301f02f772943a7e0075522f5511f27073ec4e"
+      "bytes": 798,
+      "sha256": "fd8cb6252bdb2850eb51126ff09bfae91ed51b0f3a10f9e796cec1201496e430"
     },
     {
       "path": "dfb-pokal.html",
@@ -429,14 +439,29 @@
       "sha256": "2c97fa70326dd99d1d6ce95fff81d7c3d30da2c5c16df9a2a0a2b1cca83c2022"
     },
     {
+      "path": "scripts/__pycache__/build_release_manifest.cpython-313.pyc",
+      "bytes": 1899,
+      "sha256": "17bfecabdf63793c184903059efa0ceeb0e53c972f7438e620155eee6ca071a5"
+    },
+    {
+      "path": "scripts/__pycache__/release_audit.cpython-313.pyc",
+      "bytes": 4463,
+      "sha256": "b16b1c07bd3dd9886c39819fa88a0fe827293a02362dc354d84a805011fe45cd"
+    },
+    {
+      "path": "scripts/__pycache__/update_data.cpython-313.pyc",
+      "bytes": 1969,
+      "sha256": "cc5f9abe77b4a349dad37364b539d53e94e6031912e493ef5185d3dc43dc3ac1"
+    },
+    {
       "path": "scripts/build_release_manifest.py",
       "bytes": 951,
-      "sha256": "1b990459df3001f1d754d20946efb8c7b6b07f352ccb1afebec99dfc61c4a7f3"
+      "sha256": "367ba4f71c85e4233490e5c9509c79bd6a2a1b43deaa0158bdbc51de52d2c06b"
     },
     {
       "path": "scripts/release_audit.py",
-      "bytes": 2745,
-      "sha256": "3905cb60bf0d884ee36af3b449cfa512b9b3d85f6f3c51feaee01b16cfc5af13"
+      "bytes": 2813,
+      "sha256": "70704f211d360c9391b9375e59de8ac75e22883721a1cfa2d9d949bcc9889294"
     },
     {
       "path": "scripts/update_data.py",
@@ -480,8 +505,8 @@
     },
     {
       "path": "systemstatus.json",
-      "bytes": 1596,
-      "sha256": "792ee10e577da13f5ec291613fb30b681f0fda9ee648512caf321f2669d298e2"
+      "bytes": 1703,
+      "sha256": "aa5c9a3dc60832e36f6d5a6bc81c48f0e190d0a284cd24254c7232341701f4bf"
     },
     {
       "path": "team-teilnehmerpflege.css",
@@ -507,6 +532,26 @@
       "path": "teilnehmer.json",
       "bytes": 18624,
       "sha256": "5bc43b0a5bf08fb7e45114665909f2ea429d211a224a44e420436a4b07c6757e"
+    },
+    {
+      "path": "tipppflege.css",
+      "bytes": 1343,
+      "sha256": "5bf00e6fa22a63685b4396950edd2c66e07ff186009c8e79dfdcdb1a9dd168d0"
+    },
+    {
+      "path": "tipppflege.html",
+      "bytes": 3757,
+      "sha256": "34126bd5d3617e8580aec648d28968e2eef8328576a81b7fa25237f7f8a3468d"
+    },
+    {
+      "path": "tipppflege.js",
+      "bytes": 7694,
+      "sha256": "d7e0e866a9effe1cdf1e6411748ad9d2d98b5a4fc3ade4bf0db67dde4a3895bc"
+    },
+    {
+      "path": "tipps.json",
+      "bytes": 234,
+      "sha256": "00be261523edb88f2c30db212660e62424bc5d900203163a748683a4d2102818"
     },
     {
       "path": "tippspieltage.json",

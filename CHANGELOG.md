@@ -1,3 +1,12 @@
+# Version 3.11 – Zentrale Tippdaten
+
+- Neue lokale Pflegeoberfläche `tipppflege.html`.
+- Tipps werden über stabile Teilnehmer- und Spiel-IDs referenziert.
+- Prüfung auf doppelte Tipps je Teilnehmer und Spiel, ungültige Torwerte und unbekannte Referenzen.
+- Suche, Filter, Bearbeitung, Kopie, lokale Löschung und Export der vollständigen `tipps.json`.
+- Direkter Zugang aus dem Administrationszentrum.
+- Keine automatische Änderung des GitHub-Repositories.
+
 # Version 3.9 – Zentrale Wettbewerbsverwaltung
 
 - Neue lokale Pflegeoberfläche `wettbewerbspflege.html`.
