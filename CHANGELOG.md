@@ -1,3 +1,11 @@
+# Version 4.0.3 – Trennung Spielerbereich und Administration – 31.07.2026
+
+- Öffentliche Wettbewerbsseiten konsequent auf Inhalte für Mitspieler reduziert.
+- Administrationszentrum, Prüfprotokolle, Datenregister, Konsistenzprüfungen, Export- und Datenpflegeansichten aus allen Wettbewerbsseiten entfernt.
+- Sichtbar bleiben Wettbewerbsnavigation, aktuelle Wettbewerbslage, Spiele, Ergebnisse, Tabellen und sportliche Statistiken.
+- Sämtliche Verwaltungsseiten und Funktionen bleiben unverändert vorhanden, sind aber nicht mehr aus dem öffentlichen Wettbewerbsbereich verlinkt.
+- Keine Änderung an Datenbeständen, Wertungslogik, Kachelgrößen oder mobiler Darstellung.
+
 # Changelog
 
 ## Version 4.0.2 – Highscore-Teilnehmerabgleich

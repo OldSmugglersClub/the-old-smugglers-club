@@ -1264,13 +1264,7 @@
     root.innerHTML = "";
     document.body.classList.add(`page-${slug}`);
     renderCompetitionNavigator(root);
-    renderCentralValidation(root);
-    renderMaintenancePanel(root);
-    renderCentralDataRegistry(gameData, teamData, root);
-    renderCompetitionFleetDashboard(gameData, root);
-    renderCompetitionDataCockpit(gameData, teamData, root);
     renderCompetitionSituation(gameData, teamData, root);
-    renderCompetitionDataQuality(gameData, root);
     if (slug === "bundesliga" || slug === "dynamo-dresden") {
       renderQuickBackButton(buttons, root);
     }

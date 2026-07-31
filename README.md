@@ -116,6 +116,6 @@ Die Tippfristen-Kontrolle befindet sich in `tippfristen.html` und prüft bestät
 
 Version 4.0 ist die produktionsbereite Basis. Die zentrale `teilnehmer.json` enthält den Kicktipp-Mitgliederstand vom 31.07.2026 mit 100 aktiven Teilnehmern. Bestehende IDs bleiben stabil. E-Mail-Adressen wurden nicht übernommen. Details stehen in `teilnehmer-importbericht.json` und `DATENSCHUTZ-HINWEIS.md`.
 
-## Version 4.0.2
+## Version 4.0.3
 
 Die Highscore-Rückfallquelle ist mit der zentralen Teilnehmerliste synchronisiert. Gesamt- und Spieltagswertung enthalten nun alle 100 aktiven Mitglieder.
