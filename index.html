@@ -4888,6 +4888,26 @@
   </style>
   <link rel="stylesheet" href="./highscore.css?v=4.0.1">
   <link rel="stylesheet" href="./accessibility-v33.css">
+  <style id="welcome-cleanup-v432">
+    /* Version 4.3.2: sämtliche dekorativen Scheiben-/Kompassreste der Startzentrale abschalten */
+    body main .hero-grid > .welcome-panel::before,
+    body main .hero-grid > .welcome-panel::after {
+      content: none !important;
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      border: 0 !important;
+      background: none !important;
+      background-image: none !important;
+      box-shadow: none !important;
+      filter: none !important;
+      opacity: 0 !important;
+      transform: none !important;
+    }
+    body main .hero-grid > .welcome-panel {
+      background-image: none !important;
+    }
+  </style>
 </head>
 
 <body>

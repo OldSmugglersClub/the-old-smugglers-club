@@ -746,3 +746,10 @@
 - Statische HTML-Werte bleiben als sichere Rückfallanzeige erhalten, falls das Register nicht geladen werden kann.
 - Reihenfolge, Symbole, Texte für Mitspieler, Kachelgrößen und mobile Darstellung unverändert belassen.
 - Keine Bilderstellung und keine neuen Bilddateien.
+
+## Version 4.3.2 – Bereinigung Startzentrale – 31.07.2026
+
+- Verbliebenen Scheiben-/Kompassrest aus der Startzentrale vollständig entfernt.
+- Pseudo-Elemente und Hintergrundgrafikreste der Willkommen-Kachel mit einer abschließenden, eindeutig priorisierten CSS-Regel deaktiviert.
+- Inhalt, Statusfelder, Hauptbutton, Schnellzugriffe, Kachelgröße, Raster und mobile Darstellung unverändert belassen.
+- Keine Bilderstellung und keine neuen Bilddateien.
