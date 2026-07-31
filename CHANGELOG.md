@@ -297,3 +297,7 @@
 - Pflichtdateien, lokale Referenzen und sämtliche JSON-Dateien erneut automatisiert geprüft.
 - Release-Manifest mit SHA-256-Prüfsummen und Dateigrößen aller ausgelieferten Dateien neu erzeugt.
 - Keine Änderungen an Grundlayout, Raster, Kachelgrößen, Navigation oder freigegebenen Inhalten vorgenommen.
+
+
+## Version 3.0 FINAL
+- Offizieller Final-Release auf Basis des Release Candidates 2.50.
