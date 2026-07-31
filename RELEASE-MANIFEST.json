@@ -1,7 +1,7 @@
 {
-  "manifestVersion": "3.16",
-  "generatedAtUtc": "2026-07-31T10:38:20.326302+00:00",
-  "fileCount": 148,
+  "manifestVersion": "3.17",
+  "generatedAtUtc": "2026-07-31T10:41:46.581168+00:00",
+  "fileCount": 151,
   "files": [
     {
       "path": "ADMIN-HANDBUCH.md",
@@ -20,8 +20,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 27333,
-      "sha256": "0eb8c8be663fe692f33a2bededf2ee6dc89235c2bbcf20e09d6fa93f7a430b8f"
+      "bytes": 27908,
+      "sha256": "73617845204d3c35245356f663be8b2ae83ad0853d07b37a3080be33b9a0b5ba"
     },
     {
       "path": "CNAME",
@@ -87,6 +87,11 @@
       "path": "GITHUB-UPDATE-3.16.md",
       "bytes": 457,
       "sha256": "f1c180777b124b9ab2e6bbb363667155e0b990641bbb3baa38756ac87888be50"
+    },
+    {
+      "path": "GITHUB-UPDATE-3.17.md",
+      "bytes": 453,
+      "sha256": "98de0d722fc2e30424dd2876a8089cf643e4994d165ba1a067b76ebed5e40b1f"
     },
     {
       "path": "GITHUB-UPDATE-3.2.md",
@@ -155,13 +160,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 2879,
-      "sha256": "622bf3af6297bc4c33f93b870d8ecb04b0fec14ca4840e5be8760dfefec1e76a"
+      "bytes": 3117,
+      "sha256": "c5cae89ba47549f1f7556b60e0878dee2f7b1d2315a6ec84f3684543627487cf"
     },
     {
       "path": "RELEASE-AUDIT.json",
       "bytes": 308,
-      "sha256": "3fc45a5ab574d509f4fddeeb23f69cb981bdbf4fd125dee958b4776dcb59ffe0"
+      "sha256": "3c8a93ae8af51927917d4b00f17123fc99737194c12926dce14b9bfde795e6be"
     },
     {
       "path": "RELEASE_NOTES_v3.0.1.md",
@@ -217,6 +222,11 @@
       "path": "RELEASE_NOTES_v3.16.md",
       "bytes": 396,
       "sha256": "13045b34eb840ac598220021287562fc538da0669051c541ebf1bca078ce29d4"
+    },
+    {
+      "path": "RELEASE_NOTES_v3.17.md",
+      "bytes": 284,
+      "sha256": "ba2c252d442525df542e78c23632f6966a6deb7e9f455c9f6cb02503687926ad"
     },
     {
       "path": "RELEASE_NOTES_v3.2.md",
@@ -276,7 +286,7 @@
     {
       "path": "VERSION.txt",
       "bytes": 5,
-      "sha256": "6e426caa97e33e30f1e28f731e8902eb3b5afb7db194401a4909623538985322"
+      "sha256": "40755357e9917bfd34372cb8d6d76ce786dfb3170cd08fa2a0cab7903403a0ee"
     },
     {
       "path": "accessibility-v33.css",
@@ -295,8 +305,8 @@
     },
     {
       "path": "admin.html",
-      "bytes": 4556,
-      "sha256": "a07cdf8cdedc941b561dbca401301d3518eb92ee0203b69c15c4f1c0e314c0b6"
+      "bytes": 4628,
+      "sha256": "4785dfd41b92be511c3d092e5fabab12cd3355790d98e3b0fd0ea1b599df9151"
     },
     {
       "path": "admin.js",
@@ -390,8 +400,8 @@
     },
     {
       "path": "datenregister.json",
-      "bytes": 1052,
-      "sha256": "312133894827f2c9c034fb075570b191b998fa0c9a9c1470eeac048a24adb0c2"
+      "bytes": 1089,
+      "sha256": "501a434224183bbc68c512bba80178336a2e8a33fe116ea2387367496cc8bd05"
     },
     {
       "path": "dfb-pokal.html",
@@ -534,29 +544,14 @@
       "sha256": "2c97fa70326dd99d1d6ce95fff81d7c3d30da2c5c16df9a2a0a2b1cca83c2022"
     },
     {
-      "path": "scripts/__pycache__/build_release_manifest.cpython-313.pyc",
-      "bytes": 1899,
-      "sha256": "b03cd49ac760b1d25670e825a97f50af83ce23a06e80c1c5dbd41e8109a44e99"
-    },
-    {
-      "path": "scripts/__pycache__/release_audit.cpython-313.pyc",
-      "bytes": 4881,
-      "sha256": "896ee292b45921445b0fcec6ee5af4bfbed9f1d7c8f3d36a42e936cdfe0c7b79"
-    },
-    {
-      "path": "scripts/__pycache__/update_data.cpython-313.pyc",
-      "bytes": 1969,
-      "sha256": "cc5f9abe77b4a349dad37364b539d53e94e6031912e493ef5185d3dc43dc3ac1"
-    },
-    {
       "path": "scripts/build_release_manifest.py",
       "bytes": 951,
-      "sha256": "34cae478fe4fcfff47f6ec503596b89692806373eb5717933d50141d97998ae7"
+      "sha256": "d24097db5bd6602708a9c2bf72a14dd614c7c8bcaa33fcaccc0ef87a76cf0a47"
     },
     {
       "path": "scripts/release_audit.py",
-      "bytes": 3207,
-      "sha256": "cac2a5f2beed077ceb89c5876ad74b2cfaac2e4e637cb4e49b4644c73346ec1b"
+      "bytes": 3283,
+      "sha256": "9eecfd671df2876e7cf812f8b0e66ecf49316a074f1b89ef871a0f6abb38eb19"
     },
     {
       "path": "scripts/update_data.py",
@@ -635,8 +630,8 @@
     },
     {
       "path": "systemstatus.json",
-      "bytes": 2306,
-      "sha256": "ab35f9e0a4040ccf980e79406188cafdfe5b82af4c6cfc9690eb03dbc5d0ce5e"
+      "bytes": 2416,
+      "sha256": "1d15fae0d1fc2b558eca112d6a94a79185d6d1aa649b043d3910a9ef7abe4161"
     },
     {
       "path": "team-teilnehmerpflege.css",
@@ -654,9 +649,29 @@
       "sha256": "f6e7187fb95e4a9eceb7c5878743fbccdfda900b24f25b0f98a007d2638452ac"
     },
     {
+      "path": "teampunkte.json",
+      "bytes": 311,
+      "sha256": "39fd536d84ad2e468b9b81e1943c0b9ba068344bdb8e0fbc08eeeec09feec463"
+    },
+    {
       "path": "teams.json",
       "bytes": 15484,
       "sha256": "9cc37f9345122c623ae252d16662b4076962a2bdc9a6c1bb9fc9efbca55edbdf"
+    },
+    {
+      "path": "teamwertung.css",
+      "bytes": 589,
+      "sha256": "292376a07ccc600110b4bf345df10416cd24a7ca93a7d732c001ee70270677d1"
+    },
+    {
+      "path": "teamwertung.html",
+      "bytes": 2870,
+      "sha256": "2f12418dc1ae488c0e6fd174354fb1d87ca615d2fc4a086e269a869512ccb82d"
+    },
+    {
+      "path": "teamwertung.js",
+      "bytes": 5197,
+      "sha256": "bf76305771971d9951201da865332ae0f9ad614aaf6a0c2314ca5008490ff1f7"
     },
     {
       "path": "teilnehmer.json",

@@ -455,3 +455,13 @@
 - 34 Dynamo-Spiele als stabile Smuggleraufträge zentral verknüpft.
 - Pflege, Prüfung und Export von `smugglerauftraege.json` ergänzt.
 - Automatische Fortschritts- und Statusfelder für die Startseitenkachel.
+
+## Version 3.17 – Zentrale Teamwertung – 31.07.2026
+
+- Neue Auswertungsseite `teamwertung.html`.
+- Aggregiert die zentrale Einzelwertung anhand der Teamzuordnung in `teilnehmer.json`.
+- Teamrangliste mit Punkten, Mitgliedern, Trefferstufen, gewerteten Tipps und Punkten je Mitglied.
+- Mitgliederübersicht, Suche, Mindestteamgröße sowie JSON- und CSV-Export ergänzt.
+- Neue zentrale Exportdatei `teampunkte.json`.
+- Teilnehmer ohne Team bleiben vollständig in der Einzelwertung erhalten.
+- Öffentliches Grundlayout, Raster und Kachelgrößen unverändert belassen.
