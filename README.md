@@ -34,6 +34,6 @@ Die Seite `daten-cockpit.html` zeigt alle Wettbewerbe, Spielstände und den zent
 ## Zentrale Spielpflege
 Über `spielpflege.html` kann die zentrale `spieldaten.json` lokal geprüft, bearbeitet und für den manuellen GitHub-Upload exportiert werden.
 
-## Version 3.9
+## Version 3.10
 
 Die lokale Wettbewerbsverwaltung erzeugt nach Prüfung eine vollständige `wettbewerbe.json`. GitHub-Dateien werden nicht automatisch verändert.

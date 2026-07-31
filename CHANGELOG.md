@@ -405,3 +405,10 @@
 - Karteninhalte bleiben innerhalb ihrer Kacheln; Überschriften und Werte umbrechen kontrolliert.
 - Abstände, Schriftgrößen und Innenränder für schmale Ansichten angepasst.
 - Desktop-Layout und bestehende Kachelgrößen bleiben unverändert.
+
+## Version 3.10 – Zentrale Teilnehmer- und Teamdaten – 31.07.2026
+- Neue Pflegeoberfläche `team-teilnehmerpflege.html` für Mannschaften und Teilnehmer.
+- Zentrale Teilnehmerdatei `teilnehmer.json` aus dem bestätigten Highscore-Bestand initialisiert.
+- Eindeutige IDs, Aktivstatus, Teamzuordnung und lokale JSON-Exporte ergänzt.
+- Doppelte IDs und Namen werden vor dem Export erkannt.
+- Keine Änderungen an Grundlayout, Kachelgrößen oder öffentlicher Navigation.

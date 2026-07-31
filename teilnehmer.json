@@ -1,0 +1,988 @@
+{
+  "schemaVersion": 1,
+  "datenVersion": 1,
+  "aktualisiert": "2026-07-31",
+  "hinweis": "Zentrale Teilnehmerliste. Anzeigenamen werden einmal gepflegt und über eine stabile Teilnehmer-ID referenziert.",
+  "teilnehmer": [
+    {
+      "id": "11le",
+      "name": "11LE",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "11LE",
+        "notiz": null
+      }
+    },
+    {
+      "id": "18amfg99",
+      "name": "18AMFG99",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "18AMFG99",
+        "notiz": null
+      }
+    },
+    {
+      "id": "adamj",
+      "name": "AdamJ",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "AdamJ",
+        "notiz": null
+      }
+    },
+    {
+      "id": "alex2507",
+      "name": "Alex2507",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Alex2507",
+        "notiz": null
+      }
+    },
+    {
+      "id": "andy1304",
+      "name": "Andy1304",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Andy1304",
+        "notiz": null
+      }
+    },
+    {
+      "id": "audauzvares",
+      "name": "Audauzvares",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Audauzvares",
+        "notiz": null
+      }
+    },
+    {
+      "id": "aufdieblaue",
+      "name": "AufdieBlaue",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "AufdieBlaue",
+        "notiz": null
+      }
+    },
+    {
+      "id": "baslermario",
+      "name": "baslermario",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "baslermario",
+        "notiz": null
+      }
+    },
+    {
+      "id": "ben1909",
+      "name": "Ben1909",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Ben1909",
+        "notiz": null
+      }
+    },
+    {
+      "id": "bene",
+      "name": "Bene",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Bene",
+        "notiz": null
+      }
+    },
+    {
+      "id": "berndibroti",
+      "name": "Berndibroti",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Berndibroti",
+        "notiz": null
+      }
+    },
+    {
+      "id": "best10",
+      "name": "Best10",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Best10",
+        "notiz": null
+      }
+    },
+    {
+      "id": "bigdog",
+      "name": "Bigdog",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Bigdog",
+        "notiz": null
+      }
+    },
+    {
+      "id": "birgit-blaubart",
+      "name": "Birgit_Blaubart",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Birgit_Blaubart",
+        "notiz": null
+      }
+    },
+    {
+      "id": "borussiamg1900",
+      "name": "BORUSSIAMG1900",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "BORUSSIAMG1900",
+        "notiz": null
+      }
+    },
+    {
+      "id": "bvb09-opam",
+      "name": "BvB09-OpaM",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "BvB09-OpaM",
+        "notiz": null
+      }
+    },
+    {
+      "id": "cali79",
+      "name": "Cali79",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Cali79",
+        "notiz": null
+      }
+    },
+    {
+      "id": "co",
+      "name": "Co",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Co",
+        "notiz": null
+      }
+    },
+    {
+      "id": "cobra",
+      "name": "cobra",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "cobra",
+        "notiz": null
+      }
+    },
+    {
+      "id": "cobra75",
+      "name": "Cobra75",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Cobra75",
+        "notiz": null
+      }
+    },
+    {
+      "id": "dani1893",
+      "name": "Dani1893",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Dani1893",
+        "notiz": null
+      }
+    },
+    {
+      "id": "ddd",
+      "name": "Ddd",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Ddd",
+        "notiz": null
+      }
+    },
+    {
+      "id": "dominik1966",
+      "name": "dominik1966",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "dominik1966",
+        "notiz": null
+      }
+    },
+    {
+      "id": "erik",
+      "name": "Erik",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Erik",
+        "notiz": null
+      }
+    },
+    {
+      "id": "fcahnungslos",
+      "name": "FCAhnungslos",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "FCAhnungslos",
+        "notiz": null
+      }
+    },
+    {
+      "id": "finch",
+      "name": "Finch",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Finch",
+        "notiz": null
+      }
+    },
+    {
+      "id": "flokicker94",
+      "name": "FloKicker94",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "FloKicker94",
+        "notiz": null
+      }
+    },
+    {
+      "id": "flying-dutchman",
+      "name": "Flying-Dutchman",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Flying-Dutchman",
+        "notiz": null
+      }
+    },
+    {
+      "id": "frankfurterjung",
+      "name": "FrankfurterJung",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "FrankfurterJung",
+        "notiz": null
+      }
+    },
+    {
+      "id": "franzi12345",
+      "name": "Franzi12345",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Franzi12345",
+        "notiz": null
+      }
+    },
+    {
+      "id": "g-1000",
+      "name": "G.1000",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "G.1000",
+        "notiz": null
+      }
+    },
+    {
+      "id": "gerrit1887",
+      "name": "Gerrit1887",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Gerrit1887",
+        "notiz": null
+      }
+    },
+    {
+      "id": "glatze583",
+      "name": "Glatze583",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Glatze583",
+        "notiz": null
+      }
+    },
+    {
+      "id": "glueckspfennig",
+      "name": "Glückspfennig",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Glückspfennig",
+        "notiz": null
+      }
+    },
+    {
+      "id": "gruber",
+      "name": "gRuBer",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "gRuBer",
+        "notiz": null
+      }
+    },
+    {
+      "id": "handgottes",
+      "name": "HandGottes",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "HandGottes",
+        "notiz": null
+      }
+    },
+    {
+      "id": "hardy17",
+      "name": "Hardy17",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Hardy17",
+        "notiz": null
+      }
+    },
+    {
+      "id": "ibra-goat",
+      "name": "ibra.goat",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "ibra.goat",
+        "notiz": null
+      }
+    },
+    {
+      "id": "jakob",
+      "name": "Jakob",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Jakob",
+        "notiz": null
+      }
+    },
+    {
+      "id": "juergen70",
+      "name": "Juergen70",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Juergen70",
+        "notiz": null
+      }
+    },
+    {
+      "id": "jungunddurstig",
+      "name": "JungundDurstig",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "JungundDurstig",
+        "notiz": null
+      }
+    },
+    {
+      "id": "juri",
+      "name": "JuRi",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "JuRi",
+        "notiz": null
+      }
+    },
+    {
+      "id": "jwfussball",
+      "name": "JWFUSSBALL",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "JWFUSSBALL",
+        "notiz": null
+      }
+    },
+    {
+      "id": "kev1999",
+      "name": "Kev1999",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Kev1999",
+        "notiz": null
+      }
+    },
+    {
+      "id": "kevin",
+      "name": "Kevin",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Kevin",
+        "notiz": null
+      }
+    },
+    {
+      "id": "kleinersachse",
+      "name": "kleinersachse",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "kleinersachse",
+        "notiz": null
+      }
+    },
+    {
+      "id": "kunstblume",
+      "name": "Kunstblume",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Kunstblume",
+        "notiz": null
+      }
+    },
+    {
+      "id": "laaura0804",
+      "name": "Laaura0804",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Laaura0804",
+        "notiz": null
+      }
+    },
+    {
+      "id": "lattenkracher",
+      "name": "Lattenkracher",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Lattenkracher",
+        "notiz": null
+      }
+    },
+    {
+      "id": "luca",
+      "name": "Luca",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Luca",
+        "notiz": null
+      }
+    },
+    {
+      "id": "lucas",
+      "name": "Lucas",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Lucas",
+        "notiz": null
+      }
+    },
+    {
+      "id": "lucaspodolski",
+      "name": "LucasPodolski",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "LucasPodolski",
+        "notiz": null
+      }
+    },
+    {
+      "id": "lucipher",
+      "name": "LuCipher",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "LuCipher",
+        "notiz": null
+      }
+    },
+    {
+      "id": "luki1887",
+      "name": "Luki1887",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Luki1887",
+        "notiz": null
+      }
+    },
+    {
+      "id": "maikiliii",
+      "name": "Maikiliii",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Maikiliii",
+        "notiz": null
+      }
+    },
+    {
+      "id": "manuel",
+      "name": "Manuel",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Manuel",
+        "notiz": null
+      }
+    },
+    {
+      "id": "marc86",
+      "name": "Marc86",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Marc86",
+        "notiz": null
+      }
+    },
+    {
+      "id": "marcor",
+      "name": "MarcoR",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "MarcoR",
+        "notiz": null
+      }
+    },
+    {
+      "id": "marius",
+      "name": "Marius",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Marius",
+        "notiz": null
+      }
+    },
+    {
+      "id": "mariusv",
+      "name": "mariusv",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "mariusv",
+        "notiz": null
+      }
+    },
+    {
+      "id": "mary-grace",
+      "name": "Mary-Grace",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Mary-Grace",
+        "notiz": null
+      }
+    },
+    {
+      "id": "maxpam",
+      "name": "MaxPam",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "MaxPam",
+        "notiz": null
+      }
+    },
+    {
+      "id": "medic",
+      "name": "Medic",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Medic",
+        "notiz": null
+      }
+    },
+    {
+      "id": "mikoog",
+      "name": "MiKoog",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "MiKoog",
+        "notiz": null
+      }
+    },
+    {
+      "id": "milad",
+      "name": "Milad",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Milad",
+        "notiz": null
+      }
+    },
+    {
+      "id": "modric2000",
+      "name": "Modric2000",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Modric2000",
+        "notiz": null
+      }
+    },
+    {
+      "id": "mythos",
+      "name": "Mythos",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Mythos",
+        "notiz": null
+      }
+    },
+    {
+      "id": "nick-zg-1501",
+      "name": "Nick_ZG_1501",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Nick_ZG_1501",
+        "notiz": null
+      }
+    },
+    {
+      "id": "normiks",
+      "name": "Normiks",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Normiks",
+        "notiz": null
+      }
+    },
+    {
+      "id": "nurderscf",
+      "name": "NurDerSCF",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "NurDerSCF",
+        "notiz": null
+      }
+    },
+    {
+      "id": "oifinger",
+      "name": "Oifinger",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Oifinger",
+        "notiz": null
+      }
+    },
+    {
+      "id": "oliver",
+      "name": "Oliver",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Oliver",
+        "notiz": null
+      }
+    },
+    {
+      "id": "opipeter",
+      "name": "Opipeter",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Opipeter",
+        "notiz": null
+      }
+    },
+    {
+      "id": "pauli",
+      "name": "Pauli",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Pauli",
+        "notiz": null
+      }
+    },
+    {
+      "id": "playboymarc88",
+      "name": "PlayBoyMarc88",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "PlayBoyMarc88",
+        "notiz": null
+      }
+    },
+    {
+      "id": "pochzerjung",
+      "name": "PochzerJung",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "PochzerJung",
+        "notiz": null
+      }
+    },
+    {
+      "id": "potterhead",
+      "name": "Potterhead",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Potterhead",
+        "notiz": null
+      }
+    },
+    {
+      "id": "quick",
+      "name": "Quick",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Quick",
+        "notiz": null
+      }
+    },
+    {
+      "id": "realzaragoza",
+      "name": "Realzaragoza",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Realzaragoza",
+        "notiz": null
+      }
+    },
+    {
+      "id": "redwing",
+      "name": "Redwing",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Redwing",
+        "notiz": null
+      }
+    },
+    {
+      "id": "rk69",
+      "name": "RK69",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "RK69",
+        "notiz": null
+      }
+    },
+    {
+      "id": "ronny75",
+      "name": "Ronny75",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Ronny75",
+        "notiz": null
+      }
+    },
+    {
+      "id": "salas1904",
+      "name": "Salas1904",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Salas1904",
+        "notiz": null
+      }
+    },
+    {
+      "id": "sam2004",
+      "name": "Sam2004",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Sam2004",
+        "notiz": null
+      }
+    },
+    {
+      "id": "sam-entspender",
+      "name": "SAM_ENTSPENDER",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "SAM_ENTSPENDER",
+        "notiz": null
+      }
+    },
+    {
+      "id": "servus",
+      "name": "Servus",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Servus",
+        "notiz": null
+      }
+    },
+    {
+      "id": "souvard",
+      "name": "Souvard",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Souvard",
+        "notiz": null
+      }
+    },
+    {
+      "id": "steff77",
+      "name": "Steff77",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Steff77",
+        "notiz": null
+      }
+    },
+    {
+      "id": "sven-huhn",
+      "name": "Sven_Huhn",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Sven_Huhn",
+        "notiz": null
+      }
+    },
+    {
+      "id": "tortugasge",
+      "name": "TortugaSGE",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "TortugaSGE",
+        "notiz": null
+      }
+    },
+    {
+      "id": "tribuna33",
+      "name": "TRIBUNA33",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "TRIBUNA33",
+        "notiz": null
+      }
+    },
+    {
+      "id": "waltersen",
+      "name": "Waltersen",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Waltersen",
+        "notiz": null
+      }
+    },
+    {
+      "id": "wildemoni",
+      "name": "WildeMoni",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "WildeMoni",
+        "notiz": null
+      }
+    },
+    {
+      "id": "xib0o",
+      "name": "Xib0o",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Xib0o",
+        "notiz": null
+      }
+    },
+    {
+      "id": "ximmox",
+      "name": "xIMMOx",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "xIMMOx",
+        "notiz": null
+      }
+    },
+    {
+      "id": "yauguru",
+      "name": "Yauguru",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Yauguru",
+        "notiz": null
+      }
+    },
+    {
+      "id": "yorik",
+      "name": "Yorik",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "Yorik",
+        "notiz": null
+      }
+    },
+    {
+      "id": "zweikampfgott",
+      "name": "ZweikampfGott",
+      "team": null,
+      "aktiv": true,
+      "profil": {
+        "anzeigename": "ZweikampfGott",
+        "notiz": null
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "version": "3.9",
+  "version": "3.10",
   "modus": "Plan B · datengetrieben",
   "aktualisiertAm": "2026-07-31T11:19:00+02:00",
   "module": [
@@ -62,8 +62,13 @@
       "name": "Zentrale Wettbewerbsverwaltung",
       "datei": "wettbewerbspflege.html",
       "status": "aktiv"
+    },
+    {
+      "name": "Zentrale Team- und Teilnehmerpflege",
+      "datei": "team-teilnehmerpflege.html",
+      "status": "aktiv"
     }
   ],
   "releaseStatus": "stabil",
-  "datenregisterVersion": 9
+  "datenregisterVersion": 10
 }

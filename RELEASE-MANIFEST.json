@@ -1,7 +1,7 @@
 {
-  "manifestVersion": "3.9",
-  "generatedAtUtc": "2026-07-31T10:08:18.544638+00:00",
-  "fileCount": 106,
+  "manifestVersion": "3.10",
+  "generatedAtUtc": "2026-07-31T10:11:36.219109+00:00",
+  "fileCount": 112,
   "files": [
     {
       "path": "ADMIN-HANDBUCH.md",
@@ -20,8 +20,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 24714,
-      "sha256": "d36f4b96c0dc53f3f5f14a7d5e1fe6bf2ee12af5c04cf81befb489440d23dd11"
+      "bytes": 25189,
+      "sha256": "ffc5f14d03c7a0798d37c16940bf63c0964634b5e3c0b8fbfa21bac7db43b739"
     },
     {
       "path": "CNAME",
@@ -52,6 +52,11 @@
       "path": "GITHUB-UPDATE-3.1.md",
       "bytes": 478,
       "sha256": "454f170fc69ca3efb2e0555df23c418d693f66e60e5393c8c91a0e5325ad800c"
+    },
+    {
+      "path": "GITHUB-UPDATE-3.10.md",
+      "bytes": 424,
+      "sha256": "a0965156114e1c8543453a34eb4ab58c8b890609b8c93859265b46d6668f2710"
     },
     {
       "path": "GITHUB-UPDATE-3.2.md",
@@ -120,13 +125,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 1875,
-      "sha256": "f7db6b506ceb8876dd64b7a937dc74ff16268ef8c0c232a99ee45c4e9b8bf94e"
+      "bytes": 1876,
+      "sha256": "02a4f52bbda53086c9482dcbcf95ab862022774791cc4414f9dd509424b4fbab"
     },
     {
       "path": "RELEASE-AUDIT.json",
       "bytes": 306,
-      "sha256": "e5fe80bd23c0fb6145ce23f975a21e0cdb05b9811b6424e2b1c7501995242fe6"
+      "sha256": "34bed02fcf8e0a6382e27138a3621e263cb3d549c91952cbde2b73db1a1f0e83"
     },
     {
       "path": "RELEASE_NOTES_v3.0.1.md",
@@ -147,6 +152,11 @@
       "path": "RELEASE_NOTES_v3.1.md",
       "bytes": 607,
       "sha256": "f3577ab14c4a7f1a0ac4c99b34d575431e8c0c328f165eb7e41e30eac4f7f75c"
+    },
+    {
+      "path": "RELEASE_NOTES_v3.10.md",
+      "bytes": 229,
+      "sha256": "a17f87086a2a23ca7b6166a4a7253a6ae58c942bca4aa392b850e8f437952224"
     },
     {
       "path": "RELEASE_NOTES_v3.2.md",
@@ -205,8 +215,8 @@
     },
     {
       "path": "VERSION.txt",
-      "bytes": 4,
-      "sha256": "3ec15f7f82d24dbcd050ce11c3994d981499b029772da41c37a2cd0acce87f6e"
+      "bytes": 5,
+      "sha256": "7a41a41354ab8049091ef1a00253ca00567f5a1d3f9aef5502c0b4b5ce9ae707"
     },
     {
       "path": "accessibility-v33.css",
@@ -225,8 +235,8 @@
     },
     {
       "path": "admin.html",
-      "bytes": 4059,
-      "sha256": "2a1d997ed70250f2d9e97af9b8fc1fa5c3c6364d77b7522fa8cb8da840cb499f"
+      "bytes": 4148,
+      "sha256": "e5313b1257a5ef265fecd3469a2c5f7c621ca30127150e3d14bd7b6ee193994e"
     },
     {
       "path": "admin.js",
@@ -295,8 +305,8 @@
     },
     {
       "path": "datenregister.json",
-      "bytes": 732,
-      "sha256": "c06c3d74dad60ff32f1d319d4a6b60db8fb49438b159272e7dc3c29bf3c005b0"
+      "bytes": 771,
+      "sha256": "c2e8612443f36f13249799a2e8301f02f772943a7e0075522f5511f27073ec4e"
     },
     {
       "path": "dfb-pokal.html",
@@ -420,13 +430,13 @@
     },
     {
       "path": "scripts/build_release_manifest.py",
-      "bytes": 950,
-      "sha256": "6329ccbd1d80d7a74534468839796a6899d8af8f5516af7f68482725d5b9cf2a"
+      "bytes": 951,
+      "sha256": "1b990459df3001f1d754d20946efb8c7b6b07f352ccb1afebec99dfc61c4a7f3"
     },
     {
       "path": "scripts/release_audit.py",
-      "bytes": 2637,
-      "sha256": "ea31943d65e37a06271e1643201fb1541342b929802b0e36a2680e1437b68efc"
+      "bytes": 2745,
+      "sha256": "3905cb60bf0d884ee36af3b449cfa512b9b3d85f6f3c51feaee01b16cfc5af13"
     },
     {
       "path": "scripts/update_data.py",
@@ -470,13 +480,33 @@
     },
     {
       "path": "systemstatus.json",
-      "bytes": 1459,
-      "sha256": "7cc51f544dbf846e143d5cf7ba7bad9371ec3083f11ec805a6ee1c788efc8fbc"
+      "bytes": 1596,
+      "sha256": "792ee10e577da13f5ec291613fb30b681f0fda9ee648512caf321f2669d298e2"
+    },
+    {
+      "path": "team-teilnehmerpflege.css",
+      "bytes": 1143,
+      "sha256": "96afd115fd9afaae1c9d90dfb7f3b2becb3ded5d63dcf1f9fef79f408cc5eafc"
+    },
+    {
+      "path": "team-teilnehmerpflege.html",
+      "bytes": 4340,
+      "sha256": "57662d6e2aaf7048d3cd1c5da94ba4b038096e8510d2b3b739e8b298ab422f7e"
+    },
+    {
+      "path": "team-teilnehmerpflege.js",
+      "bytes": 8466,
+      "sha256": "f6e7187fb95e4a9eceb7c5878743fbccdfda900b24f25b0f98a007d2638452ac"
     },
     {
       "path": "teams.json",
       "bytes": 15484,
       "sha256": "9cc37f9345122c623ae252d16662b4076962a2bdc9a6c1bb9fc9efbca55edbdf"
+    },
+    {
+      "path": "teilnehmer.json",
+      "bytes": 18624,
+      "sha256": "5bc43b0a5bf08fb7e45114665909f2ea429d211a224a44e420436a4b07c6757e"
     },
     {
       "path": "tippspieltage.json",
