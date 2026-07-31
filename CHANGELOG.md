@@ -1,3 +1,23 @@
+# Änderungsverlauf
+
+## Version 4.3.7 – Der Hohe Schmugglerrat – 31.07.2026
+
+### Geändert
+- Überschrift der Startzentrale von „Schmugglerrat“ in „Der Hohe Schmugglerrat“ geändert.
+- Zwischen Saison-Badge und Überschrift wurde die dezente Zusatzzeile „Hauptquartier des Old Smugglers Club“ ergänzt.
+- Typografie und mobile Schriftgröße innerhalb der bestehenden Startkachel angepasst.
+
+### Unverändert
+- Kachelgröße, Grid, Navigation, Grundlayout, Bilder und Datenlogik.
+
+### Betroffene Dateien
+- `index.html`
+- `VERSION.txt`
+- `CHANGELOG.md`
+- `README.md`
+- `RELEASE_NOTES_v4.3.7.md`
+- `GITHUB-UPDATE-4.3.7.md`
+
 # Changelog
 
 ## Version 4.3.6 – Schmugglerrat – 31.07.2026

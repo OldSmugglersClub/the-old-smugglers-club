@@ -4695,8 +4695,21 @@
       font-weight: 900;
     }
 
+    .welcome-headquarters-label {
+      display: block;
+      width: fit-content;
+      margin-top: clamp(.42rem, .8vw, .62rem);
+      color: #bfa264;
+      text-transform: uppercase;
+      letter-spacing: clamp(.1em, .24vw, .17em);
+      font-size: clamp(.58rem, .92vw, .72rem);
+      font-weight: 800;
+      line-height: 1.3;
+      text-shadow: 0 1px 2px #000;
+    }
+
     .welcome-command-center h1 {
-      margin: clamp(.48rem, 1vw, .75rem) 0 .2rem;
+      margin: clamp(.28rem, .7vw, .52rem) 0 .2rem;
       color: #e7c465;
       font-size: clamp(1.9rem, 4.25vw, 3.35rem);
       line-height: .98;
@@ -4881,7 +4894,8 @@
         padding: 1rem;
       }
       .welcome-command-copy { max-width: 100%; }
-      .welcome-command-center h1 { font-size: clamp(2rem, 10.4vw, 2.75rem); }
+      .welcome-headquarters-label { max-width: 100%; letter-spacing: .1em; font-size: .61rem; }
+      .welcome-command-center h1 { font-size: clamp(1.82rem, 9.1vw, 2.55rem); line-height: 1.02; }
       .welcome-intro { font-size: .93rem; line-height: 1.47; }
       .welcome-status-item { padding: .55rem .62rem; }
       .welcome-command-button { min-height: 49px; white-space: normal; text-align: center; }
@@ -5068,7 +5082,8 @@
         <div class="welcome-command-center" aria-labelledby="welcome-command-title">
           <div class="welcome-command-copy">
             <span class="welcome-season-badge" id="welcome-season-badge">Saison 2026/2027</span>
-            <h1 id="welcome-command-title">Schmugglerrat</h1>
+            <span class="welcome-headquarters-label">Hauptquartier des Old Smugglers Club</span>
+            <h1 id="welcome-command-title">Der Hohe Schmugglerrat</h1>
             <div class="welcome-divider" aria-hidden="true"><span></span></div>
             <p class="welcome-intro">
               Hier werden Kurse gesetzt, Missionen vorbereitet und alle Wettbewerbe
