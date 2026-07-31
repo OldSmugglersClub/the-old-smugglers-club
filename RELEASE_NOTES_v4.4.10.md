@@ -1,5 +1,3 @@
 # Release Notes – Version 4.4.10
 
-Erste kontrollierte öffentliche Verwendung der Schmugglersiegel in der Kachel „Aktueller Spieltag“.
-
-Die Integration arbeitet über Team-IDs, nutzt das zentrale Assetregister und fällt bei fehlenden SVG-Dateien auf neutrale Kürzel zurück. Andere Bereiche der Website bleiben unverändert.
+Schmugglersiegel wurden kontrolliert in die Bundesliga-Tabelle, Bundesliga-Spielpaarungen und Dynamo-Dresden-Spiele integriert. Die zentrale Badge-Komponente übernimmt Auflösung und Fallback. Layout, Grid, Navigation und Datenlogik bleiben unverändert.

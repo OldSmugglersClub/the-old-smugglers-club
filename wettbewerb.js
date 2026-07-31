@@ -22,6 +22,7 @@
   let competitionDefinitions = DEFAULT_COMPETITIONS;
   let centralValidation = null;
   let centralModel = null;
+  let currentTeamData = { teams: [] };
 
   function competitionDefinition(id) {
     return competitionDefinitions.find(item => item && item.id === id) || DEFAULT_COMPETITIONS.find(item => item.id === id) || null;
@@ -204,7 +205,11 @@
       values.forEach((value, columnIndex) => {
         const cell = document.createElement(columnIndex === 0 ? "th" : "td");
         if (columnIndex === 0) cell.scope = "row";
-        cell.textContent = value;
+        if (columnIndex === 1) {
+          cell.appendChild(createTeamIdentity(team.id, team.name, "team-identity--table"));
+        } else {
+          cell.textContent = value;
+        }
         tr.appendChild(cell);
       });
       tbody.appendChild(tr);
@@ -441,7 +446,7 @@
     stats.formRows.forEach(team => {
       const row = document.createElement("tr");
       const teamCell = document.createElement("td");
-      teamCell.textContent = team.name;
+      teamCell.appendChild(createTeamIdentity(team.id, team.name, "team-identity--table"));
       const formCell = document.createElement("td");
       const form = document.createElement("div");
       form.className = "form-badges";
@@ -501,6 +506,49 @@
     return teamLookup.get(teamId)?.name || fallback || "Team offen";
   }
 
+  function normalizeTeamLabel(value) {
+    return String(value || "")
+      .toLocaleLowerCase("de")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/\bsg\b/g, "")
+      .replace(/[^a-z0-9]+/g, " ")
+      .trim();
+  }
+
+  function resolveTeamId(teamId, teamNameValue) {
+    if (teamId) return teamId;
+    const wanted = normalizeTeamLabel(teamNameValue);
+    if (!wanted) return "";
+    const match = safeArray(currentTeamData && currentTeamData.teams).find(team => {
+      const labels = [team && team.name, team && team.kurzname, team && team.id];
+      return labels.some(label => {
+        const normalized = normalizeTeamLabel(label);
+        return normalized && (normalized === wanted || normalized.includes(wanted) || wanted.includes(normalized));
+      });
+    });
+    return match && match.id ? match.id : "";
+  }
+
+  function createTeamIdentity(teamId, teamNameValue, modifier = "") {
+    const wrap = document.createElement("span");
+    wrap.className = `team-identity${modifier ? ` ${modifier}` : ""}`;
+
+    const resolvedId = resolveTeamId(teamId, teamNameValue);
+    if (resolvedId && window.OSCTeamBadge) {
+      const badge = document.createElement("span");
+      badge.className = "team-identity__badge";
+      window.OSCTeamBadge.render(badge, resolvedId, teamNameValue, { loading: "lazy" });
+      wrap.appendChild(badge);
+    }
+
+    const name = document.createElement("span");
+    name.className = "team-identity__name";
+    name.textContent = teamNameValue || "Team offen";
+    wrap.appendChild(name);
+    return wrap;
+  }
+
   function centralGamesSection(data, teamData) {
     const games = centralGamesForPage(data);
     const teamLookup = createTeamLookup(teamData);
@@ -514,8 +562,10 @@
         datum: match.datumAnzeige || formatDate(match.datum || match.datumVon),
         datumSortierung: match.datum || match.datumVon || "9999-12-31",
         anstoss: match.anstoss || "Uhrzeit offen",
+        heimTeamId: match.heimTeamId || "",
         heim: teamName(teamLookup, match.heimTeamId, match.heim || "Heimteam offen"),
         trenner: "–",
+        auswaertsTeamId: match.auswaertsTeamId || "",
         auswaerts: teamName(teamLookup, match.auswaertsTeamId, match.auswaerts || "Auswärtsteam offen"),
         ergebnis: formatResult(match),
         status: match.status || "",
@@ -859,7 +909,12 @@ function renderCards(cards) {
       meta.textContent = [match.datum, match.anstoss].filter(Boolean).join(" · ");
 
       const pairing = document.createElement("strong");
-      pairing.textContent = [match.heim, match.trenner || "–", match.auswaerts].filter(Boolean).join(" ");
+      pairing.className = "match-pairing";
+      pairing.append(
+        createTeamIdentity(match.heimTeamId, match.heim, "team-identity--home"),
+        Object.assign(document.createElement("span"), { className: "match-pairing__separator", textContent: match.trenner || "–" }),
+        createTeamIdentity(match.auswaertsTeamId, match.auswaerts, "team-identity--away")
+      );
 
       const resultWrap = document.createElement("span");
       resultWrap.className = "match-result-wrap";
@@ -1104,6 +1159,9 @@ function renderCards(cards) {
         slug === "bundesliga" ? fetchJson(bundesligaTableUrl, false) : Promise.resolve({ teams: [] }),
         fetchJson(competitionConfigUrl, false)
       ]);
+
+      currentTeamData = teamData && typeof teamData === "object" ? teamData : { teams: [] };
+      if (window.OSCTeamBadge) await window.OSCTeamBadge.load();
 
       const sharedModel = window.OSCDataModel ? await window.OSCDataModel.load() : null;
       centralModel = sharedModel || null;

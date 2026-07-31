@@ -1,5 +1,33 @@
 # CHANGELOG
 
+## Version 4.4.10 – Schmugglersiegel in Bundesliga und Dynamo-Spielen
+
+### Neu
+- Schmugglersiegel in der Bundesliga-Tabelle und der Bundesliga-Formtabelle
+- Schmugglersiegel bei Mannschaftspaarungen im Bundesliga-Spielplan
+- Schmugglersiegel bei den Dynamo-Dresden-Smuggleraufträgen
+- automatischer Kürzel-Fallback bei fehlendem oder nicht ladbarem SVG
+
+### Geändert
+- `wettbewerb.js` nutzt die vorhandene zentrale Komponente `team-badge.js`
+- Team-IDs werden aus den zentralen Spieldaten bis zur Darstellung weitergegeben
+- Mannschaftsnamen ohne direkte Team-ID werden anhand von `teams.json` aufgelöst
+- responsive Abstände für Tabellen und Spielpaarungen ergänzt
+
+### Unverändert
+- keine Änderung an Grid, Kachelgrößen, Navigation oder Grundlayout
+- keine offiziellen Vereinswappen und keine Bildgenerierung
+- Vereinsnamen bleiben die führende Information; Siegel sind ergänzend und rückbaubar
+
+### Betroffene Dateien
+- `bundesliga.html`
+- `dynamo-dresden.html`
+- `wettbewerb.js`
+- `wettbewerb.css`
+- `VERSION.txt`
+- `CHANGELOG.md`
+- `README.md`
+
 ## Version 4.4.9 – UEFA-Kandidatenpool und vorbereitete Schmugglersiegel
 
 ### Neu

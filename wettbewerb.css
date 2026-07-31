@@ -787,3 +787,21 @@ body.page-dynamo-dresden{
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Schmugglersiegel in Wettbewerbsseiten – Version 4.4.10 */
+.team-identity{display:inline-flex;align-items:center;gap:9px;min-width:0;vertical-align:middle}
+.team-identity__badge{display:inline-flex;align-items:center;justify-content:center;flex:0 0 34px;width:34px;height:34px;border-radius:50%;overflow:hidden;color:#f1d28a;font-size:.62rem;font-weight:900;line-height:1;text-align:center}
+.team-identity__badge img{display:block;width:100%;height:100%;object-fit:contain}
+.team-identity__name{min-width:0}
+.team-identity--table{justify-content:flex-start}
+.match-pairing{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:12px;width:100%;text-align:initial}
+.match-pairing .team-identity--home{justify-content:flex-end;text-align:right}
+.match-pairing .team-identity--away{justify-content:flex-start;text-align:left}
+.match-pairing__separator{color:#d4b46e;text-align:center}
+@media(max-width:800px){
+  .team-identity{gap:11px}
+  .team-identity__badge{flex-basis:32px;width:32px;height:32px}
+  .match-pairing{grid-template-columns:1fr;justify-items:center;gap:8px}
+  .match-pairing .team-identity--home,.match-pairing .team-identity--away{justify-content:center;text-align:center}
+  .match-pairing__separator{line-height:1}
+}

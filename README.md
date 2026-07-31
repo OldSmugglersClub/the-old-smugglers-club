@@ -65,3 +65,8 @@ Die vollständige Bibliothek umfasst alle 52 aktiven Teams aus `teams.json`. Die
 ## UEFA-Kandidatenpool (Version 4.4.9)
 
 `uefa-kandidaten-2026-27.json` dokumentiert alle am 31.07.2026 auf den offiziellen UEFA-Teamseiten geführten Mannschaften der Champions League und Europa League. `teams.json` und die Schmugglersiegel-Bibliothek wurden vorsorglich erweitert. Nicht qualifizierte oder ausgeschiedene Teams bleiben unsichtbar, solange keine Wettbewerbsdatei auf ihre Team-ID verweist.
+
+
+## Schmugglersiegel-Integration (Version 4.4.10)
+
+Die zentrale Komponente `team-badge.js` wird nun auch auf den Wettbewerbsseiten Bundesliga und Dynamo Dresden verwendet. Siegel erscheinen ergänzend in Tabellen und Spielpaarungen. Fehlt ein Asset, bleibt der Vereinsname sichtbar und ein neutrales Kürzel dient als Fallback.
