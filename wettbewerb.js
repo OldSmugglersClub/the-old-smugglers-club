@@ -465,7 +465,7 @@
 
     const note = document.createElement("p");
     note.className = "data-note";
-    note.textContent = "Alle Werte werden ausschließlich aus den hinterlegten Bundesliga-Endergebnissen berechnet. Spielerbezogene Daten wie Torjäger oder Karten benötigen später eine eigene Datenquelle.";
+    note.textContent = "Die Statistik wird nach jedem eingetragenen Bundesliga-Ergebnis automatisch aktualisiert. Torjäger- und Kartenstatistiken folgen, sobald entsprechende Saisonwerte vorliegen.";
     section.appendChild(note);
     root.appendChild(section);
   }
@@ -657,56 +657,6 @@
     root.appendChild(section);
   }
 
-  function renderCompetitionDataCockpit(gameData, teamData, root) {
-    const games = centralGamesForPage(gameData);
-    const completed = games.filter(match => numericScore(match.heimtore) !== null && numericScore(match.auswaertstore) !== null);
-    const now = new Date();
-    const upcoming = games
-      .map(match => ({ match, date: gameTimestamp(match) }))
-      .filter(item => item.date && item.date >= now && !completed.includes(item.match))
-      .sort((a, b) => a.date - b.date);
-    const teams = createTeamLookup(teamData);
-    const next = upcoming[0] && upcoming[0].match;
-    const article = document.createElement("section");
-    article.className = "dynamic-section competition-cockpit";
-    const headingRow = document.createElement("div");
-    headingRow.className = "section-heading-row";
-    const heading = document.createElement("h2");
-    heading.textContent = "Wettbewerbs-Kompass";
-    const badge = document.createElement("span");
-    badge.className = "data-status-badge";
-    badge.textContent = gameData && gameData.aktualisiert ? `Datenstand ${formatDate(String(gameData.aktualisiert).slice(0,10))}` : "Zentrale Spieldaten";
-    headingRow.append(heading, badge);
-    article.appendChild(headingRow);
-
-    const grid = document.createElement("div");
-    grid.className = "competition-stat-grid";
-    const values = [
-      ["Geplante Spiele", String(games.length), games.length ? "zentral erfasst" : "noch keine Paarung hinterlegt"],
-      ["Abgeschlossen", String(completed.length), games.length ? `${Math.round((completed.length / games.length) * 100)} % des Umfangs` : "Saisonvorbereitung"],
-      ["Noch offen", String(Math.max(games.length - completed.length, 0)), "einschließlich terminierter Spiele"],
-      ["Nächster Termin", next ? formatDate(next.datum || next.datumVon) : "Noch offen", next ? `${teamName(teams,next.heimTeamId,next.heim)} – ${teamName(teams,next.auswaertsTeamId,next.auswaerts)}` : "wird aus spieldaten.json übernommen"]
-    ];
-    values.forEach(([label, value, detail]) => {
-      const card = document.createElement("div");
-      card.className = "competition-stat-card";
-      const small = document.createElement("span");
-      small.textContent = label;
-      const strong = document.createElement("strong");
-      strong.textContent = value;
-      const note = document.createElement("small");
-      note.textContent = detail;
-      card.append(small, strong, note);
-      grid.appendChild(card);
-    });
-    article.appendChild(grid);
-    const note = document.createElement("p");
-    note.className = "data-note";
-    note.textContent = "Der Kompass wertet ausschließlich die zentral hinterlegten Spiele aus. Fehlende Paarungen oder Ergebnisse werden nicht geschätzt.";
-    article.appendChild(note);
-    root.appendChild(article);
-  }
-
   function renderCompetitionSituation(gameData, teamData, root) {
     const games = centralGamesForPage(gameData);
     const teams = createTeamLookup(teamData);
@@ -777,56 +727,7 @@
     root.appendChild(section);
   }
 
-  function renderCompetitionDataQuality(gameData, root) {
-    const games = centralGamesForPage(gameData);
-    const missingTeams = games.filter(match => !match.heimTeamId || !match.auswaertsTeamId).length;
-    const missingDates = games.filter(match => !(match.datum || match.datumVon)).length;
-    const confirmed = games.filter(match => match.terminBestaetigt === true).length;
-    const sourceDates = games.map(match => match.quelleStand).filter(Boolean).sort();
-    const latestSource = sourceDates[sourceDates.length - 1] || (gameData && gameData.aktualisiert) || "";
-    const issues = missingTeams + missingDates;
-
-    const section = document.createElement("section");
-    section.className = "dynamic-section competition-quality";
-    const headingRow = document.createElement("div");
-    headingRow.className = "section-heading-row";
-    const heading = document.createElement("h2");
-    heading.textContent = "Terminstatus & Datenqualität";
-    const badge = document.createElement("span");
-    badge.className = `data-status-badge${issues ? " data-status-warning" : ""}`;
-    badge.textContent = issues ? `${issues} offene Datenfelder` : "Struktur vollständig";
-    headingRow.append(heading, badge);
-    section.appendChild(headingRow);
-
-    const grid = document.createElement("div");
-    grid.className = "quality-grid";
-    const values = [
-      ["Zeitgenau bestätigt", `${confirmed} von ${games.length}`, "Datum und Anstoß offiziell hinterlegt"],
-      ["Offene Teamangaben", String(missingTeams), missingTeams ? "Paarungen noch nicht vollständig" : "alle Teams referenziert"],
-      ["Offene Zeiträume", String(missingDates), missingDates ? "mindestens ein Datum fehlt" : "alle Spiele zeitlich eingeordnet"],
-      ["Quellenstand", latestSource ? formatDate(String(latestSource).slice(0, 10)) : "Nicht angegeben", "jüngster hinterlegter Quellenstand"]
-    ];
-    values.forEach(([label, value, detail]) => {
-      const card = document.createElement("div");
-      card.className = "quality-card";
-      const small = document.createElement("span");
-      small.textContent = label;
-      const strong = document.createElement("strong");
-      strong.textContent = value;
-      const note = document.createElement("small");
-      note.textContent = detail;
-      card.append(small, strong, note);
-      grid.appendChild(card);
-    });
-    section.appendChild(grid);
-    const note = document.createElement("p");
-    note.className = "data-note";
-    note.textContent = "Die Prüfung bewertet nur die vorhandene Datenstruktur. Sie ersetzt keine externe Termin- oder Ergebnisprüfung.";
-    section.appendChild(note);
-    root.appendChild(section);
-  }
-
-  function renderCentralValidation(root) {
+function renderCentralValidation(root) {
     const validation = centralValidation;
     if (!validation) return;
 
@@ -886,156 +787,7 @@
     root.appendChild(section);
   }
 
-  function maintenanceDate(value) {
-    if (!value) return "Nicht angegeben";
-    const normalized = String(value).slice(0, 10);
-    return formatDate(normalized) || String(value);
-  }
-
-  function createMaintenanceReport() {
-    const model = centralModel || {};
-    const validation = centralValidation || { status: "unknown", counts: {}, errors: [], warnings: [] };
-    return {
-      reportVersion: 2,
-      generatedAt: new Date().toISOString(),
-      season: model.competitionData && model.competitionData.saison || "2026/2027",
-      currentPage: slug,
-      websiteVersion: model.diagnostics && model.diagnostics.registry && model.diagnostics.registry.websiteVersion || "Nicht angegeben",
-      registryStatus: model.diagnostics && model.diagnostics.registry || null,
-      sourceDiagnostics: model.diagnostics && model.diagnostics.sources || {},
-      status: validation.status,
-      counts: validation.counts || {},
-      sourceDates: {
-        competitions: model.competitionData && model.competitionData.aktualisiert || "",
-        games: model.gameData && model.gameData.aktualisiert || "",
-        teams: model.teamData && model.teamData.aktualisiert || "",
-        matchdays: model.matchdayData && model.matchdayData.aktualisiert || ""
-      },
-      errors: safeArray(validation.errors),
-      warnings: safeArray(validation.warnings)
-    };
-  }
-
-  function downloadMaintenanceReport() {
-    const report = createMaintenanceReport();
-    const blob = new Blob([JSON.stringify(report, null, 2)], { type: "application/json;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = `osc-datenpruefung-${new Date().toISOString().slice(0, 10)}.json`;
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    URL.revokeObjectURL(url);
-  }
-
-  function renderMaintenancePanel(root) {
-    const model = centralModel;
-    if (!model) return;
-
-    const section = document.createElement("section");
-    section.className = "dynamic-section maintenance-panel";
-
-    const headingRow = document.createElement("div");
-    headingRow.className = "section-heading-row";
-    const heading = document.createElement("h2");
-    heading.textContent = "Datenpflege & Prüfprotokoll";
-    const badge = document.createElement("span");
-    badge.className = "data-status-badge";
-    const registryStatus = model.diagnostics && model.diagnostics.registry;
-    const failedSources = model.diagnostics && model.diagnostics.fallbackSources || [];
-    badge.textContent = failedSources.length ? `${failedSources.length} Quelle(n) im Rückfallmodus` : `Version ${registryStatus && registryStatus.websiteVersion || "unbekannt"}`;
-    badge.classList.toggle("data-status-warning", failedSources.length > 0);
-    headingRow.append(heading, badge);
-    section.appendChild(headingRow);
-
-    const sources = [
-      ["Website", "VERSION.txt", registryStatus && registryStatus.websiteVersion],
-      ["Datenregister", "datenregister.json", `Schema ${registryStatus && registryStatus.schemaVersion || "?"} · Daten ${registryStatus && registryStatus.datenVersion || "?"}`],
-      ["Wettbewerbe", "wettbewerbe.json", model.competitionData && model.competitionData.aktualisiert],
-      ["Spiele", "spieldaten.json", model.gameData && model.gameData.aktualisiert],
-      ["Teams", "teams.json", model.teamData && model.teamData.aktualisiert],
-      ["Tippspieltage", "tippspieltage.json", model.matchdayData && model.matchdayData.aktualisiert]
-    ];
-    const grid = document.createElement("div");
-    grid.className = "maintenance-grid";
-    sources.forEach(([label, file, updated]) => {
-      const card = document.createElement("article");
-      card.className = "maintenance-card";
-      const title = document.createElement("strong");
-      title.textContent = label;
-      const name = document.createElement("code");
-      name.textContent = file;
-      const date = document.createElement("span");
-      date.textContent = label === "Website" ? `Version: ${updated || "Nicht angegeben"}` : label === "Datenregister" ? String(updated || "Nicht angegeben") : `Datenstand: ${maintenanceDate(updated)}`;
-      card.append(title, name, date);
-      grid.appendChild(card);
-    });
-    section.appendChild(grid);
-
-    const controls = document.createElement("div");
-    controls.className = "maintenance-controls";
-    const download = document.createElement("button");
-    download.type = "button";
-    download.className = "btn btn-secondary maintenance-download";
-    download.textContent = "Prüfprotokoll herunterladen";
-    download.addEventListener("click", downloadMaintenanceReport);
-    const note = document.createElement("p");
-    note.className = "data-note";
-    note.textContent = failedSources.length ? "Mindestens eine zentrale Quelle konnte nicht geladen werden. Die Seite verwendet für diese Quelle sichere Rückfalldaten; Einzelheiten stehen im Prüfprotokoll." : "Version, Datenregister, Quellenstände und Strukturstatus wurden geladen. Das Prüfprotokoll verändert keine Website-Daten.";
-    controls.append(download, note);
-    section.appendChild(controls);
-    root.appendChild(section);
-  }
-
-  function renderCentralDataRegistry(gameData, teamData, root) {
-    const section = document.createElement("section");
-    section.className = "dynamic-section central-data-registry";
-
-    const headingRow = document.createElement("div");
-    headingRow.className = "section-heading-row";
-    const heading = document.createElement("h2");
-    heading.textContent = "Zentrale Datenbasis";
-    const badge = document.createElement("span");
-    badge.className = "data-status-badge";
-    badge.textContent = "Einheitlich verbunden";
-    headingRow.append(heading, badge);
-    section.appendChild(headingRow);
-
-    const allGames = allCentralGames(gameData);
-    const teams = safeArray(teamData && teamData.teams);
-    const currentDefinition = competitionDefinition(slug);
-    const cards = [
-      ["Wettbewerbsregister", "wettbewerbe.json", `${competitionDefinitions.length} Seiten zentral definiert`],
-      ["Spielquelle", "spieldaten.json", `${allGames.length} Spiele insgesamt erfasst`],
-      ["Teamregister", "teams.json", `${teams.length} Mannschaften zentral referenziert`],
-      ["Aktueller Filter", currentDefinition?.label || slug, currentDefinition?.filter?.type === "sonderwertung" ? "Auswahl über Sonderwertung" : "Auswahl über Wettbewerbsschlüssel"]
-    ];
-
-    const grid = document.createElement("div");
-    grid.className = "registry-grid";
-    cards.forEach(([label, value, detail]) => {
-      const card = document.createElement("article");
-      card.className = "registry-card";
-      const small = document.createElement("span");
-      small.textContent = label;
-      const strong = document.createElement("strong");
-      strong.textContent = value;
-      const note = document.createElement("small");
-      note.textContent = detail;
-      card.append(small, strong, note);
-      grid.appendChild(card);
-    });
-    section.appendChild(grid);
-
-    const note = document.createElement("p");
-    note.className = "data-note";
-    note.textContent = "Navigation, Seitenfilter und Spielzuordnung werden nun aus gemeinsamen zentralen Dateien gelesen. Seitenspezifische JSON-Dateien enthalten weiterhin nur Texte und redaktionelle Hinweise.";
-    section.appendChild(note);
-    root.appendChild(section);
-  }
-
-  function renderCards(cards) {
+function renderCards(cards) {
     const root = $("info-cards");
     root.innerHTML = "";
     safeArray(cards).forEach(card => {
@@ -1385,7 +1137,7 @@
     } catch (error) {
       console.error(error);
       const box = $("error");
-      box.textContent = "Die Wettbewerbsdaten konnten nicht geladen werden. Bitte prüfen, ob die passende JSON-Datei im selben Verzeichnis liegt.";
+      box.textContent = "Die Wettbewerbsdaten sind momentan nicht verfügbar. Bitte versuche es später erneut.";
       box.classList.remove("is-hidden");
     }
   }

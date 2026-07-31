@@ -1,4 +1,4 @@
-# The Old Smugglers Club – Version 4.0.4
+# The Old Smugglers Club – Version 4.0.5
 
 Die öffentliche GitHub-Pages-Ausgabe enthält ausschließlich den Spielerbereich. Die Administration wurde in ein separates lokales Paket ausgelagert und ist nicht über die Website erreichbar.
 
@@ -122,3 +122,7 @@ Version 4.0 ist die produktionsbereite Basis. Die zentrale `teilnehmer.json` ent
 ## Version 4.0.3
 
 Die Highscore-Rückfallquelle ist mit der zentralen Teilnehmerliste synchronisiert. Gesamt- und Spieltagswertung enthalten nun alle 100 aktiven Mitglieder.
+
+
+## Öffentlicher Spielerbereich 4.0.5
+Technische Verwaltungs-, Prüf- und Exportinformationen sind aus der öffentlichen Website entfernt. Die Administration bleibt ausschließlich im separaten lokalen Admin-Paket.

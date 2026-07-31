@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.0.5 – Bereinigung des öffentlichen Spielerbereichs
+
+- Technische Datenquellen-, Register- und Prüfhinweise aus dem öffentlichen Highscore entfernt.
+- Teilnehmerzahl ersetzt die interne Exportanzeige in der Highscore-Kopfzeile.
+- CSV- und technische Registerausgabe aus der öffentlichen Rangliste entfernt.
+- Rekorde, Feldanalyse, Chronik und Saisonverlauf mit verständlichen Spielertexten versehen.
+- Technische Ladefehler in neutrale Besucherhinweise umformuliert.
+- Nicht benötigte interne Altdateien aus dem öffentlichen Paket entfernt.
+- Lokaler Administrationsbereich bleibt unverändert.
+
 ## 4.0.4 – Öffentliche Website und lokale Administration getrennt
 
 - Sämtliche Administrations-, Pflege-, Kontroll- und Exportseiten aus dem öffentlichen GitHub-Paket entfernt.
