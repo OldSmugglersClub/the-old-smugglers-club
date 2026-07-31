@@ -19,7 +19,7 @@ for path in sorted(p for p in ROOT.rglob("*") if p.is_file()):
         "sha256": hashlib.sha256(data).hexdigest(),
     })
 manifest = {
-    "manifestVersion": "2.49",
+    "manifestVersion": "2.50",
     "generatedAtUtc": datetime.now(timezone.utc).isoformat(),
     "fileCount": len(entries),
     "files": entries,
