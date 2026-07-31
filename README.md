@@ -75,3 +75,9 @@ Die zentrale Komponente `team-badge.js` wird nun auch auf den Wettbewerbsseiten 
 ## Version 4.4.11 – robuste Schmugglersiegel
 
 Die zentrale Komponente erzeugt Schmugglersiegel nun direkt als Inline-SVG aus dem Register. Dadurch werden auf allen eingebundenen Seiten echte farbige Siegel statt reiner Fallback-Kürzel dargestellt, auch wenn einzelne externe SVG-Dateien fehlen oder falsch abgelegt wurden.
+
+
+Aktuelle Version: 4.4.12
+
+## Version 4.4.12
+Die zentrale Schmugglersiegel-Komponente ist nun auf allen öffentlichen Wettbewerbsseiten eingebunden.

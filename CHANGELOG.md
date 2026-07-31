@@ -1,5 +1,24 @@
 # CHANGELOG
 
+## Version 4.4.12
+
+### Neu
+- Schmugglersiegel-Komponente auf DFB-Pokal, Champions League, Europa League, Relegation, Piratenkodex und Weihnachtsregatta eingebunden.
+
+### Geändert
+- Footer-Versionsanzeige auf den betroffenen Seiten aktualisiert.
+
+### Betroffene Dateien
+- dfb-pokal.html
+- champions-league.html
+- europa-league.html
+- relegation.html
+- piratenkodex.html
+- weihnachtsregatta.html
+- VERSION.txt
+- README.md
+- CHANGELOG.md
+
 ## Version 4.4.11
 
 ### Behoben
