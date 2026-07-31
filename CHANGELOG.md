@@ -1,5 +1,14 @@
 # Changelog
 
+## Version 4.1.9 – Saisonakte für Spieler
+
+- Technische Begriffe auf der öffentlichen Saisonübersicht entfernt.
+- „Zentral hinterlegt“ und der sichtbare Verweis auf `spieldaten.json` durch verständliche Saisoninformationen ersetzt.
+- Hinweise zu noch nicht ausgelosten oder terminierten Begegnungen klarer formuliert.
+- Fehlermeldung der Saisonübersicht spielerfreundlich überarbeitet.
+- Europa League im Begrüßungstext der Startzentrale ergänzt.
+- Keine Änderung an Bildern, Grundraster, Kachelgrößen, Navigation oder Datenlogik.
+
 ## Version 4.1.8 – Responsive Stabilisierung
 
 - Globale Schutzregeln gegen horizontales Überlaufen in öffentlichen Kacheln ergänzt.

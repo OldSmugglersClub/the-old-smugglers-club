@@ -102,7 +102,7 @@
       const date = competitionData.aktualisiert || overview.aktualisiert;
       $("data-state").textContent = `Stand ${date ? date.split("-").reverse().join(".") : "aktuell"}`;
     } catch (error) {
-      $("data-state").textContent = "Datenfehler";
+      $("data-state").textContent = "Aktualisierung nicht verfügbar";
       const box = $("season-error");
       box.textContent = error.message;
       box.classList.remove("is-hidden");
