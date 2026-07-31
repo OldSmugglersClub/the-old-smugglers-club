@@ -983,7 +983,11 @@
     const note = document.createElement("p");
     note.className = "data-note";
     note.textContent = failedSources.length ? "Mindestens eine zentrale Quelle konnte nicht geladen werden. Die Seite verwendet für diese Quelle sichere Rückfalldaten; Einzelheiten stehen im Prüfprotokoll." : "Version, Datenregister, Quellenstände und Strukturstatus wurden geladen. Das Prüfprotokoll verändert keine Website-Daten.";
-    controls.append(download, note);
+    const adminLink = document.createElement("a");
+    adminLink.className = "btn btn-secondary maintenance-download";
+    adminLink.href = "admin.html";
+    adminLink.textContent = "Administrationszentrum öffnen";
+    controls.append(download, adminLink, note);
     section.appendChild(controls);
     root.appendChild(section);
   }

@@ -4,8 +4,8 @@
 
   const fallback = {
     schemaVersion: 2,
-    datenVersion: 3,
-    websiteVersion: "3.0.2",
+    datenVersion: 4,
+    websiteVersion: "3.1",
     saison: "2026/2027",
     quellen: {
       wettbewerbe: "wettbewerbe.json", spiele: "spieldaten.json", teams: "teams.json",

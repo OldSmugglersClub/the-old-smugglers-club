@@ -20,3 +20,6 @@ Für Updates muss nicht zwingend das komplette Paket erneut hochgeladen werden. 
 - `DATENSTRUKTUR.md` – Datenquellen und Struktur
 - `BACKUP_RESTORE.md` – Sicherung und Wiederherstellung
 - `RELEASE_NOTES_v3.0.2.md` – Hinweise zu diesem Release
+
+## Administrationszentrum
+Die Seite `admin.html` prüft die zentral registrierten Datenquellen, zeigt Versions- und Ladeinformationen und kann einen Systembericht als JSON exportieren. Sie verändert keine Daten.

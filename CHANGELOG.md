@@ -318,3 +318,10 @@
 - Loader gegen doppelte Initialisierung abgesichert und Reset-Funktion ergänzt.
 - Layout, Raster, Kachelgrößen, Navigation und freigegebene Inhalte unverändert belassen.
 
+
+## Version 3.1 – Administrations- und Wartungszentrum
+- Neue lesende Kontrollseite `admin.html`.
+- Live-Prüfung der registrierten Datenquellen mit Ladezeiten und Fehleranzeige.
+- Systembericht als JSON exportierbar.
+- Wartungspanel der Wettbewerbsseiten um direkten Administrationslink ergänzt.
+- Datenregister auf Datenversion 4 aktualisiert.
