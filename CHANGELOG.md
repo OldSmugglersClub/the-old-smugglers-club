@@ -1,5 +1,32 @@
 # CHANGELOG
 
+## Version 4.4.8
+
+### Neu
+
+- Vollständige Schmugglersiegel-Bibliothek für alle 52 aktuell aktiven Einträge aus `teams.json`.
+- Zentrales `schmugglersiegel-register.json` mit Team-ID, Kürzel, Farbwerten und Assetpfad.
+- Isolierte responsive Gesamtvorschau der Bibliothek.
+
+### Geändert
+
+- SDS-Dokumentation und Roadmap auf Phase 3 aktualisiert.
+
+### Betroffene Dateien
+
+- `assets/smugglers-design-system/schmugglersiegel/`
+- `VERSION.txt`
+- `CHANGELOG.md`
+- `README.md`
+- `ROADMAP.md`
+
+### Nicht geändert
+
+- Keine öffentliche HTML-Seite, kein Grid, keine Kachelgröße, keine Navigation und keine bestehende Datenlogik.
+
+---
+
+
 ## Version 4.4.7
 
 ### Neu

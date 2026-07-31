@@ -266,3 +266,14 @@ Nach Version 4.4.2 folgt das vollständige `ADMIN_HANDBUCH.md` auf Basis des gep
 - [ ] Pilotserie mit vier Vereinen erst nach Freigabe erzeugen
 
 Keine Integration in öffentliche Seiten vor ausdrücklicher Freigabe.
+
+
+## Version 4.4.8 – SDS Vereinsbibliothek
+
+- [x] 52 aktive Vereine aus `teams.json` erfasst
+- [x] neutrale Kürzel und gedämpfte Farbpaare festgelegt
+- [x] SVG-Schmugglersiegel erzeugt
+- [x] zentrales Assetregister erstellt
+- [x] isolierte Gesamtvorschau erstellt
+- [ ] nichtkritische Integrationsprobe
+- [ ] Serienabnahme vor öffentlicher Einbindung

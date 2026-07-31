@@ -1,0 +1,633 @@
+{
+  "schemaVersion": 1,
+  "sdsVersion": "1.0",
+  "projektVersion": "4.4.8",
+  "aktualisiert": "2026-07-31",
+  "hinweis": "Zentrales Assetregister der eigenen Schmugglersiegel. Offizielle Vereinswappen werden nicht verwendet.",
+  "siegeleintraege": [
+    {
+      "teamId": "heidenheim",
+      "name": "1. FC Heidenheim 1846",
+      "kuerzel": "FCH",
+      "farben": [
+        "#b21f2d",
+        "#153f7a"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/heidenheim.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "kaiserslautern",
+      "name": "1. FC Kaiserslautern",
+      "kuerzel": "FCK",
+      "farben": [
+        "#a71824",
+        "#121212"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/kaiserslautern.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "koeln",
+      "name": "1. FC Köln",
+      "kuerzel": "KOE",
+      "farben": [
+        "#b31422",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/koeln.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "magdeburg",
+      "name": "1. FC Magdeburg",
+      "kuerzel": "FCM",
+      "farben": [
+        "#1763a6",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/magdeburg.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "nuernberg",
+      "name": "1. FC Nürnberg",
+      "kuerzel": "FCN",
+      "farben": [
+        "#8f1725",
+        "#151515"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/nuernberg.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "union-berlin",
+      "name": "1. FC Union Berlin",
+      "kuerzel": "FCU",
+      "farben": [
+        "#b71c27",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/union-berlin.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "mainz-05",
+      "name": "1. FSV Mainz 05",
+      "kuerzel": "M05",
+      "farben": [
+        "#b51f2b",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/mainz-05.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "ac-mailand",
+      "name": "AC Mailand",
+      "kuerzel": "ACM",
+      "farben": [
+        "#a31220",
+        "#111111"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/ac-mailand.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "aston-villa",
+      "name": "Aston Villa",
+      "kuerzel": "AVL",
+      "farben": [
+        "#7b2747",
+        "#69a5bf"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/aston-villa.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "leverkusen",
+      "name": "Bayer 04 Leverkusen",
+      "kuerzel": "B04",
+      "farben": [
+        "#a71927",
+        "#151515"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/leverkusen.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "benfica-lissabon",
+      "name": "Benfica Lissabon",
+      "kuerzel": "SLB",
+      "farben": [
+        "#b21b27",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/benfica-lissabon.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "dortmund",
+      "name": "Borussia Dortmund",
+      "kuerzel": "BVB",
+      "farben": [
+        "#d3b400",
+        "#151515"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/dortmund.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "moenchengladbach",
+      "name": "Borussia Mönchengladbach",
+      "kuerzel": "BMG",
+      "farben": [
+        "#f0ead8",
+        "#161616"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/moenchengladbach.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "arminia-bielefeld",
+      "name": "DSC Arminia Bielefeld",
+      "kuerzel": "DSC",
+      "farben": [
+        "#153d79",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/arminia-bielefeld.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "braunschweig",
+      "name": "Eintracht Braunschweig",
+      "kuerzel": "EBS",
+      "farben": [
+        "#d3b000",
+        "#17477d"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/braunschweig.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "frankfurt",
+      "name": "Eintracht Frankfurt",
+      "kuerzel": "SGE",
+      "farben": [
+        "#a41624",
+        "#161616"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/frankfurt.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "augsburg",
+      "name": "FC Augsburg",
+      "kuerzel": "FCA",
+      "farben": [
+        "#b21e2b",
+        "#2d6b43"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/augsburg.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "barcelona",
+      "name": "FC Barcelona",
+      "kuerzel": "FCB",
+      "farben": [
+        "#7b213b",
+        "#234d88"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/barcelona.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "bayern-muenchen",
+      "name": "FC Bayern München",
+      "kuerzel": "FCB",
+      "farben": [
+        "#b2162a",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/bayern-muenchen.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "fc-bologna",
+      "name": "FC Bologna",
+      "kuerzel": "BOL",
+      "farben": [
+        "#9d1f2e",
+        "#183a69"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/fc-bologna.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "energie-cottbus",
+      "name": "FC Energie Cottbus",
+      "kuerzel": "FCE",
+      "farben": [
+        "#b51f2c",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/energie-cottbus.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "fc-liverpool",
+      "name": "FC Liverpool",
+      "kuerzel": "LFC",
+      "farben": [
+        "#a91320",
+        "#5b1017"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/fc-liverpool.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "schalke-04",
+      "name": "FC Schalke 04",
+      "kuerzel": "S04",
+      "farben": [
+        "#155a9c",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/schalke-04.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "st-pauli",
+      "name": "FC St. Pauli",
+      "kuerzel": "STP",
+      "farben": [
+        "#6a402d",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/st-pauli.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "hamburger-sv",
+      "name": "Hamburger SV",
+      "kuerzel": "HSV",
+      "farben": [
+        "#1c5b9e",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/hamburger-sv.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "hannover-96",
+      "name": "Hannover 96",
+      "kuerzel": "H96",
+      "farben": [
+        "#8c2027",
+        "#151515"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/hannover-96.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "hertha-bsc",
+      "name": "Hertha BSC",
+      "kuerzel": "BSC",
+      "farben": [
+        "#1c5fa5",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/hertha-bsc.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "holstein-kiel",
+      "name": "Holstein Kiel",
+      "kuerzel": "KSV",
+      "farben": [
+        "#174d8c",
+        "#b01d2a"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/holstein-kiel.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "inter-mailand",
+      "name": "Inter Mailand",
+      "kuerzel": "INT",
+      "farben": [
+        "#17467f",
+        "#161616"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/inter-mailand.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "juventus-turin",
+      "name": "Juventus Turin",
+      "kuerzel": "JUV",
+      "farben": [
+        "#f0ead8",
+        "#161616"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/juventus-turin.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "karlsruher-sc",
+      "name": "Karlsruher SC",
+      "kuerzel": "KSC",
+      "farben": [
+        "#1a5f9e",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/karlsruher-sc.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "manchester-city",
+      "name": "Manchester City",
+      "kuerzel": "MCI",
+      "farben": [
+        "#6fa7bf",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/manchester-city.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "manchester-united",
+      "name": "Manchester United",
+      "kuerzel": "MUN",
+      "farben": [
+        "#aa1826",
+        "#161616"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/manchester-united.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "nottingham-forest",
+      "name": "Nottingham Forest",
+      "kuerzel": "NFO",
+      "farben": [
+        "#a71b27",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/nottingham-forest.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "olympique-marseille",
+      "name": "Olympique Marseille",
+      "kuerzel": "OM",
+      "farben": [
+        "#5ca7bd",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/olympique-marseille.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "paris-saint-germain",
+      "name": "Paris Saint-Germain",
+      "kuerzel": "PSG",
+      "farben": [
+        "#173d71",
+        "#a71c2b"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/paris-saint-germain.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "rb-leipzig",
+      "name": "RB Leipzig",
+      "kuerzel": "RBL",
+      "farben": [
+        "#f0ead8",
+        "#a31c2b"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/rb-leipzig.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "real-madrid",
+      "name": "Real Madrid",
+      "kuerzel": "RMA",
+      "farben": [
+        "#f0ead8",
+        "#b69a4a"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/real-madrid.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "paderborn",
+      "name": "SC Paderborn 07",
+      "kuerzel": "SCP",
+      "farben": [
+        "#1f2020",
+        "#3e78a6"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/paderborn.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "dynamo-dresden",
+      "name": "SG Dynamo Dresden",
+      "kuerzel": "DD",
+      "farben": [
+        "#d5a900",
+        "#17130b"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/dynamo-dresden.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "freiburg",
+      "name": "Sport-Club Freiburg",
+      "kuerzel": "SCF",
+      "farben": [
+        "#a61d29",
+        "#161616"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/freiburg.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "sporting-lissabon",
+      "name": "Sporting Lissabon",
+      "kuerzel": "SPL",
+      "farben": [
+        "#5b3a22",
+        "#1d1712"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/sporting-lissabon.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "greuther-fuerth",
+      "name": "SpVgg Greuther Fürth",
+      "kuerzel": "SGF",
+      "farben": [
+        "#2f7a42",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/greuther-fuerth.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "darmstadt-98",
+      "name": "SV Darmstadt 98",
+      "kuerzel": "D98",
+      "farben": [
+        "#1b5a91",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/darmstadt-98.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "elversberg",
+      "name": "SV Elversberg",
+      "kuerzel": "SVE",
+      "farben": [
+        "#151515",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/elversberg.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "werder-bremen",
+      "name": "SV Werder Bremen",
+      "kuerzel": "SVW",
+      "farben": [
+        "#1b6b47",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/werder-bremen.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "tottenham-hotspur",
+      "name": "Tottenham Hotspur",
+      "kuerzel": "TOT",
+      "farben": [
+        "#f0ead8",
+        "#1b345e"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/tottenham-hotspur.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "hoffenheim",
+      "name": "TSG Hoffenheim",
+      "kuerzel": "TSH",
+      "farben": [
+        "#5b3a22",
+        "#1d1712"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/hoffenheim.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "stuttgart",
+      "name": "VfB Stuttgart",
+      "kuerzel": "VFB",
+      "farben": [
+        "#f0ead8",
+        "#b21f2c"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/stuttgart.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "bochum",
+      "name": "VfL Bochum 1848",
+      "kuerzel": "BOC",
+      "farben": [
+        "#1d5d9b",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/bochum.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "osnabrueck",
+      "name": "VfL Osnabrück",
+      "kuerzel": "VFL",
+      "farben": [
+        "#5b267a",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/osnabrueck.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    },
+    {
+      "teamId": "wolfsburg",
+      "name": "VfL Wolfsburg",
+      "kuerzel": "WOB",
+      "farben": [
+        "#5c932e",
+        "#f0ead8"
+      ],
+      "datei": "assets/smugglers-design-system/schmugglersiegel/bibliothek/wolfsburg.svg",
+      "status": "bereit",
+      "offiziellesVereinslogo": false
+    }
+  ]
+}
