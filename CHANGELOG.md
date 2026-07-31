@@ -528,3 +528,16 @@
 - Neue zentrale Datenquelle `erinnerungsprotokoll.json` registriert.
 - Keine automatische Nachrichtenübermittlung und keine automatische Änderung des GitHub-Repositories.
 - Öffentliches Grundlayout, Raster und bestehende Kachelgrößen unverändert belassen.
+
+
+## Version 3.25 – Abgabezuverlässigkeit und Teilnehmerstatus – 31.07.2026
+
+- Neue Verwaltungsseite `abgabezuverlaessigkeit.html` ergänzt.
+- Abgelaufene und bestätigte Tippfristen werden je aktivem Teilnehmer mit vorhandenen Tipps abgeglichen.
+- Abgabequote, fehlende Tipps, Erinnerungsanzahl und aktuelle vollständige Abgabeserie werden ausgewiesen.
+- Organisatorische Statusstufen von „Sehr zuverlässig“ bis „Kritisch“ ergänzt.
+- Spiele ohne bestätigte genaue Anstoßzeit bleiben von der Versäumnisbewertung ausgeschlossen.
+- Detailansicht, Filter, Sortierung sowie JSON- und CSV-Export ergänzt.
+- Neue zentrale Exportdatei `abgabezuverlaessigkeit.json` registriert.
+- Keine Sanktionierung, kein automatischer Nachrichtenversand und keine automatische Änderung des GitHub-Repositories.
+- Öffentliches Grundlayout, Raster und bestehende Kachelgrößen unverändert belassen.

@@ -4,7 +4,7 @@ Offizielle Website der Tipprunde **The Old Smugglers Club**.
 
 ## Version
 
-Aktueller Stand: **3.23 – Abgabe-Erinnerungen**
+Aktueller Stand: **3.25 – Abgabezuverlässigkeit und Teilnehmerstatus**
 
 ## Veröffentlichung auf GitHub Pages
 
@@ -100,3 +100,8 @@ Die Tippfristen-Kontrolle befindet sich in `tippfristen.html` und prüft bestät
 ## Version 3.24
 
 `erinnerungsprotokoll.html` dokumentiert manuell versendete Abgabe-Erinnerungen. Einträge können importiert, ergänzt, entfernt und als `erinnerungsprotokoll.json` oder CSV exportiert werden. Ein automatischer Versand oder eine automatische Änderung des Repositories findet nicht statt.
+
+
+## Version 3.25
+
+`abgabezuverlaessigkeit.html` führt bestätigte, abgelaufene Tippfristen mit den vorhandenen Tipps und dem Erinnerungsprotokoll zusammen. Die Auswertung ist rein lesend und kann als JSON oder CSV exportiert werden.

@@ -1,7 +1,7 @@
 {
-  "version": "3.24",
+  "version": "3.25",
   "modus": "Plan B · datengetrieben",
-  "aktualisiertAm": "2026-07-31T13:03:00+02:00",
+  "aktualisiertAm": "2026-07-31T13:07:00+02:00",
   "module": [
     {
       "name": "Clubdaten",
@@ -137,8 +137,13 @@
       "name": "Erinnerungsprotokoll",
       "datei": "erinnerungsprotokoll.html",
       "status": "aktiv"
+    },
+    {
+      "name": "Abgabezuverlässigkeit und Teilnehmerstatus",
+      "datei": "abgabezuverlaessigkeit.html",
+      "status": "aktiv"
     }
   ],
   "releaseStatus": "stabil",
-  "datenregisterVersion": 24
+  "datenregisterVersion": 25
 }
