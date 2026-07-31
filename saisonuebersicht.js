@@ -12,17 +12,18 @@
     return safeArray(data && data.saisons).flatMap(season => safeArray(season && season.tippspieltage));
   }
 
-  function matchingGames(games, filter) {
+  function matchingGames(games, competition) {
+    const filter = competition && competition.filter;
     if (!filter) return [];
-    if (filter.feld === "sonderwertungen") {
-      return games.filter(game => safeArray(game && game.sonderwertungen).includes(filter.wert));
+    if (filter.type === "sonderwertung") {
+      return games.filter(game => safeArray(game && game.sonderwertungen).includes(filter.value));
     }
-    return games.filter(game => game && game[filter.feld] === filter.wert);
+    return games.filter(game => game && game[filter.type] === filter.value);
   }
 
   function matchingMatchdays(matchdays, competition) {
     const aliases = {
-      smugglerauftraege: "smugglerauftrag",
+      "dynamo-dresden": "smugglerauftrag",
       "champions-league": "champions-league",
       "europa-league": "europa-league",
       "dfb-pokal": "dfb-pokal",
@@ -47,20 +48,22 @@
   async function init() {
     try {
       const registry = window.OSCDataRegistry;
-      const [overviewUrl, gamesUrl, matchdaysUrl] = registry
-        ? await Promise.all([registry.url("saisonuebersicht"), registry.url("spiele"), registry.url("tippspieltage")])
-        : ["./saison-2026-2027.json", "./spieldaten.json", "./tippspieltage.json"];
-      const [overviewResponse, gamesResponse, matchdaysResponse] = await Promise.all([
+      const [overviewUrl, competitionsUrl, gamesUrl, matchdaysUrl] = registry
+        ? await Promise.all([
+            registry.url("saisonuebersicht"), registry.url("wettbewerbe"),
+            registry.url("spiele"), registry.url("tippspieltage")
+          ])
+        : ["./saison-2026-2027.json", "./wettbewerbe.json", "./spieldaten.json", "./tippspieltage.json"];
+      const responses = await Promise.all([
         fetch(overviewUrl, { cache: "no-store" }),
+        fetch(competitionsUrl, { cache: "no-store" }),
         fetch(gamesUrl, { cache: "no-store" }),
         fetch(matchdaysUrl, { cache: "no-store" })
       ]);
-      if (!overviewResponse.ok || !gamesResponse.ok || !matchdaysResponse.ok) throw new Error("Saisondaten konnten nicht vollständig geladen werden.");
+      if (responses.some(response => !response.ok)) throw new Error("Saisondaten konnten nicht vollständig geladen werden.");
 
-      const [overview, gameData, matchdayData] = await Promise.all([
-        overviewResponse.json(), gamesResponse.json(), matchdaysResponse.json()
-      ]);
-      const competitions = safeArray(overview.wettbewerbe);
+      const [overview, competitionData, gameData, matchdayData] = await Promise.all(responses.map(response => response.json()));
+      const competitions = safeArray(competitionData.wettbewerbe).filter(item => item && item.saison);
       const games = centralGames(gameData);
       const matchdays = centralMatchdays(matchdayData);
 
@@ -69,10 +72,10 @@
       $("competition-count").textContent = competitions.length;
       $("stored-games").textContent = games.length;
 
-      const knownMatchdays = competitions.reduce((sum, item) => sum + (Number.isFinite(item.tippspieltageZiel) ? item.tippspieltageZiel : 0), 0);
-      const knownGames = competitions.reduce((sum, item) => sum + (Number.isFinite(item.spieleZiel) ? item.spieleZiel : 0), 0);
-      const openMatchdayCompetitions = competitions.filter(item => !Number.isFinite(item.tippspieltageZiel)).length;
-      const openGameCompetitions = competitions.filter(item => !Number.isFinite(item.spieleZiel)).length;
+      const knownMatchdays = competitions.reduce((sum, item) => sum + (Number.isFinite(item.saison.tippspieltageZiel) ? item.saison.tippspieltageZiel : 0), 0);
+      const knownGames = competitions.reduce((sum, item) => sum + (Number.isFinite(item.saison.spieleZiel) ? item.saison.spieleZiel : 0), 0);
+      const openMatchdayCompetitions = competitions.filter(item => !Number.isFinite(item.saison.tippspieltageZiel)).length;
+      const openGameCompetitions = competitions.filter(item => !Number.isFinite(item.saison.spieleZiel)).length;
 
       $("matchday-total").textContent = `${knownMatchdays}+`;
       $("matchday-note").textContent = `${openMatchdayCompetitions} Wettbewerbe werden ergänzt`;
@@ -80,20 +83,23 @@
       $("game-note").textContent = `${openGameCompetitions} Wettbewerbe werden ergänzt`;
 
       const tbody = $("season-table-body");
+      tbody.replaceChildren();
       competitions.forEach(competition => {
-        const actualGames = matchingGames(games, competition.filter).length;
+        const season = competition.saison;
+        const actualGames = matchingGames(games, competition).length;
         const actualMatchdays = matchingMatchdays(matchdays, competition).length;
         const row = document.createElement("tr");
         row.innerHTML = `
-          <td><a class="season-competition-link" href="./${competition.seite}">${competition.name}</a></td>
-          <td>${displayCount(competition.tippspieltageZiel, actualMatchdays, "nach Auslosung")}</td>
-          <td>${displayCount(competition.spieleZiel, actualGames, "nach Auslosung")}</td>
-          <td>${competition.zeitraum || "Noch offen"}</td>
-          <td><span class="season-status-pill">${competition.status || "geplant"}</span></td>`;
+          <td><a class="season-competition-link" href="./${competition.page}">${season.seasonLabel || competition.label}</a></td>
+          <td>${displayCount(season.tippspieltageZiel, actualMatchdays, "nach Auslosung")}</td>
+          <td>${displayCount(season.spieleZiel, actualGames, "nach Auslosung")}</td>
+          <td>${season.zeitraum || "Noch offen"}</td>
+          <td><span class="season-status-pill">${season.status || "geplant"}</span></td>`;
         tbody.appendChild(row);
       });
 
-      $("data-state").textContent = `Stand ${overview.aktualisiert ? overview.aktualisiert.split("-").reverse().join(".") : "aktuell"}`;
+      const date = competitionData.aktualisiert || overview.aktualisiert;
+      $("data-state").textContent = `Stand ${date ? date.split("-").reverse().join(".") : "aktuell"}`;
     } catch (error) {
       $("data-state").textContent = "Datenfehler";
       const box = $("season-error");

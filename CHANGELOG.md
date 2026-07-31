@@ -1,5 +1,15 @@
 # Changelog
 
+## Version 2.43 – Zentrale Wettbewerbs- und Saisonmetadaten
+
+- Wettbewerbsnavigation, Seitenfilter und Saisonmetadaten in `wettbewerbe.json` zusammengeführt.
+- Saisonübersicht an das zentrale Wettbewerbsregister angebunden.
+- Doppelte Pflege von Wettbewerbsnamen, Seitenzielen, Filtern, Zielwerten, Zeiträumen und Statusangaben entfernt.
+- `saison-2026-2027.json` auf globale Saison- und Seitentexte reduziert.
+- Startseiten-Spieltaganzeige lädt ihre vier Datenquellen nun vollständig über `datenregister.json`.
+- Rückfallpfade bleiben erhalten; Grundlayout, Kachelgrößen und freigegebene Bereiche unverändert.
+
+
 ## Version 2.41 – Zentrale Wettbewerbsregistrierung
 
 - Neue zentrale Datei `wettbewerbe.json` für Navigation, Seitenzuordnung und Spiel-Filter.

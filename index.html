@@ -4972,18 +4972,25 @@
       };
 
       try {
+        const registry = window.OSCDataRegistry;
+        const [configUrl, gamesUrl, teamsUrl, matchdaysUrl] = registry
+          ? await Promise.all([
+              registry.url("spieltag"), registry.url("spiele"),
+              registry.url("teams"), registry.url("tippspieltage")
+            ])
+          : ["./spieltag.json", "./spieldaten.json", "./teams.json", "./tippspieltage.json"];
         const [configResponse, gamesResponse, teamsResponse, matchdaysResponse] = await Promise.all([
-          fetch("./spieltag.json", { cache: "no-store" }),
-          fetch("./spieldaten.json", { cache: "no-store" }),
-          fetch("./teams.json", { cache: "no-store" }),
-          fetch("./tippspieltage.json", { cache: "no-store" })
+          fetch(configUrl, { cache: "no-store" }),
+          fetch(gamesUrl, { cache: "no-store" }),
+          fetch(teamsUrl, { cache: "no-store" }),
+          fetch(matchdaysUrl, { cache: "no-store" })
         ]);
 
         for (const [name, response] of [
-          ["spieltag.json", configResponse],
-          ["spieldaten.json", gamesResponse],
-          ["teams.json", teamsResponse],
-          ["tippspieltage.json", matchdaysResponse]
+          ["Spieltag-Konfiguration", configResponse],
+          ["zentrale Spieldaten", gamesResponse],
+          ["zentrales Teamregister", teamsResponse],
+          ["zentrale Tippspieltage", matchdaysResponse]
         ]) {
           if (!response.ok) throw new Error(`${name} konnte nicht geladen werden (${response.status})`);
         }
