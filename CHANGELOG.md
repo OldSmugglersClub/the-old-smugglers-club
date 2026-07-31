@@ -280,3 +280,11 @@
 - Pflichtdateien und Versionsstand werden kontrolliert.
 - Maschinenlesbares Prüfergebnis `RELEASE-AUDIT.json` ergänzt.
 - Grundlayout, Raster, Kachelgrößen und freigegebene Inhalte unverändert belassen.
+
+## Version 2.49 – Finalisierung & Release-Vorbereitung
+
+- Versionsstand und technische Release-Prüfung auf 2.49 aktualisiert.
+- Reproduzierbares Release-Manifest `RELEASE-MANIFEST.json` ergänzt.
+- SHA-256-Prüfsummen und Dateigrößen aller auslieferungsrelevanten Dateien dokumentiert.
+- Audit kontrolliert zusätzlich das Vorhandensein des Release-Manifests.
+- Grundlayout, Raster, Kachelgrößen, Navigation und freigegebene Inhalte unverändert belassen.

@@ -1,12 +1,12 @@
 {
-  "auditVersion": "2.48",
-  "generatedAtUtc": "2026-07-31T06:18:42.931937+00:00",
+  "auditVersion": "2.49",
+  "generatedAtUtc": "2026-07-31T06:26:42.002157+00:00",
   "status": "OK",
-  "version": "2.48",
+  "version": "2.49",
   "counts": {
     "html": 12,
     "javascript": 9,
-    "json": 23,
+    "json": 25,
     "referencesChecked": 79
   },
   "missingRequiredFiles": [],

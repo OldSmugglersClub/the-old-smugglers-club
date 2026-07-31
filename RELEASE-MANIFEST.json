@@ -1,0 +1,542 @@
+{
+  "manifestVersion": "2.49",
+  "generatedAtUtc": "2026-07-31T06:26:42.509096+00:00",
+  "fileCount": 107,
+  "files": [
+    {
+      "path": "ANLEITUNG-KAPITAENSTISCH-V2.txt",
+      "bytes": 652,
+      "sha256": "b27fa459ce3e68396a687117de4fbee5be490069d028bf054603aa7db978c07e"
+    },
+    {
+      "path": "ANLEITUNG-KAPITAENSTISCH.txt",
+      "bytes": 522,
+      "sha256": "af7a5dc29fef19bcdafa2f5c05ebf2bfe9f8d9c6fd25aa10325db71bb3be6266"
+    },
+    {
+      "path": "ANLEITUNG-V21.txt",
+      "bytes": 1046,
+      "sha256": "57205a453ba9e0286fc59a8086e75fabfc35f5035a7347214e20817348c80601"
+    },
+    {
+      "path": "ANLEITUNG-V23.txt",
+      "bytes": 619,
+      "sha256": "5518c6b7f736ec46d6dcf3cfcdbd57817df53b8fd968529b7c34953b1f55600c"
+    },
+    {
+      "path": "ANLEITUNG.txt",
+      "bytes": 472,
+      "sha256": "da7aa7b22dab03d48127b4a11c8d617d8bf7d6a1281d04f9114c223ceff7e8b8"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 18399,
+      "sha256": "54a10f8258ac59bd944b98f6f5d27f7b181badb1e5e308a722d866c8478f6f8a"
+    },
+    {
+      "path": "CNAME",
+      "bytes": 25,
+      "sha256": "fbb54b525696c8b148a1232625cfd9b6978921f267fa3a5fe17ee4555695de19"
+    },
+    {
+      "path": "Champion-Troph#U00e4e.jpeg",
+      "bytes": 342558,
+      "sha256": "f190b21f9e644b10a80cb4faaf4205830010db8424f980cb72f0f3c66afa0582"
+    },
+    {
+      "path": "Champion-Trophäe.jpeg",
+      "bytes": 342558,
+      "sha256": "f190b21f9e644b10a80cb4faaf4205830010db8424f980cb72f0f3c66afa0582"
+    },
+    {
+      "path": "GITHUB-ANLEITUNG-HALL-OF-FAME-KORREKTUR.txt",
+      "bytes": 877,
+      "sha256": "b428a70c4083a350ee3c48ef698c10f1fd27456b927a27e9f5a01cc4a48bb314"
+    },
+    {
+      "path": "GITHUB-ANLEITUNG-HIGHSCORE-2.txt",
+      "bytes": 649,
+      "sha256": "c3ab27f98e67d2b8f95bfee5cd9c0045803ab5a75ae7d140a32e8e8b761b1912"
+    },
+    {
+      "path": "GITHUB-ANLEITUNG.txt",
+      "bytes": 2051,
+      "sha256": "f8df8572be26b10ac8ea1683948d20ca25d8fad1f0d385654c513ac14bcfd8f0"
+    },
+    {
+      "path": "README-V30.md",
+      "bytes": 1038,
+      "sha256": "71eb550787ecd67e45729445d0855794f7527fdfd1499ff3e78c7949395ebe09"
+    },
+    {
+      "path": "README-V31.md",
+      "bytes": 463,
+      "sha256": "6f5744f22f2cf9308fe038102a60ea38dace426d8e18f7b987088a82d91230e5"
+    },
+    {
+      "path": "README-V32.md",
+      "bytes": 280,
+      "sha256": "3af17af98fd7cf846cb76ef7b34f86b4774fbf916ce0633c10ca11bfb54793a5"
+    },
+    {
+      "path": "README-V37.md",
+      "bytes": 253,
+      "sha256": "1a7b0eeeda7885c52ef1c2f7682acf23c7b38be266f3c30c092e6f789fc2f075"
+    },
+    {
+      "path": "README-V38.md",
+      "bytes": 618,
+      "sha256": "a363f33c5c420243efcd11a6e976eb780b9aba41b23e8c33d2368bb9db0b8ad0"
+    },
+    {
+      "path": "README-V39.md",
+      "bytes": 477,
+      "sha256": "17e27df26f791036129ed4d450e208cef8b1b97832ab1b849d045bbda8f18003"
+    },
+    {
+      "path": "README-V40.md",
+      "bytes": 829,
+      "sha256": "a849aaccebc0f5d386228e00699648d3394b06610a7e011ad1f7e09f1024b5ba"
+    },
+    {
+      "path": "README-V41.md",
+      "bytes": 546,
+      "sha256": "73679eafec009015b2879983d4e39bf0a4a0726da43ea1b07cec47142b7f4d7f"
+    },
+    {
+      "path": "README-V42.md",
+      "bytes": 550,
+      "sha256": "25478f6c478cbc8e85397c235ecaab7a1f8438b574a4e0989b6ffe9e12b534fb"
+    },
+    {
+      "path": "README-V43.md",
+      "bytes": 590,
+      "sha256": "9079cc74d168eaae9377e6bca500929e2e017816cc5f840f1eb76438a05301df"
+    },
+    {
+      "path": "README-V44.md",
+      "bytes": 572,
+      "sha256": "ac7c5839c5eced6a2ae62045c00052e1aeb335695daf7c3c5cafb75479e4897b"
+    },
+    {
+      "path": "README-V45.md",
+      "bytes": 309,
+      "sha256": "446c8e60df48a4612ddbf2f529752c46c96c152a28488dac3839952cff0a09b1"
+    },
+    {
+      "path": "README-V46.md",
+      "bytes": 704,
+      "sha256": "4a11891ad4c4a2d6076c91517912a4828af9e06574214c9f4329263ba563ac92"
+    },
+    {
+      "path": "README-V47.md",
+      "bytes": 607,
+      "sha256": "30129e874cb62636f7f194fc1bca93ebeea4c808cd7fb395595da8da2f1421bd"
+    },
+    {
+      "path": "README-V48.md",
+      "bytes": 608,
+      "sha256": "345c4d56c581cb003d7c12a0f00ed1601dbc01412f519d183b422ad187ad1fca"
+    },
+    {
+      "path": "README-V49.md",
+      "bytes": 714,
+      "sha256": "528345b3b3e0fa677fc23f55f6f2dc167c604c8702624b1b76f2a67f12c4516e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 71,
+      "sha256": "9bb13b2b8ffb89847122e3a5cafd530cf36ec7e9ed82658d7e635168556e905f"
+    },
+    {
+      "path": "RELEASE-AUDIT.json",
+      "bytes": 306,
+      "sha256": "acd2b8fdf093efa866a0b444036444e9624cf6108072197f557142453f3f95f3"
+    },
+    {
+      "path": "SPIELTAG-PFLEGEN-V23.txt",
+      "bytes": 423,
+      "sha256": "8671fc5ce10a75c9bc29d60f252c83274986c4b4b3bbc8548daae0ecbe3e359b"
+    },
+    {
+      "path": "UPLOAD-ANLEITUNG-V30.txt",
+      "bytes": 535,
+      "sha256": "575f11487dc8d52715bfd18721c74e2760afaf244afa2583ee834c5372ccfc45"
+    },
+    {
+      "path": "UPLOAD-ANLEITUNG-V32.txt",
+      "bytes": 241,
+      "sha256": "7ce2cfeb66a01dbe698a2d523543462ae5276267f35dc5d39d1985dbd8e807ed"
+    },
+    {
+      "path": "UPLOAD-V40-FINAL.txt",
+      "bytes": 665,
+      "sha256": "81a7dcd8de0a59acd5c277e1c5d3f4bba39f271b78d14a4438e1cf4931eb855e"
+    },
+    {
+      "path": "VERSION.txt",
+      "bytes": 5,
+      "sha256": "799cf0602f4a8f4f73196ead87192c038e00d537ece0a0e88e33da9b781f9ee8"
+    },
+    {
+      "path": "app-v40.js",
+      "bytes": 2754,
+      "sha256": "a15ece6e1bf4f5d72bd6124f1469f74cba23e4aa296d304e0fee985feecb6309"
+    },
+    {
+      "path": "background.jpeg",
+      "bytes": 251987,
+      "sha256": "1178ad90b6e98ba5b4265f8ca99d6968fbe252457fd95ee6a80bdf922a5f6a06"
+    },
+    {
+      "path": "banner.png",
+      "bytes": 2509448,
+      "sha256": "77a7d2edf755d724c48672062916da1aedb91263d37b35b1ff68ee7d501e296c"
+    },
+    {
+      "path": "beispiele/erstes-ereignis.json",
+      "bytes": 641,
+      "sha256": "0f4258baf7a04132a28bb2741de0f00655249a70f1458dbcef427fae87361a13"
+    },
+    {
+      "path": "beispiele/vor-saisonstart.json",
+      "bytes": 752,
+      "sha256": "f6cdc1180162ac15b6c27ddac93f4fe5bdc8c691d6153696232a9dc061d24c6d"
+    },
+    {
+      "path": "bundesliga-tabelle.json",
+      "bytes": 186,
+      "sha256": "f1f36d68704c4221c0af1736f743494e3d3fd41fb2d47999241da8df862bdea5"
+    },
+    {
+      "path": "bundesliga.html",
+      "bytes": 1326,
+      "sha256": "ca337f60a96c8ca67ea3b19861deff91bfbf6b1e37cac025f1d6e6e1e3e366e0"
+    },
+    {
+      "path": "bundesliga.json",
+      "bytes": 1467,
+      "sha256": "fadca707cb6219bda4400c7eaca02496df8e6d365e08264e85169e7e1ca2ffbd"
+    },
+    {
+      "path": "champion-trophy.jpeg",
+      "bytes": 257638,
+      "sha256": "1776b4c37e316281d16a7bacc6fccbc053a90007ed41c886f954fa89d6336e21"
+    },
+    {
+      "path": "champions-league.html",
+      "bytes": 1326,
+      "sha256": "ca337f60a96c8ca67ea3b19861deff91bfbf6b1e37cac025f1d6e6e1e3e366e0"
+    },
+    {
+      "path": "champions-league.json",
+      "bytes": 1766,
+      "sha256": "d5599058c504cf6b0aba1986cb2a538990dfeed72fbff2b30c06c65e4f21a00f"
+    },
+    {
+      "path": "club-app.js",
+      "bytes": 6898,
+      "sha256": "fe07d81ff10e9043f45e62be8afaf5b05deb57e933dd303cae496acd5dc01b23"
+    },
+    {
+      "path": "club-crest.svg",
+      "bytes": 910,
+      "sha256": "e5aecf1f936ff9cbd923ab169574f4e8712cffabe64e2d6d279edb8f92f22bfc"
+    },
+    {
+      "path": "club-style.css",
+      "bytes": 12845,
+      "sha256": "9927d979556a7ca6bed224d576a9e1fe1e704145cc3865c2e45d4c60ee05ff95"
+    },
+    {
+      "path": "clubdaten.json",
+      "bytes": 1431,
+      "sha256": "14f96306e3a877018f64e43def1641ef075724d0253f2371028e4e6eb8b88ff1"
+    },
+    {
+      "path": "countdown-kachel-piratenchronometer-final-v2.html",
+      "bytes": 11266,
+      "sha256": "d0ea54e158fdfafcdbad401900bafa8d2d9f89595a86525b9d2ed3af5f8b4298"
+    },
+    {
+      "path": "datenmodell.js",
+      "bytes": 7760,
+      "sha256": "d0e52b46f24f3003d644bffcc055f42643e3553c8ca6d7a7cce4a728feaa1489"
+    },
+    {
+      "path": "datenregister.js",
+      "bytes": 1224,
+      "sha256": "50d3476adedc3f9b73c2f9421aebf18f1a3118827c21b12e2ad0edaec9e98feb"
+    },
+    {
+      "path": "datenregister.json",
+      "bytes": 633,
+      "sha256": "aa932668b4cdfcaa953d1fadba7c2266ce32b08dd02e16350d39e4b40b10f31a"
+    },
+    {
+      "path": "dfb-pokal.html",
+      "bytes": 1326,
+      "sha256": "ca337f60a96c8ca67ea3b19861deff91bfbf6b1e37cac025f1d6e6e1e3e366e0"
+    },
+    {
+      "path": "dfb-pokal.json",
+      "bytes": 1662,
+      "sha256": "85f4afd0668ae5bc4d0445ab92aa6c91cd11411fbd8d46d1dae27644c2fdc0fd"
+    },
+    {
+      "path": "dynamo-dresden.html",
+      "bytes": 1372,
+      "sha256": "a0028354f17823ba5c80e80feb1644d1a7a7dc0b892ca89c412d9fa2b29193fe"
+    },
+    {
+      "path": "dynamo-dresden.json",
+      "bytes": 2556,
+      "sha256": "c2f9a3d7fd86de80494177090137803f135ff12cbaeb7d3fc8a655fc1a2c30c8"
+    },
+    {
+      "path": "europa-league.html",
+      "bytes": 1320,
+      "sha256": "a1e195222a4ebb119426a4fc6b96820d21ea04b5c4922e6776e260d79de9591c"
+    },
+    {
+      "path": "europa-league.json",
+      "bytes": 1676,
+      "sha256": "36b1e9ecce1e6d0e4dc8671a33bf90832a4ff30b9077c1ce3743c6cf703b0068"
+    },
+    {
+      "path": "favicon.jpeg",
+      "bytes": 378729,
+      "sha256": "6785ae3c5562bfc0e59ff80a94903930c3a6bc0e9e9aa9848c8fd0c99fdcd185"
+    },
+    {
+      "path": "hall-of-fame.json",
+      "bytes": 1387,
+      "sha256": "7e4c22c16aed3189b918fadc9fcd2d7c8682077af047ee85716b978d5600da9a"
+    },
+    {
+      "path": "hero-segelschiff.jpg",
+      "bytes": 2514666,
+      "sha256": "c6f5b85e6eada243dfd7fe1a702e8908258799a16d9e92d0dd9eb6351df88b8f"
+    },
+    {
+      "path": "hero-v40.jpg",
+      "bytes": 461793,
+      "sha256": "784e2c1eb609ea14718e7ef55466c165beb3d5be7e1425cd3fc6b11a1092c463"
+    },
+    {
+      "path": "highscore-teaser.js",
+      "bytes": 1120,
+      "sha256": "c32e762ebef1ce372ab65142e8225809cdd9f3d97591d6215fdb5cebd9e2a63a"
+    },
+    {
+      "path": "highscore.css",
+      "bytes": 54205,
+      "sha256": "154d646f4cb22cadc977b95b9fd308ac96d4811e6877af8ae7d5b8e86fc8e2f9"
+    },
+    {
+      "path": "highscore.html",
+      "bytes": 11432,
+      "sha256": "989df877641fa0711a30308919fb6e0b20b03428be1b76ac0a00321d7fd48e06"
+    },
+    {
+      "path": "highscore.js",
+      "bytes": 52580,
+      "sha256": "6182ac0e79034b1bce12929cc602d7a9ac50565f25dbc13813635cc2d930904a"
+    },
+    {
+      "path": "highscore.json",
+      "bytes": 38064,
+      "sha256": "3af2cc3b330387ee3ba50cb057f2f617182d8b20e4a3ac6f6934676f34953553"
+    },
+    {
+      "path": "index.html",
+      "bytes": 156514,
+      "sha256": "60ea1e27e0e3daa3b9401874c150a544e6ed3a639c37c7a18b2be18b96b67c57"
+    },
+    {
+      "path": "kapitaenstisch-final.jpg",
+      "bytes": 540256,
+      "sha256": "0d767115608d632ec7ddbb57d66561f61cfa330a8a2b42caa8e83aab1d365a77"
+    },
+    {
+      "path": "kapitaenstisch-hintergrund-v2.jpg",
+      "bytes": 334566,
+      "sha256": "9d88827a5bbe2d964adc15af9c70b72a4e52c15d9bb123604646d30d88d90b66"
+    },
+    {
+      "path": "kapitaenstisch-hintergrund.jpg",
+      "bytes": 142480,
+      "sha256": "129f99ca29a2d98f67cfd97051d150462280a6dc310c97a3ea20ef7a3d252e54"
+    },
+    {
+      "path": "kicktipp_highscore_import.py",
+      "bytes": 3107,
+      "sha256": "dd121d3cb2954633dc0c4bca0aa00e3c4bfe1db4bb23bc90f6e6d0e070a2e988"
+    },
+    {
+      "path": "logo.jpeg",
+      "bytes": 343578,
+      "sha256": "f242f11e7f3c81f9628c78be93b33713abcb56dcb34424b8556a7fb85c4e161d"
+    },
+    {
+      "path": "performance-v247.js",
+      "bytes": 710,
+      "sha256": "914bcd2b010858a2a3eb57d19df966bfb10e3dd89d927346fd57bac126388066"
+    },
+    {
+      "path": "piraten-chronometer-hintergrund.jpg",
+      "bytes": 169943,
+      "sha256": "5255835cec50a53a1cea15105445f4fc9dc1e0ce69c834ea4d3fd361bf7cfeab"
+    },
+    {
+      "path": "piraten-hintergrund.jpg",
+      "bytes": 141775,
+      "sha256": "ba65d5ff5b004a821c17aab110c5529f5676eb40b79cb1121697dd8d3ae2d046"
+    },
+    {
+      "path": "piraten-kapitaenstisch-final.jpg",
+      "bytes": 307811,
+      "sha256": "8e703bde6c00351dcf6fcdbc4a1c467591e1919df1633782ff4e2c0d1717139d"
+    },
+    {
+      "path": "piraten-spieltag-hintergrund.jpg",
+      "bytes": 319141,
+      "sha256": "c2263b8f04d432e3e1059579d934b0576256a78f85c18be8b1452890909bbb4f"
+    },
+    {
+      "path": "piratenkodex.html",
+      "bytes": 1326,
+      "sha256": "ca337f60a96c8ca67ea3b19861deff91bfbf6b1e37cac025f1d6e6e1e3e366e0"
+    },
+    {
+      "path": "piratenkodex.json",
+      "bytes": 2054,
+      "sha256": "b3cde4a089353079a10d26c8a3d8eeafa11f6a8f6ae85014fa6e67391ec02730"
+    },
+    {
+      "path": "relegation.html",
+      "bytes": 1326,
+      "sha256": "ca337f60a96c8ca67ea3b19861deff91bfbf6b1e37cac025f1d6e6e1e3e366e0"
+    },
+    {
+      "path": "relegation.json",
+      "bytes": 1625,
+      "sha256": "36fc657cbf2ff63063755a11f77aaf6be2fce417c8376f37f54a9f07e4589bb5"
+    },
+    {
+      "path": "saison-2026-2027.html",
+      "bytes": 3355,
+      "sha256": "052be90283972c6d94dd5072373966488a72956371ac4864acbb36c0a5297f2c"
+    },
+    {
+      "path": "saison-2026-2027.json",
+      "bytes": 282,
+      "sha256": "a2cd5af9ca66c58e431c80f7529071502123781dd5cd1169d1ae79d435f1fe3f"
+    },
+    {
+      "path": "saisonuebersicht.css",
+      "bytes": 2465,
+      "sha256": "3666e2b9db2ba17529d879f9b104ea33478b9fcd008524ccb56b992b99b1cb2d"
+    },
+    {
+      "path": "saisonuebersicht.js",
+      "bytes": 5544,
+      "sha256": "2c97fa70326dd99d1d6ce95fff81d7c3d30da2c5c16df9a2a0a2b1cca83c2022"
+    },
+    {
+      "path": "scripts/build_release_manifest.py",
+      "bytes": 951,
+      "sha256": "d883f9010edda07698299ed29f80f2f76e80c1407e6325b6ac7505186f23f1b0"
+    },
+    {
+      "path": "scripts/release_audit.py",
+      "bytes": 2525,
+      "sha256": "7503d2ac8fae49939dd76cb997d53af32dd458485adaa214c8276f7d3420c090"
+    },
+    {
+      "path": "scripts/update_data.py",
+      "bytes": 1036,
+      "sha256": "cae49d6ff70d3c75ba885540e4f7480ea1ab49c783f06397a924a520233f0800"
+    },
+    {
+      "path": "site-data.json",
+      "bytes": 2226,
+      "sha256": "6d110bd7adecec8e44722e3d7f12c47b5d0592163251efdccfd226a0ed894b8e"
+    },
+    {
+      "path": "smugglerauftraege.json",
+      "bytes": 1151,
+      "sha256": "e7213e0c6cbd2b5018054aa33e328b41183cb955687830b9b0554d0c1de6118e"
+    },
+    {
+      "path": "spieldaten.json",
+      "bytes": 300727,
+      "sha256": "b1646fe8fd4544da44a2ef67d713397b6fb3f5d0c731e31472688103b6a298fc"
+    },
+    {
+      "path": "spieltag.json",
+      "bytes": 632,
+      "sha256": "db6f4bf7e085015d9fe41bf79fec29839c6416963277ac441b19006e7cd26c9a"
+    },
+    {
+      "path": "style-v40.css",
+      "bytes": 11039,
+      "sha256": "680a5dd3a7b8c0ce6b77be3989aece180320d5f405700a9db2a3bdff3a1200b4"
+    },
+    {
+      "path": "systemstatus.json",
+      "bytes": 535,
+      "sha256": "c4b59017206aaf35db5b1f643619fa19ced48ee465f18b482f80f385c7330470"
+    },
+    {
+      "path": "teams.json",
+      "bytes": 15484,
+      "sha256": "9cc37f9345122c623ae252d16662b4076962a2bdc9a6c1bb9fc9efbca55edbdf"
+    },
+    {
+      "path": "tippspieltage.json",
+      "bytes": 31586,
+      "sha256": "95e94b9f30c3515408ae49c6e88be48929e571a2cc43217e964cbd340e81271c"
+    },
+    {
+      "path": "topspieler.json",
+      "bytes": 447,
+      "sha256": "f985f17d47784c83fc683aace3c62e64a64bc8643b859636c317114b000b54cd"
+    },
+    {
+      "path": "v40-test/index.html",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "weihnachtsregatta.html",
+      "bytes": 1326,
+      "sha256": "ca337f60a96c8ca67ea3b19861deff91bfbf6b1e37cac025f1d6e6e1e3e366e0"
+    },
+    {
+      "path": "weihnachtsregatta.json",
+      "bytes": 1491,
+      "sha256": "2bbcabf997575324b105e66c52665179c7b19cdb5975654812a5d0e24d392e19"
+    },
+    {
+      "path": "wettbewerb.css",
+      "bytes": 25792,
+      "sha256": "c20c64df1910f11888bb7f394bc53e8fd57774bfdfa7717830448016a0b5198e"
+    },
+    {
+      "path": "wettbewerb.js",
+      "bytes": 59821,
+      "sha256": "17785b8c772d64f403915a101d8a08c1c54d342cec9d685ae2a6d7d85dbfaaf8"
+    },
+    {
+      "path": "wettbewerbe.json",
+      "bytes": 3907,
+      "sha256": "02e91d54d7923146c17690bd8d2968d148d209a8dbd688a0056881281c6d6133"
+    },
+    {
+      "path": "willkommen-kachel-final.jpg",
+      "bytes": 513572,
+      "sha256": "ba86e6b0489bec9d193b5fd4903dd99d75e5c36014ace54a2dc5b8168d95b3b1"
+    }
+  ]
+}
