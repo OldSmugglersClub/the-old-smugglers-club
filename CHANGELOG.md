@@ -708,3 +708,15 @@
 - Das Ehrenlogbuch `hall-of-fame.html` zeigt beide Kategorien ebenfalls an.
 - Mobile Umbrüche und Kartenbreiten für die erweiterte Titelliste stabilisiert.
 - Keine Bilddateien erstellt oder verändert.
+
+## Version 4.2.0 – Startzentrale der Crew – 31.07.2026
+
+- Startzentrale innerhalb der bestehenden Kachel vollständig neu aufgebaut.
+- Bildbasierte Schaltflächen und unsichtbare Klickflächen durch echte, zugängliche HTML-Bedienelemente ersetzt.
+- Angeschnittene Messingplakette am oberen linken Rand entfernt.
+- Saisonstatus mit Saison, nächstem Smugglerauftrag und aktuellem Champion ergänzt.
+- Zwei gleichwertig ausgerichtete Schaltflächen für Tipprunde und Wettbewerbe umgesetzt.
+- Kompassrose und Clubsiegel ausschließlich mit CSS dezent in den Hintergrund integriert.
+- Mobile Darstellung als stabile Einspaltenansicht umgesetzt.
+- Kachelgröße, Grundraster und Navigation unverändert belassen.
+- Keine Bilderstellung und keine neuen Bilddateien.
