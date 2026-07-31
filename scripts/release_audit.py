@@ -45,9 +45,9 @@ for file in json_files:
 required = ["index.html", "VERSION.txt", "CHANGELOG.md", "README.md", "datenregister.json", "datenmodell.js", "RELEASE-MANIFEST.json", "admin.html", "admin.css", "admin.js"]
 missing_required = [name for name in required if not (ROOT / name).exists()]
 version = (ROOT / "VERSION.txt").read_text(encoding="utf-8").strip() if (ROOT / "VERSION.txt").exists() else None
-status = "OK" if not missing and not json_errors and not missing_required and version == "3.5" else "FEHLER"
+status = "OK" if not missing and not json_errors and not missing_required and version == "3.6" else "FEHLER"
 report = {
-    "auditVersion": "3.5",
+    "auditVersion": "3.6",
     "generatedAtUtc": datetime.now(timezone.utc).isoformat(),
     "status": status,
     "version": version,

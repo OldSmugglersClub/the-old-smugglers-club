@@ -4,6 +4,7 @@
   let latestReport = null;
   let latestBackup = null;
   let restoreResult = null;
+  const LOG_KEY = "osc-maintenance-log-v1";
 
   async function timedFetch(name, file, type = "json") {
     const started = performance.now();
@@ -76,8 +77,73 @@
     $("noticeList").replaceChildren(...notices.map(item => { const p = document.createElement("p"); p.className = `admin-notice ${item.type}`.trim(); p.textContent = item.text; return p; }));
   }
 
+  function readLog() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(LOG_KEY) || "[]");
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (_) { return []; }
+  }
+
+  function summarizeReport(report) {
+    const failed = report.sources.filter(source => !source.ok);
+    return {
+      recordedAt: new Date().toISOString(),
+      websiteVersion: report.websiteVersion,
+      dataVersion: report.dataVersion,
+      sourceTotal: report.sources.length,
+      sourceFailed: failed.length,
+      failedFiles: failed.map(source => source.file),
+      validationStatus: report.validation?.status || "unbekannt",
+      validationErrors: report.validation?.errors?.length || 0,
+      validationWarnings: report.validation?.warnings?.length || 0
+    };
+  }
+
+  function compareSnapshots(previous, current) {
+    if (!previous) return ["Erster protokollierter Prüfstand"];
+    const changes = [];
+    if (previous.websiteVersion !== current.websiteVersion) changes.push(`Website-Version ${previous.websiteVersion} → ${current.websiteVersion}`);
+    if (previous.dataVersion !== current.dataVersion) changes.push(`Datenversion ${previous.dataVersion} → ${current.dataVersion}`);
+    if (previous.sourceFailed !== current.sourceFailed) changes.push(`Fehlerhafte Quellen ${previous.sourceFailed} → ${current.sourceFailed}`);
+    if (previous.validationStatus !== current.validationStatus) changes.push(`Validierung ${previous.validationStatus} → ${current.validationStatus}`);
+    if (previous.validationErrors !== current.validationErrors) changes.push(`Validierungsfehler ${previous.validationErrors} → ${current.validationErrors}`);
+    if (previous.validationWarnings !== current.validationWarnings) changes.push(`Warnungen ${previous.validationWarnings} → ${current.validationWarnings}`);
+    return changes.length ? changes : ["Keine fachliche Änderung zum vorherigen Prüfstand"];
+  }
+
+  function renderLog() {
+    const log = readLog();
+    const latest = log.at(-1);
+    $("logBadge").textContent = log.length ? `${log.length} Einträge` : "Noch kein Eintrag";
+    $("logBadge").className = `admin-badge ${log.length ? "ok" : ""}`;
+    $("logGrid").replaceChildren(
+      card("Protokolleinträge", log.length),
+      card("Letzter Prüfstand", latest ? new Date(latest.recordedAt).toLocaleString("de-DE") : "–"),
+      card("Letzte Version", latest?.websiteVersion || "–"),
+      card("Letzter Status", latest?.validationStatus || "–")
+    );
+    $("logRows").replaceChildren(...log.slice().reverse().slice(0, 20).map(entry => {
+      const row = document.createElement("tr");
+      const values = [new Date(entry.recordedAt).toLocaleString("de-DE"), entry.websiteVersion, `${entry.sourceTotal-entry.sourceFailed}/${entry.sourceTotal}`, `${entry.validationStatus} · ${entry.validationErrors} F / ${entry.validationWarnings} W`, (entry.changes || []).join("; ")];
+      values.forEach(value => { const td=document.createElement("td"); td.textContent=value; row.appendChild(td); });
+      return row;
+    }));
+    $("logDownloadButton").disabled = !log.length;
+    $("clearLogButton").disabled = !log.length;
+  }
+
+  function recordCurrentReport() {
+    if (!latestReport) return;
+    const log = readLog();
+    const current = summarizeReport(latestReport);
+    current.changes = compareSnapshots(log.at(-1), current);
+    log.push(current);
+    localStorage.setItem(LOG_KEY, JSON.stringify(log.slice(-100)));
+    renderLog();
+  }
+
   async function run() {
-    $("refreshButton").disabled = true; $("downloadButton").disabled = true; $("backupButton").disabled = true;
+    $("refreshButton").disabled = true; $("downloadButton").disabled = true; $("backupButton").disabled = true; $("logButton").disabled = true;
     $("overallBadge").textContent = "Prüfung läuft"; $("overallBadge").className = "admin-badge";
     const started = performance.now();
     const registry = await window.OSCDataRegistry.load();
@@ -92,7 +158,7 @@
     latestReport = { reportVersion: 2, generatedAt: new Date().toISOString(), websiteVersion: registry.websiteVersion || sources.find(s => s.file === "VERSION.txt")?.detail || "unbekannt", schemaVersion: registry.schemaVersion, dataVersion: registry.datenVersion, durationMs: Math.round(performance.now() - started), validation: model.validation, sources: sources.map(({ payload, ...source }) => source) };
     latestBackup = { backupVersion: 1, generatedAt: latestReport.generatedAt, websiteVersion: latestReport.websiteVersion, dataVersion: latestReport.dataVersion, sources: Object.fromEntries(sources.filter(s => s.ok && s.file.endsWith(".json")).map(s => [s.file, s.payload])) };
     render(latestReport); renderValidation(model.validation);
-    $("refreshButton").disabled = false; $("downloadButton").disabled = false; $("backupButton").disabled = !Object.keys(latestBackup.sources).length;
+    $("refreshButton").disabled = false; $("downloadButton").disabled = false; $("backupButton").disabled = !Object.keys(latestBackup.sources).length; $("logButton").disabled = false; renderLog();
   }
 
   function validateBackupDocument(document) {
@@ -107,6 +173,10 @@
     if (!entries.length && !errors.length) warnings.push("Die Sicherung enthält keine Datenquellen.");
     if (!document.backupVersion) warnings.push("Eine Backup-Versionsnummer fehlt.");
     if (!document.generatedAt) warnings.push("Ein Erstellungszeitpunkt fehlt.");
+    const currentVersion = window.OSCDataRegistry.current?.websiteVersion;
+    if (document?.websiteVersion && currentVersion && document.websiteVersion !== currentVersion) warnings.push(`Rückrollkontrolle: Sicherung stammt aus Website-Version ${document.websiteVersion}, aktuell ist ${currentVersion}. Vor dem Ersetzen Strukturänderungen prüfen.`);
+    const currentDataVersion = window.OSCDataRegistry.current?.datenVersion;
+    if (document?.dataVersion != null && currentDataVersion != null && document.dataVersion !== currentDataVersion) warnings.push(`Rückrollkontrolle: Datenversion ${document.dataVersion} weicht von der aktuellen Datenversion ${currentDataVersion} ab.`);
     const registered = new Set(Object.values(window.OSCDataRegistry.current?.quellen || {}).filter(file => /\.json$/i.test(file)));
     const unknown = entries.map(([file]) => file).filter(file => !registered.has(file));
     const missing = [...registered].filter(file => !entries.some(([entry]) => entry === file));
@@ -176,5 +246,9 @@
   $("restoreFile").addEventListener("change", event => { const file = event.target.files?.[0]; if (file) inspectRestoreFile(file); });
   $("planButton").addEventListener("click", () => restoreResult && saveJson(buildImportPlan(restoreResult), `osc-importplan-${new Date().toISOString().slice(0,10)}.json`));
   $("verifiedBackupButton").addEventListener("click", () => restoreResult?.document && saveJson(restoreResult.document, `osc-gepruefte-datensicherung-${new Date().toISOString().slice(0,10)}.json`));
+  $("logButton").addEventListener("click", recordCurrentReport);
+  $("logDownloadButton").addEventListener("click", () => saveJson({ protocolVersion: 1, exportedAt: new Date().toISOString(), entries: readLog() }, `osc-pflegeprotokoll-${new Date().toISOString().slice(0,10)}.json`));
+  $("clearLogButton").addEventListener("click", () => { if (confirm("Lokales Pflegeprotokoll dieses Browsers wirklich leeren?")) { localStorage.removeItem(LOG_KEY); renderLog(); } });
+  renderLog();
   run();
 })();

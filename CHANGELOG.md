@@ -358,3 +358,12 @@
 - Unterstützung für reduzierte Bewegungen und erhöhten Kontrast erweitert.
 - Externe Links mit neuem Tab werden defensiv mit `noopener` und `noreferrer` abgesichert.
 - Grundlayout, Raster, Kachelgrößen, Navigation und freigegebene Inhalte unverändert belassen.
+
+## Version 3.6 – Pflegeprotokoll, Änderungsnachweis und Rückrollkontrolle – 31.07.2026
+
+- Lokales Pflegeprotokoll im Administrationszentrum ergänzt.
+- Prüfstände können mit Version, Quellenstatus und Validierungsergebnis dokumentiert werden.
+- Automatischer Vergleich mit dem vorherigen Prüfstand zeigt relevante Änderungen.
+- Pflegeprotokoll kann als JSON exportiert und lokal gelöscht werden.
+- Wiederherstellungsprüfung warnt bei abweichender Website- oder Datenversion.
+- Grundlayout, Raster, Kachelgrößen, Navigation und freigegebene Inhalte unverändert belassen.

@@ -1,7 +1,7 @@
 {
-  "version": "3.5",
+  "version": "3.6",
   "modus": "Plan B · datengetrieben",
-  "aktualisiertAm": "2026-07-31T11:12:00+02:00",
+  "aktualisiertAm": "2026-07-31T11:16:00+02:00",
   "module": [
     {
       "name": "Clubdaten",
@@ -37,8 +37,18 @@
       "name": "Wiederherstellungsprüfung",
       "datei": "admin.html",
       "status": "aktiv"
+    },
+    {
+      "name": "Pflegeprotokoll",
+      "datei": "admin.html",
+      "status": "aktiv"
+    },
+    {
+      "name": "Rückrollkontrolle",
+      "datei": "admin.html",
+      "status": "aktiv"
     }
   ],
   "releaseStatus": "stabil",
-  "datenregisterVersion": 6
+  "datenregisterVersion": 7
 }

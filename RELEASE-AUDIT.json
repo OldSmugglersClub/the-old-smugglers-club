@@ -1,8 +1,8 @@
 {
-  "auditVersion": "3.5",
-  "generatedAtUtc": "2026-07-31T09:14:35.655633+00:00",
+  "auditVersion": "3.6",
+  "generatedAtUtc": "2026-07-31T09:18:30.012836+00:00",
   "status": "OK",
-  "version": "3.5",
+  "version": "3.6",
   "counts": {
     "html": 12,
     "javascript": 9,

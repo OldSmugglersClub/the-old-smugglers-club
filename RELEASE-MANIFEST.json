@@ -1,7 +1,7 @@
 {
-  "manifestVersion": "3.5",
-  "generatedAtUtc": "2026-07-31T09:14:36.750849+00:00",
-  "fileCount": 83,
+  "manifestVersion": "3.6",
+  "generatedAtUtc": "2026-07-31T09:18:31.030289+00:00",
+  "fileCount": 85,
   "files": [
     {
       "path": "ADMIN-HANDBUCH.md",
@@ -20,8 +20,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 22359,
-      "sha256": "07c9d0bb042c76e7f355bd71f5ab64565a6aefd03656ea3e41abdfba86b21fa3"
+      "bytes": 22946,
+      "sha256": "52e8e979261f62b5275994f0f156f5327abc8488601a071df5af336a34a67523"
     },
     {
       "path": "CNAME",
@@ -74,6 +74,11 @@
       "sha256": "85ab6a48720d7e094016dc29282170f863a2d55c54469819271f86488224b7d3"
     },
     {
+      "path": "GITHUB-UPDATE-3.6.md",
+      "bytes": 367,
+      "sha256": "01b6fced875bdd33b7a7760e49a4fd6b679a87ebb85632fa903040e18d24d77b"
+    },
+    {
       "path": "INSTALLATION.md",
       "bytes": 57,
       "sha256": "b4a4c4d1a581d34fd05a9e9d6c9a74e76bd5da4c67427e9066377e6d2940b8bd"
@@ -85,13 +90,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 1389,
-      "sha256": "c64927c12b437ccf362bc923e4b9b99af8d23c33101c09596b991094988dfedc"
+      "bytes": 1547,
+      "sha256": "e9079b67059acd88bbdaed9cba2cb60343a5cd58760736c3aa557f14aac8430c"
     },
     {
       "path": "RELEASE-AUDIT.json",
       "bytes": 305,
-      "sha256": "dd2fca9147400f424ae660eb916d7ce2dc8549ebe6606ae7639c5a951680bd13"
+      "sha256": "8d26acde2076d14f3cd165ed08e2552c05f9e2243e8bafc04ca267298eacac9e"
     },
     {
       "path": "RELEASE_NOTES_v3.0.1.md",
@@ -134,9 +139,14 @@
       "sha256": "3de1faf98a973e7c9968804c0627c8936771367f3acec2ae7cea5814f7a6865e"
     },
     {
+      "path": "RELEASE_NOTES_v3.6.md",
+      "bytes": 458,
+      "sha256": "ebbcd8b2b0ee3c2c7521b245dbe90655c6e6c2738912c8b2ba23ef4ac4c7f16c"
+    },
+    {
       "path": "VERSION.txt",
       "bytes": 4,
-      "sha256": "a5c0dfc64d745c1bff4a4f6397214178e1597fc224cdb21bb7783e556ed8493f"
+      "sha256": "9c512c297617a6e3403db73afee1361d733e7e2131681e7334de2555bfca1863"
     },
     {
       "path": "accessibility-v33.css",
@@ -150,18 +160,18 @@
     },
     {
       "path": "admin.css",
-      "bytes": 2886,
-      "sha256": "ec116d0d55cdf91544f326233152c27744ae9cdbf27125185a8371188e15f439"
+      "bytes": 3006,
+      "sha256": "3f5ebde2c0912874c155fa969e9dec7415ab9f40d073a1a2f4b3e3b92e1d0365"
     },
     {
       "path": "admin.html",
-      "bytes": 3806,
-      "sha256": "ae5e178c74eab0459cdc7fe669ed3d372025dab2a1c68a06963357b9932c9702"
+      "bytes": 4945,
+      "sha256": "6d69bdff207f253965c3ab98121880a75648c4c37be57bac37296c3b04a10a5a"
     },
     {
       "path": "admin.js",
-      "bytes": 13203,
-      "sha256": "40996b222a4eeb1bd2d7b2d9523766dbf6e1e09111f35738a6a895aef2db7325"
+      "bytes": 17963,
+      "sha256": "fafcf12e0d1a4400faa4a00a6cdffa9ff09dbaf50968df7d98d4b2027635508b"
     },
     {
       "path": "banner.png",
@@ -211,7 +221,7 @@
     {
       "path": "datenregister.json",
       "bytes": 732,
-      "sha256": "023cbdb07902abdfb6fab835c8e2f730de3e90f01bf8132fe3ff5d995ea5f394"
+      "sha256": "10db64fc7267b504f613c9110a96e36d8bde2f36fd2cc5965c11c5a4683fdf91"
     },
     {
       "path": "dfb-pokal.html",
@@ -336,12 +346,12 @@
     {
       "path": "scripts/build_release_manifest.py",
       "bytes": 950,
-      "sha256": "20d2d6019254e039b56297007c03e1506ec137c14e8278be8cf161904ba9382f"
+      "sha256": "e760eb1981e3f1542758113e99805ed62546540347e6d683021bc85a17de465d"
     },
     {
       "path": "scripts/release_audit.py",
       "bytes": 2562,
-      "sha256": "cf4eec0fbc54cf1dd2089ac1559ac2c19788eb614c22c03ecf5b0408513d0e9f"
+      "sha256": "099fb1d573295471428e49d1d0b12c1ec4857ae523a4a7bdafa93272cbe5892c"
     },
     {
       "path": "scripts/update_data.py",
@@ -370,8 +380,8 @@
     },
     {
       "path": "systemstatus.json",
-      "bytes": 907,
-      "sha256": "fc49a7e4cebb5874798417f2d2e4dd0fc0fb60d57d72851d3561903d02b7385a"
+      "bytes": 1108,
+      "sha256": "8b51d526e871114dcb3ff2460c5d5d01ba19ce0d9af7d7d443bb53127e70c8d8"
     },
     {
       "path": "teams.json",
