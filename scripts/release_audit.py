@@ -1,61 +1,29 @@
 #!/usr/bin/env python3
-from __future__ import annotations
-import json, re, sys
 from pathlib import Path
-from datetime import datetime, timezone
-
-ROOT = Path(__file__).resolve().parents[1]
-REF_RE = re.compile(r'''(?:src|href)\s*=\s*["']([^"'#?]+)|fetch\(\s*["']([^"']+)["']''', re.I)
-SKIP = ("http://", "https://", "mailto:", "tel:", "javascript:", "data:", "//")
-
-html_files = sorted(ROOT.glob("*.html"))
-js_files = sorted(ROOT.glob("*.js"))
-json_files = sorted(ROOT.glob("*.json"))
-missing = []
-checked_refs = set()
-json_errors = []
-
-for file in html_files + js_files:
-    text = file.read_text(encoding="utf-8", errors="replace")
-    for match in REF_RE.finditer(text):
-        ref = next((g for g in match.groups() if g), "").strip()
-        if not ref or ref.startswith(SKIP):
-            continue
-        ref = ref.split("?")[0].split("#")[0]
-        if not ref or "${" in ref or ref.startswith("/"):
-            continue
-        target = (file.parent / ref).resolve()
-        try:
-            target.relative_to(ROOT.resolve())
-        except ValueError:
-            continue
-        key = (file.name, ref)
-        if key in checked_refs:
-            continue
-        checked_refs.add(key)
-        if not target.exists():
-            missing.append({"source": file.name, "reference": ref})
-
-for file in json_files:
-    try:
-        json.loads(file.read_text(encoding="utf-8"))
-    except Exception as exc:
-        json_errors.append({"file": file.name, "error": str(exc)})
-
-required = ["index.html", "VERSION.txt", "CHANGELOG.md", "README.md", "datenregister.json", "datenmodell.js", "RELEASE-MANIFEST.json", "admin.html", "admin.css", "admin.js", "wettbewerbspflege.html", "wettbewerbspflege.css", "wettbewerbspflege.js", "team-teilnehmerpflege.html", "team-teilnehmerpflege.css", "team-teilnehmerpflege.js", "teilnehmer.json", "tipppflege.html", "tipppflege.css", "tipppflege.js", "tipps.json", "punkteberechnung.html", "punkteberechnung.css", "punkteberechnung.js", "wertungsregeln.json", "punkte.json", "bonuspflege.html", "bonuspflege.css", "bonuspflege.js", "bonusfragen.json", "bonusantworten.json", "smugglerpflege.html", "smugglerpflege.css", "smugglerpflege.js", "smugglerauftraege.json", "smugglerwertung.html", "smugglerwertung.css", "smugglerwertung.js", "smugglerpunkte.json", "teamwertung.html", "teamwertung.css", "teamwertung.js", "teampunkte.json", "wettbewerbswertung.html", "wettbewerbswertung.css", "wettbewerbswertung.js", "wettbewerbspunkte.json", "spieltagwertung.html", "spieltagwertung.css", "spieltagwertung.js", "spieltagpunkte.json", "ranglistenverlauf.html", "ranglistenverlauf.css", "ranglistenverlauf.js", "ranglistenverlauf.json", "saisonarchiv.html", "saisonarchiv.css", "saisonarchiv.js", "saisonarchiv.json", "tippfristen.html", "tippfristen.css", "tippfristen.js", "tippfristen.json", "abgabe-erinnerungen.html", "abgabe-erinnerungen.css", "abgabe-erinnerungen.js", "abgabe-erinnerungen.json", "erinnerungsprotokoll.html", "erinnerungsprotokoll.css", "erinnerungsprotokoll.js", "erinnerungsprotokoll.json", "abgabezuverlaessigkeit.html", "abgabezuverlaessigkeit.css", "abgabezuverlaessigkeit.js", "abgabezuverlaessigkeit.json", "datenqualitaet.html", "datenqualitaet.css", "datenqualitaet.js", "datenqualitaet.json", "teilnehmer-importbericht.json", "DATENSCHUTZ-HINWEIS.md", "RELEASE_NOTES_v4.0.md", "GITHUB-UPDATE-4.0.md", "RELEASE_NOTES_v4.0.2.md", "GITHUB-UPDATE-4.0.2.md", "RELEASE_NOTES_v4.0.3.md", "GITHUB-UPDATE-4.0.3.md"]
-missing_required = [name for name in required if not (ROOT / name).exists()]
-version = (ROOT / "VERSION.txt").read_text(encoding="utf-8").strip() if (ROOT / "VERSION.txt").exists() else None
-status = "OK" if not missing and not json_errors and not missing_required and version == "4.0.3" else "FEHLER"
-report = {
-    "auditVersion": "4.0.3",
-    "generatedAtUtc": datetime.now(timezone.utc).isoformat(),
-    "status": status,
-    "version": version,
-    "counts": {"html": len(html_files), "javascript": len(js_files), "json": len(json_files), "referencesChecked": len(checked_refs)},
-    "missingRequiredFiles": missing_required,
-    "missingLocalReferences": missing,
-    "jsonErrors": json_errors,
-}
-(ROOT / "RELEASE-AUDIT.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-print(json.dumps(report, ensure_ascii=False, indent=2))
-sys.exit(0 if status == "OK" else 1)
+import json,re,sys
+from datetime import datetime,timezone
+ROOT=Path(__file__).resolve().parents[1]
+REF_RE=re.compile(r"(?:src|href)\s*=\s*['\"]([^'\"#?]+)|fetch\(\s*['\"]([^'\"]+)['\"]",re.I)
+SKIP=("http://","https://","mailto:","tel:","javascript:","data:","//")
+html=sorted(ROOT.glob('*.html')); js=sorted(ROOT.glob('*.js')); jsons=sorted(ROOT.glob('*.json'))
+missing=[]; refs=set(); errors=[]
+for f in html+js:
+ t=f.read_text(encoding='utf-8',errors='replace')
+ for m in REF_RE.finditer(t):
+  ref=next((g for g in m.groups() if g),'').strip().split('?')[0].split('#')[0]
+  if not ref or ref.startswith(SKIP) or '${' in ref or ref.startswith('/'): continue
+  target=(f.parent/ref).resolve()
+  try: target.relative_to(ROOT.resolve())
+  except ValueError: continue
+  refs.add((f.name,ref))
+  if not target.exists(): missing.append({'source':f.name,'reference':ref})
+for f in jsons:
+ try: json.loads(f.read_text(encoding='utf-8'))
+ except Exception as e: errors.append({'file':f.name,'error':str(e)})
+forbidden=['admin.html','daten-cockpit.html','spielpflege.html','wettbewerbspflege.html','team-teilnehmerpflege.html','tipppflege.html','punkteberechnung.html','bonuspflege.html','smugglerpflege.html','tippfristen.html','abgabe-erinnerungen.html','erinnerungsprotokoll.html','abgabezuverlaessigkeit.html','datenqualitaet.html']
+found=[x for x in forbidden if (ROOT/x).exists()]
+version=(ROOT/'VERSION.txt').read_text(encoding='utf-8').strip()
+status='OK' if not missing and not errors and not found and version=='4.0.4' else 'FEHLER'
+report={'auditVersion':'4.0.4','generatedAtUtc':datetime.now(timezone.utc).isoformat(),'status':status,'version':version,'counts':{'html':len(html),'javascript':len(js),'json':len(jsons),'referencesChecked':len(refs)},'missingLocalReferences':missing,'jsonErrors':errors,'forbiddenPublicAdminFiles':found}
+(ROOT/'RELEASE-AUDIT.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps(report,ensure_ascii=False,indent=2)); sys.exit(0 if status=='OK' else 1)

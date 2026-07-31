@@ -1,15 +1,15 @@
 {
-  "auditVersion": "4.0.3",
-  "generatedAtUtc": "2026-07-31T12:17:11.289265+00:00",
+  "auditVersion": "4.0.4",
+  "generatedAtUtc": "2026-07-31T12:31:38.753241+00:00",
   "status": "OK",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "counts": {
-    "html": 31,
-    "javascript": 28,
+    "html": 11,
+    "javascript": 8,
     "json": 35,
-    "referencesChecked": 307
+    "referencesChecked": 99
   },
-  "missingRequiredFiles": [],
   "missingLocalReferences": [],
-  "jsonErrors": []
+  "jsonErrors": [],
+  "forbiddenPublicAdminFiles": []
 }

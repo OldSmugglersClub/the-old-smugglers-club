@@ -1,4 +1,7 @@
-# The Old Smugglers Club
+# The Old Smugglers Club – Version 4.0.4
+
+Die öffentliche GitHub-Pages-Ausgabe enthält ausschließlich den Spielerbereich. Die Administration wurde in ein separates lokales Paket ausgelagert und ist nicht über die Website erreichbar.
+
 
 Offizielle Website der Tipprunde **The Old Smugglers Club**.
 

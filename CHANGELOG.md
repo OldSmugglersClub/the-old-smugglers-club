@@ -1,3 +1,12 @@
+# Changelog
+
+## 4.0.4 – Öffentliche Website und lokale Administration getrennt
+
+- Sämtliche Administrations-, Pflege-, Kontroll- und Exportseiten aus dem öffentlichen GitHub-Paket entfernt.
+- Öffentliche Spielerwebsite enthält nur noch Teilnehmerinhalte.
+- Separates lokales Admin-Paket mit Startskript und Bedienungsanleitung erstellt.
+- Keine Änderung am freigegebenen Layout, den Kachelgrößen oder der mobilen Darstellung.
+
 # Version 4.0.3 – Trennung Spielerbereich und Administration – 31.07.2026
 
 - Öffentliche Wettbewerbsseiten konsequent auf Inhalte für Mitspieler reduziert.

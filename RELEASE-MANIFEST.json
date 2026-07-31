@@ -1,1096 +1,794 @@
 {
-  "manifestVersion": "4.0.3",
-  "generatedAtUtc": "2026-07-31T12:17:10.270910+00:00",
-  "fileCount": 218,
+  "version": "4.0.4",
   "files": [
     {
       "path": "ADMIN-HANDBUCH.md",
-      "bytes": 44,
+      "size": 44,
       "sha256": "6fff716ecb5d1a4e37d1756c324fd40fd7a19398c7db06ac45b8829dfaab8136"
     },
     {
       "path": "BACKUP_RESTORE.md",
-      "bytes": 52,
+      "size": 52,
       "sha256": "4f866edeb024e8a702d409d7749c13763ef2b32c58971eed63bf0cad23694895"
     },
     {
       "path": "BENUTZERHANDBUCH.md",
-      "bytes": 39,
+      "size": 39,
       "sha256": "c78ac9daadf130bdb6f8e27d9ca47195423df6344755b1d9a5b2787aa780b791"
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 34707,
-      "sha256": "d24d45cc688c0d0cb58a28ed028e9cd13d3c7c5a09598d0990b5c24f7c9c2ca8"
+      "size": 35144,
+      "sha256": "e9b6648286cb66235fcce197d2f2e6d40179bd333427496021b23cbfc0f405b6"
     },
     {
       "path": "CNAME",
-      "bytes": 25,
+      "size": 25,
       "sha256": "fbb54b525696c8b148a1232625cfd9b6978921f267fa3a5fe17ee4555695de19"
     },
     {
       "path": "Champion-Trophäe.jpeg",
-      "bytes": 342558,
+      "size": 342558,
       "sha256": "f190b21f9e644b10a80cb4faaf4205830010db8424f980cb72f0f3c66afa0582"
     },
     {
       "path": "DATENSCHUTZ-HINWEIS.md",
-      "bytes": 522,
+      "size": 522,
       "sha256": "74f4ed633c18f74eb91048d88cc003978fde5397d9712bfa2a9bebe8f66f3c28"
     },
     {
       "path": "DATENSTRUKTUR.md",
-      "bytes": 51,
+      "size": 51,
       "sha256": "f0e3d497028de4e93497d4e258c19a034205581de072ebcccd2b81638d1aaf32"
     },
     {
       "path": "GITHUB-AENDERUNGEN-V3.0.1.md",
-      "bytes": 1634,
+      "size": 1634,
       "sha256": "8bd9354984aa2b8e3ea6d23080907dd7768e59b44dde90059bd3b7be559ee028"
     },
     {
       "path": "GITHUB-UPDATE-3.0.2.md",
-      "bytes": 563,
+      "size": 563,
       "sha256": "43a29a331691b5d571c40ae60b5e1be9637f7c0461c68329b1d4bacc0e755eff"
     },
     {
       "path": "GITHUB-UPDATE-3.1.md",
-      "bytes": 478,
+      "size": 478,
       "sha256": "454f170fc69ca3efb2e0555df23c418d693f66e60e5393c8c91a0e5325ad800c"
     },
     {
       "path": "GITHUB-UPDATE-3.10.md",
-      "bytes": 424,
+      "size": 424,
       "sha256": "a0965156114e1c8543453a34eb4ab58c8b890609b8c93859265b46d6668f2710"
     },
     {
       "path": "GITHUB-UPDATE-3.11.md",
-      "bytes": 387,
+      "size": 387,
       "sha256": "2a86d05904ef3da7167b32c8a783aa7529b9ec205de35295312da7d4393432c6"
     },
     {
       "path": "GITHUB-UPDATE-3.12.md",
-      "bytes": 442,
+      "size": 442,
       "sha256": "c2cb877628c664e03c27313e2119e79adecf4f01049811de00b087e1cb455708"
     },
     {
       "path": "GITHUB-UPDATE-3.13.md",
-      "bytes": 382,
+      "size": 382,
       "sha256": "d1d2288080aeaaa014b5ed822b181963126c7e022ee407dfc1b9ded79ef57b40"
     },
     {
       "path": "GITHUB-UPDATE-3.14.md",
-      "bytes": 514,
+      "size": 514,
       "sha256": "0f20a9c0f85a63c00a532491ffa508fa667c699bf7b0c337805688537f2f8103"
     },
     {
       "path": "GITHUB-UPDATE-3.15.md",
-      "bytes": 454,
+      "size": 454,
       "sha256": "d46fcf414c301c669ce8ff32fcfff4f25406503ba1f54fb8691e6297371a138e"
     },
     {
       "path": "GITHUB-UPDATE-3.16.md",
-      "bytes": 457,
+      "size": 457,
       "sha256": "f1c180777b124b9ab2e6bbb363667155e0b990641bbb3baa38756ac87888be50"
     },
     {
       "path": "GITHUB-UPDATE-3.17.md",
-      "bytes": 453,
+      "size": 453,
       "sha256": "98de0d722fc2e30424dd2876a8089cf643e4994d165ba1a067b76ebed5e40b1f"
     },
     {
       "path": "GITHUB-UPDATE-3.18.md",
-      "bytes": 422,
+      "size": 422,
       "sha256": "704078ffe7839fe28e9ee93df35e62600009d08ec081dfe86ea4923f97f15ce0"
     },
     {
       "path": "GITHUB-UPDATE-3.19.md",
-      "bytes": 457,
+      "size": 457,
       "sha256": "32d10026764a19505fba0a99289fe0a54f51f89fb0f2263131003bafa70db761"
     },
     {
       "path": "GITHUB-UPDATE-3.2.md",
-      "bytes": 424,
+      "size": 424,
       "sha256": "dc1d4df5cdbc70d864f38df82205140b6687b902f2746eadefd6eeb18ab12f38"
     },
     {
       "path": "GITHUB-UPDATE-3.20.md",
-      "bytes": 466,
+      "size": 466,
       "sha256": "eec14e4a68273cffea5cd082f02c63b82387a3cf8374e7983333beb42c4a28a7"
     },
     {
       "path": "GITHUB-UPDATE-3.21.md",
-      "bytes": 419,
+      "size": 419,
       "sha256": "45aad456de2fd97d34b96eb4ecc210926985cbbd3ce4938d82b59054c03499d3"
     },
     {
       "path": "GITHUB-UPDATE-3.22.md",
-      "bytes": 395,
+      "size": 395,
       "sha256": "f024bf58aecd297ff7e3e0e5234d6e36093be69265a754e49c1ced37576ccd39"
     },
     {
       "path": "GITHUB-UPDATE-3.23.md",
-      "bytes": 447,
+      "size": 447,
       "sha256": "225b02b410eea7ce9a2af3673b976c12d0ff8e68c9d784340988f446edd58c54"
     },
     {
       "path": "GITHUB-UPDATE-3.24.md",
-      "bytes": 502,
+      "size": 502,
       "sha256": "48b5dc6e2dec405d74dfcac328dc7a748a966da66fa4d9e6a6fb80e1e37b3919"
     },
     {
       "path": "GITHUB-UPDATE-3.25.md",
-      "bytes": 463,
+      "size": 463,
       "sha256": "6e9607b74c8eec25f8f390f7c06f98b3150d9b1c92101510cd78b1eabf8f33a6"
     },
     {
       "path": "GITHUB-UPDATE-3.26.md",
-      "bytes": 467,
+      "size": 467,
       "sha256": "3c239e00995bdfd9f9165a3985482b0edbefaf8676944e7f1692eb5278d0e61e"
     },
     {
       "path": "GITHUB-UPDATE-3.3.md",
-      "bytes": 707,
+      "size": 707,
       "sha256": "b8873b3cbb084d6856b000d01401f84c7d945684521841c059763f8801c98f18"
     },
     {
       "path": "GITHUB-UPDATE-3.4.md",
-      "bytes": 400,
+      "size": 400,
       "sha256": "a5ffe0ff02df57d820c69032f995cba2be59ab37959af2a769e6666191769636"
     },
     {
       "path": "GITHUB-UPDATE-3.5.md",
-      "bytes": 355,
+      "size": 355,
       "sha256": "85ab6a48720d7e094016dc29282170f863a2d55c54469819271f86488224b7d3"
     },
     {
       "path": "GITHUB-UPDATE-3.6.md",
-      "bytes": 367,
+      "size": 367,
       "sha256": "01b6fced875bdd33b7a7760e49a4fd6b679a87ebb85632fa903040e18d24d77b"
     },
     {
       "path": "GITHUB-UPDATE-3.7.1.md",
-      "bytes": 410,
+      "size": 410,
       "sha256": "28fb1e695e9742fdfbf8ed713a8af4a1f94dbb5f25c1779d03b7c62ac88f7bf3"
     },
     {
       "path": "GITHUB-UPDATE-3.7.2.md",
-      "bytes": 297,
+      "size": 297,
       "sha256": "479dee02a3253921dafa54abf2b93ec7e54c31254548b484ed7fec59fd6b3195"
     },
     {
       "path": "GITHUB-UPDATE-3.7.3.md",
-      "bytes": 479,
+      "size": 479,
       "sha256": "54696e4fb8c57f64cf0fd447beee52336efcdc0af9bfa6f6e62062bd18d1c20a"
     },
     {
       "path": "GITHUB-UPDATE-3.7.md",
-      "bytes": 437,
+      "size": 437,
       "sha256": "a59dcdfc4b321a026985e7f927169422b7fd46c53787f60eebbb5d3413ef05a2"
     },
     {
       "path": "GITHUB-UPDATE-3.8.md",
-      "bytes": 393,
+      "size": 393,
       "sha256": "f2ff30fa8e2d160330a2203f13f6ff4f78af7f9235dd074b62f82a3be0ccdd79"
     },
     {
       "path": "GITHUB-UPDATE-3.9.md",
-      "bytes": 403,
+      "size": 403,
       "sha256": "c113b7d0354d78406d5a91a3235cfb64da8c99cbc53bbf5fbf9379d301447d88"
     },
     {
       "path": "GITHUB-UPDATE-4.0.1.md",
-      "bytes": 344,
+      "size": 344,
       "sha256": "713353c7ffdddaf73df0de08050db0590a2d4f6eaa955951b5b8d5fb7208f678"
     },
     {
       "path": "GITHUB-UPDATE-4.0.2.md",
-      "bytes": 345,
+      "size": 345,
       "sha256": "3fdd577d4aff2956dfa7f7c55d7f21a0d5b82b1d359e37a3e0dfde44c6c00f93"
     },
     {
       "path": "GITHUB-UPDATE-4.0.3.md",
-      "bytes": 542,
+      "size": 542,
       "sha256": "6e69b661b27270b40b9f48abccc5efbada252858b92f5f9181a7579c61d360f7"
     },
     {
+      "path": "GITHUB-UPDATE-4.0.4.md",
+      "size": 1987,
+      "sha256": "04b00c9bbd3342329ff5a24a8803cc2fb893e2520783e8d5b3d5a90cbda298df"
+    },
+    {
       "path": "GITHUB-UPDATE-4.0.md",
-      "bytes": 615,
+      "size": 615,
       "sha256": "633c788219679e7b7078b6a58f04b94b50a5cac062e579cdd7f3fa64f9519723"
     },
     {
       "path": "INSTALLATION.md",
-      "bytes": 57,
+      "size": 57,
       "sha256": "b4a4c4d1a581d34fd05a9e9d6c9a74e76bd5da4c67427e9066377e6d2940b8bd"
     },
     {
       "path": "LIZENZ.md",
-      "bytes": 32,
+      "size": 32,
       "sha256": "a24c026836f5e79828f5a6f2b6a93327a40f96fbe5d4f6f00d5befe4cbc3dc7e"
     },
     {
       "path": "README.md",
-      "bytes": 5584,
-      "sha256": "4f4faf07bc580f4f0b86a4d2762d159a1191f59e7154499d95d9c283441be0db"
+      "size": 5799,
+      "sha256": "12dc46c99be41d400f6754258396b38380b9bb19388ba5bbcf56892a17667c4d"
     },
     {
       "path": "RELEASE-AUDIT.json",
-      "bytes": 310,
-      "sha256": "fa1a802130833ffe7e48824d478533cfcfe5792742fc73f8479c94c9d12b5817"
+      "size": 313,
+      "sha256": "96142df0c92ea4590a132c0a2058d81dd2d2e2b452c7215430ac5bfb89169f27"
     },
     {
       "path": "RELEASE_NOTES_v3.0.1.md",
-      "bytes": 638,
+      "size": 638,
       "sha256": "0173437643efe503f87da49c662522c561a3697808804466d69b59449d8596a4"
     },
     {
       "path": "RELEASE_NOTES_v3.0.2.md",
-      "bytes": 566,
+      "size": 566,
       "sha256": "8f8fdf7a344ac5c779bbe986196fcdcfcd6e988972f217e1e2e98f000086bbe3"
     },
     {
       "path": "RELEASE_NOTES_v3.0.md",
-      "bytes": 52,
+      "size": 52,
       "sha256": "86164c450581560e6d3f7c003fdc364d0140ccdeb0061c4cd107aadc2c3531c3"
     },
     {
       "path": "RELEASE_NOTES_v3.1.md",
-      "bytes": 607,
+      "size": 607,
       "sha256": "f3577ab14c4a7f1a0ac4c99b34d575431e8c0c328f165eb7e41e30eac4f7f75c"
     },
     {
       "path": "RELEASE_NOTES_v3.10.md",
-      "bytes": 229,
+      "size": 229,
       "sha256": "a17f87086a2a23ca7b6166a4a7253a6ae58c942bca4aa392b850e8f437952224"
     },
     {
       "path": "RELEASE_NOTES_v3.11.md",
-      "bytes": 190,
+      "size": 190,
       "sha256": "dac7199e17af404da7dcbf1c3924a1fc29e8bd4cdbe7b6764ac5d4b4db966f45"
     },
     {
       "path": "RELEASE_NOTES_v3.12.md",
-      "bytes": 523,
+      "size": 523,
       "sha256": "063dba63d561629abf042c3925f95b637b2017f0b1e3b983d3dd2bbe475e26c3"
     },
     {
       "path": "RELEASE_NOTES_v3.13.md",
-      "bytes": 471,
+      "size": 471,
       "sha256": "17a8b4bd73df93bb079229dec11df53a3788f3e5bcd1124ea9815c917c68d5e7"
     },
     {
       "path": "RELEASE_NOTES_v3.14.md",
-      "bytes": 320,
+      "size": 320,
       "sha256": "a1c2e7d0a3c3a21d2c9fbe1405b1be9a4a6be00205f3e8ba4f525cc061d254c3"
     },
     {
       "path": "RELEASE_NOTES_v3.15.md",
-      "bytes": 216,
+      "size": 216,
       "sha256": "4f1c372db94f16805908148a478c22c06bd331993943812a4af01c7128d2d8c8"
     },
     {
       "path": "RELEASE_NOTES_v3.16.md",
-      "bytes": 396,
+      "size": 396,
       "sha256": "13045b34eb840ac598220021287562fc538da0669051c541ebf1bca078ce29d4"
     },
     {
       "path": "RELEASE_NOTES_v3.17.md",
-      "bytes": 284,
+      "size": 284,
       "sha256": "ba2c252d442525df542e78c23632f6966a6deb7e9f455c9f6cb02503687926ad"
     },
     {
       "path": "RELEASE_NOTES_v3.18.md",
-      "bytes": 350,
+      "size": 350,
       "sha256": "68606f77c8a4062f14756957904d2046f505b10c0bd61f8097b68880fce44bf7"
     },
     {
       "path": "RELEASE_NOTES_v3.19.md",
-      "bytes": 433,
+      "size": 433,
       "sha256": "56204c1f215000fa0cd0249055d545718fae57be78e53b04892d8c5859cd0f69"
     },
     {
       "path": "RELEASE_NOTES_v3.2.md",
-      "bytes": 458,
+      "size": 458,
       "sha256": "d5a828ffd82ad59a4de2a44a78735b64ddbc658bafd8d1aeeec1b71d941d7642"
     },
     {
       "path": "RELEASE_NOTES_v3.20.md",
-      "bytes": 440,
+      "size": 440,
       "sha256": "517494362aefeefda46da40ae595e05d33ca448b3779468e308a905aeecc37dd"
     },
     {
       "path": "RELEASE_NOTES_v3.21.md",
-      "bytes": 191,
+      "size": 191,
       "sha256": "8680b131d8a14f6dfa58c74775f58ffaca76f31ae9d0410ef7addc7be0b23a2d"
     },
     {
       "path": "RELEASE_NOTES_v3.22.md",
-      "bytes": 545,
+      "size": 545,
       "sha256": "6a30884d5f2851852feb542bcc2e2bfe97e40e33e89ee21202e1e04b964aa72d"
     },
     {
       "path": "RELEASE_NOTES_v3.23.md",
-      "bytes": 350,
+      "size": 350,
       "sha256": "bdfcc36705f3fdbd6f80218d27d2ddb9fd2b865d097db80988d19a67ac20dff8"
     },
     {
       "path": "RELEASE_NOTES_v3.24.md",
-      "bytes": 596,
+      "size": 596,
       "sha256": "f79afdd1e1298bc1044dcaafa16ae0f96bf899c5866fbdd091e80c2cfbe257cf"
     },
     {
       "path": "RELEASE_NOTES_v3.25.md",
-      "bytes": 421,
+      "size": 421,
       "sha256": "e9cefeb9fead4db0f8861efd73c16410d1d75274427945990644c7b297d1075c"
     },
     {
       "path": "RELEASE_NOTES_v3.26.md",
-      "bytes": 558,
+      "size": 558,
       "sha256": "5998ac2616c07873066473612d3ad8c36996bbd624fef4cacb2f179ec7ade3f3"
     },
     {
       "path": "RELEASE_NOTES_v3.3.md",
-      "bytes": 728,
+      "size": 728,
       "sha256": "3446988d4da34cefdb884ac7414b31cc3bfe881b4cb23402089b9119df8fa710"
     },
     {
       "path": "RELEASE_NOTES_v3.4.md",
-      "bytes": 380,
+      "size": 380,
       "sha256": "6ee8d17a2445db7581c72e1a43dfc9df5abe197b2142ab832bade4ccb072f785"
     },
     {
       "path": "RELEASE_NOTES_v3.5.md",
-      "bytes": 509,
+      "size": 509,
       "sha256": "3de1faf98a973e7c9968804c0627c8936771367f3acec2ae7cea5814f7a6865e"
     },
     {
       "path": "RELEASE_NOTES_v3.6.md",
-      "bytes": 458,
+      "size": 458,
       "sha256": "ebbcd8b2b0ee3c2c7521b245dbe90655c6e6c2738912c8b2ba23ef4ac4c7f16c"
     },
     {
       "path": "RELEASE_NOTES_v3.7.1.md",
-      "bytes": 314,
+      "size": 314,
       "sha256": "46868287e22dd9a010e6618dba6140d6bdf71b24d21a88a1b425530dd7443d76"
     },
     {
       "path": "RELEASE_NOTES_v3.7.2.md",
-      "bytes": 343,
+      "size": 343,
       "sha256": "5098de0b7c71919eade3b74549a2e7a27cdd08de414a92e3bced60e22c3e0ad7"
     },
     {
       "path": "RELEASE_NOTES_v3.7.3.md",
-      "bytes": 356,
+      "size": 356,
       "sha256": "f7df6d61c624cfad8ddd1037503419beea3dd5fd68d5817d4f3c363c1ab7e139"
     },
     {
       "path": "RELEASE_NOTES_v3.7.md",
-      "bytes": 571,
+      "size": 571,
       "sha256": "e369c09d2088334fe046551b2d46fbff2b9468cd75179a8510bf10d0acfab6b7"
     },
     {
       "path": "RELEASE_NOTES_v3.8.md",
-      "bytes": 651,
+      "size": 651,
       "sha256": "edd7775c46ae90e1f5d96ee1db864edfd632e7e5c8988685989a1363f8a229ba"
     },
     {
       "path": "RELEASE_NOTES_v3.9.md",
-      "bytes": 307,
+      "size": 307,
       "sha256": "6dcd145d0748c42b2ff0225213c95e42388352424cebc0608c9c54431fdc671c"
     },
     {
       "path": "RELEASE_NOTES_v4.0.1.md",
-      "bytes": 568,
+      "size": 568,
       "sha256": "0d3ec28ebcc7d21705b484870cc6c722432917c06131ac4dbbea644b3d6aa1af"
     },
     {
       "path": "RELEASE_NOTES_v4.0.2.md",
-      "bytes": 311,
+      "size": 311,
       "sha256": "6b2b47ccc3cb1c7c9648e50f623d5c970c884fbc213e1fb7c8a3aec3b5673a5b"
     },
     {
       "path": "RELEASE_NOTES_v4.0.3.md",
-      "bytes": 1048,
+      "size": 1048,
       "sha256": "9c75b5a0d98b05d1acbb50efcc5f26a9c908499c8202c8851aa5e6f79f2692a2"
     },
     {
+      "path": "RELEASE_NOTES_v4.0.4.md",
+      "size": 2105,
+      "sha256": "887056fc9b76b745c805c5bc10bab65b15ebef60a9e9be68cdf932285b369209"
+    },
+    {
       "path": "RELEASE_NOTES_v4.0.md",
-      "bytes": 783,
+      "size": 783,
       "sha256": "431b92d53d2fe78a94b5352411e0f97fe6e1f4599e26f9a3468dd7d52c501279"
     },
     {
       "path": "VERSION.txt",
-      "bytes": 6,
-      "sha256": "056224f51201ea92ff0550c523b936505df28451edd4d0b096919b5713ec93fb"
+      "size": 6,
+      "sha256": "27aa16a537d00b66aa2a31a9e193efbd26861afa33a7bc14ea3345f6284cbcdc"
     },
     {
-      "path": "abgabe-erinnerungen.css",
-      "bytes": 1292,
-      "sha256": "706add8ce3feab70a8a823518c15f0d5121c8584479b9bf227a9a49ca8af1def"
-    },
-    {
-      "path": "abgabe-erinnerungen.html",
-      "bytes": 2681,
-      "sha256": "c2055479c91228eccbeadccd7e87856dbad44f8cb4a07cc44ad8ffea2d61fbf9"
-    },
-    {
-      "path": "abgabe-erinnerungen.js",
-      "bytes": 6262,
-      "sha256": "c6bcd5e479f0e1ceeac90c7f6b754a3f7f4c60fbb0ac79ef34f50315cd8a3a61"
+      "path": "ZU_LOESCHEN_4.0.4.txt",
+      "size": 1176,
+      "sha256": "398581e29ceda57585f801397a2e7e493332211ac77a0fcbfad094948e8ba141"
     },
     {
       "path": "abgabe-erinnerungen.json",
-      "bytes": 239,
+      "size": 239,
       "sha256": "9263c8a755e49b372dbab9dffb2c7a6e622b8b5f1d76b9633fcd277b18b7a970"
     },
     {
-      "path": "abgabezuverlaessigkeit.css",
-      "bytes": 1894,
-      "sha256": "b21402417e9d58dd191ea361787b1e2e4cdaea9b554039efcb0149a31405a6ce"
-    },
-    {
-      "path": "abgabezuverlaessigkeit.html",
-      "bytes": 3881,
-      "sha256": "b583d57f42d1e64f90c10c44424c68c819e853c00784c8b68837ce9b98865963"
-    },
-    {
-      "path": "abgabezuverlaessigkeit.js",
-      "bytes": 7642,
-      "sha256": "8cf34faaae7a2d23aba90c83a80ebdaf15ce4375dc89393241d5875a3c21a2f4"
-    },
-    {
       "path": "abgabezuverlaessigkeit.json",
-      "bytes": 239,
+      "size": 239,
       "sha256": "6905809eba72835ad7130ea40c8344d717d3f187b0ec74264602a6e604f8022b"
     },
     {
       "path": "accessibility-v33.css",
-      "bytes": 1922,
+      "size": 1922,
       "sha256": "eceff6c9d6e880f101fb16820dbd408dd1e44c77011db0b285d630a0b1aefb45"
     },
     {
       "path": "accessibility-v33.js",
-      "bytes": 1583,
+      "size": 1583,
       "sha256": "2e7c7639c963fb8f1bd5d3790be32f537cd84017d7c4e9623f71b56652f531f4"
     },
     {
-      "path": "admin.css",
-      "bytes": 3006,
-      "sha256": "3f5ebde2c0912874c155fa969e9dec7415ab9f40d073a1a2f4b3e3b92e1d0365"
-    },
-    {
-      "path": "admin.html",
-      "bytes": 5412,
-      "sha256": "25d74ddf400705ab3606d65ced95cbc0f3573bb0940e07d71fa0c81d2e360503"
-    },
-    {
-      "path": "admin.js",
-      "bytes": 17963,
-      "sha256": "fafcf12e0d1a4400faa4a00a6cdffa9ff09dbaf50968df7d98d4b2027635508b"
-    },
-    {
       "path": "banner.png",
-      "bytes": 2509448,
+      "size": 2509448,
       "sha256": "77a7d2edf755d724c48672062916da1aedb91263d37b35b1ff68ee7d501e296c"
     },
     {
       "path": "bonusantworten.json",
-      "bytes": 185,
+      "size": 185,
       "sha256": "23d1e092da719c0f4d667144038edc1acd96d9b504e0ed8eca90108a870334fd"
     },
     {
       "path": "bonusfragen.json",
-      "bytes": 187,
+      "size": 187,
       "sha256": "3a0dcb5986ad97040934f0ac9863699a1c45b892a5ba3013654255df473656c2"
     },
     {
-      "path": "bonuspflege.css",
-      "bytes": 810,
-      "sha256": "0f34aa740ec7c97a9b2dabf193d998b68d6f2e7049f94a0d81ce8f9e1fb627ad"
-    },
-    {
-      "path": "bonuspflege.html",
-      "bytes": 2473,
-      "sha256": "e0d3c403680db6680ed28e81fea4d5765397591a8ba04fe591cd33f6d20cd9dd"
-    },
-    {
-      "path": "bonuspflege.js",
-      "bytes": 5946,
-      "sha256": "0f45733e6e65d633c2e6d2cc0c826d033cf6bd170c6823168da4e58b74ea86c3"
-    },
-    {
       "path": "bundesliga-tabelle.json",
-      "bytes": 186,
+      "size": 186,
       "sha256": "f1f36d68704c4221c0af1736f743494e3d3fd41fb2d47999241da8df862bdea5"
     },
     {
       "path": "bundesliga.html",
-      "bytes": 1438,
+      "size": 1438,
       "sha256": "572172a99d35555db49cd891383af430268916efb77ed4d6601470c9d4d5138b"
     },
     {
       "path": "champion-trophy.jpeg",
-      "bytes": 257638,
+      "size": 257638,
       "sha256": "1776b4c37e316281d16a7bacc6fccbc053a90007ed41c886f954fa89d6336e21"
     },
     {
       "path": "champions-league.html",
-      "bytes": 1438,
+      "size": 1438,
       "sha256": "572172a99d35555db49cd891383af430268916efb77ed4d6601470c9d4d5138b"
     },
     {
       "path": "club-crest.svg",
-      "bytes": 910,
+      "size": 910,
       "sha256": "e5aecf1f936ff9cbd923ab169574f4e8712cffabe64e2d6d279edb8f92f22bfc"
     },
     {
       "path": "clubdaten.json",
-      "bytes": 1431,
+      "size": 1431,
       "sha256": "14f96306e3a877018f64e43def1641ef075724d0253f2371028e4e6eb8b88ff1"
     },
     {
-      "path": "daten-cockpit.css",
-      "bytes": 5090,
-      "sha256": "f9c4e2b93495bfb2c2a734513c7018e5973a854e7675958220b4c3b8310a46bd"
-    },
-    {
-      "path": "daten-cockpit.html",
-      "bytes": 2139,
-      "sha256": "312ea6a6551eff9aecc240615086a301681bd5dc69767bbd3f698a012f47bc99"
-    },
-    {
-      "path": "daten-cockpit.js",
-      "bytes": 5221,
-      "sha256": "2032d2e2601956c384c317be39b215721ee8799cb9feacb0b272483b501c0d29"
-    },
-    {
       "path": "datenmodell.js",
-      "bytes": 8536,
+      "size": 8536,
       "sha256": "485c6fce777c219169a441abd88d5d093ecf454d5a38857565bda34a26e4ebf7"
     },
     {
-      "path": "datenqualitaet.css",
-      "bytes": 1112,
-      "sha256": "b697d7c7f937f2362dc237a51e3086b53ca16a019deea7e0e1b1bab7f5d36daa"
-    },
-    {
-      "path": "datenqualitaet.html",
-      "bytes": 3358,
-      "sha256": "8309841d508b53a6d5cd2d37c90c262b6037711c038f366bae9071b79d370655"
-    },
-    {
-      "path": "datenqualitaet.js",
-      "bytes": 9162,
-      "sha256": "0b96d8a7f995c36ddb3831207817822406458cf644ea8a71e1347942e05bcbbd"
-    },
-    {
       "path": "datenqualitaet.json",
-      "bytes": 315,
+      "size": 315,
       "sha256": "e86adb864e207e95e6604f57a68dedd2ecbb56f0496a747d763d6f99c903f012"
     },
     {
       "path": "datenregister.js",
-      "bytes": 2140,
+      "size": 2140,
       "sha256": "269ad8f42b78197e917a7ee77e9c125f06bef43706f075979ad40c754d178a2a"
     },
     {
       "path": "datenregister.json",
-      "bytes": 1596,
+      "size": 1596,
       "sha256": "e5ee279488b9afb6b1e6d807adba9c18883d0ad1b3394e63ba8ec0986b8dcef0"
     },
     {
       "path": "dfb-pokal.html",
-      "bytes": 1438,
+      "size": 1438,
       "sha256": "572172a99d35555db49cd891383af430268916efb77ed4d6601470c9d4d5138b"
     },
     {
       "path": "dynamo-dresden.html",
-      "bytes": 1484,
+      "size": 1484,
       "sha256": "23dce739cf6c53ff698ba207eb2ba4456929c892e0a2cd841cf8784de4defe67"
     },
     {
-      "path": "erinnerungsprotokoll.css",
-      "bytes": 1240,
-      "sha256": "8ea7e6f38ef2af005e5432af5bd31eb273a475e622e51162f62dbf5eeb2f4edb"
-    },
-    {
-      "path": "erinnerungsprotokoll.html",
-      "bytes": 3473,
-      "sha256": "91128561da8eca94e0c2e026cb5586eb5c0a82b6b4361a0e1573beb4240d9247"
-    },
-    {
-      "path": "erinnerungsprotokoll.js",
-      "bytes": 9752,
-      "sha256": "1c651a44a349b4cb2cac2af4bd940c34ae441cfa70db6fdd6305cf13b015057e"
-    },
-    {
       "path": "erinnerungsprotokoll.json",
-      "bytes": 215,
+      "size": 215,
       "sha256": "2190867f8616967dcf960e4e284dbfb145637ac414ae620c43fc3d570eaa3451"
     },
     {
       "path": "europa-league.html",
-      "bytes": 1432,
+      "size": 1432,
       "sha256": "9621771f6ab3ca5e0679fd05a741daf799ae1c67d0f30555fe96f536eee24e18"
     },
     {
       "path": "favicon.jpeg",
-      "bytes": 378729,
+      "size": 378729,
       "sha256": "6785ae3c5562bfc0e59ff80a94903930c3a6bc0e9e9aa9848c8fd0c99fdcd185"
     },
     {
       "path": "hall-of-fame.json",
-      "bytes": 1387,
+      "size": 1387,
       "sha256": "7e4c22c16aed3189b918fadc9fcd2d7c8682077af047ee85716b978d5600da9a"
     },
     {
       "path": "highscore-teaser.js",
-      "bytes": 1120,
+      "size": 1120,
       "sha256": "c32e762ebef1ce372ab65142e8225809cdd9f3d97591d6215fdb5cebd9e2a63a"
     },
     {
       "path": "highscore.css",
-      "bytes": 64917,
+      "size": 64917,
       "sha256": "18bf2ceb7dc84e771623ebac4a4be0cdf037af0553716e4ea3feede75523fce6"
     },
     {
       "path": "highscore.html",
-      "bytes": 12484,
+      "size": 12484,
       "sha256": "a99d21d2ee3414131333f410aa8874968636d63f672e784f202aedc9d8dd1e4a"
     },
     {
       "path": "highscore.js",
-      "bytes": 61668,
+      "size": 61668,
       "sha256": "08377f796987fa7a74d1ccc303d2df61b5c929abdd7c42c3abf420201957ec30"
     },
     {
       "path": "highscore.json",
-      "bytes": 38739,
+      "size": 38739,
       "sha256": "85f178c69d75b20ae56a21de47f3c77e67cbc017e61ff1d67ca88fb3fa845610"
     },
     {
       "path": "index.html",
-      "bytes": 159658,
+      "size": 159658,
       "sha256": "ded41713b82da4b842ea19e740d03bdb59ab8e6636a5582623914d916f864073"
     },
     {
       "path": "kapitaenstisch-final.jpg",
-      "bytes": 540256,
+      "size": 540256,
       "sha256": "0d767115608d632ec7ddbb57d66561f61cfa330a8a2b42caa8e83aab1d365a77"
     },
     {
       "path": "kicktipp_highscore_import.py",
-      "bytes": 3107,
+      "size": 3107,
       "sha256": "dd121d3cb2954633dc0c4bca0aa00e3c4bfe1db4bb23bc90f6e6d0e070a2e988"
     },
     {
       "path": "logo.jpeg",
-      "bytes": 343578,
+      "size": 343578,
       "sha256": "f242f11e7f3c81f9628c78be93b33713abcb56dcb34424b8556a7fb85c4e161d"
     },
     {
       "path": "performance-v247.js",
-      "bytes": 710,
+      "size": 710,
       "sha256": "914bcd2b010858a2a3eb57d19df966bfb10e3dd89d927346fd57bac126388066"
     },
     {
       "path": "piraten-chronometer-hintergrund.jpg",
-      "bytes": 169943,
+      "size": 169943,
       "sha256": "5255835cec50a53a1cea15105445f4fc9dc1e0ce69c834ea4d3fd361bf7cfeab"
     },
     {
       "path": "piraten-kapitaenstisch-final.jpg",
-      "bytes": 307811,
+      "size": 307811,
       "sha256": "8e703bde6c00351dcf6fcdbc4a1c467591e1919df1633782ff4e2c0d1717139d"
     },
     {
       "path": "piraten-spieltag-hintergrund.jpg",
-      "bytes": 319141,
+      "size": 319141,
       "sha256": "c2263b8f04d432e3e1059579d934b0576256a78f85c18be8b1452890909bbb4f"
     },
     {
       "path": "piratenkodex.html",
-      "bytes": 1438,
+      "size": 1438,
       "sha256": "572172a99d35555db49cd891383af430268916efb77ed4d6601470c9d4d5138b"
     },
     {
       "path": "punkte.json",
-      "bytes": 354,
+      "size": 354,
       "sha256": "0d1ec93a38a64238cd4b8d4df119c5b4b61ab3abb7155cc6a36764b39473c0ba"
     },
     {
-      "path": "punkteberechnung.css",
-      "bytes": 851,
-      "sha256": "123ce89a8307c53313a7a0b0f0609d11a3bf4c85f32458c8fa480cfa9ec623f5"
-    },
-    {
-      "path": "punkteberechnung.html",
-      "bytes": 2774,
-      "sha256": "8361ffa279ce414d257d0922dd8c735f70a8a0842351e33083ff29f153ef8ad0"
-    },
-    {
-      "path": "punkteberechnung.js",
-      "bytes": 9068,
-      "sha256": "eab00047c21952f145b5428f54a8cb22dfcc6b13ce72585d84d1452bfae2522a"
-    },
-    {
-      "path": "ranglistenverlauf.css",
-      "bytes": 1055,
-      "sha256": "f47903bdd80b5962e744d4fc6181f7ba7f7d9ac905567728d5bd28d2cf9452e7"
-    },
-    {
-      "path": "ranglistenverlauf.html",
-      "bytes": 2872,
-      "sha256": "6d1010c0f2fbeeb40368f045c538c076aee1caaaffdf2062446d134d10b9ab9a"
-    },
-    {
-      "path": "ranglistenverlauf.js",
-      "bytes": 8086,
-      "sha256": "0bd545354c7f10b4195d19b6af6922a6a62169c1fc70418b830c8dd7820ba0f1"
-    },
-    {
       "path": "ranglistenverlauf.json",
-      "bytes": 211,
+      "size": 211,
       "sha256": "0d0b6cca9bcd0a4aad2a81d89783ca175bc40319df42361f128c9032e9010326"
     },
     {
       "path": "relegation.html",
-      "bytes": 1438,
+      "size": 1438,
       "sha256": "572172a99d35555db49cd891383af430268916efb77ed4d6601470c9d4d5138b"
     },
     {
       "path": "saison-2026-2027.html",
-      "bytes": 3467,
+      "size": 3467,
       "sha256": "0c03c2cfef4587474c3dac6f1c5031495a76048041eaa141f44d01eebb346383"
     },
     {
       "path": "saison-2026-2027.json",
-      "bytes": 282,
+      "size": 282,
       "sha256": "a2cd5af9ca66c58e431c80f7529071502123781dd5cd1169d1ae79d435f1fe3f"
     },
     {
-      "path": "saisonarchiv.css",
-      "bytes": 539,
-      "sha256": "263b895bd22cb2e920f2852e6141f335af5e3a0d75eb07a647619849aae1bf81"
-    },
-    {
-      "path": "saisonarchiv.html",
-      "bytes": 1976,
-      "sha256": "1fe067c0afe16243b708c044428b0f4808d03fe5a42dacec0d5cf7e0438378d7"
-    },
-    {
-      "path": "saisonarchiv.js",
-      "bytes": 2919,
-      "sha256": "8222d65c6e95c72ac768ff9860d22264b33cb0daa4eb7bbf1b82fcdfe4e4faa7"
-    },
-    {
       "path": "saisonarchiv.json",
-      "bytes": 1515,
+      "size": 1515,
       "sha256": "3aa4036cff2b1428fd20db3c65282c3c817bcf03baf530d4d0e55e3355907db4"
     },
     {
       "path": "saisonuebersicht.css",
-      "bytes": 2465,
+      "size": 2465,
       "sha256": "3666e2b9db2ba17529d879f9b104ea33478b9fcd008524ccb56b992b99b1cb2d"
     },
     {
       "path": "saisonuebersicht.js",
-      "bytes": 5544,
+      "size": 5544,
       "sha256": "2c97fa70326dd99d1d6ce95fff81d7c3d30da2c5c16df9a2a0a2b1cca83c2022"
     },
     {
-      "path": "scripts/__pycache__/build_release_manifest.cpython-313.pyc",
-      "bytes": 1898,
-      "sha256": "797fce81ff01e34f0a1d5101a976e8827fb5794990525d647a4b5e461713d969"
-    },
-    {
-      "path": "scripts/__pycache__/release_audit.cpython-313.pyc",
-      "bytes": 5863,
-      "sha256": "6744619eba2e948375290bc4de420ecedfb2a4eb1f8fcbd979872089f25c648f"
-    },
-    {
-      "path": "scripts/__pycache__/update_data.cpython-313.pyc",
-      "bytes": 1969,
-      "sha256": "cc5f9abe77b4a349dad37364b539d53e94e6031912e493ef5185d3dc43dc3ac1"
-    },
-    {
       "path": "scripts/build_release_manifest.py",
-      "bytes": 952,
+      "size": 952,
       "sha256": "ba29f7d95715bf4de9b4e6e1774a578124cd4dbaa8d7457760287c7c0bfda9b8"
     },
     {
       "path": "scripts/release_audit.py",
-      "bytes": 4386,
-      "sha256": "7aaefc413b79f8439aa523942b0fd5fb84d5b8a18e1d2b4864cdfbedfa6afd2d"
+      "size": 2087,
+      "sha256": "f0bac8d2772398fa5e69b840524798871e791a0c9fe87973bd3323e94055d236"
     },
     {
       "path": "scripts/update_data.py",
-      "bytes": 1036,
+      "size": 1036,
       "sha256": "cae49d6ff70d3c75ba885540e4f7480ea1ab49c783f06397a924a520233f0800"
     },
     {
       "path": "site-data.json",
-      "bytes": 2226,
+      "size": 2226,
       "sha256": "6d110bd7adecec8e44722e3d7f12c47b5d0592163251efdccfd226a0ed894b8e"
     },
     {
       "path": "smugglerauftraege.json",
-      "bytes": 13423,
+      "size": 13423,
       "sha256": "de1deca458cbda3dc747a9938489da8283ca9c7393e094ce8c94af9e9eecf620"
     },
     {
-      "path": "smugglerpflege.css",
-      "bytes": 930,
-      "sha256": "22b436a76417a6d5d3a6b4394136ba2c5c8f3d966091addce11c98e095b3fce2"
-    },
-    {
-      "path": "smugglerpflege.html",
-      "bytes": 2079,
-      "sha256": "88b29cf99a894f807920db564b59dffba4914e39d3a9bc437793eafa38283b90"
-    },
-    {
-      "path": "smugglerpflege.js",
-      "bytes": 6355,
-      "sha256": "3a98a048d10e6d47181e9931bc9727f1da4bd86e7a490d743bab4334c3388d04"
-    },
-    {
       "path": "smugglerpunkte.json",
-      "bytes": 418,
+      "size": 418,
       "sha256": "38f57bd16cc934a58a1b0e2eeb1d7eb4ba6ecc0bf31a98e0d76ec8735f564cea"
     },
     {
-      "path": "smugglerwertung.css",
-      "bytes": 822,
-      "sha256": "5824f99aee4fe76fbdb580f79c040f71e347e1cdf9c3c3488559494bbabcc02d"
-    },
-    {
-      "path": "smugglerwertung.html",
-      "bytes": 2778,
-      "sha256": "78277a0b6a895521a91dd3ab584951be8bc9c8884ce70e398886e469d2bfadf8"
-    },
-    {
-      "path": "smugglerwertung.js",
-      "bytes": 6656,
-      "sha256": "4b15375d51983d025c4b7c7ffcbf5bf07f5df079d360e0c36773e49404aa9df2"
-    },
-    {
       "path": "spieldaten.json",
-      "bytes": 300727,
+      "size": 300727,
       "sha256": "b1646fe8fd4544da44a2ef67d713397b6fb3f5d0c731e31472688103b6a298fc"
     },
     {
-      "path": "spielpflege.css",
-      "bytes": 1637,
-      "sha256": "8ce0284692ba857fc9d5379e97511c79d5d3cb634c8b6241dfea9308f7ccd578"
-    },
-    {
-      "path": "spielpflege.html",
-      "bytes": 5676,
-      "sha256": "c6e0d7ba917099278a05e58d8d57af0c5492c84192c378e1c88f3b80162921de"
-    },
-    {
-      "path": "spielpflege.js",
-      "bytes": 14744,
-      "sha256": "5c5643fb39ccd7eb844118d0a3768af1df453c99dcacf3f83e58e7ca158b1822"
-    },
-    {
       "path": "spieltag.json",
-      "bytes": 632,
+      "size": 632,
       "sha256": "db6f4bf7e085015d9fe41bf79fec29839c6416963277ac441b19006e7cd26c9a"
     },
     {
       "path": "spieltagpunkte.json",
-      "bytes": 259,
+      "size": 259,
       "sha256": "cc526dfbc084554f4d25029471b2859c87cbff24933a97a5fe412fed5c367249"
     },
     {
-      "path": "spieltagwertung.css",
-      "bytes": 1273,
-      "sha256": "42aa18fd9f4ee60ce8c3793f71a250417950fa126401f4199111053dd07781d0"
-    },
-    {
-      "path": "spieltagwertung.html",
-      "bytes": 3006,
-      "sha256": "a6695c2c743ef7e169948998c57922bf2cd898c4278646f82a3451754312375c"
-    },
-    {
-      "path": "spieltagwertung.js",
-      "bytes": 7887,
-      "sha256": "edd3ba5ebaf0d92a3a353a126eaab64c447c37068a729cebe0b0645db461e303"
-    },
-    {
       "path": "systemstatus.json",
-      "bytes": 3729,
-      "sha256": "2820b2e418edd05257bf5cef8a28e1a58df4cc1ff9df7307a5b75f1106f07610"
-    },
-    {
-      "path": "team-teilnehmerpflege.css",
-      "bytes": 1143,
-      "sha256": "96afd115fd9afaae1c9d90dfb7f3b2becb3ded5d63dcf1f9fef79f408cc5eafc"
-    },
-    {
-      "path": "team-teilnehmerpflege.html",
-      "bytes": 4499,
-      "sha256": "e78fa33c5e598638365b832e06f683fb73c2c4b94bcc5020a4a9d50cc06a5aec"
-    },
-    {
-      "path": "team-teilnehmerpflege.js",
-      "bytes": 8772,
-      "sha256": "d6f8c8f7291bd7ea0a71b3444e3f79b8d273a8d990dbf5e5f249d4252329b25a"
+      "size": 3843,
+      "sha256": "ac27bd767246db53622ba157b7a5864f638c395b9f6df1f7314ff5c20756a82d"
     },
     {
       "path": "teampunkte.json",
-      "bytes": 311,
+      "size": 311,
       "sha256": "39fd536d84ad2e468b9b81e1943c0b9ba068344bdb8e0fbc08eeeec09feec463"
     },
     {
       "path": "teams.json",
-      "bytes": 15484,
+      "size": 15484,
       "sha256": "9cc37f9345122c623ae252d16662b4076962a2bdc9a6c1bb9fc9efbca55edbdf"
     },
     {
-      "path": "teamwertung.css",
-      "bytes": 589,
-      "sha256": "292376a07ccc600110b4bf345df10416cd24a7ca93a7d732c001ee70270677d1"
-    },
-    {
-      "path": "teamwertung.html",
-      "bytes": 2870,
-      "sha256": "2f12418dc1ae488c0e6fd174354fb1d87ca615d2fc4a086e269a869512ccb82d"
-    },
-    {
-      "path": "teamwertung.js",
-      "bytes": 5197,
-      "sha256": "bf76305771971d9951201da865332ae0f9ad614aaf6a0c2314ca5008490ff1f7"
-    },
-    {
       "path": "teilnehmer-importbericht.json",
-      "bytes": 844,
+      "size": 844,
       "sha256": "5f20253d5abd80d323d46d20b0fbf989a247557efd67080f59fb2f8ecce1b1cd"
     },
     {
       "path": "teilnehmer.json",
-      "bytes": 43903,
+      "size": 43903,
       "sha256": "c1ab6b35e1c3c3e6fe1b8b0b1a19458db096939b6ea3a0410c7c862487058609"
     },
     {
-      "path": "tippfristen.css",
-      "bytes": 907,
-      "sha256": "34a46c8c4922ee4ea85067c9fa0420a7c1d923a3c8a6186fca52d0f2de09e096"
-    },
-    {
-      "path": "tippfristen.html",
-      "bytes": 3071,
-      "sha256": "aeddc5bf968911857277ad3d6443d9d0b8699779abf7b4db1d3dec5c885a5aaf"
-    },
-    {
-      "path": "tippfristen.js",
-      "bytes": 5330,
-      "sha256": "6f02f1374d1d5a368fdbba219fce1c2b028f1777729cea7728a4b7e7efe7a921"
-    },
-    {
       "path": "tippfristen.json",
-      "bytes": 258,
+      "size": 258,
       "sha256": "689b7e812baee1391864c4fd8bd62d177b2efddf2f95581b10e3357b4cbd21d0"
     },
     {
-      "path": "tipppflege.css",
-      "bytes": 1343,
-      "sha256": "5bf00e6fa22a63685b4396950edd2c66e07ff186009c8e79dfdcdb1a9dd168d0"
-    },
-    {
-      "path": "tipppflege.html",
-      "bytes": 3757,
-      "sha256": "34126bd5d3617e8580aec648d28968e2eef8328576a81b7fa25237f7f8a3468d"
-    },
-    {
-      "path": "tipppflege.js",
-      "bytes": 7694,
-      "sha256": "d7e0e866a9effe1cdf1e6411748ad9d2d98b5a4fc3ade4bf0db67dde4a3895bc"
-    },
-    {
       "path": "tipps.json",
-      "bytes": 234,
+      "size": 234,
       "sha256": "00be261523edb88f2c30db212660e62424bc5d900203163a748683a4d2102818"
     },
     {
       "path": "tippspieltage.json",
-      "bytes": 31586,
+      "size": 31586,
       "sha256": "95e94b9f30c3515408ae49c6e88be48929e571a2cc43217e964cbd340e81271c"
     },
     {
       "path": "topspieler.json",
-      "bytes": 447,
+      "size": 447,
       "sha256": "f985f17d47784c83fc683aace3c62e64a64bc8643b859636c317114b000b54cd"
     },
     {
       "path": "update_data.py",
-      "bytes": 752,
+      "size": 752,
       "sha256": "f6cdc1180162ac15b6c27ddac93f4fe5bdc8c691d6153696232a9dc061d24c6d"
     },
     {
       "path": "weihnachtsregatta.html",
-      "bytes": 1438,
+      "size": 1438,
       "sha256": "572172a99d35555db49cd891383af430268916efb77ed4d6601470c9d4d5138b"
     },
     {
       "path": "wertungsregeln.json",
-      "bytes": 412,
+      "size": 412,
       "sha256": "083ad128e183f96d516099c3188cb215587aeeb6b19d9125287dad804036e2f8"
     },
     {
       "path": "wettbewerb.css",
-      "bytes": 25792,
+      "size": 25792,
       "sha256": "c20c64df1910f11888bb7f394bc53e8fd57774bfdfa7717830448016a0b5198e"
     },
     {
       "path": "wettbewerb.js",
-      "bytes": 61025,
-      "sha256": "6f867b78d5c5bdbee9e4f4b070f6341ee1fb283edc3762253d7ad3760efd061e"
+      "size": 60798,
+      "sha256": "7800df59d376d0309df81af4596157bcec676dafa49b9001f3b2bc2a0e0a7370"
     },
     {
       "path": "wettbewerbe.json",
-      "bytes": 3907,
+      "size": 3907,
       "sha256": "02e91d54d7923146c17690bd8d2968d148d209a8dbd688a0056881281c6d6133"
     },
     {
-      "path": "wettbewerbspflege.css",
-      "bytes": 1420,
-      "sha256": "26f505f75b674eff9ecda907bd79b47e011ce5adbdf976e19859c9515b6745fe"
-    },
-    {
-      "path": "wettbewerbspflege.html",
-      "bytes": 5261,
-      "sha256": "29e4b41ca9fd16ea503606a90d538de24034748d87aa074574920c54bfa4e08b"
-    },
-    {
-      "path": "wettbewerbspflege.js",
-      "bytes": 11358,
-      "sha256": "7c0ffd8ac01b8c301469c234af83f9c1c1173621bc4cb787f31bf138c33b0330"
-    },
-    {
       "path": "wettbewerbspunkte.json",
-      "bytes": 311,
+      "size": 311,
       "sha256": "d065345a834716e1cffce3205f109f39d3bedbd3349d3d1919b4f2f3f1f47da0"
     },
     {
-      "path": "wettbewerbswertung.css",
-      "bytes": 1304,
-      "sha256": "2ad43ba211896a62a00f49c9ec45d4a29ddb4b796c11893115af26cfe550b3fb"
-    },
-    {
-      "path": "wettbewerbswertung.html",
-      "bytes": 3015,
-      "sha256": "3014eb8ae51911e20faa1830fdef97177f753e12178d97f49f0b2351e7209ae2"
-    },
-    {
-      "path": "wettbewerbswertung.js",
-      "bytes": 6294,
-      "sha256": "40e73eeecd537e2bceb9b1a37579e3ffc5653c6068e954d4cc4a621e2cd070b1"
-    },
-    {
       "path": "willkommen-kachel-final.jpg",
-      "bytes": 513572,
+      "size": 513572,
       "sha256": "ba86e6b0489bec9d193b5fd4903dd99d75e5c36014ace54a2dc5b8168d95b3b1"
     }
   ]

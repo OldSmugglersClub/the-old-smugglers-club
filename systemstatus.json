@@ -1,5 +1,5 @@
 {
-  "version": "4.0.3",
+  "version": "4.0.4",
   "modus": "Plan B · datengetrieben",
   "aktualisiertAm": "2026-07-31T13:15:00+02:00",
   "module": [
@@ -156,5 +156,7 @@
   ],
   "releaseStatus": "produktionsbereit",
   "datenregisterVersion": 40,
-  "aktualisiert": "2026-07-31"
+  "aktualisiert": "2026-07-31",
+  "status": "produktionsbereit",
+  "administration": "separates lokales Paket, nicht öffentlich bereitgestellt"
 }
