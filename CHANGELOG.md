@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.1.5 – Startzentrale
+
+- Willkommen-Kachel um zwei sichtbare Schnellzugriffe ergänzt.
+- Direkte Verknüpfung zur Tipprunde und Saisonübersicht.
+- Mobile Bedienflächen stabilisiert.
+- Keine Änderung an Kachelgröße, Raster oder Bilddateien.
+
 ## 4.1.3 – Hall-of-Fame Darstellungsfehler behoben
 
 - Unsichtbarer Pokal-Fallback wird nun tatsächlich ausgeblendet.
