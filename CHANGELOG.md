@@ -1,3 +1,14 @@
+# Version 2.40 – Wettbewerbs-Dashboard & Bereitschaftsmatrix
+
+- Aufklappbare Gesamtlage aller acht Wettbewerbe auf jeder Wettbewerbsseite ergänzt.
+- Erfassten Spielumfang, Terminierungsstand, beendete Spiele und nächsten offenen Eintrag zentral vergleichbar gemacht.
+- Belastbare Statusstufen „Nicht vorbereitet“, „Struktur vorbereitet“, „Teilweise terminiert“, „Terminbereit“ und „Abgeschlossen“ eingeführt.
+- Aktive Wettbewerbsseite in der Matrix markiert und alle Wettbewerbe direkt verlinkt.
+- Alle Werte ausschließlich aus `spieldaten.json` abgeleitet; keine Termine oder Ergebnisse geschätzt.
+- Kontrollansicht als Vorbereitung für die anschließende Vereinheitlichung der zentralen Datenpflege umgesetzt.
+- Mobile Tabellenansicht innerhalb des Bereichs scrollbar gehalten.
+- Grundlayout, Raster, Kachelgrößen und übrige Websitebereiche unverändert gelassen.
+
 # Changelog
 
 ## Version 2.39 – Wettbewerbs-Lagebild

@@ -462,14 +462,11 @@
     root.appendChild(section);
   }
 
-  function centralGamesForPage(data) {
-    const filter = FILTERS[slug];
+  function centralGamesForCompetition(data, competitionSlug) {
+    const filter = FILTERS[competitionSlug];
     if (!filter) return [];
 
-    const allGames = Array.isArray(data && data.saisons)
-      ? data.saisons.flatMap(season => safeArray(season && season.spiele))
-      : safeArray(data && data.spiele);
-
+    const allGames = allCentralGames(data);
     return allGames
       .filter(match => {
         if (!match || typeof match !== "object") return false;
@@ -481,6 +478,10 @@
         const second = `${b.datum || b.datumVon || "9999-12-31"}T${b.anstoss || "23:59"}`;
         return first.localeCompare(second);
       });
+  }
+
+  function centralGamesForPage(data) {
+    return centralGamesForCompetition(data, slug);
   }
 
   function createTeamLookup(teamData) {
@@ -559,6 +560,100 @@
       links.appendChild(link);
     });
     section.append(heading, links);
+    root.appendChild(section);
+  }
+
+  function renderCompetitionFleetDashboard(gameData, root) {
+    const section = document.createElement("details");
+    section.className = "dynamic-section competition-fleet";
+
+    const summary = document.createElement("summary");
+    summary.className = "fleet-summary";
+    const summaryTitle = document.createElement("span");
+    summaryTitle.className = "fleet-summary-title";
+    summaryTitle.textContent = "Gesamtlage aller Wettbewerbe";
+    const summaryHint = document.createElement("span");
+    summaryHint.className = "fleet-summary-hint";
+    summaryHint.textContent = "Zentraler Bereitschaftsstand";
+    summary.append(summaryTitle, summaryHint);
+    section.appendChild(summary);
+
+    const body = document.createElement("div");
+    body.className = "fleet-body";
+    const tableWrap = document.createElement("div");
+    tableWrap.className = "table-scroll fleet-table-wrap";
+    const table = document.createElement("table");
+    table.className = "data-table fleet-table";
+    table.innerHTML = "<thead><tr><th>Wettbewerb</th><th>Spiele</th><th>Terminiert</th><th>Beendet</th><th>Nächster Eintrag</th><th>Status</th></tr></thead>";
+    const tbody = document.createElement("tbody");
+    const now = new Date();
+
+    COMPETITIONS.forEach(([id, label]) => {
+      const games = centralGamesForCompetition(gameData, id);
+      const confirmed = games.filter(match => match.terminBestaetigt === true).length;
+      const completed = games.filter(match => numericScore(match.heimtore) !== null && numericScore(match.auswaertstore) !== null).length;
+      const next = games
+        .map(match => ({ match, date: gameTimestamp(match) }))
+        .filter(item => numericScore(item.match.heimtore) === null && (!item.date || item.date >= now))
+        .sort((a, b) => {
+          if (!a.date && !b.date) return 0;
+          if (!a.date) return 1;
+          if (!b.date) return -1;
+          return a.date - b.date;
+        })[0];
+
+      let statusText = "Nicht vorbereitet";
+      let statusClass = "fleet-status-empty";
+      if (games.length && confirmed === games.length) {
+        statusText = completed === games.length && games.length ? "Abgeschlossen" : "Terminbereit";
+        statusClass = completed === games.length && games.length ? "fleet-status-complete" : "fleet-status-ready";
+      } else if (games.length && confirmed > 0) {
+        statusText = "Teilweise terminiert";
+        statusClass = "fleet-status-partial";
+      } else if (games.length) {
+        statusText = "Struktur vorbereitet";
+        statusClass = "fleet-status-structure";
+      }
+
+      const row = document.createElement("tr");
+      if (id === slug) row.classList.add("is-current-competition");
+
+      const competitionCell = document.createElement("th");
+      competitionCell.scope = "row";
+      const competitionLink = document.createElement("a");
+      competitionLink.href = `./${id}.html`;
+      competitionLink.textContent = label;
+      competitionCell.appendChild(competitionLink);
+
+      const values = [
+        String(games.length),
+        `${confirmed} von ${games.length}`,
+        `${completed} von ${games.length}`,
+        next ? formatDate(next.match.datum || next.match.datumVon) : "Noch offen"
+      ];
+      row.appendChild(competitionCell);
+      values.forEach(value => {
+        const cell = document.createElement("td");
+        cell.textContent = value;
+        row.appendChild(cell);
+      });
+      const statusCell = document.createElement("td");
+      const status = document.createElement("span");
+      status.className = `fleet-status ${statusClass}`;
+      status.textContent = statusText;
+      statusCell.appendChild(status);
+      row.appendChild(statusCell);
+      tbody.appendChild(row);
+    });
+
+    table.appendChild(tbody);
+    tableWrap.appendChild(table);
+    body.appendChild(tableWrap);
+    const note = document.createElement("p");
+    note.className = "data-note";
+    note.textContent = "Die Gesamtlage wird ausschließlich aus spieldaten.json berechnet. Sie dient zugleich als Kontrollansicht für die spätere zentrale Datenpflege.";
+    body.appendChild(note);
+    section.appendChild(body);
     root.appendChild(section);
   }
 
@@ -956,6 +1051,7 @@
     root.innerHTML = "";
     document.body.classList.add(`page-${slug}`);
     renderCompetitionNavigator(root);
+    renderCompetitionFleetDashboard(gameData, root);
     renderCompetitionDataCockpit(gameData, teamData, root);
     renderCompetitionSituation(gameData, teamData, root);
     renderCompetitionDataQuality(gameData, root);
