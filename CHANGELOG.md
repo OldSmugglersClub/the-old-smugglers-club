@@ -1,3 +1,14 @@
+# Changelog
+
+## Version 2.41 – Zentrale Wettbewerbsregistrierung
+
+- Neue zentrale Datei `wettbewerbe.json` für Navigation, Seitenzuordnung und Spiel-Filter.
+- Alle acht Wettbewerbsseiten lesen dieselben Wettbewerbsdefinitionen.
+- Doppelt gepflegte Filter- und Navigationslisten in der Laufzeitlogik entfallen.
+- Neuer Bereich „Zentrale Datenbasis“ zeigt die gemeinsam genutzten Quellen und den aktiven Seitenfilter.
+- Seitenspezifische JSON-Dateien bleiben auf redaktionelle Texte beschränkt.
+- Grundlayout, Raster, Kachelgrößen und freigegebene Bereiche unverändert.
+
 # Version 2.40 – Wettbewerbs-Dashboard & Bereitschaftsmatrix
 
 - Aufklappbare Gesamtlage aller acht Wettbewerbe auf jeder Wettbewerbsseite ergänzt.

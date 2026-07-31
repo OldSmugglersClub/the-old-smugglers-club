@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "datenVersion": 1,
+  "aktualisiert": "2026-07-31",
+  "beschreibung": "Zentrales Register für Wettbewerbsnavigation und Zuordnung der Spiele aus spieldaten.json.",
+  "wettbewerbe": [
+    {
+      "id": "bundesliga",
+      "label": "Bundesliga",
+      "page": "bundesliga.html",
+      "filter": {
+        "type": "wettbewerb",
+        "value": "bundesliga"
+      },
+      "scheduleTitle": "Spiele der Bundesliga"
+    },
+    {
+      "id": "dfb-pokal",
+      "label": "DFB-Pokal",
+      "page": "dfb-pokal.html",
+      "filter": {
+        "type": "wettbewerb",
+        "value": "dfb-pokal"
+      },
+      "scheduleTitle": "Spiele des DFB-Pokals"
+    },
+    {
+      "id": "champions-league",
+      "label": "Champions League",
+      "page": "champions-league.html",
+      "filter": {
+        "type": "wettbewerb",
+        "value": "champions-league"
+      },
+      "scheduleTitle": "Spiele der Champions League"
+    },
+    {
+      "id": "europa-league",
+      "label": "Europa League",
+      "page": "europa-league.html",
+      "filter": {
+        "type": "wettbewerb",
+        "value": "europa-league"
+      },
+      "scheduleTitle": "Spiele der Europa League"
+    },
+    {
+      "id": "relegation",
+      "label": "Relegation",
+      "page": "relegation.html",
+      "filter": {
+        "type": "wettbewerb",
+        "value": "relegation"
+      },
+      "scheduleTitle": "Spiele der Relegation"
+    },
+    {
+      "id": "dynamo-dresden",
+      "label": "Dynamo Dresden",
+      "page": "dynamo-dresden.html",
+      "filter": {
+        "type": "sonderwertung",
+        "value": "smugglerauftrag"
+      },
+      "scheduleTitle": "Ausgewählte Smuggleraufträge"
+    },
+    {
+      "id": "piratenkodex",
+      "label": "Piratenkodex",
+      "page": "piratenkodex.html",
+      "filter": {
+        "type": "sonderwertung",
+        "value": "piratenkodex"
+      },
+      "scheduleTitle": "Ausgewählte Spiele des Piratenkodex"
+    },
+    {
+      "id": "weihnachtsregatta",
+      "label": "Weihnachtsregatta",
+      "page": "weihnachtsregatta.html",
+      "filter": {
+        "type": "sonderwertung",
+        "value": "weihnachtsregatta"
+      },
+      "scheduleTitle": "Spiele der Weihnachtsregatta"
+    }
+  ]
+}

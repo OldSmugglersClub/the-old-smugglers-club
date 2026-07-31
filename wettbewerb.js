@@ -8,16 +8,22 @@
   const teamDataUrl = "./teams.json";
   const bundesligaTableUrl = "./bundesliga-tabelle.json";
 
-  const FILTERS = {
-    "bundesliga": { type: "wettbewerb", value: "bundesliga", title: "Spiele der Bundesliga" },
-    "dfb-pokal": { type: "wettbewerb", value: "dfb-pokal", title: "Spiele des DFB-Pokals" },
-    "champions-league": { type: "wettbewerb", value: "champions-league", title: "Spiele der Champions League" },
-    "europa-league": { type: "wettbewerb", value: "europa-league", title: "Spiele der Europa League" },
-    "relegation": { type: "wettbewerb", value: "relegation", title: "Spiele der Relegation" },
-    "dynamo-dresden": { type: "sonderwertung", value: "smugglerauftrag", title: "Ausgewählte Smuggleraufträge" },
-    "piratenkodex": { type: "sonderwertung", value: "piratenkodex", title: "Ausgewählte Spiele des Piratenkodex" },
-    "weihnachtsregatta": { type: "sonderwertung", value: "weihnachtsregatta", title: "Spiele der Weihnachtsregatta" }
-  };
+  const competitionConfigUrl = "./wettbewerbe.json";
+  const DEFAULT_COMPETITIONS = [
+    { id: "bundesliga", label: "Bundesliga", page: "bundesliga.html", filter: { type: "wettbewerb", value: "bundesliga" }, scheduleTitle: "Spiele der Bundesliga" },
+    { id: "dfb-pokal", label: "DFB-Pokal", page: "dfb-pokal.html", filter: { type: "wettbewerb", value: "dfb-pokal" }, scheduleTitle: "Spiele des DFB-Pokals" },
+    { id: "champions-league", label: "Champions League", page: "champions-league.html", filter: { type: "wettbewerb", value: "champions-league" }, scheduleTitle: "Spiele der Champions League" },
+    { id: "europa-league", label: "Europa League", page: "europa-league.html", filter: { type: "wettbewerb", value: "europa-league" }, scheduleTitle: "Spiele der Europa League" },
+    { id: "relegation", label: "Relegation", page: "relegation.html", filter: { type: "wettbewerb", value: "relegation" }, scheduleTitle: "Spiele der Relegation" },
+    { id: "dynamo-dresden", label: "Dynamo Dresden", page: "dynamo-dresden.html", filter: { type: "sonderwertung", value: "smugglerauftrag" }, scheduleTitle: "Ausgewählte Smuggleraufträge" },
+    { id: "piratenkodex", label: "Piratenkodex", page: "piratenkodex.html", filter: { type: "sonderwertung", value: "piratenkodex" }, scheduleTitle: "Ausgewählte Spiele des Piratenkodex" },
+    { id: "weihnachtsregatta", label: "Weihnachtsregatta", page: "weihnachtsregatta.html", filter: { type: "sonderwertung", value: "weihnachtsregatta" }, scheduleTitle: "Spiele der Weihnachtsregatta" }
+  ];
+  let competitionDefinitions = DEFAULT_COMPETITIONS;
+
+  function competitionDefinition(id) {
+    return competitionDefinitions.find(item => item && item.id === id) || DEFAULT_COMPETITIONS.find(item => item.id === id) || null;
+  }
 
   const $ = (id) => document.getElementById(id);
   const text = (id, value) => {
@@ -463,7 +469,8 @@
   }
 
   function centralGamesForCompetition(data, competitionSlug) {
-    const filter = FILTERS[competitionSlug];
+    const definition = competitionDefinition(competitionSlug);
+    const filter = definition && definition.filter;
     if (!filter) return [];
 
     const allGames = allCentralGames(data);
@@ -499,7 +506,7 @@
 
     return {
       typ: "spiele",
-      titel: FILTERS[slug].title,
+      titel: competitionDefinition(slug)?.scheduleTitle || "Spiele",
       anzeigen: true,
       spiele: games.map(match => ({
         datum: match.datumAnzeige || formatDate(match.datum || match.datumVon),
@@ -523,17 +530,6 @@
 
 
 
-  const COMPETITIONS = [
-    ["bundesliga", "Bundesliga"],
-    ["dfb-pokal", "DFB-Pokal"],
-    ["champions-league", "Champions League"],
-    ["europa-league", "Europa League"],
-    ["relegation", "Relegation"],
-    ["dynamo-dresden", "Dynamo Dresden"],
-    ["piratenkodex", "Piratenkodex"],
-    ["weihnachtsregatta", "Weihnachtsregatta"]
-  ];
-
   function gameTimestamp(match) {
     const date = match && (match.datum || match.datumVon);
     const time = match && match.anstoss;
@@ -551,9 +547,10 @@
     heading.textContent = "Wettbewerbs-Navigator";
     const links = document.createElement("div");
     links.className = "competition-links";
-    COMPETITIONS.forEach(([id, label]) => {
+    competitionDefinitions.forEach(definition => {
+      const { id, label } = definition;
       const link = document.createElement("a");
-      link.href = `./${id}.html`;
+      link.href = `./${definition.page || `${id}.html`}`;
       link.textContent = label;
       link.className = `competition-link${id === slug ? " is-current" : ""}`;
       if (id === slug) link.setAttribute("aria-current", "page");
@@ -588,7 +585,8 @@
     const tbody = document.createElement("tbody");
     const now = new Date();
 
-    COMPETITIONS.forEach(([id, label]) => {
+    competitionDefinitions.forEach(definition => {
+      const { id, label } = definition;
       const games = centralGamesForCompetition(gameData, id);
       const confirmed = games.filter(match => match.terminBestaetigt === true).length;
       const completed = games.filter(match => numericScore(match.heimtore) !== null && numericScore(match.auswaertstore) !== null).length;
@@ -621,7 +619,7 @@
       const competitionCell = document.createElement("th");
       competitionCell.scope = "row";
       const competitionLink = document.createElement("a");
-      competitionLink.href = `./${id}.html`;
+      competitionLink.href = `./${definition.page || `${id}.html`}`;
       competitionLink.textContent = label;
       competitionCell.appendChild(competitionLink);
 
@@ -822,6 +820,53 @@
     const note = document.createElement("p");
     note.className = "data-note";
     note.textContent = "Die Prüfung bewertet nur die vorhandene Datenstruktur. Sie ersetzt keine externe Termin- oder Ergebnisprüfung.";
+    section.appendChild(note);
+    root.appendChild(section);
+  }
+
+  function renderCentralDataRegistry(gameData, teamData, root) {
+    const section = document.createElement("section");
+    section.className = "dynamic-section central-data-registry";
+
+    const headingRow = document.createElement("div");
+    headingRow.className = "section-heading-row";
+    const heading = document.createElement("h2");
+    heading.textContent = "Zentrale Datenbasis";
+    const badge = document.createElement("span");
+    badge.className = "data-status-badge";
+    badge.textContent = "Einheitlich verbunden";
+    headingRow.append(heading, badge);
+    section.appendChild(headingRow);
+
+    const allGames = allCentralGames(gameData);
+    const teams = safeArray(teamData && teamData.teams);
+    const currentDefinition = competitionDefinition(slug);
+    const cards = [
+      ["Wettbewerbsregister", "wettbewerbe.json", `${competitionDefinitions.length} Seiten zentral definiert`],
+      ["Spielquelle", "spieldaten.json", `${allGames.length} Spiele insgesamt erfasst`],
+      ["Teamregister", "teams.json", `${teams.length} Mannschaften zentral referenziert`],
+      ["Aktueller Filter", currentDefinition?.label || slug, currentDefinition?.filter?.type === "sonderwertung" ? "Auswahl über Sonderwertung" : "Auswahl über Wettbewerbsschlüssel"]
+    ];
+
+    const grid = document.createElement("div");
+    grid.className = "registry-grid";
+    cards.forEach(([label, value, detail]) => {
+      const card = document.createElement("article");
+      card.className = "registry-card";
+      const small = document.createElement("span");
+      small.textContent = label;
+      const strong = document.createElement("strong");
+      strong.textContent = value;
+      const note = document.createElement("small");
+      note.textContent = detail;
+      card.append(small, strong, note);
+      grid.appendChild(card);
+    });
+    section.appendChild(grid);
+
+    const note = document.createElement("p");
+    note.className = "data-note";
+    note.textContent = "Navigation, Seitenfilter und Spielzuordnung werden nun aus gemeinsamen zentralen Dateien gelesen. Seitenspezifische JSON-Dateien enthalten weiterhin nur Texte und redaktionelle Hinweise.";
     section.appendChild(note);
     root.appendChild(section);
   }
@@ -1051,6 +1096,7 @@
     root.innerHTML = "";
     document.body.classList.add(`page-${slug}`);
     renderCompetitionNavigator(root);
+    renderCentralDataRegistry(gameData, teamData, root);
     renderCompetitionFleetDashboard(gameData, root);
     renderCompetitionDataCockpit(gameData, teamData, root);
     renderCompetitionSituation(gameData, teamData, root);
@@ -1131,12 +1177,17 @@
 
   async function load() {
     try {
-      const [data, centralGameData, teamData, bundesligaTableData] = await Promise.all([
+      const [data, centralGameData, teamData, bundesligaTableData, competitionConfig] = await Promise.all([
         fetchJson(jsonUrl, true),
         fetchJson(gameDataUrl, false),
         fetchJson(teamDataUrl, false),
-        slug === "bundesliga" ? fetchJson(bundesligaTableUrl, false) : Promise.resolve({ teams: [] })
+        slug === "bundesliga" ? fetchJson(bundesligaTableUrl, false) : Promise.resolve({ teams: [] }),
+        fetchJson(competitionConfigUrl, false)
       ]);
+
+      const configuredCompetitions = safeArray(competitionConfig && competitionConfig.wettbewerbe)
+        .filter(item => item && item.id && item.label && item.filter && item.filter.type && item.filter.value);
+      competitionDefinitions = configuredCompetitions.length ? configuredCompetitions : DEFAULT_COMPETITIONS;
 
       document.title = `${data.titel || "Wettbewerb"} | The Old Smugglers Club`;
       text("eyebrow", data.bereich);
