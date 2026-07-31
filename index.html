@@ -5213,28 +5213,28 @@
         <a class="competition competition-link" href="./saison-2026-2027.html">
           <span class="icon-medallion"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-star-compass"></use></svg></span><b>Saisonübersicht</b><small>Saison 2026/2027 öffnen</small>
         </a>
-        <a class="competition competition-link" href="./bundesliga.html">
+        <a class="competition competition-link" href="./bundesliga.html" data-wettbewerb-id="bundesliga">
           <span class="icon-medallion"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-football"></use></svg></span><b>Bundesliga</b><small>Zur Wettbewerbsseite</small>
         </a>
-        <a class="competition competition-link" href="./dfb-pokal.html">
+        <a class="competition competition-link" href="./dfb-pokal.html" data-wettbewerb-id="dfb-pokal">
           <span class="icon-medallion"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></span><b>DFB-Pokal</b><small>Zur Wettbewerbsseite</small>
         </a>
-        <a class="competition competition-link" href="./champions-league.html">
+        <a class="competition competition-link" href="./champions-league.html" data-wettbewerb-id="champions-league">
           <span class="icon-medallion"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-star-compass"></use></svg></span><b>Champions League</b><small>Zur Wettbewerbsseite</small>
         </a>
-        <a class="competition competition-link" href="./europa-league.html">
+        <a class="competition competition-link" href="./europa-league.html" data-wettbewerb-id="europa-league">
           <span class="icon-medallion"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-ship-lantern"></use></svg></span><b>Europa League</b><small>Zur Wettbewerbsseite</small>
         </a>
-        <a class="competition competition-link" href="./relegation.html">
+        <a class="competition competition-link" href="./relegation.html" data-wettbewerb-id="relegation">
           <span class="icon-medallion"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-anchor"></use></svg></span><b>Relegation</b><small>Zur Wettbewerbsseite</small>
         </a>
-        <a class="competition competition-link" href="./dynamo-dresden.html">
+        <a class="competition competition-link" href="./dynamo-dresden.html" data-wettbewerb-id="dynamo-dresden">
           <span class="icon-medallion"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-map"></use></svg></span><b>Dynamo Dresden</b><small>Zu den Smuggleraufträgen</small>
         </a>
-        <a class="competition competition-link" href="./piratenkodex.html">
+        <a class="competition competition-link" href="./piratenkodex.html" data-wettbewerb-id="piratenkodex">
           <span class="icon-medallion"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-scroll"></use></svg></span><b>Piratenkodex</b><small>Zu den Sonderduellen</small>
         </a>
-        <a class="competition competition-link" href="./weihnachtsregatta.html">
+        <a class="competition competition-link" href="./weihnachtsregatta.html" data-wettbewerb-id="weihnachtsregatta">
           <span class="icon-medallion"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-ship-lantern"></use></svg></span><b>Weihnachtsregatta</b><small>Zum Sonderevent</small>
         </a>
       </div>
@@ -6134,6 +6134,37 @@
       }, 1100);
     });
   </script>
+
+  <script>
+    (function synchronisiereWettbewerbsuebersicht() {
+      const karten = Array.from(document.querySelectorAll('#wettbewerbe [data-wettbewerb-id]'));
+      if (!karten.length) return;
+
+      fetch('./wettbewerbe.json', { cache: 'no-store' })
+        .then(function (response) {
+          if (!response.ok) throw new Error('Wettbewerbsregister nicht erreichbar');
+          return response.json();
+        })
+        .then(function (data) {
+          const register = new Map((data.wettbewerbe || []).map(function (eintrag) {
+            return [eintrag.id, eintrag];
+          }));
+
+          karten.forEach(function (karte) {
+            const eintrag = register.get(karte.dataset.wettbewerbId);
+            if (!eintrag) return;
+
+            const titel = karte.querySelector('b');
+            if (titel && eintrag.label) titel.textContent = eintrag.label;
+            if (eintrag.page) karte.setAttribute('href', './' + String(eintrag.page).replace(/^\.\//, ''));
+          });
+        })
+        .catch(function () {
+          // Die statischen HTML-Werte bleiben als sichere, sichtbare Rückfallwerte erhalten.
+        });
+    }());
+  </script>
+
   <script src="./highscore-teaser.js" defer></script>
   <script src="performance-v247.js" defer></script>
   <script src="./accessibility-v33.js" defer></script>

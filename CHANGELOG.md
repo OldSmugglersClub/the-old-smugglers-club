@@ -738,3 +738,11 @@
 - Mehrfach gepflegte sichtbare Angaben auf der Startseite reduziert.
 - Fallback-Werte für den Fall eines Ladefehlers beibehalten.
 - Keine sichtbare Layoutänderung, keine Bilderstellung und keine neuen Bilddateien.
+
+## Version 4.3.1 – Zentrale Wettbewerbsübersicht – 31.07.2026
+
+- Wettbewerbskacheln der Startseite an das zentrale Register `wettbewerbe.json` angebunden.
+- Namen und Zielseiten der Wettbewerbe werden nicht mehr zusätzlich ausschließlich im HTML gepflegt.
+- Statische HTML-Werte bleiben als sichere Rückfallanzeige erhalten, falls das Register nicht geladen werden kann.
+- Reihenfolge, Symbole, Texte für Mitspieler, Kachelgrößen und mobile Darstellung unverändert belassen.
+- Keine Bilderstellung und keine neuen Bilddateien.
