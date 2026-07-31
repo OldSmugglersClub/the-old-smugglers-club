@@ -1,3 +1,15 @@
+# Changelog
+
+## Version 3.12 – Vollständige Punkteberechnung
+
+- Zentrale 2/3/5-Punkteberechnung umgesetzt.
+- Neue Seite `punkteberechnung.html` mit Rangliste und Einzelwertungen.
+- Exaktes Ergebnis: 5 Punkte, richtige Differenz: 3 Punkte, richtige Tendenz: 2 Punkte.
+- Nur die höchste zutreffende Wertungsstufe zählt.
+- Integrierte Regeltests für exakte Ergebnisse, Differenz, Tendenz, Remis und Fehlertipps.
+- Export von `punkte.json` und Ranglisten-CSV.
+- Zentrale Dateien `wertungsregeln.json` und `punkte.json` ergänzt.
+
 # Version 3.11 – Zentrale Tippdaten
 
 - Neue lokale Pflegeoberfläche `tipppflege.html`.

@@ -1,7 +1,7 @@
 {
-  "manifestVersion": "3.11",
-  "generatedAtUtc": "2026-07-31T10:14:36.555177+00:00",
-  "fileCount": 121,
+  "manifestVersion": "3.12",
+  "generatedAtUtc": "2026-07-31T10:19:51.047142+00:00",
+  "fileCount": 128,
   "files": [
     {
       "path": "ADMIN-HANDBUCH.md",
@@ -20,8 +20,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 25655,
-      "sha256": "3ece13798823dd34f9aa8384418804a2c9970a0e65b73ab3203a655fa0cbd2c7"
+      "bytes": 26187,
+      "sha256": "2d311f6d17794f50f14d7651c35a123019e27aa1cac42a07012c05936d1b55dd"
     },
     {
       "path": "CNAME",
@@ -62,6 +62,11 @@
       "path": "GITHUB-UPDATE-3.11.md",
       "bytes": 387,
       "sha256": "2a86d05904ef3da7167b32c8a783aa7529b9ec205de35295312da7d4393432c6"
+    },
+    {
+      "path": "GITHUB-UPDATE-3.12.md",
+      "bytes": 442,
+      "sha256": "c2cb877628c664e03c27313e2119e79adecf4f01049811de00b087e1cb455708"
     },
     {
       "path": "GITHUB-UPDATE-3.2.md",
@@ -130,13 +135,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 2073,
-      "sha256": "02c242b2f6ba3c3217436f7889e27084e1cdaf73733bd28d59954692d0468b18"
+      "bytes": 2295,
+      "sha256": "a356f287372df57c6e3fb7e035296c49e2842f3a47b540ba960897462414bb04"
     },
     {
       "path": "RELEASE-AUDIT.json",
       "bytes": 308,
-      "sha256": "c8a669657b296181e35846004482761c104d332bc04eeaeab90398505d281190"
+      "sha256": "1b65a7a7676e29f134512a4d606e84d617b7f9d543387cb62c7ae94cd3f18af1"
     },
     {
       "path": "RELEASE_NOTES_v3.0.1.md",
@@ -167,6 +172,11 @@
       "path": "RELEASE_NOTES_v3.11.md",
       "bytes": 190,
       "sha256": "dac7199e17af404da7dcbf1c3924a1fc29e8bd4cdbe7b6764ac5d4b4db966f45"
+    },
+    {
+      "path": "RELEASE_NOTES_v3.12.md",
+      "bytes": 523,
+      "sha256": "063dba63d561629abf042c3925f95b637b2017f0b1e3b983d3dd2bbe475e26c3"
     },
     {
       "path": "RELEASE_NOTES_v3.2.md",
@@ -226,7 +236,7 @@
     {
       "path": "VERSION.txt",
       "bytes": 5,
-      "sha256": "49a506dd32096b010d75205acf3430c9ae6c40351888129499e5a5e487126c93"
+      "sha256": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d"
     },
     {
       "path": "accessibility-v33.css",
@@ -245,8 +255,8 @@
     },
     {
       "path": "admin.html",
-      "bytes": 4226,
-      "sha256": "96b416e0c429dfe175b3ee6a04b2b7b4696863e788838c1af032d9074768d2db"
+      "bytes": 4308,
+      "sha256": "e8b436d9b81479b5493f927f8a22f8f12620943159c3c57333109639c395385f"
     },
     {
       "path": "admin.js",
@@ -315,8 +325,8 @@
     },
     {
       "path": "datenregister.json",
-      "bytes": 798,
-      "sha256": "fd8cb6252bdb2850eb51126ff09bfae91ed51b0f3a10f9e796cec1201496e430"
+      "bytes": 872,
+      "sha256": "b9807d96b6379d901337da0f5420fbc89b04d0c1c7a27e0de8abf0c0548b5b60"
     },
     {
       "path": "dfb-pokal.html",
@@ -414,6 +424,26 @@
       "sha256": "572172a99d35555db49cd891383af430268916efb77ed4d6601470c9d4d5138b"
     },
     {
+      "path": "punkte.json",
+      "bytes": 354,
+      "sha256": "0d1ec93a38a64238cd4b8d4df119c5b4b61ab3abb7155cc6a36764b39473c0ba"
+    },
+    {
+      "path": "punkteberechnung.css",
+      "bytes": 851,
+      "sha256": "123ce89a8307c53313a7a0b0f0609d11a3bf4c85f32458c8fa480cfa9ec623f5"
+    },
+    {
+      "path": "punkteberechnung.html",
+      "bytes": 2755,
+      "sha256": "2920ac76688a8dcb6c82d3aa4279cc2c556f3aaf2af2b1e96c2de67f5517b0a3"
+    },
+    {
+      "path": "punkteberechnung.js",
+      "bytes": 7704,
+      "sha256": "f491babd8c54f46dc94c303bb91edeefc0838c1da0f36f4f9152f9646aeb71a4"
+    },
+    {
       "path": "relegation.html",
       "bytes": 1438,
       "sha256": "572172a99d35555db49cd891383af430268916efb77ed4d6601470c9d4d5138b"
@@ -440,13 +470,13 @@
     },
     {
       "path": "scripts/__pycache__/build_release_manifest.cpython-313.pyc",
-      "bytes": 1899,
-      "sha256": "17bfecabdf63793c184903059efa0ceeb0e53c972f7438e620155eee6ca071a5"
+      "bytes": 1924,
+      "sha256": "e0437d40061d9976043ca368e8a6fad695e009af43a0d38906bbd57762e5a519"
     },
     {
       "path": "scripts/__pycache__/release_audit.cpython-313.pyc",
-      "bytes": 4463,
-      "sha256": "b16b1c07bd3dd9886c39819fa88a0fe827293a02362dc354d84a805011fe45cd"
+      "bytes": 4648,
+      "sha256": "76dc9ca9c1b75c4b32190a3394e50b2f2a9ba83fa077e0004903dfc5ac6d9864"
     },
     {
       "path": "scripts/__pycache__/update_data.cpython-313.pyc",
@@ -456,12 +486,12 @@
     {
       "path": "scripts/build_release_manifest.py",
       "bytes": 951,
-      "sha256": "367ba4f71c85e4233490e5c9509c79bd6a2a1b43deaa0158bdbc51de52d2c06b"
+      "sha256": "5c0a98c2fea1b973a70ab9a232adf3fe79c1e6e774c2550158928026632e4074"
     },
     {
       "path": "scripts/release_audit.py",
-      "bytes": 2813,
-      "sha256": "70704f211d360c9391b9375e59de8ac75e22883721a1cfa2d9d949bcc9889294"
+      "bytes": 2923,
+      "sha256": "c4ea7000688283f5028d66db184e645302dfdcb1d92c6ba232695a1a5e799f76"
     },
     {
       "path": "scripts/update_data.py",
@@ -505,8 +535,8 @@
     },
     {
       "path": "systemstatus.json",
-      "bytes": 1703,
-      "sha256": "aa5c9a3dc60832e36f6d5a6bc81c48f0e190d0a284cd24254c7232341701f4bf"
+      "bytes": 1823,
+      "sha256": "e0e3a4acfca13e9ff371b342344fece91afdd7a42abd77fc2cb440bdea1f4565"
     },
     {
       "path": "team-teilnehmerpflege.css",
@@ -572,6 +602,11 @@
       "path": "weihnachtsregatta.html",
       "bytes": 1438,
       "sha256": "572172a99d35555db49cd891383af430268916efb77ed4d6601470c9d4d5138b"
+    },
+    {
+      "path": "wertungsregeln.json",
+      "bytes": 412,
+      "sha256": "083ad128e183f96d516099c3188cb215587aeeb6b19d9125287dad804036e2f8"
     },
     {
       "path": "wettbewerb.css",
