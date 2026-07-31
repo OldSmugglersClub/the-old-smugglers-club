@@ -1,4 +1,4 @@
-# The Old Smugglers Club – Version 4.4.0
+# The Old Smugglers Club – Version 4.4.1
 
 Öffentliche GitHub-Pages-Website der Tipprunde **The Old Smugglers Club**.
 
@@ -15,15 +15,15 @@ Der vollständige Inhalt dieses Verzeichnisses gehört direkt in das Hauptverzei
 - zentrale Datenbausteine über JSON und `datenregister.json`
 - vollständige technische Bestandsaufnahme in `ARCHITEKTUR.md`
 
-## Version 4.4.0
+## Version 4.4.1
 
-Version 4.4.0 ist ein reines Dokumentationsrelease. Es verändert keine öffentliche Seite und keine Datenlogik.
+Version 4.4.1 ist ein reines Dokumentationsrelease. Es verändert keine öffentliche Seite und keine Datenlogik.
 
 Neu ist `ARCHITEKTUR.md`. Das Dokument beschreibt den tatsächlichen Ist-Zustand und bildet die Grundlage für die spätere Zentralisierung der Datenhaltung.
 
 ## Aktualisierung über die GitHub-Webseite
 
-Für Version 4.4.0 gilt die Datei `GITHUB-UPDATE-4.4.0.md`.
+Für Version 4.4.1 gilt die Datei `GITHUB-UPDATE-4.4.0.md`.
 
 ## Wichtige Dateien
 
@@ -32,11 +32,12 @@ Für Version 4.4.0 gilt die Datei `GITHUB-UPDATE-4.4.0.md`.
 - `spieldaten.json` – zentrale Spielliste
 - `wettbewerbe.json` – Wettbewerbsdefinitionen
 - `ARCHITEKTUR.md` – technische Bestandsaufnahme und Zielarchitektur
+- `ROADMAP.md` – verbindlicher Entwicklungsplan bis Version 5.0 LTS
 - `PromptManual/PROJECT_MANUAL.md` – verbindliche Projektanweisungen
 - `VERSION.txt` – aktuelle Versionsnummer
 - `CHANGELOG.md` – Versionshistorie
-- `RELEASE_NOTES_v4.4.0.md` – Änderungen dieses Releases
-- `GITHUB-UPDATE-4.4.0.md` – konkrete Upload-Liste
+- `RELEASE_NOTES_v4.4.1.md` – Änderungen dieses Releases
+- `GITHUB-UPDATE-4.4.1.md` – konkrete Upload-Liste
 
 ## Projektregeln
 

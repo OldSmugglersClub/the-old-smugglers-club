@@ -1,5 +1,32 @@
 # CHANGELOG
 
+## Version 4.4.1 – Verbindliche Projektroadmap – 31.07.2026
+
+### Neu
+
+- `ROADMAP.md` mit der verbindlichen Entwicklungsreihenfolge von Version 4.4.x bis Version 5.0 LTS.
+- Abgeschlossene öffentliche Bereiche, offene Architekturarbeiten, Adminpflege, Qualitätsprüfung und LTS-Freigabekriterien getrennt dokumentiert.
+- Nächster verbindlicher Arbeitsschritt als Erstellung von `DESIGN_GUIDE.md` festgelegt.
+
+### Geändert
+
+- Versions- und Projektdokumentation auf Version 4.4.1 angehoben.
+
+### Unverändert
+
+- Keine Änderung an HTML, CSS, JavaScript, JSON-Daten, Kachelgrößen, Grid, Navigation oder öffentlicher Darstellung.
+
+### Betroffene Dateien
+
+- `ROADMAP.md`
+- `VERSION.txt`
+- `CHANGELOG.md`
+- `README.md`
+- `RELEASE_NOTES_v4.4.1.md`
+- `GITHUB-UPDATE-4.4.1.md`
+
+# Änderungsverlauf
+
 ## Version 4.4.0 – Architekturdokumentation – 31.07.2026
 
 ### Neu
