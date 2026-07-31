@@ -4196,8 +4196,69 @@
         text-align: center;
       }
     }
+
+
+    /* Version 3.7.3 – mobile Highscore-Karten auf der Startseite */
+    @media (max-width: 700px) {
+      #highscore .highscore-teaser-grid {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 12px !important;
+        margin: 16px 0 20px !important;
+      }
+
+      #highscore .highscore-teaser-card {
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 16px 18px !important;
+        border: 1px solid rgba(190, 143, 61, .62) !important;
+        border-radius: 12px !important;
+        background: linear-gradient(180deg, rgba(54, 38, 23, .96), rgba(20, 13, 8, .99)) !important;
+        box-shadow: inset 0 1px rgba(255,255,255,.05), 0 8px 20px rgba(0,0,0,.28) !important;
+        text-align: left !important;
+        overflow: hidden !important;
+      }
+
+      #highscore .highscore-teaser-card span,
+      #highscore .highscore-teaser-card strong,
+      #highscore .highscore-teaser-card small {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+        hyphens: none !important;
+      }
+
+      #highscore .highscore-teaser-card span {
+        margin: 0 0 7px !important;
+        padding: 0 0 7px !important;
+        border: 0 !important;
+        border-bottom: 1px solid rgba(184, 138, 61, .32) !important;
+        font-size: .72rem !important;
+        line-height: 1.35 !important;
+        letter-spacing: .08em !important;
+      }
+
+      #highscore .highscore-teaser-card strong {
+        margin: 0 0 5px !important;
+        font-size: clamp(1.12rem, 5.4vw, 1.38rem) !important;
+        line-height: 1.2 !important;
+      }
+
+      #highscore .highscore-teaser-card small {
+        font-size: .9rem !important;
+        line-height: 1.4 !important;
+      }
+    }
   </style>
-  <link rel="stylesheet" href="./highscore.css">
+  <link rel="stylesheet" href="./highscore.css?v=3.7.3">
   <link rel="stylesheet" href="./accessibility-v33.css">
 </head>
 

@@ -1,6 +1,15 @@
-# Version 3.7.2 – Mobile Highscore-Korrektur
-
-- Highscore-Teaser auf Smartphones als lesbare, kompakte Karten untereinander angeordnet.
-- Keine erzwungenen Wortumbrüche innerhalb einzelner Wörter mehr.
-- Karteninhalte bis 390 px Bildschirmbreite in einer einspaltigen Innenstruktur.
-- Desktop- und Tablet-Darstellung bleiben unverändert.
+{
+  "auditVersion": "3.7.3",
+  "generatedAtUtc": "2026-07-31T09:55:25.397739+00:00",
+  "status": "OK",
+  "version": "3.7.3",
+  "counts": {
+    "html": 13,
+    "javascript": 10,
+    "json": 17,
+    "referencesChecked": 118
+  },
+  "missingRequiredFiles": [],
+  "missingLocalReferences": [],
+  "jsonErrors": []
+}

@@ -1,7 +1,7 @@
 {
-  "manifestVersion": "3.7.2",
-  "generatedAtUtc": "2026-07-31T09:44:45.907344+00:00",
-  "fileCount": 94,
+  "manifestVersion": "3.7.3",
+  "generatedAtUtc": "2026-07-31T09:55:26.492525+00:00",
+  "fileCount": 96,
   "files": [
     {
       "path": "ADMIN-HANDBUCH.md",
@@ -20,8 +20,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 23344,
-      "sha256": "943b764ef7b9586a06fa856502199bae69a78f1bce41b9d04f6f4b9067eb9cd4"
+      "bytes": 23790,
+      "sha256": "24a98a2fe4f53b17f47c02bbd7d91b3beda6ea3d5b845e9ae492e55d92aa3f26"
     },
     {
       "path": "CNAME",
@@ -85,8 +85,13 @@
     },
     {
       "path": "GITHUB-UPDATE-3.7.2.md",
-      "bytes": 364,
-      "sha256": "b7b322f872df4493aa8e81d84dc2a9aa8c7c41cfc5eba58f02f198a08f971a8e"
+      "bytes": 297,
+      "sha256": "479dee02a3253921dafa54abf2b93ec7e54c31254548b484ed7fec59fd6b3195"
+    },
+    {
+      "path": "GITHUB-UPDATE-3.7.3.md",
+      "bytes": 479,
+      "sha256": "54696e4fb8c57f64cf0fd447beee52336efcdc0af9bfa6f6e62062bd18d1c20a"
     },
     {
       "path": "GITHUB-UPDATE-3.7.md",
@@ -111,7 +116,7 @@
     {
       "path": "RELEASE-AUDIT.json",
       "bytes": 310,
-      "sha256": "a8152206fc3a1eaf7399a63d840c55876a14b5e787e947c0917cc0e0376a1fea"
+      "sha256": "38e512c3458c690e65b9963b17f79771c6542ba4e9443d875dc3a09dfd1baecd"
     },
     {
       "path": "RELEASE_NOTES_v3.0.1.md",
@@ -169,6 +174,11 @@
       "sha256": "5098de0b7c71919eade3b74549a2e7a27cdd08de414a92e3bced60e22c3e0ad7"
     },
     {
+      "path": "RELEASE_NOTES_v3.7.3.md",
+      "bytes": 356,
+      "sha256": "f7df6d61c624cfad8ddd1037503419beea3dd5fd68d5817d4f3c363c1ab7e139"
+    },
+    {
       "path": "RELEASE_NOTES_v3.7.md",
       "bytes": 571,
       "sha256": "e369c09d2088334fe046551b2d46fbff2b9468cd75179a8510bf10d0acfab6b7"
@@ -176,7 +186,7 @@
     {
       "path": "VERSION.txt",
       "bytes": 6,
-      "sha256": "c6985d515b3473f1ea6ec6306d74ea3cb913b64740172689a8e2b1edde3ec9fc"
+      "sha256": "c5c590b00cd6c1d7a69736ea08aa29cdd07d75eae430122c5b6651d299368c49"
     },
     {
       "path": "accessibility-v33.css",
@@ -266,7 +276,7 @@
     {
       "path": "datenregister.json",
       "bytes": 734,
-      "sha256": "d23dfa3362e43517f9f430fbf9ce3a2b451bb860b38c9a09eb009fb1e3f6805d"
+      "sha256": "0c222dd0e75198e9c267ad14655c64107a9a897233a49af8e1f0b6390fe9a42e"
     },
     {
       "path": "dfb-pokal.html",
@@ -300,8 +310,8 @@
     },
     {
       "path": "highscore.css",
-      "bytes": 58236,
-      "sha256": "6ebba8bae325d41ec7b8a37d71cdde7892092d187c5cbc12a0165961b2cc8fdc"
+      "bytes": 59806,
+      "sha256": "d47f639c4d47509d1c79981e38fa164b5bc9cc86e9371ad50ea7124f2a035a73"
     },
     {
       "path": "highscore.html",
@@ -320,8 +330,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 156626,
-      "sha256": "4435a41ad2daffd23047fca695f4187848a4bfdc0bd48990784ecd0be6bb30ef"
+      "bytes": 158750,
+      "sha256": "e627cc0690608c9ee99d68b4096896744712a91dd2e300f31bd0bdbf9007a425"
     },
     {
       "path": "kapitaenstisch-final.jpg",
@@ -391,12 +401,12 @@
     {
       "path": "scripts/build_release_manifest.py",
       "bytes": 952,
-      "sha256": "93ab436d07503ee176c5ca57f051fe3de59f0412a94bf3887f15b21de3876ab6"
+      "sha256": "222d8f0a27acff0bce91bb048f51dfa96ae78c53d3a7d09db555350c6df2124d"
     },
     {
       "path": "scripts/release_audit.py",
       "bytes": 2566,
-      "sha256": "2af245a9b561c7ff19a5db5024b1dc7891fc4a3681126815f37da475d812f1d7"
+      "sha256": "ae2a7c91355fabf714a0adf17ebab97e02e60e6ae9be8b650fe022dddbb7664c"
     },
     {
       "path": "scripts/update_data.py",
@@ -426,7 +436,7 @@
     {
       "path": "systemstatus.json",
       "bytes": 1225,
-      "sha256": "4af09f1b39ac7f7e0ea0274da35b5cb53fcb242e0b20e73f993e5c519989d8dd"
+      "sha256": "63cb6506b1653a300f9eaac6ea689f93ca97a7333871c09126228c11a3a23692"
     },
     {
       "path": "teams.json",
