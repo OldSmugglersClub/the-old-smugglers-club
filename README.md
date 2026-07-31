@@ -51,3 +51,8 @@ Die zentrale Punkteberechnung steht unter `punkteberechnung.html` bereit. Sie we
 ## Version 3.14
 
 `bonuspflege.html` verwaltet Bonusfragen, Lösungen und Teilnehmerantworten. Gewertete richtige Antworten fließen über `punkteberechnung.html` in den automatischen Highscore ein.
+
+
+## Version 3.15
+
+`smugglerpflege.html` verwaltet die 34 Dynamo-Sondermissionen und ihre Zuordnung zu Spiel-IDs und Kicktipp-Spieltagen.

@@ -1,7 +1,7 @@
 {
-  "manifestVersion": "3.14",
-  "generatedAtUtc": "2026-07-31T10:28:42.474868+00:00",
-  "fileCount": 137,
+  "manifestVersion": "3.15",
+  "generatedAtUtc": "2026-07-31T10:34:14.765650+00:00",
+  "fileCount": 142,
   "files": [
     {
       "path": "ADMIN-HANDBUCH.md",
@@ -20,8 +20,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 26666,
-      "sha256": "eadb92c3c4e9299ce17d4de471747db9ae4450046640eb501d7dcd1b423c2b7e"
+      "bytes": 26924,
+      "sha256": "7df775fd62249c59872f6520309ef5374eb0155f0070c41001d1d2f58c966d69"
     },
     {
       "path": "CNAME",
@@ -77,6 +77,11 @@
       "path": "GITHUB-UPDATE-3.14.md",
       "bytes": 514,
       "sha256": "0f20a9c0f85a63c00a532491ffa508fa667c699bf7b0c337805688537f2f8103"
+    },
+    {
+      "path": "GITHUB-UPDATE-3.15.md",
+      "bytes": 454,
+      "sha256": "d46fcf414c301c669ce8ff32fcfff4f25406503ba1f54fb8691e6297371a138e"
     },
     {
       "path": "GITHUB-UPDATE-3.2.md",
@@ -145,13 +150,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 2494,
-      "sha256": "b8a2e8953fc08d60077c3223cf8ae916cdee61d4c1a45cb0011f3e3ffaf265f4"
+      "bytes": 2632,
+      "sha256": "17e81ebcaac9c5fd78afbcb6e6cc0dd7c72f330c73c30a07d7848bf8e9446539"
     },
     {
       "path": "RELEASE-AUDIT.json",
       "bytes": 308,
-      "sha256": "718994d96a5eda75cc98333876bed47e69ef4cb33c57b2c28ef2be95bb28e1b8"
+      "sha256": "96c445ecf01569761eb3e54999bbceb9ae5f999afa76f7c70dd9363ceecd8d94"
     },
     {
       "path": "RELEASE_NOTES_v3.0.1.md",
@@ -197,6 +202,11 @@
       "path": "RELEASE_NOTES_v3.14.md",
       "bytes": 320,
       "sha256": "a1c2e7d0a3c3a21d2c9fbe1405b1be9a4a6be00205f3e8ba4f525cc061d254c3"
+    },
+    {
+      "path": "RELEASE_NOTES_v3.15.md",
+      "bytes": 216,
+      "sha256": "4f1c372db94f16805908148a478c22c06bd331993943812a4af01c7128d2d8c8"
     },
     {
       "path": "RELEASE_NOTES_v3.2.md",
@@ -256,7 +266,7 @@
     {
       "path": "VERSION.txt",
       "bytes": 5,
-      "sha256": "a876e0b10411037a012498b9fe18d9bc1df32ed8b722a13564dc944ddcfd9135"
+      "sha256": "1253c91eccb2aac1c6ff2ac03fd69c1aaa0b221abd3d1bf5b563c12602452b4e"
     },
     {
       "path": "accessibility-v33.css",
@@ -275,8 +285,8 @@
     },
     {
       "path": "admin.html",
-      "bytes": 4395,
-      "sha256": "a4a39579820875a2c9a6bcdfdc04226836457d67a5438d3d99892bb1e8dc2501"
+      "bytes": 4476,
+      "sha256": "5fb2d583830e1ab99454471fd04fcf58d6193ae88142098f5947c8ca75df675b"
     },
     {
       "path": "admin.js",
@@ -370,8 +380,8 @@
     },
     {
       "path": "datenregister.json",
-      "bytes": 956,
-      "sha256": "e7c7084dd4bcc997cae4a72ce8cf7fe1df91259f70d1d8e05687df7c1e2b067a"
+      "bytes": 1007,
+      "sha256": "f45ab5491b00c2983212eff49f978454ba51cb28d27e596d06b650f8dba6bafc"
     },
     {
       "path": "dfb-pokal.html",
@@ -531,12 +541,12 @@
     {
       "path": "scripts/build_release_manifest.py",
       "bytes": 951,
-      "sha256": "d1f774659eae7858ca952ea0a17f0755212a7ebad1f56a675e1e78feaadfd4a4"
+      "sha256": "8466d7c08a183c406b4e21a6aca2325acf91f410fa18d4b081de4f76c7b1f5be"
     },
     {
       "path": "scripts/release_audit.py",
-      "bytes": 3023,
-      "sha256": "c5c602caca71b282950282f5274103f6fdd784d083f192011421d86fe9c9830b"
+      "bytes": 3115,
+      "sha256": "70af9f08d7087bda76d8537186136f4e4ce6ab8d6a7b354a240ecfbdfb511223"
     },
     {
       "path": "scripts/update_data.py",
@@ -550,8 +560,23 @@
     },
     {
       "path": "smugglerauftraege.json",
-      "bytes": 1151,
-      "sha256": "e7213e0c6cbd2b5018054aa33e328b41183cb955687830b9b0554d0c1de6118e"
+      "bytes": 13423,
+      "sha256": "de1deca458cbda3dc747a9938489da8283ca9c7393e094ce8c94af9e9eecf620"
+    },
+    {
+      "path": "smugglerpflege.css",
+      "bytes": 930,
+      "sha256": "22b436a76417a6d5d3a6b4394136ba2c5c8f3d966091addce11c98e095b3fce2"
+    },
+    {
+      "path": "smugglerpflege.html",
+      "bytes": 2079,
+      "sha256": "88b29cf99a894f807920db564b59dffba4914e39d3a9bc437793eafa38283b90"
+    },
+    {
+      "path": "smugglerpflege.js",
+      "bytes": 6355,
+      "sha256": "3a98a048d10e6d47181e9931bc9727f1da4bd86e7a490d743bab4334c3388d04"
     },
     {
       "path": "spieldaten.json",
@@ -580,8 +605,8 @@
     },
     {
       "path": "systemstatus.json",
-      "bytes": 2062,
-      "sha256": "578e0cc612ec3fba74ebcefd6a10def863b77b48c6368c32c5e0e43997785459"
+      "bytes": 2186,
+      "sha256": "cf7090afae15f5da67f4f5a44ee97ef0007e6eed5fd410d9df5793d7e9df6a59"
     },
     {
       "path": "team-teilnehmerpflege.css",

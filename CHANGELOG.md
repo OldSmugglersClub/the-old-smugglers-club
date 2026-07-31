@@ -441,3 +441,9 @@
 - Punkteberechnung berücksichtigt gewertete Bonusfragen zusätzlich zur 2/3/5-Spielwertung.
 - Bonuspunkte werden getrennt in Rangliste und CSV ausgewiesen.
 - Keine Änderung an öffentlichem Grundlayout, Raster oder Kachelgrößen.
+
+
+## 3.15 – Zentrale Smugglerauftrag-Pflege
+- 34 Dynamo-Spiele als stabile Smuggleraufträge zentral verknüpft.
+- Pflege, Prüfung und Export von `smugglerauftraege.json` ergänzt.
+- Automatische Fortschritts- und Statusfelder für die Startseitenkachel.
