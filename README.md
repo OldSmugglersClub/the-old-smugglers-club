@@ -1,4 +1,4 @@
-# The Old Smugglers Club – Version 4.0.6
+# The Old Smugglers Club – Version 4.1.3
 
 Die öffentliche GitHub-Pages-Ausgabe enthält ausschließlich den Spielerbereich. Die Administration wurde in ein separates lokales Paket ausgelagert und ist nicht über die Website erreichbar.
 

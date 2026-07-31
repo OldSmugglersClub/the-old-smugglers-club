@@ -1,3 +1,12 @@
+# Changelog
+
+## 4.1.3 – Hall-of-Fame Darstellungsfehler behoben
+
+- Unsichtbarer Pokal-Fallback wird nun tatsächlich ausgeblendet.
+- Das übergroße, senkrechte Wort „POKAL“ unter dem Championbild wurde entfernt.
+- Die Hall-of-Fame-Kachel behält wieder ihre vorgesehene kompakte Höhe und Zweispaltenstruktur.
+- Keine Änderung an Bildern, Kachelgrößen, Grundlayout, Daten oder Navigation.
+
 # Version 4.1.2 – Highscore Ranglistenlogbuch
 
 - Highscore-Kachel auf der Startseite sprachlich und gestalterisch als Ranglistenlogbuch geschärft.

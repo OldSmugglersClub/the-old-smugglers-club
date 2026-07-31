@@ -4459,7 +4459,6 @@
     }
 
     #hall-of-fame .trophy-fallback {
-      display: grid;
       place-items: center;
       width: 170px;
       min-height: 170px;
@@ -4468,9 +4467,19 @@
       border-radius: 50%;
       color: #e8c66f;
       background: radial-gradient(circle, rgba(130,86,31,.5), rgba(25,15,8,.92) 68%);
+      font-size: 1rem;
       font-weight: 900;
       letter-spacing: .12em;
       text-transform: uppercase;
+    }
+
+    /* Das HTML-Attribut hidden muss Vorrang vor der Fallback-Gestaltung behalten. */
+    #hall-of-fame .trophy-fallback[hidden] {
+      display: none !important;
+    }
+
+    #hall-of-fame .trophy-fallback:not([hidden]) {
+      display: grid;
     }
 
     @media (max-width: 700px) {
