@@ -1,5 +1,14 @@
 # Changelog
 
+## Version 2.37 – Wettbewerbs-Navigator & Datenkompass
+
+- Alle acht Wettbewerbsseiten besitzen jetzt einen gemeinsamen, responsiven Wettbewerbs-Navigator.
+- Die aktuell geöffnete Wettbewerbsseite wird eindeutig markiert.
+- Neuer Wettbewerbs-Kompass mit zentral erfassten Spielen, abgeschlossenen Partien, offenen Begegnungen und nächstem Termin.
+- Der Datenstand wird direkt aus `spieldaten.json` übernommen.
+- Fehlende Daten werden ausdrücklich ausgewiesen und nicht geschätzt.
+- Keine Änderungen am freigegebenen Grundlayout, Raster oder an den Kachelgrößen der Startseite.
+
 ## Version 2.36 – Highscore Saisonarchiv & Clubchronik
 
 - Zentrale `hall-of-fame.json` zusätzlich in die Highscore eingebunden.
@@ -171,3 +180,11 @@
 - Historie als Logbuch-Zeitleiste überarbeitet und um einen sachlichen Leerzustand ergänzt.
 - Desktop- und Mobile-Darstellung der neuen Module angepasst.
 - Grundlayout, Kachelraster und übrige Websitebereiche unverändert belassen.
+
+## 2.38 – Wettbewerbs-Terminstatus und Datenqualität
+
+- Einheitliche Statusplaketten für beendete, terminierte und noch nicht zeitgenau angesetzte Spiele ergänzt.
+- Filter für alle, terminierte, offene und beendete Partien auf den zentralen Spielplänen ergänzt.
+- Datenqualitätsprüfung für fehlende Teamreferenzen, Datumsangaben und Quellenstände ergänzt.
+- Mobile Darstellung der neuen Filter und Statusinformationen angepasst.
+- Grundlayout, Raster und Kachelgrößen unverändert gelassen.

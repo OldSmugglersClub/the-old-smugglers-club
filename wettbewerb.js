@@ -515,6 +515,98 @@
     };
   }
 
+
+
+  const COMPETITIONS = [
+    ["bundesliga", "Bundesliga"],
+    ["dfb-pokal", "DFB-Pokal"],
+    ["champions-league", "Champions League"],
+    ["europa-league", "Europa League"],
+    ["relegation", "Relegation"],
+    ["dynamo-dresden", "Dynamo Dresden"],
+    ["piratenkodex", "Piratenkodex"],
+    ["weihnachtsregatta", "Weihnachtsregatta"]
+  ];
+
+  function gameTimestamp(match) {
+    const date = match && (match.datum || match.datumVon);
+    const time = match && match.anstoss;
+    if (!date || !/^\d{4}-\d{2}-\d{2}$/.test(date)) return null;
+    const normalizedTime = /^\d{2}:\d{2}$/.test(time || "") ? time : "23:59";
+    const value = new Date(`${date}T${normalizedTime}:00`);
+    return Number.isNaN(value.getTime()) ? null : value;
+  }
+
+  function renderCompetitionNavigator(root) {
+    const section = document.createElement("nav");
+    section.className = "competition-navigator dynamic-section";
+    section.setAttribute("aria-label", "Wettbewerbe wechseln");
+    const heading = document.createElement("h2");
+    heading.textContent = "Wettbewerbs-Navigator";
+    const links = document.createElement("div");
+    links.className = "competition-links";
+    COMPETITIONS.forEach(([id, label]) => {
+      const link = document.createElement("a");
+      link.href = `./${id}.html`;
+      link.textContent = label;
+      link.className = `competition-link${id === slug ? " is-current" : ""}`;
+      if (id === slug) link.setAttribute("aria-current", "page");
+      links.appendChild(link);
+    });
+    section.append(heading, links);
+    root.appendChild(section);
+  }
+
+  function renderCompetitionDataCockpit(gameData, teamData, root) {
+    const games = centralGamesForPage(gameData);
+    const completed = games.filter(match => numericScore(match.heimtore) !== null && numericScore(match.auswaertstore) !== null);
+    const now = new Date();
+    const upcoming = games
+      .map(match => ({ match, date: gameTimestamp(match) }))
+      .filter(item => item.date && item.date >= now && !completed.includes(item.match))
+      .sort((a, b) => a.date - b.date);
+    const teams = createTeamLookup(teamData);
+    const next = upcoming[0] && upcoming[0].match;
+    const article = document.createElement("section");
+    article.className = "dynamic-section competition-cockpit";
+    const headingRow = document.createElement("div");
+    headingRow.className = "section-heading-row";
+    const heading = document.createElement("h2");
+    heading.textContent = "Wettbewerbs-Kompass";
+    const badge = document.createElement("span");
+    badge.className = "data-status-badge";
+    badge.textContent = gameData && gameData.aktualisiert ? `Datenstand ${formatDate(String(gameData.aktualisiert).slice(0,10))}` : "Zentrale Spieldaten";
+    headingRow.append(heading, badge);
+    article.appendChild(headingRow);
+
+    const grid = document.createElement("div");
+    grid.className = "competition-stat-grid";
+    const values = [
+      ["Geplante Spiele", String(games.length), games.length ? "zentral erfasst" : "noch keine Paarung hinterlegt"],
+      ["Abgeschlossen", String(completed.length), games.length ? `${Math.round((completed.length / games.length) * 100)} % des Umfangs` : "Saisonvorbereitung"],
+      ["Noch offen", String(Math.max(games.length - completed.length, 0)), "einschließlich terminierter Spiele"],
+      ["Nächster Termin", next ? formatDate(next.datum || next.datumVon) : "Noch offen", next ? `${teamName(teams,next.heimTeamId,next.heim)} – ${teamName(teams,next.auswaertsTeamId,next.auswaerts)}` : "wird aus spieldaten.json übernommen"]
+    ];
+    values.forEach(([label, value, detail]) => {
+      const card = document.createElement("div");
+      card.className = "competition-stat-card";
+      const small = document.createElement("span");
+      small.textContent = label;
+      const strong = document.createElement("strong");
+      strong.textContent = value;
+      const note = document.createElement("small");
+      note.textContent = detail;
+      card.append(small, strong, note);
+      grid.appendChild(card);
+    });
+    article.appendChild(grid);
+    const note = document.createElement("p");
+    note.className = "data-note";
+    note.textContent = "Der Kompass wertet ausschließlich die zentral hinterlegten Spiele aus. Fehlende Paarungen oder Ergebnisse werden nicht geschätzt.";
+    article.appendChild(note);
+    root.appendChild(article);
+  }
+
   function renderCards(cards) {
     const root = $("info-cards");
     root.innerHTML = "";
@@ -663,6 +755,9 @@
   function renderSections(sections, buttons, gameData, teamData, tableData) {
     const root = $("dynamic-sections");
     root.innerHTML = "";
+    document.body.classList.add(`page-${slug}`);
+    renderCompetitionNavigator(root);
+    renderCompetitionDataCockpit(gameData, teamData, root);
     if (slug === "bundesliga" || slug === "dynamo-dresden") {
       renderQuickBackButton(buttons, root);
     }
