@@ -53,6 +53,11 @@ Die zentrale Punkteberechnung steht unter `punkteberechnung.html` bereit. Sie we
 `bonuspflege.html` verwaltet Bonusfragen, Lösungen und Teilnehmerantworten. Gewertete richtige Antworten fließen über `punkteberechnung.html` in den automatischen Highscore ein.
 
 
-## Version 3.15
+## Version 3.16
 
 `smugglerpflege.html` verwaltet die 34 Dynamo-Sondermissionen und ihre Zuordnung zu Spiel-IDs und Kicktipp-Spieltagen.
+
+
+## Version 3.16
+
+Die Seite `smugglerwertung.html` berechnet eine eigenständige Rangliste für alle Dynamo-Smuggleraufträge. Grundlage sind `smugglerauftraege.json`, `spieldaten.json`, `tipps.json`, `teilnehmer.json` und `wertungsregeln.json`.

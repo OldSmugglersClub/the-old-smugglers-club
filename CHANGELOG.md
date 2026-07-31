@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.16 – Smugglerauftrag-Auswertung
+
+- Separate Rangliste ausschließlich für die 34 Dynamo-Smuggleraufträge ergänzt.
+- Wertung nach den bestehenden 2/3/5-Regeln, ohne die Gesamtwertung zu verändern.
+- Filter nach einzelnen abgeschlossenen Aufträgen und Teilnehmern ergänzt.
+- Export von `smugglerpunkte.json` und einer CSV-Rangliste umgesetzt.
+- Smugglerwertung im Administrationszentrum verlinkt.
+
 ## Version 3.12 – Vollständige Punkteberechnung
 
 - Zentrale 2/3/5-Punkteberechnung umgesetzt.

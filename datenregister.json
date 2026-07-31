@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "datenVersion": 15,
+  "datenVersion": 16,
   "aktualisiert": "2026-07-31",
   "saison": "2026/2027",
   "beschreibung": "Zentrales Register der gemeinsam genutzten Datenquellen der Website.",
@@ -24,7 +24,8 @@
     "punkte": "punkte.json",
     "bonusfragen": "bonusfragen.json",
     "bonusantworten": "bonusantworten.json",
-    "smugglerauftraege": "smugglerauftraege.json"
+    "smugglerauftraege": "smugglerauftraege.json",
+    "smugglerpunkte": "smugglerpunkte.json"
   },
-  "websiteVersion": "3.15"
+  "websiteVersion": "3.16"
 }
