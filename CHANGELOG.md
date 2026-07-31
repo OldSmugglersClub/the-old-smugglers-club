@@ -1,5 +1,26 @@
 # CHANGELOG
 
+## Version 4.4.11
+
+### Behoben
+
+- Schmugglersiegel auf Wettbewerbsseiten wurden nur als Buchstabenkürzel angezeigt.
+- Die Darstellung ist nicht mehr von einzeln geladenen SVG-Dateien abhängig.
+
+### Geändert
+
+- `team-badge.js` erzeugt das freigegebene Schmugglersiegel direkt als Inline-SVG aus Kürzel und Vereinsfarben des zentralen Registers.
+- Bestehende Größen, Abstände und Layoutregeln bleiben unverändert.
+
+### Betroffene Dateien
+
+- `team-badge.js`
+- `wettbewerb.css`
+- `index.html`
+- `VERSION.txt`
+- `CHANGELOG.md`
+- `README.md`
+
 ## Version 4.4.10 – Schmugglersiegel in Bundesliga und Dynamo-Spielen
 
 ### Neu

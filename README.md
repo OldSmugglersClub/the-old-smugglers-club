@@ -67,6 +67,11 @@ Die vollständige Bibliothek umfasst alle 52 aktiven Teams aus `teams.json`. Die
 `uefa-kandidaten-2026-27.json` dokumentiert alle am 31.07.2026 auf den offiziellen UEFA-Teamseiten geführten Mannschaften der Champions League und Europa League. `teams.json` und die Schmugglersiegel-Bibliothek wurden vorsorglich erweitert. Nicht qualifizierte oder ausgeschiedene Teams bleiben unsichtbar, solange keine Wettbewerbsdatei auf ihre Team-ID verweist.
 
 
-## Schmugglersiegel-Integration (Version 4.4.10)
+## Schmugglersiegel-Integration (Version 4.4.11)
 
 Die zentrale Komponente `team-badge.js` wird nun auch auf den Wettbewerbsseiten Bundesliga und Dynamo Dresden verwendet. Siegel erscheinen ergänzend in Tabellen und Spielpaarungen. Fehlt ein Asset, bleibt der Vereinsname sichtbar und ein neutrales Kürzel dient als Fallback.
+
+
+## Version 4.4.11 – robuste Schmugglersiegel
+
+Die zentrale Komponente erzeugt Schmugglersiegel nun direkt als Inline-SVG aus dem Register. Dadurch werden auf allen eingebundenen Seiten echte farbige Siegel statt reiner Fallback-Kürzel dargestellt, auch wenn einzelne externe SVG-Dateien fehlen oder falsch abgelegt wurden.
