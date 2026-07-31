@@ -263,3 +263,11 @@
 - Export enthält Datenmengen, Quellenstände sowie erkannte Fehler und Hinweise, verändert aber keine Website-Daten.
 - Pflege- und Diagnosefunktionen verwenden das gemeinsame Datenmodell aus Version 2.44/2.45.
 - Grundlayout, Raster, Kachelgrößen und freigegebene Inhalte unverändert belassen.
+
+## Version 2.47 – Technischer Feinschliff
+
+- Ressourcenhinweise für zentrale JavaScript- und JSON-Dateien ergänzt.
+- Fokusdarstellung, Tastaturbedienung und Touch-Ziele weiter verbessert.
+- Unterstützung reduzierter Bewegungen erweitert.
+- Doppelte Initialisierung gemeinsamer Module defensiv verhindert.
+- Keine Änderungen an Grundlayout, Kachelgrößen oder freigegebenen Inhalten.
