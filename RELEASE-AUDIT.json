@@ -1,13 +1,13 @@
 {
-  "auditVersion": "3.23",
-  "generatedAtUtc": "2026-07-31T11:02:03.667359+00:00",
+  "auditVersion": "3.24",
+  "generatedAtUtc": "2026-07-31T11:05:47.781508+00:00",
   "status": "OK",
-  "version": "3.23",
+  "version": "3.24",
   "counts": {
-    "html": 28,
-    "javascript": 25,
-    "json": 31,
-    "referencesChecked": 280
+    "html": 29,
+    "javascript": 26,
+    "json": 32,
+    "referencesChecked": 289
   },
   "missingRequiredFiles": [],
   "missingLocalReferences": [],

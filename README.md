@@ -96,3 +96,7 @@ Die Tippfristen-Kontrolle befindet sich in `tippfristen.html` und prüft bestät
 ## Version 3.23
 
 `abgabe-erinnerungen.html` erzeugt aus fehlenden Tippabgaben vorbereitete, kopierbare Erinnerungstexte. Ein automatischer Versand findet nicht statt.
+
+## Version 3.24
+
+`erinnerungsprotokoll.html` dokumentiert manuell versendete Abgabe-Erinnerungen. Einträge können importiert, ergänzt, entfernt und als `erinnerungsprotokoll.json` oder CSV exportiert werden. Ein automatischer Versand oder eine automatische Änderung des Repositories findet nicht statt.

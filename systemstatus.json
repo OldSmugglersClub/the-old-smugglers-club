@@ -1,7 +1,7 @@
 {
-  "version": "3.23",
+  "version": "3.24",
   "modus": "Plan B · datengetrieben",
-  "aktualisiertAm": "2026-07-31T13:00:00+02:00",
+  "aktualisiertAm": "2026-07-31T13:03:00+02:00",
   "module": [
     {
       "name": "Clubdaten",
@@ -132,8 +132,13 @@
       "name": "Abgabe-Erinnerungen",
       "datei": "abgabe-erinnerungen.html",
       "status": "aktiv"
+    },
+    {
+      "name": "Erinnerungsprotokoll",
+      "datei": "erinnerungsprotokoll.html",
+      "status": "aktiv"
     }
   ],
   "releaseStatus": "stabil",
-  "datenregisterVersion": 23
+  "datenregisterVersion": 24
 }

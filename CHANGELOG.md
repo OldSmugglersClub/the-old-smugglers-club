@@ -517,3 +517,14 @@
 - Neue zentrale Exportdatei `teampunkte.json`.
 - Teilnehmer ohne Team bleiben vollständig in der Einzelwertung erhalten.
 - Öffentliches Grundlayout, Raster und Kachelgrößen unverändert belassen.
+
+## Version 3.24 – Erinnerungsprotokoll – 31.07.2026
+
+- Neue Verwaltungsseite `erinnerungsprotokoll.html` ergänzt.
+- Manuell versendete Abgabe-Erinnerungen können je Teilnehmer und Spiel dokumentiert werden.
+- Bereits protokollierte und noch offene Erinnerungsfälle werden getrennt ausgewiesen.
+- Versandkanal, Bearbeiter und Versandzeitpunkt werden nachvollziehbar gespeichert.
+- Import einer bestehenden Protokolldatei sowie JSON- und CSV-Export ergänzt.
+- Neue zentrale Datenquelle `erinnerungsprotokoll.json` registriert.
+- Keine automatische Nachrichtenübermittlung und keine automatische Änderung des GitHub-Repositories.
+- Öffentliches Grundlayout, Raster und bestehende Kachelgrößen unverändert belassen.
