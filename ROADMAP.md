@@ -73,15 +73,6 @@ Die öffentlichen Bereiche sind produktionsreif. Die verbleibenden Arbeiten betr
 - [x] Reihenfolge bis Version 5.0 festgelegt
 - [x] abgeschlossene und offene Aufgaben getrennt
 
-### 4.4.6 – Pilotintegration Schmugglersiegel
-
-- [x] farbige SVG-Siegel für 1. FC Nürnberg und SG Dynamo Dresden erstellt
-- [x] hervorgehobene Paarung in „Aktueller Spieltag“ integriert
-- [x] Desktop-Abstände kompakter ausgerichtet
-- [x] mobile Abstände zwischen Siegel und Mannschaftsnamen korrigiert
-- [ ] optische Abnahme auf Desktop und Mobil
-- [ ] erst nach Abnahme weitere Mannschaften und Bereiche ergänzen
-
 ### Noch offen innerhalb 4.4.x
 
 - [ ] `DESIGN_GUIDE.md` aus dem freigegebenen Ist-Zustand ableiten
@@ -98,8 +89,8 @@ Die öffentlichen Bereiche sind produktionsreif. Die verbleibenden Arbeiten betr
 - [x] Begriff „Schmugglersiegel“ und Masterprinzip freigegeben
 - [x] technische Spezifikation `SMUGGLERS_DESIGN_SYSTEM.md` erstellt
 - [x] zentrale Assetstruktur angelegt
-- [ ] editierbare Masterdatei entwickeln und in mehreren Größen prüfen
-- [ ] Pilotserie mit vier unterschiedlichen Vereinen erstellen
+- [x] editierbare Masterdatei entwickeln und in mehreren Größen prüfen
+- [x] Pilotserie mit vier unterschiedlichen Vereinen erstellen
 - [ ] vollständige Vereinsbibliothek erst nach Masterfreigabe ableiten
 - [ ] schrittweise, rückbaubare Integration in die Website
 
@@ -264,3 +255,14 @@ Nach Version 4.4.2 folgt das vollständige `ADMIN_HANDBUCH.md` auf Basis des gep
 - [x] Datenschutzerklärung für aktuellen technischen Stand ergänzt
 - [x] rechtliche Footerlinks auf allen öffentlichen Seiten ergänzt
 - [ ] Rechtstexte vor Version 5.0 nochmals gegen den dann tatsächlichen technischen Stand prüfen
+
+
+## Smugglers Design System – Version 4.4.6
+
+- [x] editierbaren neutralen SVG-Master erstellen
+- [x] isolierte Vorschau für 256, 64 und 32 Pixel bereitstellen
+- [ ] Master gestalterisch abnehmen
+- [ ] gegebenenfalls Master korrigieren
+- [ ] Pilotserie mit vier Vereinen erst nach Freigabe erzeugen
+
+Keine Integration in öffentliche Seiten vor ausdrücklicher Freigabe.

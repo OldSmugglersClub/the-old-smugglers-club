@@ -1,26 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
   <title id="title">Schmugglersiegel 1. FC Nürnberg</title>
-  <desc id="desc">Eigenes rundes Siegel in Dunkelrot, Weiß und Messing mit dem Kürzel FCN.</desc>
+  <desc id="desc">Eigenes rundes Schmugglersiegel in Weinrot, Weiß und Messing mit dem klar lesbaren Kürzel FCN.</desc>
   <defs>
-    <radialGradient id="metal" cx="35%" cy="28%" r="78%">
-      <stop offset="0" stop-color="#f1d48a"/><stop offset=".3" stop-color="#bb7b28"/><stop offset=".72" stop-color="#6f4213"/><stop offset="1" stop-color="#2b1808"/>
+    <radialGradient id="metal" cx="34%" cy="26%" r="82%">
+      <stop offset="0" stop-color="#f7dda0"/><stop offset=".28" stop-color="#c78a36"/><stop offset=".68" stop-color="#7b4818"/><stop offset="1" stop-color="#291606"/>
     </radialGradient>
-    <linearGradient id="field" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#7e1424"/><stop offset=".52" stop-color="#4d0915"/><stop offset="1" stop-color="#21050b"/>
+    <linearGradient id="enamel" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#9a2035"/><stop offset=".48" stop-color="#751325"/><stop offset="1" stop-color="#3b0711"/>
     </linearGradient>
-    <filter id="shadow"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity=".7"/></filter>
+    <radialGradient id="shine" cx="34%" cy="22%" r="75%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".23"/><stop offset=".5" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-opacity=".72"/></filter>
   </defs>
   <circle cx="64" cy="64" r="60" fill="#160b06" filter="url(#shadow)"/>
-  <circle cx="64" cy="64" r="57" fill="url(#metal)"/>
-  <circle cx="64" cy="64" r="49" fill="#130b07"/>
-  <circle cx="64" cy="64" r="45" fill="url(#field)" stroke="#e4c177" stroke-width="2"/>
-  <path d="M64 21v86M21 64h86" stroke="#f4e6cf" stroke-width="9" opacity=".95"/>
-  <circle cx="64" cy="64" r="34" fill="#5b0b19" stroke="#d09a45" stroke-width="2"/>
-  <path d="M64 28l5 12 13 1-10 8 3 13-11-7-11 7 3-13-10-8 13-1z" fill="#d4a14a" opacity=".92"/>
-  <text x="64" y="78" text-anchor="middle" fill="#f2d891" stroke="#4a2607" stroke-width="1" font-family="Georgia,serif" font-size="28" font-weight="700">FCN</text>
-  <path d="M64 92c-8 0-13-5-13-11h5c0 4 3 7 8 7s8-3 8-7h5c0 6-5 11-13 11zm0-29v22" fill="none" stroke="#d6a24b" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="64" cy="60" r="3" fill="#d6a24b"/>
-  <g fill="#3a210b" stroke="#e2bd70" stroke-width="1">
+  <circle cx="64" cy="64" r="57" fill="url(#metal)" stroke="#f0cc7d" stroke-width="1"/>
+  <circle cx="64" cy="64" r="50" fill="#211006" stroke="#55300e" stroke-width="2"/>
+  <circle cx="64" cy="64" r="45" fill="url(#enamel)" stroke="#f0d28c" stroke-width="2"/>
+  <path d="M64 19V109" stroke="#f4eadc" stroke-width="8" opacity=".94"/>
+  <circle cx="64" cy="64" r="38" fill="#731426" fill-opacity=".94" stroke="#2e050c" stroke-width="2"/>
+  <path d="M55 31h18M64 23v16M59 28l5-5 5 5" fill="none" stroke="#d8aa56" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity=".82"/>
+  <text x="64" y="75" text-anchor="middle" fill="#fff3dc" stroke="#2d060d" stroke-width="1.7" paint-order="stroke" font-family="Georgia, 'Times New Roman', serif" font-size="29" font-weight="700" letter-spacing="-1.2">FCN</text>
+  <path d="M59 94c0 3 2 5 5 5s5-2 5-5M64 84v15M58 89h12" fill="none" stroke="#d7a754" stroke-width="2.1" stroke-linecap="round" opacity=".78"/>
+  <circle cx="64" cy="64" r="45" fill="url(#shine)"/>
+  <g fill="#40250d" stroke="#f0c978" stroke-width="1">
     <circle cx="64" cy="8" r="3"/><circle cx="104" cy="24" r="3"/><circle cx="120" cy="64" r="3"/><circle cx="104" cy="104" r="3"/><circle cx="64" cy="120" r="3"/><circle cx="24" cy="104" r="3"/><circle cx="8" cy="64" r="3"/><circle cx="24" cy="24" r="3"/>
   </g>
 </svg>

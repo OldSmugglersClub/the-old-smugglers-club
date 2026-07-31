@@ -51,3 +51,7 @@ Für Version 4.4.5 gilt die Datei `GITHUB-UPDATE-4.4.6.md`.
 ## Rechtliche Seiten
 
 Die öffentlichen Seiten verlinken im Footer auf `impressum.html` und `datenschutz.html`. Die Rechtstexte beschreiben den in Version 4.4.3 geprüften technischen Stand und müssen bei neuen externen Diensten oder Formularen erneut geprüft werden.
+
+### Version 4.4.7
+
+Die zwei Pilot-Schmugglersiegel wurden auf bessere Wiedererkennbarkeit überarbeitet. Im Zentrum stehen nun die klar lesbaren Kürzel `FCN` und `SGD`; Vereinsfarben sind kräftiger, nautische Details dezenter. Das bestehende Website-Layout wurde nicht verändert.

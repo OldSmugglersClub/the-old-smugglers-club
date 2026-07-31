@@ -1014,3 +1014,21 @@
 - Alte Pseudo-Elemente bleiben deaktiviert.
 - Inhalt, Maße, Statusfelder, Hauptbutton sowie Desktop- und Mobilstruktur unverändert.
 - Keine Bilderstellung und keine Bilddateien verändert.
+
+## Version 4.4.7
+
+### Geändert
+
+- Pilot-Schmugglersiegel für 1. FC Nürnberg und SG Dynamo Dresden überarbeitet.
+- Kürzel `FCN` und `SGD` deutlich vergrößert und in den Mittelpunkt gestellt.
+- Vereinsfarben kontrastreicher als Emaille-Flächen umgesetzt.
+- Kompass- und Ankermotive bewusst verkleinert, damit sie nicht mehr mit den Kürzeln konkurrieren.
+- Bestehende Platzierung, Abstände sowie Desktop- und Mobil-Layout unverändert gelassen.
+
+### Betroffene Dateien
+
+- `assets/smugglers-design-system/schmugglersiegel/nuernberg.svg`
+- `assets/smugglers-design-system/schmugglersiegel/dynamo-dresden.svg`
+- `VERSION.txt`
+- `CHANGELOG.md`
+- `README.md`

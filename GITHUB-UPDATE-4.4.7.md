@@ -1,20 +1,15 @@
-# GITHUB-UPDATE 4.4.7
+# GitHub-Update – Version 4.4.7
 
 ## Ersetzen
 
+- `assets/smugglers-design-system/schmugglersiegel/nuernberg.svg`
+- `assets/smugglers-design-system/schmugglersiegel/dynamo-dresden.svg`
 - `VERSION.txt`
 - `CHANGELOG.md`
 - `README.md`
-- `ROADMAP.md`
-- `assets/smugglers-design-system/dokumentation/SMUGGLERS_DESIGN_SYSTEM.md`
 
 ## Neu
 
-- `assets/smugglers-design-system/pilot-vorschau.html`
-- `assets/smugglers-design-system/schmugglersiegel/pilot/sg-dynamo-dresden.svg`
-- `assets/smugglers-design-system/schmugglersiegel/pilot/fc-bayern-muenchen.svg`
-- `assets/smugglers-design-system/schmugglersiegel/pilot/borussia-dortmund.svg`
-- `assets/smugglers-design-system/schmugglersiegel/pilot/fc-schalke-04.svg`
 - `RELEASE_NOTES_v4.4.7.md`
 - `GITHUB-UPDATE-4.4.7.md`
 

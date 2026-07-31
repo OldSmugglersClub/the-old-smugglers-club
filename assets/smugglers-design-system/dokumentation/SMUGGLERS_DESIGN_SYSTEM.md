@@ -2,7 +2,7 @@
 
 ## 1. Status
 
-**SDS-Version:** 1.0 – Pilotserie  \n**Projektversion:** 4.4.8  \n**Freigabestatus:** Vollständige technische Vereinsbibliothek und Assetregister erstellt; öffentliche Integration weiterhin offen.
+**SDS-Version:** 1.0 – Pilotserie  \n**Projektversion:** 4.4.7  \n**Freigabestatus:** Vier SVG-Pilotsiegel erstellt; gestalterische Serienabnahme durch den Projektleiter offen.
 
 Dieses Dokument definiert das verbindliche Gestaltungssystem für eigene visuelle Kennzeichen des Projekts **The Old Smugglers Club**.
 
@@ -177,10 +177,10 @@ Die Integration erfolgt schrittweise. Bereits freigegebene Kachelgrößen, Grid,
 
 ### Phase 3 – Vereinsbibliothek
 
-- [x] vollständige Liste aller im Tippspiel vorkommenden Vereine ermitteln
-- [x] eindeutige Kürzel und Farbpaare festlegen
-- [x] alle Schmugglersiegel erzeugen
-- [x] Assetregister erstellen
+- [ ] vollständige Liste aller im Tippspiel vorkommenden Vereine ermitteln
+- [ ] eindeutige Kürzel und Farbpaare festlegen
+- [ ] alle Schmugglersiegel erzeugen
+- [ ] Assetregister erstellen
 
 ### Phase 4 – Integration
 
@@ -230,28 +230,3 @@ Die Pilotserie verändert ausschließlich Vereinsfarben, Initialen und die dafü
 ## 15. Nächster Freigabepunkt
 
 Vor Erstellung der vollständigen Vereinsbibliothek muss der Projektleiter die Pilotserie prüfen. Korrekturen am Master werden zuerst zentral vorgenommen und anschließend auf alle vier Pilotsiegel übertragen. Eine Integration in öffentliche Seiten erfolgt weiterhin nicht.
-
-
-## 15. Vereinsbibliothek Version 4.4.8
-
-Für alle 52 aktuell aktiven Einträge aus `teams.json` wurden eigenständige SVG-Schmugglersiegel erzeugt.
-
-Zentrale Dateien:
-
-- `schmugglersiegel/schmugglersiegel-register.json`
-- `schmugglersiegel/bibliothek-vorschau.html`
-- `schmugglersiegel/bibliothek/*.svg`
-
-Die Vereinsnamen bleiben unverändert in `teams.json`. Das Register ergänzt ausschließlich neutrale Assetpfade, Kürzel und gedämpfte Farbpaare. Die öffentliche Website verwendet die Siegel noch nicht.
-
-## 16. Nächster Schritt
-
-Phase 4 beginnt mit einer nichtkritischen, isolierten Integrationsprobe. Vor einer flächendeckenden Einbindung müssen Fallback-Verhalten, Ladefehler, Desktopdarstellung und Mobilansicht geprüft werden.
-
-## Integrationsregel ab Projektversion 4.4.9
-
-Schmugglersiegel werden ausschließlich über die `teamId` aus `teams.json` und das zentrale `schmugglersiegel-register.json` zugeordnet.
-
-Falls kein Registereintrag vorhanden ist oder eine SVG-Datei nicht geladen werden kann, muss die Oberfläche ein neutrales Kürzel-Fallback darstellen. Defekte Bildsymbole oder leere Flächen sind nicht zulässig.
-
-Die erste technische Prüfung erfolgt isoliert über `assets/smugglers-design-system/integrationsprobe.html`. Öffentliche Seiten werden erst nach visueller Freigabe angepasst.
