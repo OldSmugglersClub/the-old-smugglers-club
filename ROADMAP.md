@@ -11,7 +11,7 @@ Es trennt abgeschlossene Arbeiten, verbindlich offene Aufgaben und spätere Idee
 ## 2. Aktueller Stand
 
 **Aktuelle Projektlinie:** Version 4.4.x  
-**Letzter produktiver Funktionsstand:** Version 4.3.8  
+**Letzter produktiver Funktionsstand:** Version 4.4.12
 **Ziel:** Version 5.0 LTS
 
 Die öffentlichen Bereiche sind produktionsreif. Die verbleibenden Arbeiten betreffen überwiegend Datenarchitektur, Administration, Dokumentation und Gesamtqualität.
@@ -73,9 +73,18 @@ Die öffentlichen Bereiche sind produktionsreif. Die verbleibenden Arbeiten betr
 - [x] Reihenfolge bis Version 5.0 festgelegt
 - [x] abgeschlossene und offene Aufgaben getrennt
 
+### 4.4.6 – Pilotintegration Schmugglersiegel
+
+- [x] farbige SVG-Siegel für 1. FC Nürnberg und SG Dynamo Dresden erstellt
+- [x] hervorgehobene Paarung in „Aktueller Spieltag“ integriert
+- [x] Desktop-Abstände kompakter ausgerichtet
+- [x] mobile Abstände zwischen Siegel und Mannschaftsnamen korrigiert
+- [x] optische Abnahme auf Desktop und Mobil
+- [x] weitere Mannschaften und Wettbewerbsseiten nach Abnahme ergänzt
+
 ### Noch offen innerhalb 4.4.x
 
-- [ ] `DESIGN_GUIDE.md` aus dem freigegebenen Ist-Zustand ableiten
+- [x] `DESIGN_GUIDE.md` aus dem freigegebenen Ist-Zustand abgeleitet
 - [x] lokalen Adminbereich v4.0.5 vollständig analysieren (`ADMIN-SYSTEMANALYSE.md`)
 - [ ] vollständiges `ADMIN_HANDBUCH.md` auf Basis des realen Systems erstellen
 - [ ] bestehendes `CHANGELOG.md` langfristig in eine konsistente Struktur überführen
@@ -89,10 +98,10 @@ Die öffentlichen Bereiche sind produktionsreif. Die verbleibenden Arbeiten betr
 - [x] Begriff „Schmugglersiegel“ und Masterprinzip freigegeben
 - [x] technische Spezifikation `SMUGGLERS_DESIGN_SYSTEM.md` erstellt
 - [x] zentrale Assetstruktur angelegt
-- [x] editierbare Masterdatei entwickeln und in mehreren Größen prüfen
-- [x] Pilotserie mit vier unterschiedlichen Vereinen erstellen
-- [ ] vollständige Vereinsbibliothek erst nach Masterfreigabe ableiten
-- [ ] schrittweise, rückbaubare Integration in die Website
+- [ ] editierbare Masterdatei entwickeln und in mehreren Größen prüfen
+- [x] Pilotserie im freigegebenen v2-Stil erstellen und auf Desktop/Mobil abnehmen
+- [x] vollständige Vereinsbibliothek für alle aktiven Teams ableiten
+- [x] schrittweise, rückbaubare Integration über die zentrale Komponente auf alle Wettbewerbsseiten ausgeweitet
 
 ## 5. Version 4.5.x – Zentrale Datenhaltung
 
@@ -246,7 +255,7 @@ Ideen werden gesammelt, aber erst nach einer stabilen 5.x-Phase bewertet. Änder
 
 ## 12. Nächster verbindlicher Arbeitsschritt
 
-Nach Version 4.4.2 folgt das vollständige `ADMIN_HANDBUCH.md` auf Basis des geprüften lokalen Adminsystems v4.0.5. Anschließend wird der bestehende Designzustand in `DESIGN_GUIDE.md` dokumentiert. Beide Schritte verändern weder öffentliche Website noch Datenlogik.
+Nach Version 4.4.15 folgt die Feld-für-Feld-Migrationsmatrix für die zentrale Datenhaltung. Erst nach ihrer Prüfung und Freigabe werden JSON-Strukturen zusammengeführt oder abgelöst.
 
 
 ## Version 4.4.3 – Rechtliche Grundausstattung
@@ -255,34 +264,3 @@ Nach Version 4.4.2 folgt das vollständige `ADMIN_HANDBUCH.md` auf Basis des gep
 - [x] Datenschutzerklärung für aktuellen technischen Stand ergänzt
 - [x] rechtliche Footerlinks auf allen öffentlichen Seiten ergänzt
 - [ ] Rechtstexte vor Version 5.0 nochmals gegen den dann tatsächlichen technischen Stand prüfen
-
-
-## Smugglers Design System – Version 4.4.6
-
-- [x] editierbaren neutralen SVG-Master erstellen
-- [x] isolierte Vorschau für 256, 64 und 32 Pixel bereitstellen
-- [ ] Master gestalterisch abnehmen
-- [ ] gegebenenfalls Master korrigieren
-- [ ] Pilotserie mit vier Vereinen erst nach Freigabe erzeugen
-
-Keine Integration in öffentliche Seiten vor ausdrücklicher Freigabe.
-
-
-## Version 4.4.8 – SDS Vereinsbibliothek
-
-- [x] 52 aktive Vereine aus `teams.json` erfasst
-- [x] neutrale Kürzel und gedämpfte Farbpaare festgelegt
-- [x] SVG-Schmugglersiegel erzeugt
-- [x] zentrales Assetregister erstellt
-- [x] isolierte Gesamtvorschau erstellt
-- [ ] nichtkritische Integrationsprobe
-- [ ] Serienabnahme vor öffentlicher Einbindung
-
-### SDS – Integrationsprobe (Version 4.4.9)
-
-- [x] Schmugglersiegel dynamisch über Team-ID auflösen
-- [x] neutrales Fallback bei fehlendem oder defektem Siegel
-- [x] Darstellung in mehreren Größen prüfen
-- [x] responsive Testansicht ohne Änderung öffentlicher Seiten
-- [ ] visuelle Abnahme der Pilotintegration durch den Projektleiter
-- [ ] danach gezielte Integration in genau einen freigegebenen öffentlichen Bereich

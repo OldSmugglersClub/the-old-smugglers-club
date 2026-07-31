@@ -1,5 +1,23 @@
 # CHANGELOG
 
+## Version 4.4.15
+
+### Neu
+- Vollständiges `ADMIN_HANDBUCH.md` auf Basis des tatsächlich vorhandenen lokalen Adminsystems v4.0.5 erstellt.
+- Bedienung, Datenpflege, Berechnungsreihenfolge, Saisonwechsel, GitHub-Workflow, Backups und bekannte Grenzen dokumentiert.
+
+### Geändert
+- Roadmap: Adminhandbuch als abgeschlossen markiert.
+- Nächster Schritt auf die Feld-für-Feld-Migrationsmatrix der zentralen Datenhaltung gesetzt.
+- Versionsangaben aktualisiert.
+
+### Betroffene Dateien
+- ADMIN_HANDBUCH.md
+- ROADMAP.md
+- VERSION.txt
+- README.md
+- CHANGELOG.md
+
 ## Version 4.4.14
 
 ### Behoben
