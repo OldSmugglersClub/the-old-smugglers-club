@@ -1,11 +1,18 @@
 {
   "meta": {
     "season": "2026/2027",
-    "matchday": "Smugglerauftrag Auftakt",
+    "matchday": "Smugglerauftrag Auftakt · Tippspieltag Nr. 2",
     "exportDate": "31.07.2026",
     "source": "Kicktipp-Mitgliederexport 31.07.2026 / synchronisierte Teilnehmerbasis",
     "privacy": "E-Mail-Adressen werden nicht übernommen.",
-    "participantCount": 100
+    "participantCount": 100,
+    "bonusCompetition": {
+      "matchdayNumber": 1,
+      "questions": 25,
+      "pointsPerCorrectAnswer": 5,
+      "maxPoints": 125,
+      "countsTowardOverall": true
+    }
   },
   "individual": {
     "overall": [

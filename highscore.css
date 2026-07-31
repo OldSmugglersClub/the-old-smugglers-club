@@ -730,3 +730,15 @@
   .hs-course-board strong{font-size:.95rem}
   .hs-main-tab{overflow-wrap:normal;word-break:normal;hyphens:auto}
 }
+
+
+/* Version 4.3.3 – Bonuswettbewerb */
+.hs-bonus-panel .hs-panel-head { align-items: center; }
+.hs-bonus-max { min-width: 150px; padding: .75rem 1rem; border: 1px solid rgba(202,151,45,.7); border-radius: 12px; background: rgba(45,28,15,.72); text-align: center; }
+.hs-bonus-max span, .hs-bonus-max strong { display:block; }
+.hs-bonus-max span { color:#c9b184; font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; }
+.hs-bonus-max strong { color:#f1d58b; margin-top:.2rem; }
+@media (max-width: 760px) {
+  .hs-bonus-panel .hs-panel-head { align-items: stretch; }
+  .hs-bonus-max { width:100%; min-width:0; }
+}

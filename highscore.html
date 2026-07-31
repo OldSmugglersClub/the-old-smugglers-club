@@ -18,7 +18,7 @@
       <div>
         <div class="hs-kicker">Ranglistenlogbuch · Saison 2026/2027</div>
         <h1>Highscore</h1>
-        <p>Die Ranglage der gesamten Crew mit Einzelwertung, Teamduell, Rekorden und Piratenorden.</p>
+        <p>Die Ranglage der gesamten Crew mit Einzelwertung, Bonuswettbewerb, Teamduell, Rekorden und Piratenorden.</p>
       </div>
     </div>
 
@@ -32,12 +32,14 @@
 
   <section class="hs-course-board" aria-label="Orientierung im Ranglistenlogbuch">
     <div><span>Einzelwertung</span><strong>Gesamtrang und Spieltag</strong></div>
+    <div><span>Bonuswettbewerb</span><strong>25 Saisonfragen · je 5 Punkte</strong></div>
     <div><span>Teamduell</span><strong>Old gegen New Smugglers</strong></div>
     <div><span>Clubchronik</span><strong>Rekorde und Orden</strong></div>
   </section>
 
   <nav class="hs-main-tabs" aria-label="Highscore-Bereiche" role="tablist">
     <button id="tab-individual" class="hs-main-tab is-active" data-section="individual" role="tab" aria-selected="true" aria-controls="section-individual">Einzelwertung</button>
+    <button id="tab-bonus" class="hs-main-tab" data-section="bonus" role="tab" aria-selected="false" aria-controls="section-bonus">Bonuswettbewerb</button>
     <button id="tab-old-team" class="hs-main-tab" data-section="old-team" role="tab" aria-selected="false" aria-controls="section-old-team">Old Smugglers Team</button>
     <button id="tab-new-team" class="hs-main-tab" data-section="new-team" role="tab" aria-selected="false" aria-controls="section-new-team">New Smugglers Team</button>
     <button id="tab-records" class="hs-main-tab" data-section="records" role="tab" aria-selected="false" aria-controls="section-records">Rekorde & Orden</button>
@@ -78,6 +80,21 @@
         <label>Einträge <select id="page-size"><option value="25" selected>25</option><option value="50">50</option><option value="100">100</option></select></label>
         <button class="hs-page-btn" id="page-next">Weiter ›</button>
       </div>
+    </div>
+  </section>
+
+  <section class="hs-section" id="section-bonus" role="tabpanel" aria-labelledby="tab-bonus" hidden>
+    <div class="hs-panel hs-bonus-panel">
+      <div class="hs-panel-head">
+        <div><div class="hs-eyebrow">Tippspieltag Nr. 1</div><h2>Bonuswettbewerb</h2><p class="hs-status">25 Saisonfragen · jede richtige Antwort bringt 5 Punkte und zählt zur Gesamtwertung.</p></div>
+        <div class="hs-bonus-max"><span>Maximal</span><strong>125 Punkte</strong></div>
+      </div>
+      <div class="hs-ranking-notice" id="bonus-notice" role="status" aria-live="polite"></div>
+      <div class="hs-podium" id="bonus-podium"></div>
+    </div>
+    <div class="hs-panel">
+      <div class="hs-panel-head"><div><div class="hs-eyebrow">Bonus-Rangliste</div><h2>Stand des Bonuswettbewerbs</h2><p class="hs-status">Die Werte werden über die Saison ergänzt, sobald Kicktipp Bonusfragen auswertet.</p></div></div>
+      <div class="hs-table-wrap"><table class="hs-table"><caption class="sr-only">Rangliste des Bonuswettbewerbs</caption><thead><tr><th>Rang</th><th>Spieler</th><th>Richtige Antworten</th><th>Bonuspunkte</th></tr></thead><tbody id="bonus-body"></tbody></table></div>
     </div>
   </section>
 

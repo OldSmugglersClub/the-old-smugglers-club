@@ -5397,6 +5397,15 @@
             </div>
           </div>
 
+
+          <div class="honour-card">
+            <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-scroll"></use></svg></div>
+            <div>
+              <strong id="bonus-title">Bonuswettbewerb 2026/2027</strong>
+              <small class="status-open" id="bonus-name">Sieger noch offen</small>
+            </div>
+          </div>
+
           <div class="honour-card">
             <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-ship-lantern"></use></svg></div>
             <div>
@@ -6074,6 +6083,11 @@
           Boolean(data.smugglerauftraege?.offen),
           "Sieger noch offen"
         );
+
+
+        setText("bonus-title", `Bonuswettbewerb ${data.bonuswettbewerb?.saison ?? ""}`.trim());
+        setText("bonus-name", data.bonuswettbewerb?.name);
+        setOpenState("bonus-name", Boolean(data.bonuswettbewerb?.offen), "Sieger noch offen");
 
         setText(
           "weihnachtsregatta-title",

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "datenVersion": 3,
-  "aktualisiert": "2026-07-30",
+  "datenVersion": 4,
+  "aktualisiert": "2026-07-31",
   "aktiveSaison": "2026-27",
   "hinweis": "Zentrale 1:1-Abbildung der in Kicktipp angelegten Wertungsspieltage. Ein Tippspieltag kann ein oder mehrere reale Spiele enthalten.",
   "regeln": {
@@ -22,6 +22,22 @@
       "anzeige": "2026/2027",
       "aktiv": true,
       "tippspieltage": [
+        {
+          "nummer": 1,
+          "name": "Bonus",
+          "saison": "2026/2027",
+          "aktiv": true,
+          "status": "saisonbegleitend",
+          "typ": "bonuswettbewerb",
+          "spieltagssieger": true,
+          "anzahlEreignisse": 25,
+          "wertung": {
+            "punkteProRichtigerAntwort": 5,
+            "maximalPunkte": 125,
+            "zaehltZurGesamtwertung": true
+          },
+          "hinweis": "25 Saisonfragen. Jede richtige Antwort bringt 5 Bonuspunkte; die Auswertung erfolgt im Saisonverlauf."
+        },
         {
           "nummer": 2,
           "name": "Smugglerauftrag Auftakt",

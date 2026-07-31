@@ -100,5 +100,12 @@
     "saison": "2026/2027",
     "name": "Sieger noch offen",
     "offen": true
+  },
+  "bonuswettbewerb": {
+    "saison": "2026/2027",
+    "name": "Sieger noch offen",
+    "offen": true,
+    "fragen": 25,
+    "punkteProAntwort": 5
   }
 }

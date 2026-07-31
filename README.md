@@ -1,4 +1,4 @@
-# The Old Smugglers Club – Version 4.3.2
+# The Old Smugglers Club – Version 4.3.3
 
 Öffentliche GitHub-Pages-Website der Tipprunde **The Old Smugglers Club**.
 
@@ -18,7 +18,7 @@ Der vollständige Inhalt dieses Verzeichnisses gehört direkt in das Hauptverzei
 
 ## Aktualisierung über die GitHub-Webseite
 
-Für Version 4.3.2 gilt die Datei `GITHUB-UPDATE-4.3.0.md`. Gleichnamige Dateien werden beim Hochladen ersetzt. Es müssen keine Dateien gelöscht werden.
+Für Version 4.3.3 gilt die Datei `GITHUB-UPDATE-4.3.0.md`. Gleichnamige Dateien werden beim Hochladen ersetzt. Es müssen keine Dateien gelöscht werden.
 
 ## Wichtige Dateien
 

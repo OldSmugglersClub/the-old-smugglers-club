@@ -544,6 +544,32 @@ function renderIndividual() {
   renderPodium();
 }
 
+
+function bonusRows() {
+  const rows = [...(data.individual?.overall || [])].map(row => ({
+    rank: Number(row.rank || 1),
+    name: String(row.name || ''),
+    bonusPoints: Number(row.bonusPoints || 0),
+    correctAnswers: Math.floor(Number(row.bonusPoints || 0) / 5)
+  }));
+  rows.sort((a,b) => b.bonusPoints - a.bonusPoints || a.name.localeCompare(b.name, 'de'));
+  let rank = 0, previous = null;
+  rows.forEach((row,index) => { if (previous === null || row.bonusPoints !== previous) rank = index + 1; row.rank = rank; previous = row.bonusPoints; });
+  return rows;
+}
+
+function renderBonusCompetition() {
+  const rows = bonusRows();
+  const body = document.querySelector('#bonus-body');
+  const podium = document.querySelector('#bonus-podium');
+  const notice = document.querySelector('#bonus-notice');
+  if (!body || !podium || !notice) return;
+  const hasPoints = rows.some(row => row.bonusPoints > 0);
+  notice.innerHTML = hasPoints ? '<strong>Bonuswertung aktiv.</strong> Die Punkte werden der Gesamtwertung zugerechnet.' : '<strong>Noch keine Bonusfrage ausgewertet.</strong> Die Rangliste startet, sobald Kicktipp erste Saisonfragen auflöst.';
+  podium.innerHTML = rows.slice(0,3).map((row,index) => `<article class="hs-podium-card place-${index+1}"><span>Platz ${row.rank}</span><strong>${esc(row.name)}</strong><small>${fmt(row.bonusPoints)} Bonuspunkte · ${row.correctAnswers} richtige Antworten</small></article>`).join('');
+  body.innerHTML = rows.map(row => `<tr>${rowCell('Rang', esc(row.rank), 'hs-rank')}${rowCell('Spieler', profileButton(row.name), 'hs-player')}${rowCell('Richtige Antworten', fmt(row.correctAnswers))}${rowCell('Bonuspunkte', fmt(row.bonusPoints), 'hs-total')}</tr>`).join('');
+}
+
 function renderTeam(name) {
   const overallRows = [...(data.teams?.overall || [])].sort((a, b) => Number(b.totalPoints || 0) - Number(a.totalPoints || 0));
   const overall = overallRows.find(row => row.name === name);
@@ -781,6 +807,7 @@ function init() {
   const pageSizeSelect = document.querySelector('#page-size');
   if (pageSizeSelect) pageSizeSelect.value = String(state.pageSize);
   renderIndividual();
+  renderBonusCompetition();
   renderTeam('Old Smugglers Team');
   renderTeam('New Smugglers Team');
   renderRecords();
@@ -843,7 +870,7 @@ function init() {
   });
 
   const requestedSection = location.hash.replace('#', '');
-  if (['individual', 'old-team', 'new-team', 'records'].includes(requestedSection)) setSection(requestedSection);
+  if (['individual', 'bonus', 'old-team', 'new-team', 'records'].includes(requestedSection)) setSection(requestedSection);
 }
 
 function classListToggle(element, active) {
@@ -891,7 +918,7 @@ function loadHighscoreData() {
 
 window.addEventListener('hashchange', () => {
   const requested = location.hash.replace('#', '');
-  if (['individual', 'old-team', 'new-team', 'records'].includes(requested)) setSection(requested);
+  if (['individual', 'bonus', 'old-team', 'new-team', 'records'].includes(requested)) setSection(requested);
 });
 
 loadHighscoreData();

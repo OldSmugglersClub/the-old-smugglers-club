@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.3.3 – Bonuswettbewerb
+- Tippspieltag Nr. 1 als saisonbegleitenden Bonuswettbewerb mit 25 Fragen ergänzt.
+- Jede richtige Antwort bringt 5 Punkte; maximal sind 125 Bonuspunkte möglich.
+- Bonuspunkte zählen zur Gesamtwertung.
+- Eigener Highscore-Bereich „Bonuswettbewerb“ ergänzt.
+- Hall of Fame um den Sieger des Bonuswettbewerbs erweitert.
+- Mobile Darstellung der neuen Rangliste abgesichert.
+
 ## 4.3.0 – Startzentrale mit klarer Hierarchie
 
 - störende Kompassscheibe und Siegelprägung entfernt
