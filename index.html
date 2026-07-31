@@ -4564,6 +4564,78 @@
       }
     }
 
+
+    /* Version 4.1.8 – responsive Stabilitätsregeln für alle öffentlichen Kacheln */
+    .section,
+    .panel,
+    .hero-grid > *,
+    .competition,
+    .honour-card,
+    .highscore-teaser-card,
+    .smuggler-panel * {
+      min-width: 0;
+      box-sizing: border-box;
+    }
+
+    .section-title h2,
+    .competition b,
+    .competition small,
+    .honour-card strong,
+    .honour-card small,
+    .highscore-teaser-card strong,
+    .highscore-teaser-card small,
+    .smuggler-panel h2,
+    .smuggler-panel h3,
+    .smuggler-panel p {
+      overflow-wrap: break-word;
+      word-break: normal;
+      hyphens: none;
+    }
+
+    .button,
+    .hall-archive-link,
+    .competition-link {
+      max-width: 100%;
+    }
+
+    @media (max-width: 700px) {
+      .section,
+      .panel {
+        overflow-x: clip;
+      }
+
+      .section-title {
+        min-width: 0;
+      }
+
+      .section-title h2 {
+        max-width: 100%;
+        font-size: clamp(1.55rem, 8vw, 2.15rem);
+        line-height: 1.12;
+      }
+
+      .competition-grid,
+      .highscore-teaser-grid,
+      #hall-of-fame .honours-overview {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .competition,
+      .honour-card,
+      .highscore-teaser-card {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .button,
+      .hall-archive-link {
+        white-space: normal;
+        text-align: center;
+        overflow-wrap: break-word;
+      }
+    }
+
   </style>
   <link rel="stylesheet" href="./highscore.css?v=4.0.1">
   <link rel="stylesheet" href="./accessibility-v33.css">

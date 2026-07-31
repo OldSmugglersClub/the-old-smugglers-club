@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 4.1.8 – Responsive Stabilisierung
+
+- Globale Schutzregeln gegen horizontales Überlaufen in öffentlichen Kacheln ergänzt.
+- Saubere Wortumbrüche ohne Trennung mitten im Wort vereinheitlicht.
+- Mobile Wettbewerbs-, Highscore- und Hall-of-Fame-Karten auf eine stabile Einspaltenansicht abgesichert.
+- Buttons und Beschriftungen gegen Überlagerungen und abgeschnittene Texte abgesichert.
+- Keine Änderung an Bildern, Grundraster, Kachelgrößen, Navigation oder Datenlogik.
+
 ## 4.1.7 – Startzentrale bereinigt
 
 - Die in Version 4.1.5 zusätzlich eingeblendeten Schnellzugriffs-Buttons entfernt.
