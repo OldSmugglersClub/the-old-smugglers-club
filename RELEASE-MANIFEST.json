@@ -1,7 +1,7 @@
 {
-  "manifestVersion": "3.8",
-  "generatedAtUtc": "2026-07-31T10:01:51.497810+00:00",
-  "fileCount": 101,
+  "manifestVersion": "3.9",
+  "generatedAtUtc": "2026-07-31T10:08:18.544638+00:00",
+  "fileCount": 106,
   "files": [
     {
       "path": "ADMIN-HANDBUCH.md",
@@ -20,8 +20,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 24221,
-      "sha256": "693820236b8741ab2aa38c84579260d2106f70b20317cc9a1058bd3a48f7738f"
+      "bytes": 24714,
+      "sha256": "d36f4b96c0dc53f3f5f14a7d5e1fe6bf2ee12af5c04cf81befb489440d23dd11"
     },
     {
       "path": "CNAME",
@@ -104,6 +104,11 @@
       "sha256": "f2ff30fa8e2d160330a2203f13f6ff4f78af7f9235dd074b62f82a3be0ccdd79"
     },
     {
+      "path": "GITHUB-UPDATE-3.9.md",
+      "bytes": 403,
+      "sha256": "c113b7d0354d78406d5a91a3235cfb64da8c99cbc53bbf5fbf9379d301447d88"
+    },
+    {
       "path": "INSTALLATION.md",
       "bytes": 57,
       "sha256": "b4a4c4d1a581d34fd05a9e9d6c9a74e76bd5da4c67427e9066377e6d2940b8bd"
@@ -115,8 +120,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 1712,
-      "sha256": "fabe418bea565db3fe228ddd2b4d5c31a85c951197ace4d3d241087100e60001"
+      "bytes": 1875,
+      "sha256": "f7db6b506ceb8876dd64b7a937dc74ff16268ef8c0c232a99ee45c4e9b8bf94e"
     },
     {
       "path": "RELEASE-AUDIT.json",
@@ -194,9 +199,14 @@
       "sha256": "edd7775c46ae90e1f5d96ee1db864edfd632e7e5c8988685989a1363f8a229ba"
     },
     {
+      "path": "RELEASE_NOTES_v3.9.md",
+      "bytes": 307,
+      "sha256": "6dcd145d0748c42b2ff0225213c95e42388352424cebc0608c9c54431fdc671c"
+    },
+    {
       "path": "VERSION.txt",
       "bytes": 4,
-      "sha256": "5b02189ab1f9bb5caa7611320f35cd6a072da88db0533f62c4b3194f8bee4b79"
+      "sha256": "3ec15f7f82d24dbcd050ce11c3994d981499b029772da41c37a2cd0acce87f6e"
     },
     {
       "path": "accessibility-v33.css",
@@ -215,8 +225,8 @@
     },
     {
       "path": "admin.html",
-      "bytes": 3971,
-      "sha256": "bdb4cc54fb3cc881471189986247c6c6947e5e92ca854dca55cec952ef49522d"
+      "bytes": 4059,
+      "sha256": "2a1d997ed70250f2d9e97af9b8fc1fa5c3c6364d77b7522fa8cb8da840cb499f"
     },
     {
       "path": "admin.js",
@@ -286,7 +296,7 @@
     {
       "path": "datenregister.json",
       "bytes": 732,
-      "sha256": "a90d7dfd19ba24636e33444df3819f078e5bfe6d856bd1d3bd0946dafd2a00fb"
+      "sha256": "c06c3d74dad60ff32f1d319d4a6b60db8fb49438b159272e7dc3c29bf3c005b0"
     },
     {
       "path": "dfb-pokal.html",
@@ -411,12 +421,12 @@
     {
       "path": "scripts/build_release_manifest.py",
       "bytes": 950,
-      "sha256": "12e75253fa5a75af2375d2f3d48f52c169cb21c8b30024c90958cea072fa8a7b"
+      "sha256": "6329ccbd1d80d7a74534468839796a6899d8af8f5516af7f68482725d5b9cf2a"
     },
     {
       "path": "scripts/release_audit.py",
-      "bytes": 2562,
-      "sha256": "c785993d224567d1c77542943e31bd63c0a857507cedb37c448c9a85052b6fac"
+      "bytes": 2637,
+      "sha256": "ea31943d65e37a06271e1643201fb1541342b929802b0e36a2680e1437b68efc"
     },
     {
       "path": "scripts/update_data.py",
@@ -460,8 +470,8 @@
     },
     {
       "path": "systemstatus.json",
-      "bytes": 1333,
-      "sha256": "54ac38295ca93ebb5b67774cdc73e17471233bfc2f8ecd552f48785193f26e2b"
+      "bytes": 1459,
+      "sha256": "7cc51f544dbf846e143d5cf7ba7bad9371ec3083f11ec805a6ee1c788efc8fbc"
     },
     {
       "path": "teams.json",
@@ -502,6 +512,21 @@
       "path": "wettbewerbe.json",
       "bytes": 3907,
       "sha256": "02e91d54d7923146c17690bd8d2968d148d209a8dbd688a0056881281c6d6133"
+    },
+    {
+      "path": "wettbewerbspflege.css",
+      "bytes": 1420,
+      "sha256": "26f505f75b674eff9ecda907bd79b47e011ce5adbdf976e19859c9515b6745fe"
+    },
+    {
+      "path": "wettbewerbspflege.html",
+      "bytes": 5261,
+      "sha256": "29e4b41ca9fd16ea503606a90d538de24034748d87aa074574920c54bfa4e08b"
+    },
+    {
+      "path": "wettbewerbspflege.js",
+      "bytes": 11358,
+      "sha256": "7c0ffd8ac01b8c301469c234af83f9c1c1173621bc4cb787f31bf138c33b0330"
     },
     {
       "path": "willkommen-kachel-final.jpg",

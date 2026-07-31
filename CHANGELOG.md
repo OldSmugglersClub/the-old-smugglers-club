@@ -1,3 +1,12 @@
+# Version 3.9 – Zentrale Wettbewerbsverwaltung
+
+- Neue lokale Pflegeoberfläche `wettbewerbspflege.html`.
+- Wettbewerbe können gesucht, gefiltert, bearbeitet, ergänzt und lokal entfernt werden.
+- Validierung für IDs, HTML-Seiten, Filter, Saisonziele und doppelte Zuordnungen.
+- Export einer vollständigen `wettbewerbe.json` für den manuellen GitHub-Upload.
+- Direkter Zugang aus dem Administrationszentrum.
+- Keine Änderung am freigegebenen Layout oder an bestehenden Kachelgrößen.
+
 # Änderungsprotokoll
 
 ## 3.8 – Zentrale Spielpflege
