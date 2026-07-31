@@ -16,11 +16,10 @@
       <p>Lesende Kontrollansicht für Version, Datenquellen, Strukturprüfung und Export. Diese Seite verändert keine Website-Daten.</p>
       <nav class="admin-nav" aria-label="Administration">
         <a class="admin-button" href="index.html">Zur Startseite</a>
+        <a class="admin-button" href="daten-cockpit.html">Daten-Cockpit öffnen</a>
         <button class="admin-button" id="refreshButton" type="button">Prüfung neu starten</button>
         <button class="admin-button" id="downloadButton" type="button" disabled>Systembericht herunterladen</button>
         <button class="admin-button" id="backupButton" type="button" disabled>Datenbestand sichern</button>
-        <button class="admin-button" id="logButton" type="button" disabled>Prüfung protokollieren</button>
-        <button class="admin-button" id="logDownloadButton" type="button" disabled>Pflegeprotokoll herunterladen</button>
         <label class="admin-button admin-file-button" for="restoreFile">Sicherung prüfen<input id="restoreFile" type="file" accept="application/json,.json"></label>
       </nav>
     </header>
@@ -51,14 +50,6 @@
         <button class="admin-button" id="planButton" type="button" disabled>Importplan herunterladen</button>
         <button class="admin-button" id="verifiedBackupButton" type="button" disabled>Geprüfte Sicherung herunterladen</button>
       </div>
-    </section>
-
-    <section class="admin-section" aria-labelledby="logHeading">
-      <div class="admin-heading-row"><h2 id="logHeading">Pflegeprotokoll und Änderungsnachweis</h2><span id="logBadge" class="admin-badge">Noch kein Eintrag</span></div>
-      <p class="admin-explanation">Prüfstände werden ausschließlich lokal in diesem Browser gespeichert. Das Protokoll dokumentiert Versions-, Quellen- und Validierungsänderungen und verändert keine Website-Dateien.</p>
-      <div id="logGrid" class="admin-grid" aria-live="polite"></div>
-      <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Zeitpunkt</th><th>Version</th><th>Quellen</th><th>Validierung</th><th>Änderung</th></tr></thead><tbody id="logRows"></tbody></table></div>
-      <div class="admin-actions"><button class="admin-button" id="clearLogButton" type="button" disabled>Lokales Protokoll leeren</button></div>
     </section>
 
     <section class="admin-section" aria-labelledby="notesHeading">

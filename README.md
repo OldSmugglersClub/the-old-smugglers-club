@@ -24,9 +24,9 @@ Für Updates muss nicht zwingend das komplette Paket erneut hochgeladen werden. 
 ## Administrationszentrum
 Die Seite `admin.html` prüft die zentral registrierten Datenquellen, zeigt Versions- und Ladeinformationen und kann einen Systembericht als JSON exportieren. Sie verändert keine Daten.
 
-## Version 3.6
+## Version 3.5
 Das Administrationszentrum prüft exportierte Datensicherungen lokal, meldet fehlende oder unbekannte Quellen und erzeugt einen manuellen Importplan. Eine automatische Änderung des GitHub-Repositories findet nicht statt.
 
 
-## Version 3.6
-Das Administrationszentrum enthält ein lokales Pflegeprotokoll, Änderungsvergleiche und eine Versionskontrolle für Rückroll-Sicherungen.
+## Daten-Cockpit
+Die Seite `daten-cockpit.html` zeigt alle Wettbewerbe, Spielstände und den zentralen Integritätsstatus in einer lesenden Übersicht.
