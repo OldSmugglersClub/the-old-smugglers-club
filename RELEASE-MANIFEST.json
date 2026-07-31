@@ -1,7 +1,7 @@
 {
-  "manifestVersion": "2.49",
-  "generatedAtUtc": "2026-07-31T06:26:42.509096+00:00",
-  "fileCount": 107,
+  "manifestVersion": "2.50",
+  "generatedAtUtc": "2026-07-31T06:28:38.902717+00:00",
+  "fileCount": 110,
   "files": [
     {
       "path": "ANLEITUNG-KAPITAENSTISCH-V2.txt",
@@ -30,8 +30,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 18399,
-      "sha256": "54a10f8258ac59bd944b98f6f5d27f7b181badb1e5e308a722d866c8478f6f8a"
+      "bytes": 19034,
+      "sha256": "b61a781e76df2d1363087e002b2ab1215028851582b26aa42bdeb56e98e78a7c"
     },
     {
       "path": "CNAME",
@@ -47,6 +47,11 @@
       "path": "Champion-Trophäe.jpeg",
       "bytes": 342558,
       "sha256": "f190b21f9e644b10a80cb4faaf4205830010db8424f980cb72f0f3c66afa0582"
+    },
+    {
+      "path": "FINAL-CHECKLIST.md",
+      "bytes": 816,
+      "sha256": "33d553955d0dc8ee65680d6708d27dee437e429f53ec7ec9c704d94a4f19c4ea"
     },
     {
       "path": "GITHUB-ANLEITUNG-HALL-OF-FAME-KORREKTUR.txt",
@@ -144,14 +149,24 @@
       "sha256": "528345b3b3e0fa677fc23f55f6f2dc167c604c8702624b1b76f2a67f12c4516e"
     },
     {
+      "path": "README-V50.md",
+      "bytes": 785,
+      "sha256": "8ca001172bb5818d4741df32a883413c5939cc2a06c32ce3bd722b7d6edb13ca"
+    },
+    {
       "path": "README.md",
-      "bytes": 71,
-      "sha256": "9bb13b2b8ffb89847122e3a5cafd530cf36ec7e9ed82658d7e635168556e905f"
+      "bytes": 561,
+      "sha256": "15a6bfa461a937670ffd9f858c0c32db8e1c9c95c4125765b04b865401604168"
     },
     {
       "path": "RELEASE-AUDIT.json",
       "bytes": 306,
-      "sha256": "acd2b8fdf093efa866a0b444036444e9624cf6108072197f557142453f3f95f3"
+      "sha256": "ef4cf55197845f69e9b56a0e2f8818169bef3bd970ffd765ad4c01458e4ad015"
+    },
+    {
+      "path": "RELEASE-CANDIDATE.md",
+      "bytes": 1018,
+      "sha256": "0c37c9381016481ad98f2e20fb2b82b0b516ad83174b2abb9143c8595f7e259a"
     },
     {
       "path": "SPIELTAG-PFLEGEN-V23.txt",
@@ -176,7 +191,7 @@
     {
       "path": "VERSION.txt",
       "bytes": 5,
-      "sha256": "799cf0602f4a8f4f73196ead87192c038e00d537ece0a0e88e33da9b781f9ee8"
+      "sha256": "bdc8e36eacc9b8f335b6d93061082ceba7dcd7bbbf40d0f739ee59f224cb8825"
     },
     {
       "path": "app-v40.js",
@@ -446,12 +461,12 @@
     {
       "path": "scripts/build_release_manifest.py",
       "bytes": 951,
-      "sha256": "d883f9010edda07698299ed29f80f2f76e80c1407e6325b6ac7505186f23f1b0"
+      "sha256": "5365121380a2f221c96921008dd65c432634a112a22596f1c8cae45ee9061c9f"
     },
     {
       "path": "scripts/release_audit.py",
       "bytes": 2525,
-      "sha256": "7503d2ac8fae49939dd76cb997d53af32dd458485adaa214c8276f7d3420c090"
+      "sha256": "3574b31ba7cfc7bc9c2599fda5b38f487da2ee6969807c0d0a6266f15ca1a774"
     },
     {
       "path": "scripts/update_data.py",

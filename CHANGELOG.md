@@ -288,3 +288,12 @@
 - SHA-256-Prüfsummen und Dateigrößen aller auslieferungsrelevanten Dateien dokumentiert.
 - Audit kontrolliert zusätzlich das Vorhandensein des Release-Manifests.
 - Grundlayout, Raster, Kachelgrößen, Navigation und freigegebene Inhalte unverändert belassen.
+
+## Version 2.50 – Release Candidate – 31.07.2026
+
+- Vollständigen Release Candidate auf Basis der geprüften Version 2.49 erstellt.
+- Versionsstand in `VERSION.txt`, Audit und Release-Manifest auf 2.50 vereinheitlicht.
+- Abschlussdokumentation `README-V50.md`, `RELEASE-CANDIDATE.md` und `FINAL-CHECKLIST.md` ergänzt.
+- Pflichtdateien, lokale Referenzen und sämtliche JSON-Dateien erneut automatisiert geprüft.
+- Release-Manifest mit SHA-256-Prüfsummen und Dateigrößen aller ausgelieferten Dateien neu erzeugt.
+- Keine Änderungen an Grundlayout, Raster, Kachelgrößen, Navigation oder freigegebenen Inhalten vorgenommen.
