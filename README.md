@@ -1,4 +1,4 @@
-# The Old Smugglers Club – Version 4.4.6
+# The Old Smugglers Club – Version 4.4.7
 
 Öffentliche GitHub-Pages-Website der Tipprunde **The Old Smugglers Club**.
 
@@ -15,15 +15,15 @@ Der vollständige Inhalt dieses Verzeichnisses gehört direkt in das Hauptverzei
 - zentrale Datenbausteine über JSON und `datenregister.json`
 - vollständige technische Bestandsaufnahme in `ARCHITEKTUR.md`
 
-## Version 4.4.6
+## Version 4.4.7
 
-Version 4.4.6 startet das **Smugglers Design System (SDS)** als dokumentiertes und versioniertes Teilmodul.
+Version 4.4.7 startet das **Smugglers Design System (SDS)** als dokumentiertes und versioniertes Teilmodul.
 
 Neu sind die zentrale Assetstruktur und die verbindliche Spezifikation eigener **Schmugglersiegel**. Offizielle Vereinswappen werden nicht verwendet. In dieser Version wurden keine Bilddateien erstellt und keine öffentlichen Seiten verändert.
 
 ## Aktualisierung über die GitHub-Webseite
 
-Für Version 4.4.6 gilt die Datei `GITHUB-UPDATE-4.4.6.md`.
+Für Version 4.4.7 gilt die Datei `GITHUB-UPDATE-4.4.6.md`.
 
 ## Wichtige Dateien
 
@@ -58,3 +58,8 @@ Die öffentlichen Seiten verlinken im Footer auf `impressum.html` und `datenschu
 ## SDS-Master 4.4.6
 
 Der erste neutrale Schmugglersiegel-Master liegt als editierbares SVG unter `assets/smugglers-design-system/master/master-schmugglersiegel-v1.svg`. Die isolierte Größenprüfung erfolgt über `master-vorschau.html`. Eine öffentliche Integration ist noch nicht freigegeben.
+
+
+## Smugglers Design System – Pilotserie 4.4.7
+
+Vier vektorbasierte Pilotsiegel und eine isolierte responsive Vergleichsansicht wurden ergänzt. Öffentliche Seiten bleiben unverändert.

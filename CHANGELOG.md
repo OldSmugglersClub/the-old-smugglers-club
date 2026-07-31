@@ -1,5 +1,35 @@
 # CHANGELOG
 
+## Version 4.4.7
+
+### Neu
+
+- Vier vektorbasierte Schmugglersiegel als Pilotserie erstellt.
+- Isolierte responsive Vergleichsansicht für 256, 64 und 32 Pixel ergänzt.
+
+### Geändert
+
+- SDS-Dokumentation und Roadmap auf den Stand der Pilotserie gebracht.
+- Versionsangaben aktualisiert.
+
+### Betroffene Dateien
+
+- `assets/smugglers-design-system/schmugglersiegel/pilot/*.svg`
+- `assets/smugglers-design-system/pilot-vorschau.html`
+- `assets/smugglers-design-system/dokumentation/SMUGGLERS_DESIGN_SYSTEM.md`
+- `ROADMAP.md`
+- `README.md`
+- `VERSION.txt`
+
+### Unverändert
+
+- Öffentliche HTML-Seiten
+- CSS und JavaScript der Website
+- JSON-Nutzdaten
+- Grid, Kachelgrößen und Navigation
+
+---
+
 ## Version 4.4.6
 
 ### Neu

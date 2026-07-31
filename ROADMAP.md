@@ -89,8 +89,8 @@ Die öffentlichen Bereiche sind produktionsreif. Die verbleibenden Arbeiten betr
 - [x] Begriff „Schmugglersiegel“ und Masterprinzip freigegeben
 - [x] technische Spezifikation `SMUGGLERS_DESIGN_SYSTEM.md` erstellt
 - [x] zentrale Assetstruktur angelegt
-- [ ] editierbare Masterdatei entwickeln und in mehreren Größen prüfen
-- [ ] Pilotserie mit vier unterschiedlichen Vereinen erstellen
+- [x] editierbare Masterdatei entwickeln und in mehreren Größen prüfen
+- [x] Pilotserie mit vier unterschiedlichen Vereinen erstellen
 - [ ] vollständige Vereinsbibliothek erst nach Masterfreigabe ableiten
 - [ ] schrittweise, rückbaubare Integration in die Website
 
