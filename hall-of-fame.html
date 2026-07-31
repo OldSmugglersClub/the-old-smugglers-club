@@ -13,6 +13,7 @@
     .hero{padding:clamp(22px,4vw,42px);text-align:center}.eyebrow{color:var(--gold);font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.hero h1{margin:.35rem 0 .6rem;color:var(--light);font-size:clamp(2rem,6vw,4rem)}.hero p{max-width:720px;margin:auto;color:var(--muted);line-height:1.65}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}.panel{padding:20px}.panel h2{margin:0 0 14px;color:var(--light);font-size:1.45rem}.champion{grid-column:1/-1;display:grid;grid-template-columns:minmax(180px,.65fr) minmax(0,1.35fr);gap:24px;align-items:center}.trophy{width:min(100%,240px);max-height:250px;object-fit:contain;justify-self:center;filter:drop-shadow(0 12px 18px rgba(0,0,0,.55))}.champion-name{margin:.2rem 0;color:#fff0b2;font-size:clamp(2rem,5vw,3.4rem)}.meta{color:var(--gold);font-weight:700}.list{display:grid;gap:10px}.row{display:flex;justify-content:space-between;gap:14px;padding:12px 13px;border:1px solid rgba(190,143,61,.34);border-radius:9px;background:rgba(12,7,4,.45)}.row span{color:var(--muted)}.row strong{text-align:right;color:#f4d68b}.open{color:#b9aa8e!important}.note{margin-top:18px;padding:15px 16px;border-left:3px solid var(--gold);background:rgba(26,16,9,.72);color:var(--muted);line-height:1.55}.status{margin-top:18px;text-align:center;color:#a9987d;font-size:.86rem}
     @media(max-width:720px){.top{align-items:flex-start}.crest{width:50px;height:50px}.grid,.champion{grid-template-columns:1fr}.champion{text-align:center}.row{align-items:flex-start}.row{min-width:0}.row span,.row strong{min-width:0;overflow-wrap:anywhere;word-break:normal}.wrap{width:min(100% - 20px,1120px);padding-top:14px}}
   </style>
+  <link rel="stylesheet" href="./legal.css">
 </head>
 <body>
   <main class="wrap">
@@ -41,5 +42,17 @@
       document.getElementById('dataStatus').textContent=d.meta?.hinweis||'Ehrenlogbuch geladen.';
     }).catch(()=>{document.getElementById('dataStatus').textContent='Das Ehrenlogbuch konnte nicht vollständig geladen werden.'});
   </script>
+
+<footer class="legal-footer" aria-label="Rechtliche Hinweise">
+  <div class="legal-footer__inner">
+    <span>© 2026 The Old Smugglers Club</span>
+    <nav class="legal-footer__links" aria-label="Rechtliche Navigation">
+      <a href="./impressum.html">Impressum</a>
+      <a href="./datenschutz.html">Datenschutz</a>
+      <span>Version 4.4.3</span>
+    </nav>
+  </div>
+</footer>
+
 </body>
 </html>

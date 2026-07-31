@@ -236,3 +236,11 @@ Ideen werden gesammelt, aber erst nach einer stabilen 5.x-Phase bewertet. Änder
 ## 12. Nächster verbindlicher Arbeitsschritt
 
 Nach Version 4.4.2 folgt das vollständige `ADMIN_HANDBUCH.md` auf Basis des geprüften lokalen Adminsystems v4.0.5. Anschließend wird der bestehende Designzustand in `DESIGN_GUIDE.md` dokumentiert. Beide Schritte verändern weder öffentliche Website noch Datenlogik.
+
+
+## Version 4.4.3 – Rechtliche Grundausstattung
+
+- [x] Impressum ergänzt
+- [x] Datenschutzerklärung für aktuellen technischen Stand ergänzt
+- [x] rechtliche Footerlinks auf allen öffentlichen Seiten ergänzt
+- [ ] Rechtstexte vor Version 5.0 nochmals gegen den dann tatsächlichen technischen Stand prüfen

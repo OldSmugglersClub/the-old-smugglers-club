@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## Version 4.4.3 – Rechtliche Grundseiten und Footer
+
+### Neu
+- Impressumsseite mit Betreiber- und Kontaktdaten
+- Datenschutzerklärung für den aktuell geprüften Betrieb über GitHub Pages und IONOS
+- gemeinsames Stylesheet `legal.css` für rechtliche Seiten und Footer
+- dezente Links zu Impressum und Datenschutz auf allen öffentlichen Seiten
+
+### Geändert
+- Versionsanzeige im öffentlichen Footer auf 4.4.3 gesetzt
+
+### Betroffene Dateien
+- zwölf öffentliche HTML-Seiten
+- `impressum.html`
+- `datenschutz.html`
+- `legal.css`
+- `VERSION.txt`
+- `README.md`
+- `ROADMAP.md`
+
 ## Version 4.4.2 – Analyse des lokalen Adminsystems – 31.07.2026
 
 ### Neu

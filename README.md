@@ -1,4 +1,4 @@
-# The Old Smugglers Club – Version 4.4.2
+# The Old Smugglers Club – Version 4.4.3
 
 Öffentliche GitHub-Pages-Website der Tipprunde **The Old Smugglers Club**.
 
@@ -15,15 +15,15 @@ Der vollständige Inhalt dieses Verzeichnisses gehört direkt in das Hauptverzei
 - zentrale Datenbausteine über JSON und `datenregister.json`
 - vollständige technische Bestandsaufnahme in `ARCHITEKTUR.md`
 
-## Version 4.4.2
+## Version 4.4.3
 
-Version 4.4.2 ist ein reines Analyse- und Dokumentationsrelease. Die öffentliche Website und ihre Datenlogik wurden nicht verändert.
+Version 4.4.3 ist ein reines Analyse- und Dokumentationsrelease. Die öffentliche Website und ihre Datenlogik wurden nicht verändert.
 
 Neu ist `ADMIN-SYSTEMANALYSE.md`. Das Dokument beschreibt den tatsächlich vorliegenden lokalen Adminbereich v4.0.5, seine Module, Datenflüsse, Exportketten, Risiken und die empfohlene weitere Vorgehensweise. `ARCHITEKTUR.md` und `ROADMAP.md` wurden entsprechend ergänzt.
 
 ## Aktualisierung über die GitHub-Webseite
 
-Für Version 4.4.2 gilt die Datei `GITHUB-UPDATE-4.4.2.md`.
+Für Version 4.4.3 gilt die Datei `GITHUB-UPDATE-4.4.2.md`.
 
 ## Wichtige Dateien
 
@@ -47,3 +47,8 @@ Für Version 4.4.2 gilt die Datei `GITHUB-UPDATE-4.4.2.md`.
 - keine Bildgenerierung für HTML-, CSS-, JavaScript- oder Dateianpassungen
 - keine Emojis, Cliparts, Comicgrafiken oder generischen Symbole
 - Änderungen erst nach Analyse, Auswirkungsbewertung, Vorschlag und Freigabe umsetzen
+
+
+## Rechtliche Seiten
+
+Die öffentlichen Seiten verlinken im Footer auf `impressum.html` und `datenschutz.html`. Die Rechtstexte beschreiben den in Version 4.4.3 geprüften technischen Stand und müssen bei neuen externen Diensten oder Formularen erneut geprüft werden.
