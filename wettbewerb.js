@@ -20,6 +20,7 @@
     { id: "weihnachtsregatta", label: "Weihnachtsregatta", page: "weihnachtsregatta.html", filter: { type: "sonderwertung", value: "weihnachtsregatta" }, scheduleTitle: "Spiele der Weihnachtsregatta" }
   ];
   let competitionDefinitions = DEFAULT_COMPETITIONS;
+  let centralValidation = null;
 
   function competitionDefinition(id) {
     return competitionDefinitions.find(item => item && item.id === id) || DEFAULT_COMPETITIONS.find(item => item.id === id) || null;
@@ -824,6 +825,66 @@
     root.appendChild(section);
   }
 
+  function renderCentralValidation(root) {
+    const validation = centralValidation;
+    if (!validation) return;
+
+    const section = document.createElement("section");
+    section.className = `dynamic-section model-validation validation-${validation.status}`;
+    const headingRow = document.createElement("div");
+    headingRow.className = "section-heading-row";
+    const heading = document.createElement("h2");
+    heading.textContent = "Zentrale Konsistenzprüfung";
+    const badge = document.createElement("span");
+    badge.className = `data-status-badge${validation.status === "error" ? " data-status-error" : validation.status === "warning" ? " data-status-warning" : ""}`;
+    badge.textContent = validation.status === "error" ? `${validation.counts.errors} Fehler erkannt` : validation.status === "warning" ? `${validation.counts.warnings} Hinweis${validation.counts.warnings === 1 ? "" : "e"}` : "Datenmodell konsistent";
+    headingRow.append(heading, badge);
+    section.appendChild(headingRow);
+
+    const grid = document.createElement("div");
+    grid.className = "validation-summary-grid";
+    [
+      ["Wettbewerbe", validation.counts.competitions],
+      ["Spiele", validation.counts.games],
+      ["Teams", validation.counts.teams],
+      ["Tippspieltage", validation.counts.matchdays]
+    ].forEach(([label, value]) => {
+      const card = document.createElement("div");
+      card.className = "validation-summary-card";
+      const small = document.createElement("span"); small.textContent = label;
+      const strong = document.createElement("strong"); strong.textContent = String(value);
+      card.append(small, strong); grid.appendChild(card);
+    });
+    section.appendChild(grid);
+
+    const findings = [...validation.errors, ...validation.warnings];
+    if (findings.length) {
+      const details = document.createElement("details");
+      details.className = "validation-details";
+      const summary = document.createElement("summary");
+      summary.textContent = `${findings.length} Prüfergebnis${findings.length === 1 ? "" : "se"} anzeigen`;
+      details.appendChild(summary);
+      const list = document.createElement("div");
+      list.className = "validation-findings";
+      findings.forEach(finding => {
+        const item = document.createElement("article");
+        item.className = `validation-finding finding-${finding.severity}`;
+        const title = document.createElement("strong"); title.textContent = finding.message;
+        const text = document.createElement("p");
+        const shown = safeArray(finding.details).slice(0, 6);
+        text.textContent = shown.length ? shown.join(" · ") + (finding.details.length > shown.length ? ` · +${finding.details.length - shown.length} weitere` : "") : "Prüfung ohne Detailangabe.";
+        item.append(title, text); list.appendChild(item);
+      });
+      details.appendChild(list); section.appendChild(details);
+    } else {
+      const note = document.createElement("p");
+      note.className = "data-note";
+      note.textContent = "IDs, Teamreferenzen, Datumsfelder, Ergebnisse, Tippspieltag-Zuordnungen und Wettbewerbsfilter wurden ohne strukturellen Widerspruch geprüft.";
+      section.appendChild(note);
+    }
+    root.appendChild(section);
+  }
+
   function renderCentralDataRegistry(gameData, teamData, root) {
     const section = document.createElement("section");
     section.className = "dynamic-section central-data-registry";
@@ -1096,6 +1157,7 @@
     root.innerHTML = "";
     document.body.classList.add(`page-${slug}`);
     renderCompetitionNavigator(root);
+    renderCentralValidation(root);
     renderCentralDataRegistry(gameData, teamData, root);
     renderCompetitionFleetDashboard(gameData, root);
     renderCompetitionDataCockpit(gameData, teamData, root);
@@ -1194,6 +1256,7 @@
       ]);
 
       const sharedModel = window.OSCDataModel ? await window.OSCDataModel.load() : null;
+      centralValidation = sharedModel && sharedModel.validation ? sharedModel.validation : null;
       const configuredCompetitions = safeArray((sharedModel && sharedModel.competitions) || (competitionConfig && competitionConfig.wettbewerbe))
         .filter(item => item && item.id && item.label && item.filter && item.filter.type && item.filter.value);
       competitionDefinitions = configuredCompetitions.length ? configuredCompetitions : DEFAULT_COMPETITIONS;

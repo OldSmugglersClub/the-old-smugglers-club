@@ -246,3 +246,12 @@
 - Saisonübersicht und Wettbewerbsseiten verwenden dieselbe Wettbewerbsdefinition.
 - Zentrale Statussummen je Wettbewerb vorbereitet.
 - Sichere Rückfalllogik und bestehendes Layout beibehalten.
+
+## 2.45 – 31.07.2026
+- Zentrale Validierung in `datenmodell.js` ergänzt.
+- Automatische Prüfung auf doppelte IDs, unbekannte Teamreferenzen, ungültige Datumsfelder, vertauschte Zeiträume und unvollständige Ergebnisse.
+- Tippspieltag-Verweise auf nicht vorhandene Spiele werden erkannt.
+- Wettbewerbsdefinitionen und leere Zuordnungen werden geprüft.
+- Einheitlicher Konsistenzstatus auf allen Wettbewerbsseiten ergänzt.
+- Detailanzeige begrenzt lange Fehlerlisten und bleibt mobil lesbar.
+- Grundlayout, Raster, Kachelgrößen und freigegebene Bereiche unverändert belassen.
