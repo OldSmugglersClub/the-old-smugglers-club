@@ -1,7 +1,7 @@
 {
-  "version": "3.25",
+  "version": "4.0",
   "modus": "Plan B · datengetrieben",
-  "aktualisiertAm": "2026-07-31T13:07:00+02:00",
+  "aktualisiertAm": "2026-07-31T13:15:00+02:00",
   "module": [
     {
       "name": "Clubdaten",
@@ -142,8 +142,18 @@
       "name": "Abgabezuverlässigkeit und Teilnehmerstatus",
       "datei": "abgabezuverlaessigkeit.html",
       "status": "aktiv"
+    },
+    {
+      "name": "Zentrale Datenqualitätsprüfung",
+      "datei": "datenqualitaet.html",
+      "status": "aktiv"
+    },
+    {
+      "name": "Aktueller Teilnehmerimport und Datenschutzprüfung",
+      "datei": "teilnehmer-importbericht.json",
+      "status": "aktiv"
     }
   ],
-  "releaseStatus": "stabil",
-  "datenregisterVersion": 25
+  "releaseStatus": "produktionsbereit",
+  "datenregisterVersion": 40
 }

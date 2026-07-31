@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "datenVersion": 25,
+  "datenVersion": 40,
   "aktualisiert": "2026-07-31",
   "saison": "2026/2027",
   "beschreibung": "Zentrales Register der gemeinsam genutzten Datenquellen der Website.",
@@ -34,7 +34,9 @@
     "tippfristen": "tippfristen.json",
     "abgabeErinnerungen": "abgabe-erinnerungen.json",
     "erinnerungsprotokoll": "erinnerungsprotokoll.json",
-    "abgabezuverlaessigkeit": "abgabezuverlaessigkeit.json"
+    "abgabezuverlaessigkeit": "abgabezuverlaessigkeit.json",
+    "datenqualitaet": "datenqualitaet.json",
+    "teilnehmerImportbericht": "teilnehmer-importbericht.json"
   },
-  "websiteVersion": "3.25"
+  "websiteVersion": "4.0"
 }

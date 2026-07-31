@@ -105,3 +105,13 @@ Die Tippfristen-Kontrolle befindet sich in `tippfristen.html` und prüft bestät
 ## Version 3.25
 
 `abgabezuverlaessigkeit.html` führt bestätigte, abgelaufene Tippfristen mit den vorhandenen Tipps und dem Erinnerungsprotokoll zusammen. Die Auswertung ist rein lesend und kann als JSON oder CSV exportiert werden.
+
+
+## Version 3.26
+
+`datenqualitaet.html` prüft die zentralen JSON-Daten lesend auf fehlende Pflichtfelder, doppelte IDs, ungültige Referenzen, unvollständige Ergebnisse, unplausible Tippwerte und inkonsistente Termine. Der Prüfbericht kann als `datenqualitaet.json` oder CSV exportiert werden.
+
+
+## Version 4.0
+
+Version 4.0 ist die produktionsbereite Basis. Die zentrale `teilnehmer.json` enthält den Kicktipp-Mitgliederstand vom 31.07.2026 mit 100 aktiven Teilnehmern. Bestehende IDs bleiben stabil. E-Mail-Adressen wurden nicht übernommen. Details stehen in `teilnehmer-importbericht.json` und `DATENSCHUTZ-HINWEIS.md`.

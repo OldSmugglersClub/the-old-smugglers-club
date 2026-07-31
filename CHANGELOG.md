@@ -1,5 +1,28 @@
 # Changelog
 
+## 4.0 – Produktionsfreigabe und aktuelle Teilnehmerbasis
+
+- aktuelle Kicktipp-Mitgliederliste mit 100 Teilnehmern übernommen
+- bestehende stabile Teilnehmer-IDs erhalten
+- zwei neue Teilnehmer ergänzt: Eckes2359 und Stevie26
+- Smuggler-Teamzuordnungen aus dem Export aktualisiert
+- Mitgliedsdatum und Sprache in die zentrale Teilnehmerstruktur aufgenommen
+- E-Mail-Adressen bewusst nicht in öffentliche Dateien übernommen
+- Teilnehmerpflege um Mitgliedsdatum und Sprache erweitert
+- vorhandenen Syntaxfehler im Saisonarchiv-Export behoben
+- Importbericht und Datenschutz-Hinweis ergänzt
+- Versions-, Systemstatus-, Datenregister- und Releaseprüfungen auf 4.0 vereinheitlicht
+- keine Änderung am freigegebenen öffentlichen Grundlayout oder an Kachelgrößen
+
+## Version 3.26 – Zentrale Datenqualitätsprüfung
+
+- Neue Verwaltungsseite `datenqualitaet.html`.
+- Referenz-, Eindeutigkeits- und Plausibilitätsprüfung für zentrale Saison-, Teilnehmer-, Tipp- und Sonderdaten.
+- Fehler, Warnungen und Hinweise werden getrennt ausgewiesen und können gefiltert werden.
+- JSON- und CSV-Export des Prüfberichts ergänzt.
+- Keine automatische Veränderung der Quelldateien oder des GitHub-Repositories.
+- Öffentliches Grundlayout und bestehende Kachelgrößen bleiben unverändert.
+
 ## Version 3.23 – Abgabe-Erinnerungen
 
 - Neue Verwaltungsseite `abgabe-erinnerungen.html`.
