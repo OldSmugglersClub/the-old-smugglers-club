@@ -1,5 +1,14 @@
 # Changelog
 
+## 4.3.0 – Startzentrale mit klarer Hierarchie
+
+- störende Kompassscheibe und Siegelprägung entfernt
+- eine dominante Hauptaktion „Zur Tipprunde“
+- dezente Schnellzugriffe zu Highscore, Hall of Fame und Wettbewerben
+- Einführungstext gekürzt und atmosphärische Leitzeile ergänzt
+- mobile Darstellung stabilisiert
+- keine Bildänderungen
+
 ## Version 4.1.9 – Saisonakte für Spieler
 
 - Technische Begriffe auf der öffentlichen Saisonübersicht entfernt.

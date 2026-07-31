@@ -4638,7 +4638,7 @@
 
 
 
-    /* Version 4.2.0 – Startzentrale als echte Navigationszentrale */
+    /* Version 4.3.0 – ruhige, hierarchische Startzentrale */
     .welcome-panel {
       position: relative;
       align-self: start;
@@ -4650,9 +4650,9 @@
       isolation: isolate;
       border-color: rgba(190, 134, 43, .88);
       background:
-        radial-gradient(circle at 86% 31%, rgba(187,132,43,.13), transparent 27%),
-        radial-gradient(circle at 78% 78%, rgba(143,85,24,.12), transparent 30%),
-        linear-gradient(105deg, rgba(22,14,8,.98) 0 64%, rgba(10,7,4,.99) 100%) !important;
+        radial-gradient(ellipse at 88% 12%, rgba(180,123,39,.055), transparent 31%),
+        radial-gradient(ellipse at 76% 86%, rgba(132,78,22,.055), transparent 34%),
+        linear-gradient(105deg, rgba(22,14,8,.985) 0 68%, rgba(9,6,4,.995) 100%) !important;
       box-shadow:
         inset 0 1px rgba(245,210,129,.22),
         inset 0 0 0 1px rgba(122,75,21,.42),
@@ -4660,50 +4660,10 @@
         var(--shadow);
     }
 
-    .welcome-panel::before {
-      content: "";
-      display: block !important;
-      position: absolute;
-      z-index: 0;
-      width: min(41%, 310px);
-      aspect-ratio: 1;
-      right: -7%;
-      top: 8%;
-      border: 1px solid rgba(190,132,43,.15);
-      border-radius: 50%;
-      opacity: .66;
-      pointer-events: none;
-      background:
-        conic-gradient(from 0deg, transparent 0 10deg, rgba(190,132,43,.19) 10deg 12deg, transparent 12deg 43deg, rgba(190,132,43,.12) 43deg 45deg, transparent 45deg 88deg, rgba(190,132,43,.19) 88deg 92deg, transparent 92deg 133deg, rgba(190,132,43,.12) 133deg 135deg, transparent 135deg 178deg, rgba(190,132,43,.19) 178deg 182deg, transparent 182deg 223deg, rgba(190,132,43,.12) 223deg 225deg, transparent 225deg 268deg, rgba(190,132,43,.19) 268deg 272deg, transparent 272deg 313deg, rgba(190,132,43,.12) 313deg 315deg, transparent 315deg 358deg, rgba(190,132,43,.19) 358deg 360deg),
-        radial-gradient(circle, transparent 0 18%, rgba(190,132,43,.16) 18.5% 19%, transparent 19.5% 43%, rgba(190,132,43,.12) 43.5% 44%, transparent 44.5% 66%, rgba(190,132,43,.09) 66.5% 67%, transparent 67.5%),
-        linear-gradient(90deg, transparent 49.5%, rgba(190,132,43,.16) 50%, transparent 50.5%),
-        linear-gradient(0deg, transparent 49.5%, rgba(190,132,43,.16) 50%, transparent 50.5%),
-        linear-gradient(45deg, transparent 49.7%, rgba(190,132,43,.10) 50%, transparent 50.3%),
-        linear-gradient(-45deg, transparent 49.7%, rgba(190,132,43,.10) 50%, transparent 50.3%);
-      transform: rotate(-8deg);
-    }
-
+    .welcome-panel::before,
     .welcome-panel::after {
-      content: "OLD SMUGGLERS\A CLUB";
-      white-space: pre;
-      display: grid !important;
-      place-items: center;
-      position: absolute;
-      z-index: 0;
-      width: 132px;
-      aspect-ratio: 1;
-      right: 3.3%;
-      bottom: 5%;
-      border: 2px solid rgba(190,132,43,.14);
-      border-radius: 50%;
-      color: rgba(190,132,43,.13);
-      font-size: .72rem;
-      line-height: 1.5;
-      letter-spacing: .16em;
-      text-align: center;
-      font-weight: 900;
-      box-shadow: inset 0 0 0 7px rgba(190,132,43,.04);
-      pointer-events: none;
+      content: none !important;
+      display: none !important;
     }
 
     .welcome-command-center {
@@ -4712,12 +4672,12 @@
       height: 100%;
       display: grid;
       grid-template-rows: 1fr auto auto;
-      gap: clamp(.55rem, 1.4vw, 1rem);
+      gap: clamp(.62rem, 1.5vw, 1rem);
       padding: clamp(1.25rem, 3vw, 2.25rem);
       font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
     }
 
-    .welcome-command-copy { max-width: 72%; }
+    .welcome-command-copy { max-width: 79%; }
 
     .welcome-season-badge {
       display: inline-flex;
@@ -4747,8 +4707,8 @@
     .welcome-divider {
       display: flex;
       align-items: center;
-      width: min(100%, 520px);
-      margin: .45rem 0 .65rem;
+      width: min(100%, 465px);
+      margin: .48rem 0 .72rem;
     }
 
     .welcome-divider::before,
@@ -4756,28 +4716,37 @@
       content: "";
       height: 1px;
       flex: 1;
-      background: linear-gradient(90deg, transparent, rgba(209,158,65,.62));
+      background: linear-gradient(90deg, transparent, rgba(209,158,65,.56));
     }
     .welcome-divider::after { transform: scaleX(-1); }
     .welcome-divider span {
-      width: 18px;
-      height: 18px;
-      margin: 0 .65rem;
+      width: 14px;
+      height: 14px;
+      margin: 0 .62rem;
       border: 1px solid #ba8130;
       border-radius: 50%;
       transform: rotate(45deg);
-      box-shadow: inset 0 0 0 4px rgba(0,0,0,.42);
+      box-shadow: inset 0 0 0 3px rgba(0,0,0,.46);
     }
 
     .welcome-intro {
       max-width: 690px;
       margin: 0;
       color: #d7c9ad;
-      font-size: clamp(.88rem, 1.45vw, 1.08rem);
-      line-height: 1.52;
+      font-size: clamp(.88rem, 1.42vw, 1.06rem);
+      line-height: 1.5;
       text-shadow: 0 1px 2px #000;
     }
     .welcome-intro strong { color: #e2b951; }
+
+    .welcome-motto {
+      display: block;
+      margin-top: .48rem;
+      color: #b89450;
+      font-size: clamp(.72rem, 1.03vw, .86rem);
+      font-style: italic;
+      letter-spacing: .035em;
+    }
 
     .welcome-status {
       display: grid;
@@ -4822,42 +4791,36 @@
     }
 
     .welcome-command-actions {
+      width: min(100%, 720px);
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: .75rem;
-      width: min(100%, 620px);
+      gap: .56rem;
     }
 
     .welcome-command-button {
       min-width: 0;
-      min-height: 49px;
+      min-height: 52px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: .58rem;
-      padding: .62rem .8rem;
-      border: 1px solid #bd832c;
+      gap: .62rem;
+      padding: .66rem 1rem;
+      border: 1px solid #e1b758;
       border-radius: 8px;
-      color: #edcc73;
-      background: linear-gradient(180deg, rgba(62,38,14,.95), rgba(26,16,7,.98));
-      box-shadow: inset 0 1px rgba(255,238,177,.12), 0 5px 12px rgba(0,0,0,.28);
+      color: #1a0f05;
+      background:
+        linear-gradient(90deg, rgba(106,61,12,.10), transparent 28% 72%, rgba(106,61,12,.10)),
+        linear-gradient(#e6c36d, #a96b20);
+      box-shadow: inset 0 1px rgba(255,255,255,.26), 0 6px 14px rgba(0,0,0,.30);
       text-decoration: none;
-      font-size: clamp(.76rem, 1.2vw, .94rem);
+      text-shadow: 0 1px rgba(255,255,255,.24);
+      font-size: clamp(.82rem, 1.3vw, 1rem);
       font-weight: 900;
-      white-space: nowrap;
       transition: transform .18s ease, filter .18s ease, border-color .18s ease;
     }
 
-    .welcome-command-button-primary {
-      color: #1a0f05;
-      border-color: #e1b758;
-      background: linear-gradient(#e6c36d, #a96b20);
-      text-shadow: 0 1px rgba(255,255,255,.24);
-    }
-
     .welcome-command-button svg {
-      width: 28px;
-      height: 28px;
+      width: 27px;
+      height: 27px;
       flex: 0 0 auto;
     }
 
@@ -4869,12 +4832,41 @@
       border-color: #efd17a;
     }
 
+    .welcome-secondary-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: .25rem .7rem;
+      min-height: 30px;
+      color: #967746;
+      font-size: clamp(.68rem, 1vw, .79rem);
+    }
+
+    .welcome-secondary-nav a {
+      color: #c5a25c;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      padding: .15rem .08rem;
+      transition: color .18s ease, border-color .18s ease;
+    }
+
+    .welcome-secondary-nav a:hover,
+    .welcome-secondary-nav a:focus-visible {
+      color: #efd17a;
+      border-bottom-color: rgba(239,209,122,.58);
+      outline: none;
+    }
+
+    .welcome-secondary-nav .nav-separator {
+      color: rgba(166,116,39,.58);
+      user-select: none;
+    }
+
     @media (max-width: 900px) {
       .welcome-panel { aspect-ratio: auto; min-height: 430px; }
       .welcome-command-center { padding: 1.25rem; }
-      .welcome-command-copy { max-width: 92%; }
-      .welcome-panel::before { right: -18%; width: 58%; opacity: .43; }
-      .welcome-panel::after { display: none !important; }
+      .welcome-command-copy { max-width: 96%; }
       .welcome-status { grid-template-columns: 1fr; width: 100%; }
       .welcome-command-actions { width: 100%; }
     }
@@ -4890,8 +4882,8 @@
       .welcome-command-center h1 { font-size: clamp(2rem, 10.4vw, 2.75rem); }
       .welcome-intro { font-size: .93rem; line-height: 1.47; }
       .welcome-status-item { padding: .55rem .62rem; }
-      .welcome-command-actions { grid-template-columns: 1fr; gap: .58rem; }
-      .welcome-command-button { min-height: 48px; white-space: normal; text-align: center; }
+      .welcome-command-button { min-height: 49px; white-space: normal; text-align: center; }
+      .welcome-secondary-nav { gap: .18rem .5rem; line-height: 1.45; }
     }
   </style>
   <link rel="stylesheet" href="./highscore.css?v=4.0.1">
@@ -5053,8 +5045,9 @@
             <div class="welcome-divider" aria-hidden="true"><span></span></div>
             <p class="welcome-intro">
               Von hier aus steuert die Crew alle Wettbewerbe des Old Smugglers Club.
-              Bundesliga, DFB-Pokal, Champions League, Europa League und die legendären
+              Bundesliga, DFB-Pokal, Champions League, Europa League und
               <strong>Smuggleraufträge</strong> laufen hier zusammen.
+              <span class="welcome-motto">Alle Wege beginnen im Hauptquartier.</span>
             </p>
           </div>
 
@@ -5074,17 +5067,19 @@
           </div>
 
           <div class="welcome-command-actions">
-            <a class="welcome-command-button welcome-command-button-primary"
+            <a class="welcome-command-button"
                href="https://www.kicktipp.de/the-old-smugglers-club/"
                target="_blank" rel="noopener noreferrer">
               <svg aria-hidden="true"><use href="#icon-skull"></use></svg>
               <span>Zur Tipprunde</span>
             </a>
-            <a class="welcome-command-button"
-               href="#wettbewerbe">
-              <svg aria-hidden="true"><use href="#icon-anchor"></use></svg>
-              <span>Wettbewerbe ansehen</span>
-            </a>
+            <nav class="welcome-secondary-nav" aria-label="Schnellzugriffe der Startzentrale">
+              <a href="./highscore.html">Highscore</a>
+              <span class="nav-separator" aria-hidden="true">·</span>
+              <a href="#hall-of-fame">Hall of Fame</a>
+              <span class="nav-separator" aria-hidden="true">·</span>
+              <a href="#wettbewerbe">Wettbewerbe</a>
+            </nav>
           </div>
         </div>
       </article>
