@@ -1,3 +1,13 @@
+# Version 4.1.2 – Highscore Ranglistenlogbuch
+
+- Highscore-Kachel auf der Startseite sprachlich und gestalterisch als Ranglistenlogbuch geschärft.
+- Generisches Kronensymbol durch das vorhandene hochwertige Pokal-SVG ersetzt.
+- Detailseite um eine kompakte Orientierung für Einzelwertung, Teamduell und Clubchronik ergänzt.
+- Bezeichnungen und Rücknavigation für normale Kicktipp-Spieler verständlicher formuliert.
+- Mobile Wortumbrüche der neuen Orientierungselemente und Register stabilisiert.
+- Ranglistenlogik, Teilnehmerdaten, Tabellen, Kachelgrößen, Grundraster und Navigation unverändert gelassen.
+- Keine Bilderstellung und keine neuen Bilddateien.
+
 # Version 4.1.1 – Hall of Fame Ehrenlogbuch
 
 - Hall-of-Fame-Bereich auf der Startseite als öffentliches Ehrenlogbuch geschärft.
