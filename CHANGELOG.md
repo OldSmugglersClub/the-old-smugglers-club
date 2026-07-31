@@ -1,5 +1,31 @@
 # CHANGELOG
 
+## Version 4.4.9 – UEFA-Kandidatenpool und vorbereitete Schmugglersiegel
+
+### Neu
+- offizieller Kandidatenpool 2026/27 für Champions League und Europa League in `uefa-kandidaten-2026-27.json`
+- 107 zusätzliche eigene SVG-Schmugglersiegel für bislang nicht erfasste UEFA-Teams
+- Statusangaben je Wettbewerb und Einstiegsrunde in `teams.json`
+
+### Geändert
+- `teams.json` umfasst jetzt 159 Teams: aktive Projektteams plus vorsorglichen UEFA-Kandidatenpool
+- `schmugglersiegel-register.json` wurde auf 159 Einträge erweitert
+- vorhandene Projektteams wurden, sofern zutreffend, um UEFA-Zuordnungen ergänzt
+
+### Unverändert
+- keine Änderung an HTML, CSS, JavaScript, Grid, Kachelgrößen oder Navigation
+- Kandidatenteams erscheinen nur, wenn sie später in einer Wettbewerbs-JSON referenziert werden
+- keine offiziellen Vereinswappen und keine Bildgenerierung
+
+### Betroffene Dateien
+- `teams.json`
+- `uefa-kandidaten-2026-27.json`
+- `assets/smugglers-design-system/schmugglersiegel/*.svg`
+- `assets/smugglers-design-system/schmugglersiegel/schmugglersiegel-register.json`
+- `VERSION.txt`
+- `CHANGELOG.md`
+- `README.md`
+
 ## Version 4.4.8 – Vollständige Schmugglersiegel-Bibliothek und zentrale Komponente
 
 ### Neu
