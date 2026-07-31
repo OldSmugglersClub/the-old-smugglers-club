@@ -613,3 +613,9 @@
 - Neue zentrale Exportdatei `abgabezuverlaessigkeit.json` registriert.
 - Keine Sanktionierung, kein automatischer Nachrichtenversand und keine automatische Änderung des GitHub-Repositories.
 - Öffentliches Grundlayout, Raster und bestehende Kachelgrößen unverändert belassen.
+## 4.0.7 – Repository-Bereinigung
+
+- öffentliches GitHub-Paket auf tatsächlich benötigte Website-Dateien reduziert
+- alte Update-Anleitungen, Release-Notizen, Löschlisten und lokale Python-Hilfsskripte entfernt
+- keine Änderung an Layout, Datenlogik oder mobiler Darstellung
+- ausführliche GitHub-Desktop-Anleitung ergänzt
