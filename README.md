@@ -4,7 +4,7 @@ Offizielle Website der Tipprunde **The Old Smugglers Club**.
 
 ## Version
 
-Aktueller Stand: **3.3 – Benutzeroberfläche, Barrierefreiheit und Responsive Feinschliff**
+Aktueller Stand: **3.19 – Spieltag-Einzelwertungen**
 
 ## Veröffentlichung auf GitHub Pages
 
@@ -71,3 +71,8 @@ Die Seite `smugglerwertung.html` berechnet eine eigenständige Rangliste für al
 ## Wettbewerbs-Einzelwertungen (3.18)
 
 `wettbewerbswertung.html` erzeugt aus `punkte.json` getrennte Einzelranglisten für jeden Wettbewerb. Die Exportdatei `wettbewerbspunkte.json` kann anschließend manuell im Repository ersetzt werden.
+
+
+## Spieltag-Einzelwertungen (3.19)
+
+`spieltagwertung.html` erstellt für jeden in `spieldaten.json` erfassten Spieltag eine getrennte Rangliste. Der Export `spieltagpunkte.json` kann anschließend manuell im Repository ersetzt werden.

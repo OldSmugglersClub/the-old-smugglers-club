@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.19 – Spieltag-Einzelwertungen
+
+- Eigene Rangliste für jeden zentral erfassten Spieltag ergänzt.
+- Zuordnung über stabile Spiel-IDs und die Spieltagsangaben aus `spieldaten.json`.
+- Wettbewerb, Spieltag und Teilnehmer können gefiltert werden.
+- Einzelprotokoll sowie JSON- und CSV-Export umgesetzt.
+- Neue zentrale Exportdatei `spieltagpunkte.json` ergänzt.
+- Gesamtwertung, Wettbewerbswertungen und öffentliches Grundlayout bleiben unverändert.
+
 ## 3.18 – Wettbewerbs-Einzelwertungen
 
 - Zentrale Punkteauswertung nach einzelnen Wettbewerben getrennt.

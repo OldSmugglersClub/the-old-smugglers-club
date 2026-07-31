@@ -1,7 +1,7 @@
 {
-  "version": "3.18",
+  "version": "3.19",
   "modus": "Plan B · datengetrieben",
-  "aktualisiertAm": "2026-07-31T12:43:00+02:00",
+  "aktualisiertAm": "2026-07-31T12:46:00+02:00",
   "module": [
     {
       "name": "Clubdaten",
@@ -107,8 +107,13 @@
       "name": "Wettbewerbs-Einzelwertungen",
       "datei": "wettbewerbswertung.html",
       "status": "aktiv"
+    },
+    {
+      "name": "Spieltag-Einzelwertungen",
+      "datei": "spieltagwertung.html",
+      "status": "aktiv"
     }
   ],
   "releaseStatus": "stabil",
-  "datenregisterVersion": 18
+  "datenregisterVersion": 19
 }
