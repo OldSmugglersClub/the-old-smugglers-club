@@ -1,23 +1,21 @@
-# RELEASE NOTES – VERSION 4.4.6
+# Release Notes – Version 4.4.6
 
-## Zweck
+## Ziel
 
-Version 4.4.6 setzt Phase 1 des Smugglers Design System praktisch um: den editierbaren neutralen Master des Schmugglersiegels.
+Kontrollierte Pilotintegration farbiger Schmugglersiegel in der hervorgehobenen Paarung der Kachel „Aktueller Spieltag“.
 
-## Neu
+## Umsetzung
 
-- `master-schmugglersiegel-v1.svg`
-- `master-vorschau.html`
+- eigenständige SVG-Siegel für 1. FC Nürnberg (`FCN`) und SG Dynamo Dresden (`DD`)
+- keine offiziellen Vereinswappen oder nachgebauten Logos
+- kompaktere Mannschaftsgruppierung auf Desktop
+- vergrößerter Abstand zwischen Siegel und Mannschaftsname auf Mobil
+- neutraler Kürzel-Fallback bei fehlenden Dateien
 
-## Technische Eigenschaften
+## Nicht verändert
 
-- vollständig vektorbasiert
-- transparenter Außenbereich
-- keine externen Assets oder Bibliotheken
-- keine offiziellen Vereinswappen oder Logos
-- skalierbar und direkt im Browser nutzbar
-- isolierte Prüfung in 256, 64 und 32 Pixel
+Grid, Kachelgröße, Navigation, Grundlayout, JSON-Nutzdaten und andere öffentliche Bereiche.
 
-## Abgrenzung
+## Abnahme
 
-Es wurden keine öffentlichen Seiten verändert. Die Masterdatei ist noch nicht für eine Vereinsserie oder Websiteintegration freigegeben.
+Vor einer Ausweitung auf weitere Mannschaften ist die Desktop- und Mobilansicht erneut optisch zu prüfen.

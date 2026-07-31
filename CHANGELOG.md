@@ -1,113 +1,35 @@
 # CHANGELOG
 
-## Version 4.4.10
+## Version 4.4.6 – Farbige Schmugglersiegel in „Aktueller Spieltag“
 
 ### Neu
+- erste zwei echte, vektorbasierte Schmugglersiegel für 1. FC Nürnberg und SG Dynamo Dresden
+- farbliche Vereinszuordnung ohne Verwendung offizieller Vereinswappen
+- technischer Kürzel-Fallback, falls ein Siegel fehlt oder nicht geladen werden kann
 
-- Erste kontrollierte öffentliche Integration der Schmugglersiegel in der Kachel „Aktueller Spieltag“.
-- Dynamische Zuordnung über Team-ID und zentrales Schmugglersiegel-Register.
-- Neutraler Kürzel-Fallback bei fehlendem oder nicht ladbarem SVG.
+### Behoben
+- Mannschaften in der Desktop-Paarung nicht mehr unnötig weit auseinandergezogen
+- auf Mobil mehr Abstand zwischen Schmugglersiegel und Mannschaftsname
+- klarere Ausrichtung von Heimteam, Trenner und Auswärtsteam
 
 ### Geändert
-
-- Mannschaftspaarungen im nächsten Ereignis und in der Ereignisliste zeigen nun die vorbereiteten Schmugglersiegel.
-- Responsive Größen für Desktop und Mobil ergänzt.
+- ausschließlich die hervorgehobene Paarung in der Kachel „Aktueller Spieltag“ angepasst
+- `README.md`, `ROADMAP.md` und `VERSION.txt` auf Version 4.4.6 aktualisiert
 
 ### Unverändert
-
-- Kachelgröße, Grid, Navigation, Datenlogik und alle anderen öffentlichen Bereiche.
-
-### Betroffene Dateien
-
-- index.html
-- VERSION.txt
-- CHANGELOG.md
-- README.md
-- ROADMAP.md
-
-## Version 4.4.8
-
-### Neu
-
-- Vollständige Schmugglersiegel-Bibliothek für alle 52 aktuell aktiven Einträge aus `teams.json`.
-- Zentrales `schmugglersiegel-register.json` mit Team-ID, Kürzel, Farbwerten und Assetpfad.
-- Isolierte responsive Gesamtvorschau der Bibliothek.
-
-### Geändert
-
-- SDS-Dokumentation und Roadmap auf Phase 3 aktualisiert.
+- keine Änderung an Kachelgröße, Grid, Navigation, Grundlayout oder Spieldaten
+- keine Bildgenerierung; die Siegel sind eigenständige SVG-Projektdateien
 
 ### Betroffene Dateien
-
-- `assets/smugglers-design-system/schmugglersiegel/`
+- `index.html`
+- `assets/smugglers-design-system/schmugglersiegel/nuernberg.svg`
+- `assets/smugglers-design-system/schmugglersiegel/dynamo-dresden.svg`
 - `VERSION.txt`
 - `CHANGELOG.md`
 - `README.md`
 - `ROADMAP.md`
-
-### Nicht geändert
-
-- Keine öffentliche HTML-Seite, kein Grid, keine Kachelgröße, keine Navigation und keine bestehende Datenlogik.
-
----
-
-
-## Version 4.4.7
-
-### Neu
-
-- Vier vektorbasierte Schmugglersiegel als Pilotserie erstellt.
-- Isolierte responsive Vergleichsansicht für 256, 64 und 32 Pixel ergänzt.
-
-### Geändert
-
-- SDS-Dokumentation und Roadmap auf den Stand der Pilotserie gebracht.
-- Versionsangaben aktualisiert.
-
-### Betroffene Dateien
-
-- `assets/smugglers-design-system/schmugglersiegel/pilot/*.svg`
-- `assets/smugglers-design-system/pilot-vorschau.html`
-- `assets/smugglers-design-system/dokumentation/SMUGGLERS_DESIGN_SYSTEM.md`
-- `ROADMAP.md`
-- `README.md`
-- `VERSION.txt`
-
-### Unverändert
-
-- Öffentliche HTML-Seiten
-- CSS und JavaScript der Website
-- JSON-Nutzdaten
-- Grid, Kachelgrößen und Navigation
-
----
-
-## Version 4.4.6
-
-### Neu
-
-- Editierbarer SVG-Master für das erste neutrale Schmugglersiegel erstellt.
-- Isolierte HTML-Vorschau für 256, 64 und 32 Pixel ergänzt.
-
-### Geändert
-
-- SDS-Dokumentation auf den Stand „Master-Prototyp“ aktualisiert.
-- Projektversion auf 4.4.6 gesetzt.
-
-### Nicht geändert
-
-- Keine Integration in öffentliche Seiten.
-- Keine Änderungen an Grid, Kachelgrößen, Navigation, HTML-Struktur der Website, JavaScript oder JSON-Nutzdaten.
-
-### Betroffene Dateien
-
-- `VERSION.txt`
-- `CHANGELOG.md`
-- `README.md`
-- `ROADMAP.md`
-- `assets/smugglers-design-system/dokumentation/SMUGGLERS_DESIGN_SYSTEM.md`
-- `assets/smugglers-design-system/master/master-schmugglersiegel-v1.svg`
-- `assets/smugglers-design-system/master/master-vorschau.html`
+- `RELEASE_NOTES_v4.4.6.md`
+- `GITHUB-UPDATE-4.4.6.md`
 
 ---
 
@@ -1092,27 +1014,3 @@
 - Alte Pseudo-Elemente bleiben deaktiviert.
 - Inhalt, Maße, Statusfelder, Hauptbutton sowie Desktop- und Mobilstruktur unverändert.
 - Keine Bilderstellung und keine Bilddateien verändert.
-
-## Version 4.4.9 – SDS-Integrationsprobe
-
-### Neu
-
-- Nichtöffentliche Integrationsprobe für Schmugglersiegel erstellt.
-- Dynamische Zuordnung über `teams.json` und `schmugglersiegel-register.json`.
-- Neutraler Kürzel-Fallback für fehlende oder nicht ladbare Siegel.
-- Responsive Prüfung bei 32, 48, 64 und 96 Pixeln.
-
-### Geändert
-
-- Projektversionsangabe im Schmugglersiegel-Register auf 4.4.9 aktualisiert.
-- Roadmap und SDS-Dokumentation um den abgeschlossenen Integrationsschritt ergänzt.
-
-### Betroffene Dateien
-
-- `assets/smugglers-design-system/integrationsprobe.html`
-- `assets/smugglers-design-system/integrationsprobe.css`
-- `assets/smugglers-design-system/integrationsprobe.js`
-- `assets/smugglers-design-system/schmugglersiegel/schmugglersiegel-register.json`
-- `ROADMAP.md`
-- `README.md`
-- `VERSION.txt`

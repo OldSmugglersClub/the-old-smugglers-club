@@ -3223,9 +3223,72 @@
     }
 
     .sm-next-event__match {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      align-items: center;
+      gap: .9rem;
       min-width: 0;
       font-weight: 900;
       line-height: 1.3;
+    }
+
+    .sm-team {
+      display: inline-flex;
+      align-items: center;
+      min-width: 0;
+      gap: .7rem;
+    }
+
+    .sm-team--home {
+      justify-content: flex-end;
+      text-align: right;
+    }
+
+    .sm-team--away {
+      justify-content: flex-start;
+      text-align: left;
+    }
+
+    .sm-team__name {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .sm-team__seal {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      flex: 0 0 46px;
+      overflow: hidden;
+      border: 1px solid rgba(211, 160, 69, .78);
+      border-radius: 50%;
+      color: #f2d88f;
+      background:
+        radial-gradient(circle at 35% 28%, rgba(255,255,255,.18), transparent 28%),
+        linear-gradient(145deg, #3a2512, #120b06);
+      box-shadow:
+        inset 0 0 0 3px rgba(28, 16, 7, .78),
+        0 3px 8px rgba(0,0,0,.42);
+      font-size: .56rem;
+      font-weight: 900;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .sm-team__seal img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .sm-next-event__separator {
+      color: #d7ad58;
+      font-size: 1.25rem;
+      text-align: center;
+      text-shadow: 0 2px 4px rgba(0,0,0,.72);
     }
 
     .sm-event-list {
@@ -3448,6 +3511,38 @@
 
       .sm-next-event__competition {
         text-align: left;
+      }
+
+      .sm-next-event__match {
+        grid-template-columns: 1fr;
+        gap: .48rem;
+        margin-top: .22rem;
+      }
+
+      .sm-team,
+      .sm-team--home,
+      .sm-team--away {
+        justify-content: flex-start;
+        text-align: left;
+      }
+
+      .sm-team--away {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+      }
+
+      .sm-team {
+        gap: .85rem;
+      }
+
+      .sm-team__seal {
+        width: 42px;
+        height: 42px;
+        flex-basis: 42px;
+      }
+
+      .sm-next-event__separator {
+        display: none;
       }
 
       .sm-event-row {
@@ -4928,58 +5023,7 @@
         radial-gradient(ellipse at 76% 86%, rgba(132,78,22,.055), transparent 34%),
         linear-gradient(105deg, #160e08 0 68%, #090604 100%) !important;
     }
-  
-
-    /* SDS 4.4.10: Schmugglersiegel im aktuellen Spieltag */
-    .sm-team-inline {
-      display: inline-flex;
-      align-items: center;
-      gap: .42rem;
-      min-width: 0;
-    }
-    .sm-team-inline--away { justify-content: flex-end; }
-    .sm-team-seal {
-      width: 30px;
-      height: 30px;
-      flex: 0 0 30px;
-      object-fit: contain;
-      filter: drop-shadow(0 2px 3px rgba(0,0,0,.45));
-    }
-    .sm-team-seal-fallback {
-      width: 30px;
-      height: 30px;
-      flex: 0 0 30px;
-      display: inline-grid;
-      place-items: center;
-      border: 1px solid rgba(205,166,87,.72);
-      border-radius: 50%;
-      background: radial-gradient(circle at 38% 32%, #765c2d, #2b2114 72%);
-      color: #ead49c;
-      font-size: .62rem;
-      font-weight: 800;
-      letter-spacing: .03em;
-      line-height: 1;
-      box-shadow: inset 0 0 0 2px rgba(25,16,8,.6), 0 2px 3px rgba(0,0,0,.42);
-    }
-    .sm-next-event__match--with-seals,
-    .sm-event-row__match--with-seals {
-      display: grid;
-      grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
-      align-items: center;
-      gap: .48rem;
-    }
-    .sm-next-event__match--with-seals .sm-team-inline:first-child,
-    .sm-event-row__match--with-seals .sm-team-inline:first-child { justify-content: flex-start; }
-    .sm-next-event__match--with-seals .sm-team-inline:last-child,
-    .sm-event-row__match--with-seals .sm-team-inline:last-child { justify-content: flex-end; text-align: right; }
-    .sm-match-separator { color: rgba(234,212,156,.82); }
-    @media (max-width: 640px) {
-      .sm-team-seal, .sm-team-seal-fallback { width: 26px; height: 26px; flex-basis: 26px; }
-      .sm-next-event__match--with-seals,
-      .sm-event-row__match--with-seals { gap: .3rem; }
-      .sm-team-inline { gap: .28rem; }
-    }
-</style>
+  </style>
   <link rel="stylesheet" href="./legal.css">
 </head>
 
@@ -5249,7 +5293,17 @@
       <a class="sm-next-event" id="sm-next-event" aria-label="Nächstes Ereignis">
         <span class="sm-next-event__date" id="sm-next-date">TT.MM.JJJJ · --:--</span>
         <span class="sm-next-event__competition" id="sm-next-competition">Wettbewerb offen</span>
-        <span class="sm-next-event__match" id="sm-next-match">Heimteam – Auswärtsteam</span>
+        <span class="sm-next-event__match" id="sm-next-match">
+          <span class="sm-team sm-team--home">
+            <span class="sm-team__seal" id="sm-next-home-seal" aria-hidden="true"><span>HEIM</span></span>
+            <span class="sm-team__name" id="sm-next-home-name">Heimteam</span>
+          </span>
+          <span class="sm-next-event__separator" id="sm-next-separator">–</span>
+          <span class="sm-team sm-team--away">
+            <span class="sm-team__name" id="sm-next-away-name">Auswärtsteam</span>
+            <span class="sm-team__seal" id="sm-next-away-seal" aria-hidden="true"><span>GAST</span></span>
+          </span>
+        </span>
       </a>
 
       <div class="sm-event-list" id="sm-event-list" tabindex="0" aria-label="Kommende Tippereignisse"></div>
@@ -5837,6 +5891,11 @@
         nextDate: document.getElementById("sm-next-date"),
         nextCompetition: document.getElementById("sm-next-competition"),
         nextMatch: document.getElementById("sm-next-match"),
+        nextHomeSeal: document.getElementById("sm-next-home-seal"),
+        nextHomeName: document.getElementById("sm-next-home-name"),
+        nextSeparator: document.getElementById("sm-next-separator"),
+        nextAwayName: document.getElementById("sm-next-away-name"),
+        nextAwaySeal: document.getElementById("sm-next-away-seal"),
         list: document.getElementById("sm-event-list"),
         overview: document.getElementById("sm-overview-link"),
         kicktipp: document.getElementById("sm-kicktipp-link")
@@ -5847,9 +5906,18 @@
         elements.next?.removeAttribute("href");
         if (elements.nextDate) elements.nextDate.textContent = data.platzhalterDatum || "TT.MM.JJJJ · --:--";
         if (elements.nextCompetition) elements.nextCompetition.textContent = data.platzhalterWettbewerb || "Wettbewerb offen";
-        if (elements.nextMatch) {
-          elements.nextMatch.textContent = `${data.platzhalterHeim || "Heimteam"} ${data.platzhalterTrenner || "–"} ${data.platzhalterAuswaerts || "Auswärtsteam"}`;
-        }
+        if (elements.nextHomeName) elements.nextHomeName.textContent = data.platzhalterHeim || "Heimteam";
+        if (elements.nextSeparator) elements.nextSeparator.textContent = data.platzhalterTrenner || "–";
+        if (elements.nextAwayName) elements.nextAwayName.textContent = data.platzhalterAuswaerts || "Auswärtsteam";
+        const setSealFallback = (element, label) => {
+          if (!element) return;
+          element.replaceChildren();
+          const fallback = document.createElement("span");
+          fallback.textContent = label;
+          element.appendChild(fallback);
+        };
+        setSealFallback(elements.nextHomeSeal, "HEIM");
+        setSealFallback(elements.nextAwaySeal, "GAST");
       };
 
       const makeLocalDate = (date, time = "00:00") => {
@@ -5862,27 +5930,24 @@
 
       try {
         const registry = window.OSCDataRegistry;
-        const [configUrl, gamesUrl, teamsUrl, matchdaysUrl, sealsUrl] = registry
+        const [configUrl, gamesUrl, teamsUrl, matchdaysUrl] = registry
           ? await Promise.all([
               registry.url("spieltag"), registry.url("spiele"),
-              registry.url("teams"), registry.url("tippspieltage"),
-              "./assets/smugglers-design-system/schmugglersiegel/schmugglersiegel-register.json"
+              registry.url("teams"), registry.url("tippspieltage")
             ])
-          : ["./spieltag.json", "./spieldaten.json", "./teams.json", "./tippspieltage.json", "./assets/smugglers-design-system/schmugglersiegel/schmugglersiegel-register.json"];
-        const [configResponse, gamesResponse, teamsResponse, matchdaysResponse, sealsResponse] = await Promise.all([
+          : ["./spieltag.json", "./spieldaten.json", "./teams.json", "./tippspieltage.json"];
+        const [configResponse, gamesResponse, teamsResponse, matchdaysResponse] = await Promise.all([
           fetch(configUrl, { cache: "no-store" }),
           fetch(gamesUrl, { cache: "no-store" }),
           fetch(teamsUrl, { cache: "no-store" }),
-          fetch(matchdaysUrl, { cache: "no-store" }),
-          fetch(sealsUrl, { cache: "no-store" })
+          fetch(matchdaysUrl, { cache: "no-store" })
         ]);
 
         for (const [name, response] of [
           ["Spieltag-Konfiguration", configResponse],
           ["zentrale Spieldaten", gamesResponse],
           ["zentrales Teamregister", teamsResponse],
-          ["zentrale Tippspieltage", matchdaysResponse],
-          ["Schmugglersiegel-Register", sealsResponse]
+          ["zentrale Tippspieltage", matchdaysResponse]
         ]) {
           if (!response.ok) throw new Error(`${name} konnte nicht geladen werden (${response.status})`);
         }
@@ -5891,53 +5956,33 @@
         const gameData = await gamesResponse.json();
         const teamData = await teamsResponse.json();
         const matchdayData = await matchdaysResponse.json();
-        const sealsData = await sealsResponse.json();
         const locale = data.locale || "de-DE";
         const liveMinutesDefault = Math.max(1, Number(data.liveDauerMinuten) || 120);
         const teamLookup = new Map((Array.isArray(teamData.teams) ? teamData.teams : []).map(team => [team.id, team]));
-        const sealEntries = Array.isArray(sealsData.siegel) ? sealsData.siegel : (Array.isArray(sealsData.teams) ? sealsData.teams : []);
-        const sealLookup = new Map(sealEntries.map(entry => [entry.teamId || entry.id, entry]));
         const resolveTeamName = (teamId, fallback) => teamLookup.get(teamId)?.name || fallback || "Team offen";
-        const teamInitials = (name = "") => name.split(/\s+/).filter(Boolean).map(part => part.replace(/[^A-Za-z0-9ÄÖÜäöüß]/g, "")[0]).filter(Boolean).join("").slice(0, 3).toUpperCase() || "?";
-        const makeSeal = (teamId, teamName, side = "home") => {
-          const entry = sealLookup.get(teamId);
-          const wrap = document.createElement("span");
-          wrap.className = `sm-team-inline ${side === "away" ? "sm-team-inline--away" : ""}`;
-          const label = document.createElement("span");
-          label.textContent = teamName;
-          const seal = entry?.datei || entry?.pfad || entry?.src;
-          let emblem;
-          if (seal) {
-            emblem = document.createElement("img");
-            emblem.className = "sm-team-seal";
-            emblem.src = seal.startsWith(".") ? seal : `./${seal}`;
-            emblem.alt = "";
-            emblem.setAttribute("aria-hidden", "true");
-            emblem.addEventListener("error", () => {
-              const fallback = document.createElement("span");
-              fallback.className = "sm-team-seal-fallback";
-              fallback.textContent = entry?.kuerzel || entry?.kürzel || teamInitials(teamName);
-              fallback.setAttribute("aria-hidden", "true");
-              emblem.replaceWith(fallback);
-            }, { once: true });
-          } else {
-            emblem = document.createElement("span");
-            emblem.className = "sm-team-seal-fallback";
-            emblem.textContent = entry?.kuerzel || entry?.kürzel || teamInitials(teamName);
-            emblem.setAttribute("aria-hidden", "true");
-          }
-          if (side === "away") wrap.append(label, emblem);
-          else wrap.append(emblem, label);
-          return wrap;
+        const resolveSealPath = (teamId) => teamId
+          ? `./assets/smugglers-design-system/schmugglersiegel/${teamId}.svg`
+          : "";
+        const teamInitials = (teamId, teamName) => {
+          const fixed = { "dynamo-dresden": "DD", "nuernberg": "FCN" };
+          if (fixed[teamId]) return fixed[teamId];
+          const ignored = new Set(["fc", "sc", "sv", "vfl", "vfb", "tsg", "1.", "04", "05", "09"]);
+          const parts = String(teamName || "").split(/\s+/).filter(Boolean).filter(part => !ignored.has(part.toLowerCase()));
+          return (parts.map(part => part[0]).join("").slice(0, 3) || "TEAM").toUpperCase();
         };
-        const renderMatchWithSeals = (container, game, className) => {
-          if (!container) return;
-          container.replaceChildren();
-          container.classList.add(className);
-          const separator = document.createElement("span");
-          separator.className = "sm-match-separator";
-          separator.textContent = game.trenner || "–";
-          container.append(makeSeal(game.heimTeamId, game.heim, "home"), separator, makeSeal(game.auswaertsTeamId, game.auswaerts, "away"));
+        const renderTeamSeal = (element, teamId, teamName) => {
+          if (!element) return;
+          element.replaceChildren();
+          const fallback = document.createElement("span");
+          fallback.textContent = teamInitials(teamId, teamName);
+          element.appendChild(fallback);
+          const path = resolveSealPath(teamId);
+          if (!path) return;
+          const image = document.createElement("img");
+          image.alt = "";
+          image.decoding = "async";
+          image.src = path;
+          image.addEventListener("load", () => element.replaceChildren(image), { once: true });
         };
 
         const simulatedNow = typeof data.testJetzt === "string" && data.testJetzt.trim() ? new Date(data.testJetzt) : null;
@@ -6030,7 +6075,11 @@
           const firstDate = new Intl.DateTimeFormat(locale, { weekday: "short", day: "2-digit", month: "2-digit", year: "numeric" }).format(firstGame._start);
           if (elements.nextDate) elements.nextDate.textContent = `${firstDate} · ${firstGame.anstoss || "--:--"}`;
           if (elements.nextCompetition) elements.nextCompetition.textContent = selectedMatchday.name || firstGame.wettbewerbAnzeige || "Tippspieltag";
-          renderMatchWithSeals(elements.nextMatch, firstGame, "sm-next-event__match--with-seals");
+          if (elements.nextHomeName) elements.nextHomeName.textContent = firstGame.heim;
+          if (elements.nextSeparator) elements.nextSeparator.textContent = firstGame.trenner || "–";
+          if (elements.nextAwayName) elements.nextAwayName.textContent = firstGame.auswaerts;
+          renderTeamSeal(elements.nextHomeSeal, firstGame.heimTeamId, firstGame.heim);
+          renderTeamSeal(elements.nextAwaySeal, firstGame.auswaertsTeamId, firstGame.auswaerts);
           if (elements.next && firstGame.ereignisLink) elements.next.href = firstGame.ereignisLink;
           else elements.next?.removeAttribute("href");
 
@@ -6066,7 +6115,7 @@
                 competition.textContent = game.wettbewerbAnzeige || game.wettbewerb || "Ereignis";
                 const match = document.createElement("span");
                 match.className = "sm-event-row__match";
-                renderMatchWithSeals(match, game, "sm-event-row__match--with-seals");
+                match.textContent = `${game.heim} ${game.trenner || "–"} ${game.auswaerts}`;
                 const rowStatus = document.createElement("span");
                 rowStatus.className = "sm-event-row__status";
                 rowStatus.textContent = game._start <= now && game._end > now ? "LIVE" : (game.status || "");

@@ -73,6 +73,15 @@ Die öffentlichen Bereiche sind produktionsreif. Die verbleibenden Arbeiten betr
 - [x] Reihenfolge bis Version 5.0 festgelegt
 - [x] abgeschlossene und offene Aufgaben getrennt
 
+### 4.4.6 – Pilotintegration Schmugglersiegel
+
+- [x] farbige SVG-Siegel für 1. FC Nürnberg und SG Dynamo Dresden erstellt
+- [x] hervorgehobene Paarung in „Aktueller Spieltag“ integriert
+- [x] Desktop-Abstände kompakter ausgerichtet
+- [x] mobile Abstände zwischen Siegel und Mannschaftsnamen korrigiert
+- [ ] optische Abnahme auf Desktop und Mobil
+- [ ] erst nach Abnahme weitere Mannschaften und Bereiche ergänzen
+
 ### Noch offen innerhalb 4.4.x
 
 - [ ] `DESIGN_GUIDE.md` aus dem freigegebenen Ist-Zustand ableiten
@@ -89,8 +98,8 @@ Die öffentlichen Bereiche sind produktionsreif. Die verbleibenden Arbeiten betr
 - [x] Begriff „Schmugglersiegel“ und Masterprinzip freigegeben
 - [x] technische Spezifikation `SMUGGLERS_DESIGN_SYSTEM.md` erstellt
 - [x] zentrale Assetstruktur angelegt
-- [x] editierbare Masterdatei entwickeln und in mehreren Größen prüfen
-- [x] Pilotserie mit vier unterschiedlichen Vereinen erstellen
+- [ ] editierbare Masterdatei entwickeln und in mehreren Größen prüfen
+- [ ] Pilotserie mit vier unterschiedlichen Vereinen erstellen
 - [ ] vollständige Vereinsbibliothek erst nach Masterfreigabe ableiten
 - [ ] schrittweise, rückbaubare Integration in die Website
 
@@ -255,43 +264,3 @@ Nach Version 4.4.2 folgt das vollständige `ADMIN_HANDBUCH.md` auf Basis des gep
 - [x] Datenschutzerklärung für aktuellen technischen Stand ergänzt
 - [x] rechtliche Footerlinks auf allen öffentlichen Seiten ergänzt
 - [ ] Rechtstexte vor Version 5.0 nochmals gegen den dann tatsächlichen technischen Stand prüfen
-
-
-## Smugglers Design System – Version 4.4.6
-
-- [x] editierbaren neutralen SVG-Master erstellen
-- [x] isolierte Vorschau für 256, 64 und 32 Pixel bereitstellen
-- [ ] Master gestalterisch abnehmen
-- [ ] gegebenenfalls Master korrigieren
-- [ ] Pilotserie mit vier Vereinen erst nach Freigabe erzeugen
-
-Keine Integration in öffentliche Seiten vor ausdrücklicher Freigabe.
-
-
-## Version 4.4.8 – SDS Vereinsbibliothek
-
-- [x] 52 aktive Vereine aus `teams.json` erfasst
-- [x] neutrale Kürzel und gedämpfte Farbpaare festgelegt
-- [x] SVG-Schmugglersiegel erzeugt
-- [x] zentrales Assetregister erstellt
-- [x] isolierte Gesamtvorschau erstellt
-- [ ] nichtkritische Integrationsprobe
-- [ ] Serienabnahme vor öffentlicher Einbindung
-
-### SDS – Integrationsprobe (Version 4.4.9)
-
-- [x] Schmugglersiegel dynamisch über Team-ID auflösen
-- [x] neutrales Fallback bei fehlendem oder defektem Siegel
-- [x] Darstellung in mehreren Größen prüfen
-- [x] responsive Testansicht ohne Änderung öffentlicher Seiten
-- [ ] visuelle Abnahme der Pilotintegration durch den Projektleiter
-- [ ] danach gezielte Integration in genau einen freigegebenen öffentlichen Bereich
-
-
-### Version 4.4.10 – öffentliche Pilotintegration
-
-- [x] Schmugglersiegel in „Aktueller Spieltag“ integriert
-- [x] Fallback für fehlende oder nicht ladbare Siegel
-- [x] Desktop- und Mobilregeln ergänzt
-- [ ] Optische Abnahme durch den Projektleiter
-- [ ] Erst nach Abnahme weitere öffentliche Bereiche integrieren
