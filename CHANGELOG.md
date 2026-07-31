@@ -1,5 +1,41 @@
 # CHANGELOG
 
+## Version 4.4.14
+
+### Behoben
+- Lange Überschrift „Datenschutzerklärung“ läuft auf schmalen Mobilgeräten nicht mehr aus der Kachel.
+- Gelber Trennstrich zwischen Hauptfooter und rechtlichem Footer auf Desktop entfernt.
+- Zu große horizontale Abstände im Desktop-Footer reduziert.
+
+### Geändert
+- Rechtlicher Footer auf Desktop kompakter und mittig ausgerichtet.
+- Sichtbare Versionsangaben in den rechtlichen Footern aktualisiert.
+- Mobile Footer-Anordnung unverändert beibehalten.
+
+### Betroffene Dateien
+- legal.css
+- index.html
+- öffentliche HTML-Seiten mit rechtlichem Footer
+- VERSION.txt
+- README.md
+- CHANGELOG.md
+
+## Version 4.4.13
+
+### Neu
+- `DESIGN_GUIDE.md` als verbindliche Dokumentation des freigegebenen visuellen Ist-Zustands erstellt.
+
+### Geändert
+- Roadmap an den tatsächlichen Stand der Schmugglersiegel-Integration und Design-Dokumentation angepasst.
+- Versionsangaben aktualisiert.
+
+### Betroffene Dateien
+- DESIGN_GUIDE.md
+- ROADMAP.md
+- VERSION.txt
+- README.md
+- CHANGELOG.md
+
 ## Version 4.4.12
 
 ### Neu

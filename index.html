@@ -86,8 +86,8 @@
       margin: 0 auto;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
+      justify-content: center;
+      gap: clamp(1.75rem, 5vw, 4rem);
     }
 
     .mini-brand {
@@ -3868,7 +3868,7 @@
   
 
 
-    /* Version 4.1.0 – aktuelle Missionsakte */
+    /* Version 4.4.14 – aktuelle Missionsakte */
     .smuggler-mission-kicker {
       margin: 0 0 .2rem;
       color: #b99b62;
@@ -4458,7 +4458,7 @@
     }
 
 
-    /* Version 3.7.3 – mobile Highscore-Karten auf der Startseite */
+    /* Version 4.4.14 – mobile Highscore-Karten auf der Startseite */
     @media (max-width: 700px) {
       #highscore .highscore-teaser-grid {
         display: grid !important;
@@ -4518,7 +4518,7 @@
       }
     }
 
-    /* Version 4.1.1 – Hall of Fame als öffentliches Ehrenlogbuch */
+    /* Version 4.4.14 – Hall of Fame als öffentliches Ehrenlogbuch */
     #hall-of-fame .hall-intro-row {
       display: flex;
       justify-content: space-between;
@@ -4632,7 +4632,7 @@
     }
 
 
-    /* Version 4.1.6 – zusätzliche Ehrentitel, mobil stabil */
+    /* Version 4.4.14 – zusätzliche Ehrentitel, mobil stabil */
     #hall-of-fame .honours-overview {
       align-content: start;
     }
@@ -4661,7 +4661,7 @@
     }
 
 
-    /* Version 4.1.8 – responsive Stabilitätsregeln für alle öffentlichen Kacheln */
+    /* Version 4.4.14 – responsive Stabilitätsregeln für alle öffentlichen Kacheln */
     .section,
     .panel,
     .hero-grid > *,
@@ -4734,7 +4734,7 @@
 
 
 
-    /* Version 4.3.0 – ruhige, hierarchische Startzentrale */
+    /* Version 4.4.14 – ruhige, hierarchische Startzentrale */
     .welcome-panel {
       position: relative;
       align-self: start;
@@ -5001,7 +5001,7 @@
   <link rel="stylesheet" href="./highscore.css?v=4.0.1">
   <link rel="stylesheet" href="./accessibility-v33.css">
   <style id="welcome-cleanup-v434">
-    /* Version 4.3.4: Startzentrale vollständig deckend halten und alle alten Dekore abschalten.
+    /* Version 4.4.14: Startzentrale vollständig deckend halten und alle alten Dekore abschalten.
        Wichtig: kein background-image:none – das hatte die eigenen Farbverläufe entfernt und
        dadurch das großflächige Seitenhintergrundmotiv durchscheinen lassen. */
     body main .hero-grid > .welcome-panel::before,
@@ -6368,7 +6368,7 @@
     <nav class="legal-footer__links" aria-label="Rechtliche Navigation">
       <a href="./impressum.html">Impressum</a>
       <a href="./datenschutz.html">Datenschutz</a>
-      <span>Version 4.4.3</span>
+      <span>Version 4.4.14</span>
     </nav>
   </div>
 </footer>
