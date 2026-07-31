@@ -1,3 +1,30 @@
+# CHANGELOG
+
+## Version 4.3.8 – Starttitel auf einer Zeile – 31.07.2026
+
+### Behoben
+
+- Die künstliche Breitenbegrenzung des Textbereichs in der Startzentrale wurde entfernt.
+- „Der Hohe Schmugglerrat“ kann auf Desktop die verfügbare Kachelbreite nutzen und wird nicht mehr unnötig nach „Der Hohe“ umgebrochen.
+
+### Geändert
+
+- Ausschließlich `max-width` von `.welcome-command-copy` in `index.html` von `79%` auf `100%` gesetzt.
+- Keine Änderung an Kachelgröße, Grid, Navigation, Grundlayout oder Datenlogik.
+
+### Neu
+
+- `RELEASE_NOTES_v4.3.8.md`
+- `GITHUB-UPDATE-4.3.8.md`
+
+### Betroffene Dateien
+
+- `index.html`
+- `VERSION.txt`
+- `CHANGELOG.md`
+- `README.md`
+- `PromptManual/PROJECT_MANUAL.md`
+
 # Änderungsverlauf
 
 ## Version 4.3.7 – Der Hohe Schmugglerrat – 31.07.2026

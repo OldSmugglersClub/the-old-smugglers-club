@@ -1,4 +1,4 @@
-# The Old Smugglers Club – Version 4.3.7
+# The Old Smugglers Club – Version 4.3.8
 
 Öffentliche GitHub-Pages-Website der Tipprunde **The Old Smugglers Club**.
 
@@ -18,7 +18,7 @@ Der vollständige Inhalt dieses Verzeichnisses gehört direkt in das Hauptverzei
 
 ## Aktualisierung über die GitHub-Webseite
 
-Für Version 4.3.7 gilt die Datei `GITHUB-UPDATE-4.3.7.md`. Gleichnamige Dateien werden beim Hochladen ersetzt. Es müssen keine Dateien gelöscht werden.
+Für Version 4.3.8 gilt die Datei `GITHUB-UPDATE-4.3.8.md`. Gleichnamige Dateien werden beim Hochladen ersetzt. Es müssen keine Dateien gelöscht werden.
 
 ## Wichtige Dateien
 
@@ -28,8 +28,8 @@ Für Version 4.3.7 gilt die Datei `GITHUB-UPDATE-4.3.7.md`. Gleichnamige Dateien
 - `hall-of-fame.json` – Champion und Titelträger
 - `VERSION.txt` – aktuelle Versionsnummer
 - `CHANGELOG.md` – Versionshistorie
-- `RELEASE_NOTES_v4.3.7.md` – Änderungen dieses Releases
-- `GITHUB-UPDATE-4.3.7.md` – konkrete Upload-Liste
+- `RELEASE_NOTES_v4.3.8.md` – Änderungen dieses Releases
+- `GITHUB-UPDATE-4.3.8.md` – konkrete Upload-Liste
 
 ## Projektregeln
 
