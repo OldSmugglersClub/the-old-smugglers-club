@@ -255,3 +255,11 @@
 - Einheitlicher Konsistenzstatus auf allen Wettbewerbsseiten ergänzt.
 - Detailanzeige begrenzt lange Fehlerlisten und bleibt mobil lesbar.
 - Grundlayout, Raster, Kachelgrößen und freigegebene Bereiche unverändert belassen.
+
+## Version 2.46 – 31.07.2026
+- Zentralen Bereich „Datenpflege & Prüfprotokoll“ auf allen Wettbewerbsseiten ergänzt.
+- Datenstände von `wettbewerbe.json`, `spieldaten.json`, `teams.json` und `tippspieltage.json` werden gemeinsam ausgewiesen.
+- Strukturelles Prüfprotokoll kann als JSON-Datei heruntergeladen werden.
+- Export enthält Datenmengen, Quellenstände sowie erkannte Fehler und Hinweise, verändert aber keine Website-Daten.
+- Pflege- und Diagnosefunktionen verwenden das gemeinsame Datenmodell aus Version 2.44/2.45.
+- Grundlayout, Raster, Kachelgrößen und freigegebene Inhalte unverändert belassen.

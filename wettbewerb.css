@@ -755,3 +755,16 @@ body.page-dynamo-dresden{
 .validation-finding.finding-error{border-left-color:#b95d48}
 .validation-finding p{margin:.35rem 0 0;color:var(--muted);font-size:.9rem;overflow-wrap:anywhere}
 @media(max-width:800px){.validation-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Version 2.46: Datenpflege und exportierbares Prüfprotokoll */
+.maintenance-panel{border-color:rgba(181,122,41,.68)}
+.maintenance-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:12px 0}
+.maintenance-card{display:flex;min-width:0;flex-direction:column;gap:7px;padding:13px 14px;border:1px solid rgba(183,122,35,.42);border-radius:8px;background:linear-gradient(145deg,rgba(44,27,13,.82),rgba(16,9,5,.9))}
+.maintenance-card strong{color:#edc96f;font-size:1rem}
+.maintenance-card code{display:block;color:#d9bd7e;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.8rem;overflow-wrap:anywhere}
+.maintenance-card span{color:var(--muted);font-size:.84rem}
+.maintenance-controls{display:flex;align-items:center;gap:14px;margin-top:14px;padding-top:12px;border-top:1px solid rgba(183,122,35,.3)}
+.maintenance-controls .data-note{margin:0}
+.maintenance-download{font:inherit;cursor:pointer}
+@media(max-width:950px){.maintenance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.maintenance-grid{grid-template-columns:1fr}.maintenance-controls{align-items:stretch;flex-direction:column}.maintenance-download{width:100%}}

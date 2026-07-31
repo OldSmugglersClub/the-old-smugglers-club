@@ -21,6 +21,7 @@
   ];
   let competitionDefinitions = DEFAULT_COMPETITIONS;
   let centralValidation = null;
+  let centralModel = null;
 
   function competitionDefinition(id) {
     return competitionDefinitions.find(item => item && item.id === id) || DEFAULT_COMPETITIONS.find(item => item.id === id) || null;
@@ -885,6 +886,100 @@
     root.appendChild(section);
   }
 
+  function maintenanceDate(value) {
+    if (!value) return "Nicht angegeben";
+    const normalized = String(value).slice(0, 10);
+    return formatDate(normalized) || String(value);
+  }
+
+  function createMaintenanceReport() {
+    const model = centralModel || {};
+    const validation = centralValidation || { status: "unknown", counts: {}, errors: [], warnings: [] };
+    return {
+      reportVersion: 1,
+      generatedAt: new Date().toISOString(),
+      season: model.competitionData && model.competitionData.saison || "2026/2027",
+      currentPage: slug,
+      status: validation.status,
+      counts: validation.counts || {},
+      sourceDates: {
+        competitions: model.competitionData && model.competitionData.aktualisiert || "",
+        games: model.gameData && model.gameData.aktualisiert || "",
+        teams: model.teamData && model.teamData.aktualisiert || "",
+        matchdays: model.matchdayData && model.matchdayData.aktualisiert || ""
+      },
+      errors: safeArray(validation.errors),
+      warnings: safeArray(validation.warnings)
+    };
+  }
+
+  function downloadMaintenanceReport() {
+    const report = createMaintenanceReport();
+    const blob = new Blob([JSON.stringify(report, null, 2)], { type: "application/json;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `osc-datenpruefung-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+  }
+
+  function renderMaintenancePanel(root) {
+    const model = centralModel;
+    if (!model) return;
+
+    const section = document.createElement("section");
+    section.className = "dynamic-section maintenance-panel";
+
+    const headingRow = document.createElement("div");
+    headingRow.className = "section-heading-row";
+    const heading = document.createElement("h2");
+    heading.textContent = "Datenpflege & Prüfprotokoll";
+    const badge = document.createElement("span");
+    badge.className = "data-status-badge";
+    badge.textContent = "Pflegebereit";
+    headingRow.append(heading, badge);
+    section.appendChild(headingRow);
+
+    const sources = [
+      ["Wettbewerbe", "wettbewerbe.json", model.competitionData && model.competitionData.aktualisiert],
+      ["Spiele", "spieldaten.json", model.gameData && model.gameData.aktualisiert],
+      ["Teams", "teams.json", model.teamData && model.teamData.aktualisiert],
+      ["Tippspieltage", "tippspieltage.json", model.matchdayData && model.matchdayData.aktualisiert]
+    ];
+    const grid = document.createElement("div");
+    grid.className = "maintenance-grid";
+    sources.forEach(([label, file, updated]) => {
+      const card = document.createElement("article");
+      card.className = "maintenance-card";
+      const title = document.createElement("strong");
+      title.textContent = label;
+      const name = document.createElement("code");
+      name.textContent = file;
+      const date = document.createElement("span");
+      date.textContent = `Datenstand: ${maintenanceDate(updated)}`;
+      card.append(title, name, date);
+      grid.appendChild(card);
+    });
+    section.appendChild(grid);
+
+    const controls = document.createElement("div");
+    controls.className = "maintenance-controls";
+    const download = document.createElement("button");
+    download.type = "button";
+    download.className = "btn btn-secondary maintenance-download";
+    download.textContent = "Prüfprotokoll herunterladen";
+    download.addEventListener("click", downloadMaintenanceReport);
+    const note = document.createElement("p");
+    note.className = "data-note";
+    note.textContent = "Das Protokoll enthält nur Strukturstatus, Datenstände und erkannte Widersprüche. Spieldaten werden nicht verändert.";
+    controls.append(download, note);
+    section.appendChild(controls);
+    root.appendChild(section);
+  }
+
   function renderCentralDataRegistry(gameData, teamData, root) {
     const section = document.createElement("section");
     section.className = "dynamic-section central-data-registry";
@@ -1158,6 +1253,7 @@
     document.body.classList.add(`page-${slug}`);
     renderCompetitionNavigator(root);
     renderCentralValidation(root);
+    renderMaintenancePanel(root);
     renderCentralDataRegistry(gameData, teamData, root);
     renderCompetitionFleetDashboard(gameData, root);
     renderCompetitionDataCockpit(gameData, teamData, root);
@@ -1256,6 +1352,7 @@
       ]);
 
       const sharedModel = window.OSCDataModel ? await window.OSCDataModel.load() : null;
+      centralModel = sharedModel || null;
       centralValidation = sharedModel && sharedModel.validation ? sharedModel.validation : null;
       const configuredCompetitions = safeArray((sharedModel && sharedModel.competitions) || (competitionConfig && competitionConfig.wettbewerbe))
         .filter(item => item && item.id && item.label && item.filter && item.filter.type && item.filter.value);
