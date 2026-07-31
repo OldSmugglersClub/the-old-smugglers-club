@@ -575,3 +575,114 @@
 .hs-source-strip{display:grid;grid-template-columns:auto 1fr;gap:.2rem .75rem;align-items:center;margin:.85rem 0 1rem;padding:.72rem .9rem;border:1px solid rgba(184,134,11,.48);border-radius:10px;background:rgba(12,9,5,.58)}
 .hs-source-strip span{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#c7ad77}.hs-source-strip strong{color:#f0d58b}.hs-source-strip small{grid-column:2;color:#cfc6b3;line-height:1.35}
 @media(max-width:560px){.hs-source-strip{grid-template-columns:1fr}.hs-source-strip small{grid-column:1}}
+
+/* =========================================================
+   Version 4.0.1 – Desktop-Highscore-Kachel
+   Rein kosmetische Aufwertung. Mobile Darstellung bleibt
+   durch die vorhandenen Regeln und den Override unten identisch.
+   ========================================================= */
+@media (min-width:701px){
+  #highscore.highscore-teaser{
+    isolation:isolate;
+    background:
+      linear-gradient(90deg,rgba(7,4,2,.96),rgba(25,16,9,.93) 45%,rgba(12,7,3,.96)),
+      repeating-linear-gradient(0deg,rgba(74,47,24,.24) 0 2px,transparent 2px 58px),
+      var(--panel-bg,rgba(18,12,7,.98));
+    box-shadow:
+      inset 0 0 0 1px rgba(229,193,111,.06),
+      inset 0 -90px 120px rgba(0,0,0,.34),
+      0 18px 42px rgba(0,0,0,.35);
+  }
+  #highscore.highscore-teaser::before{
+    background:
+      radial-gradient(circle at 88% 18%,rgba(213,163,72,.20),transparent 24%),
+      linear-gradient(115deg,transparent 0 58%,rgba(184,138,61,.05) 58% 60%,transparent 60% 100%);
+    opacity:1;
+  }
+  #highscore.highscore-teaser::after{
+    content:"";
+    position:absolute;
+    left:32px;right:32px;bottom:31px;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(198,151,68,.48) 16%,rgba(198,151,68,.18) 72%,transparent);
+    pointer-events:none;
+    z-index:0;
+  }
+  #highscore .section-title,
+  #highscore > .lead,
+  #highscore .highscore-teaser-grid,
+  #highscore .highscore-teaser-action{position:relative;z-index:2}
+  #highscore .section-title{padding-right:190px}
+  #highscore > .lead{max-width:760px}
+  #highscore .highscore-desktop-scene{
+    display:block;
+    position:absolute;
+    inset:0;
+    z-index:1;
+    overflow:hidden;
+    pointer-events:none;
+  }
+  #highscore .highscore-scene-icon{
+    position:absolute;
+    fill:url(#gold-metal);
+    filter:drop-shadow(0 5px 7px rgba(0,0,0,.72));
+    opacity:.28;
+  }
+  #highscore .highscore-scene-compass{
+    width:132px;height:132px;right:42px;top:18px;transform:rotate(11deg);
+  }
+  #highscore .highscore-scene-map{
+    width:190px;height:190px;right:128px;bottom:-70px;transform:rotate(-13deg);opacity:.10;
+  }
+  #highscore .highscore-scene-coins,
+  #highscore .highscore-scene-coins::before,
+  #highscore .highscore-scene-coins::after{
+    position:absolute;border-radius:50%;
+    background:radial-gradient(circle at 35% 28%,#f0cf78 0 5%,#bd812f 24%,#684016 65%,#211207 100%);
+    border:1px solid rgba(238,196,101,.65);
+    box-shadow:inset 0 0 0 3px rgba(44,24,8,.55),0 5px 10px rgba(0,0,0,.55);
+  }
+  #highscore .highscore-scene-coins{content:"";width:34px;height:34px;right:58px;bottom:31px;transform:rotate(16deg)}
+  #highscore .highscore-scene-coins::before{content:"";width:29px;height:29px;right:27px;top:8px}
+  #highscore .highscore-scene-coins::after{content:"";width:24px;height:24px;right:8px;top:-18px}
+  #highscore .highscore-teaser-grid{gap:14px;margin-top:20px;margin-bottom:18px}
+  #highscore .highscore-teaser-card{
+    display:grid;
+    grid-template-columns:58px minmax(0,1fr);
+    align-items:center;
+    gap:14px;
+    min-height:128px;
+    padding:17px 18px;
+    border-radius:8px;
+    border:1px solid rgba(205,157,70,.72);
+    background:
+      linear-gradient(135deg,rgba(229,193,111,.09),transparent 35%),
+      repeating-linear-gradient(0deg,rgba(60,39,22,.96) 0 42px,rgba(31,19,10,.98) 43px 45px);
+    box-shadow:
+      inset 0 0 0 3px rgba(0,0,0,.38),
+      inset 0 0 0 4px rgba(229,193,111,.07),
+      0 11px 25px rgba(0,0,0,.32);
+  }
+  #highscore .highscore-teaser-card::before,
+  #highscore .highscore-teaser-card::after{
+    content:"";position:absolute;width:8px;height:8px;border-radius:50%;
+    background:radial-gradient(circle at 35% 28%,#f4d587,#966122 68%,#39200b);
+    box-shadow:0 1px 3px #000;
+  }
+  #highscore .highscore-teaser-card::before{left:9px;top:9px}
+  #highscore .highscore-teaser-card::after{right:9px;bottom:9px}
+  #highscore .highscore-card-icon{
+    width:52px;height:52px;
+    fill:url(#gold-metal);
+    filter:drop-shadow(0 3px 3px rgba(0,0,0,.75));
+  }
+  #highscore .highscore-card-copy{min-width:0}
+  #highscore .highscore-teaser-card span{padding-bottom:6px;border-bottom:1px solid rgba(184,138,61,.26)}
+  #highscore .highscore-teaser-card strong{font-family:Georgia,serif;text-shadow:0 2px 0 #3d250e}
+  #highscore .highscore-teaser-action{margin-top:4px;margin-bottom:0}
+}
+
+@media (max-width:700px){
+  #highscore .highscore-desktop-scene,
+  #highscore .highscore-card-icon{display:none!important}
+  #highscore .highscore-card-copy{display:contents!important}
+}

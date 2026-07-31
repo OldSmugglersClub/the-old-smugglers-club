@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 4.0.1 – Desktop-Highscore-Kachel
+
+- Highscore-Kachel der Desktop-Startseite optisch aufgewertet.
+- Vorhandene dynamische Highscore-Daten und Verlinkung unverändert beibehalten.
+- Piratenelemente ausschließlich mit HTML, CSS und bereits vorhandenen SVG-Symbolen umgesetzt.
+- Außenmaße, Seitenraster, Abstände und übrige Kacheln unverändert.
+- Mobile Highscore-Darstellung unverändert.
+
 ## 4.0 – Produktionsfreigabe und aktuelle Teilnehmerbasis
 
 - aktuelle Kicktipp-Mitgliederliste mit 100 Teilnehmern übernommen

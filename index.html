@@ -4258,7 +4258,7 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="./highscore.css?v=3.7.3">
+  <link rel="stylesheet" href="./highscore.css?v=4.0.1">
   <link rel="stylesheet" href="./accessibility-v33.css">
 </head>
 
@@ -4506,23 +4506,37 @@
     </section>
 
 <section class="section panel highscore-teaser" id="highscore">
+      <div class="highscore-desktop-scene" aria-hidden="true">
+        <svg class="highscore-scene-icon highscore-scene-compass"><use href="#icon-star-compass"></use></svg>
+        <svg class="highscore-scene-icon highscore-scene-map"><use href="#icon-map"></use></svg>
+        <span class="highscore-scene-coins"></span>
+      </div>
       <div class="section-title"><span class="highscore-crown" aria-hidden="true">♛</span><h2>Highscore</h2></div>
       <p class="lead">Einzelwertung, Spieltagsrangliste und der direkte Vergleich der beiden Smuggler-Teams.</p>
       <div class="highscore-teaser-grid" aria-label="Aktueller Highscore">
-        <article class="highscore-teaser-card">
-          <span>Einzelwertung</span>
-          <strong id="hs-leader-name">Saisonstart</strong>
-          <small id="hs-leader-points">Alle starten bei 0 Punkten</small>
+        <article class="highscore-teaser-card highscore-card-ranking">
+          <svg class="highscore-card-icon" aria-hidden="true"><use href="#icon-trophy"></use></svg>
+          <div class="highscore-card-copy">
+            <span>Einzelwertung</span>
+            <strong id="hs-leader-name">Saisonstart</strong>
+            <small id="hs-leader-points">Alle starten bei 0 Punkten</small>
+          </div>
         </article>
-        <article class="highscore-teaser-card">
-          <span>Letzter Spieltag</span>
-          <strong id="hs-matchday-name">Smugglerauftrag Auftakt</strong>
-          <small id="hs-matchday-winner">Noch ohne Wertung</small>
+        <article class="highscore-teaser-card highscore-card-matchday">
+          <svg class="highscore-card-icon" aria-hidden="true"><use href="#icon-map"></use></svg>
+          <div class="highscore-card-copy">
+            <span>Letzter Spieltag</span>
+            <strong id="hs-matchday-name">Smugglerauftrag Auftakt</strong>
+            <small id="hs-matchday-winner">Noch ohne Wertung</small>
+          </div>
         </article>
-        <article class="highscore-teaser-card">
-          <span>Teamduell</span>
-          <strong id="hs-team-leader">Gleichstand</strong>
-          <small id="hs-team-points">Old vs. New Smugglers Team</small>
+        <article class="highscore-teaser-card highscore-card-duel">
+          <svg class="highscore-card-icon" aria-hidden="true"><use href="#icon-crossed-sabres"></use></svg>
+          <div class="highscore-card-copy">
+            <span>Teamduell</span>
+            <strong id="hs-team-leader">Gleichstand</strong>
+            <small id="hs-team-points">Old vs. New Smugglers Team</small>
+          </div>
         </article>
       </div>
       <p class="highscore-teaser-action"><a class="button button-primary" href="./highscore.html">Highscore öffnen</a></p>
