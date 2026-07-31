@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.18 – Wettbewerbs-Einzelwertungen
+
+- Zentrale Punkteauswertung nach einzelnen Wettbewerben getrennt.
+- Eigene Rangliste für jeden Wettbewerb mit 2/3/5-, Bonus- und Gesamtpunkten.
+- Wettbewerbsübersicht mit Teilnehmerzahl, Wertungen und vergebenen Punkten ergänzt.
+- Suche, Wettbewerbswechsel sowie JSON- und CSV-Export umgesetzt.
+- Neue zentrale Exportdatei `wettbewerbspunkte.json` ergänzt.
+- Gesamtwertung und öffentliches Grundlayout bleiben unverändert.
+
 ## 3.16 – Smugglerauftrag-Auswertung
 
 - Separate Rangliste ausschließlich für die 34 Dynamo-Smuggleraufträge ergänzt.

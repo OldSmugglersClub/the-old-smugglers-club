@@ -66,3 +66,8 @@ Die Seite `smugglerwertung.html` berechnet eine eigenständige Rangliste für al
 ## Teamwertung (3.17)
 
 `teamwertung.html` fasst die in `punkte.json` berechnete Einzelwertung anhand der Teamzuordnung in `teilnehmer.json` zusammen. Der Export `teampunkte.json` kann anschließend manuell im Repository ersetzt werden.
+
+
+## Wettbewerbs-Einzelwertungen (3.18)
+
+`wettbewerbswertung.html` erzeugt aus `punkte.json` getrennte Einzelranglisten für jeden Wettbewerb. Die Exportdatei `wettbewerbspunkte.json` kann anschließend manuell im Repository ersetzt werden.
