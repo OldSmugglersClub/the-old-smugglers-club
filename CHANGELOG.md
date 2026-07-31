@@ -1,3 +1,12 @@
+# Änderungsprotokoll
+
+## 3.8 – Zentrale Spielpflege
+- Neue lokale Pflegeoberfläche für die zentrale Datei `spieldaten.json`.
+- Spiele können gesucht, gefiltert, bearbeitet, neu angelegt und lokal gelöscht werden.
+- Vor dem Export werden IDs, Teamzuordnung, Ergebnisse und Terminzeiträume geprüft.
+- Export erfolgt als vollständige Datei für den manuellen GitHub-Upload.
+- Keine automatische Änderung des Repositories.
+
 # Version 3.7.3 – Mobile Highscore-Karten und Cache-Korrektur
 
 - Mobile Highscore-Karten auf der Startseite verbindlich als einspaltige Karten dargestellt.

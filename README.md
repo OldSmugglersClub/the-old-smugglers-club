@@ -30,3 +30,6 @@ Das Administrationszentrum prüft exportierte Datensicherungen lokal, meldet feh
 
 ## Daten-Cockpit
 Die Seite `daten-cockpit.html` zeigt alle Wettbewerbe, Spielstände und den zentralen Integritätsstatus in einer lesenden Übersicht.
+
+## Zentrale Spielpflege
+Über `spielpflege.html` kann die zentrale `spieldaten.json` lokal geprüft, bearbeitet und für den manuellen GitHub-Upload exportiert werden.
