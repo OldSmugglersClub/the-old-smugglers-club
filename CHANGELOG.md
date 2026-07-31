@@ -761,3 +761,13 @@
 - Pseudo-Elemente und Hintergrundgrafikreste der Willkommen-Kachel mit einer abschließenden, eindeutig priorisierten CSS-Regel deaktiviert.
 - Inhalt, Statusfelder, Hauptbutton, Schnellzugriffe, Kachelgröße, Raster und mobile Darstellung unverändert belassen.
 - Keine Bilderstellung und keine neuen Bilddateien.
+
+## Version 4.3.4 – Deckende Startzentrale – 31.07.2026
+
+- Tatsächliche Ursache des sichtbaren Diskus-/Linienmotivs behoben.
+- Die Regel aus Version 4.3.2 hatte mit `background-image: none` versehentlich auch die eigenen deckenden Farbverläufe der Startzentrale entfernt.
+- Dadurch wurde das großflächige Seitenhintergrundbild innerhalb der Kachel sichtbar; dessen Motiv wurde fälschlich für ein verbliebenes Kacheldekor gehalten.
+- Startzentrale nun mit vollständig deckendem dunklem Holz-/Lederfarbverlauf versehen.
+- Alte Pseudo-Elemente bleiben deaktiviert.
+- Inhalt, Maße, Statusfelder, Hauptbutton sowie Desktop- und Mobilstruktur unverändert.
+- Keine Bilderstellung und keine Bilddateien verändert.

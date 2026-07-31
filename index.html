@@ -4888,8 +4888,10 @@
   </style>
   <link rel="stylesheet" href="./highscore.css?v=4.0.1">
   <link rel="stylesheet" href="./accessibility-v33.css">
-  <style id="welcome-cleanup-v432">
-    /* Version 4.3.2: sämtliche dekorativen Scheiben-/Kompassreste der Startzentrale abschalten */
+  <style id="welcome-cleanup-v434">
+    /* Version 4.3.4: Startzentrale vollständig deckend halten und alle alten Dekore abschalten.
+       Wichtig: kein background-image:none – das hatte die eigenen Farbverläufe entfernt und
+       dadurch das großflächige Seitenhintergrundmotiv durchscheinen lassen. */
     body main .hero-grid > .welcome-panel::before,
     body main .hero-grid > .welcome-panel::after {
       content: none !important;
@@ -4898,14 +4900,17 @@
       height: 0 !important;
       border: 0 !important;
       background: none !important;
-      background-image: none !important;
       box-shadow: none !important;
       filter: none !important;
       opacity: 0 !important;
       transform: none !important;
     }
     body main .hero-grid > .welcome-panel {
-      background-image: none !important;
+      background-color: #100a05 !important;
+      background:
+        radial-gradient(ellipse at 88% 12%, rgba(180,123,39,.055), transparent 31%),
+        radial-gradient(ellipse at 76% 86%, rgba(132,78,22,.055), transparent 34%),
+        linear-gradient(105deg, #160e08 0 68%, #090604 100%) !important;
     }
   </style>
 </head>
