@@ -18,6 +18,7 @@
         <a class="admin-button" href="index.html">Zur Startseite</a>
         <button class="admin-button" id="refreshButton" type="button">Prüfung neu starten</button>
         <button class="admin-button" id="downloadButton" type="button" disabled>Systembericht herunterladen</button>
+        <button class="admin-button" id="backupButton" type="button" disabled>Datenbestand sichern</button>
       </nav>
     </header>
 
@@ -31,12 +32,19 @@
       <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Quelle</th><th>Datei</th><th>Status</th><th>Details</th><th>Ladezeit</th></tr></thead><tbody id="sourceRows"></tbody></table></div>
     </section>
 
+    <section class="admin-section" aria-labelledby="validationHeading">
+      <div class="admin-heading-row"><h2 id="validationHeading">Datenkonsistenz</h2><span id="validationBadge" class="admin-badge">Prüfung läuft</span></div>
+      <div id="validationGrid" class="admin-grid" aria-live="polite"></div>
+      <div id="validationDetails" class="admin-notices"></div>
+    </section>
+
     <section class="admin-section" aria-labelledby="notesHeading">
       <h2 id="notesHeading">Wartungshinweise</h2>
       <div id="noticeList" class="admin-notices"><p>Die Prüfung wird vorbereitet.</p></div>
     </section>
   </main>
   <script src="datenregister.js"></script>
+  <script src="datenmodell.js"></script>
   <script src="admin.js"></script>
   <script src="./accessibility-v33.js" defer></script>
 </body>

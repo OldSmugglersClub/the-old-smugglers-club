@@ -1,3 +1,11 @@
+# Version 3.4 – Zentrale Datenpflege und Update-Sicherheit
+
+- Administrationszentrum um automatische Datenkonsistenzprüfung erweitert.
+- Lokale Gesamtsicherung aller erreichbaren JSON-Datenquellen als eine Sicherungsdatei ergänzt.
+- Systembericht enthält nun zusätzlich das Ergebnis der zentralen Modellvalidierung.
+- Datenregister und Systemstatus auf Version 3.4 aktualisiert.
+- Keine Änderung an Grundlayout, Kachelgrößen oder Navigation.
+
 # Version 3.2 – Statistik- und Highscore-Erweiterung
 
 - Feldanalyse mit Durchschnitt, Median, Punktespanne und Streuung ergänzt.
