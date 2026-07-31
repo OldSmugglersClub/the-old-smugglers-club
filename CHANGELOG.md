@@ -1,5 +1,36 @@
 # CHANGELOG
 
+## Version 4.4.5 – Start des Smugglers Design System
+
+### Neu
+- verbindliche Spezifikation für eigene **Schmugglersiegel**
+- zentrale Ordnerstruktur unter `assets/smugglers-design-system/`
+- Regeln für Masterdesign, Farben, Kürzel, Größen, Dateinamen, Rückbau und Integration
+- klare Entwicklungsphasen von Master über Pilotserie bis Vereinsbibliothek
+
+### Geändert
+- `PromptManual/PROJECT_MANUAL.md` um verbindliche SDS-Regeln ergänzt
+- `ROADMAP.md` um das Smugglers Design System erweitert
+- `README.md` und `VERSION.txt` auf Version 4.4.5 aktualisiert
+
+### Unverändert
+- keine Änderung an HTML, CSS, JavaScript oder JSON-Nutzdaten
+- keine Änderung an Grid, Kachelgrößen, Navigation oder öffentlicher Darstellung
+- keine Bilddateien erzeugt
+
+### Betroffene Dateien
+- `assets/smugglers-design-system/README.md`
+- `assets/smugglers-design-system/dokumentation/SMUGGLERS_DESIGN_SYSTEM.md`
+- `PromptManual/PROJECT_MANUAL.md`
+- `ROADMAP.md`
+- `README.md`
+- `VERSION.txt`
+- `CHANGELOG.md`
+- `RELEASE_NOTES_v4.4.5.md`
+- `GITHUB-UPDATE-4.4.5.md`
+
+---
+
 ## Version 4.4.3 – Rechtliche Grundseiten und Footer
 
 ### Neu

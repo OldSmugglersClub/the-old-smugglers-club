@@ -200,3 +200,21 @@ ergänzt, nicht ersetzt.
 
 Qualität, Wartbarkeit und Konsistenz haben Vorrang vor schneller
 Umsetzung.
+
+------------------------------------------------------------------------
+
+## Smugglers Design System
+
+Für eigene Vereins-, Wettbewerbs- und Auszeichnungssymbole gilt das dokumentierte **Smugglers Design System (SDS)**.
+
+- Offizielle Vereinswappen und nachgebaute Vereinslogos werden nicht verwendet.
+- Eigene Vereinskennzeichen heißen **Schmugglersiegel**.
+- Alle Schmugglersiegel werden aus einem einzigen freigegebenen Master abgeleitet.
+- Vor der Serienproduktion wird der Master in mehreren Größen geprüft und ausdrücklich freigegeben.
+- Grafische Integration bleibt ergänzend und jederzeit rückbaubar.
+- Fehlende Siegel dürfen keine Funktion beeinträchtigen; der Vereinsname bleibt die führende Information.
+- Keine Bildgenerierung ohne ausdrücklichen Auftrag. Bei Projektumsetzungen sind reale Projektdateien zu erstellen und bereitzustellen.
+
+Die technische Spezifikation liegt unter:
+
+`assets/smugglers-design-system/dokumentation/SMUGGLERS_DESIGN_SYSTEM.md`

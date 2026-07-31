@@ -83,6 +83,17 @@ Die öffentlichen Bereiche sind produktionsreif. Die verbleibenden Arbeiten betr
 
 ---
 
+
+### Smugglers Design System (SDS)
+
+- [x] Begriff „Schmugglersiegel“ und Masterprinzip freigegeben
+- [x] technische Spezifikation `SMUGGLERS_DESIGN_SYSTEM.md` erstellt
+- [x] zentrale Assetstruktur angelegt
+- [ ] editierbare Masterdatei entwickeln und in mehreren Größen prüfen
+- [ ] Pilotserie mit vier unterschiedlichen Vereinen erstellen
+- [ ] vollständige Vereinsbibliothek erst nach Masterfreigabe ableiten
+- [ ] schrittweise, rückbaubare Integration in die Website
+
 ## 5. Version 4.5.x – Zentrale Datenhaltung
 
 Ziel ist, Saison-, Termin-, Wettbewerbs- und Statusdaten möglichst nur noch einmal zu pflegen.

@@ -1,4 +1,4 @@
-# The Old Smugglers Club – Version 4.4.3
+# The Old Smugglers Club – Version 4.4.5
 
 Öffentliche GitHub-Pages-Website der Tipprunde **The Old Smugglers Club**.
 
@@ -15,15 +15,15 @@ Der vollständige Inhalt dieses Verzeichnisses gehört direkt in das Hauptverzei
 - zentrale Datenbausteine über JSON und `datenregister.json`
 - vollständige technische Bestandsaufnahme in `ARCHITEKTUR.md`
 
-## Version 4.4.3
+## Version 4.4.5
 
-Version 4.4.3 ist ein reines Analyse- und Dokumentationsrelease. Die öffentliche Website und ihre Datenlogik wurden nicht verändert.
+Version 4.4.5 startet das **Smugglers Design System (SDS)** als dokumentiertes und versioniertes Teilmodul.
 
-Neu ist `ADMIN-SYSTEMANALYSE.md`. Das Dokument beschreibt den tatsächlich vorliegenden lokalen Adminbereich v4.0.5, seine Module, Datenflüsse, Exportketten, Risiken und die empfohlene weitere Vorgehensweise. `ARCHITEKTUR.md` und `ROADMAP.md` wurden entsprechend ergänzt.
+Neu sind die zentrale Assetstruktur und die verbindliche Spezifikation eigener **Schmugglersiegel**. Offizielle Vereinswappen werden nicht verwendet. In dieser Version wurden keine Bilddateien erstellt und keine öffentlichen Seiten verändert.
 
 ## Aktualisierung über die GitHub-Webseite
 
-Für Version 4.4.3 gilt die Datei `GITHUB-UPDATE-4.4.2.md`.
+Für Version 4.4.5 gilt die Datei `GITHUB-UPDATE-4.4.5.md`.
 
 ## Wichtige Dateien
 
@@ -35,10 +35,11 @@ Für Version 4.4.3 gilt die Datei `GITHUB-UPDATE-4.4.2.md`.
 - `ADMIN-SYSTEMANALYSE.md` – geprüfter Aufbau des lokalen Adminbereichs v4.0.5
 - `ROADMAP.md` – verbindlicher Entwicklungsplan bis Version 5.0 LTS
 - `PromptManual/PROJECT_MANUAL.md` – verbindliche Projektanweisungen
+- `assets/smugglers-design-system/dokumentation/SMUGGLERS_DESIGN_SYSTEM.md` – verbindliche SDS-Spezifikation
 - `VERSION.txt` – aktuelle Versionsnummer
 - `CHANGELOG.md` – Versionshistorie
-- `RELEASE_NOTES_v4.4.2.md` – Änderungen dieses Releases
-- `GITHUB-UPDATE-4.4.2.md` – konkrete Upload-Liste
+- `RELEASE_NOTES_v4.4.5.md` – Änderungen dieses Releases
+- `GITHUB-UPDATE-4.4.5.md` – konkrete Upload-Liste
 
 ## Projektregeln
 
