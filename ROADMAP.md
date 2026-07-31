@@ -255,3 +255,14 @@ Nach Version 4.4.2 folgt das vollständige `ADMIN_HANDBUCH.md` auf Basis des gep
 - [x] Datenschutzerklärung für aktuellen technischen Stand ergänzt
 - [x] rechtliche Footerlinks auf allen öffentlichen Seiten ergänzt
 - [ ] Rechtstexte vor Version 5.0 nochmals gegen den dann tatsächlichen technischen Stand prüfen
+
+
+## Smugglers Design System – Version 4.4.6
+
+- [x] editierbaren neutralen SVG-Master erstellen
+- [x] isolierte Vorschau für 256, 64 und 32 Pixel bereitstellen
+- [ ] Master gestalterisch abnehmen
+- [ ] gegebenenfalls Master korrigieren
+- [ ] Pilotserie mit vier Vereinen erst nach Freigabe erzeugen
+
+Keine Integration in öffentliche Seiten vor ausdrücklicher Freigabe.

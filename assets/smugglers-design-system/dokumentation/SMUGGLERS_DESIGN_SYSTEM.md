@@ -2,9 +2,9 @@
 
 ## 1. Status
 
-**SDS-Version:** 1.0 – Spezifikation  
-**Projektversion:** 4.4.5  
-**Freigabestatus:** Master-Spezifikation freigegeben; visuelle Masterdatei noch nicht erstellt.
+**SDS-Version:** 1.0 – Master-Prototyp  
+**Projektversion:** 4.4.6  
+**Freigabestatus:** Editierbarer SVG-Master erstellt; gestalterische Abnahme durch den Projektleiter offen.
 
 Dieses Dokument definiert das verbindliche Gestaltungssystem für eigene visuelle Kennzeichen des Projekts **The Old Smugglers Club**.
 
@@ -166,8 +166,8 @@ Die Integration erfolgt schrittweise. Bereits freigegebene Kachelgrößen, Grid,
 - [x] Begriff und Designprinzip festgelegt
 - [x] technische Spezifikation dokumentiert
 - [x] Ordnerstruktur angelegt
-- [ ] editierbare Masterdatei entwickeln
-- [ ] Darstellung in 256, 64 und 32 Pixel prüfen
+- [x] editierbare Masterdatei entwickeln
+- [x] isolierte Darstellung in 256, 64 und 32 Pixel technisch bereitstellen
 - [ ] Master durch den Projektleiter freigeben
 
 ### Phase 2 – Pilotserie
@@ -202,6 +202,15 @@ Deshalb gilt:
 - bei fehlendem Asset automatisch auf den Vereinsnamen zurückfallen
 - keine bestehende Funktion von einem Siegel abhängig machen
 
-## 12. Offener nächster Schritt
+## 12. Masterdateien Version 4.4.6
 
-In Version 4.4.6 wird ausschließlich die editierbare Masterdatei entwickelt und als isolierter Prototyp geprüft. Eine Serienproduktion oder Integration in öffentliche Seiten erfolgt erst nach ausdrücklicher Freigabe.
+Erstellt wurden:
+
+- `master/master-schmugglersiegel-v1.svg` – editierbare, vollständig vektorbasierte Masterdatei
+- `master/master-vorschau.html` – isolierte Prüfung bei 256, 64 und 32 Pixel
+
+Der SVG-Master enthält keine externen Bilder, Schriften oder Bibliotheken. Messing, Holzstruktur, Nieten, Kompassrose, Initialen und Anker sind direkt im SVG definiert.
+
+## 13. Offener nächster Schritt
+
+Der Projektleiter prüft den Master in der isolierten Vorschau. Vor einer Pilotserie müssen insbesondere Rahmenwirkung, Holzstruktur, Initialen, Kompassrose, Anker und Lesbarkeit bei 64 und 32 Pixel ausdrücklich freigegeben oder korrigiert werden. Eine Integration in öffentliche Seiten erfolgt weiterhin nicht.

@@ -1,4 +1,4 @@
-# The Old Smugglers Club – Version 4.4.5
+# The Old Smugglers Club – Version 4.4.6
 
 Öffentliche GitHub-Pages-Website der Tipprunde **The Old Smugglers Club**.
 
@@ -15,15 +15,15 @@ Der vollständige Inhalt dieses Verzeichnisses gehört direkt in das Hauptverzei
 - zentrale Datenbausteine über JSON und `datenregister.json`
 - vollständige technische Bestandsaufnahme in `ARCHITEKTUR.md`
 
-## Version 4.4.5
+## Version 4.4.6
 
-Version 4.4.5 startet das **Smugglers Design System (SDS)** als dokumentiertes und versioniertes Teilmodul.
+Version 4.4.6 startet das **Smugglers Design System (SDS)** als dokumentiertes und versioniertes Teilmodul.
 
 Neu sind die zentrale Assetstruktur und die verbindliche Spezifikation eigener **Schmugglersiegel**. Offizielle Vereinswappen werden nicht verwendet. In dieser Version wurden keine Bilddateien erstellt und keine öffentlichen Seiten verändert.
 
 ## Aktualisierung über die GitHub-Webseite
 
-Für Version 4.4.5 gilt die Datei `GITHUB-UPDATE-4.4.5.md`.
+Für Version 4.4.6 gilt die Datei `GITHUB-UPDATE-4.4.6.md`.
 
 ## Wichtige Dateien
 
@@ -38,8 +38,8 @@ Für Version 4.4.5 gilt die Datei `GITHUB-UPDATE-4.4.5.md`.
 - `assets/smugglers-design-system/dokumentation/SMUGGLERS_DESIGN_SYSTEM.md` – verbindliche SDS-Spezifikation
 - `VERSION.txt` – aktuelle Versionsnummer
 - `CHANGELOG.md` – Versionshistorie
-- `RELEASE_NOTES_v4.4.5.md` – Änderungen dieses Releases
-- `GITHUB-UPDATE-4.4.5.md` – konkrete Upload-Liste
+- `RELEASE_NOTES_v4.4.6.md` – Änderungen dieses Releases
+- `GITHUB-UPDATE-4.4.6.md` – konkrete Upload-Liste
 
 ## Projektregeln
 
@@ -53,3 +53,8 @@ Für Version 4.4.5 gilt die Datei `GITHUB-UPDATE-4.4.5.md`.
 ## Rechtliche Seiten
 
 Die öffentlichen Seiten verlinken im Footer auf `impressum.html` und `datenschutz.html`. Die Rechtstexte beschreiben den in Version 4.4.3 geprüften technischen Stand und müssen bei neuen externen Diensten oder Formularen erneut geprüft werden.
+
+
+## SDS-Master 4.4.6
+
+Der erste neutrale Schmugglersiegel-Master liegt als editierbares SVG unter `assets/smugglers-design-system/master/master-schmugglersiegel-v1.svg`. Die isolierte Größenprüfung erfolgt über `master-vorschau.html`. Eine öffentliche Integration ist noch nicht freigegeben.

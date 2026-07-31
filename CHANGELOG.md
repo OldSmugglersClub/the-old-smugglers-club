@@ -1,5 +1,34 @@
 # CHANGELOG
 
+## Version 4.4.6
+
+### Neu
+
+- Editierbarer SVG-Master für das erste neutrale Schmugglersiegel erstellt.
+- Isolierte HTML-Vorschau für 256, 64 und 32 Pixel ergänzt.
+
+### Geändert
+
+- SDS-Dokumentation auf den Stand „Master-Prototyp“ aktualisiert.
+- Projektversion auf 4.4.6 gesetzt.
+
+### Nicht geändert
+
+- Keine Integration in öffentliche Seiten.
+- Keine Änderungen an Grid, Kachelgrößen, Navigation, HTML-Struktur der Website, JavaScript oder JSON-Nutzdaten.
+
+### Betroffene Dateien
+
+- `VERSION.txt`
+- `CHANGELOG.md`
+- `README.md`
+- `ROADMAP.md`
+- `assets/smugglers-design-system/dokumentation/SMUGGLERS_DESIGN_SYSTEM.md`
+- `assets/smugglers-design-system/master/master-schmugglersiegel-v1.svg`
+- `assets/smugglers-design-system/master/master-vorschau.html`
+
+---
+
 ## Version 4.4.5 – Start des Smugglers Design System
 
 ### Neu
