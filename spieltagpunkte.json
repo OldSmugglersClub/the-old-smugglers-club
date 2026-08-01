@@ -4,7 +4,7 @@
   "aktualisiert": "2026-08-01",
   "saison": "2026-27",
   "hinweis": "Auftragsgebundene Spieltagswertung.",
-  "berechnetAm": "2026-08-01T16:11:52.784Z",
+  "berechnetAm": "2026-08-01T16:44:13.175Z",
   "spieltage": [
     {
       "id": "smugglerauftrag-1-spieltag",
@@ -15,7 +15,7 @@
       ],
       "rangliste": [
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "11le",
           "teilnehmer": "11LE",
           "punkte": 0,
@@ -26,7 +26,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "18amfg99",
           "teilnehmer": "18AMFG99",
           "punkte": 0,
@@ -37,7 +37,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "adamj",
           "teilnehmer": "AdamJ",
           "punkte": 0,
@@ -48,7 +48,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "alex2507",
           "teilnehmer": "Alex2507",
           "punkte": 0,
@@ -59,7 +59,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "andy1304",
           "teilnehmer": "Andy1304",
           "punkte": 0,
@@ -70,7 +70,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "audauzvares",
           "teilnehmer": "Audauzvares",
           "punkte": 0,
@@ -81,7 +81,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "aufdieblaue",
           "teilnehmer": "AufdieBlaue",
           "punkte": 0,
@@ -92,7 +92,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "baslermario",
           "teilnehmer": "baslermario",
           "punkte": 0,
@@ -103,7 +103,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "ben1909",
           "teilnehmer": "Ben1909",
           "punkte": 0,
@@ -114,7 +114,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "bene",
           "teilnehmer": "Bene",
           "punkte": 0,
@@ -125,7 +125,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "berndibroti",
           "teilnehmer": "Berndibroti",
           "punkte": 0,
@@ -136,7 +136,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "best10",
           "teilnehmer": "Best10",
           "punkte": 0,
@@ -147,7 +147,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "bigdog",
           "teilnehmer": "Bigdog",
           "punkte": 0,
@@ -158,7 +158,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "birgit-blaubart",
           "teilnehmer": "Birgit_Blaubart",
           "punkte": 0,
@@ -169,7 +169,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "borussiamg1900",
           "teilnehmer": "BORUSSIAMG1900",
           "punkte": 0,
@@ -180,7 +180,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "bvb09-opam",
           "teilnehmer": "BvB09-OpaM",
           "punkte": 0,
@@ -191,7 +191,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "cali79",
           "teilnehmer": "Cali79",
           "punkte": 0,
@@ -202,7 +202,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "co",
           "teilnehmer": "Co",
           "punkte": 0,
@@ -213,7 +213,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "cobra",
           "teilnehmer": "cobra",
           "punkte": 0,
@@ -224,7 +224,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "cobra75",
           "teilnehmer": "Cobra75",
           "punkte": 0,
@@ -235,7 +235,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "dani1893",
           "teilnehmer": "Dani1893",
           "punkte": 0,
@@ -246,7 +246,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "ddd",
           "teilnehmer": "Ddd",
           "punkte": 0,
@@ -257,7 +257,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "dominik1966",
           "teilnehmer": "dominik1966",
           "punkte": 0,
@@ -268,7 +268,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "eckes2359",
           "teilnehmer": "Eckes2359",
           "punkte": 0,
@@ -279,7 +279,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "erik",
           "teilnehmer": "Erik",
           "punkte": 0,
@@ -290,7 +290,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "fcahnungslos",
           "teilnehmer": "FCAhnungslos",
           "punkte": 0,
@@ -301,7 +301,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "finch",
           "teilnehmer": "Finch",
           "punkte": 0,
@@ -312,7 +312,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "flokicker94",
           "teilnehmer": "FloKicker94",
           "punkte": 0,
@@ -323,7 +323,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "flying-dutchman",
           "teilnehmer": "Flying-Dutchman",
           "punkte": 0,
@@ -334,7 +334,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "frankfurterjung",
           "teilnehmer": "FrankfurterJung",
           "punkte": 0,
@@ -345,7 +345,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "franzi12345",
           "teilnehmer": "Franzi12345",
           "punkte": 0,
@@ -356,7 +356,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "g-1000",
           "teilnehmer": "G.1000",
           "punkte": 0,
@@ -367,7 +367,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "gerrit1887",
           "teilnehmer": "Gerrit1887",
           "punkte": 0,
@@ -378,7 +378,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "glatze583",
           "teilnehmer": "Glatze583",
           "punkte": 0,
@@ -389,7 +389,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "glueckspfennig",
           "teilnehmer": "Glückspfennig",
           "punkte": 0,
@@ -400,7 +400,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "gruber",
           "teilnehmer": "gRuBer",
           "punkte": 0,
@@ -411,7 +411,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "handgottes",
           "teilnehmer": "HandGottes",
           "punkte": 0,
@@ -422,7 +422,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "hardy17",
           "teilnehmer": "Hardy17",
           "punkte": 0,
@@ -433,7 +433,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "ibra-goat",
           "teilnehmer": "ibra.goat",
           "punkte": 0,
@@ -444,7 +444,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "jakob",
           "teilnehmer": "Jakob",
           "punkte": 0,
@@ -455,7 +455,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "juergen70",
           "teilnehmer": "Juergen70",
           "punkte": 0,
@@ -466,7 +466,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "jungunddurstig",
           "teilnehmer": "JungundDurstig",
           "punkte": 0,
@@ -477,7 +477,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "juri",
           "teilnehmer": "JuRi",
           "punkte": 0,
@@ -488,7 +488,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "jwfussball",
           "teilnehmer": "JWFUSSBALL",
           "punkte": 0,
@@ -499,7 +499,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "kev1999",
           "teilnehmer": "Kev1999",
           "punkte": 0,
@@ -510,7 +510,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "kevin",
           "teilnehmer": "Kevin",
           "punkte": 0,
@@ -521,7 +521,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "kleinersachse",
           "teilnehmer": "kleinersachse",
           "punkte": 0,
@@ -532,7 +532,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "kunstblume",
           "teilnehmer": "Kunstblume",
           "punkte": 0,
@@ -543,7 +543,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "laaura0804",
           "teilnehmer": "Laaura0804",
           "punkte": 0,
@@ -554,7 +554,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "lattenkracher",
           "teilnehmer": "Lattenkracher",
           "punkte": 0,
@@ -565,7 +565,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "luca",
           "teilnehmer": "Luca",
           "punkte": 0,
@@ -576,7 +576,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "lucas",
           "teilnehmer": "Lucas",
           "punkte": 0,
@@ -587,7 +587,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "lucaspodolski",
           "teilnehmer": "LucasPodolski",
           "punkte": 0,
@@ -598,7 +598,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "lucipher",
           "teilnehmer": "LuCipher",
           "punkte": 0,
@@ -609,7 +609,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "luki1887",
           "teilnehmer": "Luki1887",
           "punkte": 0,
@@ -620,7 +620,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "maikiliii",
           "teilnehmer": "Maikiliii",
           "punkte": 0,
@@ -631,7 +631,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "manuel",
           "teilnehmer": "Manuel",
           "punkte": 0,
@@ -642,7 +642,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "marc86",
           "teilnehmer": "Marc86",
           "punkte": 0,
@@ -653,7 +653,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "marcor",
           "teilnehmer": "MarcoR",
           "punkte": 0,
@@ -664,7 +664,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "marius",
           "teilnehmer": "Marius",
           "punkte": 0,
@@ -675,7 +675,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "mariusv",
           "teilnehmer": "mariusv",
           "punkte": 0,
@@ -686,7 +686,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "mary-grace",
           "teilnehmer": "Mary-Grace",
           "punkte": 0,
@@ -697,7 +697,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "maxpam",
           "teilnehmer": "MaxPam",
           "punkte": 0,
@@ -708,7 +708,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "medic",
           "teilnehmer": "Medic",
           "punkte": 0,
@@ -719,7 +719,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "mikoog",
           "teilnehmer": "MiKoog",
           "punkte": 0,
@@ -730,7 +730,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "milad",
           "teilnehmer": "Milad",
           "punkte": 0,
@@ -741,7 +741,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "modric2000",
           "teilnehmer": "Modric2000",
           "punkte": 0,
@@ -752,7 +752,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "mythos",
           "teilnehmer": "Mythos",
           "punkte": 0,
@@ -763,7 +763,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "nick-zg-1501",
           "teilnehmer": "Nick_ZG_1501",
           "punkte": 0,
@@ -774,7 +774,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "normiks",
           "teilnehmer": "Normiks",
           "punkte": 0,
@@ -785,7 +785,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "nurderscf",
           "teilnehmer": "NurDerSCF",
           "punkte": 0,
@@ -796,7 +796,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "oifinger",
           "teilnehmer": "Oifinger",
           "punkte": 0,
@@ -807,7 +807,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "oliver",
           "teilnehmer": "Oliver",
           "punkte": 0,
@@ -818,7 +818,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "opipeter",
           "teilnehmer": "Opipeter",
           "punkte": 0,
@@ -829,7 +829,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "pauli",
           "teilnehmer": "Pauli",
           "punkte": 0,
@@ -840,7 +840,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "playboymarc88",
           "teilnehmer": "PlayBoyMarc88",
           "punkte": 0,
@@ -851,7 +851,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "pochzerjung",
           "teilnehmer": "PochzerJung",
           "punkte": 0,
@@ -862,7 +862,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "potterhead",
           "teilnehmer": "Potterhead",
           "punkte": 0,
@@ -873,7 +873,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "quick",
           "teilnehmer": "Quick",
           "punkte": 0,
@@ -884,7 +884,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "realzaragoza",
           "teilnehmer": "Realzaragoza",
           "punkte": 0,
@@ -895,7 +895,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "redwing",
           "teilnehmer": "Redwing",
           "punkte": 0,
@@ -906,7 +906,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "rk69",
           "teilnehmer": "RK69",
           "punkte": 0,
@@ -917,7 +917,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "ronny75",
           "teilnehmer": "Ronny75",
           "punkte": 0,
@@ -928,7 +928,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "salas1904",
           "teilnehmer": "Salas1904",
           "punkte": 0,
@@ -939,7 +939,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "sam-entspender",
           "teilnehmer": "SAM_ENTSPENDER",
           "punkte": 0,
@@ -950,7 +950,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "sam2004",
           "teilnehmer": "Sam2004",
           "punkte": 0,
@@ -961,7 +961,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "servus",
           "teilnehmer": "Servus",
           "punkte": 0,
@@ -972,7 +972,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "souvard",
           "teilnehmer": "Souvard",
           "punkte": 0,
@@ -983,7 +983,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "steff77",
           "teilnehmer": "Steff77",
           "punkte": 0,
@@ -994,7 +994,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "stevie26",
           "teilnehmer": "Stevie26",
           "punkte": 0,
@@ -1005,7 +1005,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "sven-huhn",
           "teilnehmer": "Sven_Huhn",
           "punkte": 0,
@@ -1016,7 +1016,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "tortugasge",
           "teilnehmer": "TortugaSGE",
           "punkte": 0,
@@ -1027,7 +1027,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "tribuna33",
           "teilnehmer": "TRIBUNA33",
           "punkte": 0,
@@ -1038,7 +1038,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "waltersen",
           "teilnehmer": "Waltersen",
           "punkte": 0,
@@ -1049,7 +1049,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "wildemoni",
           "teilnehmer": "WildeMoni",
           "punkte": 0,
@@ -1060,7 +1060,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "xib0o",
           "teilnehmer": "Xib0o",
           "punkte": 0,
@@ -1071,7 +1071,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "ximmox",
           "teilnehmer": "xIMMOx",
           "punkte": 0,
@@ -1082,7 +1082,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "yauguru",
           "teilnehmer": "Yauguru",
           "punkte": 0,
@@ -1093,7 +1093,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "yorik",
           "teilnehmer": "Yorik",
           "punkte": 0,
@@ -1104,7 +1104,7 @@
           "nichtAbgegeben": 1
         },
         {
-          "platz": 1,
+          "platz": null,
           "teilnehmerId": "zweikampfgott",
           "teilnehmer": "ZweikampfGott",
           "punkte": 0,

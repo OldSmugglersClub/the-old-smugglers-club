@@ -4,19 +4,21 @@
   "aktualisiert": "2026-08-01",
   "saison": "2026-27",
   "hinweis": "Teamwerte aus den Teilnehmerzuordnungen berechnet.",
-  "berechnetAm": "2026-08-01T16:11:52.784Z",
+  "berechnetAm": "2026-08-01T16:44:13.175Z",
   "quelle": "teilnehmer.json + punkte.json",
   "teams": [
     {
-      "platz": 1,
+      "platz": null,
       "team": "New Smugglers Team",
       "punkte": 0,
+      "durchschnitt": 0,
       "mitglieder": 76
     },
     {
-      "platz": 1,
+      "platz": null,
       "team": "Old Smugglers Team",
       "punkte": 0,
+      "durchschnitt": 0,
       "mitglieder": 24
     }
   ],

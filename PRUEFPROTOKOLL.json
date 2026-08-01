@@ -1,5 +1,5 @@
 {
-  "erstelltAm": "2026-08-01T16:11:52.784Z",
+  "erstelltAm": "2026-08-01T16:44:13.175Z",
   "auftrag": {
     "wertung": "smugglerauftrag",
     "label": "Smugglerauftrag",
@@ -12,6 +12,9 @@
   "teilnehmer": 100,
   "abgegebeneTipps": 0,
   "nichtAbgegebeneTipps": 100,
+  "modus": "vorschau-nullstand",
+  "sichtbareTipps": 0,
+  "keineTippsSichtbar": true,
   "vergebenePunkte": 0,
   "dateien": [
     "spieldaten.json",

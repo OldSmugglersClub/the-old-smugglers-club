@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "aktualisiertAm": "2026-08-01T16:11:52.784Z",
+  "aktualisiertAm": "2026-08-01T16:44:13.175Z",
   "saison": "2026-27",
-  "status": "Berechnet",
+  "status": "Noch ohne Wertung",
   "kategorien": [
     {
       "titel": "Spieltagsführer",
-      "name": "11LE",
-      "wert": "0 Punkte"
+      "name": "Noch offen",
+      "wert": "–"
     },
     {
       "titel": "Meiste exakte Tipps",
-      "name": "11LE",
-      "wert": "0"
+      "name": "Noch offen",
+      "wert": "–"
     },
     {
       "titel": "Beste Serie",

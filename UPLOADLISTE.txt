@@ -18,6 +18,7 @@ NEU:
 LÖSCHEN:
 - keine Dateien
 
-Erstellt: 2026-08-01T16:11:52.784Z
+Erstellt: 2026-08-01T16:44:13.175Z
 Auftrag: Smugglerauftrag · 1. Spieltag
+Modus: vorschau-nullstand
 Ergebnis: 1. FC Nürnberg 0:0 Dynamo Dresden
