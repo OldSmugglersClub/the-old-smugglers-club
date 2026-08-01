@@ -1,5 +1,69 @@
 # CHANGELOG
 
+## Version 4.5.2
+
+### Neu
+- 5/3/2-Punktewertung projektweit dokumentiert.
+- Remis ohne exaktes Ergebnis als 3-Punkte-Fall festgelegt.
+- 90 Minuten einschließlich Nachspielzeit definiert.
+- Verlängerung und Elfmeterschießen ausgeschlossen.
+
+### Nicht geändert
+- Keine Websitefunktion.
+- Keine Adminlogik.
+- Keine JSON-Nutzdaten.
+
+## Version 4.5.1
+
+### Neu
+- `SPIELTAGSABSCHLUSS_KONZEPT.md` mit verbindlichem Zielworkflow für Kicktipp-Import, Ergebnisprüfung, automatische Berechnung und GitHub-Export erstellt.
+
+### Festgelegt
+- Kicktipp-Export ist die verbindliche Wahrheit.
+- Fehlende Tipps sind zulässig und werden als nicht abgegeben mit 0 Punkten behandelt.
+- Fehlende Tipps blockieren die Berechnung nicht.
+- Echte Datenfehler blockieren die Berechnung.
+- Tippfrist ist der jeweilige Anstoßzeitpunkt.
+- Produktive Importlogik wird erst nach Analyse einer echten Kicktipp-Exportdatei entwickelt.
+
+### Geändert
+- `ADMIN_HANDBUCH.md` ergänzt.
+- `ROADMAP.md` um den zentralen Spieltagsabschluss erweitert.
+- `PromptManual/PROJECT_MANUAL.md` um verbindliche Importregeln ergänzt.
+- Versionsangaben aktualisiert.
+
+### Nicht geändert
+- Keine öffentliche Websitefunktion.
+- Kein Adminmodul.
+- Keine JSON-Nutzdaten.
+- Keine Berechnungslogik.
+
+## Version 4.5.0
+
+### Neu
+- `DATENARCHITEKTUR.md` mit vollständiger Einordnung der bestehenden JSON-Daten.
+- `MIGRATIONSMATRIX.md` mit Zielstatus, Abhängigkeiten, Feldmigrationen und Etappenplan.
+
+### Geändert
+- `ARCHITEKTUR.md` um Verweise auf die neuen Datenarchitektur-Dokumente ergänzt.
+- `ROADMAP.md` an den abgeschlossenen Analyse- und Planungsstand angepasst.
+- Versionsangaben aktualisiert.
+
+### Nicht geändert
+- Keine JSON-Nutzdaten.
+- Keine HTML-, CSS- oder JavaScript-Funktion.
+- Keine öffentliche Darstellung.
+- Kein Adminmodul.
+
+### Betroffene Dateien
+- DATENARCHITEKTUR.md
+- MIGRATIONSMATRIX.md
+- ARCHITEKTUR.md
+- ROADMAP.md
+- VERSION.txt
+- README.md
+- CHANGELOG.md
+
 ## Version 4.4.15
 
 ### Neu

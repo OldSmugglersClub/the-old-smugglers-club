@@ -824,3 +824,18 @@ Darin wird dokumentiert:
 - welche Migration ohne Funktionsverlust möglich ist
 
 Bis zur Freigabe dieser Migrationsmatrix werden keine bestehenden JSON-Dateien eigenmächtig entfernt oder umbenannt.
+
+
+## 33. Geplanter zentraler Spieltagsabschluss
+
+Der Zielworkflow ist in `SPIELTAGSABSCHLUSS_KONZEPT.md` verbindlich beschrieben.
+
+Wesentliche Regel:
+
+> Der Kicktipp-Export ist die verbindliche Wahrheit. Fehlende Tipps sind zulässig, gelten als nicht abgegeben und erhalten 0 Punkte. Sie blockieren die Berechnung nicht.
+
+Die technische Umsetzung beginnt erst nach Analyse einer echten Kicktipp-Exportdatei.
+
+## 34. Verbindliche Wertungslogik
+
+Für alle Berechnungen gilt: Ergebnis 5 Punkte, Tordifferenz 3 Punkte, Tendenz 2 Punkte, Remis ohne exaktes Ergebnis 3 Punkte, falsche Tendenz 0 Punkte. Gewertet wird ausschließlich das offizielle Ergebnis nach 90 Minuten einschließlich Nachspielzeit, ohne Verlängerung und ohne Elfmeterschießen.

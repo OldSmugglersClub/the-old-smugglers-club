@@ -218,3 +218,20 @@ Für eigene Vereins-, Wettbewerbs- und Auszeichnungssymbole gilt das dokumentier
 Die technische Spezifikation liegt unter:
 
 `assets/smugglers-design-system/dokumentation/SMUGGLERS_DESIGN_SYSTEM.md`
+
+
+## Kicktipp-Import und Spieltagsabschluss
+
+Für die spätere automatische Spieltagsberechnung gilt:
+
+- Die Kicktipp-Exportdatei ist die verbindliche Datenquelle für abgegebene Tipps.
+- Fehlende Tipps sind zulässig und gelten als nicht abgegeben.
+- Nicht abgegebene Tipps erhalten 0 Punkte.
+- Fehlende Tipps blockieren die Berechnung nicht.
+- Die Tippfrist ist der jeweilige Anstoßzeitpunkt.
+- Die Software darf fehlende Tipps nicht ergänzen oder nachträglich ersetzen.
+- Echte Datenfehler müssen die Berechnung blockieren.
+
+## Verbindliche Tippwertung
+
+Für alle Wettbewerbe gilt: richtiges Ergebnis = 5 Punkte, richtige Tordifferenz = 3 Punkte, richtige Tendenz = 2 Punkte, Remis ohne exaktes Ergebnis = 3 Punkte, falsche Tendenz = 0 Punkte. Gewertet wird ausschließlich das offizielle Ergebnis nach regulärer Spielzeit: 90 Minuten einschließlich Nachspielzeit, ohne Verlängerung und ohne Elfmeterschießen.

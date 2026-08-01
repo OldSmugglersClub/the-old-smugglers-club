@@ -255,7 +255,7 @@ Ideen werden gesammelt, aber erst nach einer stabilen 5.x-Phase bewertet. Änder
 
 ## 12. Nächster verbindlicher Arbeitsschritt
 
-Nach Version 4.4.15 folgt die Feld-für-Feld-Migrationsmatrix für die zentrale Datenhaltung. Erst nach ihrer Prüfung und Freigabe werden JSON-Strukturen zusammengeführt oder abgelöst.
+Vor der weiteren technischen Datenmigration wird eine echte Kicktipp-Exportdatei analysiert. Daraus wird das Importformat für das neue Adminmodul „Spieltag abschließen“ verbindlich abgeleitet.
 
 
 ## Version 4.4.3 – Rechtliche Grundausstattung
@@ -264,3 +264,23 @@ Nach Version 4.4.15 folgt die Feld-für-Feld-Migrationsmatrix für die zentrale 
 - [x] Datenschutzerklärung für aktuellen technischen Stand ergänzt
 - [x] rechtliche Footerlinks auf allen öffentlichen Seiten ergänzt
 - [ ] Rechtstexte vor Version 5.0 nochmals gegen den dann tatsächlichen technischen Stand prüfen
+
+
+## Zentraler Spieltagsabschluss
+
+- [x] fachliche Regeln für Kicktipp-Import und fehlende Tipps festgelegt
+- [x] verbindliches Konzept dokumentiert
+- [ ] echte Kicktipp-Exportdatei analysieren
+- [ ] Importformat und Feldzuordnung dokumentieren
+- [ ] Adminmodul „Spieltag abschließen“ entwickeln
+- [ ] harte Vollständigkeits- und Fehlerprüfung umsetzen
+- [ ] automatische Berechnungskette umsetzen
+- [ ] GitHub-Exportpaket automatisch erzeugen und bei Bedarf unter 100 Dateien aufteilen
+- [ ] realen Testspieltag vollständig durchlaufen
+
+## Wertungslogik
+
+- [x] 5/3/2-Punktewertung dokumentiert
+- [x] Remis mit falschem Ergebnis als 3-Punkte-Fall festgelegt
+- [x] 90 Minuten einschließlich Nachspielzeit definiert
+- [x] Verlängerung und Elfmeterschießen ausgeschlossen

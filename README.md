@@ -77,7 +77,7 @@ Die zentrale Komponente `team-badge.js` wird nun auch auf den Wettbewerbsseiten 
 Die zentrale Komponente erzeugt Schmugglersiegel nun direkt als Inline-SVG aus dem Register. Dadurch werden auf allen eingebundenen Seiten echte farbige Siegel statt reiner Fallback-Kürzel dargestellt, auch wenn einzelne externe SVG-Dateien fehlen oder falsch abgelegt wurden.
 
 
-Aktuelle Version: 4.4.15
+Aktuelle Version: 4.5.2
 
 ## Version 4.4.12
 Die zentrale Schmugglersiegel-Komponente ist nun auf allen öffentlichen Wettbewerbsseiten eingebunden.
@@ -90,3 +90,12 @@ Bugfix für die mobile Überschrift der Datenschutzerklärung sowie für die zu 
 
 ## Version 4.4.15
 Das lokale Adminsystem v4.0.5 ist vollständig in `ADMIN_HANDBUCH.md` dokumentiert.
+
+## Version 4.5.0
+Die bestehende JSON-Landschaft ist vollständig in `DATENARCHITEKTUR.md` und `MIGRATIONSMATRIX.md` eingeordnet. Diese Version führt noch keine technische Migration aus.
+
+## Version 4.5.1
+Der geplante zentrale Spieltagsabschluss mit Kicktipp-Import, verbindlicher Behandlung fehlender Tipps und automatischer Berechnungskette ist vollständig dokumentiert.
+
+## Version 4.5.2
+Verbindliche Wertungsregeln und Definition der regulären Spielzeit projektweit dokumentiert.
