@@ -2,7 +2,9 @@
 
 ## 1. Status
 
-**SDS-Version:** 1.0 – Pilotserie  \n**Projektversion:** 4.4.8  \n**Freigabestatus:** Vollständige technische Vereinsbibliothek und Assetregister erstellt; öffentliche Integration weiterhin offen.
+**SDS-Version:** 1.0 – Spezifikation  
+**Projektversion:** 4.4.5  
+**Freigabestatus:** Master-Spezifikation freigegeben; visuelle Masterdatei noch nicht erstellt.
 
 Dieses Dokument definiert das verbindliche Gestaltungssystem für eigene visuelle Kennzeichen des Projekts **The Old Smugglers Club**.
 
@@ -164,23 +166,23 @@ Die Integration erfolgt schrittweise. Bereits freigegebene Kachelgrößen, Grid,
 - [x] Begriff und Designprinzip festgelegt
 - [x] technische Spezifikation dokumentiert
 - [x] Ordnerstruktur angelegt
-- [x] editierbare Masterdatei entwickeln
-- [x] isolierte Darstellung in 256, 64 und 32 Pixel technisch bereitstellen
-- [x] Master durch den Projektleiter für die Pilotserie freigegeben
+- [ ] editierbare Masterdatei entwickeln
+- [ ] Darstellung in 256, 64 und 32 Pixel prüfen
+- [ ] Master durch den Projektleiter freigeben
 
 ### Phase 2 – Pilotserie
 
-- [x] vier bewusst unterschiedliche Vereine ableiten
-- [x] Farb- und Kürzelregeln technisch umsetzen
-- [x] isolierte responsive Vergleichsansicht bereitstellen
+- [ ] vier bewusst unterschiedliche Vereine ableiten
+- [ ] Farb- und Kürzelregeln prüfen
+- [ ] Desktop- und Mobilwirkung testen
 - [ ] Serie freigeben oder Master korrigieren
 
 ### Phase 3 – Vereinsbibliothek
 
-- [x] vollständige Liste aller im Tippspiel vorkommenden Vereine ermitteln
-- [x] eindeutige Kürzel und Farbpaare festlegen
-- [x] alle Schmugglersiegel erzeugen
-- [x] Assetregister erstellen
+- [ ] vollständige Liste aller im Tippspiel vorkommenden Vereine ermitteln
+- [ ] eindeutige Kürzel und Farbpaare festlegen
+- [ ] alle Schmugglersiegel erzeugen
+- [ ] Assetregister erstellen
 
 ### Phase 4 – Integration
 
@@ -200,58 +202,16 @@ Deshalb gilt:
 - bei fehlendem Asset automatisch auf den Vereinsnamen zurückfallen
 - keine bestehende Funktion von einem Siegel abhängig machen
 
-## 12. Masterdateien Version 4.4.6
+## 12. Offener nächster Schritt
 
-Erstellt wurden:
-
-- `master/master-schmugglersiegel-v1.svg` – editierbare, vollständig vektorbasierte Masterdatei
-- `master/master-vorschau.html` – isolierte Prüfung bei 256, 64 und 32 Pixel
-
-Der SVG-Master enthält keine externen Bilder, Schriften oder Bibliotheken. Messing, Holzstruktur, Nieten, Kompassrose, Initialen und Anker sind direkt im SVG definiert.
-
-## 13. Offener nächster Schritt
-
-Der Projektleiter prüft den Master in der isolierten Vorschau. Vor einer Pilotserie müssen insbesondere Rahmenwirkung, Holzstruktur, Initialen, Kompassrose, Anker und Lesbarkeit bei 64 und 32 Pixel ausdrücklich freigegeben oder korrigiert werden. Eine Integration in öffentliche Seiten erfolgt weiterhin nicht.
+In Version 4.4.6 wird ausschließlich die editierbare Masterdatei entwickelt und als isolierter Prototyp geprüft. Eine Serienproduktion oder Integration in öffentliche Seiten erfolgt erst nach ausdrücklicher Freigabe.
 
 
-## 14. Pilotserie Version 4.4.7
+## Stand Version 4.4.8
 
-Aus dem Master wurden vier vollständig vektorbasierte Schmugglersiegel abgeleitet:
-
-- `schmugglersiegel/pilot/sg-dynamo-dresden.svg` – DD, Gelb/Schwarz
-- `schmugglersiegel/pilot/fc-bayern-muenchen.svg` – FCB, Rot/Elfenbein
-- `schmugglersiegel/pilot/borussia-dortmund.svg` – BVB, Schwarz/Gelb
-- `schmugglersiegel/pilot/fc-schalke-04.svg` – S04, Blau/Elfenbein
-
-Die Datei `pilot-vorschau.html` zeigt alle vier Siegel in einer isolierten responsiven Vergleichsansicht sowie zusätzlich in 64 und 32 Pixel.
-
-Die Pilotserie verändert ausschließlich Vereinsfarben, Initialen und die dafür notwendige Schriftgröße. Geometrie, Messing, Nieten, Holzmaserung, Kompassrose und Anker bleiben identisch.
-
-## 15. Nächster Freigabepunkt
-
-Vor Erstellung der vollständigen Vereinsbibliothek muss der Projektleiter die Pilotserie prüfen. Korrekturen am Master werden zuerst zentral vorgenommen und anschließend auf alle vier Pilotsiegel übertragen. Eine Integration in öffentliche Seiten erfolgt weiterhin nicht.
-
-
-## 15. Vereinsbibliothek Version 4.4.8
-
-Für alle 52 aktuell aktiven Einträge aus `teams.json` wurden eigenständige SVG-Schmugglersiegel erzeugt.
-
-Zentrale Dateien:
-
-- `schmugglersiegel/schmugglersiegel-register.json`
-- `schmugglersiegel/bibliothek-vorschau.html`
-- `schmugglersiegel/bibliothek/*.svg`
-
-Die Vereinsnamen bleiben unverändert in `teams.json`. Das Register ergänzt ausschließlich neutrale Assetpfade, Kürzel und gedämpfte Farbpaare. Die öffentliche Website verwendet die Siegel noch nicht.
-
-## 16. Nächster Schritt
-
-Phase 4 beginnt mit einer nichtkritischen, isolierten Integrationsprobe. Vor einer flächendeckenden Einbindung müssen Fallback-Verhalten, Ladefehler, Desktopdarstellung und Mobilansicht geprüft werden.
-
-## Integrationsregel ab Projektversion 4.4.9
-
-Schmugglersiegel werden ausschließlich über die `teamId` aus `teams.json` und das zentrale `schmugglersiegel-register.json` zugeordnet.
-
-Falls kein Registereintrag vorhanden ist oder eine SVG-Datei nicht geladen werden kann, muss die Oberfläche ein neutrales Kürzel-Fallback darstellen. Defekte Bildsymbole oder leere Flächen sind nicht zulässig.
-
-Die erste technische Prüfung erfolgt isoliert über `assets/smugglers-design-system/integrationsprobe.html`. Öffentliche Seiten werden erst nach visueller Freigabe angepasst.
+- Der v2-Pilotstil mit dominanten Kürzeln wurde freigegeben.
+- Für alle 52 aktiven Teams aus `teams.json` existiert ein eigenes SVG-Schmugglersiegel.
+- Die zentrale Zuordnung erfolgt über `schmugglersiegel-register.json`.
+- Die Darstellung wird durch `team-badge.js` vereinheitlicht.
+- Offizielle Vereinswappen, Vereinsschriften und geschützte Embleme werden nicht verwendet.
+- Farben dienen der Wiedererkennbarkeit, sind aber bewusst Teil des eigenen SDS-Stils.
