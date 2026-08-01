@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "aktualisiert": "2026-08-01",
+  "aktualisiert": "2026-07-30",
   "hinweis": "Zentrale Mannschaftsdaten. Namen werden hier einmal gepflegt und in allen Spielen über die Team-ID verwendet. Die Felder national und international sind optional und für spätere Wettbewerbszuordnungen vorbereitet.",
   "teams": [
     {
@@ -60,7 +60,7 @@
       "name": "1. FC Nürnberg",
       "kurzname": "1. FC Nürnberg",
       "land": "Deutschland",
-      "logo": "./team-logo-nuernberg.svg",
+      "logo": "",
       "aktiv": true,
       "national": "2-bundesliga",
       "international": {
@@ -515,7 +515,7 @@
       "name": "SG Dynamo Dresden",
       "kurzname": "Dynamo Dresden",
       "land": "Deutschland",
-      "logo": "./team-logo-dynamo-dresden.svg",
+      "logo": "",
       "aktiv": true,
       "national": "2-bundesliga",
       "international": {
@@ -679,6 +679,5 @@
         "wettbewerb": null
       }
     }
-  ],
-  "datenVersion": 1
+  ]
 }

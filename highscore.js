@@ -25,22 +25,6 @@ function formatIsoDateGerman(value) {
 function mergeCalculatedRanking(base, pointsPayload, participantPayload) {
   const ranking = Array.isArray(pointsPayload?.rangliste) ? pointsPayload.rangliste : [];
   if (!ranking.length) return { payload: base, active: false, count: 0 };
-
-  const nullstand = ranking.every(row =>
-    Number(row?.punkte || 0) === 0 &&
-    (row?.platz === null || row?.platz === undefined || Number(row?.platz || 0) === 0)
-  );
-
-  if (nullstand) {
-    const updated = structuredClone(base);
-    updated.individual = updated.individual || {};
-    updated.individual.overall = [];
-    updated.individual.matchday = [];
-    updated.meta = updated.meta || {};
-    updated.meta.status = 'noch-ohne-wertung';
-    updated.meta.source = 'Zentrale Punkteberechnung · Nullstand';
-    return { payload: updated, active: true, count: ranking.length };
-  }
   const participants = Array.isArray(participantPayload?.teilnehmer) ? participantPayload.teilnehmer : [];
   const byId = new Map(participants.map(row => [String(row.id), row]));
   const existing = new Map((base.individual?.overall || []).map(row => [String(row.name), row]));
@@ -529,27 +513,17 @@ function renderPodium() {
   const el = document.querySelector('#podium');
   const notice = document.querySelector('#ranking-notice');
 
-  if (!rows.length || status.open) {
-    notice.hidden = false;
-    notice.innerHTML = '<strong>Rangdeck noch unbesetzt.</strong> Solange keine Punkte vergeben wurden, bleiben alle Podiumsplätze frei.';
-
-    el.innerHTML = `<div class="hs-podium-rigging" aria-hidden="true"><span></span><span></span></div>${[1,2,3].map(place => `
-      <article class="hs-podium-card place-${place} is-provisional is-empty">
-        <div class="hs-card-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-        <div class="hs-rank-seal" aria-hidden="true"><span>–</span></div>
-        <div class="hs-place-label">Noch offen</div>
-        <strong class="hs-empty-name">–</strong>
-        <div class="hs-podium-divider" aria-hidden="true"></div>
-        <div class="hs-podium-points">0 Punkte</div>
-        ${state.view === 'overall' ? '<small>0 Spieltagssiege</small>' : ''}
-        <div class="hs-podium-motto">Noch ohne Wertung</div>
-        <div class="hs-pedestal-face" aria-hidden="true"><span>–</span></div>
-      </article>`).join('')}<div class="hs-podium-deck" aria-hidden="true"><span></span></div>`;
+  if (!rows.length) {
+    notice.textContent = '';
+    notice.hidden = true;
+    el.innerHTML = '<div class="hs-podium-empty">Noch keine Ranglistendaten vorhanden.</div>';
     return;
   }
 
   notice.hidden = false;
-  if (status.tied) {
+  if (status.open) {
+    notice.innerHTML = '<strong>Rangdeck noch unbesetzt.</strong> Alle Teilnehmer stehen derzeit bei 0 Punkten. Die angezeigte Reihenfolge ist vorläufig und alphabetisch.';
+  } else if (status.tied) {
     notice.innerHTML = `<strong>Geteilte Führung.</strong> ${status.leaders.length} Spieler liegen mit ${fmt(status.max)} Punkten gleichauf.`;
   } else {
     notice.innerHTML = `<strong>Aktueller Stand.</strong> ${esc(status.leaders[0]?.name)} führt mit ${fmt(status.max)} Punkten.`;
@@ -558,18 +532,18 @@ function renderPodium() {
   el.innerHTML = `<div class="hs-podium-rigging" aria-hidden="true"><span></span><span></span></div>${rows.map((row, index) => {
     const place = index + 1;
     const tiedAtTop = status.tied && scoreOf(row, state.view) === status.max;
-    const label = tiedAtTop ? 'Geteilter Rang 1' : `Platz ${place}`;
-    const motto = index === 0 ? 'Kapitän der Rangliste' : index === 1 ? 'Erster Maat' : 'Steuermann';
-    return `<article class="hs-podium-card place-${place}">
+    const label = status.open ? 'Vorläufig' : tiedAtTop ? 'Geteilter Rang 1' : `Platz ${place}`;
+    const motto = status.open ? 'Noch ohne Wertung' : index === 0 ? 'Kapitän der Rangliste' : index === 1 ? 'Erster Maat' : 'Steuermann';
+    return `<article class="hs-podium-card place-${place}${status.open ? ' is-provisional' : ''}">
       <div class="hs-card-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-      <div class="hs-rank-seal" aria-hidden="true"><span>${place}</span></div>
+      <div class="hs-rank-seal" aria-hidden="true"><span>${status.open ? '–' : place}</span></div>
       <div class="hs-place-label">${label}</div>
       <strong>${profileButton(row.name)}</strong>
       <div class="hs-podium-divider" aria-hidden="true"></div>
       <div class="hs-podium-points">${fmt(scoreOf(row, state.view))} Punkte</div>
       ${state.view === 'overall' ? `<small>${fmt(row.matchdayWins)} Spieltagssiege</small>` : ''}
       <div class="hs-podium-motto">${motto}</div>
-      <div class="hs-pedestal-face" aria-hidden="true"><span>${place}</span></div>
+      <div class="hs-pedestal-face" aria-hidden="true"><span>${status.open ? '–' : place}</span></div>
     </article>`;
   }).join('')}<div class="hs-podium-deck" aria-hidden="true"><span></span></div>`;
   el.querySelectorAll('[data-player-profile]').forEach(button => button.addEventListener('click', () => openPlayerProfile(button.dataset.playerProfile)));

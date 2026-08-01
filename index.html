@@ -3332,69 +3332,8 @@
 
     .sm-event-row__match {
       min-width: 0;
-      display: grid;
-      grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
-      gap: .48rem;
-      align-items: center;
       font-weight: 800;
       line-height: 1.25;
-    }
-
-    .sm-event-team {
-      min-width: 0;
-      display: inline-flex;
-      align-items: center;
-      gap: .42rem;
-    }
-
-    .sm-event-team--home {
-      justify-content: flex-end;
-      text-align: right;
-    }
-
-    .sm-event-team--away {
-      justify-content: flex-start;
-      text-align: left;
-    }
-
-    .sm-event-team__crest {
-      width: 28px;
-      height: 28px;
-      flex: 0 0 28px;
-      object-fit: contain;
-      filter: drop-shadow(0 2px 2px rgba(0,0,0,.55));
-    }
-
-    .sm-event-team__fallback {
-      display: grid;
-      place-items: center;
-      width: 28px;
-      height: 28px;
-      flex: 0 0 28px;
-      border: 1px solid rgba(210,154,49,.75);
-      border-radius: 50%;
-      color: #e8c66f;
-      background: #2b180b;
-      font-size: .58rem;
-      font-weight: 900;
-    }
-
-    .sm-event-score {
-      min-width: 46px;
-      color: #f1cd72;
-      font-size: 1rem;
-      font-weight: 900;
-      text-align: center;
-      white-space: nowrap;
-    }
-
-    #hs-matchday-name {
-      display: grid;
-      gap: .08rem;
-    }
-
-    #hs-matchday-name > span {
-      display: block;
     }
 
     .sm-event-row__subtitle {
@@ -3456,18 +3395,6 @@
       .sm-event-row__match,
       .sm-event-row__status {
         grid-column: 1 / -1;
-      }
-
-      .sm-event-row__match {
-        grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
-        gap: .3rem;
-      }
-
-      .sm-event-team__crest,
-      .sm-event-team__fallback {
-        width: 24px;
-        height: 24px;
-        flex-basis: 24px;
       }
 
       .sm-event-row__status {
@@ -5153,17 +5080,6 @@
         const liveMinutesDefault = Math.max(1, Number(data.liveDauerMinuten) || 120);
         const teamLookup = new Map((Array.isArray(teamData.teams) ? teamData.teams : []).map(team => [team.id, team]));
         const resolveTeamName = (teamId, fallback) => teamLookup.get(teamId)?.name || fallback || "Team offen";
-        const resolveTeamLogo = teamId => {
-          const logo = String(teamLookup.get(teamId)?.logo || "").trim();
-          return logo || "";
-        };
-        const teamInitials = name => String(name || "?")
-          .split(/\s+/)
-          .filter(Boolean)
-          .map(part => part.replace(/[^A-Za-zÄÖÜäöü0-9]/g, "").slice(0,1))
-          .join("")
-          .slice(0,3)
-          .toUpperCase() || "?";
 
         const simulatedNow = typeof data.testJetzt === "string" && data.testJetzt.trim() ? new Date(data.testJetzt) : null;
         const now = simulatedNow && !Number.isNaN(simulatedNow.getTime()) ? simulatedNow : new Date();
@@ -5291,50 +5207,10 @@
                 competition.textContent = game.wettbewerbAnzeige || game.wettbewerb || "Ereignis";
                 const match = document.createElement("span");
                 match.className = "sm-event-row__match";
-
-                const makeTeamNode = (name, teamId, side) => {
-                  const wrapper = document.createElement("span");
-                  wrapper.className = `sm-event-team sm-event-team--${side}`;
-
-                  const label = document.createElement("span");
-                  label.textContent = name;
-
-                  const logoUrl = resolveTeamLogo(teamId);
-                  const crest = logoUrl ? document.createElement("img") : document.createElement("span");
-                  if (logoUrl) {
-                    crest.className = "sm-event-team__crest";
-                    crest.src = logoUrl;
-                    crest.alt = "";
-                    crest.loading = "lazy";
-                    crest.decoding = "async";
-                  } else {
-                    crest.className = "sm-event-team__fallback";
-                    crest.textContent = teamInitials(name);
-                    crest.setAttribute("aria-hidden", "true");
-                  }
-
-                  if (side === "home") wrapper.append(label, crest);
-                  else wrapper.append(crest, label);
-                  return wrapper;
-                };
-
-                const score = document.createElement("strong");
-                score.className = "sm-event-score";
-                const hasResult = Number.isInteger(game.heimtore) && Number.isInteger(game.auswaertstore);
-                score.textContent = hasResult ? `${game.heimtore}:${game.auswaertstore}` : (game.trenner || "–");
-
-                match.append(
-                  makeTeamNode(game.heim, game.heimTeamId, "home"),
-                  score,
-                  makeTeamNode(game.auswaerts, game.auswaertsTeamId, "away")
-                );
-
+                match.textContent = `${game.heim} ${game.trenner || "–"} ${game.auswaerts}`;
                 const rowStatus = document.createElement("span");
                 rowStatus.className = "sm-event-row__status";
-                rowStatus.textContent = game._start <= now && game._end > now
-                  ? "LIVE"
-                  : (game.status || (hasResult ? "beendet" : ""));
-
+                rowStatus.textContent = game._start <= now && game._end > now ? "LIVE" : (game.status || "");
                 row.append(time, competition, match, rowStatus);
                 day.appendChild(row);
               });
