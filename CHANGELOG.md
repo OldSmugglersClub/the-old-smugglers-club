@@ -1,5 +1,22 @@
 # CHANGELOG
 
+## Version 4.6.0
+
+### Neu
+- `SPIELBETRIEB_WORKFLOW.md`
+- `ADMIN_COCKPIT_KONZEPT.md`
+
+### Geändert
+- Roadmap um Admin-Cockpit und Spielbetriebs-Workflow erweitert.
+- Adminhandbuch und Projektmanual ergänzt.
+- Versionsangaben aktualisiert.
+
+### Nicht geändert
+- Keine Websitefunktion.
+- Keine Adminfunktion.
+- Keine JSON-Nutzdaten.
+- Keine Berechnungslogik.
+
 ## Version 4.5.2
 
 ### Neu

@@ -255,7 +255,7 @@ Ideen werden gesammelt, aber erst nach einer stabilen 5.x-Phase bewertet. Änder
 
 ## 12. Nächster verbindlicher Arbeitsschritt
 
-Vor der weiteren technischen Datenmigration wird eine echte Kicktipp-Exportdatei analysiert. Daraus wird das Importformat für das neue Adminmodul „Spieltag abschließen“ verbindlich abgeleitet.
+Als nächstes wird eine echte Kicktipp-Exportdatei analysiert. Erst danach beginnt die technische Entwicklung des Importparsers und des Admin-Cockpits.
 
 
 ## Version 4.4.3 – Rechtliche Grundausstattung
@@ -284,3 +284,14 @@ Vor der weiteren technischen Datenmigration wird eine echte Kicktipp-Exportdatei
 - [x] Remis mit falschem Ergebnis als 3-Punkte-Fall festgelegt
 - [x] 90 Minuten einschließlich Nachspielzeit definiert
 - [x] Verlängerung und Elfmeterschießen ausgeschlossen
+
+## Admin-Cockpit und Spielbetrieb
+
+- [x] realen Spielbetriebs-Workflow dokumentiert
+- [x] Admin-Cockpit fachlich konzipiert
+- [ ] echte Kicktipp-Exportdatei analysieren
+- [ ] Kicktipp-Importparser entwickeln
+- [ ] Importvorschau und Sperrlogik entwickeln
+- [ ] automatische Berechnungskette anbinden
+- [ ] GitHub-Exportgenerator anbinden
+- [ ] realen Testspieltag durchführen

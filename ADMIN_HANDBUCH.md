@@ -839,3 +839,11 @@ Die technische Umsetzung beginnt erst nach Analyse einer echten Kicktipp-Exportd
 ## 34. Verbindliche Wertungslogik
 
 Für alle Berechnungen gilt: Ergebnis 5 Punkte, Tordifferenz 3 Punkte, Tendenz 2 Punkte, Remis ohne exaktes Ergebnis 3 Punkte, falsche Tendenz 0 Punkte. Gewertet wird ausschließlich das offizielle Ergebnis nach 90 Minuten einschließlich Nachspielzeit, ohne Verlängerung und ohne Elfmeterschießen.
+
+## 35. Geplanter Spielbetriebs-Workflow
+
+Der verbindliche Ablauf ist in `SPIELBETRIEB_WORKFLOW.md` beschrieben.
+
+Das geplante zentrale Bedienkonzept ist in `ADMIN_COCKPIT_KONZEPT.md` dokumentiert.
+
+Bis zur technischen Umsetzung bleiben die bestehenden Einzelmodule maßgeblich.

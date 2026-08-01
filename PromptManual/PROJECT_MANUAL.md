@@ -235,3 +235,7 @@ Für die spätere automatische Spieltagsberechnung gilt:
 ## Verbindliche Tippwertung
 
 Für alle Wettbewerbe gilt: richtiges Ergebnis = 5 Punkte, richtige Tordifferenz = 3 Punkte, richtige Tendenz = 2 Punkte, Remis ohne exaktes Ergebnis = 3 Punkte, falsche Tendenz = 0 Punkte. Gewertet wird ausschließlich das offizielle Ergebnis nach regulärer Spielzeit: 90 Minuten einschließlich Nachspielzeit, ohne Verlängerung und ohne Elfmeterschießen.
+
+## Saisonbetrieb und Admin-Cockpit
+
+Der normale Saisonbetrieb soll künftig über einen geführten lokalen Workflow erfolgen. Ergebnisse, Kicktipp-Export, Berechnungen und GitHub-Export werden in einem zentralen Admin-Cockpit gebündelt. Fehlende Tipps bleiben zulässig und erhalten 0 Punkte. Automatische Veröffentlichung ohne ausdrückliche Bestätigung ist nicht zulässig.
