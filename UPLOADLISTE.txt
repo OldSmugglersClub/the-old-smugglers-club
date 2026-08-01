@@ -1,0 +1,23 @@
+THE OLD SMUGGLERS CLUB – WEBSITE-UPDATE
+
+ERSETZEN:
+- spieldaten.json
+- tipps.json
+- punkte.json
+- spieltagpunkte.json
+- wettbewerbspunkte.json
+- smugglerpunkte.json
+- teampunkte.json
+- ranglistenverlauf.json
+- highscore.json
+- topspieler.json
+
+NEU:
+- keine Dateien
+
+LÖSCHEN:
+- keine Dateien
+
+Erstellt: 2026-08-01T16:11:52.784Z
+Auftrag: Smugglerauftrag · 1. Spieltag
+Ergebnis: 1. FC Nürnberg 0:0 Dynamo Dresden
