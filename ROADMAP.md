@@ -255,7 +255,7 @@ Ideen werden gesammelt, aber erst nach einer stabilen 5.x-Phase bewertet. Änder
 
 ## 12. Nächster verbindlicher Arbeitsschritt
 
-Als nächstes wird eine echte Kicktipp-Exportdatei analysiert. Erst danach beginnt die technische Entwicklung des Importparsers und des Admin-Cockpits.
+Als nächstes wird ein lokaler, nicht veröffentlichender Importprototyp entwickelt. Er erkennt ZIP/CSV-Dateien, validiert Kopfzeilen und zeigt eine Importvorschau, verändert aber noch keine produktiven JSON-Dateien.
 
 
 ## Version 4.4.3 – Rechtliche Grundausstattung
@@ -270,7 +270,7 @@ Als nächstes wird eine echte Kicktipp-Exportdatei analysiert. Erst danach begin
 
 - [x] fachliche Regeln für Kicktipp-Import und fehlende Tipps festgelegt
 - [x] verbindliches Konzept dokumentiert
-- [ ] echte Kicktipp-Exportdatei analysieren
+- [x] echte Kicktipp-Exportdateien analysiert
 - [ ] Importformat und Feldzuordnung dokumentieren
 - [ ] Adminmodul „Spieltag abschließen“ entwickeln
 - [ ] harte Vollständigkeits- und Fehlerprüfung umsetzen
@@ -289,8 +289,8 @@ Als nächstes wird eine echte Kicktipp-Exportdatei analysiert. Erst danach begin
 
 - [x] realen Spielbetriebs-Workflow dokumentiert
 - [x] Admin-Cockpit fachlich konzipiert
-- [ ] echte Kicktipp-Exportdatei analysieren
-- [ ] Kicktipp-Importparser entwickeln
+- [x] echte Kicktipp-Exportdateien analysiert
+- [ ] nicht veröffentlichenden Kicktipp-Importprototyp entwickeln
 - [ ] Importvorschau und Sperrlogik entwickeln
 - [ ] automatische Berechnungskette anbinden
 - [ ] GitHub-Exportgenerator anbinden

@@ -1,5 +1,32 @@
 # CHANGELOG
 
+## Version 4.6.1
+
+### Neu
+- `KICKTIPP_EXPORTANALYSE.md`
+- `KICKTIPP_IMPORTSPEZIFIKATION.md`
+- `kicktipp-import-schema.json`
+
+### Analysiert
+- Tipper-Export
+- Tipps-Export eines Spieltags
+- Ranglisten verschiedener Wertungsspieltage
+- Gesamtübersicht Einzelwertung
+- Gesamtübersichten beider Teams
+
+### Festgelegt
+- Kicktipp-Wertungen werden als offizielle Quelle übernommen.
+- Originalexporte bleiben lokal.
+- E-Mail-Adressen dürfen nicht in öffentliche JSON-Dateien gelangen.
+- Leere Tippfelder gelten als nicht abgegeben.
+- `-:-` bleibt bis zur Verifikation ein ungeklärter Sonderwert.
+- Parser muss dynamische Spieltags- und Wettbewerbsspalten unterstützen.
+
+### Nicht geändert
+- Keine Websitefunktion.
+- Keine produktive Adminfunktion.
+- Keine JSON-Nutzdaten.
+
 ## Version 4.6.0
 
 ### Neu

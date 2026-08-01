@@ -200,3 +200,7 @@ Das Cockpit benötigt mindestens:
 Version 4.6.0 programmiert noch kein Cockpit.
 
 Sie legt ausschließlich den verbindlichen Arbeitsablauf und die technische Zielrichtung fest.
+
+## 11. Verbindliche Importgrundlage
+
+Die technische Implementierung richtet sich nach `KICKTIPP_IMPORTSPEZIFIKATION.md` und `kicktipp-import-schema.json`.

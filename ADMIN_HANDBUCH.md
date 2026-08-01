@@ -847,3 +847,12 @@ Der verbindliche Ablauf ist in `SPIELBETRIEB_WORKFLOW.md` beschrieben.
 Das geplante zentrale Bedienkonzept ist in `ADMIN_COCKPIT_KONZEPT.md` dokumentiert.
 
 Bis zur technischen Umsetzung bleiben die bestehenden Einzelmodule maßgeblich.
+
+## 36. Kicktipp-Exportanalyse
+
+Die tatsächlich analysierten Exportformate und der geplante Importvertrag sind dokumentiert in:
+
+- `KICKTIPP_EXPORTANALYSE.md`
+- `KICKTIPP_IMPORTSPEZIFIKATION.md`
+
+Originalexporte enthalten personenbezogene Daten und dürfen nicht in das öffentliche Repository übernommen werden.
