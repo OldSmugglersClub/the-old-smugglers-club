@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "aktualisiert": "2026-07-31",
-  "hinweis": "Zentrale Mannschaftsdaten. Enthält aktive Projektteams sowie den vorsorglichen UEFA-Kandidatenpool 2026/27 für Champions League und Europa League. Kandidaten werden nur angezeigt, wenn sie in Wettbewerbsdaten referenziert werden.",
+  "aktualisiert": "2026-08-01",
+  "hinweis": "Zentrale Mannschaftsdaten. Namen werden hier einmal gepflegt und in allen Spielen über die Team-ID verwendet. Die Felder national und international sind optional und für spätere Wettbewerbszuordnungen vorbereitet.",
   "teams": [
     {
       "id": "heidenheim",
@@ -60,7 +60,7 @@
       "name": "1. FC Nürnberg",
       "kurzname": "1. FC Nürnberg",
       "land": "Deutschland",
-      "logo": "",
+      "logo": "./team-logo-nuernberg.svg",
       "aktiv": true,
       "national": "2-bundesliga",
       "international": {
@@ -95,26 +95,6 @@
       }
     },
     {
-      "id": "aarhus-gf",
-      "name": "Aarhus GF",
-      "kurzname": "Aarhus GF",
-      "land": "Dänemark",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
       "id": "ac-mailand",
       "name": "AC Mailand",
       "kurzname": "AC Mailand",
@@ -123,115 +103,9 @@
       "aktiv": true,
       "national": "serie-a",
       "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "league-phase"
-        }
+        "uefa": null,
+        "wettbewerb": null
       }
-    },
-    {
-      "id": "aek-athen",
-      "name": "AEK Athen",
-      "kurzname": "AEK Athen",
-      "land": "Griechenland",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "play-offs"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "afc-bournemouth",
-      "name": "AFC Bournemouth",
-      "kurzname": "AFC Bournemouth",
-      "land": "England",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "ararat-armenia",
-      "name": "Ararat-Armenia",
-      "kurzname": "Ararat-Armenia",
-      "land": "Armenien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "arsenal",
-      "name": "Arsenal",
-      "kurzname": "Arsenal",
-      "land": "England",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "as-rom",
-      "name": "AS Rom",
-      "kurzname": "AS Rom",
-      "land": "Italien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
     },
     {
       "id": "aston-villa",
@@ -242,75 +116,9 @@
       "aktiv": true,
       "national": "premier-league",
       "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
+        "uefa": null,
+        "wettbewerb": null
       }
-    },
-    {
-      "id": "atert-bissen",
-      "name": "Atert Bissen",
-      "kurzname": "Atert Bissen",
-      "land": "Luxemburg",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "atletico-madrid",
-      "name": "Atlético Madrid",
-      "kurzname": "Atlético Madrid",
-      "land": "Spanien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "az-alkmaar",
-      "name": "AZ Alkmaar",
-      "kurzname": "AZ Alkmaar",
-      "land": "Niederlande",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
     },
     {
       "id": "leverkusen",
@@ -321,14 +129,8 @@
       "aktiv": true,
       "national": "bundesliga",
       "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "league-phase"
-        }
+        "uefa": null,
+        "wettbewerb": null
       }
     },
     {
@@ -340,75 +142,9 @@
       "aktiv": true,
       "national": "primeira-liga",
       "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-3"
-        }
+        "uefa": null,
+        "wettbewerb": null
       }
-    },
-    {
-      "id": "besiktas",
-      "name": "Beşiktaş",
-      "kurzname": "Beşiktaş",
-      "land": "Türkei",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "bod-glimt",
-      "name": "Bodø/Glimt",
-      "kurzname": "Bodø/Glimt",
-      "land": "Norwegen",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "borac-banja-luka",
-      "name": "Borac Banja Luka",
-      "kurzname": "Borac Banja Luka",
-      "land": "Bosnien und Herzegowina",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
     },
     {
       "id": "dortmund",
@@ -419,14 +155,8 @@
       "aktiv": true,
       "national": "bundesliga",
       "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
+        "uefa": null,
+        "wettbewerb": null
       }
     },
     {
@@ -443,146 +173,6 @@
       }
     },
     {
-      "id": "celta-vigo",
-      "name": "Celta Vigo",
-      "kurzname": "Celta Vigo",
-      "land": "Spanien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "celtic-glasgow",
-      "name": "Celtic Glasgow",
-      "kurzname": "Celtic Glasgow",
-      "land": "Schottland",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "play-offs"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "club-brugge",
-      "name": "Club Brügge",
-      "kurzname": "Club Brügge",
-      "land": "Belgien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "como-1907",
-      "name": "Como 1907",
-      "kurzname": "Como 1907",
-      "land": "Italien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "crystal-palace",
-      "name": "Crystal Palace",
-      "kurzname": "Crystal Palace",
-      "land": "England",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "derry-city",
-      "name": "Derry City",
-      "kurzname": "Derry City",
-      "land": "Irland",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "dinamo-zagreb",
-      "name": "Dinamo Zagreb",
-      "kurzname": "Dinamo Zagreb",
-      "land": "Kroatien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
       "id": "arminia-bielefeld",
       "name": "DSC Arminia Bielefeld",
       "kurzname": "Arminia Bielefeld",
@@ -594,26 +184,6 @@
         "uefa": false,
         "wettbewerb": null
       }
-    },
-    {
-      "id": "dynamo-kiew",
-      "name": "Dynamo Kiew",
-      "kurzname": "Dynamo Kiew",
-      "land": "Ukraine",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-2"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
     },
     {
       "id": "braunschweig",
@@ -663,14 +233,8 @@
       "aktiv": true,
       "national": "la-liga",
       "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
+        "uefa": null,
+        "wettbewerb": null
       }
     },
     {
@@ -682,14 +246,8 @@
       "aktiv": true,
       "national": "bundesliga",
       "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
+        "uefa": null,
+        "wettbewerb": null
       }
     },
     {
@@ -706,26 +264,6 @@
       }
     },
     {
-      "id": "fc-drita",
-      "name": "FC Drita",
-      "kurzname": "FC Drita",
-      "land": "Kosovo",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
       "id": "energie-cottbus",
       "name": "FC Energie Cottbus",
       "kurzname": "Energie Cottbus",
@@ -739,26 +277,6 @@
       }
     },
     {
-      "id": "fc-hradec-kralove",
-      "name": "FC Hradec Králové",
-      "kurzname": "FC Hradec Králové",
-      "land": "Tschechien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
       "id": "fc-liverpool",
       "name": "FC Liverpool",
       "kurzname": "FC Liverpool",
@@ -767,55 +285,9 @@
       "aktiv": true,
       "national": "premier-league",
       "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
+        "uefa": null,
+        "wettbewerb": null
       }
-    },
-    {
-      "id": "fc-midtjylland",
-      "name": "FC Midtjylland",
-      "kurzname": "FC Midtjylland",
-      "land": "Dänemark",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-2"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "fc-porto",
-      "name": "FC Porto",
-      "kurzname": "FC Porto",
-      "land": "Portugal",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
     },
     {
       "id": "schalke-04",
@@ -831,26 +303,6 @@
       }
     },
     {
-      "id": "fc-st-gallen",
-      "name": "FC St. Gallen",
-      "kurzname": "FC St. Gallen",
-      "land": "Schweiz",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-2"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
       "id": "st-pauli",
       "name": "FC St. Pauli",
       "kurzname": "FC St. Pauli",
@@ -862,250 +314,6 @@
         "uefa": false,
         "wettbewerb": null
       }
-    },
-    {
-      "id": "fc-thun",
-      "name": "FC Thun",
-      "kurzname": "FC Thun",
-      "land": "Schweiz",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league",
-          "europa-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-2",
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "fc-twente",
-      "name": "FC Twente",
-      "kurzname": "FC Twente",
-      "land": "Niederlande",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-2"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "fenerbahce",
-      "name": "Fenerbahçe",
-      "kurzname": "Fenerbahçe",
-      "land": "Türkei",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "ferencvaros",
-      "name": "Ferencváros",
-      "kurzname": "Ferencváros",
-      "land": "Ungarn",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "feyenoord-rotterdam",
-      "name": "Feyenoord Rotterdam",
-      "kurzname": "Feyenoord Rotterdam",
-      "land": "Niederlande",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "flora-tallinn",
-      "name": "Flora Tallinn",
-      "kurzname": "Flora Tallinn",
-      "land": "Estland",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "floriana-fc",
-      "name": "Floriana FC",
-      "kurzname": "Floriana FC",
-      "land": "Malta",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "galatasaray",
-      "name": "Galatasaray",
-      "kurzname": "Galatasaray",
-      "land": "Türkei",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "glasgow-rangers",
-      "name": "Glasgow Rangers",
-      "kurzname": "Glasgow Rangers",
-      "land": "Schottland",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "gyori-eto",
-      "name": "Győri ETO",
-      "kurzname": "Győri ETO",
-      "land": "Ungarn",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "gornik-zabrze",
-      "name": "Górnik Zabrze",
-      "kurzname": "Górnik Zabrze",
-      "land": "Polen",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league",
-          "europa-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-2",
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "hajduk-split",
-      "name": "Hajduk Split",
-      "kurzname": "Hajduk Split",
-      "land": "Kroatien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-2"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
     },
     {
       "id": "hamburger-sv",
@@ -1121,26 +329,6 @@
       }
     },
     {
-      "id": "hammarby-if",
-      "name": "Hammarby IF",
-      "kurzname": "Hammarby IF",
-      "land": "Schweden",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-2"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
       "id": "hannover-96",
       "name": "Hannover 96",
       "kurzname": "Hannover 96",
@@ -1152,48 +340,6 @@
         "uefa": false,
         "wettbewerb": null
       }
-    },
-    {
-      "id": "hapoel-beer-scheva",
-      "name": "Hapoel Be’er Scheva",
-      "kurzname": "Hapoel Be’er Scheva",
-      "land": "Israel",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "heart-of-midlothian",
-      "name": "Heart of Midlothian",
-      "kurzname": "Heart of Midlothian",
-      "land": "Schottland",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league",
-          "europa-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-2",
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
     },
     {
       "id": "hertha-bsc",
@@ -1222,48 +368,6 @@
       }
     },
     {
-      "id": "iberia-tiflis",
-      "name": "Iberia Tiflis",
-      "kurzname": "Iberia Tiflis",
-      "land": "Georgien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league",
-          "europa-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-2",
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "inter-club-descaldes",
-      "name": "Inter Club d’Escaldes",
-      "kurzname": "Inter Club d’Escaldes",
-      "land": "Andorra",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
       "id": "inter-mailand",
       "name": "Inter Mailand",
       "kurzname": "Inter Mailand",
@@ -1272,35 +376,9 @@
       "aktiv": true,
       "national": "serie-a",
       "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
+        "uefa": null,
+        "wettbewerb": null
       }
-    },
-    {
-      "id": "jagiellonia-biaystok",
-      "name": "Jagiellonia Białystok",
-      "kurzname": "Jagiellonia Białystok",
-      "land": "Polen",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
     },
     {
       "id": "juventus-turin",
@@ -1311,35 +389,9 @@
       "aktiv": true,
       "national": "serie-a",
       "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "league-phase"
-        }
+        "uefa": null,
+        "wettbewerb": null
       }
-    },
-    {
-      "id": "kairat-almaty",
-      "name": "Kairat Almaty",
-      "kurzname": "Kairat Almaty",
-      "land": "Kasachstan",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
     },
     {
       "id": "karlsruher-sc",
@@ -1355,238 +407,6 @@
       }
     },
     {
-      "id": "kauno-zalgiris",
-      "name": "Kauno Žalgiris",
-      "kurzname": "Kauno Žalgiris",
-      "land": "Litauen",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "kf-egnatia",
-      "name": "KF Egnatia",
-      "kurzname": "KF Egnatia",
-      "land": "Albanien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league",
-          "europa-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-2",
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "kups-kuopio",
-      "name": "KuPS Kuopio",
-      "kurzname": "KuPS Kuopio",
-      "land": "Finnland",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league",
-          "europa-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-2",
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "ki-klaksvik",
-      "name": "KÍ Klaksvík",
-      "kurzname": "KÍ Klaksvík",
-      "land": "Färöer",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league",
-          "europa-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-2",
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "larne-fc",
-      "name": "Larne FC",
-      "kurzname": "Larne FC",
-      "land": "Nordirland",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league",
-          "europa-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-2",
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "lask",
-      "name": "LASK",
-      "kurzname": "LASK",
-      "land": "Österreich",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "play-offs"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "lech-posen",
-      "name": "Lech Posen",
-      "kurzname": "Lech Posen",
-      "land": "Polen",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league",
-          "europa-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-2",
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "levski-sofia",
-      "name": "Levski Sofia",
-      "kurzname": "Levski Sofia",
-      "land": "Bulgarien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "lillestrm-sk",
-      "name": "Lillestrøm SK",
-      "kurzname": "Lillestrøm SK",
-      "land": "Norwegen",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "play-offs"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "lincoln-red-imps",
-      "name": "Lincoln Red Imps",
-      "kurzname": "Lincoln Red Imps",
-      "land": "Gibraltar",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league",
-          "europa-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-2",
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "maccabi-tel-aviv",
-      "name": "Maccabi Tel Aviv",
-      "kurzname": "Maccabi Tel Aviv",
-      "land": "Israel",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
       "id": "manchester-city",
       "name": "Manchester City",
       "kurzname": "Manchester City",
@@ -1595,14 +415,8 @@
       "aktiv": true,
       "national": "premier-league",
       "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
+        "uefa": null,
+        "wettbewerb": null
       }
     },
     {
@@ -1614,135 +428,9 @@
       "aktiv": true,
       "national": "premier-league",
       "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
+        "uefa": null,
+        "wettbewerb": null
       }
-    },
-    {
-      "id": "mjallby-aif",
-      "name": "Mjällby AIF",
-      "kurzname": "Mjällby AIF",
-      "land": "Schweden",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "ml-vitebsk",
-      "name": "ML Vitebsk",
-      "kurzname": "ML Vitebsk",
-      "land": "Belarus",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "msk-zilina",
-      "name": "MŠK Žilina",
-      "kurzname": "MŠK Žilina",
-      "land": "Slowakei",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "nec-nijmegen",
-      "name": "NEC Nijmegen",
-      "kurzname": "NEC Nijmegen",
-      "land": "Niederlande",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "nk-aluminij",
-      "name": "NK Aluminij",
-      "kurzname": "NK Aluminij",
-      "land": "Slowenien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "nk-celje",
-      "name": "NK Celje",
-      "kurzname": "NK Celje",
-      "land": "Slowenien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
     },
     {
       "id": "nottingham-forest",
@@ -1758,66 +446,6 @@
       }
     },
     {
-      "id": "ofi-kreta",
-      "name": "OFI Kreta",
-      "kurzname": "OFI Kreta",
-      "land": "Griechenland",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "play-offs"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "olympiakos-piraus",
-      "name": "Olympiakos Piräus",
-      "kurzname": "Olympiakos Piräus",
-      "land": "Griechenland",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "olympique-lyon",
-      "name": "Olympique Lyon",
-      "kurzname": "Olympique Lyon",
-      "land": "Frankreich",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
       "id": "olympique-marseille",
       "name": "Olympique Marseille",
       "kurzname": "Olympique Marseille",
@@ -1826,97 +454,9 @@
       "aktiv": true,
       "national": "ligue-1",
       "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "league-phase"
-        }
+        "uefa": null,
+        "wettbewerb": null
       }
-    },
-    {
-      "id": "omonia-nikosia",
-      "name": "Omonia Nikosia",
-      "kurzname": "Omonia Nikosia",
-      "land": "Zypern",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league",
-          "europa-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-2",
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "osc-lille",
-      "name": "OSC Lille",
-      "kurzname": "OSC Lille",
-      "land": "Frankreich",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "pafos-fc",
-      "name": "Pafos FC",
-      "kurzname": "Pafos FC",
-      "land": "Zypern",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "paok-thessaloniki",
-      "name": "PAOK Thessaloniki",
-      "kurzname": "PAOK Thessaloniki",
-      "land": "Griechenland",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
     },
     {
       "id": "paris-saint-germain",
@@ -1927,75 +467,9 @@
       "aktiv": true,
       "national": "ligue-1",
       "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
+        "uefa": null,
+        "wettbewerb": null
       }
-    },
-    {
-      "id": "petrocub-hincesti",
-      "name": "Petrocub Hîncești",
-      "kurzname": "Petrocub Hîncești",
-      "land": "Moldau",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "psv-eindhoven",
-      "name": "PSV Eindhoven",
-      "kurzname": "PSV Eindhoven",
-      "land": "Niederlande",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "qarabag-agdam",
-      "name": "Qarabağ Ağdam",
-      "kurzname": "Qarabağ Ağdam",
-      "land": "Aserbaidschan",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-2"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
     },
     {
       "id": "rb-leipzig",
@@ -2006,55 +480,9 @@
       "aktiv": true,
       "national": "bundesliga",
       "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
+        "uefa": null,
+        "wettbewerb": null
       }
-    },
-    {
-      "id": "rc-lens",
-      "name": "RC Lens",
-      "kurzname": "RC Lens",
-      "land": "Frankreich",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "real-betis",
-      "name": "Real Betis",
-      "kurzname": "Real Betis",
-      "land": "Spanien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
     },
     {
       "id": "real-madrid",
@@ -2065,135 +493,9 @@
       "aktiv": true,
       "national": "la-liga",
       "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
+        "uefa": null,
+        "wettbewerb": null
       }
-    },
-    {
-      "id": "real-sociedad",
-      "name": "Real Sociedad",
-      "kurzname": "Real Sociedad",
-      "land": "Spanien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "red-bull-salzburg",
-      "name": "Red Bull Salzburg",
-      "kurzname": "Red Bull Salzburg",
-      "land": "Österreich",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "riga-fc",
-      "name": "Riga FC",
-      "kurzname": "Riga FC",
-      "land": "Lettland",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "roter-stern-belgrad",
-      "name": "Roter Stern Belgrad",
-      "kurzname": "Roter Stern Belgrad",
-      "land": "Serbien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "rsc-anderlecht",
-      "name": "RSC Anderlecht",
-      "kurzname": "RSC Anderlecht",
-      "land": "Belgien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "sabah-fc",
-      "name": "Sabah FC",
-      "kurzname": "Sabah FC",
-      "land": "Aserbaidschan",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
     },
     {
       "id": "paderborn",
@@ -2209,179 +511,17 @@
       }
     },
     {
-      "id": "schachtar-donezk",
-      "name": "Schachtar Donezk",
-      "kurzname": "Schachtar Donezk",
-      "land": "Ukraine",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "scu-torreense",
-      "name": "SCU Torreense",
-      "kurzname": "SCU Torreense",
-      "land": "Portugal",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
       "id": "dynamo-dresden",
       "name": "SG Dynamo Dresden",
       "kurzname": "Dynamo Dresden",
       "land": "Deutschland",
-      "logo": "",
+      "logo": "./team-logo-dynamo-dresden.svg",
       "aktiv": true,
       "national": "2-bundesliga",
       "international": {
         "uefa": false,
         "wettbewerb": null
       }
-    },
-    {
-      "id": "shamrock-rovers",
-      "name": "Shamrock Rovers",
-      "kurzname": "Shamrock Rovers",
-      "land": "Irland",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league",
-          "europa-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-2",
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "sheriff-tiraspol",
-      "name": "Sheriff Tiraspol",
-      "kurzname": "Sheriff Tiraspol",
-      "land": "Moldau",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-2"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "sint-truidense-vv",
-      "name": "Sint-Truidense VV",
-      "kurzname": "Sint-Truidense VV",
-      "land": "Belgien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "play-offs"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "slavia-prag",
-      "name": "Slavia Prag",
-      "kurzname": "Slavia Prag",
-      "land": "Tschechien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "slovan-bratislava",
-      "name": "Slovan Bratislava",
-      "kurzname": "Slovan Bratislava",
-      "land": "Slowakei",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "sparta-prag",
-      "name": "Sparta Prag",
-      "kurzname": "Sparta Prag",
-      "land": "Tschechien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
     },
     {
       "id": "freiburg",
@@ -2405,14 +545,8 @@
       "aktiv": true,
       "national": "primeira-liga",
       "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
+        "uefa": null,
+        "wettbewerb": null
       }
     },
     {
@@ -2427,106 +561,6 @@
         "uefa": false,
         "wettbewerb": null
       }
-    },
-    {
-      "id": "ssc-neapel",
-      "name": "SSC Neapel",
-      "kurzname": "SSC Neapel",
-      "land": "Italien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "stade-rennes",
-      "name": "Stade Rennes",
-      "kurzname": "Stade Rennes",
-      "land": "Frankreich",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "sturm-graz",
-      "name": "Sturm Graz",
-      "kurzname": "Sturm Graz",
-      "land": "Österreich",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "sunderland-afc",
-      "name": "Sunderland AFC",
-      "kurzname": "Sunderland AFC",
-      "land": "England",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "sutjeska-niksic",
-      "name": "Sutjeska Nikšić",
-      "kurzname": "Sutjeska Nikšić",
-      "land": "Montenegro",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
     },
     {
       "id": "darmstadt-98",
@@ -2568,26 +602,6 @@
       }
     },
     {
-      "id": "the-new-saints",
-      "name": "The New Saints",
-      "kurzname": "The New Saints",
-      "land": "Wales",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
       "id": "tottenham-hotspur",
       "name": "Tottenham Hotspur",
       "kurzname": "Tottenham Hotspur",
@@ -2601,66 +615,6 @@
       }
     },
     {
-      "id": "trabzonspor",
-      "name": "Trabzonspor",
-      "kurzname": "Trabzonspor",
-      "land": "Türkei",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "play-offs"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "tre-fiori",
-      "name": "Tre Fiori",
-      "kurzname": "Tre Fiori",
-      "land": "San Marino",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "troms-il",
-      "name": "Tromsø IL",
-      "kurzname": "Tromsø IL",
-      "land": "Norwegen",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-2"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
       "id": "hoffenheim",
       "name": "TSG Hoffenheim",
       "kurzname": "TSG Hoffenheim",
@@ -2669,117 +623,9 @@
       "aktiv": true,
       "national": "bundesliga",
       "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "league-phase"
-        }
+        "uefa": null,
+        "wettbewerb": null
       }
-    },
-    {
-      "id": "union-saint-gilloise",
-      "name": "Union Saint-Gilloise",
-      "kurzname": "Union Saint-Gilloise",
-      "land": "Belgien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "universitatea-cluj",
-      "name": "Universitatea Cluj",
-      "kurzname": "Universitatea Cluj",
-      "land": "Rumänien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "universitatea-craiova",
-      "name": "Universitatea Craiova",
-      "kurzname": "Universitatea Craiova",
-      "land": "Rumänien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league",
-          "europa-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-2",
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "vardar-skopje",
-      "name": "Vardar Skopje",
-      "kurzname": "Vardar Skopje",
-      "land": "Nordmazedonien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "vestri",
-      "name": "Vestri",
-      "kurzname": "Vestri",
-      "land": "Island",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
     },
     {
       "id": "stuttgart",
@@ -2790,14 +636,8 @@
       "aktiv": true,
       "national": "bundesliga",
       "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
+        "uefa": null,
+        "wettbewerb": null
       }
     },
     {
@@ -2838,128 +678,7 @@
         "uefa": false,
         "wettbewerb": null
       }
-    },
-    {
-      "id": "viking-fk",
-      "name": "Viking FK",
-      "kurzname": "Viking FK",
-      "land": "Norwegen",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "play-offs"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "viktoria-pilsen",
-      "name": "Viktoria Pilsen",
-      "kurzname": "Viktoria Pilsen",
-      "land": "Tschechien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "play-offs"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "villarreal-cf",
-      "name": "Villarreal CF",
-      "kurzname": "Villarreal CF",
-      "land": "Spanien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league"
-        ],
-        "status2026_27": {
-          "champions-league": "league-phase"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "vojvodina-novi-sad",
-      "name": "Vojvodina Novi Sad",
-      "kurzname": "Vojvodina Novi Sad",
-      "land": "Serbien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-1"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "vikingur-reykjavik",
-      "name": "Víkingur Reykjavík",
-      "kurzname": "Víkingur Reykjavík",
-      "land": "Island",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "champions-league",
-        "wettbewerbe": [
-          "champions-league",
-          "europa-league"
-        ],
-        "status2026_27": {
-          "champions-league": "qualifikation-2",
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
-    },
-    {
-      "id": "zska-sofia",
-      "name": "ZSKA Sofia",
-      "kurzname": "ZSKA Sofia",
-      "land": "Bulgarien",
-      "logo": "",
-      "aktiv": false,
-      "national": null,
-      "international": {
-        "uefa": true,
-        "wettbewerb": "europa-league",
-        "wettbewerbe": [
-          "europa-league"
-        ],
-        "status2026_27": {
-          "europa-league": "qualifikation-3"
-        }
-      },
-      "datenstatus": "UEFA-Kandidatenpool 2026/27"
     }
-  ]
+  ],
+  "datenVersion": 1
 }

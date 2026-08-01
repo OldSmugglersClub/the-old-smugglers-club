@@ -25,6 +25,22 @@ function formatIsoDateGerman(value) {
 function mergeCalculatedRanking(base, pointsPayload, participantPayload) {
   const ranking = Array.isArray(pointsPayload?.rangliste) ? pointsPayload.rangliste : [];
   if (!ranking.length) return { payload: base, active: false, count: 0 };
+
+  const nullstand = ranking.every(row =>
+    Number(row?.punkte || 0) === 0 &&
+    (row?.platz === null || row?.platz === undefined || Number(row?.platz || 0) === 0)
+  );
+
+  if (nullstand) {
+    const updated = structuredClone(base);
+    updated.individual = updated.individual || {};
+    updated.individual.overall = [];
+    updated.individual.matchday = [];
+    updated.meta = updated.meta || {};
+    updated.meta.status = 'noch-ohne-wertung';
+    updated.meta.source = 'Zentrale Punkteberechnung · Nullstand';
+    return { payload: updated, active: true, count: ranking.length };
+  }
   const participants = Array.isArray(participantPayload?.teilnehmer) ? participantPayload.teilnehmer : [];
   const byId = new Map(participants.map(row => [String(row.id), row]));
   const existing = new Map((base.individual?.overall || []).map(row => [String(row.name), row]));
@@ -67,6 +83,66 @@ function mergeCalculatedRanking(base, pointsPayload, participantPayload) {
   updated.meta.exportDate = formatIsoDateGerman(pointsPayload.berechnetAm || pointsPayload.aktualisiert) || updated.meta.exportDate;
   updated.meta.privacy = 'Punkte aus tipps.json, spieldaten.json und teilnehmer.json; keine E-Mail-Daten.';
   return { payload: updated, active: true, count: ranking.length };
+}
+
+function renderHighscoreSource() {
+  const label=document.querySelector('#hs-source-label');
+  const detail=document.querySelector('#hs-source-detail');
+  const strip=document.querySelector('#hs-source-strip');
+  if(!label||!detail||!strip) return;
+  if(highscoreSourceMode==='calculated'){
+    label.textContent='Automatisch berechnete Rangliste';
+    detail.textContent=`${pointsData.rangliste?.length || 0} gewertete Teilnehmer · Stand ${data.meta?.exportDate || 'unbekannt'} · Regeln ${pointsData.regeln?.tendenz ?? 2}/${pointsData.regeln?.differenz ?? 3}/${pointsData.regeln?.ergebnis ?? 5}`;
+    strip.dataset.source='calculated';
+  } else {
+    label.textContent='Highscore-Register';
+    detail.textContent='Noch keine berechnete Rangliste in punkte.json vorhanden; highscore.json bleibt die aktive Rückfallquelle.';
+    strip.dataset.source='fallback';
+  }
+}
+
+function parseGermanDate(value) {
+  const match = String(value || '').match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/);
+  if (!match) return null;
+  const date = new Date(Number(match[3]), Number(match[2]) - 1, Number(match[1]));
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function dataAgeInfo() {
+  const date = parseGermanDate(data.meta?.exportDate);
+  if (!date) return { label: 'Unbekannt', state: 'unknown', note: 'Exportdatum nicht lesbar' };
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const days = Math.max(0, Math.floor((today - date) / 86400000));
+  if (days <= 1) return { label: 'Aktuell', state: 'fresh', note: days === 0 ? 'Export von heute' : 'Export von gestern' };
+  if (days <= 7) return { label: `${days} Tage alt`, state: 'recent', note: 'Noch innerhalb des Wochenfensters' };
+  return { label: `${days} Tage alt`, state: 'stale', note: 'Neuer Kicktipp-Export empfohlen' };
+}
+
+function datasetAudit() {
+  const overall = data.individual?.overall || [];
+  const matchday = data.individual?.matchday || [];
+  const overallNames = new Set(overall.map(row => String(row.name)));
+  const matchdayNames = new Set(matchday.map(row => String(row.name)));
+  const duplicates = overall.length - overallNames.size + matchday.length - matchdayNames.size;
+  const missing = [...overallNames].filter(name => !matchdayNames.has(name)).length + [...matchdayNames].filter(name => !overallNames.has(name)).length;
+  const invalid = [...overall, ...matchday].filter(row => !row.name || !Number.isFinite(Number(row.rank))).length;
+  return { duplicates, missing, invalid, clean: duplicates === 0 && missing === 0 && invalid === 0 };
+}
+
+function renderDataCompass() {
+  const host = document.querySelector('#data-compass');
+  if (!host) return;
+  const age = dataAgeInfo();
+  const audit = datasetAudit();
+  const count = data.individual?.overall?.length || 0;
+  const statusText = audit.clean ? 'Struktur geprüft' : `${audit.duplicates + audit.missing + audit.invalid} Hinweise`;
+  host.className = `hs-data-compass is-${age.state}${audit.clean ? ' is-clean' : ' has-warning'}`;
+  host.innerHTML = `
+    <div><span>Datenquelle</span><strong>${esc(data.meta?.source || 'Nicht angegeben')}</strong><small>${esc(data.meta?.privacy || 'Nur öffentliche Ranglistendaten')}</small></div>
+    <div><span>Aktualität</span><strong>${esc(age.label)}</strong><small>${esc(age.note)}</small></div>
+    <div><span>Registerumfang</span><strong>${count} Spieler</strong><small>Gesamt- und Spieltagswertung abgeglichen</small></div>
+    <div><span>Datenprüfung</span><strong>${esc(statusText)}</strong><small>${audit.clean ? 'Keine Dubletten oder Namensabweichungen' : `Dubletten ${audit.duplicates} · Abweichungen ${audit.missing} · ungültig ${audit.invalid}`}</small></div>`;
 }
 
 function playerByName(name, view) {
@@ -252,7 +328,7 @@ function renderPlayerTrend(name) {
     box.classList.add('is-locked');
     stateEl.textContent = 'Nicht berechenbar';
     grid.innerHTML = '<article><span>Archivstände</span><strong>' + trend.snapshots.length + '</strong><small>Mindestens zwei vollständige Spielerstände erforderlich</small></article><article><span>Rangbewegung</span><strong>–</strong><small>Keine Bewegung wird simuliert</small></article><article><span>Punktezuwachs</span><strong>–</strong><small>Noch keine belastbare Zeitreihe</small></article>';
-    note.textContent = 'Der Saisonverlauf erscheint, sobald mehrere Spieltage abgeschlossen sind.';
+    note.textContent = 'Der aktuelle Export enthält keine ausreichende Spielerhistorie. Erst archivierte Gesamtstände mit Spielernamen, Rang und Punkten erlauben eine seriöse Verlaufsanalyse.';
     return;
   }
   box.classList.remove('is-locked');
@@ -308,7 +384,7 @@ function openPlayerProfile(name) {
   renderPlayerTrend(name);
   renderPlayerLegacy(name);
   document.querySelector('#player-profile-note').textContent = noScore
-    ? 'Noch keine sportliche Wertung vorhanden. Das Profil füllt sich nach dem ersten Spieltag.'
+    ? 'Noch keine sportliche Wertung vorhanden. Das Profil zeigt ausschließlich bestätigte Exportdaten.'
     : 'Das Profil vergleicht Gesamtwertung und aktuellen Einzelspieltag. Es werden keine fehlenden Werte geschätzt.';
   if (typeof dialog.showModal === 'function') dialog.showModal();
   else dialog.setAttribute('open', '');
@@ -349,6 +425,37 @@ function currentFilteredRows() {
 function csvCell(value) {
   return `"${String(value ?? '').replace(/"/g, '""')}"`;
 }
+
+function exportCurrentRanking() {
+  const rows = currentFilteredRows();
+  const overall = state.view === 'overall';
+  const header = overall
+    ? ['Rang', 'Spieler', 'Bonuspunkte', 'Spieltagsiege', 'Gesamtpunkte']
+    : ['Rang', 'Spieler', 'Punkte', 'Bonus', 'Gesamtpunkte', 'Spieltagsplatz'];
+  const body = rows.map(row => overall
+    ? [row.rank, row.name, row.bonusPoints, row.matchdayWins, row.totalPoints]
+    : [row.rank, row.name, row.points, row.bonusPoints, row.totalPoints, row.matchdayRank]);
+  const meta = [
+    ['The Old Smugglers Club – Highscore'],
+    [`Saison ${data.meta?.season || '2026/2027'}`],
+    [overall ? 'Gesamtwertung' : (data.meta?.matchday || 'Einzelspieltag')],
+    [`Datenstand ${data.meta?.exportDate || 'unbekannt'}`],
+    []
+  ];
+  const csv = '\uFEFF' + [...meta, header, ...body].map(row => row.map(csvCell).join(';')).join('\r\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  const suffix = overall ? 'gesamtwertung' : 'spieltag';
+  link.href = url;
+  link.download = `old-smugglers-highscore-${suffix}.csv`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+  setSystemStatus('ready', 'CSV erstellt', `${rows.length} Ranglisteneinträge wurden exportiert.`);
+}
+
 
 function setSystemStatus(type, title, message, retry = false) {
   const el = document.querySelector('#hs-system-status');
@@ -422,17 +529,27 @@ function renderPodium() {
   const el = document.querySelector('#podium');
   const notice = document.querySelector('#ranking-notice');
 
-  if (!rows.length) {
-    notice.textContent = '';
-    notice.hidden = true;
-    el.innerHTML = '<div class="hs-podium-empty">Noch keine Ranglistendaten vorhanden.</div>';
+  if (!rows.length || status.open) {
+    notice.hidden = false;
+    notice.innerHTML = '<strong>Rangdeck noch unbesetzt.</strong> Solange keine Punkte vergeben wurden, bleiben alle Podiumsplätze frei.';
+
+    el.innerHTML = `<div class="hs-podium-rigging" aria-hidden="true"><span></span><span></span></div>${[1,2,3].map(place => `
+      <article class="hs-podium-card place-${place} is-provisional is-empty">
+        <div class="hs-card-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="hs-rank-seal" aria-hidden="true"><span>–</span></div>
+        <div class="hs-place-label">Noch offen</div>
+        <strong class="hs-empty-name">–</strong>
+        <div class="hs-podium-divider" aria-hidden="true"></div>
+        <div class="hs-podium-points">0 Punkte</div>
+        ${state.view === 'overall' ? '<small>0 Spieltagssiege</small>' : ''}
+        <div class="hs-podium-motto">Noch ohne Wertung</div>
+        <div class="hs-pedestal-face" aria-hidden="true"><span>–</span></div>
+      </article>`).join('')}<div class="hs-podium-deck" aria-hidden="true"><span></span></div>`;
     return;
   }
 
   notice.hidden = false;
-  if (status.open) {
-    notice.innerHTML = '<strong>Rangdeck noch unbesetzt.</strong> Alle Teilnehmer stehen derzeit bei 0 Punkten. Die angezeigte Reihenfolge ist vorläufig und alphabetisch.';
-  } else if (status.tied) {
+  if (status.tied) {
     notice.innerHTML = `<strong>Geteilte Führung.</strong> ${status.leaders.length} Spieler liegen mit ${fmt(status.max)} Punkten gleichauf.`;
   } else {
     notice.innerHTML = `<strong>Aktueller Stand.</strong> ${esc(status.leaders[0]?.name)} führt mit ${fmt(status.max)} Punkten.`;
@@ -441,18 +558,18 @@ function renderPodium() {
   el.innerHTML = `<div class="hs-podium-rigging" aria-hidden="true"><span></span><span></span></div>${rows.map((row, index) => {
     const place = index + 1;
     const tiedAtTop = status.tied && scoreOf(row, state.view) === status.max;
-    const label = status.open ? 'Vorläufig' : tiedAtTop ? 'Geteilter Rang 1' : `Platz ${place}`;
-    const motto = status.open ? 'Noch ohne Wertung' : index === 0 ? 'Kapitän der Rangliste' : index === 1 ? 'Erster Maat' : 'Steuermann';
-    return `<article class="hs-podium-card place-${place}${status.open ? ' is-provisional' : ''}">
+    const label = tiedAtTop ? 'Geteilter Rang 1' : `Platz ${place}`;
+    const motto = index === 0 ? 'Kapitän der Rangliste' : index === 1 ? 'Erster Maat' : 'Steuermann';
+    return `<article class="hs-podium-card place-${place}">
       <div class="hs-card-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-      <div class="hs-rank-seal" aria-hidden="true"><span>${status.open ? '–' : place}</span></div>
+      <div class="hs-rank-seal" aria-hidden="true"><span>${place}</span></div>
       <div class="hs-place-label">${label}</div>
       <strong>${profileButton(row.name)}</strong>
       <div class="hs-podium-divider" aria-hidden="true"></div>
       <div class="hs-podium-points">${fmt(scoreOf(row, state.view))} Punkte</div>
       ${state.view === 'overall' ? `<small>${fmt(row.matchdayWins)} Spieltagssiege</small>` : ''}
       <div class="hs-podium-motto">${motto}</div>
-      <div class="hs-pedestal-face" aria-hidden="true"><span>${status.open ? '–' : place}</span></div>
+      <div class="hs-pedestal-face" aria-hidden="true"><span>${place}</span></div>
     </article>`;
   }).join('')}<div class="hs-podium-deck" aria-hidden="true"><span></span></div>`;
   el.querySelectorAll('[data-player-profile]').forEach(button => button.addEventListener('click', () => openPlayerProfile(button.dataset.playerProfile)));
@@ -544,32 +661,6 @@ function renderIndividual() {
   renderPodium();
 }
 
-
-function bonusRows() {
-  const rows = [...(data.individual?.overall || [])].map(row => ({
-    rank: Number(row.rank || 1),
-    name: String(row.name || ''),
-    bonusPoints: Number(row.bonusPoints || 0),
-    correctAnswers: Math.floor(Number(row.bonusPoints || 0) / 5)
-  }));
-  rows.sort((a,b) => b.bonusPoints - a.bonusPoints || a.name.localeCompare(b.name, 'de'));
-  let rank = 0, previous = null;
-  rows.forEach((row,index) => { if (previous === null || row.bonusPoints !== previous) rank = index + 1; row.rank = rank; previous = row.bonusPoints; });
-  return rows;
-}
-
-function renderBonusCompetition() {
-  const rows = bonusRows();
-  const body = document.querySelector('#bonus-body');
-  const podium = document.querySelector('#bonus-podium');
-  const notice = document.querySelector('#bonus-notice');
-  if (!body || !podium || !notice) return;
-  const hasPoints = rows.some(row => row.bonusPoints > 0);
-  notice.innerHTML = hasPoints ? '<strong>Bonuswertung aktiv.</strong> Die Punkte werden der Gesamtwertung zugerechnet.' : '<strong>Noch keine Bonusfrage ausgewertet.</strong> Die Rangliste startet, sobald Kicktipp erste Saisonfragen auflöst.';
-  podium.innerHTML = rows.slice(0,3).map((row,index) => `<article class="hs-podium-card place-${index+1}"><span>Platz ${row.rank}</span><strong>${esc(row.name)}</strong><small>${fmt(row.bonusPoints)} Bonuspunkte · ${row.correctAnswers} richtige Antworten</small></article>`).join('');
-  body.innerHTML = rows.map(row => `<tr>${rowCell('Rang', esc(row.rank), 'hs-rank')}${rowCell('Spieler', profileButton(row.name), 'hs-player')}${rowCell('Richtige Antworten', fmt(row.correctAnswers))}${rowCell('Bonuspunkte', fmt(row.bonusPoints), 'hs-total')}</tr>`).join('');
-}
-
 function renderTeam(name) {
   const overallRows = [...(data.teams?.overall || [])].sort((a, b) => Number(b.totalPoints || 0) - Number(a.totalPoints || 0));
   const overall = overallRows.find(row => row.name === name);
@@ -637,12 +728,12 @@ function renderLegacyArchive() {
   if (!host) return;
   const entries = confirmedHallEntries();
   if (!entries.length) {
-    host.innerHTML = '<div class="hs-legacy-empty"><strong>Chronik noch leer</strong><span>Die ersten Titel und Bestmarken werden hier nachgetragen.</span></div>';
-    if (note) note.textContent = 'Die Clubchronik wächst mit den abgeschlossenen Wettbewerben.';
+    host.innerHTML = '<div class="hs-legacy-empty"><strong>Chronik noch nicht verfügbar</strong><span>hall-of-fame.json enthält derzeit keine bestätigten Einträge.</span></div>';
+    if (note) note.textContent = 'Es werden keine historischen Gewinner aus dem aktuellen Highscore abgeleitet.';
     return;
   }
   host.innerHTML = entries.map(entry => `<article class="hs-legacy-card"><span>${esc(entry.type)}</span><strong>${esc(entry.title)}</strong><b>${profileButton(entry.holder)}</b><small>${esc(entry.detail || 'Bestätigter Chronikeintrag')}</small></article>`).join('');
-  if (note) note.textContent = `${entries.length} Titel und Bestmarken im Logbuch.`;
+  if (note) note.textContent = `${entries.length} bestätigte Titel- und Rekordeinträge aus hall-of-fame.json geladen.`;
 }
 
 function renderPlayerLegacy(name) {
@@ -674,8 +765,7 @@ function renderRecords() {
     ['Detailorden', Boolean(data.orders || data.tipDetails), data.orders || data.tipDetails ? 'Detaildaten vorhanden' : 'Detaildaten fehlen'],
     ['Datenexport', Boolean(data.meta?.exportDate), data.meta?.exportDate ? `Stand ${data.meta.exportDate}` : 'Exportdatum fehlt']
   ];
-  const readinessHost = document.querySelector('#readiness-grid');
-  if (readinessHost) readinessHost.innerHTML = readiness.map(([label, ready, text]) => `<article class="hs-readiness-card ${ready ? 'is-ready' : 'is-waiting'}"><span>${esc(label)}</span><strong>${ready ? 'Bereit' : 'Wartet'}</strong><small>${esc(text)}</small><i aria-hidden="true"></i></article>`).join('');
+  document.querySelector('#readiness-grid').innerHTML = readiness.map(([label, ready, text]) => `<article class="hs-readiness-card ${ready ? 'is-ready' : 'is-waiting'}"><span>${esc(label)}</span><strong>${ready ? 'Bereit' : 'Wartet'}</strong><small>${esc(text)}</small><i aria-hidden="true"></i></article>`).join('');
   const activeModules = readiness.filter(([, ready]) => ready).length;
   const exportLabel = data.meta?.exportDate || 'Noch offen';
   const exportEl = document.querySelector('#records-export');
@@ -757,7 +847,7 @@ function renderFieldAnalysis() {
       ['Punktespanne', '–', 'Noch keine Rangabstände']
     ].map(([label,value,small]) => `<article><span>${label}</span><strong>${value}</strong><small>${small}</small></article>`).join('');
     chart.innerHTML = '<div class="hs-zone-empty"><strong>Noch keine Leistungsverteilung</strong><span>Das Diagramm wird nach der ersten Punktevergabe automatisch aktiviert.</span></div>';
-    note.textContent = 'Die Feldanalyse startet automatisch nach der ersten Punktevergabe.';
+    note.textContent = 'Es werden keine Zonen, Mittelwerte oder Abstände simuliert. Grundlage sind ausschließlich bestätigte Werte aus highscore.json.';
     return;
   }
   status.className = 'hs-field-status is-ready';
@@ -801,17 +891,18 @@ function init() {
   const teamsTied = teams.length < 2 || Number(teams[0]?.totalPoints || 0) === Number(teams[1]?.totalPoints || 0);
   document.querySelector('#summary-team').textContent = teamsTied ? 'Gleichstand' : teams[0].name;
   document.querySelector('#summary-team-points').textContent = teamsTied && Number(teams[0]?.totalPoints || 0) === 0 ? 'Noch ohne Wertung' : `${fmt(teams[0]?.totalPoints)} Punkte`;
-  document.querySelector('#summary-participants').textContent = `${individuals.length}`;
+  document.querySelector('#summary-updated').textContent = data.meta?.exportDate || '–';
 
   document.querySelectorAll('[data-individual-view]').forEach(item => classListToggle(item, item.dataset.individualView === state.view));
   const pageSizeSelect = document.querySelector('#page-size');
   if (pageSizeSelect) pageSizeSelect.value = String(state.pageSize);
   renderIndividual();
-  renderBonusCompetition();
   renderTeam('Old Smugglers Team');
   renderTeam('New Smugglers Team');
   renderRecords();
   renderFieldAnalysis();
+  renderDataCompass();
+  renderHighscoreSource();
 
   const profileDialog = document.querySelector('#player-dialog');
   const compareSelect = document.querySelector('#player-compare-select');
@@ -858,6 +949,8 @@ function init() {
     renderIndividual();
   });
   document.querySelector('#ranking-reset').addEventListener('click', resetRankingControls);
+  document.querySelector('#export-csv').addEventListener('click', exportCurrentRanking);
+  document.querySelector('#print-ranking').addEventListener('click', () => window.print());
   document.querySelector('#page-prev').addEventListener('click', () => {
     if (state.page > 1) {
       state.page--;
@@ -870,7 +963,7 @@ function init() {
   });
 
   const requestedSection = location.hash.replace('#', '');
-  if (['individual', 'bonus', 'old-team', 'new-team', 'records'].includes(requestedSection)) setSection(requestedSection);
+  if (['individual', 'old-team', 'new-team', 'records'].includes(requestedSection)) setSection(requestedSection);
 }
 
 function classListToggle(element, active) {
@@ -879,7 +972,7 @@ function classListToggle(element, active) {
 }
 
 function loadHighscoreData() {
-  setSystemStatus('loading', 'Highscore wird geladen', 'Die aktuellen Ranglisten werden vorbereitet.');
+  setSystemStatus('loading', 'Daten werden geladen', 'Das Highscore-Register wird vorbereitet.');
   Promise.all([
     (window.OSCDataRegistry ? window.OSCDataRegistry.url('highscore') : Promise.resolve('./highscore.json')).then(url => fetch(url, { cache: 'no-store' })).then(response => {
       if (!response.ok) throw Error(`highscore.json: HTTP ${response.status}`);
@@ -911,14 +1004,14 @@ function loadHighscoreData() {
       if (body) body.innerHTML = '<tr><td colspan="6" class="hs-empty"><strong>Highscore nicht verfügbar</strong><span>Die zentrale Datendatei konnte nicht gelesen werden.</span></td></tr>';
       const notice = document.querySelector('#ranking-notice');
       if (notice) notice.innerHTML = '<strong>Datenfehler.</strong> Die Rangliste ist momentan nicht verfügbar.';
-      setSystemStatus('error', 'Highscore konnte nicht geladen werden', 'Die Rangliste ist momentan nicht verfügbar. Bitte versuche es später erneut.', true);
+      setSystemStatus('error', 'Highscore konnte nicht geladen werden', 'Bitte Verbindung oder highscore.json prüfen.', true);
       console.error(error);
     });
 }
 
 window.addEventListener('hashchange', () => {
   const requested = location.hash.replace('#', '');
-  if (['individual', 'bonus', 'old-team', 'new-team', 'records'].includes(requested)) setSection(requested);
+  if (['individual', 'old-team', 'new-team', 'records'].includes(requested)) setSection(requested);
 });
 
 loadHighscoreData();
