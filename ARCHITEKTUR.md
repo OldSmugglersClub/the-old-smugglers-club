@@ -360,3 +360,13 @@ Vor einer Änderung der Datenstruktur ist eine Feld-für-Feld-Matrix zu erstelle
 - Testfälle Desktop und Mobil
 
 Erst nach Freigabe dieser Migrationsmatrix darf die zentrale Datenhaltung technisch umgebaut werden.
+
+
+## Ergänzende Datenarchitektur
+
+Die Feld- und Migrationsanalyse ist ab Version 4.5.0 ausgelagert in:
+
+- `DATENARCHITEKTUR.md`
+- `MIGRATIONSMATRIX.md`
+
+Diese Dokumente sind vor jeder strukturellen Änderung an JSON-Dateien zu prüfen.
