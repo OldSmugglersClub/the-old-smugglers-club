@@ -1,35 +1,11 @@
 {
-  "version": "4.7.0-HF1",
-  "files": [
-    {
-      "path": "CHANGELOG.md",
-      "sha256": "321a81c67f7f5d22a4c66f158089dfb9683b482519fe80855c20411d2b847c9b",
-      "bytes": 21125
-    },
-    {
-      "path": "CHANGELOG_4.7.0-HF1.md",
-      "sha256": "7b1652072c52ab1894439708d34674f95209e0a5bd42384305f96f79e9ebbb6b",
-      "bytes": 305
-    },
-    {
-      "path": "DATEILISTE_ERSETZEN_NEU_LOESCHEN_4.7.0-HF1.md",
-      "sha256": "3ef3b67db68be0087135cd51d489ee04d0f1fa2a77ac8cc315983754e84111ad",
-      "bytes": 210
-    },
-    {
-      "path": "README-WEBSITE-4.7.0-HF1.md",
-      "sha256": "a5a05d79db73459ba20b3c3c2b266947212782a983bc8db84017bbd099248008",
-      "bytes": 521
-    },
-    {
-      "path": "VERSION.txt",
-      "sha256": "c1eab204ccfe5026639bbf03fda69b038fac513c92ab209bb580242d203d0395",
-      "bytes": 10
-    },
-    {
-      "path": "index.html",
-      "sha256": "631006a7999388e25154f150a350580132f7022d704a832b12b7a3421617a680",
-      "bytes": 199211
-    }
-  ]
+  "version": "4.7.0-HF2",
+  "files": {
+    "CHANGELOG.md": "6700338636e04a040100c51cf90f6ef7f34228f53257f8115ab3bf22314a9d27",
+    "CHANGELOG_4.7.0-HF2.md": "fd9a5a9046b3c0e19739a1d224f74167f7681aa12b4c1840a4c950de0e0b355a",
+    "DATEILISTE_ERSETZEN_NEU_LOESCHEN_4.7.0-HF2.md": "c06d8d27b3a531040f6651a06c55817f2dc41fcdf423ed32859ad04f3ca9da67",
+    "README-WEBSITE-4.7.0-HF2.md": "1282ec41ab000902aa3e31929b7360bf957831dc16f67a24de474a301ecb92ad",
+    "VERSION.txt": "583213b441ad900c0c29d013f0554850cb1a0dce439e6d1887a436325e855621",
+    "index.html": "0f37279db56c66c1e9a5f56bbaa8a45b3acba218bdded3a95549d9ddcaed6f93"
+  }
 }

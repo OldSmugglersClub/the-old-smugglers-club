@@ -5253,18 +5253,29 @@
     }
 
   
-    /* Website 4.7.0-HF1 – mobile Spieltagsliste mit zwei sichtbaren Begegnungen */
+    /* Website 4.7.0-HF2 – adaptive mobile Spieltagsliste */
     @media (max-width: 760px) {
       .sm-schedule {
         height: auto;
-        min-height: 760px;
+        min-height: 0;
         max-height: none;
       }
 
       .sm-event-list:not(.is-empty) {
         flex: 0 0 auto;
-        min-height: 340px;
-        max-height: 380px;
+        min-height: 0;
+      }
+
+      .sm-event-list.is-single,
+      .sm-event-list.is-double {
+        max-height: none;
+        overflow-y: visible;
+        scrollbar-gutter: auto;
+      }
+
+      .sm-event-list.is-multiple {
+        max-height: 700px;
+        overflow-y: auto;
       }
 
       .sm-day__title {
@@ -5274,13 +5285,8 @@
     }
 
     @media (max-width: 520px) {
-      .sm-schedule {
-        min-height: 820px;
-      }
-
-      .sm-event-list:not(.is-empty) {
-        min-height: 360px;
-        max-height: 410px;
+      .sm-event-list.is-multiple {
+        max-height: 680px;
       }
     }
 
@@ -6399,7 +6405,8 @@
 
           if (elements.list) {
             elements.list.replaceChildren();
-            elements.list.classList.remove("is-empty");
+            elements.list.classList.remove("is-empty", "is-single", "is-double", "is-multiple");
+            elements.list.classList.add(games.length === 1 ? "is-single" : (games.length === 2 ? "is-double" : "is-multiple"));
             const groups = new Map();
             games.forEach(game => {
               const key = game.datum || game.datumVon;
