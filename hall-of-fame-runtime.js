@@ -1,0 +1,35 @@
+(()=>{
+  "use strict";
+  const clone=value=>value&&typeof value==="object"?structuredClone(value):{};
+  async function json(url,fallback={}){try{const r=await fetch(url,{cache:"no-store"});return r.ok?await r.json():fallback}catch{return fallback}}
+  function mergeEntry(base,next){
+    if(!next||next.freigegeben!==true||!next.name)return base;
+    return {...(base||{}),...next,offen:false};
+  }
+  async function load(){
+    const base=clone(await json("./hall-of-fame.json",{}));
+    const view=await json("./website-view.json",{});
+    const update=view?.hallOfFame;
+    if(!update||update.freigegeben!==true){
+      base.meta={...(base.meta||{}),runtime:"Historischer Bestand aktiv; keine freigegebene Admin-Aktualisierung vorhanden."};
+      return base;
+    }
+    const result=clone(base);
+    result.aktuellerChampion=mergeEntry(result.aktuellerChampion,update.gesamtChampion);
+    result.teamChampion=mergeEntry(result.teamChampion,update.gesamtTeamSieger);
+    const mapping={bundesliga:"meister","dfb-pokal":"dfbPokal","champions-league":"championsLeague","europa-league":"europaLeague",smugglerauftraege:"smugglerauftraege",bonuswettbewerb:"bonuswettbewerb",weihnachtsregatta:"weihnachtsregatta",piratenkodex:"piratenkodex"};
+    for(const [id,key] of Object.entries(mapping)) result[key]=mergeEntry(result[key],update.wettbewerbe?.[id]);
+    if(Array.isArray(update.besondereLeistungen)){
+      const existing=Array.isArray(result.besondereLeistungen)?result.besondereLeistungen:[];
+      const additions=update.besondereLeistungen.filter(x=>x&&x.freigegeben===true&&x.name&&x.titel);
+      result.besondereLeistungen=[...existing,...additions.filter(a=>!existing.some(e=>e.titel===a.titel&&e.name===a.name))];
+    }
+    if(Array.isArray(update.meisterchronik)) result.meisterchronik=update.meisterchronik.filter(x=>x&&x.freigegeben===true&&x.name&&x.saison);
+    if(update.rekorde&&update.rekordeFreigegeben===true) result.rekorde={...(result.rekorde||{}),...update.rekorde};
+    const special=result.besondereLeistungen?.[0];
+    if(special) result.ehrenmitglieder={label:special.titel,wert:special.name,offen:false};
+    result.meta={...(result.meta||{}),runtime:"Freigegebene Admin-Titel wurden auf den historischen Bestand angewendet."};
+    return result;
+  }
+  window.OSCHallOfFame={load};
+})();

@@ -1142,6 +1142,23 @@ function renderCards(cards) {
     }
   }
 
+  async function loadFooterVersion() {
+    const target = $("legal-version");
+    if (!target) return;
+    try {
+      const versionUrl = window.OSCDataRegistry
+        ? await window.OSCDataRegistry.url("version")
+        : "./VERSION.txt";
+      const response = await fetch(versionUrl, { cache: "no-store" });
+      if (!response.ok) throw new Error(`VERSION.txt: HTTP ${response.status}`);
+      const version = (await response.text()).trim();
+      target.textContent = version ? `Version ${version}` : "Version nicht verfügbar";
+    } catch (error) {
+      console.warn("Versionsstand konnte nicht geladen werden.", error);
+      target.textContent = "Version nicht verfügbar";
+    }
+  }
+
   async function load() {
     try {
       if (window.OSCDataRegistry) {
@@ -1185,18 +1202,23 @@ function renderCards(cards) {
       text("status-text", data.aktuellerStand);
 
       const centralSection = centralGamesSection(centralGameData, teamData);
+      const editorialSections = safeArray(data.bereiche);
       const sections = centralSection
-        ? [centralSection, ...safeArray(data.bereiche)]
-        : safeArray(data.bereiche);
+        ? (slug === "dynamo-dresden"
+            ? [...editorialSections, centralSection]
+            : [centralSection, ...editorialSections])
+        : editorialSections;
 
       renderSections(sections, data.buttons, centralGameData, teamData, bundesligaTableData);
       renderButtons(data.buttons);
       text("footer-text", data.fusszeile);
+      await loadFooterVersion();
     } catch (error) {
       console.error(error);
       const box = $("error");
       box.textContent = "Die Wettbewerbsdaten sind momentan nicht verfügbar. Bitte versuche es später erneut.";
       box.classList.remove("is-hidden");
+      await loadFooterVersion();
     }
   }
 

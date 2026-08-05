@@ -1,0 +1,187 @@
+[
+  {
+    "datei": "CHANGELOG.md",
+    "sha256": "335da0979c1699dedc35513b4c78625acba1b97dc31463b9c702a26d1c982911",
+    "bytes": 20940
+  },
+  {
+    "datei": "DATEILISTE_ERSETZEN_NEU_LOESCHEN_4.7.0-FINAL.md",
+    "sha256": "5eb1f4eca4d2dc7eec7ba1d371a8e8838fd674b62c526de336ff870376790078",
+    "bytes": 330
+  },
+  {
+    "datei": "README-KUMULATIVES-UPDATE.md",
+    "sha256": "344f6da574c6db6ae56f550dcd57c5cab9811f23c564034d36cda3630d75d8fa",
+    "bytes": 632
+  },
+  {
+    "datei": "README-WEBSITE-4.7.0-FINAL.md",
+    "sha256": "ecd537a95b79ebf02234bbb4bde678681f751027c7b14d56fc006ab61eb4529e",
+    "bytes": 955
+  },
+  {
+    "datei": "RELEASE_NOTES_4.7.0_FINAL.md",
+    "sha256": "4d3b9a0bd0763866f3346018ff2ee6796a651c89350fdd9f7867c7e3a39bb333",
+    "bytes": 646
+  },
+  {
+    "datei": "ROADMAP.md",
+    "sha256": "dfef06ae785a874a67a37532b13aae132de6d350cbe8b202a9e8f18e649a6ca2",
+    "bytes": 11177
+  },
+  {
+    "datei": "VERSION.txt",
+    "sha256": "ef3193df6d68bc7ef70fda62056eba15f0ef668fc9c21b487ae7fd56a562bfd6",
+    "bytes": 6
+  },
+  {
+    "datei": "ZU_LOESCHEN_4.6.1_ZU_4.7.0.txt",
+    "sha256": "c9ce6c70d6840558e574df0a44e65c4ea78c977f13a3c470e9bf163ad56fb68b",
+    "bytes": 94
+  },
+  {
+    "datei": "bundesliga.html",
+    "sha256": "1665a51b7c6a63922a161c06643b8400bb5756bbc7a26851aed369e9bd8b80fc",
+    "bytes": 1940
+  },
+  {
+    "datei": "bundesliga.json",
+    "sha256": "d6925ebbd9e5f2f286267ac364e9a0baf4d1ba19040929f9862a2fb00bf204c5",
+    "bytes": 1238
+  },
+  {
+    "datei": "champion-trophy.jpeg",
+    "sha256": "1776b4c37e316281d16a7bacc6fccbc053a90007ed41c886f954fa89d6336e21",
+    "bytes": 257638
+  },
+  {
+    "datei": "champions-league.html",
+    "sha256": "1665a51b7c6a63922a161c06643b8400bb5756bbc7a26851aed369e9bd8b80fc",
+    "bytes": 1940
+  },
+  {
+    "datei": "datenregister.json",
+    "sha256": "219c7fbe496ab8bc2c4fc1dff4609397e3d6b6319d505f4018394a4f18ba6367",
+    "bytes": 1598
+  },
+  {
+    "datei": "dfb-pokal.html",
+    "sha256": "1665a51b7c6a63922a161c06643b8400bb5756bbc7a26851aed369e9bd8b80fc",
+    "bytes": 1940
+  },
+  {
+    "datei": "dynamo-dresden.html",
+    "sha256": "63d058753cd69663951290f825fe27935a5865ffd0d7b1164e7ee648820bd011",
+    "bytes": 1986
+  },
+  {
+    "datei": "dynamo-dresden.json",
+    "sha256": "4a8a6c5e938083b83469a3750f14cbc2b8e682a120605fb7b3a30164b05b04b0",
+    "bytes": 1729
+  },
+  {
+    "datei": "europa-league.html",
+    "sha256": "89da0bfcd4bd0d3e943d40e6497ee179600a8771264ac9eb68c72b9975a24f52",
+    "bytes": 1934
+  },
+  {
+    "datei": "hall-of-fame-runtime.js",
+    "sha256": "817b14269edf7c6ca75764264ffdef286818a8b88ad096e48eb5607348f12f6a",
+    "bytes": 2316
+  },
+  {
+    "datei": "hall-of-fame.html",
+    "sha256": "4a1d2c7e8b708b87d29453987f94f566b0a7aebda9d9401a2c05a3ec2a2daea1",
+    "bytes": 9002
+  },
+  {
+    "datei": "hall-of-fame.json",
+    "sha256": "c876eb29c0ea83df0b31e726f0c8c910715338710bed22eacff4235ad6225d5e",
+    "bytes": 2460
+  },
+  {
+    "datei": "highscore-data-adapter.js",
+    "sha256": "266b05cabf18f35dad0f8501f28186c68dca5f772ac17186393c237e617768b3",
+    "bytes": 4200
+  },
+  {
+    "datei": "highscore-teaser.js",
+    "sha256": "b449cfc1d0e3963dae2e904dacb58180c78b273b9d0c8dd6df05074c47282241",
+    "bytes": 3215
+  },
+  {
+    "datei": "highscore.css",
+    "sha256": "f8cc9f339bc5db5e4c61a462e39eaec55d2707589fb7c6777851b71b239e4e1e",
+    "bytes": 69229
+  },
+  {
+    "datei": "highscore.html",
+    "sha256": "f71da7e03e2e8caf31525b84363fec68b8f7e0d01de763e819decdd7e145994b",
+    "bytes": 4423
+  },
+  {
+    "datei": "highscore.js",
+    "sha256": "f649fb7c611a9c1e67252d048e9a0c9085745b3255bd4900600c1203d73d3cf6",
+    "bytes": 11392
+  },
+  {
+    "datei": "index.html",
+    "sha256": "c8222b840cb84e4be651dd10a21189ccd892ab687a6f6268dfb9fd0cd6d6fa86",
+    "bytes": 198587
+  },
+  {
+    "datei": "piratenkodex.html",
+    "sha256": "1665a51b7c6a63922a161c06643b8400bb5756bbc7a26851aed369e9bd8b80fc",
+    "bytes": 1940
+  },
+  {
+    "datei": "punkteberechnung.html",
+    "sha256": "8361ffa279ce414d257d0922dd8c735f70a8a0842351e33083ff29f153ef8ad0",
+    "bytes": 2774
+  },
+  {
+    "datei": "punkteberechnung.js",
+    "sha256": "eab00047c21952f145b5428f54a8cb22dfcc6b13ce72585d84d1452bfae2522a",
+    "bytes": 9068
+  },
+  {
+    "datei": "relegation.html",
+    "sha256": "1665a51b7c6a63922a161c06643b8400bb5756bbc7a26851aed369e9bd8b80fc",
+    "bytes": 1940
+  },
+  {
+    "datei": "saison-2026-2027.html",
+    "sha256": "7776c23a0b1c305e6cc34b007491a15d381866def85fc72b46f9c11aec619bee",
+    "bytes": 3926
+  },
+  {
+    "datei": "saisonuebersicht.js",
+    "sha256": "c520d2f5cf98b03562b427dd82c25bca89cf96b06b64c1e8a2446aeb9ea33402",
+    "bytes": 7803
+  },
+  {
+    "datei": "schedule-data-adapter.js",
+    "sha256": "b2f3b145ef3037cb0942f576c1dc4c9501414e90b1eaff9f1922a9c0ecc66bfe",
+    "bytes": 2676
+  },
+  {
+    "datei": "smugglerauftraege.json",
+    "sha256": "8957acfaffb89813aeae6cc2e0a8047b4791f0db7198648ced21f0af5cdaff23",
+    "bytes": 13703
+  },
+  {
+    "datei": "website-view.json",
+    "sha256": "105c178bb633578a71443ffb16cb7139f0256a8d78682727e518193eab9bad8c",
+    "bytes": 501085
+  },
+  {
+    "datei": "weihnachtsregatta.html",
+    "sha256": "1665a51b7c6a63922a161c06643b8400bb5756bbc7a26851aed369e9bd8b80fc",
+    "bytes": 1940
+  },
+  {
+    "datei": "wettbewerb.js",
+    "sha256": "b7c555e9318b7975969016a368711f052ee861c8f468a28d565f06fbeec0801d",
+    "bytes": 51061
+  }
+]

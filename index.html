@@ -2342,10 +2342,53 @@
     .countdown-panel .chronometer-seal span::before { transform: translate(-50%, -50%) rotate(45deg); height: 17px; opacity: .72; }
     .countdown-panel .chronometer-seal span::after { transform: translate(-50%, -50%) rotate(-45deg); height: 17px; opacity: .72; }
 
+    .countdown-live-state {
+      grid-column: 1 / -1;
+      min-height: 116px;
+      display: grid;
+      place-items: center;
+      align-content: center;
+      gap: .3rem;
+      padding: 1rem;
+      border: 1px solid #c78c31;
+      border-radius: 11px;
+      color: #e0c37f;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(218,166,72,.13), transparent 46%),
+        linear-gradient(180deg, #2b1a0d 0%, #120b06 48%, #070402 51%, #1d1108 100%);
+      box-shadow:
+        inset 0 0 0 2px rgba(0,0,0,.54),
+        inset 0 1px 0 rgba(255,255,255,.11),
+        inset 0 -12px 22px rgba(0,0,0,.35),
+        0 8px 18px rgba(0,0,0,.46);
+      text-align: center;
+    }
+
+    .countdown-live-state[hidden] {
+      display: none !important;
+    }
+
+    .countdown-live-state strong {
+      color: #e5bd63;
+      font-size: clamp(1.75rem, 4vw, 2.55rem);
+      line-height: 1;
+      letter-spacing: .045em;
+      text-transform: uppercase;
+      text-shadow: 0 2px 0 #2d1906, 0 4px 9px rgba(0,0,0,.82);
+    }
+
+    .countdown-live-state span {
+      color: #c8a968;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
     .countdown-message {
       position: relative;
       z-index: 1;
-      margin: .72rem .08rem 0;
+      margin: 1.85rem .08rem 0;
       padding: .78rem .78rem .74rem .9rem;
       border: 1px solid rgba(174,115,30,.34);
       border-left: 3px solid #c9952e;
@@ -2561,6 +2604,12 @@
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: .08em;
+      min-width: 100px;
+      box-sizing: border-box;
+      white-space: nowrap;
+      word-break: keep-all;
+      overflow-wrap: normal;
+      hyphens: none;
     }
 
     .matchday-status::before,
@@ -3420,8 +3469,11 @@
 
     .sm-event-row__match {
       min-width: 0;
+      width: 100%;
+      justify-self: stretch;
       font-weight: 800;
       line-height: 1.25;
+      text-align: center;
     }
 
     .sm-event-row__subtitle {
@@ -3430,9 +3482,7 @@
       color: #b99b62;
       font-size: .75rem;
       font-weight: 400;
-    }
-
-    .sm-event-row__status {
+    }    .sm-event-row__status {
       color: #cda65b;
       font-size: .75rem;
       white-space: nowrap;
@@ -4518,6 +4568,42 @@
       }
     }
 
+
+    /* RC8.5-HF1 – besondere Leistungen als Ehrenauszeichnung */
+    #hall-of-fame .special-achievement-card {
+      display: grid;
+      grid-template-columns: 92px minmax(0,1fr);
+      gap: 1.15rem;
+      align-items: center;
+      padding: 1.25rem 1.35rem;
+      border: 1px solid rgba(242,210,126,.58);
+      border-radius: 16px;
+      background:
+        radial-gradient(circle at 12% 50%, rgba(213,161,59,.22), transparent 34%),
+        linear-gradient(145deg, rgba(66,40,18,.96), rgba(17,10,6,.96));
+      box-shadow: inset 0 1px rgba(255,255,255,.06), 0 14px 30px rgba(0,0,0,.28);
+    }
+    #hall-of-fame .special-achievement-medal {
+      width: 82px;
+      height: 82px;
+      display: grid;
+      place-items: center;
+      border: 2px solid rgba(242,210,126,.7);
+      border-radius: 50%;
+      color: var(--gold-light);
+      background: radial-gradient(circle, rgba(213,161,59,.28), rgba(54,31,13,.96) 70%);
+      box-shadow: inset 0 0 0 6px rgba(0,0,0,.22), 0 8px 18px rgba(0,0,0,.38);
+    }
+    #hall-of-fame .special-achievement-medal .pirate-icon { width: 44px; height: 44px; }
+    #hall-of-fame .special-achievement-copy { display: grid; gap: .28rem; min-width: 0; }
+    #hall-of-fame .special-achievement-copy span { color: var(--muted); font-weight: 700; }
+    #hall-of-fame .special-achievement-copy strong { color: #fff0b2; font-size: clamp(1.35rem,3vw,2rem); }
+    #hall-of-fame .special-achievement-copy small { color: var(--gold); letter-spacing: .05em; }
+    @media(max-width:620px){
+      #hall-of-fame .special-achievement-card { grid-template-columns: 1fr; text-align:center; }
+      #hall-of-fame .special-achievement-medal { justify-self:center; }
+    }
+
     /* Version 4.4.14 – Hall of Fame als öffentliches Ehrenlogbuch */
     #hall-of-fame .hall-intro-row {
       display: flex;
@@ -4901,6 +4987,47 @@
       word-break: normal;
     }
 
+    /* Website 4.7.0-RC8.1-HF3 – Missionsblock als geschlossene Einheit zentriert */
+    .welcome-status-item--mission {
+      align-items: center;
+    }
+    .welcome-status-item--mission > svg {
+      align-self: center;
+    }
+    .welcome-status-item--mission > span {
+      align-self: center;
+      display: grid;
+      min-width: 0;
+      gap: .11rem;
+    }
+    .welcome-status-item--mission > span > small {
+      margin: 0;
+      line-height: 1;
+    }
+    #welcome-next-mission {
+      display: grid;
+      gap: .08rem;
+      min-width: 0;
+      margin-top: 0;
+    }
+    .welcome-mission-name {
+      display: -webkit-box;
+      min-width: 0;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      overflow-wrap: anywhere;
+      line-height: 1.08;
+    }
+    .welcome-mission-date {
+      display: block;
+      color: #d7b85f;
+      font-size: .86em;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
     .welcome-command-actions {
       width: min(100%, 720px);
       display: grid;
@@ -4997,6 +5124,136 @@
       .welcome-command-button { min-height: 49px; white-space: normal; text-align: center; }
       .welcome-secondary-nav { gap: .18rem .5rem; line-height: 1.45; }
     }
+
+
+    .sm-event-row__status {
+      min-width: 78px;
+      padding: .28rem .58rem;
+      border: 1px solid rgba(190,129,39,.58);
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(82,48,17,.92), rgba(31,18,9,.96));
+      box-shadow: inset 0 1px rgba(255,255,255,.06);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .045em;
+      line-height: 1.1;
+      justify-self: center;
+    }
+
+    @media (max-width: 760px) {
+      .sm-event-row__status {
+        min-width: 0;
+        width: fit-content;
+        justify-self: start;
+      }
+    }
+
+
+    /* Website 4.7.0-RC6-HF7 – Spielpaarung als geschlossene, wartbare Einheit */
+    .sm-event-row__match {
+      min-width: 0;
+      width: 100%;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .sm-event-row__team {
+      min-width: 0;
+    }
+
+    .sm-event-row__team-name {
+      min-width: 0;
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+    }
+
+    .sm-event-row__seal {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      flex: 0 0 32px;
+      overflow: hidden;
+      border: 1px solid rgba(211,160,69,.72);
+      border-radius: 50%;
+      background: linear-gradient(145deg,#3a2512,#120b06);
+      box-shadow:
+        inset 0 0 0 2px rgba(28,16,7,.72),
+        0 2px 6px rgba(0,0,0,.38);
+      font-size: .48rem;
+      font-weight: 900;
+    }
+
+    .sm-event-row__seal img,
+    .sm-event-row__seal svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .sm-event-row__separator {
+      color: #d7ad58;
+      font-size: 1.05rem;
+      flex: 0 0 auto;
+    }
+
+    @media (min-width: 761px) {
+      .sm-event-row__match {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .62rem;
+        text-align: center;
+      }
+
+      .sm-event-row__team,
+      .sm-event-row__team--home,
+      .sm-event-row__team--away {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        gap: .42rem;
+      }
+
+      .sm-event-row__team-name {
+        width: auto;
+        white-space: nowrap;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .sm-event-row__match {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: .35rem;
+        text-align: left;
+      }
+
+      .sm-event-row__team,
+      .sm-event-row__team--home,
+      .sm-event-row__team--away {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: .5rem;
+        text-align: left;
+      }
+
+      .sm-event-row__team--away {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+      }
+
+      .sm-event-row__separator {
+        display: none;
+      }
+    }
+
+  
+    .hall-columns--records-only { grid-template-columns: minmax(0, 1fr); }
   </style>
   <link rel="stylesheet" href="./highscore.css?v=4.0.1">
   <link rel="stylesheet" href="./accessibility-v33.css">
@@ -5026,6 +5283,8 @@
     }
   </style>
   <link rel="stylesheet" href="./legal.css">
+  <script src="./hall-of-fame-runtime.js"></script>
+  <script src="./highscore-data-adapter.js"></script>
 </head>
 
 <body>
@@ -5164,7 +5423,6 @@
           <li><a href="#wettbewerbe">Wettbewerbe</a></li>
           <li><a href="./saison-2026-2027.html">Saisonübersicht</a></li>
           <li><a href="./highscore.html">Highscore</a></li>
-          <li><a href="#auftraege">Smuggleraufträge</a></li>
           <li><a href="#hall-of-fame">Hall of Fame</a></li>
           <li><a href="#piratenkodex">Piratenkodex</a></li>
           <li><a href="#kummerkasten">Kummerkasten</a></li>
@@ -5178,7 +5436,7 @@
       <article class="panel welcome-panel">
         <div class="welcome-command-center" aria-labelledby="welcome-command-title">
           <div class="welcome-command-copy">
-            <span class="welcome-season-badge" id="welcome-season-badge">Saison 2026/2027</span>
+            <span class="welcome-season-badge" id="welcome-season-badge">Saison noch offen</span>
             <span class="welcome-headquarters-label">Hauptquartier des Old Smugglers Club</span>
             <h1 id="welcome-command-title">Der Hohe Schmugglerrat</h1>
             <div class="welcome-divider" aria-hidden="true"><span></span></div>
@@ -5192,21 +5450,21 @@
           <div class="welcome-status" aria-label="Aktueller Saisonstatus">
             <div class="welcome-status-item">
               <svg aria-hidden="true"><use href="#icon-map"></use></svg>
-              <span><small>Aktuelle Saison</small><strong id="welcome-season">2026/2027</strong></span>
+              <span><small>Aktuelle Saison</small><strong id="welcome-season">Noch offen</strong></span>
             </div>
-            <div class="welcome-status-item">
+            <div class="welcome-status-item welcome-status-item--mission">
               <svg aria-hidden="true"><use href="#icon-anchor"></use></svg>
-              <span><small>Nächste Mission</small><strong id="welcome-next-mission">09.08.2026</strong></span>
+              <span><small>Nächste Mission</small><strong id="welcome-next-mission"><span class="welcome-mission-name">Noch kein Termin</span><span class="welcome-mission-date" aria-hidden="true"></span></strong></span>
             </div>
             <div class="welcome-status-item">
               <svg aria-hidden="true"><use href="#icon-trophy"></use></svg>
-              <span><small>Aktueller Champion</small><strong id="welcome-champion">ZweikampfGott</strong></span>
+              <span><small>Aktueller Champion</small><strong id="welcome-champion">Noch offen</strong></span>
             </div>
           </div>
 
           <div class="welcome-command-actions">
-            <a class="welcome-command-button"
-               href="https://www.kicktipp.de/the-old-smugglers-club/"
+            <a class="welcome-command-button" id="welcome-kicktipp-link"
+               href="#"
                target="_blank" rel="noopener noreferrer">
               <svg aria-hidden="true"><use href="#icon-skull"></use></svg>
               <span>Zur Tipprunde</span>
@@ -5224,7 +5482,7 @@
 
       <aside class="panel countdown-panel">
         <div class="countdown-plaque" id="countdown-plaque">
-          Bundesliga-Start · 28. August 2026
+          Nächstes Event
         </div>
 
         <div class="countdown" aria-live="polite" aria-label="Countdown bis zum Bundesliga-Start">
@@ -5263,6 +5521,10 @@
               <span class="flip-label">Sekunden</span>
             </div>
           </div>
+          <div class="countdown-live-state" id="countdown-live-state" hidden>
+            <strong id="countdown-live-title">JETZT LIVE</strong>
+            <span>Aktueller Spielbetrieb</span>
+          </div>
         </div>
 
         <div class="countdown-rigging" aria-hidden="true">
@@ -5270,12 +5532,8 @@
         </div>
 
         <div class="countdown-message" id="countdown-note">
-          <strong>Der Zähler läuft bis zum offiziellen Bundesliga-Start.</strong>
-          <span>Bundesliga-Start: 28. August 2026</span>
-          <span class="mission-note">
-            <span class="mission-note-icon" aria-hidden="true"></span>
-            <span>Bereits am 09. August startet der Smugglerauftrag „Auftakt“.</span>
-          </span>
+          <strong>Der Zähler läuft bis zum nächsten bestätigten Event.</strong>
+          <span>Termin und Begegnung werden aus dem zentralen Spielbetrieb geladen.</span>
         </div>
       </aside>
     </section>
@@ -5337,8 +5595,8 @@
         <article class="highscore-teaser-card highscore-card-matchday">
           <svg class="highscore-card-icon" aria-hidden="true"><use href="#icon-map"></use></svg>
           <div class="highscore-card-copy">
-            <span>Letzter Spieltag</span>
-            <strong id="hs-matchday-name">Smugglerauftrag Auftakt</strong>
+            <span>Aktueller Spieltag</span>
+            <strong id="hs-matchday-name">Smuggleraufträge · 1. Spieltag</strong>
             <small id="hs-matchday-winner">Noch ohne Wertung</small>
           </div>
         </article>
@@ -5388,64 +5646,6 @@
       </div>
     </section>
 
-    <section class="section panel smuggler-panel" id="auftraege">
-      <div class="smuggler-header">
-        <div>
-          <div class="eyebrow" id="smuggler-label">Sondermissionen</div>
-          <h2 id="smuggler-title">Smuggleraufträge</h2>
-        </div>
-        <div class="matchday-status" id="smuggler-status">IN VORBEREITUNG</div>
-      </div>
-
-      <p class="lead" id="smuggler-intro">
-        Spezialmissionen außerhalb der regulären Wettbewerbe.
-      </p>
-
-      <div class="smuggler-grid" id="smuggler-grid">
-        <article class="smuggler-card">
-          <div class="smuggler-card__head">
-            <span class="smuggler-card__medallion" aria-hidden="true"><svg class="pirate-icon"><use href="#icon-map"></use></svg></span>
-            <div>
-              <p class="smuggler-mission-kicker">Aktuelle Mission</p>
-              <h3 id="smuggler-current">Operation „Auftakt“</h3>
-              <p id="smuggler-subtitle">Smugglerauftrag 1 · 2. Bundesliga</p>
-            </div>
-          </div>
-
-          <div class="smuggler-match" aria-label="Aktuelle Spielpaarung">
-            <span class="smuggler-match__team" id="smuggler-home">1. FC Nürnberg</span>
-            <span class="smuggler-match__versus">gegen</span>
-            <span class="smuggler-match__team" id="smuggler-away">Dynamo Dresden</span>
-          </div>
-
-          <div class="smuggler-mission-meta">
-            <div><span>Termin</span><strong id="smuggler-date">09.08.2026 · 13:30 Uhr</strong></div>
-            <div><span>Status</span><strong id="smuggler-mission-status">Auftrag offen</strong></div>
-            <div><span>Wertung</span><strong id="smuggler-scoring">2 / 3 / 5 Punkte</strong></div>
-          </div>
-
-          <p class="smuggler-description" id="smuggler-description"></p>
-
-          <div class="smuggler-actions">
-            <a class="button button-primary" id="smuggler-link" href="./smugglerauftrag-auftakt.html">
-              Missionsakte öffnen
-            </a>
-            <a class="button" href="./dynamo-dresden.html">Alle Aufträge</a>
-          </div>
-        </article>
-
-        <aside class="smuggler-sidecard">
-          <div class="smuggler-sidecard__plaque" id="smuggler-side-title">Piratenlogbuch</div>
-          <p id="smuggler-side-text">Der erste Auftrag führt die Crew nach Nürnberg. Jeder Smugglerauftrag ist ein eigener Spieltag und zählt zur Einzel-Gesamtwertung.</p>
-          <div class="smuggler-sidecard__seal" aria-hidden="true">
-            <span class="smuggler-hourglass"></span>
-          </div>
-          <div class="smuggler-sidecard__status"><span id="smuggler-progress">0 / 34</span> abgeschlossen</div>
-        </aside>
-      </div>
-    </section>
-
-
     <section class="section panel" id="hall-of-fame">
       <div class="section-title"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-trophy"></use></svg><h2>Hall of Fame</h2></div>
 
@@ -5477,10 +5677,10 @@
           </div>
 
           <div>
-            <p class="champion-kicker">Titelträger der letzten abgeschlossenen Mission</p>
-            <h3 class="champion-name" id="champion-name">ZweikampfGott</h3>
-            <p class="champion-meta" id="champion-meta">Weltmeisterschaft · Champion 2026</p>
-            <div class="champion-season" id="champion-label">Old Smugglers Champion</div>
+            <p class="champion-kicker">Gesamtchampion der letzten abgeschlossenen Saison</p>
+            <h3 class="champion-name" id="champion-name">Manuel</h3>
+            <p class="champion-meta" id="champion-meta">Gesamtchampion</p>
+            <div class="champion-season" id="champion-label">Old Smugglers Saison-Champion</div>
           </div>
         </article>
 
@@ -5488,7 +5688,7 @@
           <div class="honour-card">
             <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-crown"></use></svg></div>
             <div>
-              <strong id="meister-title">Meister 2025/2026</strong>
+              <strong id="meister-title">Bundesliga</strong>
               <small id="meister-name">Manuel</small>
             </div>
           </div>
@@ -5496,7 +5696,7 @@
           <div class="honour-card">
             <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></div>
             <div>
-              <strong id="dfb-title">DFB-Pokal 2025/2026</strong>
+              <strong id="dfb-title">DFB-Pokal</strong>
               <small id="dfb-name">Manuel</small>
             </div>
           </div>
@@ -5504,7 +5704,7 @@
           <div class="honour-card">
             <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-star-compass"></use></svg></div>
             <div>
-              <strong id="cl-title">Champions League 2025/2026</strong>
+              <strong id="cl-title">Champions League</strong>
               <small id="cl-name">ZweikampfGott</small>
             </div>
           </div>
@@ -5512,16 +5712,16 @@
           <div class="honour-card">
             <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-football"></use></svg></div>
             <div>
-              <strong id="el-title">Europa League 2026/2027</strong>
-              <small class="status-open" id="el-name">Sieger noch offen</small>
+              <strong id="el-title">Europa League</strong>
+              <small id="el-name">Marius</small>
             </div>
           </div>
 
           <div class="honour-card">
             <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-map"></use></svg></div>
             <div>
-              <strong id="smugglerwertung-title">Smuggleraufträge 2026/2027</strong>
-              <small class="status-open" id="smugglerwertung-name">Sieger noch offen</small>
+              <strong id="smugglerwertung-title">Smuggleraufträge</strong>
+              <small class="status-open" id="smugglerwertung-name">Erstmals 2026/2027</small>
             </div>
           </div>
 
@@ -5529,44 +5729,41 @@
           <div class="honour-card">
             <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-scroll"></use></svg></div>
             <div>
-              <strong id="bonus-title">Bonuswettbewerb 2026/2027</strong>
-              <small class="status-open" id="bonus-name">Sieger noch offen</small>
+              <strong id="bonus-title">Bonuswettbewerb</strong>
+              <small id="bonus-name">Marius</small>
             </div>
           </div>
 
           <div class="honour-card">
             <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-ship-lantern"></use></svg></div>
             <div>
-              <strong id="weihnachtsregatta-title">Weihnachtsregatta 2026</strong>
-              <small class="status-open" id="weihnachtsregatta-name">Noch offen</small>
+              <strong id="weihnachtsregatta-title">Weihnachtsregatta</strong>
+              <small class="status-open" id="weihnachtsregatta-name">Erstmals 2026/2027</small>
             </div>
           </div>
 
           <div class="honour-card">
             <div class="honour-icon"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-scroll"></use></svg></div>
             <div>
-              <strong id="piratenkodex-title">Piratenkodex 2026/2027</strong>
-              <small class="status-open" id="piratenkodex-name">Sieger noch offen</small>
+              <strong id="piratenkodex-title">Piratenkodex</strong>
+              <small class="status-open" id="piratenkodex-name">Erstmals 2026/2027</small>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="hall-columns">
-        <div>
-          <h3 class="hall-section-title">Meisterchronik</h3>
-          <div class="history-table">
-            <div class="history-row">
-              <span id="chronik-season-1">2025/2026</span>
-              <strong id="chronik-name-1">Manuel</strong>
-            </div>
-            <div class="history-row">
-              <span id="chronik-season-2">2026/2027</span>
-              <strong class="status-open" id="chronik-name-2">Noch offen</strong>
-            </div>
-          </div>
+      <h3 class="hall-section-title">Ehrenmitglieder & besondere Leistungen</h3>
+      <div class="special-achievement-card">
+        <div class="special-achievement-medal" aria-hidden="true">
+          <svg class="pirate-icon" aria-hidden="true"><use href="#icon-star-compass"></use></svg>
         </div>
+        <div class="special-achievement-copy">
+          <span id="honours-label">Champion der WM-Runde 2026</span>
+          <strong id="honours-value">ZweikampfGott</strong>
+          <small>Außergewöhnliche Leistung der Crew</small>
+        </div>
+      </div>
 
+      <div class="hall-columns hall-columns--records-only">
         <div>
           <h3 class="hall-section-title">Rekordtafel</h3>
           <div class="records-grid">
@@ -5590,16 +5787,6 @@
         </div>
       </div>
 
-      <h3 class="hall-section-title">Ehrenmitglieder & besondere Leistungen</h3>
-      <div class="history-row">
-        <span id="honours-label">Status</span>
-        <strong class="status-open" id="honours-value">Noch keine Einträge</strong>
-      </div>
-
-      <div class="hall-logbook">
-        <strong>Ehrenlogbuch</strong>
-        <p>Jeder bestätigte Titel und Rekord bleibt erhalten. Offene Wettbewerbe werden erst nach ihrer offiziellen Auswertung in die Ehrenhalle übernommen.</p>
-      </div>
     </section>
 
     <section class="section" id="piratenkodex">
@@ -5721,6 +5908,7 @@
   <script src="./datenregister.js"></script>
   <script src="./datenmodell.js"></script>
   <script src="./team-badge.js"></script>
+  <script src="./schedule-data-adapter.js"></script>
   <script>
     const menuButton = document.querySelector(".menu-button");
     const navigation = document.getElementById("navigation");
@@ -5737,44 +5925,111 @@
       });
     });
 
-    let countdownTarget = new Date("2026-08-28T20:30:00+02:00").getTime();
     let countdownSeason = "2026/2027";
+    let countdownRuntime = null;
 
     function setFlipValue(id, value) {
       const element = document.getElementById(id);
+      if (!element) return;
       const card = element.closest(".flip-card");
-      const formatted = String(value).padStart(2, "0");
-
+      const formatted = String(Math.max(0, value)).padStart(2, "0");
       if (element.textContent === formatted) return;
+      if (card) {
+        card.classList.remove("is-flipping");
+        void card.offsetWidth;
+        card.classList.add("is-flipping");
+      }
+      window.setTimeout(() => { element.textContent = formatted; }, 210);
+    }
 
-      card.classList.remove("is-flipping");
-      void card.offsetWidth;
-      card.classList.add("is-flipping");
+    function countdownClockNow() {
+      if (!countdownRuntime) return new Date();
+      return new Date(countdownRuntime.baseNow + (Date.now() - countdownRuntime.startedAt));
+    }
 
-      window.setTimeout(() => {
-        element.textContent = formatted;
-      }, 210);
+    function configureEventCountdown(events, now, locale = "de-DE") {
+      countdownRuntime = {
+        events: [...events].sort((a, b) => a._start - b._start),
+        baseNow: now.getTime(),
+        startedAt: Date.now(),
+        locale
+      };
+      updateCountdown();
+    }
+
+    function setCountdownInfo(plaqueText, headline, lines = []) {
+      const plaque = document.getElementById("countdown-plaque");
+      const note = document.getElementById("countdown-note");
+      if (plaque) plaque.textContent = plaqueText;
+      if (note) {
+        note.replaceChildren();
+        const strong = document.createElement("strong");
+        strong.textContent = headline;
+        note.appendChild(strong);
+        lines.filter(Boolean).forEach(line => {
+          const span = document.createElement("span");
+          span.textContent = line;
+          note.appendChild(span);
+        });
+      }
+    }
+
+    function setCountdownLiveMode(count = 0) {
+      const liveState = document.getElementById("countdown-live-state");
+      const liveTitle = document.getElementById("countdown-live-title");
+      document.querySelectorAll(".countdown-panel .flip-unit").forEach(unit => {
+        unit.hidden = count > 0;
+      });
+      if (liveState) liveState.hidden = count <= 0;
+      if (liveTitle && count > 0) {
+        liveTitle.textContent = count > 1 ? `${count} SPIELE LIVE` : "JETZT LIVE";
+      }
     }
 
     function updateCountdown() {
-      const distance = countdownTarget - Date.now();
-
-      if (distance <= 0) {
-        setFlipValue("days", 0);
-        setFlipValue("hours", 0);
-        setFlipValue("minutes", 0);
-        setFlipValue("seconds", 0);
-        const plaque = document.getElementById("countdown-plaque");
-        if (plaque) plaque.textContent = `Bundesliga-Saison ${countdownSeason} · gestartet`;
-        document.getElementById("countdown-note").innerHTML =
-          `<strong>Die Bundesliga-Saison ${countdownSeason} hat begonnen.</strong><span>Der Chronometer hat sein Ziel erreicht. Die nächsten Termine stehen im Spieltagslogbuch.</span>`;
+      if (!countdownRuntime || !countdownRuntime.events.length) {
+        setCountdownLiveMode(0);
+        ["days", "hours", "minutes", "seconds"].forEach(id => setFlipValue(id, 0));
+        setCountdownInfo("Nächstes Event", "Noch kein bestätigter Termin vorhanden.", ["Der Admin liefert den nächsten freigegebenen Spieltermin."]);
         return;
       }
 
-      setFlipValue("days", Math.floor(distance / (1000 * 60 * 60 * 24)));
-      setFlipValue("hours", Math.floor((distance / (1000 * 60 * 60)) % 24));
-      setFlipValue("minutes", Math.floor((distance / (1000 * 60)) % 60));
+      const now = countdownClockNow();
+      const live = countdownRuntime.events.filter(event => event._start <= now && event._end > now);
+      if (live.length) {
+        setCountdownLiveMode(live.length);
+        const event = live[0];
+        const liveLabel = live.length > 1 ? `${live.length} EVENTS LIVE` : "JETZT LIVE";
+        const match = live.length > 1
+          ? `${live.length} Begegnungen laufen gleichzeitig`
+          : `${event.heim} ${event.trenner || "–"} ${event.auswaerts}`;
+        setCountdownInfo(liveLabel, event.matchdayName || event.wettbewerbAnzeige || "Event läuft", [match]);
+        return;
+      }
+
+      const next = countdownRuntime.events.find(event => event._start > now);
+      if (!next) {
+        setCountdownLiveMode(0);
+        ["days", "hours", "minutes", "seconds"].forEach(id => setFlipValue(id, 0));
+        setCountdownInfo("SAISON BEENDET", `Für die Saison ${countdownSeason} ist kein weiteres Event terminiert.`, ["Neue Termine erscheinen nach Freigabe durch den Admin."]);
+        return;
+      }
+
+      setCountdownLiveMode(0);
+      const distance = next._start.getTime() - now.getTime();
+      setFlipValue("days", Math.floor(distance / 86400000));
+      setFlipValue("hours", Math.floor((distance / 3600000) % 24));
+      setFlipValue("minutes", Math.floor((distance / 60000) % 60));
       setFlipValue("seconds", Math.floor((distance / 1000) % 60));
+
+      const dateLabel = new Intl.DateTimeFormat(countdownRuntime.locale, {
+        weekday: "short", day: "2-digit", month: "2-digit", year: "numeric",
+        hour: "2-digit", minute: "2-digit"
+      }).format(next._start);
+      setCountdownInfo("NÄCHSTES EVENT", next.matchdayName || next.wettbewerbAnzeige || "Nächstes Tippspiel", [
+        dateLabel,
+        `${next.heim} ${next.trenner || "–"} ${next.auswaerts}`
+      ]);
     }
 
     updateCountdown();
@@ -5792,10 +6047,6 @@
         setText("welcome-season", season);
         setText("welcome-season-badge", `Saison ${season}`);
 
-        if (data.kickoff) {
-          const parsedTarget = new Date(data.kickoff).getTime();
-          if (Number.isFinite(parsedTarget)) countdownTarget = parsedTarget;
-        }
       } catch (error) {
         console.error("Seitendaten konnten nicht geladen werden:", error);
       }
@@ -5883,6 +6134,27 @@
       }).join("");
     }
 
+    const formatSeasonLabel = value => {
+      const raw = String(value || "").trim();
+      const match = raw.match(/^(\d{4})[-/](\d{2}|\d{4})$/);
+      if (!match) return raw || "Noch offen";
+      const end = match[2].length === 2 ? `${match[1].slice(0, 2)}${match[2]}` : match[2];
+      return `${match[1]}/${end}`;
+    };
+
+    const configureWelcomeKicktipp = config => {
+      const link = document.getElementById("welcome-kicktipp-link");
+      if (!link) return;
+      const href = typeof config?.kicktippLink === "string" ? config.kicktippLink.trim() : "";
+      const text = typeof config?.kicktippButtonText === "string" ? config.kicktippButtonText.trim() : "";
+      const label = text || "Zur Tipprunde";
+      link.querySelector("span")?.replaceChildren(label);
+      link.href = href || "#";
+      link.classList.toggle("is-hidden", !href);
+      link.setAttribute("aria-hidden", String(!href));
+      if (!href) link.removeAttribute("target");
+    };
+
     async function loadMatchdayData() {
       const elements = {
         label: document.getElementById("sm-schedule-label"),
@@ -5930,34 +6202,36 @@
         return Number.isNaN(value.getTime()) ? null : value;
       };
 
-      try {
-        const registry = window.OSCDataRegistry;
-        const [configUrl, gamesUrl, teamsUrl, matchdaysUrl] = registry
-          ? await Promise.all([
-              registry.url("spieltag"), registry.url("spiele"),
-              registry.url("teams"), registry.url("tippspieltage")
-            ])
-          : ["./spieltag.json", "./spieldaten.json", "./teams.json", "./tippspieltage.json"];
-        const [configResponse, gamesResponse, teamsResponse, matchdaysResponse] = await Promise.all([
-          fetch(configUrl, { cache: "no-store" }),
-          fetch(gamesUrl, { cache: "no-store" }),
-          fetch(teamsUrl, { cache: "no-store" }),
-          fetch(matchdaysUrl, { cache: "no-store" })
-        ]);
-
-        for (const [name, response] of [
-          ["Spieltag-Konfiguration", configResponse],
-          ["zentrale Spieldaten", gamesResponse],
-          ["zentrales Teamregister", teamsResponse],
-          ["zentrale Tippspieltage", matchdaysResponse]
-        ]) {
-          if (!response.ok) throw new Error(`${name} konnte nicht geladen werden (${response.status})`);
+      const setWelcomeMission = (name, date = "") => {
+        const target = document.getElementById("welcome-next-mission");
+        if (!target) return;
+        let nameNode = target.querySelector(".welcome-mission-name");
+        let dateNode = target.querySelector(".welcome-mission-date");
+        if (!nameNode || !dateNode) {
+          target.replaceChildren();
+          nameNode = document.createElement("span");
+          nameNode.className = "welcome-mission-name";
+          dateNode = document.createElement("span");
+          dateNode.className = "welcome-mission-date";
+          target.append(nameNode, dateNode);
         }
+        nameNode.textContent = String(name || "Noch kein Termin").trim() || "Noch kein Termin";
+        dateNode.textContent = String(date || "").trim();
+        dateNode.setAttribute("aria-hidden", String(!dateNode.textContent));
+      };
 
-        const data = await configResponse.json();
-        const gameData = await gamesResponse.json();
-        const teamData = await teamsResponse.json();
-        const matchdayData = await matchdaysResponse.json();
+      try {
+        if (!window.OSCScheduleDataAdapter) throw new Error("Spielbetriebsadapter fehlt");
+        const schedulePayload = await window.OSCScheduleDataAdapter.loadSchedule();
+        const data = schedulePayload.config;
+        const gameData = schedulePayload.games;
+        const teamData = schedulePayload.teams;
+        const matchdayData = schedulePayload.matchdays;
+        const activeSeasonLabel = formatSeasonLabel(matchdayData.aktiveSaison || gameData.aktiveSaison || schedulePayload.config?.activeSeason);
+        setText("welcome-season", activeSeasonLabel, "Noch offen");
+        setText("welcome-season-badge", `Saison ${activeSeasonLabel}`, "Saison noch offen");
+        configureWelcomeKicktipp(data);
+        document.documentElement.dataset.scheduleSource = schedulePayload.source;
         const locale = data.locale || "de-DE";
         const liveMinutesDefault = Math.max(1, Number(data.liveDauerMinuten) || 120);
         const teamLookup = new Map((Array.isArray(teamData.teams) ? teamData.teams : []).map(team => [team.id, team]));
@@ -6033,6 +6307,20 @@
           .filter(matchday => matchday._games.length > 0)
           .sort((a, b) => a._start - b._start || Number(a.nummer) - Number(b.nummer));
 
+        const countdownEvents = preparedMatchdays.flatMap(matchday => matchday._games.map(game => ({
+          ...game,
+          matchdayName: matchday.name || `Tippspieltag ${matchday.nummer}`
+        })));
+        configureEventCountdown(countdownEvents, now, locale);
+        const welcomeEvent = countdownEvents.find(event => event._end > now);
+        if (welcomeEvent) {
+          const missionDate = new Intl.DateTimeFormat(locale, { day: "2-digit", month: "2-digit", year: "numeric" }).format(welcomeEvent._start);
+          const missionName = welcomeEvent.matchdayName || welcomeEvent.runde || welcomeEvent.wettbewerb || "Nächstes Event";
+          setWelcomeMission(missionName, missionDate);
+        } else {
+          setWelcomeMission("Noch kein Termin");
+        }
+
         const currentMatchday = preparedMatchdays.find(matchday => matchday._start <= now && matchday._end >= now);
         const nextMatchday = preparedMatchdays.find(matchday => matchday._end >= now);
         const selectedMatchday = currentMatchday || nextMatchday;
@@ -6064,7 +6352,12 @@
           elements.next?.classList.remove("is-placeholder");
           const firstDate = new Intl.DateTimeFormat(locale, { weekday: "short", day: "2-digit", month: "2-digit", year: "numeric" }).format(firstGame._start);
           if (elements.nextDate) elements.nextDate.textContent = `${firstDate} · ${firstGame.anstoss || "--:--"}`;
-          if (elements.nextCompetition) elements.nextCompetition.textContent = selectedMatchday.name || firstGame.wettbewerbAnzeige || "Tippspieltag";
+          if (elements.nextCompetition) {
+            const mainGameLabel = liveGames.length
+              ? "Aktuelles Spiel"
+              : (firstGame._start > now ? "Nächstes Spiel" : "Letztes Spiel");
+            elements.nextCompetition.textContent = mainGameLabel;
+          }
           if (elements.nextHomeName) elements.nextHomeName.textContent = firstGame.heim;
           if (elements.nextSeparator) elements.nextSeparator.textContent = firstGame.trenner || "–";
           if (elements.nextAwayName) elements.nextAwayName.textContent = firstGame.auswaerts;
@@ -6105,7 +6398,30 @@
                 competition.textContent = game.wettbewerbAnzeige || game.wettbewerb || "Ereignis";
                 const match = document.createElement("span");
                 match.className = "sm-event-row__match";
-                match.textContent = `${game.heim} ${game.trenner || "–"} ${game.auswaerts}`;
+                const home = document.createElement("span");
+                home.className = "sm-event-row__team sm-event-row__team--home";
+                const homeSeal = document.createElement("span");
+                homeSeal.className = "sm-event-row__seal";
+                homeSeal.setAttribute("aria-hidden", "true");
+                const homeName = document.createElement("span");
+                homeName.className = "sm-event-row__team-name";
+                homeName.textContent = game.heim;
+                home.append(homeSeal, homeName);
+                const separator = document.createElement("span");
+                separator.className = "sm-event-row__separator";
+                separator.textContent = game.trenner || "–";
+                const away = document.createElement("span");
+                away.className = "sm-event-row__team sm-event-row__team--away";
+                const awayName = document.createElement("span");
+                awayName.className = "sm-event-row__team-name";
+                awayName.textContent = game.auswaerts;
+                const awaySeal = document.createElement("span");
+                awaySeal.className = "sm-event-row__seal";
+                awaySeal.setAttribute("aria-hidden", "true");
+                away.append(awayName, awaySeal);
+                match.append(home, separator, away);
+                renderTeamSeal(homeSeal, game.heimTeamId, game.heim);
+                renderTeamSeal(awaySeal, game.auswaertsTeamId, game.auswaerts);
                 const rowStatus = document.createElement("span");
                 rowStatus.className = "sm-event-row__status";
                 rowStatus.textContent = game._start <= now && game._end > now ? "LIVE" : (game.status || "");
@@ -6137,6 +6453,8 @@
           elements.kicktipp.setAttribute("aria-hidden", String(!visible));
         }
       } catch (error) {
+        setWelcomeMission("Noch kein Termin");
+        configureWelcomeKicktipp(null);
         console.error("Spieltagskachel:", error);
         if (elements.label) elements.label.textContent = "Nächster Tippspieltag";
         if (elements.title) elements.title.textContent = "Daten konnten nicht geladen werden";
@@ -6147,94 +6465,38 @@
       }
     }
 
-    async function loadSmugglerData() {
-      try {
-        const response = await fetch("./smugglerauftraege.json", { cache: "no-store" });
-        if (!response.ok) {
-          throw new Error(`smugglerauftraege.json: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        const setText = (id, value, fallback = "") => {
-          const element = document.getElementById(id);
-          if (element) element.textContent = value || fallback;
-        };
-
-        setText("smuggler-label", data.bereich, "Sondermissionen");
-        setText("smuggler-title", data.titel, "Smuggleraufträge");
-        setText("smuggler-status", data.status, "IN VORBEREITUNG");
-        setText("smuggler-intro", data.einleitung, "Spezialmissionen außerhalb der regulären Wettbewerbe.");
-        const mission = data.mission || {};
-        const missionDate = String(mission.termin || "").split("·")[0].trim();
-        setText("welcome-next-mission", missionDate || "Noch offen");
-        setText("smuggler-current", mission.titel || data.aktuellerAuftrag, "Operation „Auftakt“");
-        setText("smuggler-subtitle", mission.untertitel, "Smugglerauftrag 1 · 2. Bundesliga");
-        setText("smuggler-home", mission.heim, "1. FC Nürnberg");
-        setText("smuggler-away", mission.auswaerts, "Dynamo Dresden");
-        setText("smuggler-date", mission.termin, "09.08.2026 · 13:30 Uhr");
-        setText("smuggler-mission-status", mission.statusText, "Auftrag offen");
-        setText("smuggler-scoring", mission.wertung, "2 / 3 / 5 Punkte");
-
-        const completed = Number(data.abgeschlossen) || 0;
-        const total = Number(data.gesamt) || 0;
-        setText("smuggler-progress", `${completed} / ${total}`);
-
-        setText("smuggler-description", data.beschreibung, "");
-        setText("smuggler-side-title", data.logbuchTitel, "Piratenlogbuch");
-        setText(
-          "smuggler-side-text",
-          data.logbuchText,
-          "Sobald ein Auftrag festgelegt ist, erscheinen hier Status und Fortschritt."
-        );
-
-        const link = document.getElementById("smuggler-link");
-        if (link) {
-          link.href = mission.link || "./smugglerauftrag-auftakt.html";
-          link.textContent = mission.buttonText || "Missionsakte öffnen";
-        }
-      } catch (error) {
-        console.error("Smuggleraufträge konnten nicht geladen werden:", error);
-      }
-    }
-
     async function loadClubData() {
       try {
-        const response = await fetch("./hall-of-fame.json", { cache: "no-store" });
-        if (!response.ok) {
-          throw new Error(`hall-of-fame.json konnte nicht geladen werden: ${response.status}`);
-        }
-
-        const data = await response.json();
+        const data = await window.OSCHighscoreDataAdapter.loadHallOfFame();
 
         setText("champion-name", data.aktuellerChampion?.name);
         setText("welcome-champion", data.aktuellerChampion?.name || "Noch offen");
         setText(
           "champion-meta",
-          [data.aktuellerChampion?.wettbewerb, data.aktuellerChampion?.titel, data.aktuellerChampion?.jahr]
+          [data.aktuellerChampion?.titel]
             .filter(Boolean)
             .join(" · ")
         );
         setText("champion-label", data.aktuellerChampion?.label);
 
-        setText("meister-title", `Meister ${data.meister?.saison ?? ""}`.trim());
+        setText("meister-title", "Bundesliga");
         setText("meister-name", data.meister?.name);
 
-        setText("dfb-title", `DFB-Pokal ${data.dfbPokal?.saison ?? ""}`.trim());
+        setText("dfb-title", "DFB-Pokal");
         setText("dfb-name", data.dfbPokal?.name);
         setOpenState("dfb-name", Boolean(data.dfbPokal?.offen), "Noch offen");
 
-        setText("cl-title", `Champions League ${data.championsLeague?.saison ?? ""}`.trim());
+        setText("cl-title", "Champions League");
         setText("cl-name", data.championsLeague?.name);
         setOpenState("cl-name", Boolean(data.championsLeague?.offen), "Noch offen");
 
-        setText("el-title", `Europa League ${data.europaLeague?.saison ?? ""}`.trim());
+        setText("el-title", "Europa League");
         setText("el-name", data.europaLeague?.name);
         setOpenState("el-name", Boolean(data.europaLeague?.offen), "Sieger noch offen");
 
         setText(
           "smugglerwertung-title",
-          `Smuggleraufträge ${data.smugglerauftraege?.saison ?? ""}`.trim()
+          "Smuggleraufträge"
         );
         setText("smugglerwertung-name", data.smugglerauftraege?.name);
         setOpenState(
@@ -6244,13 +6506,13 @@
         );
 
 
-        setText("bonus-title", `Bonuswettbewerb ${data.bonuswettbewerb?.saison ?? ""}`.trim());
+        setText("bonus-title", "Bonuswettbewerb");
         setText("bonus-name", data.bonuswettbewerb?.name);
         setOpenState("bonus-name", Boolean(data.bonuswettbewerb?.offen), "Sieger noch offen");
 
         setText(
           "weihnachtsregatta-title",
-          `Weihnachtsregatta ${data.weihnachtsregatta?.jahr ?? ""}`.trim()
+          "Weihnachtsregatta"
         );
         setText("weihnachtsregatta-name", data.weihnachtsregatta?.name);
         setOpenState(
@@ -6261,7 +6523,7 @@
 
         setText(
           "piratenkodex-title",
-          `Piratenkodex ${data.piratenkodex?.saison ?? ""}`.trim()
+          "Piratenkodex"
         );
         setText("piratenkodex-name", data.piratenkodex?.name);
         setOpenState(
@@ -6276,10 +6538,13 @@
           setText("chronik-name-1", chronik[0].name);
           setOpenState("chronik-name-1", Boolean(chronik[0].offen));
         }
-        if (chronik[1]) {
+        const chronikRow2 = document.getElementById("chronik-name-2")?.closest(".history-row");
+        if (chronik[1] && chronikRow2) {
           setText("chronik-season-2", chronik[1].saison);
           setText("chronik-name-2", chronik[1].name);
           setOpenState("chronik-name-2", Boolean(chronik[1].offen));
+        } else if (chronikRow2) {
+          chronikRow2.hidden = true;
         }
 
         setText("record-total-label", data.rekorde?.gesamtpunkte?.label);
@@ -6315,7 +6580,6 @@
     }
 
     loadSiteData();
-    loadSmugglerData();
     loadClubData();
     loadMatchdayData();
 
@@ -6361,6 +6625,12 @@
   <script src="./highscore-teaser.js" defer></script>
   <script src="performance-v247.js" defer></script>
   <script src="./accessibility-v33.js" defer></script>
+  <script>
+    fetch('./VERSION.txt', { cache: 'no-store' })
+      .then(function (response) { if (!response.ok) throw new Error('VERSION.txt'); return response.text(); })
+      .then(function (version) { document.getElementById('legal-version').textContent = 'Version ' + version.trim(); })
+      .catch(function () { document.getElementById('legal-version').textContent = 'Version nicht verfügbar'; });
+  </script>
 
 <footer class="legal-footer" aria-label="Rechtliche Hinweise">
   <div class="legal-footer__inner">
@@ -6368,7 +6638,7 @@
     <nav class="legal-footer__links" aria-label="Rechtliche Navigation">
       <a href="./impressum.html">Impressum</a>
       <a href="./datenschutz.html">Datenschutz</a>
-      <span>Version 4.4.14</span>
+      <span id="legal-version">Version wird geladen</span>
     </nav>
   </div>
 </footer>
