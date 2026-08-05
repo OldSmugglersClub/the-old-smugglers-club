@@ -5253,6 +5253,37 @@
     }
 
   
+    /* Website 4.7.0-HF1 – mobile Spieltagsliste mit zwei sichtbaren Begegnungen */
+    @media (max-width: 760px) {
+      .sm-schedule {
+        height: auto;
+        min-height: 760px;
+        max-height: none;
+      }
+
+      .sm-event-list:not(.is-empty) {
+        flex: 0 0 auto;
+        min-height: 340px;
+        max-height: 380px;
+      }
+
+      .sm-day__title {
+        position: sticky;
+        top: 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .sm-schedule {
+        min-height: 820px;
+      }
+
+      .sm-event-list:not(.is-empty) {
+        min-height: 360px;
+        max-height: 410px;
+      }
+    }
+
     .hall-columns--records-only { grid-template-columns: minmax(0, 1fr); }
   </style>
   <link rel="stylesheet" href="./highscore.css?v=4.0.1">

@@ -1,3 +1,8 @@
+# Website 4.7.0-HF1 – Mobile Spieltagsliste – 05.08.2026
+
+- Mobile Spieltagsliste vergrößert, sodass mindestens zwei Begegnungen sichtbar sind.
+- Desktop und Logik unverändert.
+
 # Website 4.7.0 FINAL – Produktionsfreigabe – 05.08.2026
 
 - Freigegebener Stand RC8.5-HF4 übernommen.
