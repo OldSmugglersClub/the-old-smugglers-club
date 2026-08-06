@@ -1,3 +1,9 @@
+# Website 4.7.1-TEST3
+
+- Mobile Header-Kollision zwischen Markenname und Menü behoben.
+- Willkürliche Worttrennung bei „Weihnachtsregatta“ verhindert.
+- Keine Funktions- oder Architekturänderungen.
+
 # Website 4.7.0-HF2 – Adaptive mobile Spieltagsliste – 05.08.2026
 
 - Mobile Höhe der unteren Spieltagsliste richtet sich nach der tatsächlichen Spielanzahl.
