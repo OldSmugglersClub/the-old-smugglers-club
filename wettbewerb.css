@@ -805,3 +805,14 @@ body.page-dynamo-dresden{
   .match-pairing .team-identity--home,.match-pairing .team-identity--away{justify-content:center;text-align:center}
   .match-pairing__separator{line-height:1}
 }
+
+/* Website 4.7.1-TEST – Mobile Polish: lange Wettbewerbsnamen sauber umbrechen */
+@media(max-width:800px){
+  h1{
+    font-size:clamp(1.95rem,9.2vw,2.75rem);
+    line-height:1.04;
+    overflow-wrap:normal;
+    word-break:normal;
+    hyphens:none;
+  }
+}
