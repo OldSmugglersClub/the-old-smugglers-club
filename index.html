@@ -6027,7 +6027,7 @@
       if (!countdownRuntime || !countdownRuntime.events.length) {
         setCountdownLiveMode(0);
         ["days", "hours", "minutes", "seconds"].forEach(id => setFlipValue(id, 0));
-        setCountdownInfo("Nächstes Event", "Noch kein bestätigter Termin vorhanden.", ["Der Admin liefert den nächsten freigegebenen Spieltermin."]);
+        setCountdownInfo("Nächstes Event", "Noch kein bestätigter Termin vorhanden.", ["Der nächste bestätigte Spieltermin steht noch nicht fest."]);
         return;
       }
 
@@ -6048,7 +6048,7 @@
       if (!next) {
         setCountdownLiveMode(0);
         ["days", "hours", "minutes", "seconds"].forEach(id => setFlipValue(id, 0));
-        setCountdownInfo("SAISON BEENDET", `Für die Saison ${countdownSeason} ist kein weiteres Event terminiert.`, ["Neue Termine erscheinen nach Freigabe durch den Admin."]);
+        setCountdownInfo("SAISON BEENDET", `Für die Saison ${countdownSeason} ist kein weiteres Event terminiert.`, ["Neue Termine erscheinen nach ihrer Freigabe."]);
         return;
       }
 

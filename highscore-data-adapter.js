@@ -53,7 +53,7 @@
       sourceHasGesamtTeam:Array.isArray(gesamt.team),
       sourceHasTeamsOverall:Array.isArray(teamSources.overall),
       warning:sourcePath!=='./website-view.json'
-        ? 'Admin-6.2-Datei website-view.json fehlt. Es wird die ältere highscore.json als Rückfallquelle verwendet.'
+        ? 'Aktuelle Ranglistendaten sind nicht vollständig verfügbar.'
         : ''
     };
     return normalized;
