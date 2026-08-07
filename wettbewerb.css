@@ -817,7 +817,7 @@ body.page-dynamo-dresden{
   }
 }
 
-/* Website 4.7.1-TEST10 – gezielter Mobilfix im tatsaechlichen dynamischen Wettbewerbs-Navigator. */
+/* Website 4.7.1 FINAL – gezielter Mobilfix im tatsaechlichen dynamischen Wettbewerbs-Navigator. */
 @media(max-width:600px){
   .competition-link--weihnachtsregatta{
     white-space:nowrap !important;

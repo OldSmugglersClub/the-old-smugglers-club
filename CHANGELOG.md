@@ -1,3 +1,11 @@
+# Website 4.7.1 FINAL – 07.08.2026
+
+- 4.7.1-TEST10 nach erfolgreicher Desktop-/Mobile-Abnahme unverändert als FINAL freigegeben.
+- Letzter bestätigter Besucherfehler im mobilen dynamischen Wettbewerbs-Navigator behoben: „Weihnachtsregatta“ wird nicht mehr innerhalb des Wortes getrennt.
+- Highscore-Navigator, Hall of Fame, mobile Kopfzeile, Saisonübersicht und Button-Konventionen aus dem 4.7.1-Audit bestätigt.
+- Release-/Pfadfehler aus TEST5-HF1 dauerhaft berücksichtigt; Updatepakete liegen flach für den Repository-Stamm vor.
+- Keine neuen Funktionen, keine Änderung an Grid, Kachelgrößen, Navigation, Fachlogik, JSON-Datenmodell oder Admin.
+
 # Website 4.7.1-TEST9
 
 - Kumulativer Nachfolger von 4.7.1-TEST8.
