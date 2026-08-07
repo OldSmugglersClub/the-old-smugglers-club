@@ -1,3 +1,9 @@
+# Website 4.7.1-TEST8
+
+- Kumulativer Nachfolger von 4.7.1-TEST7.
+- Ausschließlich mobiler Besucherfix: „Weihnachtsregatta“ wird im Wettbewerbs-Navigator nicht mehr innerhalb des Wortes getrennt.
+- Gezielte Markup-/CSS-Absicherung nur für diese Kachel; Grid, Kachelmaße, Navigation und Fachlogik unverändert.
+
 # Website 4.7.1-TEST7
 
 - Mobile Wettbewerbsnavigator: „Weihnachtsregatta“ bleibt vollständig innerhalb der bestehenden Kachel.
