@@ -1,3 +1,10 @@
+# Website 4.7.1-TEST9
+
+- Kumulativer Nachfolger von 4.7.1-TEST8.
+- Einziger Fix: Die Wettbewerbs-Synchronisierung erhält bei „Weihnachtsregatta“ den vorhandenen `competition-label-nowrap`-Span, statt ihn per `textContent` zu entfernen.
+- Dadurch greift die bereits vorhandene mobile `white-space: nowrap`-Regel tatsächlich.
+- Keine Änderungen an Grid, Kachelgrößen, Navigation, Datenmodell oder Fachlogik.
+
 # Website 4.7.1-TEST8
 
 - Kumulativer Nachfolger von 4.7.1-TEST7.

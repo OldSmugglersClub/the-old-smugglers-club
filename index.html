@@ -5353,7 +5353,7 @@
         max-width: 100%;
       }
 
-      /* Website 4.7.1-TEST8 – gezielter, robuster Mobilfix nur für Weihnachtsregatta.
+      /* Website 4.7.1-TEST9 – gezielter Mobilfix für Weihnachtsregatta; DOM-Struktur bleibt bei Datensynchronisierung erhalten.
          Das eigentliche Wort liegt in einem Inline-Block und darf nicht innerhalb des Wortes umbrechen. */
       #wettbewerbe [data-wettbewerb-id="weihnachtsregatta"] .competition-label--weihnachtsregatta {
         display: block !important;
@@ -6714,7 +6714,14 @@
             if (!eintrag) return;
 
             const titel = karte.querySelector('b');
-            if (titel && eintrag.label) titel.textContent = eintrag.label;
+            if (titel && eintrag.label) {
+              const nowrapLabel = titel.querySelector('.competition-label-nowrap');
+              if (nowrapLabel) {
+                nowrapLabel.textContent = eintrag.label;
+              } else {
+                titel.textContent = eintrag.label;
+              }
+            }
             if (eintrag.page) karte.setAttribute('href', './' + String(eintrag.page).replace(/^\.\//, ''));
           });
         })
