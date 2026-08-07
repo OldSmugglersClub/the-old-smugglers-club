@@ -5291,6 +5291,17 @@
     }
 
     .hall-columns--records-only { grid-template-columns: minmax(0, 1fr); }
+  
+    /* Website 4.7.2-TEST1 – Hauptnavigation um Stalk-O-Meter erweitert.
+       Nur Desktop: moderate Typografie-/Padding-Kompaktierung, keine Strukturänderung. */
+    @media (min-width: 721px) {
+      #navigation > ul > li > a {
+        font-size: .92rem;
+        padding-left: .68rem;
+        padding-right: .68rem;
+      }
+    }
+
   </style>
   <link rel="stylesheet" href="./highscore.css?v=4.0.1">
   <link rel="stylesheet" href="./accessibility-v33.css">
@@ -5507,6 +5518,7 @@
           <li><a href="#hall-of-fame">Hall of Fame</a></li>
           <li><a href="#piratenkodex">Piratenkodex</a></li>
           <li><a href="#kummerkasten">Kummerkasten</a></li>
+          <li><a href="./stalk-o-meter.html">Stalk-O-Meter</a></li>
         </ul>
       </nav>
     </div>
@@ -6725,5 +6737,6 @@
   </div>
 </footer>
 
+  <script src="./analytics.js" defer></script>
 </body>
 </html>

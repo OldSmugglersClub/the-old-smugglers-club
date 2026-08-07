@@ -105,3 +105,7 @@ Der reale Spielbetriebs-Workflow und das geplante Admin-Cockpit sind verbindlich
 
 ## Version 4.6.1
 Die realen Kicktipp-Exportformate und der verbindliche Importvertrag sind dokumentiert. Originalexporte mit personenbezogenen Daten sind nicht Bestandteil des Projektpakets.
+
+
+## Aktuelle Test-Erweiterung: Stalk-O-Meter (4.7.2-TEST1)
+Siehe `STALK-O-METER-HANDBUCH.md` und `README_4.7.2-TEST1.md`.

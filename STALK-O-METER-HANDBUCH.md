@@ -1,0 +1,100 @@
+# Stalk-O-Meter – Fach- und Architekturhandbuch
+
+Version: 4.7.2-TEST1
+
+## 1. Zweck
+Das Stalk-O-Meter misst die Nutzungsintensität der öffentlichen Clubwebsite anhand von **Pageviews/Aufrufen**, nicht anhand eindeutiger Besucher. Mehrfache echte Aufrufe derselben Person zählen mehrfach.
+
+## 2. Öffentliche Darstellung
+Die Seite `stalk-o-meter.html` zeigt:
+- die Summe der freigegebenen Inhaltsseiten,
+- eine automatisch nach Aufrufen sortierte Rangliste der einzelnen Bereiche.
+
+Gezählte Bereiche:
+1. Startseite (`/`)
+2. Saisonübersicht (`/saison-2026-2027.html`)
+3. Ranglistenlogbuch (`/highscore.html`)
+4. Ehrenlogbuch (`/hall-of-fame.html`)
+5. Bundesliga (`/bundesliga.html`)
+6. DFB-Pokal (`/dfb-pokal.html`)
+7. Champions League (`/champions-league.html`)
+8. Europa League (`/europa-league.html`)
+9. Relegation (`/relegation.html`)
+10. Smuggleraufträge (`/dynamo-dresden.html`)
+11. Piratenkodex (`/piratenkodex.html`)
+12. Weihnachtsregatta (`/weihnachtsregatta.html`)
+
+Nicht gezählt bzw. nicht Bestandteil der veröffentlichten Gesamtzahl:
+- `impressum.html`
+- `datenschutz.html`
+- `stalk-o-meter.html`
+
+## 3. Navigationslogik
+Desktop: zusätzlicher Hauptmenüpunkt `Stalk-O-Meter` rechts neben `Kummerkasten`.
+Mobil: derselbe Link erscheint im bestehenden aufklappbaren Hauptmenü. Es wird keine neue mobile Navigation eingeführt.
+Für Desktop wird ausschließlich die Typografie/das horizontale Padding der Hauptnavigation moderat verdichtet. Grid, Kachelgrößen und Grundlayout bleiben unverändert.
+
+## 4. Datenfluss
+`öffentliche Inhaltsseite -> analytics.js -> https://gc.zgo.at/count.js -> https://oldsmugglersclub.goatcounter.com/count`
+
+Anzeige:
+`stalk-o-meter.html -> stalk-o-meter.js -> öffentliche /counter/<PATH>.json-Endpunkte -> Rangliste + Summe`
+
+Es wird kein GoatCounter-API-Key im Browser verwendet.
+
+## 5. GoatCounter-Konfiguration
+Konto: `oldsmugglersclub`
+- öffentliche Besucher-/Counterfunktion: aktiviert
+- Dashboard: nur angemeldete Benutzer
+- Sitzungen: deaktiviert
+- einzelne Seitenaufrufe: deaktiviert
+- Referrer: deaktiviert
+- User-Agent: deaktiviert
+- Bildschirmgröße: deaktiviert
+- Land/Region/Sprache: deaktiviert
+- Datenaufbewahrung: 0 / keine zeitliche Löschung der aggregierten Statistik
+
+## 6. Zähllogik
+Gezählt wird die tatsächlich geladene Zielseite. Der Navigationsweg ist irrelevant.
+Beispiel: `Start -> DFB-Pokal` und `Saisonübersicht -> DFB-Pokal` erhöhen beide denselben DFB-Pokal-Seitenzähler.
+Reloads zählen wegen deaktivierter GoatCounter-Sitzungen als weitere Pageviews.
+
+## 7. Ausfallsicherheit
+Analytics ist nicht geschäftskritisch.
+`analytics.js` lädt GoatCounter asynchron und fail-open. Blockiert ein Adblocker den Dienst oder fällt GoatCounter aus, dürfen Navigation, Wettbewerbe, Highscore, Hall of Fame und alle anderen Website-Funktionen nicht beeinträchtigt werden.
+Die Stalk-O-Meter-Seite zeigt bei Abruffehlern einen lokalen Hinweis statt JavaScript-Fehlern.
+
+## 8. Datenschutz
+Die Website verwendet nur die für den Zweck erforderliche Seitenaufrufzählung. Zusätzliche GoatCounter-Auswertungsmerkmale wurden im Konto deaktiviert. Die öffentliche Statistik zeigt ausschließlich aggregierte Zählerstände. Die Datenschutzerklärung wurde um die technische Einbindung ergänzt.
+
+## 9. Design
+Keine neue Designsprache. `stalk-o-meter.html` verwendet die bestehende Unterseitenbasis `wettbewerb.css` und ergänzt nur die für die Statistik erforderlichen Komponenten in `stalk-o-meter.css`.
+
+## 10. Dateien
+Neu:
+- `analytics.js`
+- `stalk-o-meter.html`
+- `stalk-o-meter.css`
+- `stalk-o-meter.js`
+- `STALK-O-METER-HANDBUCH.md`
+
+Geändert:
+- `index.html`
+- die 11 weiteren gezählten Inhaltsseiten
+- `datenschutz.html`
+- `VERSION.txt`
+
+## 11. Pflichtprüfung vor Freigabe
+1. Desktop-Navigation bei mehreren Breiten: kein ungewollter Umbruch/Überlauf.
+2. Mobile Navigation: Stalk-O-Meter sichtbar und erreichbar.
+3. GC-2: echter Pageview erscheint in GoatCounter.
+4. GC-3: Reload erzeugt einen zusätzlichen Pageview.
+5. GC-4: mindestens zwei Zielseiten werden getrennt gezählt.
+6. Stalk-O-Meter: Einzelwerte erscheinen und werden absteigend sortiert.
+7. Gesamtwert entspricht der Summe der zwölf dargestellten Inhaltsseiten.
+8. Impressum, Datenschutz und Stalk-O-Meter erhöhen diese fachliche Gesamtzahl nicht.
+9. Test mit blockiertem `gc.zgo.at`: restliche Website vollständig funktionsfähig.
+10. Desktop und Mobil fachliche Sichtprüfung.
+
+## 12. Handover-Regel
+Dieses Dokument ist bei jedem Projekt-Handover zusammen mit dem allgemeinen Projektstand zu übergeben. Offene Tests, GoatCounter-Konfiguration, Zähllogik und betroffene Dateien dürfen nicht nur verkürzt als Notiz übergeben werden.
