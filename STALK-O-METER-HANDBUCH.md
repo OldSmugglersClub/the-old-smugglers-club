@@ -1,6 +1,6 @@
 # Stalk-O-Meter – Fach- und Architekturhandbuch
 
-Version: 4.7.2-TEST2
+Version: 4.7.2-TEST3
 
 ## 1. Zweck
 Das Stalk-O-Meter misst die Nutzungsintensität der öffentlichen Clubwebsite anhand von **Pageviews/Aufrufen**, nicht anhand eindeutiger Besucher. Mehrfache echte Aufrufe derselben Person zählen mehrfach.
@@ -103,3 +103,17 @@ Dieses Dokument ist bei jedem Projekt-Handover zusammen mit dem allgemeinen Proj
 In TEST1 wurden die GoatCounter-Script-Attribute dynamisch über `analytics.js` erzeugt. GC-2 schlug fehl: Trotz erreichbarem `https://gc.zgo.at/count.js` wurden keine Pageviews registriert.
 
 In 4.7.2-TEST2 wird deshalb auf allen zwölf gezählten Inhaltsseiten ausschließlich der von GoatCounter dokumentierte direkte Script-Tag verwendet. `analytics.js` wurde vollständig entfernt. Navigation, Stalk-O-Meter-Darstellung, gezählte Zielseiten und Fachlogik bleiben unverändert.
+
+
+## 14. TEST3 – Korrektur des Startseitenpfads
+GoatCounter führt die öffentliche Startseite nach dem realen Tracking-Nachweis als `/index.html`.
+Der Stalk-O-Meter hatte dafür noch `/` abgefragt. In 4.7.2-TEST3 wird ausschließlich diese
+Zuordnung auf `/index.html` korrigiert.
+
+Das Tracking selbst bleibt gegenüber TEST2 unverändert. TEST2 hat per Browser-Netzwerkanalyse
+einen erfolgreichen GoatCounter-Request (HTTP 200) gezeigt; das GoatCounter-Dashboard führte
+bereits `/index.html` und `/highscore.html` mit realen Aufrufen.
+
+Hinweis zur Anzeige: Die öffentlichen GoatCounter-Counterantworten können zwischengespeichert
+sein. Deshalb können die sichtbaren Stalk-O-Meter-Werte zeitlich hinter dem GoatCounter-Dashboard
+liegen. Ein aktuell angezeigter Nullwert ist deshalb nicht automatisch ein Trackingfehler.

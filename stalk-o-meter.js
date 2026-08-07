@@ -8,7 +8,7 @@
 
   const base = 'https://oldsmugglersclub.goatcounter.com/counter/';
   const pages = [
-    { label: 'Startseite', path: '/' },
+    { label: 'Startseite', path: '/index.html' },
     { label: 'Saisonübersicht', path: '/saison-2026-2027.html' },
     { label: 'Ranglistenlogbuch', path: '/highscore.html' },
     { label: 'Ehrenlogbuch', path: '/hall-of-fame.html' },
