@@ -5335,15 +5335,16 @@
       .mini-brand {
         min-width: 0;
         max-width: 100%;
-        overflow: hidden;
+        overflow: visible;
       }
 
       .mini-brand span {
         min-width: 0;
         white-space: nowrap;
-        overflow: hidden;
+        overflow: visible;
         text-overflow: clip;
-        font-size: clamp(.78rem, 3.6vw, .98rem);
+        font-size: clamp(.72rem, 3.2vw, .94rem);
+        line-height: 1.05;
       }
 
       .menu-button {
@@ -5490,7 +5491,7 @@
     <div class="nav-inner">
       <a class="mini-brand" href="#start">
         <img src="./logo.jpeg" alt="" decoding="async">
-        <span>Old Smugglers</span>
+        <span>Old Smugglers Club</span>
       </a>
 
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="navigation">

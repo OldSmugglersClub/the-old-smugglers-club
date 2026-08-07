@@ -1,3 +1,11 @@
+# Website 4.7.1-TEST6
+
+- Hall of Fame: Hinweisbox „Gesamt-Team-Sieger“ verwendet nun dasselbe Piratensymbol wie „Besondere Leistungen“ statt gelbem Seitenstrich.
+- Hall of Fame: Hinweisbox „Ehrenlogbuch“ verwendet nun dasselbe Piratensymbol statt gelbem Seitenstrich.
+- Mobile Navigation: vollständiger Markenname „Old Smugglers Club“ wird angezeigt; Größen-/Überlaufregel gezielt stabilisiert.
+- Saisonübersicht: CSS/JS und Saisondaten werden für TEST6 versionsgebunden frisch geladen, damit Mobil und Desktop denselben DFB-Pokal-Zeitraum „Ab Achtelfinale“ verwenden.
+- Keine Änderungen an Fachlogik, Navigation, Grid, Kachelgrößen oder Admin.
+
 # Website 4.7.1-TEST5
 
 - TEST4 als nicht veröffentlichten Zwischenstand verworfen und vollständig in TEST5 übernommen.

@@ -1,5 +1,7 @@
 (() => {
   "use strict";
+  const freshUrl = url => `${url}${url.includes("?") ? "&" : "?"}v=4.7.1-TEST6`;
+
 
   const $ = id => document.getElementById(id);
   const safeArray = value => Array.isArray(value) ? value : [];
@@ -98,10 +100,10 @@
           ])
         : ["./saison-2026-2027.json", "./wettbewerbe.json", "./spieldaten.json", "./tippspieltage.json"];
       const responses = await Promise.all([
-        fetch(overviewUrl, { cache: "no-store" }),
-        fetch(competitionsUrl, { cache: "no-store" }),
-        fetch(gamesUrl, { cache: "no-store" }),
-        fetch(matchdaysUrl, { cache: "no-store" })
+        fetch(freshUrl(overviewUrl), { cache: "no-store" }),
+        fetch(freshUrl(competitionsUrl), { cache: "no-store" }),
+        fetch(freshUrl(gamesUrl), { cache: "no-store" }),
+        fetch(freshUrl(matchdaysUrl), { cache: "no-store" })
       ]);
       if (responses.some(response => !response.ok)) throw new Error("Saisondaten konnten nicht vollständig geladen werden.");
 
