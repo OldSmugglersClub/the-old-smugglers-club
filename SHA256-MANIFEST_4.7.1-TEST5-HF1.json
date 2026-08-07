@@ -1,0 +1,80 @@
+{
+  "release": "4.7.1-TEST5-HF1",
+  "files": [
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "0c2ae32e48571627639c2e488f3ac3b4099d5a4bb2de475047be8a4bc2e22f97",
+      "size": 23437
+    },
+    {
+      "path": "CHANGELOG_4.7.1-TEST5-HF1.md",
+      "sha256": "6e8a896cfda45cdcee99d92dec7de893821d3f5c9fd5ea42473646104125629a",
+      "size": 825
+    },
+    {
+      "path": "DATEILISTE_ERSETZEN_NEU_LOESCHEN_4.7.1-TEST5-HF1.md",
+      "sha256": "1724ab735928877c0e06c78d5748b3c84e512dd21260cf8104b658e4a9e8d64a",
+      "size": 603
+    },
+    {
+      "path": "GITHUB-DESKTOP_4.7.1-TEST5-HF1.md",
+      "sha256": "d3d94b7bcc64d94cd6db8c1a14ac0495d7e6690be3167098908e80bcb51a7ed3",
+      "size": 687
+    },
+    {
+      "path": "README_4.7.1-TEST5-HF1.md",
+      "sha256": "ba3f0d41d25a1da533666cd05b23a6377a6af55275da20af89f93296864b3173",
+      "size": 1097
+    },
+    {
+      "path": "TESTPROTOKOLL_4.7.1-TEST5-HF1.md",
+      "sha256": "ae31719a10620c8366875ef0d335307886776b0ac7c6c77147f2d6c642b6a42f",
+      "size": 1085
+    },
+    {
+      "path": "VERSION.txt",
+      "sha256": "21a7213df0b77e03208891630801f6541cb1aef56842de5ecc62eb58e4088311",
+      "size": 16
+    },
+    {
+      "path": "hall-of-fame.html",
+      "sha256": "9fa06e9d1f77fb54f7fd8ab23c3e6c812974faf602cbad8f7478a3ecb1947d68",
+      "size": 9664
+    },
+    {
+      "path": "highscore.css",
+      "sha256": "50fcfa23262e2c89953595a8c9f9f268c8da9da3f1ccfeb42ad0e7f3c728f672",
+      "size": 71151
+    },
+    {
+      "path": "highscore.html",
+      "sha256": "4812089982c2f334e0e8d108f84b4128a769a8b7dc7c8f4aabdc220f34e80185",
+      "size": 4831
+    },
+    {
+      "path": "index.html",
+      "sha256": "715f41b0dee675cb860d4d7c57fff9cd655d4fc60a9911e8b210c20c9266211e",
+      "size": 200605
+    },
+    {
+      "path": "saison-2026-2027.html",
+      "sha256": "017b211dca552fc8f7c3426591103f9bf8f208baf5e8fc04b3db376b1636fa9c",
+      "size": 3926
+    },
+    {
+      "path": "saisonuebersicht.css",
+      "sha256": "dc9ed67468f42f1486c9484cef3e9b3c66099d0bd920dfbdaf5d690649ca1887",
+      "size": 2842
+    },
+    {
+      "path": "saisonuebersicht.js",
+      "sha256": "d7b1261819f4d9f8b6626de4c2162a2f9a6e1d22222b46bf74b70a792e462b1c",
+      "size": 7654
+    },
+    {
+      "path": "wettbewerbe.json",
+      "sha256": "7b0b26b991f32bba15af848cb077559cc895b6e4988b794a2822a20758da4038",
+      "size": 3897
+    }
+  ]
+}

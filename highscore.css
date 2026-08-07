@@ -779,3 +779,33 @@
 @media(max-width:390px){
   .hs-summary{grid-template-columns:1fr}
 }
+
+
+/* 4.7.1-TEST4: Besucher-Audit – keine willkürliche Worttrennung in Wettbewerbsnamen */
+.hs-competition-tabs .hs-main-tab{overflow-wrap:normal;word-break:normal;hyphens:none}
+.hs-actions .hs-btn--back{color:#e7d2a5;background:linear-gradient(180deg,#271b10,#171008)}
+.hs-actions .hs-btn--kicktipp{color:#211305;border-color:#e2bd68;background:linear-gradient(180deg,#e8c66f,#a96b1f)}
+
+
+/* 4.7.1-TEST5: Wettbewerbsnamen auf Desktop und Mobil niemals innerhalb eines Wortes trennen. */
+.hs-competition-tabs .hs-main-tab{
+  white-space:nowrap;
+  overflow-wrap:normal;
+  word-break:keep-all;
+  hyphens:none;
+  padding-left:8px;
+  padding-right:8px;
+  font-size:clamp(.62rem,1.05vw,.82rem);
+}
+@media(max-width:720px){
+  .hs-competition-tabs .hs-main-tab{
+    white-space:nowrap;
+    overflow-wrap:normal;
+    word-break:keep-all;
+    hyphens:none;
+    font-size:clamp(.58rem,2.45vw,.76rem);
+    letter-spacing:.025em;
+    padding-left:5px;
+    padding-right:5px;
+  }
+}

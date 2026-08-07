@@ -38,10 +38,9 @@
 
   function displayCount(target, actual, suffix) {
     if (Number.isFinite(target)) {
-      const detail = actual > 0 && actual !== target ? `<small>${actual} aktuell hinterlegt</small>` : "";
-      return `<span class="season-count">${target}${detail}</span>`;
+      return `<span class="season-count">${target}</span>`;
     }
-    if (actual > 0) return `<span class="season-count">${actual}<small>aktuell hinterlegt</small></span>`;
+    if (actual > 0) return `<span class="season-count">${actual}</span>`;
     return `<span class="season-count">automatisch<small>${suffix}</small></span>`;
   }
 

@@ -1,3 +1,22 @@
+# Website 4.7.1-TEST5
+
+- TEST4 als nicht veröffentlichten Zwischenstand verworfen und vollständig in TEST5 übernommen.
+- Hinweisblock „Besondere Leistungen“ mit Piratensymbol statt gelbem Seitenstrich.
+- Wettbewerbsnamen im Highscore auf Desktop und Mobil ohne willkürliche Worttrennung.
+- DFB-Pokal in der Saisonübersicht einheitlich als „Ab Achtelfinale“ dargestellt.
+- Buttonfarbregel vereinheitlicht: Gelb für Kicktipp, Braun für interne Rücknavigation.
+- Interne Pflegehinweise wie „aktuell hinterlegt“ aus der öffentlichen Saisonübersicht entfernt.
+- Saisonübersicht auf Mobil und Desktop inhaltlich vereinheitlicht.
+- Keine Änderungen an Fachlogik, Datenmodell, Navigation, Grid oder Kachelgrößen.
+
+# Website 4.7.1-TEST4
+
+- Hall-of-Fame-Hinweis „Besondere Leistungen“: gelben Seitenstrich durch vorhandenes Club-Piratensymbol ersetzt.
+- Highscore-Wettbewerbsnavigation: willkürliche Worttrennung bei Gesamtwertung, Bundesliga und Piratenkodex verhindert.
+- Saisonübersicht: DFB-Pokal-Zeitraum besucherorientiert auf „Ab Achtelfinale“ vereinheitlicht.
+- Aktionsfarben vereinheitlicht: Kicktipp gelb, interne Rücknavigation braun.
+- Keine Änderungen an Fachlogik, Buttonzielen, Grid, Kachelgrößen, Admin oder JSON-Strukturen.
+
 # Website 4.7.1-TEST3
 
 - Mobile Header-Kollision zwischen Markenname und Menü behoben.
@@ -331,3 +350,10 @@
 
 ## 4.7.0-RC8.5-HF1-TEST
 - Startseite kompakter, Ehrenlogbuch historisch vollständig; besondere Leistungen optisch hervorgehoben.
+
+# Website 4.7.1-TEST5-HF1
+
+- Release-/Einspiel-Hotfix: Die bereits freigegebenen TEST5-Website-Dateien werden direkt in den Repository-Stamm eingespielt.
+- Der fälschlich veröffentlichte Ordner `DATEIEN_FUER_GITHUB` ist zu löschen.
+- Keine neuen Fach- oder Layoutänderungen gegenüber TEST5.
+- Enthält weiterhin die kumulativen TEST3-/TEST5-Korrekturen.
