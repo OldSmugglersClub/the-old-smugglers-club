@@ -1,6 +1,6 @@
 # Stalk-O-Meter – Fach- und Architekturhandbuch
 
-Version: 4.7.2-TEST3
+Version: 4.7.2
 
 ## 1. Zweck
 Das Stalk-O-Meter misst die Nutzungsintensität der öffentlichen Clubwebsite anhand von **Pageviews/Aufrufen**, nicht anhand eindeutiger Besucher. Mehrfache echte Aufrufe derselben Person zählen mehrfach.
@@ -117,3 +117,25 @@ bereits `/index.html` und `/highscore.html` mit realen Aufrufen.
 Hinweis zur Anzeige: Die öffentlichen GoatCounter-Counterantworten können zwischengespeichert
 sein. Deshalb können die sichtbaren Stalk-O-Meter-Werte zeitlich hinter dem GoatCounter-Dashboard
 liegen. Ein aktuell angezeigter Nullwert ist deshalb nicht automatisch ein Trackingfehler.
+
+
+## 15. FINAL-Freigabe 4.7.2
+Die technische Erfassung wurde im Realbetrieb nachgewiesen:
+- GoatCounter-Script geladen.
+- `window.goatcounter` vorhanden.
+- Filterprüfung liefert `false`.
+- `get_data()` liefert korrekte Seitenpfade.
+- Netzwerkrequest an GoatCounter wurde mit HTTP 200 bestätigt.
+- GoatCounter-Dashboard zeigt reale und getrennte Pageviews mehrerer Zielseiten.
+- Mehrfachaufrufe derselben Zielseite werden gezählt.
+- Startseite wird korrekt unter `/index.html` geführt.
+- Öffentliche Stalk-O-Meter-Zähler lesen GoatCounter-Counterwerte ein.
+
+Bekanntes Betriebsverhalten:
+Die öffentlichen GoatCounter-Counterwerte können gegenüber dem internen Dashboard zeitversetzt aktualisiert werden.
+Diese Verzögerung ist kein Trackingfehler und wird als akzeptiertes Betriebsverhalten dokumentiert.
+
+Die Version 4.7.2 wurde auf ausdrückliche Nutzerfreigabe trotz noch nicht vollständig abgelaufener
+öffentlicher Cache-Beobachtungszeit als FINAL freigegeben. Es besteht kein bekannter Fehler in der
+Tracking-Erfassung. Eine spätere Sichtprüfung der nachgezogenen öffentlichen Werte bleibt als
+betriebliche Kontrolle sinnvoll, ist aber keine Voraussetzung mehr für die FINAL-Freigabe.
