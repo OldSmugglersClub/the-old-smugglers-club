@@ -1,6 +1,6 @@
 # Stalk-O-Meter – Fach- und Architekturhandbuch
 
-Version: 4.7.2-TEST1
+Version: 4.7.2-TEST2
 
 ## 1. Zweck
 Das Stalk-O-Meter misst die Nutzungsintensität der öffentlichen Clubwebsite anhand von **Pageviews/Aufrufen**, nicht anhand eindeutiger Besucher. Mehrfache echte Aufrufe derselben Person zählen mehrfach.
@@ -35,7 +35,7 @@ Mobil: derselbe Link erscheint im bestehenden aufklappbaren Hauptmenü. Es wird 
 Für Desktop wird ausschließlich die Typografie/das horizontale Padding der Hauptnavigation moderat verdichtet. Grid, Kachelgrößen und Grundlayout bleiben unverändert.
 
 ## 4. Datenfluss
-`öffentliche Inhaltsseite -> analytics.js -> https://gc.zgo.at/count.js -> https://oldsmugglersclub.goatcounter.com/count`
+`öffentliche Inhaltsseite -> direkter GoatCounter-Script-Tag -> https://gc.zgo.at/count.js -> https://oldsmugglersclub.goatcounter.com/count`
 
 Anzeige:
 `stalk-o-meter.html -> stalk-o-meter.js -> öffentliche /counter/<PATH>.json-Endpunkte -> Rangliste + Summe`
@@ -61,7 +61,7 @@ Reloads zählen wegen deaktivierter GoatCounter-Sitzungen als weitere Pageviews.
 
 ## 7. Ausfallsicherheit
 Analytics ist nicht geschäftskritisch.
-`analytics.js` lädt GoatCounter asynchron und fail-open. Blockiert ein Adblocker den Dienst oder fällt GoatCounter aus, dürfen Navigation, Wettbewerbe, Highscore, Hall of Fame und alle anderen Website-Funktionen nicht beeinträchtigt werden.
+Der von GoatCounter dokumentierte Script-Tag wird direkt und asynchron auf den zwölf gezählten Inhaltsseiten geladen. Blockiert ein Adblocker den Dienst oder fällt GoatCounter aus, dürfen Navigation, Wettbewerbe, Highscore, Hall of Fame und alle anderen Website-Funktionen nicht beeinträchtigt werden.
 Die Stalk-O-Meter-Seite zeigt bei Abruffehlern einen lokalen Hinweis statt JavaScript-Fehlern.
 
 ## 8. Datenschutz
@@ -72,7 +72,6 @@ Keine neue Designsprache. `stalk-o-meter.html` verwendet die bestehende Untersei
 
 ## 10. Dateien
 Neu:
-- `analytics.js`
 - `stalk-o-meter.html`
 - `stalk-o-meter.css`
 - `stalk-o-meter.js`
@@ -98,3 +97,9 @@ Geändert:
 
 ## 12. Handover-Regel
 Dieses Dokument ist bei jedem Projekt-Handover zusammen mit dem allgemeinen Projektstand zu übergeben. Offene Tests, GoatCounter-Konfiguration, Zähllogik und betroffene Dateien dürfen nicht nur verkürzt als Notiz übergeben werden.
+
+
+## 13. TEST2-Korrektur
+In TEST1 wurden die GoatCounter-Script-Attribute dynamisch über `analytics.js` erzeugt. GC-2 schlug fehl: Trotz erreichbarem `https://gc.zgo.at/count.js` wurden keine Pageviews registriert.
+
+In 4.7.2-TEST2 wird deshalb auf allen zwölf gezählten Inhaltsseiten ausschließlich der von GoatCounter dokumentierte direkte Script-Tag verwendet. `analytics.js` wurde vollständig entfernt. Navigation, Stalk-O-Meter-Darstellung, gezählte Zielseiten und Fachlogik bleiben unverändert.
