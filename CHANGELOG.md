@@ -1,3 +1,9 @@
+# Website 4.7.1-TEST7
+
+- Mobile Wettbewerbsnavigator: „Weihnachtsregatta“ bleibt vollständig innerhalb der bestehenden Kachel.
+- Desktop Highscore/Wettbewerb: lange Wettbewerbsnamen verlassen ihre Buttons nicht mehr.
+- Keine Änderungen an Fachlogik, Navigation, Grid oder Kachelgrößen.
+
 # Website 4.7.1-TEST6
 
 - Hall of Fame: Hinweisbox „Gesamt-Team-Sieger“ verwendet nun dasselbe Piratensymbol wie „Besondere Leistungen“ statt gelbem Seitenstrich.
