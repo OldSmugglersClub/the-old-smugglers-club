@@ -384,3 +384,11 @@
 - Der fälschlich veröffentlichte Ordner `DATEIEN_FUER_GITHUB` ist zu löschen.
 - Keine neuen Fach- oder Layoutänderungen gegenüber TEST5.
 - Enthält weiterhin die kumulativen TEST3-/TEST5-Korrekturen.
+
+
+## 4.7.1-TEST10
+- Letzten mobilen Besucherfehler im tatsaechlichen dynamischen Wettbewerbs-Navigator lokalisiert.
+- `wettbewerb.js`: Weihnachtsregatta erhaelt ausschliesslich im Navigator eine eigene Zielklasse.
+- `wettbewerb.css`: gezielte mobile No-Wrap-/Schriftregel nur fuer diese Navigator-Kachel.
+- Wettbewerbsseiten laden `wettbewerb.css` und `wettbewerb.js` versionsgebunden, damit Safari keinen Altstand verwendet.
+- Fehlgeleitete TEST7/8/9-Sonderaenderungen an der Startseiten-Komponente wurden auf den bestaetigten TEST6-Stand zurueckgesetzt; keine neue Fachlogik.

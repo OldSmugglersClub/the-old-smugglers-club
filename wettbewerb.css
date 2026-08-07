@@ -816,3 +816,18 @@ body.page-dynamo-dresden{
     hyphens:none;
   }
 }
+
+/* Website 4.7.1-TEST10 – gezielter Mobilfix im tatsaechlichen dynamischen Wettbewerbs-Navigator. */
+@media(max-width:600px){
+  .competition-link--weihnachtsregatta{
+    white-space:nowrap !important;
+    overflow-wrap:normal !important;
+    word-break:normal !important;
+    hyphens:none !important;
+    font-size:clamp(.68rem,3.1vw,.82rem);
+    line-height:1.08;
+    letter-spacing:-.02em;
+    padding-left:.35rem;
+    padding-right:.35rem;
+  }
+}

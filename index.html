@@ -5353,33 +5353,13 @@
         max-width: 100%;
       }
 
-      /* Website 4.7.1-TEST9 – gezielter Mobilfix für Weihnachtsregatta; DOM-Struktur bleibt bei Datensynchronisierung erhalten.
-         Das eigentliche Wort liegt in einem Inline-Block und darf nicht innerhalb des Wortes umbrechen. */
-      #wettbewerbe [data-wettbewerb-id="weihnachtsregatta"] .competition-label--weihnachtsregatta {
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        text-align: center !important;
-        white-space: normal !important;
-        overflow: visible !important;
-        font-size: 1rem !important;
-        line-height: 1.08 !important;
-        letter-spacing: -.025em !important;
-      }
-
-      #wettbewerbe [data-wettbewerb-id="weihnachtsregatta"] .competition-label-nowrap {
-        display: inline-block !important;
-        max-width: 100% !important;
-        white-space: nowrap !important;
-        overflow-wrap: normal !important;
-        word-break: keep-all !important;
-        hyphens: none !important;
-        font-size: clamp(.78rem, 3.45vw, .98rem) !important;
-        line-height: 1.08 !important;
-        letter-spacing: -.035em !important;
+      /* Wettbewerbsnavigator: keine willkürliche Trennung von Weihnachtsregatta. */
+      #wettbewerbe [data-wettbewerb-id="weihnachtsregatta"] b {
+        white-space: nowrap;
+        overflow-wrap: normal;
+        word-break: keep-all;
+        hyphens: none;
+        font-size: clamp(1.25rem, 5.2vw, 1.8rem);
       }
     }
 </style>
@@ -5742,7 +5722,7 @@
           <span class="icon-medallion"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-scroll"></use></svg></span><b>Piratenkodex</b><small>Zu den Sonderduellen</small>
         </a>
         <a class="competition competition-link" href="./weihnachtsregatta.html" data-wettbewerb-id="weihnachtsregatta">
-          <span class="icon-medallion"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-ship-lantern"></use></svg></span><b class="competition-label--weihnachtsregatta"><span class="competition-label-nowrap">Weihnachtsregatta</span></b><small>Zum Sonderevent</small>
+          <span class="icon-medallion"><svg class="pirate-icon" aria-hidden="true"><use href="#icon-ship-lantern"></use></svg></span><b>Weihnachtsregatta</b><small>Zum Sonderevent</small>
         </a>
       </div>
     </section>
@@ -6714,14 +6694,7 @@
             if (!eintrag) return;
 
             const titel = karte.querySelector('b');
-            if (titel && eintrag.label) {
-              const nowrapLabel = titel.querySelector('.competition-label-nowrap');
-              if (nowrapLabel) {
-                nowrapLabel.textContent = eintrag.label;
-              } else {
-                titel.textContent = eintrag.label;
-              }
-            }
+            if (titel && eintrag.label) titel.textContent = eintrag.label;
             if (eintrag.page) karte.setAttribute('href', './' + String(eintrag.page).replace(/^\.\//, ''));
           });
         })
