@@ -54,12 +54,12 @@
    Schriftgröße nur mobil reduzieren, damit "Nutzungsrechte" ungeteilt passt. */
 @media (max-width: 700px) {
   .legal-page h1 {
-    font-size: clamp(2rem, 8.4vw, 2.75rem);
+    font-size: clamp(1.72rem, 7.1vw, 2.25rem);
     line-height: 1.08;
-    hyphens: none !important;
-    -webkit-hyphens: none !important;
-    word-break: keep-all !important;
-    overflow-wrap: normal !important;
+    hyphens: none;
+    -webkit-hyphens: none;
+    word-break: normal;
+    overflow-wrap: normal;
   }
 }
 
@@ -72,3 +72,8 @@
   hyphens: none;
   -webkit-hyphens: none;
 }
+
+
+/* 4.7.2-HF3-HF1: Mobile Rechtsseiten-H1 verkleinert, damit lange Titel wie
+   „Datenschutzerklärung“ vollständig im bestehenden Kasten bleiben.
+   Keine Worttrennung, kein Desktop-Eingriff. */
