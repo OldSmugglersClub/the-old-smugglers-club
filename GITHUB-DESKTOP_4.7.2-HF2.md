@@ -32,3 +32,8 @@ Vor dem Commit:
 - Änderungen in `legal.css` auf die mobile H1-Korrektur prüfen.
 - Geänderte HTML-Dateien auf `kontakt@the-old-smugglers-club.de` prüfen.
 - Erst nach bestandenem Website-Test committen und pushen.
+
+
+## Finale Kontrolle vor Commit
+- `index.html`: Footer-Kontaktlink muss `kontakt@the-old-smugglers-club.de` enthalten.
+- Nach bestandener Website-Prüfung kann HF2 zum Commit freigegeben werden.

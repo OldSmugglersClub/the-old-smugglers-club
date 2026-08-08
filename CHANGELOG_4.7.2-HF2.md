@@ -26,3 +26,9 @@
 - Kontaktadresse auf `kontakt@the-old-smugglers-club.de` korrigiert; vorhandene `mailto:`-Verweise entsprechend geprüft/angepasst.
 - Keine Änderung an Grid, Navigation, Tracking oder Fachlogik.
 - Versionsstand bleibt `4.7.2-HF2`, da die Abnahme noch nicht abgeschlossen war.
+
+
+## Abnahmekorrektur 3
+- Footer-Kontaktlink in `index.html` von `captain@the-old-smugglers-club.de` auf `kontakt@the-old-smugglers-club.de` korrigiert.
+- Sichtbare Bezeichnung `Kontakt` unverändert.
+- Keine weitere HTML-, Layout-, Tracking- oder Fachlogikänderung.
