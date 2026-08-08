@@ -26,3 +26,24 @@
 @media(min-width:721px){
   .legal-footer__links{gap:18px}
 }
+
+
+/* HF2 Korrektur: keine Wortzerreißung in Überschriften auf Rechtsseiten */
+.legal-page h1,
+.legal-page h2,
+.legal-page .legal-kicker {
+  hyphens: none;
+  -webkit-hyphens: none;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+@media (max-width: 700px) {
+  .legal-page h1,
+  .legal-page h2 {
+    hyphens: none;
+    -webkit-hyphens: none;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+}

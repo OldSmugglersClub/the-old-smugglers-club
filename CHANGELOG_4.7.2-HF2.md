@@ -13,3 +13,9 @@
 - Datenschutzinhalt aus HF1.
 - Wettbewerbs-, Saison-, Highscore- und Hall-of-Fame-Logik.
 - Admin Tool.
+
+
+## Korrekturen vor Abnahme
+- Nicht erforderliche öffentliche Projekt-/Rechtsberatungshinweise aus `datenschutz.html` und `nutzungsrechte.html` entfernt.
+- Mobile Wortzerreißung in Überschriften der Rechtsseiten unterbunden.
+- Versionsstand bleibt 4.7.2-HF2, da die Korrekturen vor Abschluss der Abnahme erfolgt sind.

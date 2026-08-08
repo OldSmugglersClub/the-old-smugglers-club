@@ -16,3 +16,9 @@ Eigener Rechtsbereich für Inhalte, Programmierung und konkrete Architektur-/Dok
 7. GitHub Pages/Actions abwarten.
 8. Hart neu laden und Version `4.7.2-HF2` bestätigen.
 9. Footer und neue Nutzungsrechte-Seite Desktop/Mobil testen.
+
+## Zusätzliche Kontrolle vor Commit
+- `datenschutz.html`: nur Hinweisblock entfernt.
+- `nutzungsrechte.html`: nur Hinweisblock entfernt.
+- `legal.css`: ausschließlich Überschriften-Worttrennung korrigiert.
+- Keine Änderung an Tracking, Navigation oder Fachlogik.

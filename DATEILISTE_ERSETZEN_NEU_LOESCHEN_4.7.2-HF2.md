@@ -1,6 +1,7 @@
 # DATEILISTE ERSETZEN / NEU / LÖSCHEN – 4.7.2-HF2
 
 ## ERSETZEN
+- legal.css
 - VERSION.txt
 - bundesliga.html
 - champions-league.html

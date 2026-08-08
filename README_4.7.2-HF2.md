@@ -12,3 +12,8 @@ Neuer rechtlicher Footer-Bereich `Nutzungsrechte`. Die Seite beschreibt den mög
 4. Darstellung mit Impressum/Datenschutz vergleichen.
 5. Links `Impressum`, `Datenschutz`, `Nutzungsrechte` und Zurück-Link prüfen.
 6. Startseite und Stalk-O-Meter kurz regressionsprüfen.
+
+## Ergänzende Testforderung nach Korrektur
+- Datenschutzseite: kein Projekt-/Rechtsberatungshinweis mehr sichtbar.
+- Nutzungsrechte-Seite: kein Projekt-/Rechtsberatungshinweis mehr sichtbar.
+- Mobile Darstellung: Überschrift `Urheber- und Nutzungsrechte` ohne Trennung innerhalb des Wortes `Nutzungsrechte`.
