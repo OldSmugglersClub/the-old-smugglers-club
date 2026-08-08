@@ -62,3 +62,13 @@
     overflow-wrap: normal !important;
   }
 }
+
+
+/* 4.7.2-HF3: Nur lange Kontakt-Mailadressen dürfen auf schmalen Displays umbrechen.
+   Fließtext und Überschriften behalten die HF2-Regeln gegen Wortzerreißung. */
+.legal-page .legal-email {
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
