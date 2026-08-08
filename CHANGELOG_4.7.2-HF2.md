@@ -19,3 +19,10 @@
 - Nicht erforderliche öffentliche Projekt-/Rechtsberatungshinweise aus `datenschutz.html` und `nutzungsrechte.html` entfernt.
 - Mobile Wortzerreißung in Überschriften der Rechtsseiten unterbunden.
 - Versionsstand bleibt 4.7.2-HF2, da die Korrekturen vor Abschluss der Abnahme erfolgt sind.
+
+
+## Abnahmekorrektur 2
+- Mobile Darstellung der Überschrift `Urheber- und Nutzungsrechte` korrigiert: keine Trennung innerhalb von `Nutzungsrechte`; dafür ausschließlich mobile H1-Skalierung auf Rechtsseiten angepasst.
+- Kontaktadresse auf `kontakt@the-old-smugglers-club.de` korrigiert; vorhandene `mailto:`-Verweise entsprechend geprüft/angepasst.
+- Keine Änderung an Grid, Navigation, Tracking oder Fachlogik.
+- Versionsstand bleibt `4.7.2-HF2`, da die Abnahme noch nicht abgeschlossen war.

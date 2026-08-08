@@ -17,3 +17,11 @@ Neuer rechtlicher Footer-Bereich `Nutzungsrechte`. Die Seite beschreibt den mög
 - Datenschutzseite: kein Projekt-/Rechtsberatungshinweis mehr sichtbar.
 - Nutzungsrechte-Seite: kein Projekt-/Rechtsberatungshinweis mehr sichtbar.
 - Mobile Darstellung: Überschrift `Urheber- und Nutzungsrechte` ohne Trennung innerhalb des Wortes `Nutzungsrechte`.
+
+
+## Abschließende Testforderung
+1. Mobil `nutzungsrechte.html` öffnen: `Nutzungsrechte` darf nicht innerhalb des Wortes getrennt werden.
+2. Desktop `nutzungsrechte.html` prüfen: bisherige Darstellung muss unverändert bleiben.
+3. Am Website-Ende unter `Kontakt` muss `kontakt@the-old-smugglers-club.de` sichtbar sein.
+4. Kontaktlink anklicken bzw. Ziel prüfen: `mailto:kontakt@the-old-smugglers-club.de`.
+5. Stichprobe: Navigation, Stalk-O-Meter und übrige Website-Funktionen unverändert.

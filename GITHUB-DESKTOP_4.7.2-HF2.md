@@ -22,3 +22,13 @@ Eigener Rechtsbereich für Inhalte, Programmierung und konkrete Architektur-/Dok
 - `nutzungsrechte.html`: nur Hinweisblock entfernt.
 - `legal.css`: ausschließlich Überschriften-Worttrennung korrigiert.
 - Keine Änderung an Tracking, Navigation oder Fachlogik.
+
+
+## Commit nach bestandener Abnahme
+Empfohlene Summary:
+`4.7.2-HF2: Rechtsseiten mobil korrigiert und Kontaktadresse berichtigt`
+
+Vor dem Commit:
+- Änderungen in `legal.css` auf die mobile H1-Korrektur prüfen.
+- Geänderte HTML-Dateien auf `kontakt@the-old-smugglers-club.de` prüfen.
+- Erst nach bestandenem Website-Test committen und pushen.
