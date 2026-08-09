@@ -1,9 +1,5 @@
 {
-  "schemaVersion": 3,
-  "datenVersion": 9,
-  "aktualisiert": "2026-07-30",
   "aktiveSaison": "2026-27",
-  "hinweis": "Zentrale saisonfähige Spieldaten. Mannschaften werden über IDs aus teams.json referenziert. Alle 34 Dynamo-Ligaspiele sind als Smuggleraufträge vorbereitet.",
   "saisons": [
     {
       "id": "2026-27",
@@ -24,16 +20,18 @@
           "datumAnzeige": "09.08.2026",
           "anstoss": "13:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 3,
+          "auswaertstore": 0,
+          "status": "beendet",
           "sonderwertungen": [
             "smugglerauftrag"
           ],
           "notiz": "Smugglerauftrag „Auftakt“",
           "quelleStand": "2026-07-30",
           "heimTeamId": "nuernberg",
-          "auswaertsTeamId": "dynamo-dresden"
+          "auswaertsTeamId": "dynamo-dresden",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "aktualisiertAm": "2026-08-09T18:11:13.460Z"
         },
         {
           "id": "sma-2026-27-02-013",
@@ -8275,5 +8273,7 @@
         }
       ]
     }
-  ]
+  ],
+  "datenVersion": 4,
+  "aktualisiert": "2026-08-09"
 }

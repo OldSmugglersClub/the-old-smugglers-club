@@ -34,7 +34,8 @@
     const rows=item?.matchday||[];
     const declared=item?.matchdayLeader||item?.spieltagLeader||null;
     const leader=declared||rows.find(row=>totalOf(row)>0)||null;
-    return {label,leader};
+    const leaders=rows.filter(row=>Number(row?.rank??row?.platz)===1);
+    return {label,leader,leaders};
   }
 
   function renderIndividuals(data){
@@ -52,6 +53,11 @@
   function renderMatchday(data){
     const matchday=currentMatchday(data);
     set('hs-matchday-name',compactMatchdayLabel(matchday.label));
+    if(matchday.leaders.length>1){
+      const points=totalOf(matchday.leaders[0]);
+      set('hs-matchday-winner',`${matchday.leaders.length} Spieltagsbeste · je ${format(points)} Punkte`);
+      return;
+    }
     set('hs-matchday-winner',matchday.leader?`${nameOf(matchday.leader)} · ${format(totalOf(matchday.leader))} Punkte`:'Noch ohne Wertung');
   }
 
@@ -63,7 +69,7 @@
     const newAverage=averageOf(newTeam);
     const label=oldAverage===newAverage?'Gleichstand':oldAverage>newAverage?'Old Smugglers':'New Smugglers';
     set('hs-team-leader',label);
-    set('hs-team-points',`${format(oldAverage,1)} : ${format(newAverage,1)} Punkte`);
+    set('hs-team-points',`${format(oldAverage,2)} : ${format(newAverage,2)} Punkte`);
   }
 
   async function init(){
