@@ -370,3 +370,26 @@ Die Feld- und Migrationsanalyse ist ab Version 4.5.0 ausgelagert in:
 - `MIGRATIONSMATRIX.md`
 
 Diese Dokumente sind vor jeder strukturellen Änderung an JSON-Dateien zu prüfen.
+
+## Externe Wettbewerbsdaten ab Website 4.7.2-HF3-HF6
+
+`wettbewerb.js` besitzt zusätzlich einen reinen Darstellungsdatenpfad für externe Sportdaten. Dieser Datenpfad ist von der OSC-Fachlogik getrennt.
+
+### OpenLigaDB
+- DFB-Pokal: `https://api.openligadb.de/getmatchdata/dfb/2026`
+- Champions League: `https://api.openligadb.de/getmatchdata/ucl/2026`
+- Europa League: `https://api.openligadb.de/getmatchdata/uel/2026`
+
+Die Abfragen erfolgen clientseitig über `fetch()` auf den statischen GitHub-Pages-Seiten. OpenLigaDB ist eine optionale Darstellungsquelle; ein Ausfall darf die OSC-Wertung nicht blockieren.
+
+### DFB-Pokal
+Der Turnierbaum verwendet Achtelfinale, Viertelfinale, Halbfinale und Finale. Die Verbindungslinien werden datenbasiert über tatsächlich in der Folgerunde wieder auftauchende Teams gezogen. Nicht vorhandene K.-o.-Runden werden nicht durch Vorsaisondaten ersetzt.
+
+### Champions League
+Die Ligaphasen-Tabelle wird aus den OpenLigaDB-Spielen mit den Rundenbezeichnungen `1. Spieltag` bis `8. Spieltag` berechnet. Dadurch bleiben spätere K.-o.-Spiele aus der Tabelle ausgeschlossen. Der K.-o.-Baum enthält Playoffs, Achtelfinale, Viertelfinale, Halbfinale und Finale. Hin- und Rückspiele werden teambezogen zu einem Gesamtergebnis aggregiert.
+
+### Europa League
+Die Europa League nutzt OpenLigaDB rundenweise als Primärquelle. Die lokale Datei `europa-league-ko-2026.json` ist die optionale Rückfallebene. Eine Runde wird nur dann aus OpenLigaDB übernommen, wenn sie vollständig verwertbar ist. Bei einem verifizierten Widerspruch zwischen OpenLigaDB und lokalem Fallback erhält der lokale Fallback Vorrang.
+
+### Architekturschutz
+Externe Tabellen und Turnierbäume sind ausschließlich Wettbewerbsinformation. Sie verändern weder Admin-Daten noch Kicktipp-Importe, Highscore, Teilnehmerdaten oder OSC-Wertungen.

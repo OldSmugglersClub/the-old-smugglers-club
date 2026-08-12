@@ -619,3 +619,25 @@ Die konkrete Reihenfolge steht in `MIGRATIONSMATRIX.md`.
 ## Wertungsrelevante Ergebnisfelder
 
 `spieldaten.json` muss ein eindeutig nutzbares Ergebnis nach regulärer Spielzeit enthalten. Gemeint sind 90 Minuten einschließlich Nachspielzeit. Ergebnisse nach Verlängerung oder Elfmeterschießen müssen getrennt gespeichert und bei der Tippwertung ignoriert werden.
+
+## Externe Sportdaten und Europa-League-Fallback – 4.7.2-HF3-HF6
+
+Externe Sportdaten werden in `wettbewerb.js` ausschließlich für die visuelle Wettbewerbsdarstellung verarbeitet.
+
+### OpenLigaDB-Daten
+Die JSON-Antworten von OpenLigaDB werden nicht als führende OSC-Daten gespeichert. Sie werden zur Laufzeit gelesen und in Tabellen bzw. K.-o.-Paarungen transformiert.
+
+### `europa-league-ko-2026.json`
+Lokale Rückfallebene für die Europa-League-K.-o.-Phase 2026/27.
+
+Struktur:
+- `wettbewerb`
+- `saison`
+- `quelle`
+- `status`
+- `runden.achtelfinale`
+- `runden.viertelfinale`
+- `runden.halbfinale`
+- `runden.finale`
+
+Die Datei startet leer. Sie darf nur mit verifizierten realen Paarungen und Ergebnissen befüllt werden. Sie ersetzt keine OSC-Spieldaten und keine Admin-Ergebniseingabe.

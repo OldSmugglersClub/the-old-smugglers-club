@@ -1,5 +1,12 @@
 # Website 4.7.1 FINAL – 07.08.2026
 
+## 4.7.2-HF3-HF6 – Externe Wettbewerbsdaten 2026/27
+- OpenLigaDB-basierte DFB-Pokal-, Champions-League- und Europa-League-Darstellung.
+- Champions-League-Ligaphase aus Spieltag 1–8 sowie aggregierter K.-o.-Baum.
+- Europa-League-Fallback mit rundenweiser Priorität und Datenkonflikt-Erkennung.
+- 2025/26-Prototypdaten aus dem Saisonbetrieb entfernt; Regression 2026/27 bestanden.
+
+
 - 4.7.1-TEST10 nach erfolgreicher Desktop-/Mobile-Abnahme unverändert als FINAL freigegeben.
 - Letzter bestätigter Besucherfehler im mobilen dynamischen Wettbewerbs-Navigator behoben: „Weihnachtsregatta“ wird nicht mehr innerhalb des Wortes getrennt.
 - Highscore-Navigator, Hall of Fame, mobile Kopfzeile, Saisonübersicht und Button-Konventionen aus dem 4.7.1-Audit bestätigt.

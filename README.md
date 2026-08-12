@@ -114,3 +114,7 @@ Siehe `STALK-O-METER-HANDBUCH.md` und `README_4.7.2-TEST1.md`.
 ## Aktuelle Website-Version: 4.7.2 FINAL
 Enthält das Stalk-O-Meter mit GoatCounter-Pageview-Erfassung, öffentlicher Rangliste und
 Gesamtanzeige. Architektur und Betriebsdetails siehe `STALK-O-METER-HANDBUCH.md`.
+
+## Website 4.7.2-HF3-HF6 – externe Wettbewerbsdaten 2026/27
+
+Die Wettbewerbsseiten für DFB-Pokal, Champions League und Europa League können nun externe Sportdaten von OpenLigaDB darstellen. Die Champions-League-Ligaphase wird ausschließlich aus den Spieltagen 1–8 aufgebaut. K.-o.-Paarungen werden in Turnierbäumen dargestellt; Hin- und Rückspiele der UEFA-Wettbewerbe werden zu Paarungen aggregiert. Für die Europa League existiert mit `europa-league-ko-2026.json` ein leer startender lokaler Fallback für fehlende oder verifiziert widersprüchliche Runden. Externe Sportdaten beeinflussen keine OSC-/Kicktipp-Wertung.

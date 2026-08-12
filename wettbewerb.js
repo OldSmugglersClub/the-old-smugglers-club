@@ -549,6 +549,737 @@
     return wrap;
   }
 
+  const OPENLIGADB_CL_MATCHES_PROTOTYPE_URL = "https://api.openligadb.de/getmatchdata/ucl/2026";
+  const OPENLIGADB_EL_MATCHES_PROTOTYPE_URL = "https://api.openligadb.de/getmatchdata/uel/2026";
+  const EUROPA_LEAGUE_FALLBACK_PROTOTYPE_URL = "./europa-league-ko-2026.json";
+  const OPENLIGADB_DFB_PROTOTYPE_URL = "https://api.openligadb.de/getmatchdata/dfb/2026";
+  const DFB_BRACKET_ROUNDS = [
+    { key: "achtelfinale", label: "Achtelfinale" },
+    { key: "viertelfinale", label: "Viertelfinale" },
+    { key: "halbfinale", label: "Halbfinale" },
+    { key: "finale", label: "Finale" }
+  ];
+
+  function normalizeRoundLabel(value) {
+    return String(value || "")
+      .toLocaleLowerCase("de")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, " ")
+      .trim();
+  }
+
+  function openLigaDbRoundKey(match) {
+    const label = normalizeRoundLabel(
+      match?.group?.groupName ??
+      match?.group?.GroupName ??
+      ""
+    );
+    if (label.includes("achtelfinale")) return "achtelfinale";
+    if (label.includes("viertelfinale")) return "viertelfinale";
+    if (label.includes("halbfinale")) return "halbfinale";
+    if (label.includes("endspiel") || label === "finale" || label.includes(" finale")) return "finale";
+    return "";
+  }
+
+  function openLigaDbFinalResult(match) {
+    const results = safeArray(match && match.matchResults);
+    const final = results.find(result => {
+      const name = String(result?.resultName ?? result?.resultTypeName ?? "").toLocaleLowerCase("de");
+      const typeId = Number(result?.resultTypeID ?? result?.resultTypeId ?? -1);
+      return name.includes("end") || name.includes("final") || typeId === 2;
+    }) || results.at(-1);
+
+    if (!final) return "";
+    const home = Number(final?.pointsTeam1 ?? final?.PointsTeam1);
+    const away = Number(final?.pointsTeam2 ?? final?.PointsTeam2);
+    return Number.isFinite(home) && Number.isFinite(away) ? `${home}:${away}` : "";
+  }
+
+  function openLigaDbTeamName(team) {
+    return String(team?.teamName ?? team?.TeamName ?? "Team offen").trim() || "Team offen";
+  }
+
+  function bracketTeamKey(value) {
+    return String(value || "")
+      .toLocaleLowerCase("de")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, " ")
+      .trim();
+  }
+
+  function createBracketMatch(match) {
+    const card = document.createElement("article");
+    card.className = "ko-match";
+
+    const teams = document.createElement("div");
+    teams.className = "ko-match__teams";
+
+    const homeName = openLigaDbTeamName(match?.team1);
+    const awayName = openLigaDbTeamName(match?.team2);
+    card.dataset.team1 = bracketTeamKey(homeName);
+    card.dataset.team2 = bracketTeamKey(awayName);
+
+    teams.append(
+      createTeamIdentity("", homeName, "ko-team"),
+      createTeamIdentity("", awayName, "ko-team")
+    );
+
+    const meta = document.createElement("div");
+    meta.className = "ko-match__meta";
+
+    const result = document.createElement("strong");
+    result.className = "ko-match__result";
+    result.textContent = openLigaDbFinalResult(match) || "–";
+
+    const date = document.createElement("span");
+    date.className = "ko-match__date";
+    const rawDate = String(match?.matchDateTime ?? match?.MatchDateTime ?? "");
+    date.textContent = rawDate && /^\d{4}-\d{2}-\d{2}/.test(rawDate)
+      ? formatDate(rawDate.slice(0, 10))
+      : "Termin offen";
+
+    meta.append(result, date);
+    card.append(teams, meta);
+    return card;
+  }
+
+  function bracketCardTeams(card) {
+    return [card?.dataset?.team1, card?.dataset?.team2].filter(Boolean);
+  }
+
+  function drawBracketConnections(bracket) {
+    if (!bracket) return;
+    const oldSvg = bracket.querySelector(".ko-bracket__connections");
+    if (oldSvg) oldSvg.remove();
+
+    const rounds = [...bracket.querySelectorAll(".ko-round")];
+    if (rounds.length < 2) return;
+
+    const width = Math.max(bracket.scrollWidth, bracket.clientWidth);
+    const height = Math.max(bracket.scrollHeight, bracket.clientHeight);
+    if (!width || !height) return;
+
+    const baseRect = bracket.getBoundingClientRect();
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("class", "ko-bracket__connections");
+    svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+    svg.setAttribute("width", width);
+    svg.setAttribute("height", height);
+    svg.setAttribute("aria-hidden", "true");
+
+    const connected = new Set();
+
+    for (let roundIndex = 1; roundIndex < rounds.length; roundIndex += 1) {
+      const previousCards = [...rounds[roundIndex - 1].querySelectorAll(".ko-match:not(.ko-match--open)")];
+      const currentCards = [...rounds[roundIndex].querySelectorAll(".ko-match:not(.ko-match--open)")];
+
+      currentCards.forEach(currentCard => {
+        const currentTeams = new Set(bracketCardTeams(currentCard));
+        const targetRect = currentCard.getBoundingClientRect();
+
+        previousCards.forEach(previousCard => {
+          const sharedTeam = bracketCardTeams(previousCard).find(team => currentTeams.has(team));
+          if (!sharedTeam) return;
+
+          const connectionKey = `${roundIndex}:${sharedTeam}:${previousCard.dataset.team1}:${previousCard.dataset.team2}`;
+          if (connected.has(connectionKey)) return;
+          connected.add(connectionKey);
+
+          const sourceRect = previousCard.getBoundingClientRect();
+          const x1 = sourceRect.right - baseRect.left;
+          const y1 = sourceRect.top - baseRect.top + sourceRect.height / 2;
+          const x2 = targetRect.left - baseRect.left;
+          const y2 = targetRect.top - baseRect.top + targetRect.height / 2;
+          const middleX = x1 + Math.max(12, (x2 - x1) / 2);
+
+          const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+          path.setAttribute("d", `M ${x1} ${y1} H ${middleX} V ${y2} H ${x2}`);
+          path.setAttribute("class", "ko-bracket__connection");
+          svg.appendChild(path);
+        });
+      });
+    }
+
+    bracket.prepend(svg);
+  }
+
+  function activateBracketConnections(bracket) {
+    const redraw = () => window.requestAnimationFrame(() => drawBracketConnections(bracket));
+    redraw();
+
+    if ("ResizeObserver" in window) {
+      const observer = new ResizeObserver(redraw);
+      observer.observe(bracket);
+    } else {
+      window.addEventListener("resize", redraw, { passive: true });
+    }
+  }
+
+  function openLigaDbNumber(row, ...keys) {
+    for (const key of keys) {
+      const value = Number(row && row[key]);
+      if (Number.isFinite(value)) return value;
+    }
+    return 0;
+  }
+
+  function renderChampionsLeagueTable(openLigaDbMatches, root) {
+    if (slug !== "champions-league") return;
+
+    const leaguePhaseMatches = safeArray(openLigaDbMatches).filter(match => {
+      const groupName = String(match?.group?.groupName ?? match?.group?.GroupName ?? "");
+      const matchday = Number(groupName.match(/(\d+)\.\s*Spieltag/i)?.[1]);
+      return Number.isFinite(matchday) && matchday >= 1 && matchday <= 8;
+    });
+
+    const teams = new Map();
+
+    function ensureTeam(team) {
+      const id = String(team?.teamId ?? team?.teamID ?? team?.TeamId ?? team?.TeamID ?? "");
+      const name = openLigaDbTeamName(team);
+      const key = id || bracketTeamKey(name);
+      if (!teams.has(key)) {
+        teams.set(key, { id, name, played: 0, wins: 0, draws: 0, losses: 0, goalsFor: 0, goalsAgainst: 0, points: 0 });
+      }
+      return teams.get(key);
+    }
+
+    leaguePhaseMatches.forEach(match => {
+      const home = ensureTeam(match?.team1);
+      const away = ensureTeam(match?.team2);
+      const results = safeArray(match?.matchResults);
+      const finalResult = results.find(result => Number(result?.resultTypeID ?? result?.resultTypeId ?? result?.ResultTypeID ?? -1) === 2)
+        || results.find(result => {
+          const name = String(result?.resultName ?? result?.resultTypeName ?? "").toLocaleLowerCase("de");
+          return name.includes("end") || name.includes("final");
+        })
+        || results.at(-1);
+      if (!finalResult) return;
+      const homeGoals = Number(finalResult?.pointsTeam1 ?? finalResult?.PointsTeam1);
+      const awayGoals = Number(finalResult?.pointsTeam2 ?? finalResult?.PointsTeam2);
+      if (!Number.isFinite(homeGoals) || !Number.isFinite(awayGoals)) return;
+
+      home.played += 1; away.played += 1;
+      home.goalsFor += homeGoals; home.goalsAgainst += awayGoals;
+      away.goalsFor += awayGoals; away.goalsAgainst += homeGoals;
+      if (homeGoals > awayGoals) { home.wins += 1; away.losses += 1; home.points += 3; }
+      else if (homeGoals < awayGoals) { away.wins += 1; home.losses += 1; away.points += 3; }
+      else { home.draws += 1; away.draws += 1; home.points += 1; away.points += 1; }
+    });
+
+    const rows = [...teams.values()].sort((a, b) => {
+      if (b.points !== a.points) return b.points - a.points;
+      const gdA = a.goalsFor - a.goalsAgainst;
+      const gdB = b.goalsFor - b.goalsAgainst;
+      if (gdB !== gdA) return gdB - gdA;
+      if (b.goalsFor !== a.goalsFor) return b.goalsFor - a.goalsFor;
+      return a.name.localeCompare(b.name, "de");
+    });
+
+    const section = document.createElement("section");
+    section.className = "dynamic-section standings-section";
+    const headingRow = document.createElement("div");
+    headingRow.className = "section-heading-row";
+    const heading = document.createElement("h2");
+    heading.textContent = "Champions-League-Tabelle";
+    const badge = document.createElement("span");
+    badge.className = "data-status-badge";
+    const complete = rows.length === 36 && rows.every(team => team.played === 8);
+    badge.textContent = complete ? "OpenLigaDB 2026/27 · Ligaphase vollständig" : `OpenLigaDB 2026/27 · ${rows.length} Teams`;
+    headingRow.append(heading, badge);
+    section.appendChild(headingRow);
+
+    if (!rows.length) {
+      const note = document.createElement("p");
+      note.className = "data-note";
+      note.textContent = "OpenLigaDB liefert derzeit keine verwertbaren Daten für die Champions-League-Ligaphase.";
+      section.appendChild(note); root.appendChild(section); return;
+    }
+
+    const wrapper = document.createElement("div"); wrapper.className = "table-scroll";
+    const table = document.createElement("table"); table.className = "data-table standings-table";
+    table.innerHTML = "<thead><tr><th>Pl.</th><th>Verein</th><th>Sp.</th><th>S</th><th>U</th><th>N</th><th>Tore</th><th>Diff.</th><th>Pkt.</th></tr></thead>";
+    const tbody = document.createElement("tbody");
+    rows.forEach((team, index) => {
+      const tr = document.createElement("tr");
+      const gd = team.goalsFor - team.goalsAgainst;
+      const values = [index + 1, team.name, team.played, team.wins, team.draws, team.losses, `${team.goalsFor}:${team.goalsAgainst}`, gd > 0 ? `+${gd}` : String(gd), team.points];
+      values.forEach((value, columnIndex) => {
+        const cell = document.createElement(columnIndex === 0 ? "th" : "td");
+        if (columnIndex === 0) cell.scope = "row";
+        if (columnIndex === 1) cell.appendChild(createTeamIdentity(team.id, team.name, "team-identity--table"));
+        else cell.textContent = value;
+        tr.appendChild(cell);
+      });
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody); wrapper.appendChild(table); section.appendChild(wrapper);
+    const note = document.createElement("p"); note.className = "data-note";
+    note.textContent = complete
+      ? "Die Tabelle wurde ausschließlich aus den acht Spieltagen der Champions-League-Ligaphase berechnet. K.-o.-Spiele verändern diesen Endstand nicht."
+      : "Die Tabelle wird ausschließlich aus den bereits verfügbaren Spieltagen 1–8 der Champions-League-Ligaphase berechnet.";
+    section.appendChild(note); root.appendChild(section);
+  }
+
+  function championsLeagueKoRoundKey(match) {
+    const label = normalizeRoundLabel(match?.group?.groupName ?? match?.group?.GroupName ?? "");
+    if (label.includes("playoff")) return "playoffs";
+    if (label.includes("achtelfinale")) return "achtelfinale";
+    if (label.includes("viertelfinale")) return "viertelfinale";
+    if (label.includes("halbfinale")) return "halbfinale";
+    if (label.includes("endspiel") || label === "finale" || label.includes(" finale")) return "finale";
+    return "";
+  }
+
+  function openLigaDbFinalScore(match) {
+    const result = openLigaDbFinalResult(match);
+    const parts = String(result || "").match(/^(\d+):(\d+)$/);
+    return parts ? [Number(parts[1]), Number(parts[2])] : null;
+  }
+
+  function aggregateChampionsLeagueRound(matches, roundKey) {
+    if (roundKey === "finale") return safeArray(matches);
+
+    const pairs = new Map();
+    safeArray(matches).forEach(match => {
+      const team1Name = openLigaDbTeamName(match?.team1);
+      const team2Name = openLigaDbTeamName(match?.team2);
+      const key = [bracketTeamKey(team1Name), bracketTeamKey(team2Name)].sort().join("::");
+      if (!pairs.has(key)) pairs.set(key, []);
+      pairs.get(key).push(match);
+    });
+
+    return [...pairs.values()].map(games => {
+      const sorted = games.slice().sort((a, b) => String(a?.matchDateTime ?? "").localeCompare(String(b?.matchDateTime ?? "")));
+      const first = sorted[0];
+      const firstTeam1Key = bracketTeamKey(openLigaDbTeamName(first?.team1));
+      let goals1 = 0;
+      let goals2 = 0;
+      let complete = sorted.length >= 2;
+
+      sorted.forEach(game => {
+        const score = openLigaDbFinalScore(game);
+        if (!score) { complete = false; return; }
+        const homeKey = bracketTeamKey(openLigaDbTeamName(game?.team1));
+        if (homeKey === firstTeam1Key) {
+          goals1 += score[0]; goals2 += score[1];
+        } else {
+          goals1 += score[1]; goals2 += score[0];
+        }
+      });
+
+      const last = sorted.at(-1);
+      return {
+        team1: first?.team1,
+        team2: first?.team2,
+        matchDateTime: last?.matchDateTime ?? first?.matchDateTime ?? "",
+        MatchDateTime: last?.MatchDateTime ?? first?.MatchDateTime ?? "",
+        matchResults: complete ? [{
+          resultTypeID: 2,
+          resultName: "Gesamt",
+          pointsTeam1: goals1,
+          pointsTeam2: goals2
+        }] : []
+      };
+    });
+  }
+
+  function renderChampionsLeagueKnockoutPrototype(openLigaDbMatches, root) {
+    if (slug !== "champions-league") return;
+
+    const rounds = [
+      { key: "playoffs", label: "Playoffs" },
+      { key: "achtelfinale", label: "Achtelfinale" },
+      { key: "viertelfinale", label: "Viertelfinale" },
+      { key: "halbfinale", label: "Halbfinale" },
+      { key: "finale", label: "Finale" }
+    ];
+
+    const rawGroups = new Map(rounds.map(round => [round.key, []]));
+    safeArray(openLigaDbMatches).forEach(match => {
+      const key = championsLeagueKoRoundKey(match);
+      if (key && rawGroups.has(key)) rawGroups.get(key).push(match);
+    });
+
+    const groups = new Map();
+    rounds.forEach(round => groups.set(round.key, aggregateChampionsLeagueRound(rawGroups.get(round.key), round.key)));
+
+    const total = [...groups.values()].reduce((sum, matches) => sum + matches.length, 0);
+    if (!total) return;
+
+    const section = document.createElement("section");
+    section.className = "dynamic-section ko-bracket-section";
+
+    const headingRow = document.createElement("div");
+    headingRow.className = "section-heading-row";
+    const heading = document.createElement("h2");
+    heading.textContent = "Champions League · Turnierbaum";
+    const badge = document.createElement("span");
+    badge.className = "data-status-badge";
+    badge.textContent = "OpenLigaDB 2026/27";
+    headingRow.append(heading, badge);
+    section.appendChild(headingRow);
+
+    const note = document.createElement("p");
+    note.className = "data-note";
+    note.textContent = "K.-o.-Phase mit aggregierten Hin- und Rückspielen. Angezeigt wird das Gesamtergebnis der jeweiligen Paarung.";
+    section.appendChild(note);
+
+    const scroll = document.createElement("div");
+    scroll.className = "ko-bracket-scroll";
+    const bracket = document.createElement("div");
+    bracket.className = "ko-bracket ko-bracket--champions-league";
+    bracket.setAttribute("aria-label", "Champions-League-Turnierbaum");
+    bracket.style.gridTemplateColumns = "repeat(5, minmax(250px, 1fr))";
+    bracket.style.minWidth = "1370px";
+
+    rounds.forEach(round => {
+      const column = document.createElement("section");
+      column.className = `ko-round ko-round--${round.key}`;
+      const title = document.createElement("h3");
+      title.className = "ko-round__title";
+      title.textContent = round.label;
+      column.appendChild(title);
+
+      const list = document.createElement("div");
+      list.className = "ko-round__matches";
+      const matches = groups.get(round.key) || [];
+
+      if (!matches.length) {
+        const open = document.createElement("div");
+        open.className = "ko-match ko-match--open";
+        open.textContent = "Noch nicht feststehend";
+        list.appendChild(open);
+      } else {
+        matches.slice()
+          .sort((a, b) => String(a?.matchDateTime ?? "").localeCompare(String(b?.matchDateTime ?? "")))
+          .forEach(match => list.appendChild(createBracketMatch(match)));
+      }
+
+      column.appendChild(list);
+      bracket.appendChild(column);
+    });
+
+    scroll.appendChild(bracket);
+    section.appendChild(scroll);
+    activateBracketConnections(bracket);
+
+    const source = document.createElement("p");
+    source.className = "data-note ko-source-note";
+    source.textContent = "Sportdaten: OpenLigaDB · Darstellung ausschließlich als externe Wettbewerbsinformation.";
+    section.appendChild(source);
+    root.appendChild(section);
+  }
+
+  const EUROPA_LEAGUE_ROUNDS = [
+    { key: "achtelfinale", label: "Achtelfinale", expected: 8 },
+    { key: "viertelfinale", label: "Viertelfinale", expected: 4 },
+    { key: "halbfinale", label: "Halbfinale", expected: 2 },
+    { key: "finale", label: "Finale", expected: 1 }
+  ];
+
+  function europaLeagueRoundKey(match) {
+    const label = normalizeRoundLabel(
+      match?.group?.groupName ??
+      match?.group?.GroupName ??
+      ""
+    );
+    if (label.includes("achtelfinale")) return "achtelfinale";
+    if (label.includes("viertelfinale")) return "viertelfinale";
+    if (label.includes("halbfinale")) return "halbfinale";
+    if (label.includes("endspiel") || label === "finale" || label.includes(" finale")) return "finale";
+    return "";
+  }
+
+  function aggregateTwoLegRound(matches, roundKey) {
+    if (roundKey === "finale") return safeArray(matches);
+
+    const pairs = new Map();
+
+    safeArray(matches).forEach(match => {
+      const a = bracketTeamKey(openLigaDbTeamName(match?.team1));
+      const b = bracketTeamKey(openLigaDbTeamName(match?.team2));
+      if (!a || !b) return;
+      const key = [a, b].sort().join("::");
+      if (!pairs.has(key)) pairs.set(key, []);
+      pairs.get(key).push(match);
+    });
+
+    return [...pairs.values()].map(games => {
+      const sorted = games.slice().sort((a, b) =>
+        String(a?.matchDateTime ?? "").localeCompare(String(b?.matchDateTime ?? ""))
+      );
+
+      const first = sorted[0];
+      const firstHomeKey = bracketTeamKey(openLigaDbTeamName(first?.team1));
+      let goals1 = 0;
+      let goals2 = 0;
+      let complete = sorted.length >= 2;
+
+      sorted.forEach(game => {
+        const scoreText = openLigaDbFinalResult(game);
+        const match = String(scoreText || "").match(/^(\d+):(\d+)$/);
+        if (!match) {
+          complete = false;
+          return;
+        }
+
+        const score = [Number(match[1]), Number(match[2])];
+        const homeKey = bracketTeamKey(openLigaDbTeamName(game?.team1));
+
+        if (homeKey === firstHomeKey) {
+          goals1 += score[0];
+          goals2 += score[1];
+        } else {
+          goals1 += score[1];
+          goals2 += score[0];
+        }
+      });
+
+      const last = sorted.at(-1);
+      return {
+        team1: first?.team1,
+        team2: first?.team2,
+        matchDateTime: last?.matchDateTime ?? first?.matchDateTime ?? "",
+        matchResults: complete ? [{
+          resultTypeID: 2,
+          resultName: "Gesamt",
+          pointsTeam1: goals1,
+          pointsTeam2: goals2
+        }] : []
+      };
+    });
+  }
+
+  function manualEuropaLeagueMatch(item, roundKey) {
+    const result = String(item?.gesamt || "").match(/(\d+)\s*:\s*(\d+)/);
+    return {
+      team1: { teamName: item?.team1 || "Team offen" },
+      team2: { teamName: item?.team2 || "Team offen" },
+      matchDateTime: "",
+      matchResults: result ? [{
+        resultTypeID: 2,
+        resultName: roundKey === "finale" ? "Endergebnis" : "Gesamt",
+        pointsTeam1: Number(result[1]),
+        pointsTeam2: Number(result[2])
+      }] : []
+    };
+  }
+
+  function europaLeagueRoundFromOpenLigaDb(matches, roundKey, expected) {
+    const raw = safeArray(matches).filter(match => europaLeagueRoundKey(match) === roundKey);
+    const aggregated = aggregateTwoLegRound(raw, roundKey);
+
+    const valid = aggregated.length === expected &&
+      aggregated.every(match => Boolean(openLigaDbFinalResult(match)));
+
+    return valid ? aggregated : null;
+  }
+
+  function europaLeagueRoundFromFallback(fallbackData, roundKey, expected) {
+    const items = safeArray(fallbackData?.runden?.[roundKey]);
+    if (items.length !== expected) return [];
+    return items.map(item => manualEuropaLeagueMatch(item, roundKey));
+  }
+
+  function europaLeagueRoundHasConflict(openLigaDbRound, fallbackRound) {
+    if (!safeArray(openLigaDbRound).length || !safeArray(fallbackRound).length) return false;
+    if (openLigaDbRound.length !== fallbackRound.length) return true;
+
+    const byPair = matches => new Map(matches.map(match => {
+      const a = bracketTeamKey(openLigaDbTeamName(match?.team1));
+      const b = bracketTeamKey(openLigaDbTeamName(match?.team2));
+      return [[a, b].sort().join("::"), openLigaDbFinalResult(match)];
+    }));
+
+    const automatic = byPair(openLigaDbRound);
+    const fallback = byPair(fallbackRound);
+
+    if (automatic.size !== fallback.size) return true;
+
+    for (const [key, fallbackResult] of fallback) {
+      if (!automatic.has(key)) return true;
+      if (automatic.get(key) !== fallbackResult) return true;
+    }
+
+    return false;
+  }
+
+  function renderEuropaLeagueKnockoutPrototype(openLigaDbMatches, fallbackData, root) {
+    if (slug !== "europa-league") return;
+
+    const groups = new Map();
+    const sources = new Map();
+
+    EUROPA_LEAGUE_ROUNDS.forEach(round => {
+      const automatic = europaLeagueRoundFromOpenLigaDb(openLigaDbMatches, round.key, round.expected);
+      const fallback = europaLeagueRoundFromFallback(fallbackData, round.key, round.expected);
+
+      if (automatic && fallback.length && europaLeagueRoundHasConflict(automatic, fallback)) {
+        groups.set(round.key, fallback);
+        sources.set(round.key, "Fallback · Datenkonflikt");
+      } else if (automatic) {
+        groups.set(round.key, automatic);
+        sources.set(round.key, "OpenLigaDB");
+      } else {
+        groups.set(round.key, fallback);
+        sources.set(round.key, "Fallback");
+      }
+    });
+
+    const total = [...groups.values()].reduce((sum, matches) => sum + matches.length, 0);
+    if (!total) return;
+
+    const section = document.createElement("section");
+    section.className = "dynamic-section ko-bracket-section";
+
+    const headingRow = document.createElement("div");
+    headingRow.className = "section-heading-row";
+
+    const heading = document.createElement("h2");
+    heading.textContent = "Europa League · Turnierbaum";
+
+    const badge = document.createElement("span");
+    badge.className = "data-status-badge";
+    badge.textContent = "OpenLigaDB + lokaler Fallback 2026/27";
+
+    headingRow.append(heading, badge);
+    section.appendChild(headingRow);
+
+    const note = document.createElement("p");
+    note.className = "data-note";
+    note.textContent = "OpenLigaDB wird rundenweise bevorzugt. Nur unvollständige K.-o.-Runden werden durch den lokalen Test-Fallback ergänzt.";
+    section.appendChild(note);
+
+    const scroll = document.createElement("div");
+    scroll.className = "ko-bracket-scroll";
+
+    const bracket = document.createElement("div");
+    bracket.className = "ko-bracket";
+    bracket.setAttribute("aria-label", "Europa-League-Turnierbaum");
+
+    EUROPA_LEAGUE_ROUNDS.forEach(round => {
+      const column = document.createElement("section");
+      column.className = `ko-round ko-round--${round.key}`;
+
+      const title = document.createElement("h3");
+      title.className = "ko-round__title";
+      title.textContent = `${round.label} · ${sources.get(round.key)}`;
+      column.appendChild(title);
+
+      const list = document.createElement("div");
+      list.className = "ko-round__matches";
+
+      const matches = groups.get(round.key) || [];
+      if (!matches.length) {
+        const open = document.createElement("div");
+        open.className = "ko-match ko-match--open";
+        open.textContent = "Noch nicht feststehend";
+        list.appendChild(open);
+      } else {
+        matches.forEach(match => list.appendChild(createBracketMatch(match)));
+      }
+
+      column.appendChild(list);
+      bracket.appendChild(column);
+    });
+
+    scroll.appendChild(bracket);
+    section.appendChild(scroll);
+    activateBracketConnections(bracket);
+
+    const source = document.createElement("p");
+    source.className = "data-note ko-source-note";
+    source.textContent = "Sportdaten: OpenLigaDB; fehlende Runden: lokaler Fallback 2026/27.";
+    section.appendChild(source);
+
+    root.appendChild(section);
+  }
+
+  function renderDfbKnockoutPrototype(openLigaDbMatches, root) {
+    if (slug !== "dfb-pokal") return;
+
+    const section = document.createElement("section");
+    section.className = "dynamic-section ko-bracket-section";
+
+    const headingRow = document.createElement("div");
+    headingRow.className = "section-heading-row";
+    const heading = document.createElement("h2");
+    heading.textContent = "DFB-Pokal · Turnierbaum";
+    const badge = document.createElement("span");
+    badge.className = "data-status-badge";
+    badge.textContent = "OpenLigaDB 2026/27";
+    headingRow.append(heading, badge);
+    section.appendChild(headingRow);
+
+    const note = document.createElement("p");
+    note.className = "data-note";
+    note.textContent = "Für die Saison 2026/27 werden nur die jeweils bereits feststehenden K.-o.-Runden angezeigt.";
+    section.appendChild(note);
+
+    const groups = new Map(DFB_BRACKET_ROUNDS.map(round => [round.key, []]));
+    safeArray(openLigaDbMatches).forEach(match => {
+      const key = openLigaDbRoundKey(match);
+      if (key && groups.has(key)) groups.get(key).push(match);
+    });
+
+    const total = [...groups.values()].reduce((sum, matches) => sum + matches.length, 0);
+    if (!total) {
+      const empty = document.createElement("div");
+      empty.className = "schedule-empty";
+      empty.textContent = "OpenLigaDB liefert aktuell keine verwertbaren K.-o.-Runden für den Turnierbaum.";
+      section.appendChild(empty);
+      root.appendChild(section);
+      return;
+    }
+
+    const scroll = document.createElement("div");
+    scroll.className = "ko-bracket-scroll";
+    const bracket = document.createElement("div");
+    bracket.className = "ko-bracket";
+    bracket.setAttribute("aria-label", "DFB-Pokal Turnierbaum");
+
+    DFB_BRACKET_ROUNDS.forEach(round => {
+      const column = document.createElement("section");
+      column.className = `ko-round ko-round--${round.key}`;
+      const title = document.createElement("h3");
+      title.className = "ko-round__title";
+      title.textContent = round.label;
+      column.appendChild(title);
+
+      const matches = groups.get(round.key);
+      const list = document.createElement("div");
+      list.className = "ko-round__matches";
+
+      if (!matches.length) {
+        const open = document.createElement("div");
+        open.className = "ko-match ko-match--open";
+        open.textContent = "Noch nicht feststehend";
+        list.appendChild(open);
+      } else {
+        matches
+          .slice()
+          .sort((a, b) => String(a?.matchDateTime ?? "").localeCompare(String(b?.matchDateTime ?? "")))
+          .forEach(match => list.appendChild(createBracketMatch(match)));
+      }
+
+      column.appendChild(list);
+      bracket.appendChild(column);
+    });
+
+    scroll.appendChild(bracket);
+    section.appendChild(scroll);
+    activateBracketConnections(bracket);
+
+    const source = document.createElement("p");
+    source.className = "data-note ko-source-note";
+    source.textContent = "Sportdaten: OpenLigaDB · Darstellung ausschließlich als externe Wettbewerbsinformation.";
+    section.appendChild(source);
+    root.appendChild(section);
+  }
+
   function centralGamesSection(data, teamData) {
     const games = centralGamesForPage(data);
     const teamLookup = createTeamLookup(teamData);
@@ -1062,12 +1793,16 @@ function renderCards(cards) {
     root.appendChild(quickActions);
   }
 
-  function renderSections(sections, buttons, gameData, teamData, tableData) {
+  function renderSections(sections, buttons, gameData, teamData, tableData, openLigaDbDfbMatches, openLigaDbClTable, openLigaDbElMatches, europaLeagueFallback) {
     const root = $("dynamic-sections");
     root.innerHTML = "";
     document.body.classList.add(`page-${slug}`);
     renderCompetitionNavigator(root);
     renderCompetitionSituation(gameData, teamData, root);
+    renderChampionsLeagueTable(openLigaDbClTable, root);
+    renderChampionsLeagueKnockoutPrototype(openLigaDbClTable, root);
+    renderEuropaLeagueKnockoutPrototype(openLigaDbElMatches, europaLeagueFallback, root);
+    renderDfbKnockoutPrototype(openLigaDbDfbMatches, root);
     if (slug === "bundesliga" || slug === "dynamo-dresden") {
       renderQuickBackButton(buttons, root);
     }
@@ -1169,12 +1904,24 @@ function renderCards(cards) {
           window.OSCDataRegistry.url("wettbewerbe")
         ]);
       }
-      const [data, centralGameData, teamData, bundesligaTableData, competitionConfig] = await Promise.all([
+      const [data, centralGameData, teamData, bundesligaTableData, competitionConfig, openLigaDbDfbMatches, openLigaDbClTable, openLigaDbElMatches, europaLeagueFallback] = await Promise.all([
         fetchJson(jsonUrl, true),
         fetchJson(gameDataUrl, false),
         fetchJson(teamDataUrl, false),
         slug === "bundesliga" ? fetchJson(bundesligaTableUrl, false) : Promise.resolve({ teams: [] }),
-        fetchJson(competitionConfigUrl, false)
+        fetchJson(competitionConfigUrl, false),
+        slug === "dfb-pokal"
+          ? fetchJson(OPENLIGADB_DFB_PROTOTYPE_URL, false)
+          : Promise.resolve([]),
+        slug === "champions-league"
+          ? fetchJson(OPENLIGADB_CL_MATCHES_PROTOTYPE_URL, false)
+          : Promise.resolve([]),
+        slug === "europa-league"
+          ? fetchJson(OPENLIGADB_EL_MATCHES_PROTOTYPE_URL, false)
+          : Promise.resolve([]),
+        slug === "europa-league"
+          ? fetchJson(EUROPA_LEAGUE_FALLBACK_PROTOTYPE_URL, false)
+          : Promise.resolve({ runden: {} })
       ]);
 
       currentTeamData = teamData && typeof teamData === "object" ? teamData : { teams: [] };
@@ -1209,7 +1956,7 @@ function renderCards(cards) {
             : [centralSection, ...editorialSections])
         : editorialSections;
 
-      renderSections(sections, data.buttons, centralGameData, teamData, bundesligaTableData);
+      renderSections(sections, data.buttons, centralGameData, teamData, bundesligaTableData, openLigaDbDfbMatches, openLigaDbClTable, openLigaDbElMatches, europaLeagueFallback);
       renderButtons(data.buttons);
       text("footer-text", data.fusszeile);
       await loadFooterVersion();
