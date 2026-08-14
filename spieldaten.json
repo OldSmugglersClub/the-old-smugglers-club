@@ -31,7 +31,25 @@
           "heimTeamId": "nuernberg",
           "auswaertsTeamId": "dynamo-dresden",
           "ergebnisNach90MinutenBestaetigt": true,
-          "aktualisiertAm": "2026-08-09T18:11:13.460Z"
+          "aktualisiertAm": "2026-08-09T18:11:13.460Z",
+          "tippverteilung": {
+            "abgegeben": 95,
+            "nichtAbgegeben": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 67,
+                "prozent": 70.5
+              },
+              "X": {
+                "anzahl": 14,
+                "prozent": 14.7
+              },
+              "2": {
+                "anzahl": 14,
+                "prozent": 14.7
+              }
+            }
+          }
         },
         {
           "id": "sma-2026-27-02-013",
