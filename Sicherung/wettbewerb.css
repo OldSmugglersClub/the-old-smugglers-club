@@ -1169,26 +1169,3 @@ body.page-dynamo-dresden{
   }
 }
 
-/* MOBILE-MATCH-LAYOUT-TEST1
-   Nur normale Spielplanlisten auf Mobile <= 800px.
-   Ursache: team-identity war mobil inhaltsbreit; dadurch wanderte die Wappenachse
-   mit der Laenge des Vereinsnamens. Dynamo Dresden bleibt bewusst unberuehrt. */
-@media(max-width:800px){
-  body:not(.page-dynamo-dresden) .match-list .match-pairing .team-identity--home,
-  body:not(.page-dynamo-dresden) .match-list .match-pairing .team-identity--away{
-    width:100%;
-    max-width:100%;
-    justify-content:center;
-  }
-
-  body:not(.page-dynamo-dresden) .match-list .match-pairing .team-identity__name{
-    width:100%;
-    max-width:100%;
-    text-align:center;
-    white-space:normal;
-    overflow-wrap:normal;
-    word-break:normal;
-    hyphens:none;
-  }
-}
-
