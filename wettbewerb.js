@@ -1305,7 +1305,8 @@
         terminBestaetigt: match.terminBestaetigt === true,
         abgeschlossen: numericScore(match.heimtore) !== null && numericScore(match.auswaertstore) !== null,
         datumIso: match.datum || match.datumVon || null,
-        quelleStand: match.quelleStand || ""
+        quelleStand: match.quelleStand || "",
+        tippverteilung: match.tippverteilung && typeof match.tippverteilung === "object" ? match.tippverteilung : null
       })),
       zentral: true
     };
@@ -1626,6 +1627,82 @@ function renderCards(cards) {
     return "open";
   }
 
+
+  function createTipDistribution(match) {
+    const distribution = match && match.tippverteilung;
+    const submitted = Number(distribution && distribution.abgegeben);
+    const tendencies = distribution && distribution.tendenzen;
+    if (!distribution || !tendencies || !Number.isFinite(submitted) || submitted <= 0) return null;
+
+    const valueFor = key => {
+      const entry = tendencies[key] || {};
+      const count = Number(entry.anzahl);
+      const percent = Number(entry.prozent);
+      return {
+        count: Number.isFinite(count) && count >= 0 ? count : 0,
+        percent: Number.isFinite(percent) && percent >= 0 ? Math.min(percent, 100) : 0
+      };
+    };
+
+    const wrap = document.createElement("div");
+    wrap.className = "tip-distribution";
+
+    const title = document.createElement("strong");
+    title.className = "tip-distribution__title";
+    title.textContent = "Tippverteilung:";
+    wrap.appendChild(title);
+
+    const center = document.createElement("div");
+    center.className = "tip-distribution__center";
+
+    [
+      ["1", "Heimsieg", "home"],
+      ["X", "Remis", "draw"],
+      ["2", "Auswärtssieg", "away"]
+    ].forEach(([key, label, modifier]) => {
+      const value = valueFor(key);
+
+      const item = document.createElement("span");
+      item.className = `tip-distribution__item tip-distribution__item--${modifier}`;
+      item.title = `${key} · ${label}: ${value.count} Tipp${value.count === 1 ? "" : "s"}`;
+
+      const keyNode = document.createElement("b");
+      keyNode.className = "tip-distribution__key";
+      keyNode.textContent = key;
+
+      const track = document.createElement("span");
+      track.className = "tip-distribution__track";
+
+      const fill = document.createElement("span");
+      fill.className = "tip-distribution__fill";
+      fill.style.width = `${value.percent}%`;
+      track.appendChild(fill);
+
+      const amount = document.createElement("span");
+      amount.className = "tip-distribution__amount";
+      amount.textContent = `${String(value.percent).replace(".", ",")} %`;
+
+      item.append(keyNode, track, amount);
+      center.appendChild(item);
+    });
+
+    wrap.appendChild(center);
+
+    const meta = document.createElement("span");
+    meta.className = "tip-distribution__meta";
+
+    const missing = Number(distribution.nichtAbgegeben);
+    const total = submitted + (Number.isFinite(missing) && missing > 0 ? missing : 0);
+    meta.textContent = total > submitted ? `${submitted} von ${total} Tipps` : `${submitted} Tipps`;
+
+    if (Number.isFinite(missing) && missing > 0) {
+      meta.title = `${missing} Nichtabgabe${missing === 1 ? "" : "n"}`;
+    }
+
+    wrap.appendChild(meta);
+    return wrap;
+  }
+
   function createMatchList(matches, options = {}) {
     const list = document.createElement("div");
     list.className = "match-list";
@@ -1658,6 +1735,8 @@ function renderCards(cards) {
       resultWrap.append(stateBadge, result);
 
       row.append(meta, pairing, resultWrap);
+      const tipDistribution = createTipDistribution(match);
+      if (tipDistribution) row.appendChild(tipDistribution);
       list.appendChild(row);
     });
     if (options.className) list.classList.add(options.className);

@@ -982,3 +982,130 @@ body.page-dynamo-dresden{
   max-width:100%;
   box-sizing:border-box;
 }
+
+/* Tippverteilung pro Spiel – TV-TEST6: stabile 3-Zonen-Struktur */
+.tip-distribution{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:minmax(150px,1fr) minmax(420px,auto) minmax(150px,1fr);
+  align-items:center;
+  column-gap:18px;
+  min-width:0;
+  padding-top:8px;
+  border-top:1px solid rgba(205,164,81,.22);
+  color:#d8c49a;
+  font-size:.76rem;
+}
+.tip-distribution__title{
+  grid-column:1;
+  justify-self:start;
+  color:#e5c06b;
+  font-size:.78rem;
+  letter-spacing:.01em;
+  white-space:nowrap;
+}
+.tip-distribution__center{
+  grid-column:2;
+  justify-self:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  min-width:0;
+}
+.tip-distribution__item{
+  display:grid;
+  grid-template-columns:auto 110px auto;
+  align-items:center;
+  gap:6px;
+  min-width:0;
+}
+.tip-distribution__key{
+  font-size:.78rem;
+  font-weight:900;
+}
+.tip-distribution__item--home .tip-distribution__key,
+.tip-distribution__item--home .tip-distribution__amount{color:#70b978}
+.tip-distribution__item--draw .tip-distribution__key,
+.tip-distribution__item--draw .tip-distribution__amount{color:#e1b54f}
+.tip-distribution__item--away .tip-distribution__key,
+.tip-distribution__item--away .tip-distribution__amount{color:#d96a62}
+.tip-distribution__track{
+  display:block;
+  width:110px;
+  height:10px;
+  overflow:hidden;
+  border:1px solid rgba(224,190,116,.24);
+  border-radius:4px;
+  background:rgba(5,4,3,.55);
+}
+.tip-distribution__fill{
+  display:block;
+  width:0;
+  height:100%;
+  border-radius:3px;
+}
+.tip-distribution__item--home .tip-distribution__fill{background:#5b9b62}
+.tip-distribution__item--draw .tip-distribution__fill{background:#d3a748}
+.tip-distribution__item--away .tip-distribution__fill{background:#b9564f}
+.tip-distribution__amount{
+  font-size:.76rem;
+  font-weight:900;
+  white-space:nowrap;
+}
+.tip-distribution__meta{
+  grid-column:3;
+  justify-self:end;
+  color:#dfd1b3;
+  font-size:.74rem;
+  white-space:nowrap;
+}
+
+@media(max-width:980px){
+  .tip-distribution{
+    grid-template-columns:1fr auto;
+    row-gap:8px;
+  }
+  .tip-distribution__title{
+    grid-column:1;
+  }
+  .tip-distribution__meta{
+    grid-column:2;
+  }
+  .tip-distribution__center{
+    grid-column:1 / -1;
+    grid-row:2;
+    justify-self:center;
+    flex-wrap:wrap;
+  }
+}
+
+@media(max-width:620px){
+  .tip-distribution{
+    grid-template-columns:1fr;
+    row-gap:7px;
+  }
+  .tip-distribution__title,
+  .tip-distribution__center,
+  .tip-distribution__meta{
+    grid-column:1;
+  }
+  .tip-distribution__title{
+    justify-self:start;
+  }
+  .tip-distribution__center{
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:6px;
+  }
+  .tip-distribution__item{
+    grid-template-columns:auto minmax(60px,1fr) auto;
+  }
+  .tip-distribution__track{
+    width:100%;
+  }
+  .tip-distribution__meta{
+    justify-self:end;
+  }
+}
