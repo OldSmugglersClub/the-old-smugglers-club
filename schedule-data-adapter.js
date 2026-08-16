@@ -7,6 +7,35 @@
     return response.json();
   };
 
+
+  const mergePersistentSchedule = async gamesDoc => {
+    let snapshot;
+    try { snapshot=await fetchJson("./schedule-terminstand.json"); }
+    catch(_){ return gamesDoc; }
+
+    const entries=snapshot&&snapshot.entries&&typeof snapshot.entries==="object"?snapshot.entries:{};
+    const clone=JSON.parse(JSON.stringify(gamesDoc));
+    const seasons=Array.isArray(clone.saisons)?clone.saisons:[];
+
+    seasons.forEach(season=>(season.spiele||[]).forEach(game=>{
+      const saved=entries[game.id];
+      if(!saved||saved.terminBestaetigt!==true) return;
+
+      const localConfirmed=game.terminBestaetigt===true&&game.datum&&game.anstoss;
+      const localStand=String(game.quelleStand||"");
+      const savedStand=String(saved.quelleStand||"");
+
+      // Persistenz ist Rückfallschutz, keine zweite fachliche Wahrheit:
+      // - unbestätigte/geleerte Admin-Daten dürfen einen bestätigten Termin nicht vernichten;
+      // - ein neuerer verifizierter lokaler Termin gewinnt gegen den Snapshot;
+      // - bei gleichem Quellenstand gewinnt der aktuelle lokale Datensatz.
+      if(!localConfirmed || (savedStand && (!localStand || savedStand>localStand))){
+        Object.assign(game,saved);
+      }
+    }));
+    return clone;
+  };
+
   const validSchedule = schedule => schedule && typeof schedule === "object"
     && Array.isArray(schedule.games)
     && Array.isArray(schedule.matchdays)
@@ -32,7 +61,7 @@
             kicktippLink: schedule.kicktippLink || "",
             kicktippButtonText: schedule.kicktippButtonText || ""
           },
-          games: { aktiveSaison: activeSeason, saisons: [{ id: activeSeason, spiele: schedule.games }] },
+          games: await mergePersistentSchedule({ aktiveSaison: activeSeason, saisons: [{ id: activeSeason, spiele: schedule.games }] }),
           teams: { teams: schedule.teams },
           matchdays: {
             aktiveSaison: activeSeason,
@@ -52,12 +81,13 @@
         ])
       : ["./spieltag.json", "./spieldaten.json", "./teams.json", "./tippspieltage.json"];
 
-    const [config, games, teams, matchdays] = await Promise.all([
+    const [config, gamesRaw, teams, matchdays] = await Promise.all([
       fetchJson(configUrl), fetchJson(gamesUrl), fetchJson(teamsUrl), fetchJson(matchdaysUrl)
     ]);
+    const games = await mergePersistentSchedule(gamesRaw);
     return {
-      source: "legacy",
-      diagnostics: { source: "legacy", fallback: true },
+      source: "legacy+persistent-terminstand",
+      diagnostics: { source: "legacy+persistent-terminstand", fallback: true },
       config, games, teams, matchdays
     };
   }
