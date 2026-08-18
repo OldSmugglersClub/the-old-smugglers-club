@@ -39,11 +39,56 @@ function renderSummary(list){
 }
 function podiumCard(r,pos,zero){
  const isTeam=view==='team';
- const pointsLine=isTeam?`${fmt(r.pointsSum??r.punktesumme??r.totalPoints??0,1)} Punkte gesamt`:`${fmt(rowPoints(r))} Punkte`;
- const detailLine=zero?'Noch ohne Wertung':isTeam?`Ø ${fmt(rowPoints(r),1)} Punkte · ${num(r.memberCount??r.mitglieder)} Mitglieder`:'Offizielle Rangfolge';
- return `<article class="hs-podium-card place-${pos}"><div class="hs-podium-rank">${zero?'–':`№ ${esc(rowRank(r,pos))}`}</div><strong>${esc(rowName(r))}</strong><span>${pointsLine}</span><small>${detailLine}</small></article>`;
+ const score=isTeam?fmt(rowPoints(r),1):fmt(rowPoints(r));
+ const scoreLabel=isTeam?'Ø Punkte':'Punkte';
+ const detailLine=zero?'Noch ohne Wertung':isTeam?`${fmt(r.pointsSum??r.punktesumme??r.totalPoints??0,1)} gesamt · ${num(r.memberCount??r.mitglieder)} Mitglieder`:view==='bonus'?'Bonuswertung':'Aktueller Rang';
+ const medalClass=pos===1?'gold':pos===2?'silver':'bronze';
+ return `<article class="hs-rank-card hs-rank-card--${medalClass} hs-rank-card--place-${pos}">
+   <div class="hs-rank-medal" aria-hidden="true">${zero?'–':pos}</div>
+   <strong class="hs-rank-name">${esc(rowName(r))}</strong>
+   <div class="hs-rank-score"><b>${score}</b><span>${scoreLabel}</span></div>
+   <small>${detailLine}</small>
+ </article>`;
 }
-function renderPodium(list){const zero=allZero(list);if(zero){$('podium').innerHTML='<div class="hs-podium-empty-state"><strong>Das Podium ist noch nicht besetzt.</strong><span>Nach der ersten bestätigten Wertung erscheint hier die aktuelle Top 3.</span></div>';$('ranking-notice').textContent='Noch keine Wertung. Die vollständige Rangliste bleibt zur Kontrolle alphabetisch sichtbar.';return;}const sharedLeaders=view!=='team'&&view!=='bonus'?list.filter(r=>Number(rowRank(r,0))===1):[];if(sharedLeaders.length>3){$('podium').innerHTML=`<div class="hs-podium-empty-state"><strong>${sharedLeaders.length} Spieler teilen sich Platz 1.</strong><span>Je ${fmt(rowPoints(sharedLeaders[0]))} Punkte.</span></div>`;$('ranking-notice').textContent='Bei mehr als drei gemeinsam Führenden wird kein zufälliges Dreierpodium hervorgehoben. Die vollständige Rangliste zeigt alle Gleichplatzierten.';return;}const top=list.slice(0,3);$('podium').innerHTML=top.length?top.map((r,i)=>podiumCard(r,i+1,false)).join(''):'<p class="hs-empty">Noch keine Daten vorhanden.</p>';$('ranking-notice').textContent='Die offizielle Rangfolge aus dem Datenpaket wird unverändert angezeigt.';}
+function leaderCard(r){
+ const score=fmt(rowPoints(r));
+ return `<article class="hs-tie-card">
+   <div class="hs-tie-rank" aria-hidden="true">1</div>
+   <strong class="hs-tie-name">${esc(rowName(r))}</strong>
+   <div class="hs-tie-score"><b>${score}</b><span>Punkte</span></div>
+ </article>`;
+}
+function renderPodium(list){
+ document.body.dataset.view=view;
+ const podium=$('podium');
+ const zero=allZero(list);
+ $('ranking-notice').textContent='';
+ $('ranking-notice').hidden=true;
+
+ if(zero){
+   podium.className='hs-podium hs-podium--empty';
+   podium.innerHTML='<div class="hs-podium-empty-state"><strong>Das Führungsdeck ist noch unbesetzt.</strong><span>Nach der ersten bestätigten Wertung erscheint hier die aktuelle Spitze.</span></div>';
+   return;
+ }
+
+ const sharedLeaders=view!=='team'&&view!=='bonus'?list.filter(r=>Number(rowRank(r,0))===1):[];
+ if(sharedLeaders.length>1){
+   podium.className='hs-podium hs-podium--simple hs-podium--tie';
+   podium.innerHTML=`<div class="hs-simple-deck">
+     <header class="hs-simple-banner"><span>Das Führungsdeck</span><strong>${sharedLeaders.length} Freibeuter teilen sich Rang 1</strong><small>je ${fmt(rowPoints(sharedLeaders[0]))} Punkte</small></header>
+     <div class="hs-tie-grid">${sharedLeaders.map(leaderCard).join('')}</div>
+   </div>`;
+   return;
+ }
+
+ const top=list.slice(0,3);
+ const count=top.length;
+ podium.className=`hs-podium hs-podium--simple hs-podium--ranked hs-podium--count-${count}`;
+ podium.innerHTML=top.length?`<div class="hs-simple-deck">
+   <header class="hs-simple-banner"><span>Das Führungsdeck</span><small>Die aktuelle Spitze der Highscore</small></header>
+   <div class="hs-rank-grid hs-rank-grid--count-${count}">${top.map((r,i)=>podiumCard(r,i+1,false)).join('')}</div>
+ </div>`:'<p class="hs-empty">Noch keine Daten vorhanden.</p>';
+}
 function paginationHtml(total){const pages=Math.max(1,Math.ceil(total/pageSize));page=Math.min(Math.max(1,page),pages);if(total<=pageSize)return '';const nums=Array.from({length:pages},(_,i)=>i+1).map(n=>`<button class="hs-page-btn ${n===page?'is-active':''}" type="button" data-page="${n}" aria-label="Seite ${n}" aria-current="${n===page?'page':'false'}">${n}</button>`).join('');return `<nav class="hs-pagination" aria-label="Ranglistenseiten"><button class="hs-page-btn" type="button" data-page="${page-1}" ${page===1?'disabled':''}>Zurück</button><span>Einträge ${(page-1)*pageSize+1}–${Math.min(page*pageSize,total)} von ${total}</span><div class="hs-page-numbers">${nums}</div><button class="hs-page-btn" type="button" data-page="${page+1}" ${page===pages?'disabled':''}>Weiter</button></nav>`;}
 function bindPagination(){document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>{page=Number(b.dataset.page)||1;renderTable(rows());$('table-panel').scrollIntoView({behavior:'smooth',block:'start'});});}
 function renderTable(list){const team=view==='team';const bonus=view==='bonus';const tableWrap=$('ranking-body').closest('.hs-table-wrap');if(tableWrap){tableWrap.classList.toggle('is-team-table',team);tableWrap.classList.toggle('is-individual-table',view==='individual');tableWrap.classList.toggle('is-matchday-table',view==='matchday');tableWrap.classList.toggle('is-bonus-table',bonus);}$('search-box').hidden=false;const searchLabel=$('search-box').querySelector('span');if(searchLabel)searchLabel.textContent=team?'Team suchen':'Spieler suchen';let base=sortedRows(list);let filtered=base.filter(r=>rowName(r).toLocaleLowerCase('de').includes(query.toLocaleLowerCase('de')));const pages=Math.max(1,Math.ceil(filtered.length/pageSize));page=Math.min(page,pages);const shown=team?filtered:filtered.slice((page-1)*pageSize,page*pageSize);$('toolbar-count').textContent=`${filtered.length} ${team?'Teams':'Spieler'}`;$('ranking-head').innerHTML=team?'<tr><th>Rang</th><th>Team</th><th>Mitglieder</th><th>Punktesumme</th><th>Durchschnitt</th></tr>':bonus?'<tr><th>Rang</th><th>Spieler</th><th>Bonuspunkte</th></tr>':view==='matchday'?'<tr><th>Rang</th><th>Spieler</th><th>Punkte</th><th>Exakt</th><th>Differenz</th><th>Tendenz</th></tr>':'<tr><th>Rang</th><th>Spieler</th><th>Bonuspunkte</th><th>Spieltagsiege</th><th>Gesamtpunkte</th></tr>';
