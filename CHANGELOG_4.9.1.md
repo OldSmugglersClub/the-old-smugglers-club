@@ -23,3 +23,8 @@
 ## Abnahme
 - Entwicklungsstand 4.9.1-S30-2-HF1 wurde am 20.08.2026 visuell und funktional abgenommen.
 - Finalisierung zu 4.9.1 enthält keine zusätzliche Fachänderung.
+
+## Typografie-Feinschliff vor Live-Einspielung
+- Wettbewerbs-/Spieltagsbezeichnung innerhalb „Spieltag in 30 Sekunden“ besser lesbar dargestellt.
+- Beispiel: „Smuggleraufträge 2. Spieltag“ erhält eine moderat größere Schrift.
+- Keine Änderung an Fachlogik, Grid, Kachelgrößen, Navigation oder Grundlayout.

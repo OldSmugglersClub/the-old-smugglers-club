@@ -18,3 +18,6 @@ Zusätzlich ist der abgenommene Darstellungsfix für die Crewduell-Durchschnitts
 Für ein bestehendes Website-4.9.0-Repository das LIVE-UPDATE verwenden und die unter **ERSETZEN** genannten Dateien ersetzen. Danach Deployment abwarten und Startseite sowie `logbuch.html` auf Desktop und Mobil prüfen.
 
 Das LIVE-FULL-Paket ist der vollständige archivierungsfähige Referenzstand für weitere Website-Entwicklung.
+
+### Typografie
+Die Wettbewerbs-/Spieltagsbezeichnung innerhalb „Spieltag in 30 Sekunden“ wurde vor der Live-Einspielung moderat vergrößert. Dies ist ausschließlich ein Lesbarkeitsfix; Datenlogik und Layoutstruktur bleiben unverändert.
