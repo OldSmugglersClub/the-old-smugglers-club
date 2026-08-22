@@ -6406,7 +6406,7 @@
         }
 
         const formatMatchdayTitle = event => {
-          const name = String(event?.matchdayName || "").trim();
+          const name = String(event?.matchdayName || "").trim().replace(/(\d+\.)\s+(Spieltag)/gi, "$1\u00a0$2");
           const type = String(event?.matchdayType || "").trim().toLowerCase();
           if (type === "smugglerauftrag") return name || "Smugglerauftrag";
           if (type === "bundesliga") return name ? `Bundesliga · ${name}` : "Bundesliga";

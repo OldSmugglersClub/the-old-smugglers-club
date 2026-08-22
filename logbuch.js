@@ -4,6 +4,7 @@ const $=s=>document.querySelector(s);
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const arr=v=>Array.isArray(v)?v:[];
 const norm=v=>String(v??"").trim().toLowerCase();
+const keepSpieltag=v=>String(v??"").replace(/(\d+\.)\s+(Spieltag)/gi,"$1\u00a0$2");
 let data=null;
 
 function shown(entry){return (entry?.highlights||[]).filter(h=>h?.anzeigen===true)}
@@ -52,7 +53,7 @@ function summaryTitle(type){
 function renderThirtySeconds(entry,pending){
  const host=$("#logbook-30s"); if(!host) return;
  if(pending?.active){
-  host.innerHTML=`<div class="logbook-30s-pending"><span class="logbook-kicker">${esc(pending.kicker)}</span><strong>${esc(pending.title)}</strong><p>${esc(pending.text)}</p>${pending.detail?`<small>${esc(pending.detail)}</small>`:""}</div>`;
+  host.innerHTML=`<div class="logbook-30s-pending"><span class="logbook-kicker">${esc(pending.kicker)}</span><strong>${esc(keepSpieltag(pending.title))}</strong><p>${esc(pending.text)}</p>${pending.detail?`<small>${esc(pending.detail)}</small>`:""}</div>`;
   return;
  }
  if(!entry){
@@ -64,7 +65,7 @@ function renderThirtySeconds(entry,pending){
   host.innerHTML='<div class="logbook-30s-empty">Für diesen Spieltag liegen noch keine freigegebenen Kurzmeldungen vor.</div>';
   return;
  }
- host.innerHTML=`<div class="logbook-30s-head"><span class="logbook-kicker">${esc(entry.bezeichnung||entry.runde||"Letzter Spieltag")}</span><strong>Die drei wichtigsten Logbuch-Signale</strong></div><div class="logbook-30s-list">${picks.map(h=>`<article class="logbook-30s-item"><span>${esc(summaryTitle(h.typ))}</span><p>${esc(summaryText(h))}</p></article>`).join("")}</div>`;
+ host.innerHTML=`<div class="logbook-30s-head"><span class="logbook-kicker">${esc(keepSpieltag(entry.bezeichnung||entry.runde||"Letzter Spieltag"))}</span><strong>Die drei wichtigsten Logbuch-Signale</strong></div><div class="logbook-30s-list">${picks.map(h=>`<article class="logbook-30s-item"><span>${esc(summaryTitle(h.typ))}</span><p>${esc(summaryText(h))}</p></article>`).join("")}</div>`;
 }
 
 function shortNames(rows,max=8){
@@ -97,12 +98,12 @@ function renderHighlight(h){
 function renderEntry(entry,pending){
  const host=$("#lb-current"); if(!host) return;
  if(pending?.active){
-  host.innerHTML=`<section class="lb-entry lb-entry--pending"><header class="lb-entry-head"><span>${esc(pending.kicker)}</span><h2>${esc(pending.title)}</h2></header><div class="lb-pending-copy"><p>${esc(pending.text)}</p>${pending.detail?`<strong>${esc(pending.detail)}</strong>`:""}<small>Frühere abgeschlossene Logbücher bleiben unten im Archiv erreichbar.</small></div></section>`;
+  host.innerHTML=`<section class="lb-entry lb-entry--pending"><header class="lb-entry-head"><span>${esc(pending.kicker)}</span><h2>${esc(keepSpieltag(pending.title))}</h2></header><div class="lb-pending-copy"><p>${esc(pending.text)}</p>${pending.detail?`<strong>${esc(pending.detail)}</strong>`:""}<small>Frühere abgeschlossene Logbücher bleiben unten im Archiv erreichbar.</small></div></section>`;
   document.title="Auswertung läuft | The Old Smugglers Club";
   return;
  }
  if(!entry){host.innerHTML='<div class="lb-status">Noch kein abgeschlossenes Logbuch vorhanden.</div>';return}
- host.innerHTML=`<section class="lb-entry"><header class="lb-entry-head"><span>${esc(entry.wettbewerb||"Spieltag")}</span><h2>${esc(entry.bezeichnung||entry.runde||"Logbuch")}</h2></header><div class="lb-highlight-grid">${shown(entry).map(renderHighlight).join("")}</div></section>`;
+ host.innerHTML=`<section class="lb-entry"><header class="lb-entry-head"><span>${esc(entry.wettbewerb||"Spieltag")}</span><h2>${esc(keepSpieltag(entry.bezeichnung||entry.runde||"Logbuch"))}</h2></header><div class="lb-highlight-grid">${shown(entry).map(renderHighlight).join("")}</div></section>`;
  document.title=`${entry.bezeichnung||"Logbuch"} | The Old Smugglers Club`;
 }
 function archive(){
