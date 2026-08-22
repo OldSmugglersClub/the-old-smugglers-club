@@ -5266,7 +5266,7 @@
 
   </style>
   <link rel="stylesheet" href="./highscore.css?v=4.0.1">
-  <link rel="stylesheet" href="./logbuch.css?v=4.9.1-S30-2">
+  <link rel="stylesheet" href="./logbuch.css?v=4.9.1-S30-3-HF1">
   <link rel="stylesheet" href="./accessibility-v33.css">
   <style id="welcome-cleanup-v434">
     /* Version 4.4.14: Startzentrale vollständig deckend halten und alle alten Dekore abschalten.
@@ -6405,6 +6405,14 @@
           elements.note.classList.toggle("is-hidden", !noteVisible);
         }
 
+        const formatMatchdayTitle = event => {
+          const name = String(event?.matchdayName || "").trim();
+          const type = String(event?.matchdayType || "").trim().toLowerCase();
+          if (type === "smugglerauftrag") return name || "Smugglerauftrag";
+          if (type === "bundesliga") return name ? `Bundesliga · ${name}` : "Bundesliga";
+          return name || event?.wettbewerbAnzeige || "Nächstes Event";
+        };
+
         const focus = state.focus;
         if (!focus) {
           if (elements.label) elements.label.textContent = "Nächste Tippereignisse";
@@ -6413,7 +6421,7 @@
           setPlaceholder(data);
         } else {
           if (elements.label) elements.label.textContent = "Nächstes Tippereignis";
-          if (elements.title) elements.title.textContent = focus.matchdayName || focus.wettbewerbAnzeige || "Nächstes Event";
+          if (elements.title) elements.title.textContent = formatMatchdayTitle(focus);
           if (elements.status) elements.status.textContent = `${upcoming.length} EVENT${upcoming.length===1?"":"S"}`;
 
           elements.next?.classList.remove("is-placeholder");
@@ -6450,7 +6458,7 @@
               if(game.ereignisLink)row.href=game.ereignisLink;
               const time=document.createElement("span"); time.className="sm-event-row__time"; time.textContent=game.anstoss;
               const competition=document.createElement("span"); competition.className="sm-event-row__competition";
-              competition.textContent=game.matchdayType==="Smugglerauftrag"?"Smugglerauftrag":(game.wettbewerbAnzeige||game.wettbewerb||"Ereignis");
+              competition.textContent=String(game.matchdayType||"").trim().toLowerCase()==="smugglerauftrag"?(game.matchdayName||"Smugglerauftrag"):(game.wettbewerbAnzeige||game.wettbewerb||"Ereignis");
               const match=document.createElement("span"); match.className="sm-event-row__match";
 
               const homeWrap=document.createElement("span"); homeWrap.className="sm-event-row__team sm-event-row__team--home";
@@ -6716,7 +6724,7 @@
   </script>
 
   <script src="./highscore-teaser.js" defer></script>
-  <script src="./logbuch.js?v=4.9.1-S30-2" defer></script>
+  <script src="./logbuch.js?v=4.9.1-S30-3-HF3" defer></script>
   <script src="performance-v247.js" defer></script>
   <script src="./accessibility-v33.js" defer></script>
   <script>
