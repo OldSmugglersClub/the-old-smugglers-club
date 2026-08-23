@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 3,
-  "aktualisiert": "2026-08-17",
+  "datenVersion": 4,
+  "aktualisiert": "2026-08-23",
   "saison": "2026-27",
   "hinweis": "Offizielle Spieltagsplatzierung und Punkte aus der Kicktipp-Spieltagsrangliste; interne Detailstatistik ergänzend.",
-  "berechnetAm": "2026-08-17T20:01:58.159Z",
+  "berechnetAm": "2026-08-23T14:17:41.394Z",
   "spieltage": [
     {
       "id": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",

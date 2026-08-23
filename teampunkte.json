@@ -1,11 +1,11 @@
 {
   "schemaVersion": 2,
-  "datenVersion": 3,
-  "aktualisiert": "2026-08-17",
+  "datenVersion": 4,
+  "aktualisiert": "2026-08-23",
   "saison": "2026-27",
   "hinweis": "Teamdurchschnitt als arithmetisches Mittel aller aktiven Teammitglieder; echte Nichtabgabe zählt mit 0 Punkten.",
-  "berechnetAm": "2026-08-17T20:01:58.159Z",
-  "quelle": "Kicktipp-Einzelranglisten + Tipper-Gruppen / Admin 6.2.0-a6-HF3-HF13",
+  "berechnetAm": "2026-08-23T14:17:41.394Z",
+  "quelle": "Kicktipp-Einzelranglisten + Tipper-Gruppen / Admin 6.5.0-HF2",
   "gesamt": [
     {
       "platz": 1,
@@ -260,14 +260,14 @@
       "punkte": 2
     },
     {
-      "teilnehmerId": "ximmox",
-      "teilnehmer": "xIMMOx",
+      "teilnehmerId": "mary-grace",
+      "teilnehmer": "Mary-Grace",
       "team": "Old Smugglers Team",
       "punkte": 2
     },
     {
-      "teilnehmerId": "handgottes",
-      "teilnehmer": "HandGottes",
+      "teilnehmerId": "ximmox",
+      "teilnehmer": "xIMMOx",
       "team": "Old Smugglers Team",
       "punkte": 2
     },
@@ -284,8 +284,8 @@
       "punkte": 2
     },
     {
-      "teilnehmerId": "mary-grace",
-      "teilnehmer": "Mary-Grace",
+      "teilnehmerId": "handgottes",
+      "teilnehmer": "HandGottes",
       "team": "Old Smugglers Team",
       "punkte": 2
     },

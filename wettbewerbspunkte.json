@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 3,
-  "aktualisiert": "2026-08-17",
+  "datenVersion": 4,
+  "aktualisiert": "2026-08-23",
   "saison": "2026-27",
   "hinweis": "Kumulativ aus der zentralen Spielbetriebsdatenbank erzeugt. Bei bislang genau einem abgeschlossenen Wettbewerb wird nur die Reihenfolge vollständig gleichrangiger Teilnehmer anhand der offiziellen Kicktipp-Gesamtreihenfolge stabilisiert.",
-  "berechnetAm": "2026-08-17T20:01:58.159Z",
-  "quelle": "Admin 6.2.0-a6-HF3-HF13",
+  "berechnetAm": "2026-08-23T14:17:41.394Z",
+  "quelle": "Admin 6.5.0-HF2",
   "rangReferenz": {
     "applied": true,
     "competition": "smugglerauftrag"
@@ -360,8 +360,8 @@
         },
         {
           "platz": 33,
-          "teilnehmerId": "ximmox",
-          "teilnehmer": "xIMMOx",
+          "teilnehmerId": "mary-grace",
+          "teilnehmer": "Mary-Grace",
           "punkte": 2,
           "exakt": 0,
           "differenz": 0,
@@ -370,8 +370,8 @@
         },
         {
           "platz": 33,
-          "teilnehmerId": "handgottes",
-          "teilnehmer": "HandGottes",
+          "teilnehmerId": "ximmox",
+          "teilnehmer": "xIMMOx",
           "punkte": 2,
           "exakt": 0,
           "differenz": 0,
@@ -400,8 +400,8 @@
         },
         {
           "platz": 33,
-          "teilnehmerId": "mary-grace",
-          "teilnehmer": "Mary-Grace",
+          "teilnehmerId": "handgottes",
+          "teilnehmer": "HandGottes",
           "punkte": 2,
           "exakt": 0,
           "differenz": 0,

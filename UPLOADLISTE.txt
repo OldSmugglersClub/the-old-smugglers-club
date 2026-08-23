@@ -15,6 +15,7 @@ ERSETZEN:
 - highscore.json
 - hall-of-fame.json
 - website-view.json
+- spieltag-logbuch.json
 - topspieler.json
 - teams.json
 
@@ -30,6 +31,6 @@ NICHT HOCHLADEN:
 - PRUEFPROTOKOLL.json
 - MANIFEST.json
 
-Erstellt: 2026-08-16T16:19:08.078Z
+Erstellt: 2026-08-23T14:17:41.394Z
 Fachliche Auftrags-ID: 2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013
 Modus: produktiv

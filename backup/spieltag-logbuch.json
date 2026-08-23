@@ -1,11 +1,10 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 4,
-  "aktualisiert": "2026-08-23T14:17:41.394Z",
+  "datenVersion": 3,
+  "aktualisiert": "2026-08-19T19:30:00.000Z",
   "saison": "2026-27",
   "regelwerk": {
     "kapitaene": "Alle Tipper mit der höchsten tatsächlichen Spieltagspunktzahl; kein künstlicher Tie-Break.",
-    "werHatsGerochen": "Richtige Tendenz von höchstens 25 % der gültigen Abgaben. Tie-Break: kleinster Anteil, danach exakte Treffer, danach kleinere absolute Gruppe; vollständiger Gleichstand wird gemeinsam ausgezeichnet.",
     "crewduell": "Vergleich über Punkte pro Teammitglied (Durchschnitt), nicht über absolute Punktsumme.",
     "kursbewegung": "Wird am Saisonanfang bei verzerrenden Gleichstandsblöcken redaktionell unterdrückt.",
     "redaktion": "Nur Highlights mit anzeigen=true werden auf der Website ausgegeben."
@@ -1300,8 +1299,6 @@
           "anzeigen": true,
           "daten": {
             "spielId": "sma-2026-27-02-013",
-            "heimTeam": "dynamo-dresden",
-            "auswaertsTeam": "darmstadt-98",
             "ergebnis": "1:0",
             "abgegeben": 93,
             "nichtAbgegeben": 4,
@@ -1318,230 +1315,7 @@
               "ausgang": "2",
               "anzahl": 39
             },
-            "gegenDenStrom": true,
-            "richtigeTendenz": {
-              "anzahl": 36,
-              "anteil": 38.7,
-              "tipper": [
-                {
-                  "teilnehmerId": "nick-zg-1501",
-                  "teilnehmer": "Nick_ZG_1501",
-                  "tipp": "1:0",
-                  "exakt": true
-                },
-                {
-                  "teilnehmerId": "wildemoni",
-                  "teilnehmer": "WildeMoni",
-                  "tipp": "1:0",
-                  "exakt": true
-                },
-                {
-                  "teilnehmerId": "baslermario",
-                  "teilnehmer": "baslermario",
-                  "tipp": "1:0",
-                  "exakt": true
-                },
-                {
-                  "teilnehmerId": "rk69",
-                  "teilnehmer": "RK69",
-                  "tipp": "1:0",
-                  "exakt": true
-                },
-                {
-                  "teilnehmerId": "yauguru",
-                  "teilnehmer": "Yauguru",
-                  "tipp": "1:0",
-                  "exakt": true
-                },
-                {
-                  "teilnehmerId": "frankfurterjung",
-                  "teilnehmer": "FrankfurterJung",
-                  "tipp": "1:0",
-                  "exakt": true
-                },
-                {
-                  "teilnehmerId": "andy1304",
-                  "teilnehmer": "Andy1304",
-                  "tipp": "1:0",
-                  "exakt": true
-                },
-                {
-                  "teilnehmerId": "mikoog",
-                  "teilnehmer": "MiKoog",
-                  "tipp": "1:0",
-                  "exakt": true
-                },
-                {
-                  "teilnehmerId": "oifinger",
-                  "teilnehmer": "Oifinger",
-                  "tipp": "2:1",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "cobra",
-                  "teilnehmer": "cobra",
-                  "tipp": "2:1",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "flokicker94",
-                  "teilnehmer": "FloKicker94",
-                  "tipp": "2:1",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "tribuna33",
-                  "teilnehmer": "TRIBUNA33",
-                  "tipp": "2:1",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "waltersen",
-                  "teilnehmer": "Waltersen",
-                  "tipp": "3:2",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "steff77",
-                  "teilnehmer": "Steff77",
-                  "tipp": "2:1",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "eckes2359",
-                  "teilnehmer": "Eckes2359",
-                  "tipp": "2:1",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "marius",
-                  "teilnehmer": "Marius",
-                  "tipp": "2:0",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "adamj",
-                  "teilnehmer": "AdamJ",
-                  "tipp": "2:0",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "souvard",
-                  "teilnehmer": "Souvard",
-                  "tipp": "3:1",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "best10",
-                  "teilnehmer": "Best10",
-                  "tipp": "3:1",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "dominik1966",
-                  "teilnehmer": "dominik1966",
-                  "tipp": "2:0",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "erik",
-                  "teilnehmer": "Erik",
-                  "tipp": "2:0",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "vebfriwiwerk",
-                  "teilnehmer": "VebFriwiwerk",
-                  "tipp": "2:1",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "11le",
-                  "teilnehmer": "11LE",
-                  "tipp": "2:1",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "gruber",
-                  "teilnehmer": "gRuBer",
-                  "tipp": "2:1",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "glatze583",
-                  "teilnehmer": "Glatze583",
-                  "tipp": "3:2",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "lattenkracher",
-                  "teilnehmer": "Lattenkracher",
-                  "tipp": "2:1",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "opipeter",
-                  "teilnehmer": "Opipeter",
-                  "tipp": "2:1",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "tortugasge",
-                  "teilnehmer": "TortugaSGE",
-                  "tipp": "2:1",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "18amfg99",
-                  "teilnehmer": "18AMFG99",
-                  "tipp": "2:1",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "redwing",
-                  "teilnehmer": "Redwing",
-                  "tipp": "3:2",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "seboso",
-                  "teilnehmer": "Seboso",
-                  "tipp": "2:1",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "olympiakos",
-                  "teilnehmer": "Olympiakos",
-                  "tipp": "2:1",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "glueckspfennig",
-                  "teilnehmer": "Glückspfennig",
-                  "tipp": "3:0",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "kev1999",
-                  "teilnehmer": "Kev1999",
-                  "tipp": "3:1",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "munmarkus",
-                  "teilnehmer": "Munmarkus",
-                  "tipp": "4:2",
-                  "exakt": false
-                },
-                {
-                  "teilnehmerId": "urkel",
-                  "teilnehmer": "Urkel",
-                  "tipp": "3:1",
-                  "exakt": false
-                }
-              ],
-              "exakteTipps": 8
-            }
+            "gegenDenStrom": true
           }
         },
         {

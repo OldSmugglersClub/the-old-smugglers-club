@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 3,
-  "aktualisiert": "2026-08-17",
+  "datenVersion": 4,
+  "aktualisiert": "2026-08-23",
   "saison": "2026-27",
   "hinweis": "Kumulative Smugglerwertung. Jeder abgeschlossene Smugglerauftrag zählt als eigener Spieltag; geteilte Spieltagssiege werden anteilig kumuliert. Testpakete simulieren denselben kumulierten Fachstand wie der spätere Produktivexport.",
-  "berechnetAm": "2026-08-17T20:01:58.159Z",
+  "berechnetAm": "2026-08-23T14:17:41.394Z",
   "regeln": {
     "tendenz": 2,
     "differenz": 3,
@@ -3432,8 +3432,8 @@
     },
     {
       "platz": 33,
-      "teilnehmerId": "ximmox",
-      "teilnehmer": "xIMMOx",
+      "teilnehmerId": "mary-grace",
+      "teilnehmer": "Mary-Grace",
       "punkte": 2,
       "spieltagssiege": 0.014925373134328358,
       "exakt": 0,
@@ -3442,8 +3442,8 @@
     },
     {
       "platz": 33,
-      "teilnehmerId": "handgottes",
-      "teilnehmer": "HandGottes",
+      "teilnehmerId": "ximmox",
+      "teilnehmer": "xIMMOx",
       "punkte": 2,
       "spieltagssiege": 0.014925373134328358,
       "exakt": 0,
@@ -3472,8 +3472,8 @@
     },
     {
       "platz": 33,
-      "teilnehmerId": "mary-grace",
-      "teilnehmer": "Mary-Grace",
+      "teilnehmerId": "handgottes",
+      "teilnehmer": "HandGottes",
       "punkte": 2,
       "spieltagssiege": 0.014925373134328358,
       "exakt": 0,

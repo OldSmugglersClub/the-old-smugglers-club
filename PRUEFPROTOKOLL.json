@@ -1,6 +1,6 @@
 {
-  "erstelltAm": "2026-08-16T16:19:08.078Z",
-  "generatorVersion": "6.2.0-a6-HF3-HF9",
+  "erstelltAm": "2026-08-23T14:17:41.394Z",
+  "generatorVersion": "6.5.0-HF2",
   "auftrag": {
     "fachlicheId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
     "wertung": "smugglerauftrag",
@@ -12,15 +12,15 @@
     ]
   },
   "ergebnisseBestaetigt": true,
-  "teilnehmer": 97,
+  "teilnehmer": 100,
   "abgegebeneTipps": 93,
   "nichtAbgegebeneTipps": 4,
   "verborgeneTipps": 0,
   "unbekannteTeilnehmer": 0,
   "doppelteTeilnehmer": 0,
   "modus": "produktiv",
-  "vergebenePunkte": 114,
-  "produktiveAuftraege": 1,
+  "vergebenePunkte": 248,
+  "produktiveAuftraege": 2,
   "uploadDateien": [
     "spielbetrieb.json",
     "teilnehmer.json",
@@ -36,19 +36,25 @@
     "highscore.json",
     "hall-of-fame.json",
     "website-view.json",
+    "spieltag-logbuch.json",
     "topspieler.json",
     "teams.json"
   ],
   "websiteDateienEnthalten": true,
   "konsistenz": {
-    "punkteRangliste": true,
+    "kicktippGesamtwertung": {
+      "gueltig": true,
+      "uebernommen": 97,
+      "geliefert": 97,
+      "hinweis": "Aktuelle Kicktipp-Gesamtwertung wird teilnehmerbezogen geprüft; historische OSC-Teilnehmer außerhalb des aktuellen Kicktipp-Exports sind zulässig."
+    },
     "teamduellNurOffizielleTeams": true,
     "kumulativeQuelle": "spielbetrieb.abgeschlosseneAuftraege"
   },
   "importmodell": {
     "schemaVersion": 1,
     "source": "Kicktipp",
-    "createdAt": "2026-08-16T16:19:08.084Z",
+    "createdAt": "2026-08-23T14:17:41.400Z",
     "assignment": {
       "competitionId": "dynamo-dresden",
       "valuationId": "smugglerauftrag",
@@ -58,6 +64,12 @@
       ]
     },
     "files": {
+      "history": {
+        "name": "the-old-smugglers-club-main (1).zip",
+        "parsedName": "the-old-smugglers-club-main (1).zip",
+        "complete": true,
+        "participants": 2
+      },
       "tips": {
         "name": "kicktipp-the-old-smugglers-club-Tipps-Smugglerauftrag Goldrausch-2026-08-16-14-45-12-+0000-7731815667722554568.csv.zip",
         "parsedName": "kicktipp-the-old-smugglers-club-Tipps-Smugglerauftrag Goldrausch-2026-08-16-14-45-12-+0000-.csv",
@@ -122,8 +134,10 @@
       "overall": [
         {
           "rank": 1,
+          "sourceRank": 1,
           "participantId": "nick-zg-1501",
           "name": "Nick_ZG_1501",
+          "memberSince": "2026-07-24T17:45:44+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -132,9 +146,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 1,
+          "rank": 2,
+          "sourceRank": 1,
           "participantId": "wildemoni",
           "name": "WildeMoni",
+          "memberSince": "2026-07-25T15:16:12+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -143,9 +159,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 1,
+          "rank": 3,
+          "sourceRank": 1,
           "participantId": "baslermario",
           "name": "baslermario",
+          "memberSince": "2026-07-25T17:38:37+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -154,9 +172,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 1,
+          "rank": 4,
+          "sourceRank": 1,
           "participantId": "rk69",
           "name": "RK69",
+          "memberSince": "2026-07-26T06:04:04+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -165,9 +185,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 1,
+          "rank": 5,
+          "sourceRank": 1,
           "participantId": "yauguru",
           "name": "Yauguru",
+          "memberSince": "2026-07-26T13:30:10+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -176,9 +198,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 1,
+          "rank": 6,
+          "sourceRank": 1,
           "participantId": "frankfurterjung",
           "name": "FrankfurterJung",
+          "memberSince": "2026-07-30T13:59:44+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -188,8 +212,10 @@
         },
         {
           "rank": 7,
+          "sourceRank": 7,
           "participantId": "andy1304",
           "name": "Andy1304",
+          "memberSince": "2026-07-26T18:19:00+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -198,9 +224,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 7,
+          "rank": 8,
+          "sourceRank": 7,
           "participantId": "mikoog",
           "name": "MiKoog",
+          "memberSince": "2026-07-27T18:03:58+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -210,8 +238,10 @@
         },
         {
           "rank": 9,
+          "sourceRank": 9,
           "participantId": "oifinger",
           "name": "Oifinger",
+          "memberSince": "2026-07-26T11:54:58+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -220,9 +250,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 9,
+          "rank": 10,
+          "sourceRank": 9,
           "participantId": "cobra",
           "name": "cobra",
+          "memberSince": "2026-07-26T14:25:16+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -231,9 +263,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 9,
+          "rank": 11,
+          "sourceRank": 9,
           "participantId": "flokicker94",
           "name": "FloKicker94",
+          "memberSince": "2026-07-27T17:02:40+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -242,9 +276,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 9,
+          "rank": 12,
+          "sourceRank": 9,
           "participantId": "tribuna33",
           "name": "TRIBUNA33",
+          "memberSince": "2026-07-27T18:21:33+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -253,9 +289,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 9,
+          "rank": 13,
+          "sourceRank": 9,
           "participantId": "waltersen",
           "name": "Waltersen",
+          "memberSince": "2026-07-28T17:56:59+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -264,9 +302,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 9,
+          "rank": 14,
+          "sourceRank": 9,
           "participantId": "steff77",
           "name": "Steff77",
+          "memberSince": "2026-07-28T21:18:40+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -275,9 +315,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 9,
+          "rank": 15,
+          "sourceRank": 9,
           "participantId": "eckes2359",
           "name": "Eckes2359",
+          "memberSince": "2026-07-31T08:10:00+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -287,8 +329,10 @@
         },
         {
           "rank": 16,
+          "sourceRank": 16,
           "participantId": "marius",
           "name": "Marius",
+          "memberSince": "2026-05-22T11:09:12+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -297,9 +341,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 16,
+          "rank": 17,
+          "sourceRank": 16,
           "participantId": "adamj",
           "name": "AdamJ",
+          "memberSince": "2026-07-26T06:27:27+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -308,9 +354,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 16,
+          "rank": 18,
+          "sourceRank": 16,
           "participantId": "souvard",
           "name": "Souvard",
+          "memberSince": "2026-07-26T09:02:20+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -319,9 +367,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 16,
+          "rank": 19,
+          "sourceRank": 16,
           "participantId": "best10",
           "name": "Best10",
+          "memberSince": "2026-07-26T14:55:09+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -330,9 +380,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 16,
+          "rank": 20,
+          "sourceRank": 16,
           "participantId": "dominik1966",
           "name": "dominik1966",
+          "memberSince": "2026-07-27T13:41:00+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -341,9 +393,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 16,
+          "rank": 21,
+          "sourceRank": 16,
           "participantId": "erik",
           "name": "Erik",
+          "memberSince": "2026-07-28T07:45:45+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -353,8 +407,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "vebfriwiwerk",
           "name": "VebFriwiwerk",
+          "memberSince": "2026-05-22T03:31:28+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -363,9 +419,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 22,
+          "rank": 23,
+          "sourceRank": 22,
           "participantId": "11le",
           "name": "11LE",
+          "memberSince": "2026-06-10T09:01:05+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -374,9 +432,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 22,
+          "rank": 24,
+          "sourceRank": 22,
           "participantId": "gruber",
           "name": "gRuBer",
+          "memberSince": "2026-07-26T09:17:01+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -385,9 +445,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 22,
+          "rank": 25,
+          "sourceRank": 22,
           "participantId": "glatze583",
           "name": "Glatze583",
+          "memberSince": "2026-07-26T14:12:00+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -396,9 +458,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 22,
+          "rank": 26,
+          "sourceRank": 22,
           "participantId": "lattenkracher",
           "name": "Lattenkracher",
+          "memberSince": "2026-07-26T21:44:51+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -407,9 +471,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 22,
+          "rank": 27,
+          "sourceRank": 22,
           "participantId": "opipeter",
           "name": "Opipeter",
+          "memberSince": "2026-07-27T16:51:27+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -418,9 +484,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 22,
+          "rank": 28,
+          "sourceRank": 22,
           "participantId": "tortugasge",
           "name": "TortugaSGE",
+          "memberSince": "2026-07-27T18:53:44+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -429,9 +497,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 22,
+          "rank": 29,
+          "sourceRank": 22,
           "participantId": "18amfg99",
           "name": "18AMFG99",
+          "memberSince": "2026-07-29T02:23:14+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -440,9 +510,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 22,
+          "rank": 30,
+          "sourceRank": 22,
           "participantId": "redwing",
           "name": "Redwing",
+          "memberSince": "2026-07-30T08:02:02+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -451,9 +523,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 22,
+          "rank": 31,
+          "sourceRank": 22,
           "participantId": "seboso",
           "name": "Seboso",
+          "memberSince": "2026-08-11T19:50:07+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -462,9 +536,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 22,
+          "rank": 32,
+          "sourceRank": 22,
           "participantId": "olympiakos",
           "name": "Olympiakos",
+          "memberSince": "2026-08-13T10:48:33+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -474,8 +550,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "manuel",
           "name": "Manuel",
+          "memberSince": "2026-05-22T03:28:35+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -484,9 +562,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 34,
+          "sourceRank": 33,
           "participantId": "kleinersachse",
           "name": "kleinersachse",
+          "memberSince": "2026-05-22T03:58:20+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -495,53 +575,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
-          "participantId": "ximmox",
-          "name": "xIMMOx",
-          "points": 0,
-          "bonusPoints": 0,
-          "matchdayWinner": 0,
-          "totalPoints": 2,
-          "matchdayWins": 0.02,
-          "matchdayRank": 1
-        },
-        {
-          "rank": 33,
-          "participantId": "handgottes",
-          "name": "HandGottes",
-          "points": 0,
-          "bonusPoints": 0,
-          "matchdayWinner": 0,
-          "totalPoints": 2,
-          "matchdayWins": 0.02,
-          "matchdayRank": 1
-        },
-        {
-          "rank": 33,
-          "participantId": "normiks",
-          "name": "Normiks",
-          "points": 0,
-          "bonusPoints": 0,
-          "matchdayWinner": 0,
-          "totalPoints": 2,
-          "matchdayWins": 0.02,
-          "matchdayRank": 1
-        },
-        {
-          "rank": 33,
-          "participantId": "kevin",
-          "name": "Kevin",
-          "points": 0,
-          "bonusPoints": 0,
-          "matchdayWinner": 0,
-          "totalPoints": 2,
-          "matchdayWins": 0.02,
-          "matchdayRank": 1
-        },
-        {
-          "rank": 33,
+          "rank": 35,
+          "sourceRank": 33,
           "participantId": "mary-grace",
           "name": "Mary-Grace",
+          "memberSince": "2026-05-22T04:02:09+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -550,9 +588,63 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 36,
+          "sourceRank": 33,
+          "participantId": "ximmox",
+          "name": "xIMMOx",
+          "memberSince": "2026-05-22T05:50:59+00:00",
+          "points": 0,
+          "bonusPoints": 0,
+          "matchdayWinner": 0,
+          "totalPoints": 2,
+          "matchdayWins": 0.02,
+          "matchdayRank": 1
+        },
+        {
+          "rank": 37,
+          "sourceRank": 33,
+          "participantId": "normiks",
+          "name": "Normiks",
+          "memberSince": "2026-05-22T06:08:59+00:00",
+          "points": 0,
+          "bonusPoints": 0,
+          "matchdayWinner": 0,
+          "totalPoints": 2,
+          "matchdayWins": 0.02,
+          "matchdayRank": 1
+        },
+        {
+          "rank": 38,
+          "sourceRank": 33,
+          "participantId": "kevin",
+          "name": "Kevin",
+          "memberSince": "2026-05-22T06:14:28+00:00",
+          "points": 0,
+          "bonusPoints": 0,
+          "matchdayWinner": 0,
+          "totalPoints": 2,
+          "matchdayWins": 0.02,
+          "matchdayRank": 1
+        },
+        {
+          "rank": 39,
+          "sourceRank": 33,
+          "participantId": "handgottes",
+          "name": "HandGottes",
+          "memberSince": "2026-05-22T06:24:35+00:00",
+          "points": 0,
+          "bonusPoints": 0,
+          "matchdayWinner": 0,
+          "totalPoints": 2,
+          "matchdayWins": 0.02,
+          "matchdayRank": 1
+        },
+        {
+          "rank": 40,
+          "sourceRank": 33,
           "participantId": "quick",
           "name": "Quick",
+          "memberSince": "2026-07-23T19:26:30+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -561,9 +653,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 41,
+          "sourceRank": 33,
           "participantId": "flying-dutchman",
           "name": "Flying-Dutchman",
+          "memberSince": "2026-07-24T18:12:55+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -572,9 +666,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 42,
+          "sourceRank": 33,
           "participantId": "salas1904",
           "name": "Salas1904",
+          "memberSince": "2026-07-25T05:16:32+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -583,9 +679,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 43,
+          "sourceRank": 33,
           "participantId": "sven-huhn",
           "name": "Sven_Huhn",
+          "memberSince": "2026-07-25T10:44:13+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -594,9 +692,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 44,
+          "sourceRank": 33,
           "participantId": "luca",
           "name": "Luca",
+          "memberSince": "2026-07-25T12:05:50+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -605,9 +705,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 45,
+          "sourceRank": 33,
           "participantId": "hardy17",
           "name": "Hardy17",
+          "memberSince": "2026-07-25T12:07:55+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -616,9 +718,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 46,
+          "sourceRank": 33,
           "participantId": "maikiliii",
           "name": "Maikiliii",
+          "memberSince": "2026-07-25T21:11:04+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -627,9 +731,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 47,
+          "sourceRank": 33,
           "participantId": "bigdog",
           "name": "Bigdog",
+          "memberSince": "2026-07-26T05:16:51+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -638,9 +744,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 48,
+          "sourceRank": 33,
           "participantId": "mariusv",
           "name": "mariusv",
+          "memberSince": "2026-07-26T07:10:24+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -649,9 +757,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 49,
+          "sourceRank": 33,
           "participantId": "jakob",
           "name": "Jakob",
+          "memberSince": "2026-07-26T11:51:29+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -660,9 +770,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 50,
+          "sourceRank": 33,
           "participantId": "medic",
           "name": "Medic",
+          "memberSince": "2026-07-26T12:27:22+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -671,9 +783,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 51,
+          "sourceRank": 33,
           "participantId": "berndibroti",
           "name": "Berndibroti",
+          "memberSince": "2026-07-26T14:00:11+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -682,9 +796,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 52,
+          "sourceRank": 33,
           "participantId": "co",
           "name": "Co",
+          "memberSince": "2026-07-26T17:05:32+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -693,9 +809,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 53,
+          "sourceRank": 33,
           "participantId": "realzaragoza",
           "name": "Realzaragoza",
+          "memberSince": "2026-07-26T20:22:04+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -704,9 +822,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 54,
+          "sourceRank": 33,
           "participantId": "cobra75",
           "name": "Cobra75",
+          "memberSince": "2026-07-27T00:15:52+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -715,9 +835,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 55,
+          "sourceRank": 33,
           "participantId": "juri",
           "name": "JuRi",
+          "memberSince": "2026-07-27T05:39:29+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -726,9 +848,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 56,
+          "sourceRank": 33,
           "participantId": "lucas",
           "name": "Lucas",
+          "memberSince": "2026-07-27T05:39:38+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -737,9 +861,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 57,
+          "sourceRank": 33,
           "participantId": "luki1887",
           "name": "Luki1887",
+          "memberSince": "2026-07-27T06:02:34+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -748,9 +874,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 58,
+          "sourceRank": 33,
           "participantId": "dani1893",
           "name": "Dani1893",
+          "memberSince": "2026-07-27T09:20:10+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -759,9 +887,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 59,
+          "sourceRank": 33,
           "participantId": "g-1000",
           "name": "G.1000",
+          "memberSince": "2026-07-27T13:41:28+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -770,9 +900,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 60,
+          "sourceRank": 33,
           "participantId": "potterhead",
           "name": "Potterhead",
+          "memberSince": "2026-07-27T16:26:51+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -781,9 +913,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 61,
+          "sourceRank": 33,
           "participantId": "bvb09-opam",
           "name": "BvB09-OpaM",
+          "memberSince": "2026-07-27T19:47:41+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -792,9 +926,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 62,
+          "sourceRank": 33,
           "participantId": "nurderscf",
           "name": "NurDerSCF",
+          "memberSince": "2026-07-28T05:34:15+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -803,9 +939,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 63,
+          "sourceRank": 33,
           "participantId": "audauzvares",
           "name": "Audauzvares",
+          "memberSince": "2026-07-28T07:04:01+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -814,9 +952,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 64,
+          "sourceRank": 33,
           "participantId": "playboymarc88",
           "name": "PlayBoyMarc88",
+          "memberSince": "2026-07-28T07:20:54+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -825,9 +965,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 65,
+          "sourceRank": 33,
           "participantId": "marcor",
           "name": "MarcoR",
+          "memberSince": "2026-07-28T08:32:52+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -836,9 +978,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 66,
+          "sourceRank": 33,
           "participantId": "pochzerjung",
           "name": "PochzerJung",
+          "memberSince": "2026-07-28T09:36:37+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -847,9 +991,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 67,
+          "sourceRank": 33,
           "participantId": "sam2004",
           "name": "Sam2004",
+          "memberSince": "2026-07-28T10:57:45+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -858,9 +1004,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 68,
+          "sourceRank": 33,
           "participantId": "maxpam",
           "name": "MaxPam",
+          "memberSince": "2026-07-28T12:39:56+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -869,9 +1017,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 69,
+          "sourceRank": 33,
           "participantId": "ben1909",
           "name": "Ben1909",
+          "memberSince": "2026-07-28T13:00:10+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -880,9 +1030,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 70,
+          "sourceRank": 33,
           "participantId": "bene",
           "name": "Bene",
+          "memberSince": "2026-07-28T13:01:49+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -891,9 +1043,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 71,
+          "sourceRank": 33,
           "participantId": "cali79",
           "name": "Cali79",
+          "memberSince": "2026-07-28T14:14:58+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -902,9 +1056,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 72,
+          "sourceRank": 33,
           "participantId": "sam-entspender",
           "name": "SAM_ENTSPENDER",
+          "memberSince": "2026-07-29T14:18:36+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -913,9 +1069,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 73,
+          "sourceRank": 33,
           "participantId": "jwfussball",
           "name": "JWFUSSBALL",
+          "memberSince": "2026-07-29T16:10:16+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -924,9 +1082,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 74,
+          "sourceRank": 33,
           "participantId": "gerrit1887",
           "name": "Gerrit1887",
+          "memberSince": "2026-07-29T20:44:14+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -935,9 +1095,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 75,
+          "sourceRank": 33,
           "participantId": "finch",
           "name": "Finch",
+          "memberSince": "2026-07-29T21:14:02+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -946,9 +1108,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 76,
+          "sourceRank": 33,
           "participantId": "marc86",
           "name": "Marc86",
+          "memberSince": "2026-07-30T05:36:59+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -957,9 +1121,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 77,
+          "sourceRank": 33,
           "participantId": "juergen70",
           "name": "Juergen70",
+          "memberSince": "2026-07-30T16:54:23+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -968,9 +1134,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 78,
+          "sourceRank": 33,
           "participantId": "stevie26",
           "name": "Stevie26",
+          "memberSince": "2026-07-31T08:58:17+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -979,9 +1147,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 33,
+          "rank": 79,
+          "sourceRank": 33,
           "participantId": "sgbw",
           "name": "sgbw",
+          "memberSince": "2026-08-07T11:24:18+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -991,8 +1161,10 @@
         },
         {
           "rank": 80,
+          "sourceRank": 80,
           "participantId": "glueckspfennig",
           "name": "Glückspfennig",
+          "memberSince": "2026-05-22T07:03:31+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1001,9 +1173,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 80,
+          "rank": 81,
+          "sourceRank": 80,
           "participantId": "kev1999",
           "name": "Kev1999",
+          "memberSince": "2026-07-26T05:55:12+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1012,9 +1186,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 80,
+          "rank": 82,
+          "sourceRank": 80,
           "participantId": "munmarkus",
           "name": "Munmarkus",
+          "memberSince": "2026-08-07T18:40:46+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1023,9 +1199,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 80,
+          "rank": 83,
+          "sourceRank": 80,
           "participantId": "urkel",
           "name": "Urkel",
+          "memberSince": "2026-08-08T11:41:50+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1035,8 +1213,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "zweikampfgott",
           "name": "ZweikampfGott",
+          "memberSince": "2026-05-22T03:16:39+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1045,9 +1225,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 84,
+          "rank": 85,
+          "sourceRank": 84,
           "participantId": "jungunddurstig",
           "name": "JungundDurstig",
+          "memberSince": "2026-06-10T16:33:19+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1056,9 +1238,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 84,
+          "rank": 86,
+          "sourceRank": 84,
           "participantId": "lucaspodolski",
           "name": "LucasPodolski",
+          "memberSince": "2026-07-23T14:02:32+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1067,9 +1251,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 84,
+          "rank": 87,
+          "sourceRank": 84,
           "participantId": "lucipher",
           "name": "LuCipher",
+          "memberSince": "2026-07-25T12:29:27+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1078,9 +1264,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 84,
+          "rank": 88,
+          "sourceRank": 84,
           "participantId": "birgit-blaubart",
           "name": "Birgit_Blaubart",
+          "memberSince": "2026-07-25T19:34:56+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1089,9 +1277,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 84,
+          "rank": 89,
+          "sourceRank": 84,
           "participantId": "mythos",
           "name": "Mythos",
+          "memberSince": "2026-07-26T08:31:03+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1100,9 +1290,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 84,
+          "rank": 90,
+          "sourceRank": 84,
           "participantId": "milad",
           "name": "Milad",
+          "memberSince": "2026-07-26T20:36:25+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1111,9 +1303,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 84,
+          "rank": 91,
+          "sourceRank": 84,
           "participantId": "fcahnungslos",
           "name": "FCAhnungslos",
+          "memberSince": "2026-07-27T06:24:30+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1122,9 +1316,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 84,
+          "rank": 92,
+          "sourceRank": 84,
           "participantId": "aufdieblaue",
           "name": "AufdieBlaue",
+          "memberSince": "2026-07-27T08:54:51+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1133,9 +1329,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 84,
+          "rank": 93,
+          "sourceRank": 84,
           "participantId": "kunstblume",
           "name": "Kunstblume",
+          "memberSince": "2026-07-28T19:30:29+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1144,9 +1342,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 84,
+          "rank": 94,
+          "sourceRank": 84,
           "participantId": "xib0o",
           "name": "Xib0o",
+          "memberSince": "2026-07-30T00:50:41+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1155,9 +1355,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 84,
+          "rank": 95,
+          "sourceRank": 84,
           "participantId": "pauli",
           "name": "Pauli",
+          "memberSince": "2026-07-30T18:59:14+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1166,9 +1368,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 84,
+          "rank": 96,
+          "sourceRank": 84,
           "participantId": "g-threepwood",
           "name": "G.Threepwood",
+          "memberSince": "2026-08-12T17:30:04+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1177,9 +1381,11 @@
           "matchdayRank": 1
         },
         {
-          "rank": 84,
+          "rank": 97,
+          "sourceRank": 84,
           "participantId": "gordinho",
           "name": "Gordinho",
+          "memberSince": "2026-08-12T18:54:43+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1191,8 +1397,10 @@
       "matchday": [
         {
           "rank": 1,
+          "sourceRank": 1,
           "participantId": "nick-zg-1501",
           "name": "Nick_ZG_1501",
+          "memberSince": "2026-07-24T17:45:44+00:00",
           "points": 5,
           "bonusPoints": 0,
           "matchdayWinner": 8,
@@ -1202,8 +1410,10 @@
         },
         {
           "rank": 1,
+          "sourceRank": 1,
           "participantId": "wildemoni",
           "name": "WildeMoni",
+          "memberSince": "2026-07-25T15:16:12+00:00",
           "points": 5,
           "bonusPoints": 0,
           "matchdayWinner": 8,
@@ -1213,8 +1423,10 @@
         },
         {
           "rank": 1,
+          "sourceRank": 1,
           "participantId": "baslermario",
           "name": "baslermario",
+          "memberSince": "2026-07-25T17:38:37+00:00",
           "points": 5,
           "bonusPoints": 0,
           "matchdayWinner": 8,
@@ -1224,8 +1436,10 @@
         },
         {
           "rank": 1,
+          "sourceRank": 1,
           "participantId": "rk69",
           "name": "RK69",
+          "memberSince": "2026-07-26T06:04:04+00:00",
           "points": 5,
           "bonusPoints": 0,
           "matchdayWinner": 8,
@@ -1235,8 +1449,10 @@
         },
         {
           "rank": 1,
+          "sourceRank": 1,
           "participantId": "yauguru",
           "name": "Yauguru",
+          "memberSince": "2026-07-26T13:30:10+00:00",
           "points": 5,
           "bonusPoints": 0,
           "matchdayWinner": 8,
@@ -1246,8 +1462,10 @@
         },
         {
           "rank": 1,
+          "sourceRank": 1,
           "participantId": "frankfurterjung",
           "name": "FrankfurterJung",
+          "memberSince": "2026-07-30T13:59:44+00:00",
           "points": 5,
           "bonusPoints": 0,
           "matchdayWinner": 8,
@@ -1257,8 +1475,10 @@
         },
         {
           "rank": 7,
+          "sourceRank": 7,
           "participantId": "andy1304",
           "name": "Andy1304",
+          "memberSince": "2026-07-26T18:19:00+00:00",
           "points": 5,
           "bonusPoints": 0,
           "matchdayWinner": 8,
@@ -1268,8 +1488,10 @@
         },
         {
           "rank": 7,
+          "sourceRank": 7,
           "participantId": "mikoog",
           "name": "MiKoog",
+          "memberSince": "2026-07-27T18:03:58+00:00",
           "points": 5,
           "bonusPoints": 0,
           "matchdayWinner": 8,
@@ -1279,8 +1501,10 @@
         },
         {
           "rank": 9,
+          "sourceRank": 9,
           "participantId": "oifinger",
           "name": "Oifinger",
+          "memberSince": "2026-07-26T11:54:58+00:00",
           "points": 3,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1290,8 +1514,10 @@
         },
         {
           "rank": 9,
+          "sourceRank": 9,
           "participantId": "cobra",
           "name": "cobra",
+          "memberSince": "2026-07-26T14:25:16+00:00",
           "points": 3,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1301,8 +1527,10 @@
         },
         {
           "rank": 9,
+          "sourceRank": 9,
           "participantId": "flokicker94",
           "name": "FloKicker94",
+          "memberSince": "2026-07-27T17:02:40+00:00",
           "points": 3,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1312,8 +1540,10 @@
         },
         {
           "rank": 9,
+          "sourceRank": 9,
           "participantId": "tribuna33",
           "name": "TRIBUNA33",
+          "memberSince": "2026-07-27T18:21:33+00:00",
           "points": 3,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1323,8 +1553,10 @@
         },
         {
           "rank": 9,
+          "sourceRank": 9,
           "participantId": "waltersen",
           "name": "Waltersen",
+          "memberSince": "2026-07-28T17:56:59+00:00",
           "points": 3,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1334,8 +1566,10 @@
         },
         {
           "rank": 9,
+          "sourceRank": 9,
           "participantId": "steff77",
           "name": "Steff77",
+          "memberSince": "2026-07-28T21:18:40+00:00",
           "points": 3,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1345,8 +1579,10 @@
         },
         {
           "rank": 9,
+          "sourceRank": 9,
           "participantId": "eckes2359",
           "name": "Eckes2359",
+          "memberSince": "2026-07-31T08:10:00+00:00",
           "points": 3,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1356,8 +1592,10 @@
         },
         {
           "rank": 16,
+          "sourceRank": 16,
           "participantId": "marius",
           "name": "Marius",
+          "memberSince": "2026-05-22T11:09:12+00:00",
           "points": 2,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1367,8 +1605,10 @@
         },
         {
           "rank": 16,
+          "sourceRank": 16,
           "participantId": "adamj",
           "name": "AdamJ",
+          "memberSince": "2026-07-26T06:27:27+00:00",
           "points": 2,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1378,8 +1618,10 @@
         },
         {
           "rank": 16,
+          "sourceRank": 16,
           "participantId": "souvard",
           "name": "Souvard",
+          "memberSince": "2026-07-26T09:02:20+00:00",
           "points": 2,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1389,8 +1631,10 @@
         },
         {
           "rank": 16,
+          "sourceRank": 16,
           "participantId": "best10",
           "name": "Best10",
+          "memberSince": "2026-07-26T14:55:09+00:00",
           "points": 2,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1400,8 +1644,10 @@
         },
         {
           "rank": 16,
+          "sourceRank": 16,
           "participantId": "dominik1966",
           "name": "dominik1966",
+          "memberSince": "2026-07-27T13:41:00+00:00",
           "points": 2,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1411,8 +1657,10 @@
         },
         {
           "rank": 16,
+          "sourceRank": 16,
           "participantId": "erik",
           "name": "Erik",
+          "memberSince": "2026-07-28T07:45:45+00:00",
           "points": 2,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1422,8 +1670,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "vebfriwiwerk",
           "name": "VebFriwiwerk",
+          "memberSince": "2026-05-22T03:31:28+00:00",
           "points": 3,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1433,8 +1683,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "11le",
           "name": "11LE",
+          "memberSince": "2026-06-10T09:01:05+00:00",
           "points": 3,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1444,8 +1696,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "gruber",
           "name": "gRuBer",
+          "memberSince": "2026-07-26T09:17:01+00:00",
           "points": 3,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1455,8 +1709,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "glatze583",
           "name": "Glatze583",
+          "memberSince": "2026-07-26T14:12:00+00:00",
           "points": 3,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1466,8 +1722,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "lattenkracher",
           "name": "Lattenkracher",
+          "memberSince": "2026-07-26T21:44:51+00:00",
           "points": 3,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1477,8 +1735,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "opipeter",
           "name": "Opipeter",
+          "memberSince": "2026-07-27T16:51:27+00:00",
           "points": 3,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1488,8 +1748,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "tortugasge",
           "name": "TortugaSGE",
+          "memberSince": "2026-07-27T18:53:44+00:00",
           "points": 3,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1499,8 +1761,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "18amfg99",
           "name": "18AMFG99",
+          "memberSince": "2026-07-29T02:23:14+00:00",
           "points": 3,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1510,8 +1774,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "redwing",
           "name": "Redwing",
+          "memberSince": "2026-07-30T08:02:02+00:00",
           "points": 3,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1521,8 +1787,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "seboso",
           "name": "Seboso",
+          "memberSince": "2026-08-11T19:50:07+00:00",
           "points": 3,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1532,8 +1800,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "olympiakos",
           "name": "Olympiakos",
+          "memberSince": "2026-08-13T10:48:33+00:00",
           "points": 3,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1543,8 +1813,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "manuel",
           "name": "Manuel",
+          "memberSince": "2026-05-22T03:28:35+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1554,8 +1826,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "kleinersachse",
           "name": "kleinersachse",
+          "memberSince": "2026-05-22T03:58:20+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1565,8 +1839,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "ximmox",
           "name": "xIMMOx",
+          "memberSince": "2026-05-22T05:50:59+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1576,8 +1852,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "handgottes",
           "name": "HandGottes",
+          "memberSince": "2026-05-22T06:24:35+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1587,8 +1865,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "normiks",
           "name": "Normiks",
+          "memberSince": "2026-05-22T06:08:59+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1598,8 +1878,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "kevin",
           "name": "Kevin",
+          "memberSince": "2026-05-22T06:14:28+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1609,8 +1891,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "mary-grace",
           "name": "Mary-Grace",
+          "memberSince": "2026-05-22T04:02:09+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1620,8 +1904,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "quick",
           "name": "Quick",
+          "memberSince": "2026-07-23T19:26:30+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1631,8 +1917,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "flying-dutchman",
           "name": "Flying-Dutchman",
+          "memberSince": "2026-07-24T18:12:55+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1642,8 +1930,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "salas1904",
           "name": "Salas1904",
+          "memberSince": "2026-07-25T05:16:32+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1653,8 +1943,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "sven-huhn",
           "name": "Sven_Huhn",
+          "memberSince": "2026-07-25T10:44:13+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1664,8 +1956,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "luca",
           "name": "Luca",
+          "memberSince": "2026-07-25T12:05:50+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1675,8 +1969,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "hardy17",
           "name": "Hardy17",
+          "memberSince": "2026-07-25T12:07:55+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1686,8 +1982,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "maikiliii",
           "name": "Maikiliii",
+          "memberSince": "2026-07-25T21:11:04+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1697,8 +1995,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "bigdog",
           "name": "Bigdog",
+          "memberSince": "2026-07-26T05:16:51+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1708,8 +2008,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "mariusv",
           "name": "mariusv",
+          "memberSince": "2026-07-26T07:10:24+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1719,8 +2021,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "jakob",
           "name": "Jakob",
+          "memberSince": "2026-07-26T11:51:29+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1730,8 +2034,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "medic",
           "name": "Medic",
+          "memberSince": "2026-07-26T12:27:22+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1741,8 +2047,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "berndibroti",
           "name": "Berndibroti",
+          "memberSince": "2026-07-26T14:00:11+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1752,8 +2060,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "co",
           "name": "Co",
+          "memberSince": "2026-07-26T17:05:32+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1763,8 +2073,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "realzaragoza",
           "name": "Realzaragoza",
+          "memberSince": "2026-07-26T20:22:04+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1774,8 +2086,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "cobra75",
           "name": "Cobra75",
+          "memberSince": "2026-07-27T00:15:52+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1785,8 +2099,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "juri",
           "name": "JuRi",
+          "memberSince": "2026-07-27T05:39:29+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1796,8 +2112,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "lucas",
           "name": "Lucas",
+          "memberSince": "2026-07-27T05:39:38+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1807,8 +2125,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "luki1887",
           "name": "Luki1887",
+          "memberSince": "2026-07-27T06:02:34+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1818,8 +2138,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "dani1893",
           "name": "Dani1893",
+          "memberSince": "2026-07-27T09:20:10+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1829,8 +2151,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "g-1000",
           "name": "G.1000",
+          "memberSince": "2026-07-27T13:41:28+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1840,8 +2164,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "potterhead",
           "name": "Potterhead",
+          "memberSince": "2026-07-27T16:26:51+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1851,8 +2177,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "bvb09-opam",
           "name": "BvB09-OpaM",
+          "memberSince": "2026-07-27T19:47:41+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1862,8 +2190,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "nurderscf",
           "name": "NurDerSCF",
+          "memberSince": "2026-07-28T05:34:15+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1873,8 +2203,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "audauzvares",
           "name": "Audauzvares",
+          "memberSince": "2026-07-28T07:04:01+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1884,8 +2216,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "playboymarc88",
           "name": "PlayBoyMarc88",
+          "memberSince": "2026-07-28T07:20:54+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1895,8 +2229,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "marcor",
           "name": "MarcoR",
+          "memberSince": "2026-07-28T08:32:52+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1906,8 +2242,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "pochzerjung",
           "name": "PochzerJung",
+          "memberSince": "2026-07-28T09:36:37+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1917,8 +2255,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "sam2004",
           "name": "Sam2004",
+          "memberSince": "2026-07-28T10:57:45+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1928,8 +2268,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "maxpam",
           "name": "MaxPam",
+          "memberSince": "2026-07-28T12:39:56+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1939,8 +2281,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "ben1909",
           "name": "Ben1909",
+          "memberSince": "2026-07-28T13:00:10+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1950,8 +2294,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "bene",
           "name": "Bene",
+          "memberSince": "2026-07-28T13:01:49+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1961,8 +2307,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "cali79",
           "name": "Cali79",
+          "memberSince": "2026-07-28T14:14:58+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1972,8 +2320,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "sam-entspender",
           "name": "SAM_ENTSPENDER",
+          "memberSince": "2026-07-29T14:18:36+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1983,8 +2333,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "jwfussball",
           "name": "JWFUSSBALL",
+          "memberSince": "2026-07-29T16:10:16+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -1994,8 +2346,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "gerrit1887",
           "name": "Gerrit1887",
+          "memberSince": "2026-07-29T20:44:14+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2005,8 +2359,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "finch",
           "name": "Finch",
+          "memberSince": "2026-07-29T21:14:02+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2016,8 +2372,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "marc86",
           "name": "Marc86",
+          "memberSince": "2026-07-30T05:36:59+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2027,8 +2385,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "juergen70",
           "name": "Juergen70",
+          "memberSince": "2026-07-30T16:54:23+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2038,8 +2398,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "stevie26",
           "name": "Stevie26",
+          "memberSince": "2026-07-31T08:58:17+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2049,8 +2411,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "sgbw",
           "name": "sgbw",
+          "memberSince": "2026-08-07T11:24:18+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2060,8 +2424,10 @@
         },
         {
           "rank": 80,
+          "sourceRank": 80,
           "participantId": "glueckspfennig",
           "name": "Glückspfennig",
+          "memberSince": "2026-05-22T07:03:31+00:00",
           "points": 2,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2071,8 +2437,10 @@
         },
         {
           "rank": 80,
+          "sourceRank": 80,
           "participantId": "kev1999",
           "name": "Kev1999",
+          "memberSince": "2026-07-26T05:55:12+00:00",
           "points": 2,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2082,8 +2450,10 @@
         },
         {
           "rank": 80,
+          "sourceRank": 80,
           "participantId": "munmarkus",
           "name": "Munmarkus",
+          "memberSince": "2026-08-07T18:40:46+00:00",
           "points": 2,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2093,8 +2463,10 @@
         },
         {
           "rank": 80,
+          "sourceRank": 80,
           "participantId": "urkel",
           "name": "Urkel",
+          "memberSince": "2026-08-08T11:41:50+00:00",
           "points": 2,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2104,8 +2476,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "zweikampfgott",
           "name": "ZweikampfGott",
+          "memberSince": "2026-05-22T03:16:39+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2115,8 +2489,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "jungunddurstig",
           "name": "JungundDurstig",
+          "memberSince": "2026-06-10T16:33:19+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2126,8 +2502,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "lucaspodolski",
           "name": "LucasPodolski",
+          "memberSince": "2026-07-23T14:02:32+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2137,8 +2515,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "lucipher",
           "name": "LuCipher",
+          "memberSince": "2026-07-25T12:29:27+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2148,8 +2528,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "birgit-blaubart",
           "name": "Birgit_Blaubart",
+          "memberSince": "2026-07-25T19:34:56+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2159,8 +2541,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "mythos",
           "name": "Mythos",
+          "memberSince": "2026-07-26T08:31:03+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2170,8 +2554,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "milad",
           "name": "Milad",
+          "memberSince": "2026-07-26T20:36:25+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2181,8 +2567,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "fcahnungslos",
           "name": "FCAhnungslos",
+          "memberSince": "2026-07-27T06:24:30+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2192,8 +2580,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "aufdieblaue",
           "name": "AufdieBlaue",
+          "memberSince": "2026-07-27T08:54:51+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2203,8 +2593,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "kunstblume",
           "name": "Kunstblume",
+          "memberSince": "2026-07-28T19:30:29+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2214,8 +2606,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "xib0o",
           "name": "Xib0o",
+          "memberSince": "2026-07-30T00:50:41+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2225,8 +2619,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "pauli",
           "name": "Pauli",
+          "memberSince": "2026-07-30T18:59:14+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2236,8 +2632,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "g-threepwood",
           "name": "G.Threepwood",
+          "memberSince": "2026-08-12T17:30:04+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2247,8 +2645,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "gordinho",
           "name": "Gordinho",
+          "memberSince": "2026-08-12T18:54:43+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2260,8 +2660,10 @@
       "bonus": [
         {
           "rank": 1,
+          "sourceRank": 1,
           "participantId": "nick-zg-1501",
           "name": "Nick_ZG_1501",
+          "memberSince": "2026-07-24T17:45:44+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2271,8 +2673,10 @@
         },
         {
           "rank": 1,
+          "sourceRank": 1,
           "participantId": "wildemoni",
           "name": "WildeMoni",
+          "memberSince": "2026-07-25T15:16:12+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2282,8 +2686,10 @@
         },
         {
           "rank": 1,
+          "sourceRank": 1,
           "participantId": "baslermario",
           "name": "baslermario",
+          "memberSince": "2026-07-25T17:38:37+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2293,8 +2699,10 @@
         },
         {
           "rank": 1,
+          "sourceRank": 1,
           "participantId": "rk69",
           "name": "RK69",
+          "memberSince": "2026-07-26T06:04:04+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2304,8 +2712,10 @@
         },
         {
           "rank": 1,
+          "sourceRank": 1,
           "participantId": "yauguru",
           "name": "Yauguru",
+          "memberSince": "2026-07-26T13:30:10+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2315,8 +2725,10 @@
         },
         {
           "rank": 1,
+          "sourceRank": 1,
           "participantId": "frankfurterjung",
           "name": "FrankfurterJung",
+          "memberSince": "2026-07-30T13:59:44+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2326,8 +2738,10 @@
         },
         {
           "rank": 7,
+          "sourceRank": 7,
           "participantId": "andy1304",
           "name": "Andy1304",
+          "memberSince": "2026-07-26T18:19:00+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2337,8 +2751,10 @@
         },
         {
           "rank": 7,
+          "sourceRank": 7,
           "participantId": "mikoog",
           "name": "MiKoog",
+          "memberSince": "2026-07-27T18:03:58+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2348,8 +2764,10 @@
         },
         {
           "rank": 9,
+          "sourceRank": 9,
           "participantId": "oifinger",
           "name": "Oifinger",
+          "memberSince": "2026-07-26T11:54:58+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2359,8 +2777,10 @@
         },
         {
           "rank": 9,
+          "sourceRank": 9,
           "participantId": "cobra",
           "name": "cobra",
+          "memberSince": "2026-07-26T14:25:16+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2370,8 +2790,10 @@
         },
         {
           "rank": 9,
+          "sourceRank": 9,
           "participantId": "flokicker94",
           "name": "FloKicker94",
+          "memberSince": "2026-07-27T17:02:40+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2381,8 +2803,10 @@
         },
         {
           "rank": 9,
+          "sourceRank": 9,
           "participantId": "tribuna33",
           "name": "TRIBUNA33",
+          "memberSince": "2026-07-27T18:21:33+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2392,8 +2816,10 @@
         },
         {
           "rank": 9,
+          "sourceRank": 9,
           "participantId": "waltersen",
           "name": "Waltersen",
+          "memberSince": "2026-07-28T17:56:59+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2403,8 +2829,10 @@
         },
         {
           "rank": 9,
+          "sourceRank": 9,
           "participantId": "steff77",
           "name": "Steff77",
+          "memberSince": "2026-07-28T21:18:40+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2414,8 +2842,10 @@
         },
         {
           "rank": 9,
+          "sourceRank": 9,
           "participantId": "eckes2359",
           "name": "Eckes2359",
+          "memberSince": "2026-07-31T08:10:00+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2425,8 +2855,10 @@
         },
         {
           "rank": 16,
+          "sourceRank": 16,
           "participantId": "marius",
           "name": "Marius",
+          "memberSince": "2026-05-22T11:09:12+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2436,8 +2868,10 @@
         },
         {
           "rank": 16,
+          "sourceRank": 16,
           "participantId": "adamj",
           "name": "AdamJ",
+          "memberSince": "2026-07-26T06:27:27+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2447,8 +2881,10 @@
         },
         {
           "rank": 16,
+          "sourceRank": 16,
           "participantId": "souvard",
           "name": "Souvard",
+          "memberSince": "2026-07-26T09:02:20+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2458,8 +2894,10 @@
         },
         {
           "rank": 16,
+          "sourceRank": 16,
           "participantId": "best10",
           "name": "Best10",
+          "memberSince": "2026-07-26T14:55:09+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2469,8 +2907,10 @@
         },
         {
           "rank": 16,
+          "sourceRank": 16,
           "participantId": "dominik1966",
           "name": "dominik1966",
+          "memberSince": "2026-07-27T13:41:00+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2480,8 +2920,10 @@
         },
         {
           "rank": 16,
+          "sourceRank": 16,
           "participantId": "erik",
           "name": "Erik",
+          "memberSince": "2026-07-28T07:45:45+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2491,8 +2933,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "vebfriwiwerk",
           "name": "VebFriwiwerk",
+          "memberSince": "2026-05-22T03:31:28+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2502,8 +2946,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "11le",
           "name": "11LE",
+          "memberSince": "2026-06-10T09:01:05+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2513,8 +2959,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "gruber",
           "name": "gRuBer",
+          "memberSince": "2026-07-26T09:17:01+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2524,8 +2972,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "glatze583",
           "name": "Glatze583",
+          "memberSince": "2026-07-26T14:12:00+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2535,8 +2985,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "lattenkracher",
           "name": "Lattenkracher",
+          "memberSince": "2026-07-26T21:44:51+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2546,8 +2998,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "opipeter",
           "name": "Opipeter",
+          "memberSince": "2026-07-27T16:51:27+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2557,8 +3011,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "tortugasge",
           "name": "TortugaSGE",
+          "memberSince": "2026-07-27T18:53:44+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2568,8 +3024,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "18amfg99",
           "name": "18AMFG99",
+          "memberSince": "2026-07-29T02:23:14+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2579,8 +3037,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "redwing",
           "name": "Redwing",
+          "memberSince": "2026-07-30T08:02:02+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2590,8 +3050,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "seboso",
           "name": "Seboso",
+          "memberSince": "2026-08-11T19:50:07+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2601,8 +3063,10 @@
         },
         {
           "rank": 22,
+          "sourceRank": 22,
           "participantId": "olympiakos",
           "name": "Olympiakos",
+          "memberSince": "2026-08-13T10:48:33+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2612,8 +3076,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "manuel",
           "name": "Manuel",
+          "memberSince": "2026-05-22T03:28:35+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2623,8 +3089,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "kleinersachse",
           "name": "kleinersachse",
+          "memberSince": "2026-05-22T03:58:20+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2634,8 +3102,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "ximmox",
           "name": "xIMMOx",
+          "memberSince": "2026-05-22T05:50:59+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2645,8 +3115,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "handgottes",
           "name": "HandGottes",
+          "memberSince": "2026-05-22T06:24:35+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2656,8 +3128,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "normiks",
           "name": "Normiks",
+          "memberSince": "2026-05-22T06:08:59+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2667,8 +3141,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "kevin",
           "name": "Kevin",
+          "memberSince": "2026-05-22T06:14:28+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2678,8 +3154,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "mary-grace",
           "name": "Mary-Grace",
+          "memberSince": "2026-05-22T04:02:09+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2689,8 +3167,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "quick",
           "name": "Quick",
+          "memberSince": "2026-07-23T19:26:30+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2700,8 +3180,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "flying-dutchman",
           "name": "Flying-Dutchman",
+          "memberSince": "2026-07-24T18:12:55+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2711,8 +3193,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "salas1904",
           "name": "Salas1904",
+          "memberSince": "2026-07-25T05:16:32+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2722,8 +3206,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "sven-huhn",
           "name": "Sven_Huhn",
+          "memberSince": "2026-07-25T10:44:13+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2733,8 +3219,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "luca",
           "name": "Luca",
+          "memberSince": "2026-07-25T12:05:50+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2744,8 +3232,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "hardy17",
           "name": "Hardy17",
+          "memberSince": "2026-07-25T12:07:55+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2755,8 +3245,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "maikiliii",
           "name": "Maikiliii",
+          "memberSince": "2026-07-25T21:11:04+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2766,8 +3258,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "bigdog",
           "name": "Bigdog",
+          "memberSince": "2026-07-26T05:16:51+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2777,8 +3271,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "mariusv",
           "name": "mariusv",
+          "memberSince": "2026-07-26T07:10:24+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2788,8 +3284,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "jakob",
           "name": "Jakob",
+          "memberSince": "2026-07-26T11:51:29+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2799,8 +3297,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "medic",
           "name": "Medic",
+          "memberSince": "2026-07-26T12:27:22+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2810,8 +3310,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "berndibroti",
           "name": "Berndibroti",
+          "memberSince": "2026-07-26T14:00:11+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2821,8 +3323,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "co",
           "name": "Co",
+          "memberSince": "2026-07-26T17:05:32+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2832,8 +3336,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "realzaragoza",
           "name": "Realzaragoza",
+          "memberSince": "2026-07-26T20:22:04+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2843,8 +3349,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "cobra75",
           "name": "Cobra75",
+          "memberSince": "2026-07-27T00:15:52+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2854,8 +3362,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "juri",
           "name": "JuRi",
+          "memberSince": "2026-07-27T05:39:29+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2865,8 +3375,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "lucas",
           "name": "Lucas",
+          "memberSince": "2026-07-27T05:39:38+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2876,8 +3388,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "luki1887",
           "name": "Luki1887",
+          "memberSince": "2026-07-27T06:02:34+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2887,8 +3401,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "dani1893",
           "name": "Dani1893",
+          "memberSince": "2026-07-27T09:20:10+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2898,8 +3414,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "g-1000",
           "name": "G.1000",
+          "memberSince": "2026-07-27T13:41:28+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2909,8 +3427,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "potterhead",
           "name": "Potterhead",
+          "memberSince": "2026-07-27T16:26:51+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2920,8 +3440,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "bvb09-opam",
           "name": "BvB09-OpaM",
+          "memberSince": "2026-07-27T19:47:41+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2931,8 +3453,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "nurderscf",
           "name": "NurDerSCF",
+          "memberSince": "2026-07-28T05:34:15+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2942,8 +3466,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "audauzvares",
           "name": "Audauzvares",
+          "memberSince": "2026-07-28T07:04:01+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2953,8 +3479,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "playboymarc88",
           "name": "PlayBoyMarc88",
+          "memberSince": "2026-07-28T07:20:54+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2964,8 +3492,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "marcor",
           "name": "MarcoR",
+          "memberSince": "2026-07-28T08:32:52+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2975,8 +3505,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "pochzerjung",
           "name": "PochzerJung",
+          "memberSince": "2026-07-28T09:36:37+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2986,8 +3518,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "sam2004",
           "name": "Sam2004",
+          "memberSince": "2026-07-28T10:57:45+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -2997,8 +3531,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "maxpam",
           "name": "MaxPam",
+          "memberSince": "2026-07-28T12:39:56+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3008,8 +3544,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "ben1909",
           "name": "Ben1909",
+          "memberSince": "2026-07-28T13:00:10+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3019,8 +3557,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "bene",
           "name": "Bene",
+          "memberSince": "2026-07-28T13:01:49+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3030,8 +3570,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "cali79",
           "name": "Cali79",
+          "memberSince": "2026-07-28T14:14:58+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3041,8 +3583,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "sam-entspender",
           "name": "SAM_ENTSPENDER",
+          "memberSince": "2026-07-29T14:18:36+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3052,8 +3596,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "jwfussball",
           "name": "JWFUSSBALL",
+          "memberSince": "2026-07-29T16:10:16+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3063,8 +3609,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "gerrit1887",
           "name": "Gerrit1887",
+          "memberSince": "2026-07-29T20:44:14+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3074,8 +3622,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "finch",
           "name": "Finch",
+          "memberSince": "2026-07-29T21:14:02+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3085,8 +3635,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "marc86",
           "name": "Marc86",
+          "memberSince": "2026-07-30T05:36:59+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3096,8 +3648,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "juergen70",
           "name": "Juergen70",
+          "memberSince": "2026-07-30T16:54:23+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3107,8 +3661,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "stevie26",
           "name": "Stevie26",
+          "memberSince": "2026-07-31T08:58:17+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3118,8 +3674,10 @@
         },
         {
           "rank": 33,
+          "sourceRank": 33,
           "participantId": "sgbw",
           "name": "sgbw",
+          "memberSince": "2026-08-07T11:24:18+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3129,8 +3687,10 @@
         },
         {
           "rank": 80,
+          "sourceRank": 80,
           "participantId": "glueckspfennig",
           "name": "Glückspfennig",
+          "memberSince": "2026-05-22T07:03:31+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3140,8 +3700,10 @@
         },
         {
           "rank": 80,
+          "sourceRank": 80,
           "participantId": "kev1999",
           "name": "Kev1999",
+          "memberSince": "2026-07-26T05:55:12+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3151,8 +3713,10 @@
         },
         {
           "rank": 80,
+          "sourceRank": 80,
           "participantId": "munmarkus",
           "name": "Munmarkus",
+          "memberSince": "2026-08-07T18:40:46+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3162,8 +3726,10 @@
         },
         {
           "rank": 80,
+          "sourceRank": 80,
           "participantId": "urkel",
           "name": "Urkel",
+          "memberSince": "2026-08-08T11:41:50+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3173,8 +3739,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "zweikampfgott",
           "name": "ZweikampfGott",
+          "memberSince": "2026-05-22T03:16:39+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3184,8 +3752,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "jungunddurstig",
           "name": "JungundDurstig",
+          "memberSince": "2026-06-10T16:33:19+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3195,8 +3765,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "lucaspodolski",
           "name": "LucasPodolski",
+          "memberSince": "2026-07-23T14:02:32+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3206,8 +3778,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "lucipher",
           "name": "LuCipher",
+          "memberSince": "2026-07-25T12:29:27+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3217,8 +3791,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "birgit-blaubart",
           "name": "Birgit_Blaubart",
+          "memberSince": "2026-07-25T19:34:56+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3228,8 +3804,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "mythos",
           "name": "Mythos",
+          "memberSince": "2026-07-26T08:31:03+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3239,8 +3817,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "milad",
           "name": "Milad",
+          "memberSince": "2026-07-26T20:36:25+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3250,8 +3830,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "fcahnungslos",
           "name": "FCAhnungslos",
+          "memberSince": "2026-07-27T06:24:30+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3261,8 +3843,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "aufdieblaue",
           "name": "AufdieBlaue",
+          "memberSince": "2026-07-27T08:54:51+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3272,8 +3856,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "kunstblume",
           "name": "Kunstblume",
+          "memberSince": "2026-07-28T19:30:29+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3283,8 +3869,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "xib0o",
           "name": "Xib0o",
+          "memberSince": "2026-07-30T00:50:41+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3294,8 +3882,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "pauli",
           "name": "Pauli",
+          "memberSince": "2026-07-30T18:59:14+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3305,8 +3895,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "g-threepwood",
           "name": "G.Threepwood",
+          "memberSince": "2026-08-12T17:30:04+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
@@ -3316,8 +3908,10 @@
         },
         {
           "rank": 84,
+          "sourceRank": 84,
           "participantId": "gordinho",
           "name": "Gordinho",
+          "memberSince": "2026-08-12T18:54:43+00:00",
           "points": 0,
           "bonusPoints": 0,
           "matchdayWinner": 0,
