@@ -14,15 +14,16 @@ Gezählte Bereiche:
 1. Startseite (`/`)
 2. Saisonübersicht (`/saison-2026-2027.html`)
 3. Ranglistenlogbuch (`/highscore.html`)
-4. Ehrenlogbuch (`/hall-of-fame.html`)
-5. Bundesliga (`/bundesliga.html`)
-6. DFB-Pokal (`/dfb-pokal.html`)
-7. Champions League (`/champions-league.html`)
-8. Europa League (`/europa-league.html`)
-9. Relegation (`/relegation.html`)
-10. Smuggleraufträge (`/dynamo-dresden.html`)
-11. Piratenkodex (`/piratenkodex.html`)
-12. Weihnachtsregatta (`/weihnachtsregatta.html`)
+4. Logbuch (`/logbuch.html`)
+5. Ehrenlogbuch (`/hall-of-fame.html`)
+6. Bundesliga (`/bundesliga.html`)
+7. DFB-Pokal (`/dfb-pokal.html`)
+8. Champions League (`/champions-league.html`)
+9. Europa League (`/europa-league.html`)
+10. Relegation (`/relegation.html`)
+11. Smuggleraufträge (`/dynamo-dresden.html`)
+12. Piratenkodex (`/piratenkodex.html`)
+13. Weihnachtsregatta (`/weihnachtsregatta.html`)
 
 Nicht gezählt bzw. nicht Bestandteil der veröffentlichten Gesamtzahl:
 - `impressum.html`
@@ -61,7 +62,7 @@ Reloads zählen wegen deaktivierter GoatCounter-Sitzungen als weitere Pageviews.
 
 ## 7. Ausfallsicherheit
 Analytics ist nicht geschäftskritisch.
-Der von GoatCounter dokumentierte Script-Tag wird direkt und asynchron auf den zwölf gezählten Inhaltsseiten geladen. Blockiert ein Adblocker den Dienst oder fällt GoatCounter aus, dürfen Navigation, Wettbewerbe, Highscore, Hall of Fame und alle anderen Website-Funktionen nicht beeinträchtigt werden.
+Der von GoatCounter dokumentierte Script-Tag wird direkt und asynchron auf den dreizehn gezählten Inhaltsseiten geladen. Blockiert ein Adblocker den Dienst oder fällt GoatCounter aus, dürfen Navigation, Wettbewerbe, Highscore, Hall of Fame und alle anderen Website-Funktionen nicht beeinträchtigt werden.
 Die Stalk-O-Meter-Seite zeigt bei Abruffehlern einen lokalen Hinweis statt JavaScript-Fehlern.
 
 ## 8. Datenschutz
@@ -90,7 +91,7 @@ Geändert:
 4. GC-3: Reload erzeugt einen zusätzlichen Pageview.
 5. GC-4: mindestens zwei Zielseiten werden getrennt gezählt.
 6. Stalk-O-Meter: Einzelwerte erscheinen und werden absteigend sortiert.
-7. Gesamtwert entspricht der Summe der zwölf dargestellten Inhaltsseiten.
+7. Gesamtwert entspricht der Summe der dreizehn dargestellten Inhaltsseiten.
 8. Impressum, Datenschutz und Stalk-O-Meter erhöhen diese fachliche Gesamtzahl nicht.
 9. Test mit blockiertem `gc.zgo.at`: restliche Website vollständig funktionsfähig.
 10. Desktop und Mobil fachliche Sichtprüfung.
@@ -102,7 +103,7 @@ Dieses Dokument ist bei jedem Projekt-Handover zusammen mit dem allgemeinen Proj
 ## 13. TEST2-Korrektur
 In TEST1 wurden die GoatCounter-Script-Attribute dynamisch über `analytics.js` erzeugt. GC-2 schlug fehl: Trotz erreichbarem `https://gc.zgo.at/count.js` wurden keine Pageviews registriert.
 
-In 4.7.2-TEST2 wird deshalb auf allen zwölf gezählten Inhaltsseiten ausschließlich der von GoatCounter dokumentierte direkte Script-Tag verwendet. `analytics.js` wurde vollständig entfernt. Navigation, Stalk-O-Meter-Darstellung, gezählte Zielseiten und Fachlogik bleiben unverändert.
+In 4.7.2-TEST2 wird deshalb auf allen dreizehn gezählten Inhaltsseiten ausschließlich der von GoatCounter dokumentierte direkte Script-Tag verwendet. `analytics.js` wurde vollständig entfernt. Navigation, Stalk-O-Meter-Darstellung, gezählte Zielseiten und Fachlogik bleiben unverändert.
 
 
 ## 14. TEST3 – Korrektur des Startseitenpfads
