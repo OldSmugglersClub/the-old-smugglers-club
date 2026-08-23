@@ -313,3 +313,25 @@ body{overflow-x:hidden}
   .logbook-30s-item p{display:block;margin-top:.35rem;}
   .logbook-30s-head .logbook-30s-round{font-size:1.38em;line-height:1;}
 }
+
+/* Website 4.9.2-HF6-TEST1 – Mobile Tippernamen ohne Wortbruch */
+@media (max-width:760px){
+  .lb-highlight--captains .lb-name{
+    min-width:0;
+    white-space:nowrap;
+    overflow-wrap:normal;
+    word-break:normal;
+    hyphens:none;
+    font-size:.82rem;
+    letter-spacing:0;
+    padding-left:6px;
+    padding-right:6px;
+  }
+}
+@media (max-width:360px){
+  .lb-highlight--captains .lb-name{
+    font-size:.76rem;
+    padding-left:4px;
+    padding-right:4px;
+  }
+}
