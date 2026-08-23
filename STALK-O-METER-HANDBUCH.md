@@ -14,7 +14,7 @@ Gezählte Bereiche:
 1. Startseite (`/`)
 2. Saisonübersicht (`/saison-2026-2027.html`)
 3. Ranglistenlogbuch (`/highscore.html`)
-4. Logbuch (`/logbuch.html`)
+4. Spieltags-Logbuch (`/logbuch.html`)
 5. Ehrenlogbuch (`/hall-of-fame.html`)
 6. Bundesliga (`/bundesliga.html`)
 7. DFB-Pokal (`/dfb-pokal.html`)

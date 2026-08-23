@@ -1,16 +1,14 @@
-# Dateiliste – Test2 Stalk-O-Meter Logbuch
+# Dateiliste – Live Textfix Spieltags-Logbuch
 
-## ERSETZEN
+## Ersetzen
+
 - `stalk-o-meter.js`
 - `STALK-O-METER-HANDBUCH.md`
 
-## NEU im Repository
+## Neu
+
 - keine
 
-## LÖSCHEN
-- keine
+## Löschen
 
-## Nur Paketdokumentation
-- `README.md`
-- `CHANGELOG.md`
-- `DATEILISTE_ERSETZEN_NEU_LOESCHEN.md`
+- keine
