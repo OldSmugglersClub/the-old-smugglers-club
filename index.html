@@ -5336,6 +5336,21 @@
         font-size: clamp(1.25rem, 5.2vw, 1.8rem);
       }
     }
+
+    /* HF3 – Champion-Pokal Desktop: größer, vollständig sichtbar */
+    @media (min-width: 769px) {
+      #hall-of-fame .trophy-stage {
+        min-height: 430px;
+      }
+
+      #hall-of-fame .trophy {
+        width: min(94%, 560px);
+        height: 410px;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+
 </style>
   <link rel="stylesheet" href="./legal.css">
   <script src="./hall-of-fame-runtime.js"></script>
