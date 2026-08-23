@@ -288,3 +288,28 @@ body{overflow-x:hidden}
 .lb-pending-copy p{margin:0;color:#d4c09b;line-height:1.65;font-size:1rem}
 .lb-pending-copy strong{display:block;margin-top:14px;color:#efcb78;font-size:1rem}
 .lb-pending-copy small{display:block;margin-top:14px;color:#9f8b69;line-height:1.45}
+
+/* Website 4.9.2-HF5 – sichere Dreierstruktur: Titel oben, Text im Restbereich ausbalanciert */
+.logbook-30s-head .logbook-30s-round{
+  display:inline-block;
+  font-size:1.55em;
+  line-height:.82;
+  font-weight:900;
+  letter-spacing:0;
+  vertical-align:-.08em;
+}
+@media(min-width:761px){
+  .logbook-30s-item{display:flex;flex-direction:column;justify-content:flex-start;}
+  .logbook-30s-item>span{flex:0 0 auto;}
+  .logbook-30s-item p{
+    flex:1 1 auto;
+    display:flex;
+    align-items:center;
+    margin:.35rem 0 0;
+  }
+}
+@media(max-width:760px){
+  .logbook-30s-item{display:block;}
+  .logbook-30s-item p{display:block;margin-top:.35rem;}
+  .logbook-30s-head .logbook-30s-round{font-size:1.38em;line-height:1;}
+}

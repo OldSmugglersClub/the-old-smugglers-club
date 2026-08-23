@@ -51,14 +51,16 @@
   }
 
   function renderMatchday(data){
-    const matchday=currentMatchday(data);
-    set('hs-matchday-name',compactMatchdayLabel(matchday.label));
-    if(matchday.leaders.length>1){
-      const points=totalOf(matchday.leaders[0]);
-      set('hs-matchday-winner',`${matchday.leaders.length} Spieltagsbeste · je ${format(points)} Punkte`);
+    const smuggler=competitions(data)?.smugglerauftraege||{};
+    const rows=Array.isArray(smuggler.overall)?smuggler.overall:[];
+    const leaders=rows.filter(row=>Number(row?.rank??row?.platz)===1);
+    const leader=leaders[0]||rows.find(row=>totalOf(row)>0)||null;
+    set('hs-matchday-name','Gesamtstand');
+    if(leaders.length>1){
+      set('hs-matchday-winner',`${leaders.length} Führende · je ${format(totalOf(leaders[0]))} Punkte`);
       return;
     }
-    set('hs-matchday-winner',matchday.leader?`${nameOf(matchday.leader)} · ${format(totalOf(matchday.leader))} Punkte`:'Noch ohne Wertung');
+    set('hs-matchday-winner',leader?`${nameOf(leader)} · ${format(totalOf(leader))} Punkte`:'Noch ohne Wertung');
   }
 
   function renderTeams(data){
@@ -69,7 +71,7 @@
     const newAverage=averageOf(newTeam);
     const label=oldAverage===newAverage?'Gleichstand':oldAverage>newAverage?'Old Smugglers':'New Smugglers';
     set('hs-team-leader',label);
-    set('hs-team-points',`${format(oldAverage,2)} : ${format(newAverage,2)} Punkte`);
+    set('hs-team-points',label==='Old Smugglers'?`${format(oldAverage,2)} : ${format(newAverage,2)} Punkte`:label==='New Smugglers'?`${format(newAverage,2)} : ${format(oldAverage,2)} Punkte`:`${format(oldAverage,2)} : ${format(newAverage,2)} Punkte`);
   }
 
   async function init(){
