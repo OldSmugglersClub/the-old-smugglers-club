@@ -4470,6 +4470,139 @@
     }
 
 
+    /* 4.9.2-HF8 – Wettbewerbsauswahl in der mittleren Highscore-Kachel */
+    #highscore .highscore-card-matchday { overflow: visible; }
+    #highscore .highscore-competition-copy { position: relative; min-width: 0; }
+    #highscore .hs-competition-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-width: 0; }
+    #highscore .hs-competition-head > span { flex: 1 1 auto; min-width: 0; }
+    #highscore .hs-competition-picker { position: relative; flex: 0 0 auto; }
+    #highscore .hs-competition-toggle {
+      min-height: 26px; padding: 3px 8px; border: 1px solid rgba(211,159,60,.72); border-radius: 7px;
+      color: #f0cf83; background: linear-gradient(180deg,rgba(73,45,19,.96),rgba(31,18,9,.98));
+      font: 700 .66rem/1 Georgia,serif; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; cursor: pointer;
+    }
+    #highscore .hs-competition-menu {
+      position: absolute; z-index: 40; top: calc(100% + 7px); right: 0; min-width: 190px; padding: 6px;
+      border: 1px solid rgba(211,159,60,.72); border-radius: 9px; background: rgba(20,12,7,.99);
+      box-shadow: 0 12px 26px rgba(0,0,0,.48);
+    }
+    #highscore .hs-competition-option {
+      display: block; width: 100%; padding: 8px 10px; border: 0; border-bottom: 1px solid rgba(184,138,61,.22);
+      color: #f1d89c; background: transparent; text-align: left; font: 700 .84rem/1.25 Georgia,serif; cursor: pointer;
+    }
+    #highscore .hs-competition-option:last-child { border-bottom: 0; }
+    #highscore .hs-competition-option:hover, #highscore .hs-competition-option:focus-visible { background: rgba(122,75,21,.35); outline: none; }
+    @media (max-width:700px){
+      #highscore .hs-competition-menu { right: 0; min-width: min(220px, calc(100vw - 72px)); max-width: calc(100vw - 72px); }
+      #highscore .hs-competition-head > span { width: auto !important; }
+    }
+
+    /* 4.9.2-HF8 – klare Wettbewerbs-Kopfzeile */
+    #highscore .hs-competition-head {
+      align-items: center;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(184,138,61,.32);
+    }
+    #highscore .hs-competition-head > span {
+      width: auto !important;
+      flex: 1 1 auto;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: 0 !important;
+      white-space: nowrap !important;
+      overflow-wrap: normal !important;
+      word-break: keep-all !important;
+      hyphens: none !important;
+      font-size: clamp(.58rem, .72vw, .72rem) !important;
+      line-height: 1.1 !important;
+      letter-spacing: .055em !important;
+    }
+    #highscore .hs-competition-toggle {
+      flex: 0 0 auto;
+      min-height: 24px;
+      padding: 3px 8px;
+      font-size: .62rem;
+      letter-spacing: .045em;
+    }
+    @media (max-width:700px){
+      #highscore .hs-competition-head { gap: 8px; }
+      #highscore .hs-competition-head > span {
+        font-size: clamp(.60rem, 3.1vw, .72rem) !important;
+        letter-spacing: .045em !important;
+      }
+      #highscore .hs-competition-toggle {
+        min-height: 26px;
+        padding: 4px 9px;
+        font-size: .64rem;
+      }
+    }
+
+
+
+    /* 4.9.2-HF8 – abgenommene responsive Wettbewerbs-Kopfzeile */
+    @media (min-width:701px){
+      #highscore .hs-competition-head {
+        align-items: center;
+        gap: 24px;
+      }
+      #highscore .hs-competition-head > span {
+        flex: 1 1 auto;
+        line-height: 1.24 !important;
+        padding-top: 2px !important;
+        padding-bottom: 2px !important;
+      }
+      #highscore .hs-competition-picker { margin-left: 10px; }
+      #highscore .hs-desktop-break { display: initial; }
+    }
+    @media (max-width:700px){
+      #highscore .hs-desktop-break { display: none; }
+      #highscore .hs-competition-head {
+        display: grid;
+        grid-template-columns: minmax(0,1fr) auto;
+        grid-template-rows: auto auto;
+        align-items: center;
+        gap: 6px 8px;
+        border-bottom: 0;
+      }
+      #highscore #hs-competition-label {
+        grid-column: 1;
+        grid-row: 1;
+        width: auto !important;
+        min-width: 0;
+        margin: 0 !important;
+        padding: 0 !important;
+        white-space: nowrap !important;
+        font-size: clamp(.54rem,2.65vw,.66rem) !important;
+        letter-spacing: .025em !important;
+      }
+      #highscore .hs-competition-picker { display: contents; }
+      #highscore .hs-competition-toggle {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+        margin: 0;
+        min-height: 25px;
+        padding: 3px 7px;
+        font-size: .60rem;
+      }
+      #highscore .hs-competition-menu {
+        position: static;
+        grid-column: 1 / -1;
+        grid-row: 2;
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+        max-height: 190px;
+        overflow-y: auto;
+        margin-top: 0;
+        box-sizing: border-box;
+      }
+      #highscore .hs-competition-option {
+        min-height: 38px;
+        padding: 9px 11px;
+      }
+    }
+
     /* Version 4.4.14 – mobile Highscore-Karten auf der Startseite */
     @media (max-width: 700px) {
       #highscore .highscore-teaser-grid {
@@ -5673,8 +5806,14 @@
         </article>
         <article class="highscore-teaser-card highscore-card-matchday">
           <svg class="highscore-card-icon" aria-hidden="true"><use href="#icon-map"></use></svg>
-          <div class="highscore-card-copy">
-            <span>Smuggleraufträge</span>
+          <div class="highscore-card-copy highscore-competition-copy">
+            <div class="hs-competition-head">
+              <span id="hs-competition-label">Smuggleraufträge</span>
+              <div class="hs-competition-picker" id="hs-competition-picker" hidden>
+                <button class="hs-competition-toggle" id="hs-competition-toggle" type="button" aria-label="Wettbewerb auswählen" aria-haspopup="true" aria-expanded="false">Auswählen ▾</button>
+                <div class="hs-competition-menu" id="hs-competition-menu" role="menu" hidden></div>
+              </div>
+            </div>
             <strong id="hs-matchday-name">Gesamtstand</strong>
             <small id="hs-matchday-winner">Noch ohne Wertung</small>
           </div>
@@ -6747,7 +6886,7 @@
     }());
   </script>
 
-  <script src="./highscore-teaser.js" defer></script>
+  <script src="./highscore-teaser.js?v=4.9.2-HF8" defer></script>
   <script src="./logbuch.js?v=4.9.2-HF5" defer></script>
   <script src="performance-v247.js" defer></script>
   <script src="./accessibility-v33.js" defer></script>

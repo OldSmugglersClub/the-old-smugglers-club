@@ -50,17 +50,69 @@
       .replace(/(\d+)\.\s*Spieltag/gi,'$1.\u00a0Spieltag');
   }
 
-  function renderMatchday(data){
-    const smuggler=competitions(data)?.smugglerauftraege||{};
-    const rows=Array.isArray(smuggler.overall)?smuggler.overall:[];
-    const leaders=rows.filter(row=>Number(row?.rank??row?.platz)===1);
-    const leader=leaders[0]||rows.find(row=>totalOf(row)>0)||null;
-    set('hs-matchday-name','Gesamtstand');
-    if(leaders.length>1){
-      set('hs-matchday-winner',`${leaders.length} Führende · je ${format(totalOf(leaders[0]))} Punkte`);
-      return;
+  const competitionLabels={
+    'smugglerauftraege':'Smuggleraufträge',
+    'bundesliga':'Bundesliga',
+    'champions-league':'Champions League',
+    'europa-league':'Europa League',
+    'dfb-pokal':'DFB-Pokal',
+    'relegation':'Relegation',
+    'piratenkodex':'Piratenkodex',
+    'weihnachtsregatta':'Weihnachtsregatta'
+  };
+
+  function renderCompetitionOverall(data,key){
+    const item=competitions(data)?.[key]||{};
+    const rows=Array.isArray(item.overall)?item.overall:[];
+    // Die Reihenfolge der importierten Kicktipp-Gesamtwertung ist verbindlich.
+    // Keine eigene Sortierung/Gleichstandsauflösung im Teaser.
+    const leader=rows[0]||null;
+    const labelNode=byId('hs-competition-label');
+    if(labelNode){
+      if(key==='smugglerauftraege'){
+        labelNode.innerHTML='Smuggler<br class="hs-desktop-break">Aufträge';
+      }else{
+        labelNode.textContent=competitionLabels[key]||key;
+      }
     }
-    set('hs-matchday-winner',leader?`${nameOf(leader)} · ${format(totalOf(leader))} Punkte`:'Noch ohne Wertung');
+    set('hs-matchday-name',leader?nameOf(leader):'Gesamtstand');
+    set('hs-matchday-winner',leader?`${format(totalOf(leader))} Punkte`:'Noch ohne Wertung');
+  }
+
+  function initCompetitionPicker(data){
+    const picker=byId('hs-competition-picker');
+    const toggle=byId('hs-competition-toggle');
+    const menu=byId('hs-competition-menu');
+    if(!picker||!toggle||!menu)return;
+    const available=Object.entries(competitions(data)).filter(([,item])=>Array.isArray(item?.overall)&&item.overall.length);
+    const defaultKey=available.some(([key])=>key==='smugglerauftraege')?'smugglerauftraege':available[0]?.[0];
+    if(!defaultKey){ renderCompetitionOverall(data,'smugglerauftraege'); picker.hidden=true; return; }
+    menu.replaceChildren();
+    available.forEach(([key])=>{
+      const button=document.createElement('button');
+      button.type='button';
+      button.className='hs-competition-option';
+      button.textContent=competitionLabels[key]||key;
+      button.dataset.competition=key;
+      button.setAttribute('role','menuitem');
+      button.addEventListener('click',()=>{
+        renderCompetitionOverall(data,key);
+        menu.hidden=true;
+        toggle.setAttribute('aria-expanded','false');
+      });
+      menu.appendChild(button);
+    });
+    renderCompetitionOverall(data,defaultKey);
+    picker.hidden=available.length<2;
+    toggle.addEventListener('click',event=>{
+      event.stopPropagation();
+      const open=menu.hidden;
+      menu.hidden=!open;
+      toggle.setAttribute('aria-expanded',String(open));
+    });
+    document.addEventListener('click',event=>{
+      if(!picker.contains(event.target)){menu.hidden=true;toggle.setAttribute('aria-expanded','false');}
+    });
   }
 
   function renderTeams(data){
@@ -78,7 +130,7 @@
     try{
       const data=await window.OSCHighscoreDataAdapter.loadHighscore();
       renderIndividuals(data);
-      renderMatchday(data);
+      initCompetitionPicker(data);
       renderTeams(data);
     }catch(error){
       console.warn('Highscore konnte nicht geladen werden.',error);
