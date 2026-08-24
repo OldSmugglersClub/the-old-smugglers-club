@@ -5084,7 +5084,16 @@
       .welcome-intro { font-size: .93rem; line-height: 1.47; }
       .welcome-status-item { padding: .55rem .62rem; }
       .welcome-command-button { min-height: 49px; white-space: normal; text-align: center; }
-      .welcome-secondary-nav { gap: .18rem .5rem; line-height: 1.45; }
+      /* HF7: mobile Schnellzugriffe – geschlossene Tafeln im vorhandenen
+         rotbraunen Clubstil und mehr Abstand zwischen umgebrochenen Zeilen. */
+      .welcome-secondary-nav {
+        gap: .65rem .5rem;
+        line-height: 1.45;
+      }
+      .welcome-secondary-nav a {
+        border-color: rgba(213,161,59,.28);
+        background: linear-gradient(145deg, rgba(56,36,19,.82), rgba(20,12,7,.92));
+      }
     }
 
 
