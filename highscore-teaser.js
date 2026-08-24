@@ -103,7 +103,7 @@
       menu.appendChild(button);
     });
     renderCompetitionOverall(data,defaultKey);
-    picker.hidden=available.length<2;
+    picker.hidden=available.length<1;
     toggle.addEventListener('click',event=>{
       event.stopPropagation();
       const open=menu.hidden;
