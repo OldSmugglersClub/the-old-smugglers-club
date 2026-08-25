@@ -5493,6 +5493,40 @@
       }
     }
 
+
+    /* 4.9.2-HF11 – Coco-Orakel: schmaler Einstieg, bestehendes Grid unverändert */
+    .coco-entry {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 132px minmax(0,1fr) auto;
+      align-items: center;
+      gap: 22px;
+      min-height: 132px;
+      padding: 16px 24px;
+      border: 1px solid rgba(190,132,25,.78);
+      border-radius: 18px;
+      background:
+        linear-gradient(90deg, rgba(12,7,3,.96), rgba(35,20,9,.94) 58%, rgba(12,7,3,.97));
+      box-shadow: inset 0 0 0 1px rgba(255,210,95,.06);
+    }
+    .coco-entry__portrait {
+      width: 132px; height: 98px; border-radius: 13px; overflow: hidden;
+      border: 1px solid rgba(190,132,25,.72); background:#0c0703;
+    }
+    .coco-entry__portrait img { width:100%; height:100%; object-fit:cover; object-position:50% 35%; display:block; }
+    .coco-entry__kicker { display:block; margin-bottom:4px; color:#d8a83e; font-size:.76rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+    .coco-entry h2 { margin:0 0 5px; color:#f2cf78; font-size:clamp(1.55rem,2.6vw,2.2rem); line-height:1.05; }
+    .coco-entry p { margin:0; color:#e4d1a7; font-size:1rem; line-height:1.45; }
+    .coco-entry__action { white-space:nowrap; min-width:190px; text-align:center; }
+    @media (max-width: 760px) {
+      .coco-entry { grid-template-columns:82px minmax(0,1fr); gap:13px; padding:13px; min-height:0; border-radius:14px; }
+      .coco-entry__portrait { width:82px; height:82px; }
+      .coco-entry h2 { font-size:1.45rem; }
+      .coco-entry p { font-size:.9rem; }
+      .coco-entry__action { grid-column:1 / -1; width:100%; min-width:0; }
+    }
+
 </style>
   <link rel="stylesheet" href="./legal.css">
   <script src="./hall-of-fame-runtime.js"></script>
@@ -5786,6 +5820,19 @@
            target="_blank" rel="noopener noreferrer">Jetzt bei Kicktipp tippen</a>
       </footer>
     </section>
+
+
+<section class="section coco-entry" id="coco-orakel-entry" aria-labelledby="coco-entry-title">
+  <div class="coco-entry__portrait" aria-hidden="true">
+    <img src="./coco/coco-reference.png" alt="">
+  </div>
+  <div class="coco-entry__copy">
+    <span class="coco-entry__kicker">Coco · Das Orakel</span>
+    <h2 id="coco-entry-title">Was sagt der alte Vogel?</h2>
+    <p>Wähle eine anstehende Partie und lass Coco seinen Tipp abgeben.</p>
+  </div>
+  <a class="button button-primary coco-entry__action" href="./coco/">Coco befragen</a>
+</section>
 
 <section class="section panel highscore-teaser" id="highscore">
       <div class="highscore-desktop-scene" aria-hidden="true">
