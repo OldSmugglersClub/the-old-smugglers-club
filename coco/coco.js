@@ -17,7 +17,7 @@
     bindEls();
     bindEvents();
     try {
-      const [schedule, teamData] = await Promise.all([fetchJson(DATA_PATH), fetchJson(TEAMS_PATH)]);
+      const [schedule, teamData] = await Promise.all([fetchJson(DATA_PATH), fetchJson(TEAMS_PATH), window.OSCTeamBadge?.load('../assets/smugglers-design-system/schmugglersiegel/schmugglersiegel-register.json')]);
       const season = (schedule.saisons || []).find(s => s.id === schedule.aktiveSaison) || (schedule.saisons || [])[0];
       games = (season?.spiele || []).filter(hasRealTeams);
       teams = new Map((teamData.teams || []).map(team => [team.id, team]));
@@ -170,10 +170,6 @@
     return t?.kurzname || t?.name || id || 'Unbekannt';
   }
 
-  function teamLogo(id) {
-    const logo = teams.get(id)?.logo;
-    return logo ? `../${logo.replace(/^\.\//,'')}` : '';
-  }
 
   function formatKickoff(game) {
     return new Intl.DateTimeFormat('de-DE', { timeZone: BERLIN_TZ, day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit' }).format(gameTime(game));
@@ -202,16 +198,17 @@
     }
   }
 
-  function setLogo(img, id) {
-    const src = teamLogo(id);
-    img.src = src;
-    img.alt = teamName(id);
-    img.hidden = !src;
+  function setLogo(element, id) {
+    if (!element) return;
+    element.hidden = false;
+    element.setAttribute('aria-hidden', 'false');
+    window.OSCTeamBadge?.render(element, id, teamName(id));
   }
 
   function clearSelection() {
     selectedGame = null;
     els.homeName.textContent = 'Heimteam'; els.awayName.textContent = 'Auswärtsteam';
+    els.homeLogo.replaceChildren(); els.awayLogo.replaceChildren();
     els.homeLogo.hidden = true; els.awayLogo.hidden = true;
     els.matchMeta.textContent = 'Noch keine Partie ausgewählt';
     els.query.disabled = true;
