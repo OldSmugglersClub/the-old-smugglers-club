@@ -335,3 +335,117 @@ body{overflow-x:hidden}
     padding-right:4px;
   }
 }
+
+
+/* Website 4.9.2-HF10-TEST3 – Startseiten-Teaser: feste Vertikalstruktur der Kennzahlen */
+.logbook-teaser>.lead{
+  margin-top:-2px;
+  color:#bda783;
+  font-size:.95rem;
+}
+.logbook-teaser .logbook-30s-head{
+  align-items:center;
+  min-height:24px;
+  padding-bottom:8px;
+}
+.logbook-teaser .logbook-30s-stats{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  margin-top:10px;
+}
+.logbook-teaser .logbook-30s-stat{
+  min-width:0;
+  padding:12px 10px 11px;
+  border:1px solid rgba(198,142,47,.30);
+  border-radius:9px;
+  background:linear-gradient(180deg,rgba(15,9,5,.62),rgba(8,5,3,.48));
+  text-align:center;
+  display:grid;
+  grid-template-rows:auto auto auto;
+  row-gap:6px;
+  align-content:center;
+}
+.logbook-teaser .logbook-30s-stat>span{
+  display:block;
+  color:#d7a64d;
+  font-size:.69rem;
+  font-weight:800;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.logbook-teaser .logbook-30s-stat>strong{
+  display:block;
+  margin:0;
+  color:#f1cf86;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(2rem,4vw,2.7rem);
+  line-height:1;
+  text-shadow:0 1px 10px rgba(205,148,50,.13);
+}
+.logbook-teaser .logbook-30s-stat>small{
+  display:block;
+  color:#bca989;
+  font-size:.78rem;
+  line-height:1.25;
+}
+.logbook-teaser .logbook-30s-story{
+  margin-top:11px;
+  padding:12px 14px 13px;
+  border-left:3px solid rgba(215,166,77,.72);
+  border-radius:7px;
+  background:rgba(10,6,3,.48);
+}
+.logbook-teaser .logbook-30s-story>span{
+  display:block;
+  color:#d7a64d;
+  font-size:.67rem;
+  font-weight:900;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+}
+.logbook-teaser .logbook-30s-story>strong{
+  display:block;
+  margin:.32rem 0 .26rem;
+  color:#f0d29a;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1.06rem;
+  line-height:1.3;
+}
+.logbook-teaser .logbook-30s-story p{
+  margin:0;
+  color:#cdb995;
+  font-size:.86rem;
+  line-height:1.4;
+}
+@media(max-width:760px){
+  .logbook-teaser .logbook-30s-stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .logbook-teaser .logbook-30s-stat{padding:10px 5px 9px;grid-template-rows:2.35em auto auto;row-gap:5px}
+  .logbook-teaser .logbook-30s-stat>span{display:flex;align-items:center;justify-content:center;font-size:.57rem;letter-spacing:.045em;line-height:1.18}
+  .logbook-teaser .logbook-30s-stat>strong{font-size:clamp(1.65rem,9vw,2.15rem);margin:0}
+  .logbook-teaser .logbook-30s-stat>small{font-size:.67rem}
+  .logbook-teaser .logbook-30s-story{padding:11px 12px 12px}
+  .logbook-teaser .logbook-30s-story>strong{font-size:1rem}
+  .logbook-teaser .logbook-30s-story p{font-size:.82rem}
+}
+
+
+/* Website 4.9.2-HF10-TEST4 – gezielter Positionsfix: mittlere Kennzahl (Gegen den Strom) */
+.logbook-teaser .logbook-30s-stat:nth-child(2)>strong{
+  position:relative;
+  top:-6px;
+}
+@media(max-width:760px){
+  .logbook-teaser .logbook-30s-stat:nth-child(2)>strong{top:-8px}
+}
+
+/* Website 4.9.2-HF10 – „Wer hat’s gerochen?“ kompakt, desktop- und mobilefest. */
+.lb-highlight--smelled .lb-name--more{
+  font-weight:800;
+  white-space:nowrap;
+}
+@media(max-width:760px){
+  .lb-highlight--smelled .lb-names{gap:7px}
+  .lb-highlight--smelled .lb-name{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+  .lb-highlight--smelled .lb-name--more{white-space:nowrap}
+}

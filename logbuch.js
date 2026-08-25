@@ -10,52 +10,54 @@ let data=null;
 
 function shown(entry){return (entry?.highlights||[]).filter(h=>h?.anzeigen===true)}
 function highlight(entry,type){return shown(entry).find(h=>h.typ===type)}
-
-function summaryHighlights(entry,max=3){
- return shown(entry)
-  .filter(h=>Number.isFinite(Number(h?.prioritaet)))
-  .sort((a,b)=>Number(b.prioritaet)-Number(a.prioritaet))
-  .slice(0,max);
-}
 function firstTipperName(rows){
  const first=arr(rows).map(x=>x?.teilnehmer).find(Boolean);
  return first?String(first):"";
 }
-function summaryText(h){
- const d=h?.daten||{};
- if(h.typ==="kapitaene"){
-  const count=Number(d.anzahl||0),name=firstTipperName(d.tipper);
-  return count===1
-   ?`${name||"1 Tipper"} holt mit ${Number(d.punkte||0)} Punkten die beste Spieltagsleistung.`
-   :`${count} Tipper teilen sich die beste Beute mit ${Number(d.punkte||0)} Punkten.`;
+
+function startStat(entry,type){
+ const h=highlight(entry,type),d=h?.daten||{};
+ if(!h)return null;
+ if(type==="kapitaene"){
+  const value=Number(d.anzahl||arr(d.tipper).length||0);
+  return {label:"Kapitäne",value,copy:value===1?"holt die Beute":"teilen die Beute"};
  }
- if(h.typ==="gegen-den-strom") return `Die größte Tippgruppe lag mit ${outcomeLabel(d.meistGetippt?.ausgang)} daneben. Richtig war ${outcomeLabel(d.richtigerAusgang)}; ${Number(d.exakt||0)} trafen ${d.ergebnis||"das Ergebnis"} exakt.`;
- if(h.typ==="wer-hats-gerochen"){
-  const f=arr(d.faelle)[0],r=f?.richtigeTendenz||{},names=arr(r.tipper).map(x=>x?.teilnehmer).filter(Boolean);
-  if(!f)return "";
-  const who=names.length===1?names[0]:`${names.length} Tipper`;
-  return `${who} roch ${outcomeLabel(f.richtigerAusgang)} bei ${f.heimTeam} – ${f.auswaertsTeam}: nur ${Number(r.anzahl||0)} von ${Number(f.abgegeben||0)} lagen mit der Tendenz richtig.`;
+ if(type==="gegen-den-strom"){
+  const value=Number(d.meistGetippt?.anzahl||0);
+  return {label:"Gegen den Strom",value,copy:value===1?"lag daneben":"lagen daneben"};
  }
- if(h.typ==="volltreffer"){
-  const count=Number(d.anzahl||0),name=firstTipperName(d.tipper);
-  return count===1
-   ?`${name||"1 Tipper"} erreicht mit ${Number(d.maxExakt||0)} exakten Treffern die höchste Präzision.`
-   :`${count} Tipper erreichten die höchste Präzision mit ${Number(d.maxExakt||0)} exakten Treffern.`;
+ if(type==="volltreffer"){
+  const value=Number(d.anzahl||arr(d.tipper).length||0);
+  return {label:"Volltreffer",value,copy:value===1?"traf exakt":"trafen exakt"};
  }
- if(h.typ==="crewduell") return d.sieger?`${d.sieger} liegt im Crewduell nach Durchschnittspunkten vorn.`:"Im Crewduell herrscht Gleichstand.";
- if(h.typ==="kursbewegung") return `Größter Sprung: +${Number(d.maxGewinn||0)} Plätze; größter Verlust: ${Number(d.maxVerlust||0)} Plätze.`;
- if(h.typ==="zahlen-aus-der-kombuese") return `${Number(d.abgegeben||0)} Abgaben, ${Number(d.exakt||0)} exakte Treffer und ${Number(d.differenz||0)} Differenztreffer.`;
- return "";
+ return null;
 }
-function summaryTitle(type){
- return ({
-  "kapitaene":"Kapitäne",
-  "gegen-den-strom":"Gegen den Strom",
-  "volltreffer":"Volltreffer",
-  "crewduell":"Crewduell",
-  "kursbewegung":"Kursbewegung",
-  "zahlen-aus-der-kombuese":"Zahlen aus der Kombüse"
- })[type]||"Logbuch";
+function storyFromEntry(entry){
+ const against=highlight(entry,"gegen-den-strom");
+ if(against){
+  const d=against.daten||{},count=Number(d.meistGetippt?.anzahl||0),exact=Number(d.exakt||0);
+  return {
+   title:`${count} Smuggler segelten in die falsche Richtung.`,
+   text:`Die größte Tippgruppe setzte auf ${outcomeLabel(d.meistGetippt?.ausgang)}. Richtig war ${outcomeLabel(d.richtigerAusgang)}; ${exact} trafen ${d.ergebnis||"das Ergebnis"} exakt.`
+  };
+ }
+ const smelled=highlight(entry,"wer-hats-gerochen");
+ if(smelled){
+  const f=arr(smelled.daten?.faelle)[0],r=f?.richtigeTendenz||{};
+  if(f)return {
+   title:`Nur ${Number(r.anzahl||0)} Smuggler rochen den richtigen Kurs.`,
+   text:`Bei ${f.heimTeam} – ${f.auswaertsTeam} lag nur eine kleine Gruppe mit ${outcomeLabel(f.richtigerAusgang)} richtig.`
+  };
+ }
+ const captains=highlight(entry,"kapitaene");
+ if(captains){
+  const d=captains.daten||{},count=Number(d.anzahl||arr(d.tipper).length||0);
+  return {
+   title:count===1?"Ein Kapitän holte die beste Beute.":`${count} Kapitäne teilten die beste Beute.`,
+   text:`Die stärkste Spieltagsleistung lag bei ${Number(d.punkte||0)} Punkten.`
+  };
+ }
+ return null;
 }
 function renderThirtySeconds(entry,pending){
  const host=$("#logbook-30s"); if(!host) return;
@@ -67,12 +69,13 @@ function renderThirtySeconds(entry,pending){
   host.innerHTML='<div class="logbook-30s-empty">Noch kein abgeschlossener Spieltag für die Kurzfassung vorhanden.</div>';
   return;
  }
- const picks=summaryHighlights(entry,3).filter(h=>summaryText(h));
- if(!picks.length){
+ const stats=[startStat(entry,"kapitaene"),startStat(entry,"gegen-den-strom"),startStat(entry,"volltreffer")].filter(Boolean);
+ const story=storyFromEntry(entry);
+ if(!stats.length&&!story){
   host.innerHTML='<div class="logbook-30s-empty">Für diesen Spieltag liegen noch keine freigegebenen Kurzmeldungen vor.</div>';
   return;
  }
- host.innerHTML=`<div class="logbook-30s-head"><span class="logbook-kicker">${formatThirtySecondsKicker(entry.bezeichnung||entry.runde||"Letzter Spieltag")}</span><strong>Die drei wichtigsten Logbuch-Signale</strong></div><div class="logbook-30s-list">${picks.map(h=>`<article class="logbook-30s-item"><span>${esc(summaryTitle(h.typ))}</span><p>${esc(summaryText(h))}</p></article>`).join("")}</div>`;
+ host.innerHTML=`<div class="logbook-30s-head"><span class="logbook-kicker">${formatThirtySecondsKicker(entry.bezeichnung||entry.runde||"Letzter Spieltag")}</span></div>${stats.length?`<div class="logbook-30s-stats">${stats.map(stat=>`<article class="logbook-30s-stat"><span>${esc(stat.label)}</span><strong>${Number(stat.value).toLocaleString("de-DE")}</strong><small>${esc(stat.copy)}</small></article>`).join("")}</div>`:""}${story?`<article class="logbook-30s-story"><span>Die Geschichte des Spieltags</span><strong>${esc(story.title)}</strong><p>${esc(story.text)}</p></article>`:""}`;
 }
 
 function shortNames(rows,max=8){
@@ -94,7 +97,11 @@ function renderHighlight(h){
  if(h.typ==="gegen-den-strom") return `<article class="lb-highlight lb-highlight--hero"><h3>Gegen den Strom</h3><p>Die größte Tippgruppe setzte auf <strong>${esc(outcomeLabel(d.meistGetippt?.ausgang))}</strong> (${Number(d.meistGetippt?.anzahl||0)} Tipps) und lag falsch. Richtig war <strong>${esc(outcomeLabel(d.richtigerAusgang))}</strong>; ${Number(d.exakt||0)} Tipper trafen ${esc(d.ergebnis||"")} exakt.</p><div class="lb-scoreline"><div><strong>${Number(d.tippverteilung?.["1"]||0)}</strong><span>Heimsieg</span></div><div><strong>${Number(d.tippverteilung?.X||0)}</strong><span>Remis</span></div><div><strong>${Number(d.tippverteilung?.["2"]||0)}</strong><span>Auswärtssieg</span></div></div></article>`;
  if(h.typ==="wer-hats-gerochen"){
    const cases=arr(d.faelle);
-   return `<article class="lb-highlight lb-highlight--wide lb-highlight--smelled"><h3>Wer hat’s gerochen?</h3>${cases.map(f=>{const r=f.richtigeTendenz||{},tipper=arr(r.tipper);return `<div class="lb-smelled-case"><p>Nur <strong>${Number(r.anzahl||0)} von ${Number(f.abgegeben||0)} Tippern</strong> (${Number(r.anteil||0).toLocaleString("de-DE",{maximumFractionDigits:1})} %) setzten bei <strong>${esc(f.heimTeam)} – ${esc(f.auswaertsTeam)}</strong> auf ${esc(outcomeLabel(f.richtigerAusgang))} und lagen richtig. Ergebnis: <strong>${esc(f.ergebnis||"")}</strong>.</p><div class="lb-names">${tipper.map(x=>`<span class="lb-name">${esc(x.teilnehmer)} · Tipp ${esc(x.tipp)}${x.exakt?" · exakt":""}</span>`).join("")}</div></div>`}).join("")}</article>`;
+   return `<article class="lb-highlight lb-highlight--wide lb-highlight--smelled"><h3>Wer hat’s gerochen?</h3>${cases.map(f=>{
+     const r=f.richtigeTendenz||{},tipper=arr(r.tipper),shownTipper=tipper.slice(0,5),rest=Math.max(0,tipper.length-shownTipper.length);
+     const more=rest?`<span class="lb-name lb-name--more">+${rest} ${rest===1?"weiterer Tipper":"weitere Tipper"}</span>`:"";
+     return `<div class="lb-smelled-case"><p>Nur <strong>${Number(r.anzahl||0)} von ${Number(f.abgegeben||0)} Tippern</strong> (${Number(r.anteil||0).toLocaleString("de-DE",{maximumFractionDigits:1})} %) setzten bei <strong>${esc(f.heimTeam)} – ${esc(f.auswaertsTeam)}</strong> auf ${esc(outcomeLabel(f.richtigerAusgang))} und lagen richtig. Ergebnis: <strong>${esc(f.ergebnis||"")}</strong>.</p><div class="lb-names">${shownTipper.map(x=>`<span class="lb-name">${esc(x.teilnehmer)} · Tipp ${esc(x.tipp)}${x.exakt?" · exakt":""}</span>`).join("")}${more}</div></div>`;
+   }).join("")}</article>`;
  }
  if(h.typ==="volltreffer") return `<article class="lb-highlight lb-highlight--volltreffer"><h3>Volltreffer</h3><p>Die stärksten Präzisionstreffer: <strong>${Number(d.maxExakt||0)} exakt</strong> im Spieltag.</p><div class="lb-names">${shortNames(d.tipper)}</div></article>`;
  if(h.typ==="crewduell"){
@@ -114,7 +121,8 @@ function renderEntry(entry,pending){
   return;
  }
  if(!entry){host.innerHTML='<div class="lb-status">Noch kein abgeschlossenes Logbuch vorhanden.</div>';return}
- host.innerHTML=`<section class="lb-entry"><header class="lb-entry-head"><span>${esc(entry.wettbewerb||"Spieltag")}</span><h2>${esc(keepSpieltag(entry.bezeichnung||entry.runde||"Logbuch"))}</h2></header><div class="lb-highlight-grid">${shown(entry).map(renderHighlight).join("")}</div></section>`;
+ const detailHighlights=shown(entry);
+ host.innerHTML=`<section class="lb-entry"><header class="lb-entry-head"><span>${esc(entry.wettbewerb||"Spieltag")}</span><h2>${esc(keepSpieltag(entry.bezeichnung||entry.runde||"Logbuch"))}</h2></header><div class="lb-highlight-grid">${detailHighlights.map(renderHighlight).join("")}</div></section>`;
  document.title=`${entry.bezeichnung||"Logbuch"} | The Old Smugglers Club`;
 }
 function archive(){
