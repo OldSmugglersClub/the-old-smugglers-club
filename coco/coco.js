@@ -22,8 +22,10 @@
       games = (season?.spiele || []).filter(hasRealTeams);
       teams = new Map((teamData.teams || []).map(team => [team.id, team]));
       populateCompetitions();
+      configureReturnLink();
+      applyDeepLinkedGame();
       renderStats();
-      setStatus('Wähle einen Wettbewerb und eine Partie.');
+      if (!selectedGame) setStatus('Wähle einen Wettbewerb und eine Partie.');
     } catch (error) {
       console.error(error);
       setStatus('Coco findet den Spielplan nicht. Testmodul über einen lokalen Webserver öffnen.', true);
@@ -45,7 +47,7 @@
   }
 
   async function fetchJson(path) {
-    const response = await fetch(`${path}?coco-hf11=${Date.now()}`, { cache: 'no-store' });
+    const response = await fetch(`${path}?coco-hf12=${Date.now()}`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
     return response.json();
   }
@@ -93,6 +95,43 @@
       const kickoff = gameTime(game);
       return kickoff > now && kickoff <= limit;
     });
+  }
+
+  function configureReturnLink() {
+    const link = document.querySelector('.coco-back');
+    if (!link) return;
+    const params = new URLSearchParams(window.location.search);
+    const target = params.get('return');
+    const isSafeInternalTarget = typeof target === 'string'
+      && target.startsWith('/')
+      && !target.startsWith('//')
+      && !target.includes('://');
+
+    if (isSafeInternalTarget) {
+      link.href = target;
+      link.textContent = 'Zurück zum Spiel';
+      link.setAttribute('aria-label', 'Zurück zur zuvor ausgewählten Partie');
+    } else {
+      link.href = '../';
+      link.textContent = 'Zurück an Deck';
+      link.setAttribute('aria-label', 'Zurück zur Startseite');
+    }
+  }
+
+  function applyDeepLinkedGame() {
+    const gameId = new URLSearchParams(window.location.search).get('game');
+    if (!gameId) return;
+    const game = oracleGames().find(item => item.id === gameId);
+    if (!game) {
+      setStatus('Diese Partie kann Coco derzeit nicht befragen.', true);
+      return;
+    }
+    els.competition.value = game.wettbewerb;
+    populateRounds();
+    els.round.value = game.runde || 'Ohne Runde';
+    populateMatches();
+    els.match.value = game.id;
+    selectMatch();
   }
 
   function populateCompetitions() {

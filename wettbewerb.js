@@ -1246,6 +1246,7 @@
       titel: competitionDefinition(slug)?.scheduleTitle || "Spiele",
       anzeigen: true,
       spiele: games.map(match => ({
+        id: match.id || "",
         datum: match.datumAnzeige || formatDate(match.datum || match.datumVon),
         datumSortierung: match.datum || match.datumVon || "9999-12-31",
         anstoss: match.anstoss || "Uhrzeit offen",
@@ -1579,6 +1580,36 @@ function renderCards(cards) {
     return "open";
   }
 
+  const COCO_WINDOW_DAYS = 7;
+
+  function cocoEligible(match) {
+    if (!match || !match.id || match.abgeschlossen || match.terminBestaetigt !== true) return false;
+    const date = match.datumIso || match.datumSortierung;
+    const time = match.anstoss;
+    if (!date || !/^\d{4}-\d{2}-\d{2}$/.test(date) || !/^\d{2}:\d{2}$/.test(time || "")) return false;
+    const kickoff = new Date(`${date}T${time}:00`);
+    if (Number.isNaN(kickoff.getTime())) return false;
+    const now = new Date();
+    const limit = new Date(now.getTime() + COCO_WINDOW_DAYS * 24 * 60 * 60 * 1000);
+    return kickoff > now && kickoff <= limit;
+  }
+
+  function cocoMatchAnchor(match) {
+    return `spiel-${String(match?.id || "").replace(/[^a-zA-Z0-9_-]/g, "-")}`;
+  }
+
+  function createCocoMatchLink(match) {
+    if (!cocoEligible(match)) return null;
+    const link = document.createElement("a");
+    const anchor = cocoMatchAnchor(match);
+    const returnTarget = `${window.location.pathname}${window.location.search}#${anchor}`;
+    link.className = "coco-match-link";
+    link.href = `./coco/?game=${encodeURIComponent(match.id)}&return=${encodeURIComponent(returnTarget)}`;
+    link.textContent = "Coco fragen";
+    link.setAttribute("aria-label", `Coco zu ${match.heim} gegen ${match.auswaerts} fragen`);
+    return link;
+  }
+
 
   function createTipDistribution(match) {
     const distribution = match && match.tippverteilung;
@@ -1663,6 +1694,7 @@ function renderCards(cards) {
       const row = document.createElement("div");
       row.className = `match-row match-state-${state}`;
       row.dataset.matchState = state;
+      if (match.id) row.id = cocoMatchAnchor(match);
 
       const meta = document.createElement("span");
       meta.className = "match-meta";
@@ -1685,6 +1717,8 @@ function renderCards(cards) {
       result.className = "result";
       result.textContent = match.ergebnis || "";
       resultWrap.append(stateBadge, result);
+      const cocoLink = createCocoMatchLink(match);
+      if (cocoLink) resultWrap.appendChild(cocoLink);
 
       row.append(meta, pairing, resultWrap);
       const tipDistribution = createTipDistribution(match);
