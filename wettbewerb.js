@@ -48,7 +48,7 @@
     const hasHomeScore = Number.isFinite(match.heimtore);
     const hasAwayScore = Number.isFinite(match.auswaertstore);
     if (hasHomeScore && hasAwayScore) return `${match.heimtore}:${match.auswaertstore}`;
-    return match.status || "";
+    return "";
   }
 
 
@@ -1683,7 +1683,7 @@ function renderCards(cards) {
       stateBadge.textContent = state === "completed" ? "Beendet" : state === "scheduled" ? "Terminiert" : "Termin offen";
       const result = document.createElement("span");
       result.className = "result";
-      result.textContent = match.ergebnis || match.status || "";
+      result.textContent = match.ergebnis || "";
       resultWrap.append(stateBadge, result);
 
       row.append(meta, pairing, resultWrap);
