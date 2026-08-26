@@ -439,7 +439,7 @@ body{overflow-x:hidden}
   .logbook-teaser .logbook-30s-stat:nth-child(2)>strong{top:-8px}
 }
 
-/* Website 4.9.2-HF10 – „Wer hat’s gerochen?“ kompakt, desktop- und mobilefest. */
+/* Website 4.9.2-HF10-TEST5 – „Wer hat’s gerochen?“ kompakt, desktop- und mobilefest. */
 .lb-highlight--smelled .lb-name--more{
   font-weight:800;
   white-space:nowrap;
@@ -448,4 +448,10 @@ body{overflow-x:hidden}
   .lb-highlight--smelled .lb-names{gap:7px}
   .lb-highlight--smelled .lb-name{max-width:100%;white-space:normal;overflow-wrap:anywhere}
   .lb-highlight--smelled .lb-name--more{white-space:nowrap}
+}
+
+/* COCO-PHASE4-TEST1 – bestehender Highlight-Typ im Logbuch */
+.lb-highlight--coco{
+ background:linear-gradient(135deg,rgba(54,31,12,.74),rgba(20,11,6,.82));
+ border-color:rgba(201,149,58,.42);
 }

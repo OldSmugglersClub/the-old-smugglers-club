@@ -7,6 +7,7 @@ const norm=v=>String(v??"").trim().toLowerCase();
 const keepSpieltag=v=>String(v??"").replace(/(\d+\.)\s+(Spieltag)/gi,"$1\u00a0$2");
 const formatThirtySecondsKicker=v=>esc(keepSpieltag(v)).replace(/(\d+\.)/g,'<span class="logbook-30s-round">$1</span>');
 let data=null;
+let gameById=new Map();
 
 function shown(entry){return (entry?.highlights||[]).filter(h=>h?.anzeigen===true)}
 function highlight(entry,type){return shown(entry).find(h=>h.typ===type)}
@@ -113,6 +114,38 @@ function renderHighlight(h){
  return "";
 }
 
+
+function cocoLogbookCard(entry){
+ const ids=arr(entry?.spielIds).filter(Boolean);
+ if(!ids.length||!window.CocoOracle)return "";
+ const games=ids.map(id=>gameById.get(id)).filter(Boolean).filter(g=>Number.isFinite(g?.heimtore)&&Number.isFinite(g?.auswaertstore));
+ if(!games.length)return "";
+ let tendency=0,exact=0;
+ for(const g of games){
+   const ev=window.CocoOracle.evaluate(window.CocoOracle.predict(g.id),g.heimtore,g.auswaertstore);
+   if(ev.tendencyHit)tendency+=1;
+   if(ev.exact)exact+=1;
+ }
+ const quote=(tendency/games.length*100).toFixed(1).replace(".",",");
+ return `<article class="lb-highlight lb-highlight--coco"><h3>Cocos Seemannsgarn</h3><p>So schlug sich das Orakel in diesem abgeschlossenen Wertungsblock.</p><div class="lb-scoreline"><div><strong>${tendency}/${games.length}</strong><span>Tendenztreffer</span></div><div><strong>${exact}</strong><span>Volltreffer</span></div><div><strong>${quote} %</strong><span>Trefferquote</span></div></div></article>`;
+}
+function renderHighlightsWithCoco(entry){
+ const rows=[];
+ let inserted=false;
+ for(const h of shown(entry)){
+   rows.push(renderHighlight(h));
+   if(h?.typ==="volltreffer"){
+     const coco=cocoLogbookCard(entry);
+     if(coco){rows.push(coco);inserted=true;}
+   }
+ }
+ if(!inserted){
+   const coco=cocoLogbookCard(entry);
+   if(coco)rows.push(coco);
+ }
+ return rows.join("");
+}
+
 function renderEntry(entry,pending){
  const host=$("#lb-current"); if(!host) return;
  if(pending?.active){
@@ -121,8 +154,7 @@ function renderEntry(entry,pending){
   return;
  }
  if(!entry){host.innerHTML='<div class="lb-status">Noch kein abgeschlossenes Logbuch vorhanden.</div>';return}
- const detailHighlights=shown(entry);
- host.innerHTML=`<section class="lb-entry"><header class="lb-entry-head"><span>${esc(entry.wettbewerb||"Spieltag")}</span><h2>${esc(keepSpieltag(entry.bezeichnung||entry.runde||"Logbuch"))}</h2></header><div class="lb-highlight-grid">${detailHighlights.map(renderHighlight).join("")}</div></section>`;
+ host.innerHTML=`<section class="lb-entry"><header class="lb-entry-head"><span>${esc(entry.wettbewerb||"Spieltag")}</span><h2>${esc(keepSpieltag(entry.bezeichnung||entry.runde||"Logbuch"))}</h2></header><div class="lb-highlight-grid">${renderHighlightsWithCoco(entry)}</div></section>`;
  document.title=`${entry.bezeichnung||"Logbuch"} | The Old Smugglers Club`;
 }
 function archive(){
@@ -221,7 +253,7 @@ async function init(){
      fetchJson("./spieltag-logbuch.json"),fetchJson("./website-view.json"),fetchJson("./tippspieltage.json"),fetchJson("./spieldaten.json")
    ]);
    if(!logDoc)throw Error("spieltag-logbuch.json nicht erreichbar");
-   data=logDoc; const latest=(data.logbuecher||[]).at(-1)||null;
+   data=logDoc; gameById=new Map(flattenGames(games).map(g=>[g.id,g])); const latest=(data.logbuecher||[]).at(-1)||null;
    const pending=buildPending(view,matchdays,games,arr(data.logbuecher));
    renderThirtySeconds(latest,pending); renderEntry(latest,pending); archive();
    const st=$("#lb-status"); if(st) st.remove();
