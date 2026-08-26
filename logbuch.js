@@ -148,7 +148,7 @@ function renderHighlight(h){
    return `<article class="lb-highlight lb-highlight--crew">
      <div class="lb-crew-head">
        <h3>Crewduell</h3>
-       <p><strong>${esc(d.sieger||"Gleichstand")}</strong> führt nach Durchschnittspunkten.</p>
+       <p>${d.sieger?`<strong>${esc(d.sieger)}</strong> gewinnt das Crewduell.`:"Das Crewduell endet unentschieden."}</p>
      </div>
      <div class="lb-crew-visual" aria-hidden="true"></div>
      ${a&&b?`<div class="lb-crew-scorebar">
