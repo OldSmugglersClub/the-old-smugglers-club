@@ -46,3 +46,8 @@
   line-height:1.5;
   font-size:.88rem;
 }
+
+
+/* HF9: zentrale Schmugglersiegel-Darstellung aus HF7 wiederhergestellt */
+.coco-team-badge{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;flex:0 0 48px}
+.coco-team-badge svg{display:block;width:100%;height:100%}

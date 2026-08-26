@@ -17,7 +17,7 @@
     bindEls();
     bindEvents();
     try {
-      const [schedule, teamData] = await Promise.all([fetchJson(DATA_PATH), fetchJson(TEAMS_PATH)]);
+      const [schedule, teamData] = await Promise.all([fetchJson(DATA_PATH), fetchJson(TEAMS_PATH), window.OSCTeamBadge?.load('../assets/smugglers-design-system/schmugglersiegel/schmugglersiegel-register.json')]);
       const season = (schedule.saisons || []).find(s => s.id === schedule.aktiveSaison) || (schedule.saisons || [])[0];
       games = (season?.spiele || []).filter(hasRealTeams);
       teams = new Map((teamData.teams || []).map(team => [team.id, team]));
@@ -209,11 +209,11 @@
     }
   }
 
-  function setLogo(img, id) {
-    const src = teamLogo(id);
-    img.src = src;
-    img.alt = teamName(id);
-    img.hidden = !src;
+  function setLogo(element, id) {
+    if (!element) return;
+    element.hidden = false;
+    element.setAttribute('aria-hidden', 'false');
+    window.OSCTeamBadge?.render(element, id, teamName(id));
   }
 
   function clearSelection() {
