@@ -163,7 +163,7 @@ function renderHighlight(h){
        </div>
      </div>
      <div class="lb-crew-scorelabel">Durchschnittspunkte</div>`:""}
-     <small class="lb-crew-note">Crewduell = Vergleich der Durchschnittspunkte aller aktiven Teammitglieder.</small>
+     
    </article>`;
  }
  if(h.typ==="kursbewegung") return `<article class="lb-highlight"><h3>Kursbewegung</h3><p>Größter Sprung: <strong>+${Number(d.maxGewinn||0)} Plätze</strong>. Größter Verlust: <strong>${Number(d.maxVerlust||0)} Plätze</strong>.</p><div class="lb-names">${shortNames(d.gewinner,5)}</div></article>`;
@@ -257,7 +257,7 @@ function formCrewCard(entry){
    <h3>Form der Crew</h3>
    <p>Wer bekam beim letzten Wertungsblock den meisten Wind in die Segel?</p>
    <div class="lb-form-list">${body}</div>
-   <small class="lb-form-note">Kurs = Veränderung des Kicktipp-S-Werts zum vorherigen abgeschlossenen Wertungsblock</small>
+   
  </article>`;
 }
 
