@@ -8,6 +8,7 @@ const keepSpieltag=v=>String(v??"").replace(/(\d+\.)\s+(Spieltag)/gi,"$1\u00a0$2
 const formatThirtySecondsKicker=v=>esc(keepSpieltag(v)).replace(/(\d+\.)/g,'<span class="logbook-30s-round">$1</span>');
 let data=null;
 let gameById=new Map();
+let spieltagpunkteDoc=null;
 
 function shown(entry){return (entry?.highlights||[]).filter(h=>h?.anzeigen===true)}
 function highlight(entry,type){return shown(entry).find(h=>h.typ===type)}
@@ -144,7 +145,26 @@ function renderHighlight(h){
  if(h.typ==="volltreffer") return `<article class="lb-highlight lb-highlight--volltreffer"><h3>Volltreffer</h3><p>Die stärksten Präzisionstreffer: <strong>${Number(d.maxExakt||0)} exakt</strong> im Spieltag.</p><div class="lb-names">${shortNames(d.tipper)}</div></article>`;
  if(h.typ==="crewduell"){
    const teams=d.teams||[]; const a=teams[0],b=teams[1];
-   return `<article class="lb-highlight lb-highlight--crew"><h3>Crewduell</h3><p><strong>${esc(d.sieger||"Gleichstand")}</strong> führt nach Durchschnittspunkten.</p>${a&&b?`<div class="lb-crewline"><div><span>${esc(a.team)}</span><strong>${Number(a.durchschnitt||0).toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:2})}</strong></div><div class="lb-crew-vs">gegen</div><div><span>${esc(b.team)}</span><strong>${Number(b.durchschnitt||0).toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:2})}</strong></div></div>`:""}</article>`;
+   return `<article class="lb-highlight lb-highlight--crew">
+     <div class="lb-crew-head">
+       <h3>Crewduell</h3>
+       <p><strong>${esc(d.sieger||"Gleichstand")}</strong> führt nach Durchschnittspunkten.</p>
+     </div>
+     <div class="lb-crew-visual" aria-hidden="true"></div>
+     ${a&&b?`<div class="lb-crew-scorebar">
+       <div class="lb-crew-side lb-crew-side--left">
+         <span>${esc(a.team)}</span>
+         <strong>${Number(a.durchschnitt||0).toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:2})}</strong>
+       </div>
+       <div class="lb-crew-vs">vs.</div>
+       <div class="lb-crew-side lb-crew-side--right">
+         <strong>${Number(b.durchschnitt||0).toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:2})}</strong>
+         <span>${esc(b.team)}</span>
+       </div>
+     </div>
+     <div class="lb-crew-scorelabel">Durchschnittspunkte</div>`:""}
+     <small class="lb-crew-note">Crewduell = Vergleich der Durchschnittspunkte aller aktiven Teammitglieder.</small>
+   </article>`;
  }
  if(h.typ==="kursbewegung") return `<article class="lb-highlight"><h3>Kursbewegung</h3><p>Größter Sprung: <strong>+${Number(d.maxGewinn||0)} Plätze</strong>. Größter Verlust: <strong>${Number(d.maxVerlust||0)} Plätze</strong>.</p><div class="lb-names">${shortNames(d.gewinner,5)}</div></article>`;
  if(h.typ==="zahlen-aus-der-kombuese") return `<article class="lb-highlight lb-highlight--wide lb-highlight--galley"><h3>Zahlen aus der Kombüse</h3><div class="lb-galley-grid"><div><strong>${Number(d.abgegeben||0)}</strong><span>Abgaben</span></div><div><strong>${Number(d.nichtAbgegeben||0)}</strong><span>Nichtabgaben</span></div><div><strong>${Number(d.exakt||0)}</strong><span>Exakt</span></div><div><strong>${Number(d.differenz||0)}</strong><span>Differenz</span></div><div><strong>${Number(d.tendenz||0)}</strong><span>Tendenz</span></div></div></article>`;
@@ -172,6 +192,12 @@ function renderHighlightsWithCoco(entry){
  for(const h of shown(entry)){
    const rendered=renderHighlight(h);
    if(rendered)rows.push(rendered);
+
+   if(h?.typ==="crewduell"){
+     const form=formCrewCard(entry);
+     if(form)rows.push(form);
+   }
+
    if(h?.typ==="volltreffer"){
      const coco=cocoLogbookCard(entry);
      if(coco){rows.push(coco);inserted=true;}
@@ -182,6 +208,57 @@ function renderHighlightsWithCoco(entry){
    if(coco)rows.push(coco);
  }
  return rows.join("");
+}
+
+
+function formCrewCard(entry){
+ const matchdays=arr(spieltagpunkteDoc?.spieltage).filter(md=>md?.abgeschlossen!==false);
+ const index=matchdays.findIndex(md=>md?.id===entry?.id);
+ if(index<=0)return "";
+
+ const current=matchdays[index];
+ const previous=matchdays[index-1];
+ const prevById=new Map(arr(previous?.rangliste).map(row=>[row?.teilnehmerId,row]));
+
+ const rows=[];
+ arr(current?.rangliste).forEach((row,currentOrder)=>{
+   const prev=prevById.get(row?.teilnehmerId);
+   if(!prev)return;
+   const before=Number(prev?.gesamtspieltagssiege);
+   const now=Number(row?.gesamtspieltagssiege);
+   if(!Number.isFinite(before)||!Number.isFinite(now))return;
+   rows.push({
+     order:currentOrder,
+     name:row?.teilnehmer||row?.teilnehmerId||"",
+     before,
+     now,
+     delta:Number((now-before).toFixed(4))
+   });
+ });
+
+ // Bei gleichem Delta bleibt die vorhandene Kicktipp-Reihenfolge maßgeblich.
+ rows.sort((a,b)=>b.delta-a.delta||a.order-b.order);
+ const top=rows.slice(0,5);
+ if(!top.length)return "";
+
+ const fmt=value=>Math.abs(value).toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:4});
+ const body=top.map((row,i)=>{
+   const cls=row.delta>0?"is-up":row.delta<0?"is-down":"is-flat";
+   const symbol=row.delta>0?"▲":row.delta<0?"▼":"—";
+   const value=row.delta===0?"":` ${row.delta>0?"+":"-"}${fmt(row.delta)}`;
+   return `<div class="lb-form-row">
+     <span class="lb-form-rank">${i+1}.</span>
+     <strong>${esc(row.name)}</strong>
+     <span class="lb-form-course ${cls}">${symbol}${value}</span>
+   </div>`;
+ }).join("");
+
+ return `<article class="lb-highlight lb-highlight--form">
+   <h3>Form der Crew</h3>
+   <p>Wer bekam beim letzten Wertungsblock den meisten Wind in die Segel?</p>
+   <div class="lb-form-list">${body}</div>
+   <small class="lb-form-note">Kurs = Veränderung des Kicktipp-S-Werts zum vorherigen abgeschlossenen Wertungsblock</small>
+ </article>`;
 }
 
 function renderEntry(entry,pending){
@@ -287,11 +364,11 @@ function buildPending(view,matchdayDoc,gameDoc,logs){
 
 async function init(){
  try{
-   const [logDoc,view,matchdays,games]=await Promise.all([
-     fetchJson("./spieltag-logbuch.json"),fetchJson("./website-view.json"),fetchJson("./tippspieltage.json"),fetchJson("./spieldaten.json")
+   const [logDoc,view,matchdays,games,spieltagpunkte]=await Promise.all([
+     fetchJson("./spieltag-logbuch.json"),fetchJson("./website-view.json"),fetchJson("./tippspieltage.json"),fetchJson("./spieldaten.json"),fetchJson("./spieltagpunkte.json")
    ]);
    if(!logDoc)throw Error("spieltag-logbuch.json nicht erreichbar");
-   data=logDoc; gameById=new Map(flattenGames(games).map(g=>[g.id,g])); const latest=(data.logbuecher||[]).at(-1)||null;
+   data=logDoc; spieltagpunkteDoc=spieltagpunkte; gameById=new Map(flattenGames(games).map(g=>[g.id,g])); const latest=(data.logbuecher||[]).at(-1)||null;
    const pending=buildPending(view,matchdays,games,arr(data.logbuecher));
    renderThirtySeconds(latest,pending); renderEntry(latest,pending); archive();
    const st=$("#lb-status"); if(st) st.remove();
