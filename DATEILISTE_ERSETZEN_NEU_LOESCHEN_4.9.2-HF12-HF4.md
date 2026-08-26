@@ -1,0 +1,10 @@
+# DATEILISTE
+## Ersetzen
+- stalk-o-meter.js
+- VERSION.txt
+## Neu
+- CHANGELOG_4.9.2-HF12-HF4.md
+- README_4.9.2-HF12-HF4.md
+- DATEILISTE_ERSETZEN_NEU_LOESCHEN_4.9.2-HF12-HF4.md
+## Löschen
+- nichts

@@ -21,7 +21,7 @@
     { label: 'Smuggleraufträge', path: '/dynamo-dresden.html' },
     { label: 'Piratenkodex', path: '/piratenkodex.html' },
     { label: 'Weihnachtsregatta', path: '/weihnachtsregatta.html' },
-    { label: 'Coco – Das Orakel', path: '/coco/' }
+    { label: 'Coco – Das Orakel', path: '/coco' }
   ];
 
   const list = document.getElementById('stalk-list');
