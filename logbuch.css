@@ -642,3 +642,192 @@ body{overflow-x:hidden}
   .lb-hit-badge{min-width:92px;font-size:.64rem;padding:5px 7px}
   .lb-smelled-more{font-size:.78rem}
 }
+
+
+/* FORM-DER-CREW-WEBSITE-ONLY-TEST1 */
+.lb-highlight--form{
+  background:linear-gradient(145deg,rgba(42,24,10,.90),rgba(18,10,6,.94));
+  border-color:rgba(190,137,48,.36);
+}
+.lb-highlight--form p{
+  margin-bottom:10px;
+}
+.lb-form-list{
+  border:1px solid rgba(190,137,48,.28);
+  border-radius:9px;
+  overflow:hidden;
+  background:rgba(11,6,4,.36);
+}
+.lb-form-row{
+  display:grid;
+  grid-template-columns:30px minmax(0,1fr) auto;
+  gap:8px;
+  align-items:center;
+  min-height:39px;
+  padding:7px 10px;
+  border-bottom:1px solid rgba(190,137,48,.16);
+}
+.lb-form-row:last-child{border-bottom:0}
+.lb-form-rank{
+  color:#b88b45;
+  font-weight:900;
+}
+.lb-form-row strong{
+  color:#edcf91;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+.lb-form-course{
+  min-width:82px;
+  text-align:right;
+  font-weight:900;
+  letter-spacing:.02em;
+}
+.lb-form-course.is-up{color:#d9c778}
+.lb-form-course.is-down{color:#ba8e76}
+.lb-form-course.is-flat{color:#95866e}
+.lb-form-note{
+  display:block;
+  margin-top:8px;
+  color:#8f8069;
+  font-size:.69rem;
+  line-height:1.35;
+}
+@media(max-width:760px){
+  .lb-form-row{grid-template-columns:26px minmax(0,1fr) auto;padding:7px 8px}
+  .lb-form-course{min-width:70px;font-size:.76rem}
+  .lb-form-note{font-size:.65rem}
+}
+
+
+
+
+
+
+
+
+/* CREWDUELL-COMPACT-TEST4
+   Bestehendes Motiv bereinigt; keine Bildgenerierung. */
+.lb-highlight--crew{
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 34%,rgba(107,68,27,.15),transparent 48%),
+    linear-gradient(145deg,rgba(42,24,10,.94),rgba(15,9,5,.98));
+}
+.lb-crew-head h3{margin-bottom:10px}
+.lb-crew-head p{margin-bottom:0}
+
+.lb-crew-visual{
+  min-height:160px;
+  margin:14px 0 7px;
+  border:1px solid rgba(190,137,48,.38);
+  border-radius:10px;
+  background:
+    linear-gradient(180deg,rgba(8,5,3,.02),rgba(8,5,3,.12)),
+    url("./assets/logbuch/crewduell-motiv.jpg") center center / cover no-repeat;
+  box-shadow:inset 0 0 30px rgba(0,0,0,.28);
+}
+
+.lb-crew-scorebar{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 48px minmax(0,1fr);
+  align-items:center;
+  min-height:64px;
+  border:1px solid rgba(190,137,48,.38);
+  border-radius:9px 9px 0 0;
+  background:rgba(12,7,4,.62);
+  overflow:hidden;
+}
+.lb-crew-side{
+  min-width:0;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:9px 13px;
+}
+.lb-crew-side--left{justify-content:flex-end}
+.lb-crew-side--right{justify-content:flex-start}
+.lb-crew-side span{
+  min-width:0;
+  color:#edcf91;
+  font-weight:900;
+  line-height:1.12;
+  overflow-wrap:normal;
+  word-break:normal;
+  hyphens:none;
+}
+.lb-crew-side strong{
+  flex:0 0 auto;
+  color:#f2c65f;
+  font-size:1.30rem;
+  white-space:nowrap;
+}
+.lb-crew-vs{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  align-self:stretch;
+  border-left:1px solid rgba(190,137,48,.18);
+  border-right:1px solid rgba(190,137,48,.18);
+  color:#c8a75d;
+  font-weight:900;
+  font-size:.82rem;
+  white-space:nowrap;
+}
+.lb-crew-scorelabel{
+  padding:5px 10px 7px;
+  border:1px solid rgba(190,137,48,.38);
+  border-top:0;
+  border-radius:0 0 9px 9px;
+  color:#8f7d63;
+  font-size:.62rem;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  background:rgba(12,7,4,.62);
+}
+.lb-crew-note{
+  display:block;
+  margin-top:9px;
+  color:#8e7f69;
+  font-size:.67rem;
+  line-height:1.35;
+}
+
+@media(max-width:760px){
+  .lb-crew-visual{
+    min-height:0;
+    height:112px;
+    margin-top:10px;
+    margin-bottom:7px;
+    background-size:cover;
+    background-position:center center;
+  }
+  .lb-crew-scorebar{
+    grid-template-columns:1fr;
+    min-height:0;
+  }
+  .lb-crew-side{
+    justify-content:space-between;
+    min-height:46px;
+    padding:8px 12px;
+  }
+  .lb-crew-side--right{flex-direction:row-reverse}
+  .lb-crew-side span{
+    font-size:.82rem;
+    max-width:72%;
+  }
+  .lb-crew-side strong{font-size:1.12rem}
+  .lb-crew-vs{
+    min-height:25px;
+    border-left:0;
+    border-right:0;
+    border-top:1px solid rgba(190,137,48,.18);
+    border-bottom:1px solid rgba(190,137,48,.18);
+  }
+  .lb-crew-scorelabel{font-size:.57rem}
+  .lb-crew-note{font-size:.63rem}
+}
