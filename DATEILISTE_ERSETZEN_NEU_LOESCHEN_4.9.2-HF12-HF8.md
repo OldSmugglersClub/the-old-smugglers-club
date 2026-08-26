@@ -1,0 +1,12 @@
+# DATEILISTE
+## Ersetzen
+- `coco/index.html`
+- `coco/coco.js`
+- `coco/coco.css`
+- `VERSION.txt`
+## Neu
+- `CHANGELOG_4.9.2-HF12-HF8.md`
+- `README_4.9.2-HF12-HF8.md`
+- `DATEILISTE_ERSETZEN_NEU_LOESCHEN_4.9.2-HF12-HF8.md`
+## Löschen
+- nichts

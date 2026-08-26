@@ -20,4 +20,29 @@
 .coco-back:hover,.coco-back:focus-visible{border-color:#d7a84d;background:linear-gradient(180deg,rgba(61,42,24,.98),rgba(29,20,12,.98));outline:none}
 @media(max-width:430px){.coco-header-actions{margin-bottom:8px}.coco-back{width:100%;min-height:42px}}
 
-.coco-team-badge{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;flex:0 0 48px}.coco-team-badge svg{display:block;width:100%;height:100%}
+/* COCO-PHASE5-TEST1 – Warum, Coco? innerhalb der bestehenden Tipp-Kachel */
+.coco-why-btn{
+  margin-top:12px;
+  min-height:36px;
+  padding:8px 12px;
+  border:1px solid rgba(201,149,58,.58);
+  border-radius:8px;
+  background:linear-gradient(180deg,rgba(63,39,18,.96),rgba(31,18,9,.96));
+  color:#efd18f;
+  font-weight:800;
+  cursor:pointer;
+}
+.coco-why-btn:hover,.coco-why-btn:focus-visible{
+  border-color:#d7a84d;
+  filter:brightness(1.08);
+  outline:none;
+}
+.coco-why{
+  margin-top:10px;
+  padding:10px 12px;
+  border-left:3px solid rgba(201,149,58,.62);
+  background:rgba(15,8,4,.42);
+  color:#cfbd9b;
+  line-height:1.5;
+  font-size:.88rem;
+}

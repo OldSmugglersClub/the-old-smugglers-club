@@ -17,7 +17,7 @@
     bindEls();
     bindEvents();
     try {
-      const [schedule, teamData] = await Promise.all([fetchJson(DATA_PATH), fetchJson(TEAMS_PATH), window.OSCTeamBadge?.load('../assets/smugglers-design-system/schmugglersiegel/schmugglersiegel-register.json')]);
+      const [schedule, teamData] = await Promise.all([fetchJson(DATA_PATH), fetchJson(TEAMS_PATH)]);
       const season = (schedule.saisons || []).find(s => s.id === schedule.aktiveSaison) || (schedule.saisons || [])[0];
       games = (season?.spiele || []).filter(hasRealTeams);
       teams = new Map((teamData.teams || []).map(team => [team.id, team]));
@@ -34,7 +34,7 @@
   }
 
   function bindEls() {
-    for (const id of ['competition','round','match','homeLogo','awayLogo','homeName','awayName','matchMeta','query','status','tipPanel','tipScore','tipLabel','cocoStage','hmmm','stats','resultState']) {
+    for (const id of ['competition','round','match','homeLogo','awayLogo','homeName','awayName','matchMeta','query','status','tipPanel','tipScore','tipLabel','cocoStage','hmmm','stats','resultState','whyCoco','whyText']) {
       els[id] = document.getElementById(id);
     }
   }
@@ -43,11 +43,17 @@
     els.competition.addEventListener('change', () => { populateRounds(); clearSelection(); });
     els.round.addEventListener('change', () => { populateMatches(); clearSelection(); });
     els.match.addEventListener('change', selectMatch);
+    els.whyCoco.addEventListener('click', () => {
+      if (!selectedGame) return;
+      const pred = CocoOracle.predict(selectedGame.id);
+      els.whyText.textContent = cocoReason(pred);
+      els.whyText.hidden = false;
+    });
     els.query.addEventListener('click', reveal);
   }
 
   async function fetchJson(path) {
-    const response = await fetch(`${path}?coco-hf12=${Date.now()}`, { cache: 'no-store' });
+    const response = await fetch(`${path}?v=${Date.now()}`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
     return response.json();
   }
@@ -170,6 +176,10 @@
     return t?.kurzname || t?.name || id || 'Unbekannt';
   }
 
+  function teamLogo(id) {
+    const logo = teams.get(id)?.logo;
+    return logo ? `../${logo.replace(/^\.\//,'')}` : '';
+  }
 
   function formatKickoff(game) {
     return new Intl.DateTimeFormat('de-DE', { timeZone: BERLIN_TZ, day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit' }).format(gameTime(game));
@@ -199,17 +209,16 @@
     }
   }
 
-  function setLogo(element, id) {
-    if (!element) return;
-    element.hidden = false;
-    element.setAttribute('aria-hidden', 'false');
-    window.OSCTeamBadge?.render(element, id, teamName(id));
+  function setLogo(img, id) {
+    const src = teamLogo(id);
+    img.src = src;
+    img.alt = teamName(id);
+    img.hidden = !src;
   }
 
   function clearSelection() {
     selectedGame = null;
     els.homeName.textContent = 'Heimteam'; els.awayName.textContent = 'Auswärtsteam';
-    els.homeLogo.replaceChildren(); els.awayLogo.replaceChildren();
     els.homeLogo.hidden = true; els.awayLogo.hidden = true;
     els.matchMeta.textContent = 'Noch keine Partie ausgewählt';
     els.query.disabled = true;
@@ -218,6 +227,9 @@
 
   function resetReveal() {
     els.tipPanel.hidden = true;
+    els.whyCoco.hidden = true;
+    els.whyText.hidden = true;
+    els.whyText.textContent = '';
     els.resultState.textContent = '';
     els.hmmm.classList.remove('show');
     els.cocoStage.classList.remove('thinking');
@@ -251,6 +263,9 @@
     els.tipScore.textContent = pred.score;
     els.tipLabel.textContent = pred.pirate ? 'Piratenmut!' : tendencyText(pred.tendency);
     els.tipPanel.hidden = false;
+    els.whyCoco.hidden = false;
+    els.whyText.hidden = true;
+    els.whyText.textContent = '';
     els.tipPanel.classList.toggle('reveal', Boolean(animate));
     window.setTimeout(() => els.tipPanel.classList.remove('reveal'), 900);
 
@@ -262,6 +277,46 @@
       els.resultState.textContent = 'Tipp nach 90 Minuten inkl. Nachspielzeit';
       els.resultState.dataset.state = '';
     }
+  }
+
+  function cocoReason(pred) {
+    const home = Number(pred?.home);
+    const away = Number(pred?.away);
+    const diff = Math.abs(home - away);
+    const total = home + away;
+    const seed = Math.abs((home * 31) + (away * 17) + (pred?.tendency === 'H' ? 3 : pred?.tendency === 'A' ? 7 : 11));
+    const pick = (items) => items[seed % items.length];
+
+    if (pred?.tendency === 'X') {
+      if (total === 0) return pick([
+        'Coco riecht Flaute auf beiden Decks. Viel Gerangel, aber keiner bringt die Kugel über die Planke.',
+        'Die Kristallkugel bleibt torlos. Coco sieht zwei Crews, die sich gegenseitig den Wind aus den Segeln nehmen.'
+      ]);
+      if (total <= 2) return pick([
+        'Coco wittert eine enge Fahrt. Beide Crews halten dagegen – am Ende teilt man die Beute.',
+        'Keiner bekommt für Coco entscheidend Wind in die Segel. Das riecht nach geteilter Beute.'
+      ]);
+      return pick([
+        'Coco erwartet Kanonendonner auf beiden Seiten, aber keinen Sieger. Die Beute wird geteilt.',
+        'Hier fliegen für Coco die Fetzen, doch keine Crew setzt sich ab. Am Ende bleibt Gleichstand.'
+      ]);
+    }
+
+    const homeWin = pred?.tendency === 'H';
+    const crew = homeWin ? 'Heimcrew' : 'Auswärtscrew';
+
+    if (diff >= 3) return pick([
+      `Coco hisst die Flagge klar für die ${crew}. In seiner Kugel ist das kein Duell auf Messers Schneide, sondern ein deutlicher Beutezug.`,
+      `Die Kristallkugel zeigt Coco klare See für die ${crew}. Er erwartet, dass sie dem Gegner deutlich den Wind aus den Segeln nimmt.`
+    ]);
+    if (diff === 2) return pick([
+      `Coco sieht die ${crew} auf sicherem Kurs. Der Gegner leistet Widerstand, doch die Beute geht für ihn mit Abstand an diese Crew.`,
+      `Der Wind bläst für Coco spürbar zugunsten der ${crew}. Kein Spaziergang – aber ein Kurs mit ordentlichem Vorsprung.`
+    ]);
+    return pick([
+      `Coco riecht einen knappen Beutezug der ${crew}. Gegenwehr gibt es reichlich, doch am Ende bleibt sie eine Kanonenkugel voraus.`,
+      `Das wird für Coco eine Fahrt auf Messers Schneide. Trotzdem setzt er seinen letzten Rum auf die ${crew}.`
+    ]);
   }
 
   function tendencyText(t) { return t === 'H' ? 'Coco setzt auf Heim' : t === 'A' ? 'Coco setzt auf Auswärts' : 'Coco riecht ein Remis'; }
