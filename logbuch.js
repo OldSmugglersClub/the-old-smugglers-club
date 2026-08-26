@@ -11,6 +11,24 @@ let gameById=new Map();
 
 function shown(entry){return (entry?.highlights||[]).filter(h=>h?.anzeigen===true)}
 function highlight(entry,type){return shown(entry).find(h=>h.typ===type)}
+
+function sensationCases(highlightEntry){
+ const limit=Number(highlightEntry?.daten?.grenzeProzent ?? 25);
+ return arr(highlightEntry?.daten?.faelle).filter(f=>{
+   const actual=String(f?.richtigerAusgang||"");
+   const most=String(f?.meistGetippt?.ausgang||"");
+   const share=Number(f?.richtigeTendenz?.anteil);
+   return (actual==="1"||actual==="2")
+     && most
+     && actual!==most
+     && Number.isFinite(share)
+     && share<=limit;
+ });
+}
+function validSmelledHighlight(entry){
+ const h=highlight(entry,"wer-hats-gerochen");
+ return h&&sensationCases(h).length?h:null;
+}
 function firstTipperName(rows){
  const first=arr(rows).map(x=>x?.teilnehmer).find(Boolean);
  return first?String(first):"";
@@ -42,12 +60,12 @@ function storyFromEntry(entry){
    text:`Die größte Tippgruppe setzte auf ${outcomeLabel(d.meistGetippt?.ausgang)}. Richtig war ${outcomeLabel(d.richtigerAusgang)}; ${exact} trafen ${d.ergebnis||"das Ergebnis"} exakt.`
   };
  }
- const smelled=highlight(entry,"wer-hats-gerochen");
+ const smelled=validSmelledHighlight(entry);
  if(smelled){
-  const f=arr(smelled.daten?.faelle)[0],r=f?.richtigeTendenz||{};
+  const f=sensationCases(smelled)[0],r=f?.richtigeTendenz||{};
   if(f)return {
-   title:`Nur ${Number(r.anzahl||0)} Smuggler rochen den richtigen Kurs.`,
-   text:`Bei ${f.heimTeam} – ${f.auswaertsTeam} lag nur eine kleine Gruppe mit ${outcomeLabel(f.richtigerAusgang)} richtig.`
+   title:`Nur ${Number(r.anzahl||0)} Smuggler rochen die Überraschung.`,
+   text:`Bei ${f.heimTeam} – ${f.auswaertsTeam} lag die Außenseiterseite mit ${outcomeLabel(f.richtigerAusgang)} richtig.`
   };
  }
  const captains=highlight(entry,"kapitaene");
@@ -97,11 +115,30 @@ function renderHighlight(h){
  }
  if(h.typ==="gegen-den-strom") return `<article class="lb-highlight lb-highlight--hero"><h3>Gegen den Strom</h3><p>Die größte Tippgruppe setzte auf <strong>${esc(outcomeLabel(d.meistGetippt?.ausgang))}</strong> (${Number(d.meistGetippt?.anzahl||0)} Tipps) und lag falsch. Richtig war <strong>${esc(outcomeLabel(d.richtigerAusgang))}</strong>; ${Number(d.exakt||0)} Tipper trafen ${esc(d.ergebnis||"")} exakt.</p><div class="lb-scoreline"><div><strong>${Number(d.tippverteilung?.["1"]||0)}</strong><span>Heimsieg</span></div><div><strong>${Number(d.tippverteilung?.X||0)}</strong><span>Remis</span></div><div><strong>${Number(d.tippverteilung?.["2"]||0)}</strong><span>Auswärtssieg</span></div></div></article>`;
  if(h.typ==="wer-hats-gerochen"){
-   const cases=arr(d.faelle);
-   return `<article class="lb-highlight lb-highlight--wide lb-highlight--smelled"><h3>Wer hat’s gerochen?</h3>${cases.map(f=>{
-     const r=f.richtigeTendenz||{},tipper=arr(r.tipper),shownTipper=tipper.slice(0,5),rest=Math.max(0,tipper.length-shownTipper.length);
-     const more=rest?`<span class="lb-name lb-name--more">+${rest} ${rest===1?"weiterer Tipper":"weitere Tipper"}</span>`:"";
-     return `<div class="lb-smelled-case"><p>Nur <strong>${Number(r.anzahl||0)} von ${Number(f.abgegeben||0)} Tippern</strong> (${Number(r.anteil||0).toLocaleString("de-DE",{maximumFractionDigits:1})} %) setzten bei <strong>${esc(f.heimTeam)} – ${esc(f.auswaertsTeam)}</strong> auf ${esc(outcomeLabel(f.richtigerAusgang))} und lagen richtig. Ergebnis: <strong>${esc(f.ergebnis||"")}</strong>.</p><div class="lb-names">${shownTipper.map(x=>`<span class="lb-name">${esc(x.teilnehmer)} · Tipp ${esc(x.tipp)}${x.exakt?" · exakt":""}</span>`).join("")}${more}</div></div>`;
+   const cases=sensationCases(h);
+   if(!cases.length)return "";
+   return `<article class="lb-highlight lb-highlight--wide lb-highlight--smelled"><h3>Wer hat’s gerochen?</h3>${cases.map((f,caseIndex)=>{
+     const r=f.richtigeTendenz||{};
+     const sorted=arr(r.tipper).map((x,idx)=>({x,idx})).sort((a,b)=>(Number(Boolean(b.x?.exakt))-Number(Boolean(a.x?.exakt)))||(a.idx-b.idx)).map(row=>row.x);
+     const shownTipper=sorted.slice(0,5),rest=Math.max(0,sorted.length-shownTipper.length);
+     const rows=shownTipper.map(x=>`
+       <tr>
+         <td class="lb-smelled-name">${esc(x.teilnehmer)}</td>
+         <td class="lb-smelled-tip">${esc(x.tipp)}</td>
+         <td class="lb-smelled-hit"><span class="lb-hit-badge ${x.exakt?"is-exact":"is-tendency"}">${x.exakt?"Sensation exakt":"Tendenz richtig"}</span></td>
+       </tr>`).join("");
+     const more=rest?`<div class="lb-smelled-more">+${rest} ${rest===1?"weiterer Tipper":"weitere Tipper"}</div>`:"";
+     return `<section class="lb-sensation-case">
+       ${cases.length>1?`<div class="lb-sensation-number">Überraschung ${caseIndex+1}</div>`:""}
+       <p><strong>${esc(f.heimTeam)} – ${esc(f.auswaertsTeam)} · ${esc(f.ergebnis||"")}</strong><br>Nur <strong>${Number(r.anzahl||0)} von ${Number(f.abgegeben||0)} Tippern</strong> (${Number(r.anteil||0).toLocaleString("de-DE",{maximumFractionDigits:1})} %) hatten den ${esc(outcomeLabel(f.richtigerAusgang))} auf dem Zettel. Die Mehrheit tippte auf ${esc(outcomeLabel(f.meistGetippt?.ausgang))}.</p>
+       <div class="lb-smelled-table-wrap">
+         <table class="lb-smelled-table">
+           <thead><tr><th>Tipper</th><th>Tipp</th><th>Wertung</th></tr></thead>
+           <tbody>${rows}</tbody>
+         </table>
+         ${more}
+       </div>
+     </section>`;
    }).join("")}</article>`;
  }
  if(h.typ==="volltreffer") return `<article class="lb-highlight lb-highlight--volltreffer"><h3>Volltreffer</h3><p>Die stärksten Präzisionstreffer: <strong>${Number(d.maxExakt||0)} exakt</strong> im Spieltag.</p><div class="lb-names">${shortNames(d.tipper)}</div></article>`;
@@ -133,7 +170,8 @@ function renderHighlightsWithCoco(entry){
  const rows=[];
  let inserted=false;
  for(const h of shown(entry)){
-   rows.push(renderHighlight(h));
+   const rendered=renderHighlight(h);
+   if(rendered)rows.push(rendered);
    if(h?.typ==="volltreffer"){
      const coco=cocoLogbookCard(entry);
      if(coco){rows.push(coco);inserted=true;}
