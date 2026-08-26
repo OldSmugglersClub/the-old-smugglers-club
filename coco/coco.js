@@ -178,6 +178,7 @@
   function selectMatch() {
     selectedGame = games.find(g => g.id === els.match.value) || null;
     resetReveal();
+    renderStats();
     if (!selectedGame) return clearSelection();
 
     els.homeName.textContent = teamName(selectedGame.heimTeamId);
@@ -289,12 +290,37 @@
       const last = sequence[sequence.length - 1]; streakType = last ? 'Treffer' : 'Fehler';
       for (let i=sequence.length-1; i>=0 && sequence[i]===last; i-=1) streak += 1;
     }
+    let bestStreak = 0, runningStreak = 0;
+    for (const hit of sequence) {
+      runningStreak = hit ? runningStreak + 1 : 0;
+      bestStreak = Math.max(bestStreak, runningStreak);
+    }
+
+    const recent = sequence.slice(-5);
+    const recentHits = recent.filter(Boolean).length;
+    const formText = recent.length ? `${recentHits}/${recent.length}` : '–';
+
     const pct = (n,d) => d ? `${(n/d*100).toFixed(1).replace('.',',')} %` : '–';
+
+    let teamStats = '';
+    if (selectedGame) {
+      teamStats = [selectedGame.heimTeamId, selectedGame.auswaertsTeamId].map(teamId => {
+        const teamGames = finished.filter(g => g.heimTeamId === teamId || g.auswaertsTeamId === teamId);
+        const hits = teamGames.filter(g =>
+          CocoOracle.evaluate(CocoOracle.predict(g.id), g.heimtore, g.auswaertstore).tendencyHit
+        ).length;
+        return `<div><strong>${teamGames.length ? `${hits}/${teamGames.length}` : 'keine'}</strong><span>${teamName(teamId)}</span></div>`;
+      }).join('');
+    }
+
     els.stats.innerHTML = `
       <div><strong>${finished.length}</strong><span>ausgewertet</span></div>
       <div><strong>${tendency}</strong><span>Tendenz · ${pct(tendency, finished.length)}</span></div>
       <div><strong>${exact}</strong><span>Volltreffer · ${pct(exact, finished.length)}</span></div>
-      <div><strong>${streak || '–'}</strong><span>Serie · ${streakType}</span></div>`;
+      <div><strong>${streak || '–'}</strong><span>Serie · ${streakType}</span></div>
+      <div><strong>${bestStreak || '–'}</strong><span>Beste Treffer-Serie</span></div>
+      <div><strong>${formText}</strong><span>Form · letzte ${recent.length}</span></div>
+      ${teamStats}`;
   }
 
   function setStatus(text, error=false) {
