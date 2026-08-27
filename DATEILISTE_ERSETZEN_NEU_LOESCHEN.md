@@ -1,14 +1,14 @@
-# Dateiliste – Live Textfix Spieltags-Logbuch
+# Ersetzen / Neu / Löschen
 
 ## Ersetzen
-
-- `stalk-o-meter.js`
-- `STALK-O-METER-HANDBUCH.md`
+- .github/workflows/bundesliga-ergebnisimport-auto.yml
+- .github/workflows/bundesliga-terminimport-auto.yml
+- .github/workflows/dynamo-terminimport-auto.yml
 
 ## Neu
-
-- keine
+- CHANGELOG.md
+- README.md
+- DATEILISTE_ERSETZEN_NEU_LOESCHEN.md
 
 ## Löschen
-
-- keine
+- Keine Dateien.

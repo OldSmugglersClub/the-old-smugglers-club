@@ -1,18 +1,7 @@
-# TOSMC – Live Textfix „Spieltags-Logbuch“
+# README
+Update in das LIVE-Repository übernehmen.
 
-Kleine freigegebene Textänderung auf Basis des bereits getesteten Stalk-O-Meter-Updates.
-
-## Wirkung
-
-Im Stalk-O-Meter wird der vorhandene Eintrag für `/logbuch.html` künftig als **Spieltags-Logbuch** angezeigt. GoatCounter-Pfad und Funktion bleiben identisch.
-
-## Einspielen
-
-Die enthaltenen Dateien an gleicher Stelle im Live-Repository ersetzen.
-
-Danach Deployment abwarten und `stalk-o-meter.html` mit `Strg+F5` prüfen.
-
-## Sollzustand
-
-- `Spieltags-Logbuch` wird mit dem bisherigen GoatCounter-Wert angezeigt.
-- Rangfolge und Gesamtaufrufe bleiben funktional unverändert; nur die sichtbare Bezeichnung ändert sich.
+Danach prüfen:
+1. Keine manuellen Änderungen an Cron-Zeiten.
+2. Nächsten automatischen `schedule`-Run abwarten.
+3. Erst danach Test2-v2 analog behandeln, falls nötig.

@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
   schedule:
     # Viermal täglich. Die Fachlogik schreibt nur bei neuen, sicher konkretisierbaren Terminen.
+    # Scheduler-Neuregistrierung 2026-08-27 – keine funktionale Änderung.
     - cron: "17 */6 * * *"
 
 permissions:

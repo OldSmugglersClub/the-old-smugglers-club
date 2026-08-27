@@ -5,6 +5,7 @@ on:
   schedule:
     # GitHub-Cron läuft in UTC. Der Workflow ist nur der Wecker.
     # Die Fachlogik entscheidet lokal, ob überhaupt ein OpenLigaDB-Abruf nötig ist.
+    # Scheduler-Neuregistrierung 2026-08-27 – keine funktionale Änderung.
     - cron: "7,37 * * * *"
 
 permissions:
