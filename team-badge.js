@@ -2,9 +2,11 @@
   "use strict";
 
   const DEFAULT_REGISTER = "./assets/smugglers-design-system/schmugglersiegel/schmugglersiegel-register.json";
+  const DEFAULT_ORIGINAL_REGISTER = "./assets/team-logos/original-team-logos.json";
   const SVG_NS = "http://www.w3.org/2000/svg";
   let registerPromise = null;
   let register = { teams: {} };
+  let originalRegister = { teams: {} };
   let sealCounter = 0;
 
   const fallbackInitials = (teamId, teamName) => {
@@ -16,22 +18,28 @@
     return (parts.map(part => part[0]).join("").slice(0, 4) || "TEAM").toUpperCase();
   };
 
-  const load = (url = DEFAULT_REGISTER) => {
+  const fetchRegistry = async (url, fallback, label) => {
+    try {
+      const response = await fetch(url, { cache: "no-store" });
+      if (!response.ok) throw new Error(`${label} konnte nicht geladen werden (${response.status})`);
+      const data = await response.json();
+      return data && typeof data === "object" ? data : fallback;
+    } catch (error) {
+      console.warn(error);
+      return fallback;
+    }
+  };
+
+  const load = (url = DEFAULT_REGISTER, originalUrl = DEFAULT_ORIGINAL_REGISTER) => {
     if (!registerPromise) {
-      registerPromise = fetch(url, { cache: "no-store" })
-        .then(response => {
-          if (!response.ok) throw new Error(`Schmugglersiegel-Register konnte nicht geladen werden (${response.status})`);
-          return response.json();
-        })
-        .then(data => {
-          register = data && typeof data === "object" ? data : { teams: {} };
-          return register;
-        })
-        .catch(error => {
-          console.warn(error);
-          register = { teams: {} };
-          return register;
-        });
+      registerPromise = Promise.all([
+        fetchRegistry(url, { teams: {} }, "Schmugglersiegel-Register"),
+        fetchRegistry(originalUrl, { teams: {} }, "Originalwappen-Register")
+      ]).then(([sealData, originalData]) => {
+        register = sealData;
+        originalRegister = originalData;
+        return register;
+      });
     }
     return registerPromise;
   };
@@ -115,12 +123,43 @@
     return svg;
   };
 
-  const render = (element, teamId, teamName, options = {}) => {
-    if (!element) return;
-    const badge = resolve(teamId, teamName);
+  const originalLogoPath = teamId => {
+    const entry = originalRegister.teams?.[teamId];
+    return typeof entry?.path === "string" && entry.path.trim() ? entry.path.trim() : null;
+  };
+
+  const renderSealFallback = (element, badge, options = {}) => {
     element.replaceChildren(createSeal(badge));
+    element.dataset.badgeSource = "smugglersiegel";
     element.setAttribute("aria-label", options.ariaLabel || `Schmugglersiegel ${badge.name}`);
   };
 
-  window.OSCTeamBadge = Object.freeze({ load, resolve, render, fallbackInitials });
+  const render = (element, teamId, teamName, options = {}) => {
+    if (!element) return;
+    const badge = resolve(teamId, teamName);
+    const logoPath = originalLogoPath(teamId);
+
+    if (!logoPath) {
+      renderSealFallback(element, badge, options);
+      return;
+    }
+
+    const image = document.createElement("img");
+    image.src = logoPath;
+    image.alt = "";
+    image.decoding = "async";
+    image.loading = "eager";
+    image.style.width = "100%";
+    image.style.height = "100%";
+    image.style.display = "block";
+    image.style.objectFit = "contain";
+    image.style.objectPosition = "center";
+    image.addEventListener("error", () => renderSealFallback(element, badge, options), { once: true });
+
+    element.replaceChildren(image);
+    element.dataset.badgeSource = "original";
+    element.setAttribute("aria-label", options.ariaLabel || `Vereinswappen ${badge.name}`);
+  };
+
+  window.OSCTeamBadge = Object.freeze({ load, resolve, render, fallbackInitials, originalLogoPath });
 })();

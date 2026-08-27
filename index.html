@@ -5289,6 +5289,17 @@
       font-weight: 900;
     }
 
+
+    /* Originalwappen ohne Schmugglersiegel-Dekoration in der Spieltags-Kachel */
+    .sm-team__seal[data-badge-source="original"],
+    .sm-event-row__seal[data-badge-source="original"] {
+      overflow: visible;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
     .sm-event-row__seal img,
     .sm-event-row__seal svg {
       display: block;

@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 2,
+  "modus": "current-season-test3",
+  "hinweis": "Aktueller tatsächlich verwendeter Tippspielbestand. Lokales Originalwappen hat Priorität; Schmugglersiegel bleibt Fallback.",
+  "teams": {
+    "ac-mailand": {
+      "path": "./assets/team-logos/original/ac-mailand.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "arminia-bielefeld": {
+      "path": "./assets/team-logos/original/arminia-bielefeld.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "aston-villa": {
+      "path": "./assets/team-logos/original/aston-villa.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "augsburg": {
+      "path": "./assets/team-logos/original/augsburg.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "barcelona": {
+      "path": "./assets/team-logos/original/barcelona.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "bayern-muenchen": {
+      "path": "./assets/team-logos/original/bayern-muenchen.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "benfica-lissabon": {
+      "path": "./assets/team-logos/original/benfica-lissabon.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "bochum": {
+      "path": "./assets/team-logos/original/bochum.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "braunschweig": {
+      "path": "./assets/team-logos/original/braunschweig.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "darmstadt-98": {
+      "path": "./assets/team-logos/original/darmstadt-98.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "dortmund": {
+      "path": "./assets/team-logos/original/dortmund.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "dynamo-dresden": {
+      "path": "./assets/team-logos/original/dynamo-dresden.svg",
+      "status": "local-original-verified",
+      "quelle": "bereits im Projekt vorhandenes und in TEST1 bestätigtes Originalwappen"
+    },
+    "elversberg": {
+      "path": "./assets/team-logos/original/elversberg.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "energie-cottbus": {
+      "path": "./assets/team-logos/original/energie-cottbus.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "fc-bologna": {
+      "path": "./assets/team-logos/original/fc-bologna.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "fc-liverpool": {
+      "path": "./assets/team-logos/original/fc-liverpool.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "frankfurt": {
+      "path": "./assets/team-logos/original/frankfurt.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "freiburg": {
+      "path": "./assets/team-logos/original/freiburg.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "greuther-fuerth": {
+      "path": "./assets/team-logos/original/greuther-fuerth.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "hamburger-sv": {
+      "path": "./assets/team-logos/original/hamburger-sv.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "hannover-96": {
+      "path": "./assets/team-logos/original/hannover-96.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "heidenheim": {
+      "path": "./assets/team-logos/original/heidenheim.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "hertha-bsc": {
+      "path": "./assets/team-logos/original/hertha-bsc.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "hoffenheim": {
+      "path": "./assets/team-logos/original/hoffenheim.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "holstein-kiel": {
+      "path": "./assets/team-logos/original/holstein-kiel.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "inter-mailand": {
+      "path": "./assets/team-logos/original/inter-mailand.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "juventus-turin": {
+      "path": "./assets/team-logos/original/juventus-turin.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "kaiserslautern": {
+      "path": "./assets/team-logos/original/kaiserslautern.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "karlsruher-sc": {
+      "path": "./assets/team-logos/original/karlsruher-sc.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "koeln": {
+      "path": "./assets/team-logos/original/koeln.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "leverkusen": {
+      "path": "./assets/team-logos/original/leverkusen.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "magdeburg": {
+      "path": "./assets/team-logos/original/magdeburg.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "mainz-05": {
+      "path": "./assets/team-logos/original/mainz-05.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "manchester-city": {
+      "path": "./assets/team-logos/original/manchester-city.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "manchester-united": {
+      "path": "./assets/team-logos/original/manchester-united.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "moenchengladbach": {
+      "path": "./assets/team-logos/original/moenchengladbach.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "nottingham-forest": {
+      "path": "./assets/team-logos/original/nottingham-forest.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "nuernberg": {
+      "path": "./assets/team-logos/original/nuernberg.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "olympique-marseille": {
+      "path": "./assets/team-logos/original/olympique-marseille.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "osnabrueck": {
+      "path": "./assets/team-logos/original/osnabrueck.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "paderborn": {
+      "path": "./assets/team-logos/original/paderborn.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "paris-saint-germain": {
+      "path": "./assets/team-logos/original/paris-saint-germain.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "rb-leipzig": {
+      "path": "./assets/team-logos/original/rb-leipzig.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "real-madrid": {
+      "path": "./assets/team-logos/original/real-madrid.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "schalke-04": {
+      "path": "./assets/team-logos/original/schalke-04.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "sporting-lissabon": {
+      "path": "./assets/team-logos/original/sporting-lissabon.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "st-pauli": {
+      "path": "./assets/team-logos/original/st-pauli.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "stuttgart": {
+      "path": "./assets/team-logos/original/stuttgart.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "tottenham-hotspur": {
+      "path": "./assets/team-logos/original/tottenham-hotspur.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "union-berlin": {
+      "path": "./assets/team-logos/original/union-berlin.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "werder-bremen": {
+      "path": "./assets/team-logos/original/werder-bremen.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "wolfsburg": {
+      "path": "./assets/team-logos/original/wolfsburg.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    }
+  }
+}

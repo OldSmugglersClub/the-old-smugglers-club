@@ -1192,3 +1192,10 @@ body.page-dynamo-dresden{
   }
 }
 
+
+
+/* Originalwappen: keine Schmugglersiegel-Maske */
+.team-identity__badge[data-badge-source="original"] {
+  border-radius: 0;
+  overflow: visible;
+}
