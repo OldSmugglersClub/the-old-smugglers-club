@@ -600,12 +600,8 @@
     opacity:1;
   }
   #highscore.highscore-teaser::after{
-    content:"";
-    position:absolute;
-    left:32px;right:32px;bottom:31px;height:1px;
-    background:linear-gradient(90deg,transparent,rgba(198,151,68,.48) 16%,rgba(198,151,68,.18) 72%,transparent);
-    pointer-events:none;
-    z-index:0;
+    content:none;
+    display:none;
   }
   #highscore .section-title,
   #highscore > .lead,
