@@ -1568,6 +1568,32 @@
       }
     }
 
+    /* Highscore-Aktionszeile: sauberer Abschluss ohne optische Verlängerung */
+    #highscore .highscore-teaser-action {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .75rem;
+      width: fit-content;
+      max-width: 100%;
+      margin: 1.35rem 0 0;
+      padding: 0;
+      border: 0;
+    }
+
+    @media (max-width: 700px) {
+      #highscore .highscore-teaser-action {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: .55rem;
+        width: 100%;
+      }
+
+      #highscore .highscore-teaser-action .button {
+        width: 100%;
+      }
+    }
+
     footer {
       border-top: 1px solid var(--line);
       background: rgba(8,5,3,.97);
