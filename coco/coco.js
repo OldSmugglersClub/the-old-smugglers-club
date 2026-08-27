@@ -3,11 +3,13 @@
 
   const DATA_PATH = '../spieldaten.json';
   const TEAMS_PATH = '../teams.json';
+  const ORIGINAL_LOGOS_PATH = '../assets/team-logos/original-team-logos.json';
   const BERLIN_TZ = 'Europe/Berlin';
 
   const els = {};
   let games = [];
   let teams = new Map();
+  let originalLogos = new Map();
   let selectedGame = null;
   let revealing = false;
 
@@ -17,10 +19,11 @@
     bindEls();
     bindEvents();
     try {
-      const [schedule, teamData] = await Promise.all([fetchJson(DATA_PATH), fetchJson(TEAMS_PATH), window.OSCTeamBadge?.load('../assets/smugglers-design-system/schmugglersiegel/schmugglersiegel-register.json')]);
+      const [schedule, teamData, originalLogoData] = await Promise.all([fetchJson(DATA_PATH), fetchJson(TEAMS_PATH), fetchJson(ORIGINAL_LOGOS_PATH)]);
       const season = (schedule.saisons || []).find(s => s.id === schedule.aktiveSaison) || (schedule.saisons || [])[0];
       games = (season?.spiele || []).filter(hasRealTeams);
       teams = new Map((teamData.teams || []).map(team => [team.id, team]));
+      originalLogos = new Map(Object.entries(originalLogoData.teams || {}));
       populateCompetitions();
       configureReturnLink();
       applyDeepLinkedGame();
@@ -177,8 +180,10 @@
   }
 
   function teamLogo(id) {
-    const logo = teams.get(id)?.logo;
-    return logo ? `../${logo.replace(/^\.\//,'')}` : '';
+    const original = originalLogos.get(id)?.path;
+    if (original) return `../${original.replace(/^\.\//,'')}`;
+    const fallback = teams.get(id)?.logo;
+    return fallback ? `../${fallback.replace(/^\.\//,'')}` : '';
   }
 
   function formatKickoff(game) {
@@ -209,11 +214,11 @@
     }
   }
 
-  function setLogo(element, id) {
-    if (!element) return;
-    element.hidden = false;
-    element.setAttribute('aria-hidden', 'false');
-    window.OSCTeamBadge?.render(element, id, teamName(id));
+  function setLogo(img, id) {
+    const src = teamLogo(id);
+    img.src = src;
+    img.alt = teamName(id);
+    img.hidden = !src;
   }
 
   function clearSelection() {

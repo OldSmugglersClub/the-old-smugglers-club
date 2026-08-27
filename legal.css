@@ -77,3 +77,10 @@
 /* 4.7.2-HF3-HF1: Mobile Rechtsseiten-H1 verkleinert, damit lange Titel wie
    „Datenschutzerklärung“ vollständig im bestehenden Kasten bleiben.
    Keine Worttrennung, kein Desktop-Eingriff. */
+
+/* 4.9.2-HF12-HF22: Mobile Footer-Kacheln unten wieder geschlossen. */
+@media (max-width: 620px) {
+  .legal-footer a {
+    border-bottom-color: rgba(196,151,71,.65);
+  }
+}
