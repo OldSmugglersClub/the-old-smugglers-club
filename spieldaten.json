@@ -914,14 +914,38 @@
           "datumAnzeige": "28.08.2026",
           "anstoss": "20:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 5,
+          "auswaertstore": 1,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "",
-          "quelleStand": "2026-07-30",
+          "quelleStand": "2026-08-28",
           "heimTeamId": "bayern-muenchen",
-          "auswaertsTeamId": "stuttgart"
+          "auswaertsTeamId": "stuttgart",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-08-28T23:36:21.302Z",
+            "abgegeben": 95,
+            "nichtAbgegeben": 5,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 91,
+                "prozent": 95.8
+              },
+              "2": {
+                "anzahl": 1,
+                "prozent": 1.1
+              },
+              "X": {
+                "anzahl": 3,
+                "prozent": 3.2
+              }
+            }
+          },
+          "aktualisiertAm": "2026-08-28T23:36:21.302Z"
         },
         {
           "id": "bl-2026-27-01-003",
@@ -8341,6 +8365,6 @@
       ]
     }
   ],
-  "datenVersion": 12,
-  "aktualisiert": "2026-08-23"
+  "datenVersion": 14,
+  "aktualisiert": "2026-08-28"
 }
