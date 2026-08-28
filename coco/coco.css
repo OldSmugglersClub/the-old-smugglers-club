@@ -15,10 +15,10 @@
 
 
 .coco-header{position:relative}
-.coco-header-actions{display:flex;justify-content:flex-start;margin-bottom:10px}
-.coco-back{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:9px 15px;border:1px solid var(--coco-line);border-radius:10px;background:linear-gradient(180deg,rgba(46,32,20,.96),rgba(24,17,11,.96));color:var(--coco-gold2);font-weight:700;text-decoration:none;box-shadow:inset 0 1px rgba(255,255,255,.04)}
-.coco-back:hover,.coco-back:focus-visible{border-color:#d7a84d;background:linear-gradient(180deg,rgba(61,42,24,.98),rgba(29,20,12,.98));outline:none}
-@media(max-width:430px){.coco-header-actions{margin-bottom:8px}.coco-back{width:100%;min-height:42px}}
+.coco-header-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.coco-header-action{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:9px 15px;border:1px solid var(--coco-line);border-radius:10px;background:linear-gradient(180deg,rgba(46,32,20,.96),rgba(24,17,11,.96));color:var(--coco-gold2);font-weight:700;text-decoration:none;box-shadow:inset 0 1px rgba(255,255,255,.04)}
+.coco-header-action:hover,.coco-header-action:focus-visible{border-color:#d7a84d;background:linear-gradient(180deg,rgba(61,42,24,.98),rgba(29,20,12,.98));outline:none}
+@media(max-width:430px){.coco-header-actions{flex-direction:column;margin-bottom:8px}.coco-header-action{width:100%;min-height:42px}}
 
 /* COCO-PHASE5-TEST1 – Warum, Coco? innerhalb der bestehenden Tipp-Kachel */
 .coco-why-btn{
