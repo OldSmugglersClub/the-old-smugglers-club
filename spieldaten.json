@@ -914,12 +914,12 @@
           "datumAnzeige": "28.08.2026",
           "anstoss": "20:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 5,
+          "auswaertstore": 1,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "",
-          "quelleStand": "2026-07-30",
+          "quelleStand": "2026-08-28",
           "heimTeamId": "bayern-muenchen",
           "auswaertsTeamId": "stuttgart"
         },
@@ -8341,6 +8341,6 @@
       ]
     }
   ],
-  "datenVersion": 12,
-  "aktualisiert": "2026-08-23"
+  "datenVersion": 13,
+  "aktualisiert": "2026-08-28"
 }
