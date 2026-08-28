@@ -22,9 +22,9 @@
   "bereiche": [],
   "buttons": [
     {
-      "text": "Zum Kicktipp",
-      "link": "https://www.kicktipp.de/the-old-smugglers-club/",
-      "neuesFenster": true,
+      "text": "Kicktipp Live Action",
+      "link": "./kicktipp.html?path=tippuebersicht&br_p=%2Fthe-old-smugglers-club%2Ftippuebersicht",
+      "neuesFenster": false,
       "stil": "primaer",
       "anzeigen": true
     },
