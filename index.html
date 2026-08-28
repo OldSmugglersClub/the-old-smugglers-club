@@ -6287,6 +6287,9 @@
 
     let countdownSeason = "2026/2027";
     let countdownRuntime = null;
+    let countdownEventKey;
+    let matchdayRefreshPending = false;
+    let matchdayRefreshQueued = false;
 
     function setFlipValue(id, value) {
       const element = document.getElementById(id);
@@ -6329,6 +6332,34 @@
       updateCountdown();
     }
 
+    function requestMatchdayRefresh() {
+      if (matchdayRefreshPending) {
+        matchdayRefreshQueued = true;
+        return;
+      }
+      matchdayRefreshPending = true;
+      Promise.resolve(loadMatchdayData()).finally(() => {
+        matchdayRefreshPending = false;
+        if (matchdayRefreshQueued) {
+          matchdayRefreshQueued = false;
+          requestMatchdayRefresh();
+        }
+      });
+    }
+
+    function synchronizeMatchdayWithCountdown(nextEvent) {
+      const nextKey = nextEvent
+        ? `${nextEvent.id || "event"}::${nextEvent._start.getTime()}`
+        : "__NO_NEXT_EVENT__";
+      if (countdownEventKey === undefined) {
+        countdownEventKey = nextKey;
+        return;
+      }
+      if (countdownEventKey === nextKey) return;
+      countdownEventKey = nextKey;
+      requestMatchdayRefresh();
+    }
+
     function setCountdownInfo(plaqueText, headline, lines = []) {
       const plaque = document.getElementById("countdown-plaque");
       const note = document.getElementById("countdown-note");
@@ -6356,6 +6387,7 @@
 
       const now = countdownClockNow();
       const next = countdownRuntime.events.find(event => event._start > now);
+      synchronizeMatchdayWithCountdown(next || null);
       if (!next) {
         ["days", "hours", "minutes", "seconds"].forEach(id => setFlipValue(id, 0));
         setCountdownInfo("SAISON BEENDET", `Für die Saison ${countdownSeason} ist kein weiteres Event terminiert.`, ["Neue Termine erscheinen nach ihrer Freigabe."]);
@@ -6380,6 +6412,12 @@
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) updateCountdown();
+    });
+    window.addEventListener("pageshow", event => {
+      if (event.persisted) updateCountdown();
+    });
 
 
     async function loadSiteData() {
