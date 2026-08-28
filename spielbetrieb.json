@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "datenVersion": 7,
-  "aktualisiertAm": "2026-08-28T23:36:21.302Z",
+  "aktualisiertAm": "2026-08-28T23:48:58.697Z",
   "aktiveSaison": "2026-27",
   "quelle": "The Old Smugglers Club Admin 6.5.0-HF5 Zwischenstand",
   "regeln": {
@@ -2984,7 +2984,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-08-28T23:36:21.302Z",
+              "stand": "2026-08-28T23:48:58.697Z",
               "abgegeben": 95,
               "nichtAbgegeben": 5,
               "verborgen": 0,
@@ -3003,7 +3003,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-08-28T23:36:21.302Z"
+            "aktualisiertAm": "2026-08-28T23:48:58.697Z"
           },
           {
             "id": "bl-2026-27-01-003",
@@ -32615,7 +32615,7 @@
             "tippImporte": []
           }
         ],
-        "statusErmitteltAm": "2026-08-28T23:36:21.327Z"
+        "statusErmitteltAm": "2026-08-28T23:48:58.723Z"
       },
       {
         "id": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
@@ -33573,7 +33573,7 @@
             "tippImporte": []
           }
         ],
-        "statusErmitteltAm": "2026-08-28T23:36:21.327Z"
+        "statusErmitteltAm": "2026-08-28T23:48:58.723Z"
       },
       {
         "id": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
@@ -33582,8 +33582,8 @@
         "wertung": "bundesliga",
         "label": "Bundesliga",
         "runde": "1. Spieltag",
-        "erstelltAm": "2026-08-28T23:34:29.763Z",
-        "aktualisiertAm": "2026-08-28T23:36:21.328Z",
+        "erstelltAm": "2026-08-28T23:47:54.837Z",
+        "aktualisiertAm": "2026-08-28T23:48:58.724Z",
         "spiele": [
           {
             "id": "bl-2026-27-01-001",
@@ -33831,7 +33831,7 @@
         ],
         "tippImportHistorie": [],
         "status": "teilweise",
-        "statusErmitteltAm": "2026-08-28T23:36:21.328Z"
+        "statusErmitteltAm": "2026-08-28T23:48:58.724Z"
       }
     ]
   },
