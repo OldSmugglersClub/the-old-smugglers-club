@@ -1,9 +1,9 @@
 {
   "schemaVersion": 3,
-  "datenVersion": 8,
-  "aktualisiertAm": "2026-08-29T19:37:55.601Z",
+  "datenVersion": 9,
+  "aktualisiertAm": "2026-08-29T20:36:14.310Z",
   "aktiveSaison": "2026-27",
-  "quelle": "The Old Smugglers Club Admin 6.5.0-HF7",
+  "quelle": "The Old Smugglers Club Admin 6.5.0-HF7 Zwischenstand",
   "regeln": {
     "tendenz": 2,
     "differenz": 3,
@@ -3065,7 +3065,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-08-28T23:48:58.697Z",
+              "stand": "2026-08-29T20:36:14.310Z",
               "abgegeben": 95,
               "nichtAbgegeben": 5,
               "verborgen": 0,
@@ -3084,7 +3084,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-08-28T23:48:58.697Z"
+            "aktualisiertAm": "2026-08-29T20:36:14.310Z"
           },
           {
             "id": "bl-2026-27-01-003",
@@ -3107,7 +3107,31 @@
             "notiz": "",
             "quelleStand": "2026-08-29",
             "heimTeamId": "rb-leipzig",
-            "auswaertsTeamId": "moenchengladbach"
+            "auswaertsTeamId": "moenchengladbach",
+            "ergebnisNach90MinutenBestaetigt": true,
+            "tippverteilung": {
+              "schemaVersion": 1,
+              "quelle": "Kicktipp – Tipps aller Tipper",
+              "stand": "2026-08-29T20:36:14.310Z",
+              "abgegeben": 93,
+              "nichtAbgegeben": 7,
+              "verborgen": 0,
+              "tendenzen": {
+                "1": {
+                  "anzahl": 81,
+                  "prozent": 87.1
+                },
+                "2": {
+                  "anzahl": 4,
+                  "prozent": 4.3
+                },
+                "X": {
+                  "anzahl": 8,
+                  "prozent": 8.6
+                }
+              }
+            },
+            "aktualisiertAm": "2026-08-29T20:36:14.310Z"
           },
           {
             "id": "bl-2026-27-01-006",
@@ -3130,7 +3154,31 @@
             "notiz": "",
             "quelleStand": "2026-08-29",
             "heimTeamId": "mainz-05",
-            "auswaertsTeamId": "paderborn"
+            "auswaertsTeamId": "paderborn",
+            "ergebnisNach90MinutenBestaetigt": true,
+            "tippverteilung": {
+              "schemaVersion": 1,
+              "quelle": "Kicktipp – Tipps aller Tipper",
+              "stand": "2026-08-29T20:36:14.310Z",
+              "abgegeben": 93,
+              "nichtAbgegeben": 7,
+              "verborgen": 0,
+              "tendenzen": {
+                "1": {
+                  "anzahl": 85,
+                  "prozent": 91.4
+                },
+                "2": {
+                  "anzahl": 3,
+                  "prozent": 3.2
+                },
+                "X": {
+                  "anzahl": 5,
+                  "prozent": 5.4
+                }
+              }
+            },
+            "aktualisiertAm": "2026-08-29T20:36:14.310Z"
           },
           {
             "id": "bl-2026-27-01-007",
@@ -3153,7 +3201,31 @@
             "notiz": "",
             "quelleStand": "2026-08-29",
             "heimTeamId": "union-berlin",
-            "auswaertsTeamId": "frankfurt"
+            "auswaertsTeamId": "frankfurt",
+            "ergebnisNach90MinutenBestaetigt": true,
+            "tippverteilung": {
+              "schemaVersion": 1,
+              "quelle": "Kicktipp – Tipps aller Tipper",
+              "stand": "2026-08-29T20:36:14.310Z",
+              "abgegeben": 93,
+              "nichtAbgegeben": 7,
+              "verborgen": 0,
+              "tendenzen": {
+                "1": {
+                  "anzahl": 15,
+                  "prozent": 16.1
+                },
+                "2": {
+                  "anzahl": 53,
+                  "prozent": 57
+                },
+                "X": {
+                  "anzahl": 25,
+                  "prozent": 26.9
+                }
+              }
+            },
+            "aktualisiertAm": "2026-08-29T20:36:14.310Z"
           },
           {
             "id": "bl-2026-27-01-008",
@@ -3176,7 +3248,31 @@
             "notiz": "",
             "quelleStand": "2026-08-29",
             "heimTeamId": "koeln",
-            "auswaertsTeamId": "hoffenheim"
+            "auswaertsTeamId": "hoffenheim",
+            "ergebnisNach90MinutenBestaetigt": true,
+            "tippverteilung": {
+              "schemaVersion": 1,
+              "quelle": "Kicktipp – Tipps aller Tipper",
+              "stand": "2026-08-29T20:36:14.310Z",
+              "abgegeben": 93,
+              "nichtAbgegeben": 7,
+              "verborgen": 0,
+              "tendenzen": {
+                "1": {
+                  "anzahl": 20,
+                  "prozent": 21.5
+                },
+                "2": {
+                  "anzahl": 48,
+                  "prozent": 51.6
+                },
+                "X": {
+                  "anzahl": 25,
+                  "prozent": 26.9
+                }
+              }
+            },
+            "aktualisiertAm": "2026-08-29T20:36:14.310Z"
           },
           {
             "id": "bl-2026-27-01-009",
@@ -3199,7 +3295,31 @@
             "notiz": "",
             "quelleStand": "2026-08-29",
             "heimTeamId": "elversberg",
-            "auswaertsTeamId": "leverkusen"
+            "auswaertsTeamId": "leverkusen",
+            "ergebnisNach90MinutenBestaetigt": true,
+            "tippverteilung": {
+              "schemaVersion": 1,
+              "quelle": "Kicktipp – Tipps aller Tipper",
+              "stand": "2026-08-29T20:36:14.310Z",
+              "abgegeben": 93,
+              "nichtAbgegeben": 7,
+              "verborgen": 0,
+              "tendenzen": {
+                "1": {
+                  "anzahl": 5,
+                  "prozent": 5.4
+                },
+                "2": {
+                  "anzahl": 84,
+                  "prozent": 90.3
+                },
+                "X": {
+                  "anzahl": 4,
+                  "prozent": 4.3
+                }
+              }
+            },
+            "aktualisiertAm": "2026-08-29T20:36:14.310Z"
           },
           {
             "id": "bl-2026-27-01-002",
@@ -3222,7 +3342,31 @@
             "notiz": "",
             "quelleStand": "2026-08-29",
             "heimTeamId": "dortmund",
-            "auswaertsTeamId": "hamburger-sv"
+            "auswaertsTeamId": "hamburger-sv",
+            "ergebnisNach90MinutenBestaetigt": true,
+            "tippverteilung": {
+              "schemaVersion": 1,
+              "quelle": "Kicktipp – Tipps aller Tipper",
+              "stand": "2026-08-29T20:36:14.310Z",
+              "abgegeben": 93,
+              "nichtAbgegeben": 7,
+              "verborgen": 0,
+              "tendenzen": {
+                "1": {
+                  "anzahl": 87,
+                  "prozent": 93.5
+                },
+                "2": {
+                  "anzahl": 3,
+                  "prozent": 3.2
+                },
+                "X": {
+                  "anzahl": 3,
+                  "prozent": 3.2
+                }
+              }
+            },
+            "aktualisiertAm": "2026-08-29T20:36:14.310Z"
           },
           {
             "id": "bl-2026-27-01-004",
@@ -42567,7 +42711,7 @@
             "tippImporte": []
           }
         ],
-        "statusErmitteltAm": "2026-08-29T19:37:55.633Z"
+        "statusErmitteltAm": "2026-08-29T20:36:14.342Z"
       },
       {
         "id": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
@@ -43525,7 +43669,7 @@
             "tippImporte": []
           }
         ],
-        "statusErmitteltAm": "2026-08-29T19:37:55.634Z"
+        "statusErmitteltAm": "2026-08-29T20:36:14.343Z"
       },
       {
         "id": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
@@ -43535,7 +43679,7 @@
         "label": "Bundesliga",
         "runde": "1. Spieltag",
         "erstelltAm": "2026-08-28T23:47:54.837Z",
-        "aktualisiertAm": "2026-08-28T23:48:58.724Z",
+        "aktualisiertAm": "2026-08-29T20:36:14.345Z",
         "spiele": [
           {
             "id": "bl-2026-27-01-001",
@@ -43578,15 +43722,15 @@
             "datumAnzeige": "29.08.2026",
             "anstoss": "15:30",
             "terminBestaetigt": true,
-            "heimtore": null,
-            "auswaertstore": null,
-            "status": "terminiert",
+            "heimtore": 3,
+            "auswaertstore": 0,
+            "status": "beendet",
             "sonderwertungen": [],
             "notiz": "",
             "quelleStand": "2026-07-30",
             "heimTeamId": "rb-leipzig",
             "auswaertsTeamId": "moenchengladbach",
-            "ergebnisNach90MinutenBestaetigt": false,
+            "ergebnisNach90MinutenBestaetigt": true,
             "tippStatus": "vorlaeufig",
             "tippImporte": [],
             "tippsSnapshot": []
@@ -43605,15 +43749,15 @@
             "datumAnzeige": "29.08.2026",
             "anstoss": "15:30",
             "terminBestaetigt": true,
-            "heimtore": null,
-            "auswaertstore": null,
-            "status": "terminiert",
+            "heimtore": 0,
+            "auswaertstore": 0,
+            "status": "beendet",
             "sonderwertungen": [],
             "notiz": "",
             "quelleStand": "2026-07-30",
             "heimTeamId": "mainz-05",
             "auswaertsTeamId": "paderborn",
-            "ergebnisNach90MinutenBestaetigt": false,
+            "ergebnisNach90MinutenBestaetigt": true,
             "tippStatus": "vorlaeufig",
             "tippImporte": [],
             "tippsSnapshot": []
@@ -43632,15 +43776,15 @@
             "datumAnzeige": "29.08.2026",
             "anstoss": "15:30",
             "terminBestaetigt": true,
-            "heimtore": null,
-            "auswaertstore": null,
-            "status": "terminiert",
+            "heimtore": 3,
+            "auswaertstore": 3,
+            "status": "beendet",
             "sonderwertungen": [],
             "notiz": "",
             "quelleStand": "2026-07-30",
             "heimTeamId": "union-berlin",
             "auswaertsTeamId": "frankfurt",
-            "ergebnisNach90MinutenBestaetigt": false,
+            "ergebnisNach90MinutenBestaetigt": true,
             "tippStatus": "vorlaeufig",
             "tippImporte": [],
             "tippsSnapshot": []
@@ -43659,15 +43803,15 @@
             "datumAnzeige": "29.08.2026",
             "anstoss": "15:30",
             "terminBestaetigt": true,
-            "heimtore": null,
-            "auswaertstore": null,
-            "status": "terminiert",
+            "heimtore": 3,
+            "auswaertstore": 2,
+            "status": "beendet",
             "sonderwertungen": [],
             "notiz": "",
             "quelleStand": "2026-07-30",
             "heimTeamId": "koeln",
             "auswaertsTeamId": "hoffenheim",
-            "ergebnisNach90MinutenBestaetigt": false,
+            "ergebnisNach90MinutenBestaetigt": true,
             "tippStatus": "vorlaeufig",
             "tippImporte": [],
             "tippsSnapshot": []
@@ -43686,15 +43830,15 @@
             "datumAnzeige": "29.08.2026",
             "anstoss": "15:30",
             "terminBestaetigt": true,
-            "heimtore": null,
-            "auswaertstore": null,
-            "status": "terminiert",
+            "heimtore": 3,
+            "auswaertstore": 2,
+            "status": "beendet",
             "sonderwertungen": [],
             "notiz": "",
             "quelleStand": "2026-07-30",
             "heimTeamId": "elversberg",
             "auswaertsTeamId": "leverkusen",
-            "ergebnisNach90MinutenBestaetigt": false,
+            "ergebnisNach90MinutenBestaetigt": true,
             "tippStatus": "vorlaeufig",
             "tippImporte": [],
             "tippsSnapshot": []
@@ -43713,15 +43857,15 @@
             "datumAnzeige": "29.08.2026",
             "anstoss": "18:30",
             "terminBestaetigt": true,
-            "heimtore": null,
-            "auswaertstore": null,
-            "status": "terminiert",
+            "heimtore": 2,
+            "auswaertstore": 0,
+            "status": "beendet",
             "sonderwertungen": [],
             "notiz": "",
             "quelleStand": "2026-07-30",
             "heimTeamId": "dortmund",
             "auswaertsTeamId": "hamburger-sv",
-            "ergebnisNach90MinutenBestaetigt": false,
+            "ergebnisNach90MinutenBestaetigt": true,
             "tippStatus": "vorlaeufig",
             "tippImporte": [],
             "tippsSnapshot": []
@@ -43783,7 +43927,7 @@
         ],
         "tippImportHistorie": [],
         "status": "teilweise",
-        "statusErmitteltAm": "2026-08-29T19:37:55.634Z"
+        "statusErmitteltAm": "2026-08-29T20:36:14.345Z"
       },
       {
         "id": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
@@ -44720,7 +44864,8 @@
             ],
             "tippImporte": []
           }
-        ]
+        ],
+        "statusErmitteltAm": "2026-08-29T20:36:14.343Z"
       }
     ]
   },
