@@ -7,6 +7,7 @@
   let gameDataUrl = "./spieldaten.json";
   let teamDataUrl = "./teams.json";
   let bundesligaTableUrl = "./bundesliga-tabelle.json";
+  let bundesligaGoalGetterUrl = "./bundesliga-torjaeger.json";
 
   let competitionConfigUrl = "./wettbewerbe.json";
   const DEFAULT_COMPETITIONS = [
@@ -1751,7 +1752,53 @@ function renderCentralValidation(root) {
     root.appendChild(section);
   }
 
-function renderCards(cards) {
+function bundesligaInfoCards(cards, goalData) {
+    const result = safeArray(cards).map(card => ({ ...card }));
+    if (slug !== "bundesliga") return result;
+
+    const entries = safeArray(goalData?.torjaeger)
+      .map(entry => ({
+        name: String(entry?.name || "").trim(),
+        tore: Number(entry?.tore)
+      }))
+      .filter(entry => entry.name && Number.isInteger(entry.tore) && entry.tore > 0)
+      .sort((a, b) => b.tore - a.tore || a.name.localeCompare(b.name, "de"));
+
+    if (!entries.length || result.length < 2) return result;
+
+    const topGoals = entries[0].tore;
+    const leaders = entries.filter(entry => entry.tore === topGoals);
+    const goalWord = topGoals === 1 ? "Tor" : "Tore";
+
+    result[0] = {
+      ...result[0],
+      titel: "Torjäger",
+      text: leaders.length === 1
+        ? `${leaders[0].name} führt mit ${topGoals} ${goalWord}.`
+        : `${leaders.length} Spieler führen mit je ${topGoals} ${goalWord}.`
+    };
+
+    const shown = entries.slice(0, 3);
+    const equalAfterShown = entries.length > shown.length && shown.length
+      ? entries.slice(shown.length).filter(entry => entry.tore === shown.at(-1).tore).length
+      : 0;
+    const listText = shown
+      .map(entry => `${entry.name} · ${entry.tore} ${entry.tore === 1 ? "Tor" : "Tore"}`)
+      .join(" · ");
+    const equalText = equalAfterShown
+      ? ` · +${equalAfterShown} weitere gleichauf`
+      : "";
+
+    result[1] = {
+      ...result[1],
+      titel: "Torjägerfeld",
+      text: `${listText}${equalText}`
+    };
+
+    return result;
+  }
+
+  function renderCards(cards) {
     const root = $("info-cards");
     root.innerHTML = "";
     safeArray(cards).forEach(card => {
@@ -2192,18 +2239,20 @@ function renderCards(cards) {
   async function load() {
     try {
       if (window.OSCDataRegistry) {
-        [gameDataUrl, teamDataUrl, bundesligaTableUrl, competitionConfigUrl] = await Promise.all([
+        [gameDataUrl, teamDataUrl, bundesligaTableUrl, bundesligaGoalGetterUrl, competitionConfigUrl] = await Promise.all([
           window.OSCDataRegistry.url("spiele"),
           window.OSCDataRegistry.url("teams"),
           window.OSCDataRegistry.url("bundesligaTabelle"),
+          window.OSCDataRegistry.url("bundesligaTorjaeger"),
           window.OSCDataRegistry.url("wettbewerbe")
         ]);
       }
-      const [data, centralGameData, teamData, bundesligaTableData, competitionConfig, openLigaDbDfbMatches, openLigaDbClTable, openLigaDbElMatches, europaLeagueFallback] = await Promise.all([
+      const [data, centralGameData, teamData, bundesligaTableData, bundesligaGoalGetterData, competitionConfig, openLigaDbDfbMatches, openLigaDbClTable, openLigaDbElMatches, europaLeagueFallback] = await Promise.all([
         fetchJson(jsonUrl, true),
         fetchJson(gameDataUrl, false),
         fetchJson(teamDataUrl, false),
         slug === "bundesliga" ? fetchJson(bundesligaTableUrl, false) : Promise.resolve({ teams: [] }),
+        slug === "bundesliga" ? fetchJson(bundesligaGoalGetterUrl, false) : Promise.resolve({ torjaeger: [] }),
         fetchJson(competitionConfigUrl, false),
         slug === "dfb-pokal"
           ? fetchJson(OPENLIGADB_DFB_PROTOTYPE_URL, false)
@@ -2236,7 +2285,7 @@ function renderCards(cards) {
       text("title", data.titel);
       text("description", data.beschreibung);
 
-      renderCards(data.karten);
+      renderCards(bundesligaInfoCards(data.karten, bundesligaGoalGetterData));
 
       const statusBox = $("status-box");
       const showStatus = Boolean(data.aktuellerStandTitel || data.aktuellerStand);

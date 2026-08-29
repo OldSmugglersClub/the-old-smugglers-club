@@ -11,7 +11,7 @@
       wettbewerbe: "wettbewerbe.json", spiele: "spieldaten.json", teams: "teams.json",
       tippspieltage: "tippspieltage.json", highscore: "highscore.json", hallOfFame: "hall-of-fame.json",
       clubdaten: "clubdaten.json", saisonuebersicht: "saison-2026-2027.json", spieltag: "spieltag.json",
-      bundesligaTabelle: "bundesliga-tabelle.json", version: "VERSION.txt", systemstatus: "systemstatus.json"
+      bundesligaTabelle: "bundesliga-tabelle.json", bundesligaTorjaeger: "bundesliga-torjaeger.json", version: "VERSION.txt", systemstatus: "systemstatus.json"
     }
   };
 

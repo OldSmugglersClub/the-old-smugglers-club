@@ -5,12 +5,12 @@
   "beschreibung": "Die Bundesliga-Zentrale bündelt alle 34 Spieltage, Ergebnisse, die automatisch berechnete Tabelle sowie kompakte Saisonstatistiken der Saison 2026/2027.",
   "karten": [
     {
-      "titel": "Wertung",
-      "text": "Die Bundesliga bildet die reguläre Hauptwertung der Saison 2026/2027."
+      "titel": "Torjäger",
+      "text": "Aktuelle Torjägerdaten werden automatisch aus OpenLigaDB geladen."
     },
     {
-      "titel": "Saisonstart",
-      "text": "Der erste Spieltag beginnt am 28. August 2026."
+      "titel": "Torjägerfeld",
+      "text": "Die führenden Torschützen erscheinen hier, sobald OpenLigaDB verwertbare Saisondaten liefert."
     },
     {
       "titel": "Datenzentrale",
