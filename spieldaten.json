@@ -1076,12 +1076,12 @@
           "datumAnzeige": "29.08.2026",
           "anstoss": "18:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 2,
+          "auswaertstore": 0,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "",
-          "quelleStand": "2026-07-30",
+          "quelleStand": "2026-08-29",
           "heimTeamId": "dortmund",
           "auswaertsTeamId": "hamburger-sv"
         },
@@ -8365,6 +8365,6 @@
       ]
     }
   ],
-  "datenVersion": 15,
+  "datenVersion": 16,
   "aktualisiert": "2026-08-29"
 }
