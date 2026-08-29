@@ -1,9 +1,30 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 0,
-  "aktualisiert": null,
+  "datenVersion": 1,
+  "aktualisiert": "2026-08-29",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
-  "status": "wartet-auf-openligadb",
-  "torjaeger": []
+  "status": "bereit",
+  "torjaeger": [
+    {
+      "name": "Aleksandar Pavlovic",
+      "tore": 1
+    },
+    {
+      "name": "D. Upamecano",
+      "tore": 1
+    },
+    {
+      "name": "J. Vagnoman",
+      "tore": 1
+    },
+    {
+      "name": "Luis Díaz",
+      "tore": 1
+    },
+    {
+      "name": "M. Olise",
+      "tore": 1
+    }
+  ]
 }
