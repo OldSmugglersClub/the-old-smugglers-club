@@ -1,11 +1,19 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 2,
+  "datenVersion": 3,
   "aktualisiert": "2026-08-29",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
   "torjaeger": [
+    {
+      "name": "Younes Ebnoutalib",
+      "tore": 3
+    },
+    {
+      "name": "Thijs Dallinga",
+      "tore": 2
+    },
     {
       "name": "J. Vagnoman",
       "tore": 1
@@ -24,6 +32,62 @@
     },
     {
       "name": "Aleksandar Pavlovic",
+      "tore": 1
+    },
+    {
+      "name": "R. Reitz",
+      "tore": 1
+    },
+    {
+      "name": "R. Baku",
+      "tore": 1
+    },
+    {
+      "name": "A. Nusa",
+      "tore": 1
+    },
+    {
+      "name": "T. Skarke",
+      "tore": 1
+    },
+    {
+      "name": "L. Querfeld",
+      "tore": 1
+    },
+    {
+      "name": "Emmanuel Latte Lath",
+      "tore": 1
+    },
+    {
+      "name": "S. El Mala",
+      "tore": 1
+    },
+    {
+      "name": "O. Kabak",
+      "tore": 1
+    },
+    {
+      "name": "A. Daghim",
+      "tore": 1
+    },
+    {
+      "name": "Cole Campbell",
+      "tore": 1
+    },
+    {
+      "name": "David Mokwa Ntusu",
+      "tore": 1
+    },
+    {
+      "name": "C. Kofane",
+      "tore": 1
+    },
+    {
+      "name": "P. Schick",
+      "tore": 1
+    },
+    {
+      "name": "L. Petkov",
       "tore": 1
     }
   ]
