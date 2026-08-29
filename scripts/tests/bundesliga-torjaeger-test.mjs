@@ -13,10 +13,10 @@ const normalized = normalizeGoalGetters([
 ]);
 
 assert.deepEqual(normalized, [
-  { name: "A Spieler", tore: 2 },
   { name: "B Spieler", tore: 1 },
+  { name: "A Spieler", tore: 2 },
   { name: "C Spieler", tore: 1 }
-]);
+], "OpenLigaDB-Reihenfolge muss unverändert bleiben.");
 
 const dir = fs.mkdtempSync(path.join(os.tmpdir(), "osc-goalgetter-"));
 const fixture = path.join(dir, "fixture.json");

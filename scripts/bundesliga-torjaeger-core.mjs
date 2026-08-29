@@ -29,9 +29,9 @@ export function normalizeGoalGetters(rows) {
     seen.add(key);
   }
 
-  return normalized.sort(
-    (a, b) => b.tore - a.tore || a.name.localeCompare(b.name, "de")
-  );
+  // TEST27: Reihenfolge von OpenLigaDB unverändert bewahren.
+  // Der erste von OpenLigaDB gelieferte Eintrag ist verbindlich Platz 1.
+  return normalized;
 }
 
 export function sameSportingData(a, b) {

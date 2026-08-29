@@ -9,8 +9,8 @@
       "text": "Aktuelle Torjägerdaten werden automatisch aus OpenLigaDB geladen."
     },
     {
-      "titel": "Torjägerfeld",
-      "text": "Die führenden Torschützen erscheinen hier, sobald OpenLigaDB verwertbare Saisondaten liefert."
+      "titel": "Verfolgerfeld",
+      "text": "Die Plätze 2 bis 5 erscheinen hier, sobald OpenLigaDB verwertbare Torjägerdaten liefert."
     },
     {
       "titel": "Datenzentrale",

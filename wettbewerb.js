@@ -1761,38 +1761,37 @@ function bundesligaInfoCards(cards, goalData) {
         name: String(entry?.name || "").trim(),
         tore: Number(entry?.tore)
       }))
-      .filter(entry => entry.name && Number.isInteger(entry.tore) && entry.tore > 0)
-      .sort((a, b) => b.tore - a.tore || a.name.localeCompare(b.name, "de"));
+      .filter(entry => entry.name && Number.isInteger(entry.tore) && entry.tore > 0);
 
     if (!entries.length || result.length < 2) return result;
 
-    const topGoals = entries[0].tore;
-    const leaders = entries.filter(entry => entry.tore === topGoals);
-    const goalWord = topGoals === 1 ? "Tor" : "Tore";
+    // Zwingende Fachregel TEST27:
+    // OpenLigaDB liefert die maßgebende Reihenfolge.
+    // Eintrag 1 wird ohne eigene Sortierung als Platz 1 angezeigt.
+    const leader = entries[0];
 
     result[0] = {
       ...result[0],
       titel: "Torjäger",
-      text: leaders.length === 1
-        ? `${leaders[0].name} führt mit ${topGoals} ${goalWord}.`
-        : `${leaders.length} Spieler führen mit je ${topGoals} ${goalWord}.`
+      leader: {
+        image: "./assets/torjaeger-kanone.png",
+        name: leader.name,
+        tore: leader.tore
+      }
     };
 
-    const shown = entries.slice(0, 3);
-    const equalAfterShown = entries.length > shown.length && shown.length
-      ? entries.slice(shown.length).filter(entry => entry.tore === shown.at(-1).tore).length
-      : 0;
-    const listText = shown
-      .map(entry => `${entry.name} · ${entry.tore} ${entry.tore === 1 ? "Tor" : "Tore"}`)
-      .join(" · ");
-    const equalText = equalAfterShown
-      ? ` · +${equalAfterShown} weitere gleichauf`
-      : "";
+    // TEST29: Verfolgerfeld zeigt ausschließlich OpenLigaDB-Plätze 2 bis 5
+    // als eigene, vertikal zentrierte Zeilen.
+    const chasers = entries.slice(1, 5);
 
     result[1] = {
       ...result[1],
-      titel: "Torjägerfeld",
-      text: `${listText}${equalText}`
+      titel: "Verfolgerfeld",
+      chasers: chasers.map((entry, index) => ({
+        platz: index + 2,
+        name: entry.name,
+        tore: entry.tore
+      }))
     };
 
     return result;
@@ -1807,7 +1806,62 @@ function bundesligaInfoCards(cards, goalData) {
       const h2 = document.createElement("h2");
       h2.textContent = card.titel || "";
       const p = document.createElement("p");
-      p.textContent = card.text || "";
+      if (card.leader) {
+        const box = document.createElement("div");
+        box.className = "goalgetter-leader";
+
+        const img = document.createElement("img");
+        img.className = "goalgetter-cannon";
+        img.src = card.leader.image;
+        img.alt = "Torjäger-Kanone";
+
+        const name = document.createElement("div");
+        name.className = "goalgetter-leader-name";
+        name.textContent = card.leader.name || "";
+
+        const goals = document.createElement("div");
+        goals.className = "goalgetter-leader-goals";
+        const count = Number(card.leader.tore);
+        goals.textContent = `${count} ${count === 1 ? "Tor" : "Tore"}`;
+
+        box.append(img, name, goals);
+        p.appendChild(box);
+      } else if (Array.isArray(card.chasers)) {
+        const box = document.createElement("div");
+        box.className = "goalgetter-chasers";
+
+        if (!card.chasers.length) {
+          const empty = document.createElement("div");
+          empty.className = "goalgetter-chasers-empty";
+          empty.textContent = "Noch keine Verfolger.";
+          box.appendChild(empty);
+        } else {
+          card.chasers.forEach(entry => {
+            const row = document.createElement("div");
+            row.className = "goalgetter-chaser-row";
+
+            const place = document.createElement("span");
+            place.className = "goalgetter-chaser-place";
+            place.textContent = `${entry.platz}.`;
+
+            const name = document.createElement("span");
+            name.className = "goalgetter-chaser-name";
+            name.textContent = entry.name || "";
+
+            const goals = document.createElement("span");
+            goals.className = "goalgetter-chaser-goals";
+            const count = Number(entry.tore);
+            goals.textContent = `${count} ${count === 1 ? "Tor" : "Tore"}`;
+
+            row.append(place, name, goals);
+            box.appendChild(row);
+          });
+        }
+
+        p.appendChild(box);
+      } else {
+        p.textContent = card.text || "";
+      }
       article.append(h2, p);
       root.appendChild(article);
     });
