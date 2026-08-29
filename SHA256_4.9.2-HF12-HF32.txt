@@ -1,0 +1,8 @@
+# SHA-256 – 4.9.2-HF12-HF32
+# Prüfsummen der ersetzten und neu hinzugefügten Dateien; diese Datei selbst ist ausgenommen.
+
+b51cf00cc56e817489697ccfe7c51f81e8f2984ff7348ff68654e5b892e5d6e0  legal.css
+57c4df6b6394c5a1b85b45a00c77ba8a8a0f4a4ee473a4796122fd12a0b47006  VERSION.txt
+7b65dcaa7df69afca628dafafb0f03354b7fdd702f75af48ea07d610a52c41b8  CHANGELOG_4.9.2-HF12-HF32.md
+24ccad257d22aa76b9ee189a40d5ef66c981377298ed7e6d88ad056472e1185f  README_4.9.2-HF12-HF32.md
+3c088849e2b7e0346fce41f41edea3e110b2d418be40fad8f98b2def3eb4a20e  DATEILISTE_ERSETZEN_NEU_LOESCHEN_4.9.2-HF12-HF32.md
