@@ -113,15 +113,15 @@
   },
   "meta": {
     "titel": "Ehrenlogbuch des Old Smugglers Club",
-    "stand": "2026-08-23T14:17:41.394Z",
+    "stand": "2026-08-29T19:37:55.601Z",
     "hinweis": "Nur bestätigte Titel und Rekorde werden dauerhaft eingetragen.",
     "schemaVersion": 2,
     "adminUebergabeErforderlich": true,
     "generatorVersion": "6.2.0-a6-HF3-HF7"
   },
   "schemaVersion": 3,
-  "datenVersion": 2,
-  "aktualisiertAm": "2026-08-23T14:17:41.394Z",
+  "datenVersion": 3,
+  "aktualisiertAm": "2026-08-29T19:37:55.601Z",
   "saison": "2026-27",
   "quelle": "Admin 6.2.0-a6-HF3-HF7 – bestätigte Titel, Bestandsschutz und Website-Zielstruktur",
   "aktuelleSaison": {
@@ -231,7 +231,6 @@
   "pruefung": {
     "gueltig": false,
     "hinweise": [
-      "Rekord Gesamtpunkte: 6 gleichrangige Bestwerte (7); keine automatische Ersetzung.",
       "Rekord Exakte Tipps: 8 gleichrangige Bestwerte (1); keine automatische Ersetzung."
     ],
     "entscheidungen": [],
@@ -242,7 +241,7 @@
       "erforderlich": false,
       "vorhanden": true,
       "gueltig": true,
-      "anzahlErstplatzierte": 6
+      "anzahlErstplatzierte": 1
     },
     "ehrenchampions": {
       "gueltig": true,

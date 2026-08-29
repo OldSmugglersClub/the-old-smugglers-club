@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "datenVersion": 6,
-  "aktualisiert": "2026-08-23",
+  "datenVersion": 8,
+  "aktualisiert": "2026-08-29",
   "hinweis": "Kompatible Website-Ausgabe, automatisch aus spielbetrieb.json/stammdaten.vereine erzeugt. Nicht direkt bearbeiten.",
-  "quelle": "Admin 6.5.0-HF2",
+  "quelle": "Admin 6.5.0-HF7",
   "teams": [
     {
       "id": "heidenheim",
@@ -18,7 +18,8 @@
         "wettbewerb": null
       },
       "kicktippAliase": [
-        "FCH"
+        "FCH",
+        "HDH"
       ],
       "apiAliase": [
         "1. FC Heidenheim 1846",
@@ -868,7 +869,8 @@
         "wettbewerb": null
       },
       "kicktippAliase": [
-        "SVD"
+        "SVD",
+        "D98"
       ],
       "apiAliase": [
         "SV Darmstadt 98",

@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 3,
-  "aktualisiertAm": "2026-08-23T14:17:41.394Z",
+  "datenVersion": 4,
+  "aktualisiertAm": "2026-08-29T19:37:55.601Z",
   "saison": "2026-27",
   "status": "Berechnet",
   "kategorien": [
     {
       "titel": "Spieltagsführer",
       "name": "baslermario",
-      "wert": "7 Punkte"
+      "wert": "10 Punkte"
     },
     {
       "titel": "Meiste exakte Tipps",

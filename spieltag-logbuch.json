@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 4,
-  "aktualisiert": "2026-08-23T14:17:41.394Z",
+  "datenVersion": 5,
+  "aktualisiert": "2026-08-29T19:37:55.601Z",
   "saison": "2026-27",
   "regelwerk": {
     "kapitaene": "Alle Tipper mit der höchsten tatsächlichen Spieltagspunktzahl; kein künstlicher Tie-Break.",
@@ -1992,6 +1992,458 @@
             "exakt": 8,
             "differenz": 18,
             "tendenz": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
+      "bezeichnung": "Smuggleraufträge 3. Spieltag",
+      "wettbewerb": "smugglerauftrag",
+      "runde": "3. Spieltag",
+      "abgeschlossen": true,
+      "spielIds": [
+        "sma-2026-27-03-020"
+      ],
+      "kapitaene": [
+        {
+          "teilnehmerId": "baslermario",
+          "teilnehmer": "baslermario",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "mikoog",
+          "teilnehmer": "MiKoog",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "steff77",
+          "teilnehmer": "Steff77",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "eckes2359",
+          "teilnehmer": "Eckes2359",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "marius",
+          "teilnehmer": "Marius",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "adamj",
+          "teilnehmer": "AdamJ",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "souvard",
+          "teilnehmer": "Souvard",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "olympiakos",
+          "teilnehmer": "Olympiakos",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "ximmox",
+          "teilnehmer": "xIMMOx",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "bigdog",
+          "teilnehmer": "Bigdog",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "jakob",
+          "teilnehmer": "Jakob",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "realzaragoza",
+          "teilnehmer": "Realzaragoza",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "marcor",
+          "teilnehmer": "MarcoR",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "cali79",
+          "teilnehmer": "Cali79",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "jwfussball",
+          "teilnehmer": "JWFUSSBALL",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "gerrit1887",
+          "teilnehmer": "Gerrit1887",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "marc86",
+          "teilnehmer": "Marc86",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "juergen70",
+          "teilnehmer": "Juergen70",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "stevie26",
+          "teilnehmer": "Stevie26",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "jungunddurstig",
+          "teilnehmer": "JungundDurstig",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "lucipher",
+          "teilnehmer": "LuCipher",
+          "punkte": 3,
+          "exakt": 0,
+          "differenz": 1,
+          "tendenz": 0
+        }
+      ],
+      "highlights": [
+        {
+          "typ": "kapitaene",
+          "prioritaet": 100,
+          "anzeigen": true,
+          "daten": {
+            "punkte": 3,
+            "anzahl": 21,
+            "tipper": [
+              {
+                "teilnehmerId": "baslermario",
+                "teilnehmer": "baslermario",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "mikoog",
+                "teilnehmer": "MiKoog",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "steff77",
+                "teilnehmer": "Steff77",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "eckes2359",
+                "teilnehmer": "Eckes2359",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "marius",
+                "teilnehmer": "Marius",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "adamj",
+                "teilnehmer": "AdamJ",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "souvard",
+                "teilnehmer": "Souvard",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "olympiakos",
+                "teilnehmer": "Olympiakos",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "ximmox",
+                "teilnehmer": "xIMMOx",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "bigdog",
+                "teilnehmer": "Bigdog",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "jakob",
+                "teilnehmer": "Jakob",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "realzaragoza",
+                "teilnehmer": "Realzaragoza",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "marcor",
+                "teilnehmer": "MarcoR",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "cali79",
+                "teilnehmer": "Cali79",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "jwfussball",
+                "teilnehmer": "JWFUSSBALL",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "gerrit1887",
+                "teilnehmer": "Gerrit1887",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "marc86",
+                "teilnehmer": "Marc86",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "juergen70",
+                "teilnehmer": "Juergen70",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "stevie26",
+                "teilnehmer": "Stevie26",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "jungunddurstig",
+                "teilnehmer": "JungundDurstig",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "lucipher",
+                "teilnehmer": "LuCipher",
+                "punkte": 3,
+                "exakt": 0,
+                "differenz": 1,
+                "tendenz": 0
+              }
+            ]
+          }
+        },
+        {
+          "typ": "crewduell",
+          "prioritaet": 70,
+          "anzeigen": true,
+          "daten": {
+            "teams": [
+              {
+                "team": "New Smugglers Team",
+                "durchschnitt": 1.52,
+                "punktesumme": 114,
+                "mitglieder": 75
+              },
+              {
+                "team": "Old Smugglers Team",
+                "durchschnitt": 1,
+                "punktesumme": 25,
+                "mitglieder": 25
+              }
+            ],
+            "sieger": "New Smugglers Team",
+            "differenz": 0.52
+          }
+        },
+        {
+          "typ": "kursbewegung",
+          "prioritaet": 40,
+          "anzeigen": true,
+          "grund": null,
+          "daten": {
+            "gewinner": [
+              {
+                "teilnehmerId": "jungunddurstig",
+                "teilnehmer": "JungundDurstig",
+                "vorher": 85,
+                "jetzt": 62,
+                "veraenderung": 23
+              },
+              {
+                "teilnehmerId": "lucipher",
+                "teilnehmer": "LuCipher",
+                "vorher": 85,
+                "jetzt": 62,
+                "veraenderung": 23
+              }
+            ],
+            "verlierer": [
+              {
+                "teilnehmerId": "11le",
+                "teilnehmer": "11LE",
+                "vorher": 22,
+                "jetzt": 62,
+                "veraenderung": -40
+              },
+              {
+                "teilnehmerId": "18amfg99",
+                "teilnehmer": "18AMFG99",
+                "vorher": 22,
+                "jetzt": 62,
+                "veraenderung": -40
+              },
+              {
+                "teilnehmerId": "gruber",
+                "teilnehmer": "gRuBer",
+                "vorher": 22,
+                "jetzt": 62,
+                "veraenderung": -40
+              },
+              {
+                "teilnehmerId": "vebfriwiwerk",
+                "teilnehmer": "VebFriwiwerk",
+                "vorher": 22,
+                "jetzt": 62,
+                "veraenderung": -40
+              }
+            ],
+            "maxGewinn": 23,
+            "maxVerlust": -40
+          }
+        },
+        {
+          "typ": "zahlen-aus-der-kombuese",
+          "prioritaet": 30,
+          "anzeigen": true,
+          "daten": {
+            "abgegeben": 91,
+            "nichtAbgegeben": 9,
+            "exakt": 0,
+            "differenz": 21,
+            "tendenz": 38
           }
         }
       ]
