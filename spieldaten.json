@@ -950,7 +950,7 @@
           "tippverteilung": {
             "schemaVersion": 1,
             "quelle": "Kicktipp – Tipps aller Tipper",
-            "stand": "2026-08-29T20:36:14.310Z",
+            "stand": "2026-08-30T19:49:50.788Z",
             "abgegeben": 95,
             "nichtAbgegeben": 5,
             "verborgen": 0,
@@ -969,7 +969,7 @@
               }
             }
           },
-          "aktualisiertAm": "2026-08-29T20:36:14.310Z"
+          "aktualisiertAm": "2026-08-30T19:49:50.788Z"
         },
         {
           "id": "bl-2026-27-01-003",
@@ -997,7 +997,7 @@
           "tippverteilung": {
             "schemaVersion": 1,
             "quelle": "Kicktipp – Tipps aller Tipper",
-            "stand": "2026-08-29T20:36:14.310Z",
+            "stand": "2026-08-30T19:49:50.788Z",
             "abgegeben": 93,
             "nichtAbgegeben": 7,
             "verborgen": 0,
@@ -1016,7 +1016,7 @@
               }
             }
           },
-          "aktualisiertAm": "2026-08-29T20:36:14.310Z"
+          "aktualisiertAm": "2026-08-30T19:49:50.788Z"
         },
         {
           "id": "bl-2026-27-01-006",
@@ -1044,7 +1044,7 @@
           "tippverteilung": {
             "schemaVersion": 1,
             "quelle": "Kicktipp – Tipps aller Tipper",
-            "stand": "2026-08-29T20:36:14.310Z",
+            "stand": "2026-08-30T19:49:50.788Z",
             "abgegeben": 93,
             "nichtAbgegeben": 7,
             "verborgen": 0,
@@ -1063,7 +1063,7 @@
               }
             }
           },
-          "aktualisiertAm": "2026-08-29T20:36:14.310Z"
+          "aktualisiertAm": "2026-08-30T19:49:50.788Z"
         },
         {
           "id": "bl-2026-27-01-007",
@@ -1091,7 +1091,7 @@
           "tippverteilung": {
             "schemaVersion": 1,
             "quelle": "Kicktipp – Tipps aller Tipper",
-            "stand": "2026-08-29T20:36:14.310Z",
+            "stand": "2026-08-30T19:49:50.788Z",
             "abgegeben": 93,
             "nichtAbgegeben": 7,
             "verborgen": 0,
@@ -1110,7 +1110,7 @@
               }
             }
           },
-          "aktualisiertAm": "2026-08-29T20:36:14.310Z"
+          "aktualisiertAm": "2026-08-30T19:49:50.788Z"
         },
         {
           "id": "bl-2026-27-01-008",
@@ -1138,7 +1138,7 @@
           "tippverteilung": {
             "schemaVersion": 1,
             "quelle": "Kicktipp – Tipps aller Tipper",
-            "stand": "2026-08-29T20:36:14.310Z",
+            "stand": "2026-08-30T19:49:50.788Z",
             "abgegeben": 93,
             "nichtAbgegeben": 7,
             "verborgen": 0,
@@ -1157,7 +1157,7 @@
               }
             }
           },
-          "aktualisiertAm": "2026-08-29T20:36:14.310Z"
+          "aktualisiertAm": "2026-08-30T19:49:50.788Z"
         },
         {
           "id": "bl-2026-27-01-009",
@@ -1185,7 +1185,7 @@
           "tippverteilung": {
             "schemaVersion": 1,
             "quelle": "Kicktipp – Tipps aller Tipper",
-            "stand": "2026-08-29T20:36:14.310Z",
+            "stand": "2026-08-30T19:49:50.788Z",
             "abgegeben": 93,
             "nichtAbgegeben": 7,
             "verborgen": 0,
@@ -1204,7 +1204,7 @@
               }
             }
           },
-          "aktualisiertAm": "2026-08-29T20:36:14.310Z"
+          "aktualisiertAm": "2026-08-30T19:49:50.788Z"
         },
         {
           "id": "bl-2026-27-01-002",
@@ -1232,7 +1232,7 @@
           "tippverteilung": {
             "schemaVersion": 1,
             "quelle": "Kicktipp – Tipps aller Tipper",
-            "stand": "2026-08-29T20:36:14.310Z",
+            "stand": "2026-08-30T19:49:50.788Z",
             "abgegeben": 93,
             "nichtAbgegeben": 7,
             "verborgen": 0,
@@ -1251,7 +1251,7 @@
               }
             }
           },
-          "aktualisiertAm": "2026-08-29T20:36:14.310Z"
+          "aktualisiertAm": "2026-08-30T19:49:50.788Z"
         },
         {
           "id": "bl-2026-27-01-004",
@@ -1274,7 +1274,31 @@
           "notiz": "",
           "quelleStand": "2026-08-30",
           "heimTeamId": "freiburg",
-          "auswaertsTeamId": "werder-bremen"
+          "auswaertsTeamId": "werder-bremen",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-08-30T19:49:50.788Z",
+            "abgegeben": 94,
+            "nichtAbgegeben": 6,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 70,
+                "prozent": 74.5
+              },
+              "2": {
+                "anzahl": 8,
+                "prozent": 8.5
+              },
+              "X": {
+                "anzahl": 16,
+                "prozent": 17
+              }
+            }
+          },
+          "aktualisiertAm": "2026-08-30T19:49:50.788Z"
         },
         {
           "id": "bl-2026-27-01-005",
@@ -1297,7 +1321,31 @@
           "notiz": "",
           "quelleStand": "2026-08-30",
           "heimTeamId": "augsburg",
-          "auswaertsTeamId": "schalke-04"
+          "auswaertsTeamId": "schalke-04",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-08-30T19:49:50.788Z",
+            "abgegeben": 94,
+            "nichtAbgegeben": 6,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 47,
+                "prozent": 50
+              },
+              "2": {
+                "anzahl": 22,
+                "prozent": 23.4
+              },
+              "X": {
+                "anzahl": 25,
+                "prozent": 26.6
+              }
+            }
+          },
+          "aktualisiertAm": "2026-08-30T19:49:50.788Z"
         },
         {
           "id": "bl-2026-27-02-010",
@@ -8533,6 +8581,6 @@
       ]
     }
   ],
-  "datenVersion": 20,
+  "datenVersion": 21,
   "aktualisiert": "2026-08-30"
 }
