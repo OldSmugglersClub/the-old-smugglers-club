@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 5,
+  "datenVersion": 6,
   "aktualisiert": "2026-08-30",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
@@ -75,14 +75,6 @@
       "tore": 1
     },
     {
-      "name": "Cole Campbell",
-      "tore": 1
-    },
-    {
-      "name": "David Mokwa Ntusu",
-      "tore": 1
-    },
-    {
       "name": "L. Petkov",
       "tore": 1
     },
@@ -95,6 +87,14 @@
       "tore": 1
     },
     {
+      "name": "Cole Campbell",
+      "tore": 1
+    },
+    {
+      "name": "David Mokwa Ntusu",
+      "tore": 1
+    },
+    {
       "name": "S. Guirassy",
       "tore": 1
     },
@@ -103,15 +103,23 @@
       "tore": 1
     },
     {
-      "name": "I. Matanovic",
-      "tore": 1
-    },
-    {
       "name": "D. Stalmach",
       "tore": 1
     },
     {
+      "name": "I. Matanovic",
+      "tore": 1
+    },
+    {
       "name": "M. Gregoritsch",
+      "tore": 1
+    },
+    {
+      "name": "Rodrigo Ribeiro",
+      "tore": 1
+    },
+    {
+      "name": "A. Kade",
       "tore": 1
     }
   ]

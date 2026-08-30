@@ -1290,12 +1290,12 @@
           "datumAnzeige": "30.08.2026",
           "anstoss": "17:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 3,
+          "auswaertstore": 0,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "",
-          "quelleStand": "2026-07-30",
+          "quelleStand": "2026-08-30",
           "heimTeamId": "augsburg",
           "auswaertsTeamId": "schalke-04"
         },
@@ -8533,6 +8533,6 @@
       ]
     }
   ],
-  "datenVersion": 19,
+  "datenVersion": 20,
   "aktualisiert": "2026-08-30"
 }
