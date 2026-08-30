@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 4,
-  "aktualisiert": "2026-08-29",
+  "datenVersion": 5,
+  "aktualisiert": "2026-08-30",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
@@ -11,19 +11,19 @@
       "tore": 3
     },
     {
+      "name": "Y. Suzuki",
+      "tore": 3
+    },
+    {
       "name": "Thijs Dallinga",
       "tore": 2
     },
     {
+      "name": "D. Upamecano",
+      "tore": 1
+    },
+    {
       "name": "Aleksandar Pavlovic",
-      "tore": 1
-    },
-    {
-      "name": "Luis Díaz",
-      "tore": 1
-    },
-    {
-      "name": "J. Vagnoman",
       "tore": 1
     },
     {
@@ -31,7 +31,15 @@
       "tore": 1
     },
     {
-      "name": "D. Upamecano",
+      "name": "J. Vagnoman",
+      "tore": 1
+    },
+    {
+      "name": "Luis Díaz",
+      "tore": 1
+    },
+    {
+      "name": "A. Nusa",
       "tore": 1
     },
     {
@@ -43,15 +51,7 @@
       "tore": 1
     },
     {
-      "name": "A. Nusa",
-      "tore": 1
-    },
-    {
       "name": "Emmanuel Latte Lath",
-      "tore": 1
-    },
-    {
-      "name": "T. Skarke",
       "tore": 1
     },
     {
@@ -59,11 +59,7 @@
       "tore": 1
     },
     {
-      "name": "A. Daghim",
-      "tore": 1
-    },
-    {
-      "name": "S. El Mala",
+      "name": "T. Skarke",
       "tore": 1
     },
     {
@@ -71,15 +67,11 @@
       "tore": 1
     },
     {
-      "name": "C. Kofane",
+      "name": "S. El Mala",
       "tore": 1
     },
     {
-      "name": "P. Schick",
-      "tore": 1
-    },
-    {
-      "name": "L. Petkov",
+      "name": "A. Daghim",
       "tore": 1
     },
     {
@@ -91,11 +83,35 @@
       "tore": 1
     },
     {
+      "name": "L. Petkov",
+      "tore": 1
+    },
+    {
+      "name": "P. Schick",
+      "tore": 1
+    },
+    {
+      "name": "C. Kofane",
+      "tore": 1
+    },
+    {
       "name": "S. Guirassy",
       "tore": 1
     },
     {
       "name": "Giannis Konstantelias",
+      "tore": 1
+    },
+    {
+      "name": "I. Matanovic",
+      "tore": 1
+    },
+    {
+      "name": "D. Stalmach",
+      "tore": 1
+    },
+    {
+      "name": "M. Gregoritsch",
       "tore": 1
     }
   ]

@@ -1267,12 +1267,12 @@
           "datumAnzeige": "30.08.2026",
           "anstoss": "15:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 4,
+          "auswaertstore": 1,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "",
-          "quelleStand": "2026-07-30",
+          "quelleStand": "2026-08-30",
           "heimTeamId": "freiburg",
           "auswaertsTeamId": "werder-bremen"
         },
@@ -8533,6 +8533,6 @@
       ]
     }
   ],
-  "datenVersion": 18,
-  "aktualisiert": "2026-08-29"
+  "datenVersion": 19,
+  "aktualisiert": "2026-08-30"
 }
