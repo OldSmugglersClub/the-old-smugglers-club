@@ -126,7 +126,7 @@ function renderHighlight(h){
        <tr>
          <td class="lb-smelled-name">${esc(x.teilnehmer)}</td>
          <td class="lb-smelled-tip">${esc(x.tipp)}</td>
-         <td class="lb-smelled-hit"><span class="lb-hit-badge ${x.exakt?"is-exact":"is-tendency"}">${x.exakt?"Sensation exakt":"Tendenz richtig"}</span></td>
+         <td class="lb-smelled-hit"><span class="lb-hit-badge ${x.exakt?"is-exact":"is-tendency"}"><span class="lb-hit-label lb-hit-label--desktop">${x.exakt?"Sensation exakt":"Tendenz richtig"}</span><span class="lb-hit-label lb-hit-label--mobile">${x.exakt?"Exakt":"Tendenz"}</span></span></td>
        </tr>`).join("");
      const more=rest?`<div class="lb-smelled-more">+${rest} ${rest===1?"weiterer Tipper":"weitere Tipper"}</div>`:"";
      return `<section class="lb-sensation-case">

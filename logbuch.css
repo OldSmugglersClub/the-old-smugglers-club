@@ -512,6 +512,7 @@ body{overflow-x:hidden}
   font-weight:900;
   letter-spacing:.05em;
 }
+.lb-hit-label--mobile{display:none}
 .lb-hit-badge.is-exact{
   color:#d8efb9;
   border-color:rgba(112,156,57,.55);
@@ -641,6 +642,8 @@ body{overflow-x:hidden}
   .lb-smelled-name{font-size:.86rem!important}
   .lb-smelled-tip{font-size:.9rem!important}
   .lb-hit-badge{box-sizing:border-box;width:100%;min-width:0;font-size:.60rem;padding:5px 3px;letter-spacing:.02em;white-space:nowrap}
+  .lb-hit-label--desktop{display:none}
+  .lb-hit-label--mobile{display:inline}
   .lb-smelled-more{font-size:.78rem}
 }
 
