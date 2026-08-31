@@ -166,7 +166,15 @@ function renderHighlight(h){
      
    </article>`;
  }
- if(h.typ==="kursbewegung") return `<article class="lb-highlight"><h3>Kursbewegung</h3><p>Größter Sprung: <strong>+${Number(d.maxGewinn||0)} Plätze</strong>. Größter Verlust: <strong>${Number(d.maxVerlust||0)} Plätze</strong>.</p><div class="lb-names">${shortNames(d.gewinner,5)}</div></article>`;
+ if(h.typ==="kursbewegung"){
+   const movementNames=(rows,direction)=>arr(rows).slice(0,5).map(row=>{
+     const value=Math.abs(Number(row?.veraenderung||0));
+     const symbol=direction==="up"?"▲":"▼";
+     const sign=direction==="up"?"+":"−";
+     return `<span class="lb-name lb-name--movement is-${direction}">${esc(row?.teilnehmer||"")} <strong>${symbol} ${sign}${value}</strong></span>`;
+   }).join("");
+   return `<article class="lb-highlight"><h3>Kursbewegung</h3><p>Größter Sprung: <strong>+${Number(d.maxGewinn||0)} Plätze</strong>. Größter Verlust: <strong>${Number(d.maxVerlust||0)} Plätze</strong>.</p><div class="lb-names lb-movement-names">${movementNames(d.gewinner,"up")}${movementNames(d.verlierer,"down")}</div></article>`;
+ }
  if(h.typ==="zahlen-aus-der-kombuese") return `<article class="lb-highlight lb-highlight--wide lb-highlight--galley"><h3>Zahlen aus der Kombüse</h3><div class="lb-galley-grid"><div><strong>${Number(d.abgegeben||0)}</strong><span>Abgaben</span></div><div><strong>${Number(d.nichtAbgegeben||0)}</strong><span>Nichtabgaben</span></div><div><strong>${Number(d.exakt||0)}</strong><span>Exakt</span></div><div><strong>${Number(d.differenz||0)}</strong><span>Differenz</span></div><div><strong>${Number(d.tendenz||0)}</strong><span>Tendenz</span></div></div></article>`;
  return "";
 }
@@ -244,8 +252,8 @@ function formCrewCard(entry){
  const fmt=value=>Math.abs(value).toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:4});
  const body=top.map((row,i)=>{
    const cls=row.delta>0?"is-up":row.delta<0?"is-down":"is-flat";
-   const symbol=row.delta>0?"▲":row.delta<0?"▼":"—";
-   const value=row.delta===0?"":` ${row.delta>0?"+":"-"}${fmt(row.delta)}`;
+   const symbol=row.delta>0?"▲":row.delta<0?"▼":"±";
+   const value=row.delta===0?" 0,00":` ${row.delta>0?"+":"−"}${fmt(row.delta)}`;
    return `<div class="lb-form-row">
      <span class="lb-form-rank">${i+1}.</span>
      <strong>${esc(row.name)}</strong>

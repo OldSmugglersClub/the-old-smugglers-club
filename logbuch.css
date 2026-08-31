@@ -635,13 +635,18 @@ body{overflow-x:hidden}
 
 @media(max-width:760px){
   .lb-sensation-case p{font-size:.9rem}
-  .lb-smelled-table th{font-size:.68rem;padding:10px 8px}
+  .lb-smelled-table th{font-size:.66rem;padding:10px 6px}
   .lb-smelled-table td{font-size:.86rem;padding:10px 8px}
+  .lb-smelled-table th:nth-child(3){white-space:nowrap;letter-spacing:.05em}
   .lb-smelled-name{font-size:.86rem!important}
   .lb-smelled-tip{font-size:.9rem!important}
-  .lb-hit-badge{min-width:92px;font-size:.64rem;padding:5px 7px}
+  .lb-hit-badge{box-sizing:border-box;width:100%;min-width:0;font-size:.60rem;padding:5px 3px;letter-spacing:.02em;white-space:nowrap}
   .lb-smelled-more{font-size:.78rem}
 }
+
+.lb-name--movement strong{white-space:nowrap}
+.lb-name--movement.is-up strong{color:#d9c778}
+.lb-name--movement.is-down strong{color:#ba8e76}
 
 
 /* FORM-DER-CREW-WEBSITE-ONLY-TEST1 */
