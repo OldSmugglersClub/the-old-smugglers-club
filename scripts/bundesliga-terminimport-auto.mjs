@@ -43,7 +43,23 @@ const originalSpieldatenText = fs.readFileSync(SPIELDATEN_PATH, "utf8");
 const data = JSON.parse(originalSpieldatenText);
 const teams = readJson(TEAMS_PATH);
 const apiMatches = await loadApiMatches();
-const officialConfirmedMatchdays = await loadOfficialConfirmedMatchdays("bundesliga");
+const saisonSpiele = (Array.isArray(data?.saisons) ? data.saisons : [])
+  .flatMap(s => Array.isArray(s?.spiele) ? s.spiele : []);
+const bundesligaSpiele = saisonSpiele.filter(spiel =>
+  spiel?.wettbewerb === "bundesliga" && spiel?.saison === "2026/2027"
+);
+const offeneSpieltage = bundesligaSpiele
+  .filter(spiel =>
+    spiel?.status !== "beendet" &&
+    !(Number.isInteger(spiel?.heimtore) && Number.isInteger(spiel?.auswaertstore))
+  )
+  .map(spiel => Number(spiel?.spieltagNummer))
+  .filter(Number.isFinite);
+const firstRelevantMatchday = offeneSpieltage.length ? Math.min(...offeneSpieltage) : 34;
+console.log(`Offizielle Terminprüfung ab erstem nicht beendeten Bundesliga-Spieltag: ${firstRelevantMatchday}`);
+const officialConfirmedMatchdays = await loadOfficialConfirmedMatchdays("bundesliga", {
+  startMatchday: firstRelevantMatchday
+});
 console.log(`Offiziell fix terminierte Spieltage: ${[...officialConfirmedMatchdays].join(", ")}`);
 const plan = validateAndPlan(data, teams, apiMatches, officialConfirmedMatchdays, new Date());
 

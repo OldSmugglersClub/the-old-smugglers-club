@@ -52,7 +52,12 @@ async function loadPage(slug, matchday, fixtureDir) {
   if (fixtureDir) {
     const path = `${fixtureDir}/${slug}-${matchday}.html`;
     if (!fs.existsSync(path)) throw new Error(`Offizielles Testfixture fehlt: ${path}`);
-    return fs.readFileSync(path, "utf8");
+    return {
+      html: fs.readFileSync(path, "utf8"),
+      status: 200,
+      contentType: "text/html; fixture",
+      url: path
+    };
   }
 
   let response;
@@ -72,7 +77,50 @@ async function loadPage(slug, matchday, fixtureDir) {
   if (!response.ok) {
     throw new Error(`Offizielle Bundesliga-Terminquelle HTTP ${response.status}. Keine Änderung.`);
   }
-  return await response.text();
+  return {
+    html: await response.text(),
+    status: response.status,
+    contentType: response.headers.get("content-type") || "unbekannt",
+    url: response.url || pageUrl(slug, matchday)
+  };
+}
+
+function wait(ms) {
+  return ms > 0 ? new Promise(resolve => setTimeout(resolve, ms)) : Promise.resolve();
+}
+
+async function loadAndClassifyMatchday(slug, matchday, options) {
+  const fixtureDir = options.fixtureDir || "";
+  const fetchAttempts = fixtureDir ? 1 : Math.max(1, Number(options.fetchAttempts || 3));
+  const retryDelayMs = Math.max(0, Number(options.retryDelayMs ?? 1500));
+  let lastError;
+
+  for (let attempt = 1; attempt <= fetchAttempts; attempt++) {
+    try {
+      const page = await loadPage(slug, matchday, fixtureDir);
+      try {
+        return classifyOfficialMatchdayPage(page.html, matchday);
+      } catch (error) {
+        throw new Error(
+          `${error.message} [HTTP ${page.status}; Content-Type ${page.contentType}; ` +
+          `${page.html.length} Zeichen; Quelle ${page.url}]`
+        );
+      }
+    } catch (error) {
+      lastError = error;
+      if (attempt >= fetchAttempts) break;
+      console.warn(
+        `Offizielle Spieltagseite ${matchday} unplausibel/nicht erreichbar ` +
+        `(Versuch ${attempt}/${fetchAttempts}): ${error.message}`
+      );
+      await wait(retryDelayMs);
+    }
+  }
+
+  throw new Error(
+    `Offizielle Spieltagseite ${matchday} nach ${fetchAttempts} Versuch(en) nicht sicher auswertbar: ` +
+    `${lastError?.message || "unbekannter Fehler"}`
+  );
 }
 
 export async function loadOfficialConfirmedMatchdays(competition, options = {}) {
@@ -86,8 +134,10 @@ export async function loadOfficialConfirmedMatchdays(competition, options = {}) 
   // DFL terminiert fortlaufende Blöcke. Bis zum ersten offiziell als offen
   // gekennzeichneten Spieltag prüfen; spätere Rahmentermine werden nicht freigegeben.
   for (let st = startMatchday; st <= 34; st++) {
-    const html = await loadPage(cfg.slug, st, fixtureDir);
-    const isConfirmed = classifyOfficialMatchdayPage(html, st);
+    const isConfirmed = await loadAndClassifyMatchday(cfg.slug, st, {
+      ...options,
+      fixtureDir
+    });
     if (!isConfirmed) break;
     confirmed.add(st);
   }
