@@ -652,7 +652,7 @@
     border:1px solid rgba(205,157,70,.72);
     background:
       linear-gradient(135deg,rgba(229,193,111,.09),transparent 35%),
-      repeating-linear-gradient(0deg,rgba(60,39,22,.96) 0 42px,rgba(31,19,10,.98) 43px 45px);
+      linear-gradient(180deg,rgba(59,39,23,.98),rgba(31,19,10,.99));
     box-shadow:
       inset 0 0 0 3px rgba(0,0,0,.38),
       inset 0 0 0 4px rgba(229,193,111,.07),
@@ -677,13 +677,36 @@
     display:grid;
     grid-template-rows:auto 1fr auto;
   }
-  #highscore .highscore-teaser-card span{padding-bottom:6px;border-bottom:1px solid rgba(184,138,61,.26)}
-  #highscore .highscore-teaser-card strong{font-family:Georgia,serif;text-shadow:0 2px 0 #3d250e}
+  #highscore .highscore-card-copy>span,
+  #highscore .hs-competition-head{
+    min-height:34px;
+    box-sizing:border-box;
+    border-bottom:1px solid rgba(196,148,61,.34);
+  }
+  #highscore .highscore-card-copy>span{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0 0 6px;
+  }
+  #highscore .hs-competition-head{
+    align-items:center;
+    padding-bottom:6px;
+  }
+  #highscore .highscore-teaser-card strong{
+    display:flex;
+    align-items:center;
+    min-height:0;
+    margin:0;
+    padding:6px 0;
+    font-family:Georgia,serif;
+    text-shadow:0 2px 0 #3d250e;
+  }
   #highscore .highscore-teaser-card small{
     align-self:end;
-    margin-top:8px;
-    padding-top:8px;
-    border-top:2px solid rgba(0,0,0,.78);
+    margin:0;
+    padding-top:7px;
+    border-top:1px solid rgba(196,148,61,.34);
   }
   #highscore .highscore-teaser-action{margin-top:4px;margin-bottom:0}
 }
