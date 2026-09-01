@@ -671,9 +671,20 @@
     fill:url(#gold-metal);
     filter:drop-shadow(0 3px 3px rgba(0,0,0,.75));
   }
-  #highscore .highscore-card-copy{min-width:0}
+  #highscore .highscore-card-copy{
+    min-width:0;
+    align-self:stretch;
+    display:grid;
+    grid-template-rows:auto 1fr auto;
+  }
   #highscore .highscore-teaser-card span{padding-bottom:6px;border-bottom:1px solid rgba(184,138,61,.26)}
   #highscore .highscore-teaser-card strong{font-family:Georgia,serif;text-shadow:0 2px 0 #3d250e}
+  #highscore .highscore-teaser-card small{
+    align-self:end;
+    margin-top:8px;
+    padding-top:8px;
+    border-top:2px solid rgba(0,0,0,.78);
+  }
   #highscore .highscore-teaser-action{margin-top:4px;margin-bottom:0}
 }
 
