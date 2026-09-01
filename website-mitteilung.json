@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "mitteilung-a4e905f3",
+  "enabled": true,
+  "timeZone": "Europe/Berlin",
+  "headline": "Wichtige Mitteilung",
+  "message": "Der Chef ist im Urlaub – die Aktualisierung der Website erfolgt am 28.09.2026 gegen 09:00 Uhr.",
+  "startsAt": "2026-09-25T00:00",
+  "endsAt": "2026-09-28T06:00",
+  "buttonLabel": "OK"
+}
