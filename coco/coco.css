@@ -51,3 +51,154 @@
 /* HF9: zentrale Schmugglersiegel-Darstellung aus HF7 wiederhergestellt */
 .coco-team-badge{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;flex:0 0 48px}
 .coco-team-badge svg{display:block;width:100%;height:100%}
+
+
+/* TEST37 – Coco: rein visuelle Premium-Politur, keine Funktionsänderung */
+.coco-header h1{
+  letter-spacing:.015em;
+  text-shadow:0 2px 14px rgba(0,0,0,.92),0 0 28px rgba(214,168,75,.10);
+}
+.coco-header p{
+  color:#d4c3a2;
+}
+.coco-panel{
+  border-color:rgba(214,168,75,.42);
+  box-shadow:0 20px 42px rgba(0,0,0,.42),inset 0 1px rgba(255,255,255,.055),inset 0 0 34px rgba(214,168,75,.018);
+}
+.coco-controls{
+  background:linear-gradient(180deg,rgba(51,35,21,.97),rgba(27,19,12,.97));
+}
+.field select{
+  transition:border-color .18s ease,box-shadow .18s ease,background-color .18s ease;
+}
+.field select:not(:disabled):hover{
+  border-color:rgba(214,168,75,.62);
+}
+.field select:not(:disabled):focus-visible{
+  border-color:#d6a84b;
+  box-shadow:0 0 0 3px rgba(214,168,75,.14);
+  outline:none;
+}
+.match-card{
+  background:linear-gradient(180deg,rgba(54,37,22,.97),rgba(29,20,13,.97));
+}
+.match-card .team strong{
+  text-shadow:0 2px 10px rgba(0,0,0,.8);
+}
+.match-card .versus{
+  color:var(--coco-gold2);
+  text-shadow:0 1px 10px rgba(214,168,75,.18);
+}
+.oracle-card{
+  box-shadow:0 24px 54px rgba(0,0,0,.5),inset 0 1px rgba(255,255,255,.055);
+}
+.coco-stage::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  box-shadow:inset 0 0 50px rgba(0,0,0,.22);
+}
+.oracle-actions{
+  background:linear-gradient(180deg,rgba(37,25,15,.96),rgba(25,17,11,.98));
+  border-top:1px solid rgba(214,168,75,.16);
+  padding:17px 16px 18px;
+}
+.coco-button{
+  min-width:230px;
+  padding:14px 30px;
+  border-color:#edca79;
+  background:linear-gradient(180deg,#e0b65f 0%,#c58e3a 48%,#9a6123 100%);
+  box-shadow:0 5px 0 #553313,0 12px 24px rgba(0,0,0,.46),inset 0 1px rgba(255,255,255,.22);
+  transition:transform .16s ease,filter .16s ease,box-shadow .16s ease;
+}
+.coco-button:not(:disabled):hover,.coco-button:not(:disabled):focus-visible{
+  filter:brightness(1.08);
+  transform:translateY(-1px);
+  box-shadow:0 6px 0 #553313,0 15px 28px rgba(0,0,0,.5),inset 0 1px rgba(255,255,255,.28);
+  outline:none;
+}
+.coco-button:active:not(:disabled){
+  transform:translateY(2px);
+  box-shadow:0 3px 0 #553313,0 8px 18px rgba(0,0,0,.44),inset 0 1px rgba(255,255,255,.16);
+}
+.stats-panel,.rules{
+  background:linear-gradient(180deg,rgba(51,35,21,.97),rgba(29,20,13,.97));
+}
+.stats-panel h2,.rules h2{
+  text-shadow:0 2px 12px rgba(0,0,0,.75);
+}
+.stats div{
+  border-color:rgba(214,168,75,.42);
+  background:linear-gradient(180deg,rgba(20,14,9,.98),rgba(15,10,7,.98));
+  box-shadow:inset 0 1px rgba(255,255,255,.025),0 7px 16px rgba(0,0,0,.16);
+}
+.stats strong{
+  text-shadow:0 1px 10px rgba(214,168,75,.12);
+}
+@media(max-width:430px){
+  .coco-button{min-width:0}
+}
+
+/* TEST40 – harmonisierte Coco-Proportionen auf Basis des Nutzerfeedbacks.
+   Sichtbare, aber kontrollierte Layout-Politur. Keine Funktions-, Daten- oder Logikänderung. */
+@media (min-width:821px){
+  /* Rückkehr zu einer ausgewogenen Grundproportion statt bildlastiger TEST38/39-Aufteilung. */
+  .coco-main{
+    grid-template-columns:minmax(0,1.2fr) minmax(380px,.8fr);
+    gap:18px;
+    align-items:start;
+  }
+  .oracle-column{gap:16px}
+  .match-card{padding:16px 18px}
+  .coco-stage{aspect-ratio:3/2}
+
+  /* Hauptaktion präsent, aber der Aktionsbereich bleibt kompakt. */
+  .oracle-actions{padding:15px 18px 17px}
+  .coco-button{
+    width:min(100%,300px);
+    min-width:230px;
+    font-size:1.03rem;
+    padding:13px 28px;
+  }
+  .status{margin-top:10px}
+
+  /* Rechte Informationszone: beide Außenkacheln im gleichen Maßstab. */
+  .side{gap:16px}
+  .stats-panel,.rules{
+    min-height:286px;
+    padding:20px;
+    border-color:rgba(214,168,75,.42);
+    background:linear-gradient(180deg,rgba(51,35,21,.97),rgba(29,20,13,.97));
+    box-shadow:0 18px 38px rgba(0,0,0,.40),inset 0 1px rgba(255,255,255,.05);
+  }
+  .stats-panel h2,.rules h2{
+    margin:0 0 14px;
+    font-size:1.22rem;
+    line-height:1.15;
+    color:var(--coco-gold2);
+  }
+
+  /* Bilanz: sechs gleichmäßige, etwas großzügigere Felder. */
+  .stats{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .stats div{
+    min-height:66px;
+    padding:11px 13px;
+    border-radius:11px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .stats strong{font-size:1.48rem;line-height:1.05}
+  .stats span{font-size:.82rem;line-height:1.25;margin-top:4px}
+
+  /* Kodex bleibt gleichwertige Kachel; Text bekommt Luft statt zusammengepresst zu wirken. */
+  .rules{
+    font-size:.93rem;
+    line-height:1.55;
+  }
+  .rules p{margin:.58rem 0;color:var(--coco-muted)}
+}

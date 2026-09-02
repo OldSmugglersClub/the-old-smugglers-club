@@ -1,0 +1,9 @@
+# SHA-256 4.9.2-HF12-HF41
+
+## Geänderte Laufzeitdateien
+
+- `coco/coco.css`: `b058b820b4faff5ae5b898817cae39e363f3efc4f10258501d56a62e094ef47c`
+- `coco/index.html`: `48f8009051492390c1600abd4d0f4c1ea25d8959af8a397a6db526e1ab5b9114`
+- `VERSION.txt`: `36ed543447a9d428b145f310bd3689083d1b09449f96cb865b763ecaa9ea1e68`
+
+Die Paket-Hashes werden außerhalb der ZIP-Dateien angegeben, damit kein rekursiver Selbst-Hash entsteht.
