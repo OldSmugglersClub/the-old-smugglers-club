@@ -1,3 +1,10 @@
+# 4.9.2-HF12-HF43 – DFB-Pokal/Europa-League-Turnierbaum
+
+- Live-Übernahme des in Test2v2 abgenommenen TEST47-Stands.
+- DFB-Pokal und Europa League zeigen den Turnierbaum-Bereich bereits vor der Achtelfinal-Auslosung als Vorbereitung an.
+- Beide Wettbewerbe weisen direkt am Turnierbaum sichtbar auf den TOSMC-Wertungsstart ab Achtelfinale hin.
+- Keine funktionale Änderung gegenüber TEST47.
+
 # 4.9.2-HF12-HF42 – Champions-League-Ansetzungen/Wappen
 
 - Live-Übernahme des in Test2v2 abgenommenen TEST46-Stands.
@@ -155,3 +162,6 @@ Technische Vorprüfung bestanden; Realtest im Test2v2-Repo durch den Nutzer steh
 - Drei Live-Auto-Workflows ohne Funktionsänderung neu gespeichert.
 - Ausschließlich Kommentar zur Scheduler-Neuregistrierung ergänzt.
 - Cron-Zeiten, Jobs, Berechtigungen und Fachlogik unverändert.
+
+## 4.9.2-HF12-HF43
+- DFB-Pokal/Europa League: Turnierbaum-Vorbereitung vereinheitlicht und Wertungsstart ab Achtelfinale direkt am Turnierbaum sichtbar gemacht.

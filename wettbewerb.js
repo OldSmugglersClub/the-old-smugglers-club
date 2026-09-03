@@ -1561,7 +1561,6 @@
     });
 
     const total = [...groups.values()].reduce((sum, matches) => sum + matches.length, 0);
-    if (!total) return;
 
     const section = document.createElement("section");
     section.className = "dynamic-section ko-bracket-section";
@@ -1575,6 +1574,19 @@
     headingRow.append(heading);
     section.appendChild(headingRow);
 
+    const participationNote = document.createElement("p");
+    participationNote.className = "data-note";
+    participationNote.textContent = "TOSMC-Wertung ab Achtelfinale – Ligaphase und Zwischenrunde gehören nicht zu unserem Tippspiel.";
+    section.appendChild(participationNote);
+
+    if (!total) {
+      const empty = document.createElement("div");
+      empty.className = "schedule-empty";
+      empty.textContent = "Der Turnierbaum wird nach der Achtelfinal-Auslosung automatisch eingeblendet.";
+      section.appendChild(empty);
+      root.appendChild(section);
+      return;
+    }
 
     const scroll = document.createElement("div");
     scroll.className = "ko-bracket-scroll";
@@ -1631,7 +1643,7 @@
 
     const note = document.createElement("p");
     note.className = "data-note";
-    note.textContent = "Für die Saison 2026/27 werden nur die jeweils bereits feststehenden K.-o.-Runden angezeigt.";
+    note.textContent = "TOSMC-Wertung ab Achtelfinale – die 1. und 2. Hauptrunde gehören nicht zu unserem Tippspiel.";
     section.appendChild(note);
 
     const groups = new Map(DFB_BRACKET_ROUNDS.map(round => [round.key, []]));
@@ -1644,7 +1656,7 @@
     if (!total) {
       const empty = document.createElement("div");
       empty.className = "schedule-empty";
-      empty.textContent = "Aktuelle K.-o.-Runden sind momentan nicht verfügbar.";
+      empty.textContent = "Der Turnierbaum wird nach der Achtelfinal-Auslosung automatisch eingeblendet.";
       section.appendChild(empty);
       root.appendChild(section);
       return;
