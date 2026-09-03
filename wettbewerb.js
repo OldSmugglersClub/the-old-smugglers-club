@@ -554,7 +554,87 @@
     return wrap;
   }
 
-  const OPENLIGADB_CL_MATCHES_PROTOTYPE_URL = "https://api.openligadb.de/getmatchdata/ucl2026/2026";
+  const OPENLIGADB_CL_MATCHES_PROTOTYPE_URL = "https://api.openligadb.de/getmatchdata/ucl/2026";
+  const CHAMPIONS_LEAGUE_TEAM_BADGE_IDS = Object.freeze({
+    "aek athens": "aek-athen",
+    "aek athen": "aek-athen",
+    "lask linz": "lask",
+    "lask": "lask",
+    "club brugge": "club-brugge",
+    "club brugge kv": "club-brugge",
+    "aston villa": "aston-villa",
+    "borussia dortmund": "dortmund",
+    "villarreal cf": "villarreal-cf",
+    "villarreal": "villarreal-cf",
+    "fc porto": "fc-porto",
+    "porto": "fc-porto",
+    "manchester city": "manchester-city",
+    "lille osc": "osc-lille",
+    "osc lille": "osc-lille",
+    "lille": "osc-lille",
+    "real betis seville": "real-betis",
+    "real betis": "real-betis",
+    "real madrid": "real-madrid",
+    "inter milano": "inter-mailand",
+    "inter mailand": "inter-mailand",
+    "inter": "inter-mailand",
+    "fc barcelona": "barcelona",
+    "barcelona": "barcelona",
+    "feyenoord rotterdam": "feyenoord-rotterdam",
+    "feyenoord": "feyenoord-rotterdam",
+    "vfb stuttgart": "stuttgart",
+    "viking fk": "viking-fk",
+    "viking": "viking-fk",
+    "liverpool fc": "fc-liverpool",
+    "fc liverpool": "fc-liverpool",
+    "liverpool": "fc-liverpool",
+    "atletico madrid": "atletico-madrid",
+    "atletico de madrid": "atletico-madrid",
+    "paris saint germain": "paris-saint-germain",
+    "paris st germain": "paris-saint-germain",
+    "psg": "paris-saint-germain",
+    "slovan bratislava": "slovan-bratislava",
+    "sk slovan bratislava": "slovan-bratislava",
+    "sporting cp": "sporting-lissabon",
+    "sporting lissabon": "sporting-lissabon",
+    "galatasaray istanbul": "galatasaray",
+    "galatasaray": "galatasaray",
+    "ssc napoli": "ssc-neapel",
+    "napoli": "ssc-neapel",
+    "ssc neapel": "ssc-neapel",
+    "arsenal fc": "arsenal",
+    "arsenal": "arsenal",
+    "fenerbahce istanbul": "fenerbahce",
+    "fenerbahce sk": "fenerbahce",
+    "fenerbahce": "fenerbahce",
+    "as roma": "as-rom",
+    "as rom": "as-rom",
+    "roma": "as-rom",
+    "psv eindhoven": "psv-eindhoven",
+    "psv": "psv-eindhoven",
+    "fc shakhtar donetsk": "schachtar-donezk",
+    "shakhtar donetsk": "schachtar-donezk",
+    "schachtar donezk": "schachtar-donezk",
+    "como 1907": "como-1907",
+    "como": "como-1907",
+    "rb leipzig": "rb-leipzig",
+    "fc bayern munchen": "bayern-muenchen",
+    "bayern munich": "bayern-muenchen",
+    "bayern munchen": "bayern-muenchen",
+    "bodoe glimt": "bod-glimt",
+    "bodo glimt": "bod-glimt",
+    "bod glimt": "bod-glimt",
+    "manchester united": "manchester-united",
+    "sabah masazir": "sabah-fc",
+    "sabah fc": "sabah-fc",
+    "sabah": "sabah-fc",
+    "slavia prague": "slavia-prag",
+    "slavia prag": "slavia-prag",
+    "slavia praha": "slavia-prag",
+    "racing club de lens": "rc-lens",
+    "rc lens": "rc-lens",
+    "lens": "rc-lens"
+  });
   const OPENLIGADB_EL_MATCHES_PROTOTYPE_URL = "https://api.openligadb.de/getmatchdata/uel/2026";
   const EUROPA_LEAGUE_FALLBACK_PROTOTYPE_URL = "./europa-league-ko-2026.json";
   const OPENLIGADB_DFB_PROTOTYPE_URL = "https://api.openligadb.de/getmatchdata/dfb/2026";
@@ -745,12 +825,68 @@
     return /^\d{4}-\d{2}-\d{2}$/.test(value) ? value : "";
   }
 
+  function championsLeagueMatchdayNumber(match) {
+    const group = match?.group || {};
+    const label = normalizeRoundLabel(group?.groupName ?? group?.GroupName ?? "");
+    const fromLabel = Number(label.match(/^(\d+)\s*spieltag$/i)?.[1]);
+    if (Number.isInteger(fromLabel) && fromLabel >= 1 && fromLabel <= 8) return fromLabel;
+
+    const fromOrder = Number(
+      group?.groupOrderID ?? group?.groupOrderId ?? group?.GroupOrderID ?? group?.GroupOrderId
+    );
+    return Number.isInteger(fromOrder) && fromOrder >= 1 && fromOrder <= 8 ? fromOrder : null;
+  }
+
+  function championsLeagueMatchHasKickoff(match) {
+    const raw = String(match?.matchDateTime ?? match?.MatchDateTime ?? "");
+    return /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(raw);
+  }
+
+  function championsLeagueClusterIsPlausible(cluster) {
+    if (!cluster || safeArray(cluster.matches).length !== 18) return false;
+    const teams = new Set();
+    for (const match of cluster.matches) {
+      if (!championsLeagueMatchHasKickoff(match)) return false;
+      const home = String(match?.team1?.teamId ?? match?.team1?.teamID ?? openLigaDbTeamName(match?.team1));
+      const away = String(match?.team2?.teamId ?? match?.team2?.teamID ?? openLigaDbTeamName(match?.team2));
+      if (!home || !away || teams.has(home) || teams.has(away)) return false;
+      teams.add(home); teams.add(away);
+    }
+    return teams.size === 36;
+  }
+
   function championsLeagueMatchdayClusters(matches) {
     const phaseMatches = safeArray(matches);
-    if (phaseMatches.length < 144) return [];
+    if (!phaseMatches.length) return [];
 
+    // Bevorzugt die explizite OpenLigaDB-Spieltagszuordnung. Damit kann jeder
+    // bereits vollständig terminierte Spieltag sofort angezeigt werden, ohne
+    // auf die komplette Ligaphase mit 144 Partien warten zu müssen.
+    const byMatchday = new Map();
+    phaseMatches.forEach(match => {
+      const number = championsLeagueMatchdayNumber(match);
+      if (!number) return;
+      if (!byMatchday.has(number)) byMatchday.set(number, []);
+      byMatchday.get(number).push(match);
+    });
+
+    const explicit = [...byMatchday.entries()]
+      .map(([matchdayNumber, groupedMatches]) => ({
+        matchdayNumber,
+        dates: [...new Set(groupedMatches.map(openLigaDbMatchDate).filter(Boolean))].sort(),
+        matches: groupedMatches
+      }))
+      .filter(championsLeagueClusterIsPlausible)
+      .sort((a, b) => a.matchdayNumber - b.matchdayNumber);
+
+    if (explicit.length) return explicit;
+
+    // Fallback für OpenLigaDB-Datensätze, die weiterhin nur "Ligaphase"
+    // liefern: ausschließlich vollständig terminierte 18er-Termincluster
+    // übernehmen. Unvollständige oder künstliche Zuordnungen bleiben außen vor.
     const byDate = new Map();
     phaseMatches.forEach(match => {
+      if (!championsLeagueMatchHasKickoff(match)) return;
       const date = openLigaDbMatchDate(match);
       if (!date) return;
       if (!byDate.has(date)) byDate.set(date, []);
@@ -772,36 +908,36 @@
       }
     });
 
-    if (clusters.length !== 8) return [];
-    const allPlausible = clusters.every(cluster => {
-      if (cluster.matches.length !== 18) return false;
-      const teams = new Set();
-      for (const match of cluster.matches) {
-        const home = String(match?.team1?.teamId ?? match?.team1?.teamID ?? openLigaDbTeamName(match?.team1));
-        const away = String(match?.team2?.teamId ?? match?.team2?.teamID ?? openLigaDbTeamName(match?.team2));
-        if (!home || !away || teams.has(home) || teams.has(away)) return false;
-        teams.add(home); teams.add(away);
-      }
-      return teams.size === 36;
-    });
-    return allPlausible ? clusters : [];
+    return clusters
+      .filter(championsLeagueClusterIsPlausible)
+      .slice(0, 8)
+      .map((cluster, index) => ({ ...cluster, matchdayNumber: index + 1 }));
   }
 
   function championsLeagueDisplayMatch(match, matchdayNumber = null, provisional = false) {
     const rawDate = openLigaDbMatchDate(match);
     const rawTime = String(match?.matchDateTime ?? match?.MatchDateTime ?? "").match(/T(\d{2}:\d{2})/)?.[1] || "";
     const score = openLigaDbFinalResult(match);
+    const homeName = openLigaDbTeamName(match?.team1);
+    const awayName = openLigaDbTeamName(match?.team2);
     return {
       id: match?.matchID ? `openligadb-cl-${match.matchID}` : "",
       datum: provisional || !rawDate ? "Terminierung offen" : formatDate(rawDate),
       datumSortierung: provisional || !rawDate ? "9999-12-31" : rawDate,
       datumIso: provisional || !rawDate ? "" : rawDate,
       anstoss: provisional || !rawTime ? "" : rawTime,
-      heimTeamId: "",
-      heim: openLigaDbTeamName(match?.team1),
+      // TEST44: Die allgemeinen Match-Zeilen rendern Wappen ausschließlich über
+      // heimTeamId/auswaertsTeamId. TEST42/43 hatten zwar eine CL-spezifische
+      // Wappenauflösung ergänzt, die Ansetzungen selbst verloren diese Zuordnung
+      // beim Umwandeln der OpenLigaDB-Partien jedoch wieder. Deshalb werden die
+      // bereits geprüften lokalen CL-Team-IDs hier direkt mitgegeben.
+      heimTeamId: championsLeagueLocalBadgeId(homeName),
+      heim: homeName,
+      heimTeamSource: match?.team1 || null,
       trenner: "–",
-      auswaertsTeamId: "",
-      auswaerts: openLigaDbTeamName(match?.team2),
+      auswaertsTeamId: championsLeagueLocalBadgeId(awayName),
+      auswaerts: awayName,
+      auswaertsTeamSource: match?.team2 || null,
       ergebnis: score,
       status: provisional ? "Terminierung offen" : "",
       runde: matchdayNumber ? `${matchdayNumber}. Spieltag` : "Ligaphase",
@@ -815,7 +951,8 @@
     if (slug !== "champions-league") return;
     const matches = championsLeaguePhaseMatches(openLigaDbMatches);
     const clusters = championsLeagueMatchdayClusters(matches);
-    const scheduleConfirmed = clusters.length === 8;
+    const scheduledMatchdays = clusters.length;
+    const scheduleConfirmed = scheduledMatchdays > 0;
 
     const section = document.createElement("section");
     section.className = "dynamic-section competition-situation";
@@ -833,8 +970,8 @@
     grid.className = "situation-grid";
     const cards = [
       ["Datenquelle", matches.length ? "OpenLigaDB verbunden" : "Noch keine Ligaphasen-Daten", matches.length ? "Die Community-Daten werden bei jedem Laden neu abgefragt." : "Die Seite wartet auf verwertbare OpenLigaDB-Daten."],
-      ["Spieltagszuordnung", scheduleConfirmed ? "8 Spieltage erkannt" : "Noch nicht belastbar", scheduleConfirmed ? "Alle acht Spieltage erfüllen die Plausibilitätsprüfung mit je 18 Spielen und 36 Teams." : "OpenLigaDB führt die Partien derzeit gemeinsam unter „Ligaphase“. Keine künstliche Zuordnung wird erzeugt."],
-      ["Terminierung", scheduleConfirmed ? "Plausibel strukturiert" : "Noch in Bearbeitung", scheduleConfirmed ? "Die Ligaphase ist anhand der offiziellen Termincluster strukturiert." : "Platzhalter- oder unvollständige Termine werden nicht als echte Spieltage behandelt."],
+      ["Spieltagszuordnung", scheduleConfirmed ? `${scheduledMatchdays} von 8 Spieltagen erkannt` : "Noch nicht belastbar", scheduleConfirmed ? "Jeder angezeigte Spieltag enthält 18 vollständig terminierte Spiele mit 36 eindeutigen Teams." : "OpenLigaDB liefert derzeit noch keinen vollständig terminierten 18er-Spieltag. Keine künstliche Zuordnung wird erzeugt."],
+      ["Terminierung", scheduleConfirmed ? "Veröffentlichte Spieltage aktiv" : "Noch in Bearbeitung", scheduleConfirmed ? "Sobald OpenLigaDB einen weiteren vollständigen Spieltag terminiert, wird er beim nächsten Laden automatisch ergänzt." : "Platzhalter- oder unvollständige Termine werden nicht als echte Spieltage behandelt."],
       ["Wappen", "Lokale Stammdaten + geprüfter Fallback", "Lokale Originalwappen haben Vorrang. Nur sichere HTTP(S)-Wappen von OpenLigaDB werden ersatzweise geladen; Base64-Daten bleiben ausgeschlossen."]
     ];
     cards.forEach(([label, value, detail]) => {
@@ -857,8 +994,8 @@
     const note = document.createElement("p");
     note.className = "data-note";
     note.textContent = scheduleConfirmed
-      ? "Die acht Spieltage wurden nur nach erfolgreicher Plausibilitätsprüfung aus der OpenLigaDB-Terminierung gebildet."
-      : "OpenLigaDB hat bereits Ligaphasen-Paarungen erfasst, aber noch keine belastbare Verteilung auf die acht Spieltage. Deshalb werden die Paarungen ohne erfundene Spieltagsnummern und ohne Platzhaltertermine angezeigt.";
+      ? `Aktuell sind ${scheduledMatchdays} von 8 Spieltagen vollständig terminiert und plausibilisiert. Weitere Spieltage erscheinen automatisch, sobald OpenLigaDB sie vollständig bereitstellt.`
+      : "OpenLigaDB hat bereits Ligaphasen-Paarungen erfasst, aber noch keinen vollständigen terminieren 18er-Spieltag. Deshalb werden keine erfundenen Spieltagsnummern oder Platzhaltertermine angezeigt.";
     schedule.appendChild(note);
 
     if (scheduleConfirmed) {
@@ -870,21 +1007,30 @@
         details.open = index === 0;
         const summary = document.createElement("summary");
         summary.className = "matchday-summary";
-        const label = document.createElement("span"); label.textContent = `${index + 1}. Spieltag`;
+        const matchdayNumber = cluster.matchdayNumber || index + 1;
+        const label = document.createElement("span"); label.textContent = `${matchdayNumber}. Spieltag`;
         const count = document.createElement("span"); count.className = "matchday-count"; count.textContent = `${cluster.matches.length} Spiele`;
         summary.append(label, count);
         const rows = cluster.matches
           .slice()
           .sort((a, b) => String(a?.matchDateTime ?? "").localeCompare(String(b?.matchDateTime ?? "")))
-          .map(match => championsLeagueDisplayMatch(match, index + 1, false));
-        details.append(summary, createMatchList(rows));
+          .map(match => championsLeagueDisplayMatch(match, matchdayNumber, false));
+        details.append(summary, createMatchList(rows, {
+          teamIdentityFactory: (teamId, teamName, modifier, match, side) => {
+            const sourceTeam = side === "home" ? match?.heimTeamSource : match?.auswaertsTeamSource;
+            return createChampionsLeagueTeamIdentity(
+              sourceTeam || { teamId, teamName },
+              modifier
+            );
+          }
+        }));
         accordion.appendChild(details);
       });
       schedule.appendChild(accordion);
     } else {
       const waiting = document.createElement("p");
       waiting.className = "data-note";
-      waiting.textContent = `${matches.length} Paarungen sind bei OpenLigaDB bereits erfasst. Die Besucheransicht zeigt sie erst dann als regulären Spielplan, wenn alle acht Spieltage eindeutig und plausibel zugeordnet werden können.`;
+      waiting.textContent = `${matches.length} Paarungen sind bei OpenLigaDB bereits erfasst. Die Besucheransicht schaltet jeden Spieltag einzeln frei, sobald dafür 18 Spiele mit bestätigtem Anstoß und 36 eindeutigen Teams vorliegen.`;
       schedule.appendChild(waiting);
     }
     root.appendChild(schedule);
@@ -903,27 +1049,106 @@
     }
   }
 
+  function championsLeagueBadgeLookupKeys(teamNameValue) {
+    const normalized = normalizeTeamLabel(teamNameValue);
+    if (!normalized) return [];
+
+    const keys = new Set([normalized]);
+    const prefixes = ["fc", "fk", "sc", "sk", "ac", "as", "cf", "rc", "ssc", "osc", "sv", "vfb", "vfl", "tsg"];
+    let reduced = normalized;
+
+    // OpenLigaDB verwendet bei einigen Clubs wechselnde Präfixe, z. B.
+    // „FC Arsenal“ statt „Arsenal FC“ oder „FK Bodø/Glimt“. Diese Präfixe
+    // dürfen die Zuordnung zum lokalen Badge nicht verhindern.
+    for (let i = 0; i < 3; i += 1) {
+      const parts = reduced.split(" ").filter(Boolean);
+      if (!parts.length || !prefixes.includes(parts[0])) break;
+      parts.shift();
+      reduced = parts.join(" ").trim();
+      if (reduced) keys.add(reduced);
+    }
+
+    // Zusätzlich Varianten mit nachgestelltem FC/CF erfassen.
+    for (const suffix of [" fc", " cf", " sk", " fk"]) {
+      if (normalized.endsWith(suffix)) keys.add(normalized.slice(0, -suffix.length).trim());
+    }
+
+    return [...keys].filter(Boolean);
+  }
+
+  function championsLeagueLocalBadgeId(teamNameValue) {
+    const genericId = resolveTeamId("", teamNameValue);
+    if (genericId) return genericId;
+
+    for (const key of championsLeagueBadgeLookupKeys(teamNameValue)) {
+      const mapped = CHAMPIONS_LEAGUE_TEAM_BADGE_IDS[key];
+      if (mapped) return mapped;
+    }
+    return "";
+  }
+
   function createChampionsLeagueTeamIdentity(team, modifier = "") {
     const name = openLigaDbTeamName(team);
-    const localId = resolveTeamId("", name);
-    if (localId) return createTeamIdentity(localId, name, modifier);
+    const localId = championsLeagueLocalBadgeId(name);
+    const hasLocalOriginal = Boolean(
+      localId &&
+      window.OSCTeamBadge &&
+      typeof window.OSCTeamBadge.originalLogoPath === "function" &&
+      window.OSCTeamBadge.originalLogoPath(localId)
+    );
+
+    // Lokale Originalwappen bleiben die erste Wahl. Für die übrigen CL-Teams
+    // wird zunächst das sichere OpenLigaDB-Wappen versucht; bei fehlender oder
+    // nicht ladbarer Fremdquelle fällt die Anzeige auf das bereits vorhandene
+    // lokale Schmugglersiegel desselben Vereins zurück. So bleibt die Wappenachse
+    // vollständig belegt, ohne externe Logos in das Repository zu kopieren.
+    if (hasLocalOriginal) return createTeamIdentity(localId, name, modifier);
 
     const wrap = document.createElement("span");
     wrap.className = `team-identity${modifier ? ` ${modifier}` : ""}`;
     const iconUrl = openLigaDbSafeIconUrl(team);
-    if (iconUrl) {
+
+    if (iconUrl || localId) {
       const badge = document.createElement("span");
       badge.className = "team-identity__badge";
-      const image = document.createElement("img");
-      image.src = iconUrl;
-      image.alt = "";
-      image.loading = "lazy";
-      image.decoding = "async";
-      image.referrerPolicy = "no-referrer";
-      image.addEventListener("error", () => badge.remove(), { once: true });
-      badge.appendChild(image);
+
+      const renderLocalFallback = () => {
+        if (window.OSCTeamBadge) {
+          const fallbackId = localId || `cl-${normalizeTeamLabel(name).replace(/\s+/g, "-") || "team"}`;
+          window.OSCTeamBadge.render(badge, fallbackId, name, { loading: "lazy" });
+        }
+      };
+
+      // Den lokalen Badge immer sofort rendern. Dadurch bleibt die Wappenposition
+      // auch dann sichtbar, wenn eine externe OpenLigaDB-Bildquelle langsam,
+      // blockiert oder technisch mit HTTP 200 aber ohne brauchbares Bild antwortet.
+      renderLocalFallback();
+
+      // Nur wenn kein lokales Originalwappen existiert, darf ein erfolgreich
+      // vorgeladenes OpenLigaDB-Wappen den lokalen Fallback ersetzen. Ein Fehler
+      // oder Hängen der Fremdquelle kann damit keine leere Badge-Fläche mehr erzeugen.
+      if (!hasLocalOriginal && iconUrl) {
+        const probe = new Image();
+        probe.decoding = "async";
+        probe.referrerPolicy = "no-referrer";
+        probe.onload = () => {
+          if (!probe.naturalWidth || !probe.naturalHeight || !badge.isConnected) return;
+          const image = document.createElement("img");
+          image.src = iconUrl;
+          image.alt = "";
+          image.loading = "lazy";
+          image.decoding = "async";
+          image.referrerPolicy = "no-referrer";
+          image.addEventListener("error", renderLocalFallback, { once: true });
+          badge.replaceChildren(image);
+          badge.dataset.badgeSource = "openligadb";
+        };
+        probe.onerror = () => {};
+        probe.src = iconUrl;
+      }
       wrap.appendChild(badge);
     }
+
     const label = document.createElement("span");
     label.className = "team-identity__name";
     label.textContent = name;
@@ -2032,10 +2257,14 @@ function bundesligaInfoCards(cards, goalData) {
 
       const pairing = document.createElement("strong");
       pairing.className = "match-pairing";
+      const teamIdentityFactory = typeof options.teamIdentityFactory === "function"
+        ? options.teamIdentityFactory
+        : (teamId, teamName, modifier) => createTeamIdentity(teamId, teamName, modifier);
+
       pairing.append(
-        createTeamIdentity(match.heimTeamId, match.heim, "team-identity--home"),
+        teamIdentityFactory(match.heimTeamId, match.heim, "team-identity--home", match, "home"),
         Object.assign(document.createElement("span"), { className: "match-pairing__separator", textContent: match.trenner || "–" }),
-        createTeamIdentity(match.auswaertsTeamId, match.auswaerts, "team-identity--away")
+        teamIdentityFactory(match.auswaertsTeamId, match.auswaerts, "team-identity--away", match, "away")
       );
 
       const resultWrap = document.createElement("span");
