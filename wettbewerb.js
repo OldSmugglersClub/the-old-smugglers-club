@@ -2197,6 +2197,7 @@ function normalizeGoalGetterEntries(goalGetterData) {
 
         p.appendChild(box);
       } else if (Array.isArray(card.winners)) {
+        article.classList.add("info-card--recent-winners");
         const box = document.createElement("div");
         box.className = "recent-winners";
 
