@@ -1368,7 +1368,31 @@
           "notiz": "",
           "quelleStand": "2026-09-04",
           "heimTeamId": "stuttgart",
-          "auswaertsTeamId": "koeln"
+          "auswaertsTeamId": "koeln",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-09-04T23:44:12.814Z",
+            "abgegeben": 87,
+            "nichtAbgegeben": 13,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 72,
+                "prozent": 82.8
+              },
+              "2": {
+                "anzahl": 7,
+                "prozent": 8
+              },
+              "X": {
+                "anzahl": 8,
+                "prozent": 9.2
+              }
+            }
+          },
+          "aktualisiertAm": "2026-09-04T23:44:12.814Z"
         },
         {
           "id": "bl-2026-27-02-011",
@@ -8581,6 +8605,6 @@
       ]
     }
   ],
-  "datenVersion": 22,
+  "datenVersion": 23,
   "aktualisiert": "2026-09-04"
 }
