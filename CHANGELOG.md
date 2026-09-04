@@ -1,3 +1,26 @@
+# 4.9.2-HF12-HF44
+
+- Live-Übernahme von `4.9.2-HF12-HF43-TEST50`.
+- Rechte Bundesliga-Kachel: vollständiges Nutzer-Logo statt Infotext, groß und exakt zentriert.
+- Linke und mittlere Bundesliga-Kachel sowie Datenlogik unverändert.
+
+# 4.9.2-HF12-HF43-TEST50
+
+- Bundesliga: rechtes Fenster verwendet jetzt vollständig das vom Nutzer bereitgestellte Bundesliga-Logo.
+- Logo horizontal und vertikal mittig zentriert und großflächig eingepasst.
+- Linke und mittlere Bundesliga-Kachel unverändert.
+
+# 4.9.2-HF12-HF43-TEST49
+
+- Bundesliga: Logo in der rechten Infokachel deutlich größer und weiterhin exakt horizontal/vertikal zentriert.
+- Dezente rote Flächenwirkung im rechten Fenster für bessere optische Ausfüllung.
+- Torjäger und Verfolgerfeld unverändert.
+
+# 4.9.2-HF12-HF43-TEST48
+
+- Bundesliga: rechte Infokachel zeigt nun mittig das Bundesliga-Logo statt des bisherigen Datenzentrale-Texts.
+- Torjäger und Verfolgerfeld unverändert.
+
 # 4.9.2-HF12-HF43 – DFB-Pokal/Europa-League-Turnierbaum
 
 - Live-Übernahme des in Test2v2 abgenommenen TEST47-Stands.
