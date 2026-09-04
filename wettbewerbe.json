@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 3,
-  "aktualisiert": "2026-08-14",
+  "datenVersion": 4,
+  "aktualisiert": "2026-09-04",
   "beschreibung": "Zentrales Register für Wettbewerbsnavigation, Saisonmetadaten und Zuordnung der Spiele aus spieldaten.json.",
   "wettbewerbe": [
     {
@@ -49,8 +49,8 @@
       "scheduleTitle": "Spiele der Champions League",
       "saison": {
         "seasonLabel": "Champions League",
-        "tippspieltageZiel": null,
-        "spieleZiel": null,
+        "tippspieltageZiel": 17,
+        "spieleZiel": 189,
         "zeitraum": "Ligaphase bis Finale",
         "status": "wartet auf Spielplan"
       }
@@ -66,8 +66,8 @@
       "scheduleTitle": "Spiele der Europa League",
       "saison": {
         "seasonLabel": "Europa League",
-        "tippspieltageZiel": null,
-        "spieleZiel": null,
+        "tippspieltageZiel": 7,
+        "spieleZiel": 15,
         "zeitraum": "Ab Achtelfinale",
         "status": "wartet auf Achtelfinale"
       }

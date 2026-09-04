@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "datenVersion": 5,
-  "aktualisiert": "2026-08-14",
+  "datenVersion": 6,
+  "aktualisiert": "2026-09-04",
   "aktiveSaison": "2026-27",
   "hinweis": "Zentrale 1:1-Abbildung der in Kicktipp angelegten Wertungsspieltage. Ein Tippspieltag kann ein oder mehrere reale Spiele enthalten.",
   "regeln": {
@@ -1434,12 +1434,27 @@
         },
         {
           "nummer": 104,
-          "name": "Finale",
+          "name": "Finale - DFB-Pokal",
           "saison": "2026/2027",
           "aktiv": true,
           "status": "geplant",
-          "typ": "noch-zuordnen",
-          "hinweis": "Die Wettbewerbzuordnung des Eintrags „Finale“ wird bei der späteren Terminpflege bestätigt."
+          "typ": "dfb-pokal",
+          "spielAuswahl": {
+            "wettbewerb": "dfb-pokal",
+            "runde": "Finale"
+          }
+        },
+        {
+          "nummer": 105,
+          "name": "Finale - CL",
+          "saison": "2026/2027",
+          "aktiv": true,
+          "status": "geplant",
+          "typ": "champions-league",
+          "spielAuswahl": {
+            "wettbewerb": "champions-league",
+            "runde": "Finale"
+          }
         }
       ]
     }
