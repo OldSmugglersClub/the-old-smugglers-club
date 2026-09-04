@@ -1361,12 +1361,12 @@
           "datumAnzeige": "04.09.2026",
           "anstoss": "20:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 4,
+          "auswaertstore": 1,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "",
-          "quelleStand": "2026-07-30",
+          "quelleStand": "2026-09-04",
           "heimTeamId": "stuttgart",
           "auswaertsTeamId": "koeln"
         },
@@ -8581,6 +8581,6 @@
       ]
     }
   ],
-  "datenVersion": 21,
-  "aktualisiert": "2026-08-30"
+  "datenVersion": 22,
+  "aktualisiert": "2026-09-04"
 }
