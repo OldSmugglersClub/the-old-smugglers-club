@@ -1317,6 +1317,18 @@ body.page-dynamo-dresden{
     drop-shadow(0 0 22px rgba(50, 113, 215, .52));
 }
 
+/* 4.9.2-HF12-HF51-TEST64: bewusst gesetzte, zentrierte Zweizeilen-Ueberschrift. */
+.page-champions-league .info-card--recent-winners > h2 {
+  text-align: center;
+  white-space: pre;
+}
+
+@media (max-width: 800px) {
+  .page-champions-league .info-card--recent-winners > h2 {
+    font-size: 1.1rem;
+  }
+}
+
 /* 4.9.2-HF12-HF50-TEST63: drei kompakte, symmetrische Europa-League-Fenster. */
 .page-europa-league #info-cards > .info-card {
   height: 290px;

@@ -2162,7 +2162,7 @@ function normalizeGoalGetterEntries(goalGetterData) {
     if (result[1]) {
       result[1] = {
         ...result[1],
-        titel: "Die letzten 5 Champions-League-Sieger",
+        titel: "Die letzten 5\nChampions-League-Sieger",
         text: "",
         winners: CHAMPIONS_LEAGUE_RECENT_WINNERS
       };
