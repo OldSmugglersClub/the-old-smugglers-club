@@ -1,9 +1,9 @@
 # TESTPROTOKOLL 4.9.2-HF12-HF44
 
-Technische Prüfungen:
-- `bundesliga.json`: gültiges JSON.
-- `wettbewerb.js`: JavaScript-Syntax geprüft.
-- Vom Nutzer bereitgestelltes `assets/bundesliga-logo.png` vorhanden und lesbar.
-- `bundesliga.html` referenziert Release-Cache-Buster `4.9.2-HF12-HF44`.
-- Änderung gegenüber TEST50 beschränkt sich auf Release-Metadaten / Cache-Buster.
-- Funktionaler Stand entspricht dem vom Nutzer abgenommenen TEST50.
+- `VERSION.txt` = `4.9.2-HF12-HF44`.
+- `bundesliga.html` nutzt Cache-Buster `4.9.2-HF12-HF44` für CSS und JS.
+- `bundesliga.json` enthält die Logo-Karte mit `./assets/bundesliga-logo.png`.
+- `wettbewerb.js` rendert Karten mit `logo` als zentriertes Wettbewerbslogo.
+- `wettbewerb.css` zentriert und skaliert das Logo im rechten Fenster.
+- Nutzerlogo `assets/bundesliga-logo.png` ist vollständig enthalten.
+- Linke und mittlere Bundesliga-Karte bleiben funktional unverändert.

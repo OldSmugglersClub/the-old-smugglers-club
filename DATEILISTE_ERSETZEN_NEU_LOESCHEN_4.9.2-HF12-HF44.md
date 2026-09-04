@@ -1,7 +1,10 @@
 # DATEILISTE 4.9.2-HF12-HF44
 
 ## Ersetzen
+- `VERSION.txt`
 - `bundesliga.html`
+- `bundesliga.json`
+- `wettbewerb.js`
 - `wettbewerb.css`
 - `assets/bundesliga-logo.png`
 - `CHANGELOG.md`

@@ -13,8 +13,9 @@
       "text": "Die Plätze 2 bis 5 erscheinen hier, sobald OpenLigaDB verwertbare Torjägerdaten liefert."
     },
     {
-      "titel": "Datenzentrale",
-      "text": "Spieltage, Endergebnisse, Tabelle, Formkurven sowie Heim-, Auswärts- und Torstatistiken werden zentral aus den Spieldaten aufgebaut."
+      "titel": "",
+      "logo": "./assets/bundesliga-logo.png",
+      "logoAlt": "Bundesliga Logo"
     }
   ],
   "aktuellerStandTitel": "",

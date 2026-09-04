@@ -2043,7 +2043,20 @@ function bundesligaInfoCards(cards, goalData) {
       const h2 = document.createElement("h2");
       h2.textContent = card.titel || "";
       const p = document.createElement("p");
-      if (card.leader) {
+      if (card.logo) {
+        article.classList.add("info-card--competition-logo");
+        h2.classList.add("is-hidden");
+        const box = document.createElement("div");
+        box.className = "competition-logo-box";
+
+        const img = document.createElement("img");
+        img.className = "competition-logo-image";
+        img.src = card.logo;
+        img.alt = card.logoAlt || "Wettbewerbslogo";
+
+        box.appendChild(img);
+        p.appendChild(box);
+      } else if (card.leader) {
         const box = document.createElement("div");
         box.className = "goalgetter-leader";
 
