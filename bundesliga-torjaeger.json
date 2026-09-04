@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 6,
-  "aktualisiert": "2026-08-30",
+  "datenVersion": 7,
+  "aktualisiert": "2026-09-04",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
@@ -15,11 +15,15 @@
       "tore": 3
     },
     {
+      "name": "J. Vagnoman",
+      "tore": 2
+    },
+    {
       "name": "Thijs Dallinga",
       "tore": 2
     },
     {
-      "name": "D. Upamecano",
+      "name": "M. Olise",
       "tore": 1
     },
     {
@@ -27,15 +31,11 @@
       "tore": 1
     },
     {
-      "name": "M. Olise",
-      "tore": 1
-    },
-    {
-      "name": "J. Vagnoman",
-      "tore": 1
-    },
-    {
       "name": "Luis Díaz",
+      "tore": 1
+    },
+    {
+      "name": "D. Upamecano",
       "tore": 1
     },
     {
@@ -63,11 +63,11 @@
       "tore": 1
     },
     {
-      "name": "O. Kabak",
+      "name": "S. El Mala",
       "tore": 1
     },
     {
-      "name": "S. El Mala",
+      "name": "O. Kabak",
       "tore": 1
     },
     {
@@ -75,11 +75,11 @@
       "tore": 1
     },
     {
-      "name": "L. Petkov",
+      "name": "P. Schick",
       "tore": 1
     },
     {
-      "name": "P. Schick",
+      "name": "L. Petkov",
       "tore": 1
     },
     {
@@ -120,6 +120,18 @@
     },
     {
       "name": "A. Kade",
+      "tore": 1
+    },
+    {
+      "name": "E. Demirovic",
+      "tore": 1
+    },
+    {
+      "name": "G. Prömel",
+      "tore": 1
+    },
+    {
+      "name": "B. El Khannouss",
       "tore": 1
     }
   ]
