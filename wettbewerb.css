@@ -1302,6 +1302,21 @@ body.page-dynamo-dresden{
   margin: auto;
 }
 
+/* 4.9.2-HF12-HF50: UEFA-blauer Kontrast nur im rechten Champions-League-Fenster. */
+.page-champions-league .info-card--competition-logo {
+  background:
+    radial-gradient(circle at 50% 46%, rgba(43, 105, 196, .72) 0%, rgba(15, 48, 112, .58) 34%, transparent 68%),
+    linear-gradient(145deg, #07122f 0%, #091b4a 52%, #04091e 100%);
+}
+
+.page-champions-league .competition-logo-image {
+  width: min(88%, 340px);
+  filter:
+    invert(1)
+    drop-shadow(0 0 8px rgba(211, 228, 255, .34))
+    drop-shadow(0 0 22px rgba(50, 113, 215, .52));
+}
+
 
 /* 4.9.2-HF12-HF46: DFB-Pokal-Kacheln mit Torjäger und letzten fünf Pokalsiegern. */
 .recent-winners {
@@ -1484,6 +1499,64 @@ body.page-dynamo-dresden{
 
 @media (max-width: 800px) {
   .info-card--bundesliga-goalgetter .goalgetter-cannon {
+    width: 100%;
+  }
+}
+
+/* 4.9.2-HF12-HF50: Champions-League-Torjaeger im bestaetigten 16:9-Kachellayout. */
+.info-card--champions-league-goalgetter {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  overflow: hidden;
+}
+
+.info-card--champions-league-goalgetter > h2 {
+  margin: 0 0 .5rem;
+}
+
+.info-card--champions-league-goalgetter > p {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.info-card--champions-league-goalgetter .goalgetter-leader {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  align-content: center;
+  justify-items: stretch;
+  gap: .35rem;
+  text-align: center;
+}
+
+.info-card--champions-league-goalgetter .goalgetter-cannon {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 10px;
+}
+
+.info-card--champions-league-goalgetter .goalgetter-leader-name {
+  margin-top: .15rem;
+  font-weight: 800;
+  font-size: 1.15rem;
+  line-height: 1.15;
+}
+
+.info-card--champions-league-goalgetter .goalgetter-leader-goals {
+  margin-top: 0;
+  opacity: .9;
+  font-size: 1rem;
+}
+
+@media (max-width: 800px) {
+  .info-card--champions-league-goalgetter .goalgetter-cannon {
     width: 100%;
   }
 }
