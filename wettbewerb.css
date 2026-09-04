@@ -1262,7 +1262,7 @@ body.page-dynamo-dresden{
 }
 
 
-/* 4.9.2-HF12-HF44: vom Nutzer bereitgestelltes Bundesliga-Logo vollständig, groß und exakt zentriert. */
+/* 4.9.2-HF12-HF43-TEST50: vom Nutzer bereitgestelltes Bundesliga-Logo vollständig, groß und exakt zentriert. */
 .info-card--competition-logo {
   display: flex;
   align-items: stretch;
@@ -1300,4 +1300,102 @@ body.page-dynamo-dresden{
   object-fit: contain;
   object-position: center center;
   margin: auto;
+}
+
+
+/* 4.9.2-HF12-HF46: DFB-Pokal-Kacheln mit Torjäger und letzten fünf Pokalsiegern. */
+.recent-winners {
+  min-height: 205px;
+  display: grid;
+  align-content: center;
+  gap: 0.55rem;
+}
+
+.recent-winner-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.85rem;
+  width: min(100%, 390px);
+  margin-inline: auto;
+}
+
+.recent-winner-team {
+  min-width: 0;
+}
+
+.recent-winner-team .team-identity__name {
+  text-align: left;
+  font-weight: 700;
+}
+
+.recent-winner-season {
+  white-space: nowrap;
+  opacity: 0.9;
+  font-size: 0.95em;
+}
+
+.recent-winners-empty {
+  text-align: center;
+}
+
+
+/* 4.9.2-HF12-HF46-TEST53: DFB-Pokal-Torjaeger nutzt die komplette linke Kachel. */
+.info-card--dfb-goalgetter {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  overflow: hidden;
+}
+
+.info-card--dfb-goalgetter > h2 {
+  margin: 0 0 .5rem;
+}
+
+.info-card--dfb-goalgetter > p {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+/* TEST54: DFB-Pokal-Torjäger nutzt die verfügbare Breite vollständig;
+   Spielername und Tore bleiben bewusst unterhalb des Bildes. */
+.info-card--dfb-goalgetter .goalgetter-leader {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  align-content: center;
+  justify-items: stretch;
+  gap: .35rem;
+  text-align: center;
+}
+
+.info-card--dfb-goalgetter .goalgetter-cannon {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 10px;
+}
+
+.info-card--dfb-goalgetter .goalgetter-leader-name {
+  margin-top: .15rem;
+  font-weight: 800;
+  font-size: 1.15rem;
+  line-height: 1.15;
+}
+
+.info-card--dfb-goalgetter .goalgetter-leader-goals {
+  margin-top: 0;
+  opacity: .9;
+  font-size: 1rem;
+}
+
+@media (max-width: 800px) {
+  .info-card--dfb-goalgetter .goalgetter-cannon {
+    width: 100%;
+  }
 }

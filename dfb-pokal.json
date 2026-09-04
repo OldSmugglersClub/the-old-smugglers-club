@@ -5,15 +5,16 @@
   "beschreibung": "Der DFB-Pokal wird in unserer Tipprunde ab dem Achtelfinale als eigener Wettbewerb geführt. Alle vorgesehenen K.-o.-Runden werden nach Auslosung und Terminierung zentral ergänzt.",
   "karten": [
     {
-      "titel": "Start im Tippspiel",
-      "text": "Gewertet wird der DFB-Pokal ab dem Achtelfinale. Die 1. und 2. Hauptrunde gehören nicht zu unserem Tippspiel."
+      "titel": "Aktueller Torjäger",
+      "text": "Wird automatisch aus OpenLigaDB geladen. Falls noch keine Torschützen gepflegt sind, erscheint ein Hinweis."
     },
     {
-      "titel": "K.-o.-Phase 2026/2027",
-      "text": "Achtelfinale: 1./2. Dezember 2026 · Viertelfinale: 2./3. und 9./10. Februar 2027 · Halbfinale: 20./21. April 2027 · Finale in Berlin: 29. Mai 2027."
+      "titel": "Die letzten 5 Pokalsieger",
+      "text": "Die letzten fünf DFB-Pokalsieger werden mit Originalwappen angezeigt."
     },
     {
       "titel": "",
+      "text": "",
       "logo": "./assets/dfb-pokal-logo.jpg",
       "logoAlt": "DFB-Pokal Logo"
     }

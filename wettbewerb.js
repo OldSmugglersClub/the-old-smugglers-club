@@ -638,6 +638,14 @@
   const OPENLIGADB_EL_MATCHES_PROTOTYPE_URL = "https://api.openligadb.de/getmatchdata/uel/2026";
   const EUROPA_LEAGUE_FALLBACK_PROTOTYPE_URL = "./europa-league-ko-2026.json";
   const OPENLIGADB_DFB_PROTOTYPE_URL = "https://api.openligadb.de/getmatchdata/dfb/2026";
+  const OPENLIGADB_DFB_GOALGETTERS_URL = "https://api.openligadb.de/getgoalgetters/dfb/2026";
+  const DFB_POKAL_RECENT_WINNERS = Object.freeze([
+    { saison: "2025/2026", teamId: "bayern-muenchen", name: "FC Bayern München" },
+    { saison: "2024/2025", teamId: "stuttgart", name: "VfB Stuttgart" },
+    { saison: "2023/2024", teamId: "leverkusen", name: "Bayer 04 Leverkusen" },
+    { saison: "2022/2023", teamId: "rb-leipzig", name: "RB Leipzig" },
+    { saison: "2021/2022", teamId: "rb-leipzig", name: "RB Leipzig" }
+  ]);
   const DFB_BRACKET_ROUNDS = [
     { key: "achtelfinale", label: "Achtelfinale" },
     { key: "viertelfinale", label: "Viertelfinale" },
@@ -1989,7 +1997,82 @@ function renderCentralValidation(root) {
     root.appendChild(section);
   }
 
-function bundesligaInfoCards(cards, goalData) {
+function normalizeGoalGetterEntries(goalGetterData) {
+    const rawEntries = Array.isArray(goalGetterData)
+      ? goalGetterData
+      : safeArray(goalGetterData?.goalGetters || goalGetterData?.goalgetters || goalGetterData?.torjaeger || goalGetterData?.entries);
+
+    return rawEntries
+      .map(entry => {
+        const nested = entry?.goalGetter || entry?.player || null;
+        const name = String(
+          entry?.goalGetterName ||
+          entry?.goalGetterNameShort ||
+          nested?.goalGetterName ||
+          nested?.name ||
+          entry?.name ||
+          ""
+        ).trim();
+        const tore = Number(
+          entry?.goalCount ??
+          entry?.goals ??
+          entry?.goalGetterGoals ??
+          entry?.anzahlTore ??
+          entry?.tore
+        );
+        return { name, tore };
+      })
+      .filter(entry => entry.name && Number.isFinite(entry.tore))
+      .sort((a, b) => b.tore - a.tore || a.name.localeCompare(b.name, "de"));
+  }
+
+  function dfbPokalInfoCards(cards, goalGetterData) {
+    const result = safeArray(cards).map(card => ({ ...card }));
+    if (slug !== "dfb-pokal") return result;
+
+    const entries = normalizeGoalGetterEntries(goalGetterData);
+    const leader = entries[0] || null;
+
+    result[0] = leader
+      ? {
+          ...result[0],
+          titel: "Aktueller Torjäger",
+          text: "",
+          leader: {
+            image: "./assets/dfb-pokal-torjaegerkanone.jpg",
+            name: leader.name,
+            tore: leader.tore
+          }
+        }
+      : {
+          ...result[0],
+          titel: "Aktueller Torjäger",
+          text: "Noch keine Torschützen aus OpenLigaDB verfügbar."
+        };
+
+    if (result[1]) {
+      result[1] = {
+        ...result[1],
+        titel: "Die letzten 5 Pokalsieger",
+        text: "",
+        winners: DFB_POKAL_RECENT_WINNERS
+      };
+    }
+
+    if (result[2]) {
+      result[2] = {
+        ...result[2],
+        titel: "",
+        text: "",
+        logo: result[2].logo || "./assets/dfb-pokal-logo.jpg",
+        logoAlt: result[2].logoAlt || "DFB-Pokal Logo"
+      };
+    }
+
+    return result;
+  }
+
+  function bundesligaInfoCards(cards, goalData) {
     const result = safeArray(cards).map(card => ({ ...card }));
     if (slug !== "bundesliga") return result;
 
@@ -2057,6 +2140,8 @@ function bundesligaInfoCards(cards, goalData) {
         box.appendChild(img);
         p.appendChild(box);
       } else if (card.leader) {
+        if (slug === "dfb-pokal") article.classList.add("info-card--dfb-goalgetter");
+
         const box = document.createElement("div");
         box.className = "goalgetter-leader";
 
@@ -2104,6 +2189,33 @@ function bundesligaInfoCards(cards, goalData) {
             goals.textContent = `${count} ${count === 1 ? "Tor" : "Tore"}`;
 
             row.append(place, name, goals);
+            box.appendChild(row);
+          });
+        }
+
+        p.appendChild(box);
+      } else if (Array.isArray(card.winners)) {
+        const box = document.createElement("div");
+        box.className = "recent-winners";
+
+        if (!card.winners.length) {
+          const empty = document.createElement("div");
+          empty.className = "recent-winners-empty";
+          empty.textContent = "Noch keine Pokalsieger hinterlegt.";
+          box.appendChild(empty);
+        } else {
+          card.winners.forEach(entry => {
+            const row = document.createElement("div");
+            row.className = "recent-winner-row";
+
+            const identity = createTeamIdentity(entry.teamId || "", entry.name || "");
+            identity.classList.add("recent-winner-team");
+
+            const season = document.createElement("span");
+            season.className = "recent-winner-season";
+            season.textContent = entry.saison || "";
+
+            row.append(identity, season);
             box.appendChild(row);
           });
         }
@@ -2555,12 +2667,13 @@ function bundesligaInfoCards(cards, goalData) {
           window.OSCDataRegistry.url("wettbewerbe")
         ]);
       }
-      const [data, centralGameData, teamData, bundesligaTableData, bundesligaGoalGetterData, competitionConfig, openLigaDbDfbMatches, openLigaDbClTable, openLigaDbElMatches, europaLeagueFallback] = await Promise.all([
+      const [data, centralGameData, teamData, bundesligaTableData, bundesligaGoalGetterData, dfbGoalGetterData, competitionConfig, openLigaDbDfbMatches, openLigaDbClTable, openLigaDbElMatches, europaLeagueFallback] = await Promise.all([
         fetchJson(jsonUrl, true),
         fetchJson(gameDataUrl, false),
         fetchJson(teamDataUrl, false),
         slug === "bundesliga" ? fetchJson(bundesligaTableUrl, false) : Promise.resolve({ teams: [] }),
         slug === "bundesliga" ? fetchJson(bundesligaGoalGetterUrl, false) : Promise.resolve({ torjaeger: [] }),
+        slug === "dfb-pokal" ? fetchJson(OPENLIGADB_DFB_GOALGETTERS_URL, false) : Promise.resolve([]),
         fetchJson(competitionConfigUrl, false),
         slug === "dfb-pokal"
           ? fetchJson(OPENLIGADB_DFB_PROTOTYPE_URL, false)
@@ -2593,7 +2706,12 @@ function bundesligaInfoCards(cards, goalData) {
       text("title", data.titel);
       text("description", data.beschreibung);
 
-      renderCards(bundesligaInfoCards(data.karten, bundesligaGoalGetterData));
+      const preparedCards = slug === "bundesliga"
+        ? bundesligaInfoCards(data.karten, bundesligaGoalGetterData)
+        : slug === "dfb-pokal"
+          ? dfbPokalInfoCards(data.karten, dfbGoalGetterData)
+          : data.karten;
+      renderCards(preparedCards);
 
       const statusBox = $("status-box");
       const showStatus = Boolean(data.aktuellerStandTitel || data.aktuellerStand);
