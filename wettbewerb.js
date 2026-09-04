@@ -2094,7 +2094,7 @@ function normalizeGoalGetterEntries(goalGetterData) {
       ...result[0],
       titel: "Torjäger",
       leader: {
-        image: "./assets/torjaeger-kanone.png",
+        image: "./assets/bundesliga-torjaegerkanone.jpg",
         name: leader.name,
         tore: leader.tore
       }
@@ -2141,6 +2141,7 @@ function normalizeGoalGetterEntries(goalGetterData) {
         p.appendChild(box);
       } else if (card.leader) {
         if (slug === "dfb-pokal") article.classList.add("info-card--dfb-goalgetter");
+        if (slug === "bundesliga") article.classList.add("info-card--bundesliga-goalgetter");
 
         const box = document.createElement("div");
         box.className = "goalgetter-leader";
@@ -2162,6 +2163,7 @@ function normalizeGoalGetterEntries(goalGetterData) {
         box.append(img, name, goals);
         p.appendChild(box);
       } else if (Array.isArray(card.chasers)) {
+        article.classList.add("info-card--goalgetter-chasers");
         const box = document.createElement("div");
         box.className = "goalgetter-chasers";
 
