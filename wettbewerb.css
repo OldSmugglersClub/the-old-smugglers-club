@@ -1317,6 +1317,93 @@ body.page-dynamo-dresden{
     drop-shadow(0 0 22px rgba(50, 113, 215, .52));
 }
 
+/* 4.9.2-HF12-HF50-TEST63: drei kompakte, symmetrische Europa-League-Fenster. */
+.page-europa-league #info-cards > .info-card {
+  height: 290px;
+  min-height: 290px;
+}
+
+.page-europa-league #info-cards > .info-card h2 {
+  margin-bottom: .5rem;
+  font-size: clamp(.95rem, 1.55vw, 1.2rem);
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.page-europa-league .info-card--competition-logo {
+  padding: 0;
+  overflow: hidden;
+}
+
+.page-europa-league .info-card--competition-logo > p,
+.page-europa-league .competition-logo-box {
+  width: 100%;
+  height: 100%;
+  min-height: 205px;
+}
+
+.page-europa-league .competition-logo-image {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: center center;
+  margin: 0;
+}
+
+.page-europa-league .info-card--europa-league-goalgetter,
+.page-europa-league .info-card--recent-winners {
+  padding: 12px;
+}
+
+.page-europa-league .info-card--europa-league-goalgetter .goalgetter-leader {
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  align-content: stretch;
+  min-height: 0;
+}
+
+.page-europa-league .info-card--europa-league-goalgetter .goalgetter-cannon {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.page-europa-league .goalgetter-leader-name,
+.page-europa-league .goalgetter-leader-goals,
+.page-europa-league .recent-winner-team .team-identity__name,
+.page-europa-league .recent-winner-season {
+  white-space: nowrap;
+}
+
+.page-europa-league .info-card--recent-winners .recent-winner-row {
+  gap: .5rem;
+}
+
+@media (max-width: 420px) {
+  .page-europa-league #info-cards > .info-card h2 {
+    font-size: .78rem;
+  }
+
+  .page-europa-league .info-card--recent-winners .recent-winner-row {
+    gap: .35rem;
+    font-size: .75rem;
+  }
+
+  .page-europa-league .info-card--recent-winners .team-identity {
+    gap: .35rem;
+  }
+
+  .page-europa-league .info-card--recent-winners .team-identity__badge {
+    flex-basis: 26px;
+    width: 26px;
+    height: 26px;
+  }
+}
+
 
 /* 4.9.2-HF12-HF46: DFB-Pokal-Kacheln mit Torjäger und letzten fünf Pokalsiegern. */
 .recent-winners {
@@ -1557,6 +1644,64 @@ body.page-dynamo-dresden{
 
 @media (max-width: 800px) {
   .info-card--champions-league-goalgetter .goalgetter-cannon {
+    width: 100%;
+  }
+}
+
+/* 4.9.2-HF12-HF50-TEST59: Europa-League-Torjaeger im bestaetigten 16:9-Kachellayout. */
+.info-card--europa-league-goalgetter {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  overflow: hidden;
+}
+
+.info-card--europa-league-goalgetter > h2 {
+  margin: 0 0 .5rem;
+}
+
+.info-card--europa-league-goalgetter > p {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.info-card--europa-league-goalgetter .goalgetter-leader {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  align-content: center;
+  justify-items: stretch;
+  gap: .35rem;
+  text-align: center;
+}
+
+.info-card--europa-league-goalgetter .goalgetter-cannon {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 10px;
+}
+
+.info-card--europa-league-goalgetter .goalgetter-leader-name {
+  margin-top: .15rem;
+  font-weight: 800;
+  font-size: 1.15rem;
+  line-height: 1.15;
+}
+
+.info-card--europa-league-goalgetter .goalgetter-leader-goals {
+  margin-top: 0;
+  opacity: .9;
+  font-size: 1rem;
+}
+
+@media (max-width: 800px) {
+  .info-card--europa-league-goalgetter .goalgetter-cannon {
     width: 100%;
   }
 }

@@ -13,6 +13,11 @@
       "status": "local-original-512",
       "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
     },
+    "atalanta": {
+      "path": "./assets/team-logos/original/atalanta.png",
+      "status": "local-original-web",
+      "quelle": "öffentlich verfügbares Vereinswappen"
+    },
     "aston-villa": {
       "path": "./assets/team-logos/original/aston-villa.png",
       "status": "local-original-512",
@@ -227,6 +232,11 @@
       "path": "./assets/team-logos/original/schalke-04.png",
       "status": "local-original-512",
       "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "sevilla": {
+      "path": "./assets/team-logos/original/sevilla.png",
+      "status": "local-original-web",
+      "quelle": "öffentlich verfügbares Vereinswappen"
     },
     "sporting-lissabon": {
       "path": "./assets/team-logos/original/sporting-lissabon.png",
