@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 8,
+  "datenVersion": 9,
   "aktualisiert": "2026-09-05",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
@@ -19,11 +19,35 @@
       "tore": 2
     },
     {
+      "name": "R. Baku",
+      "tore": 2
+    },
+    {
       "name": "Thijs Dallinga",
       "tore": 2
     },
     {
+      "name": "P. Schick",
+      "tore": 2
+    },
+    {
+      "name": "S. Guirassy",
+      "tore": 2
+    },
+    {
+      "name": "H. Bolin",
+      "tore": 2
+    },
+    {
+      "name": "M. Krattenmacher",
+      "tore": 2
+    },
+    {
       "name": "Luis Díaz",
+      "tore": 1
+    },
+    {
+      "name": "M. Olise",
       "tore": 1
     },
     {
@@ -35,10 +59,6 @@
       "tore": 1
     },
     {
-      "name": "M. Olise",
-      "tore": 1
-    },
-    {
       "name": "A. Nusa",
       "tore": 1
     },
@@ -47,19 +67,15 @@
       "tore": 1
     },
     {
-      "name": "R. Baku",
-      "tore": 1
-    },
-    {
-      "name": "Emmanuel Latte Lath",
-      "tore": 1
-    },
-    {
       "name": "T. Skarke",
       "tore": 1
     },
     {
       "name": "L. Querfeld",
+      "tore": 1
+    },
+    {
+      "name": "Emmanuel Latte Lath",
       "tore": 1
     },
     {
@@ -75,18 +91,6 @@
       "tore": 1
     },
     {
-      "name": "C. Kofane",
-      "tore": 1
-    },
-    {
-      "name": "P. Schick",
-      "tore": 1
-    },
-    {
-      "name": "L. Petkov",
-      "tore": 1
-    },
-    {
       "name": "Cole Campbell",
       "tore": 1
     },
@@ -95,7 +99,11 @@
       "tore": 1
     },
     {
-      "name": "S. Guirassy",
+      "name": "C. Kofane",
+      "tore": 1
+    },
+    {
+      "name": "L. Petkov",
       "tore": 1
     },
     {
@@ -103,11 +111,15 @@
       "tore": 1
     },
     {
+      "name": "D. Stalmach",
+      "tore": 1
+    },
+    {
       "name": "I. Matanovic",
       "tore": 1
     },
     {
-      "name": "D. Stalmach",
+      "name": "M. Gregoritsch",
       "tore": 1
     },
     {
@@ -116,10 +128,6 @@
     },
     {
       "name": "Rodrigo Ribeiro",
-      "tore": 1
-    },
-    {
-      "name": "M. Gregoritsch",
       "tore": 1
     },
     {
@@ -135,15 +143,55 @@
       "tore": 1
     },
     {
+      "name": "T. Lemperle",
+      "tore": 1
+    },
+    {
+      "name": "Fabio Silva",
+      "tore": 1
+    },
+    {
+      "name": "L. Avdullahu",
+      "tore": 1
+    },
+    {
+      "name": "Facundo Medina",
+      "tore": 1
+    },
+    {
       "name": "E. Fernández",
       "tore": 1
     },
     {
-      "name": "H. Bolin",
+      "name": "Ibrahim Maza",
+      "tore": 1
+    },
+    {
+      "name": "D. Mokwa",
+      "tore": 1
+    },
+    {
+      "name": "F. Keidel",
+      "tore": 1
+    },
+    {
+      "name": "J. Scally",
+      "tore": 1
+    },
+    {
+      "name": "N. Füllkrug",
+      "tore": 1
+    },
+    {
+      "name": "M. Grüll",
       "tore": 1
     },
     {
       "name": "E. Dinkçi",
+      "tore": 1
+    },
+    {
+      "name": "M. Eggestein",
       "tore": 1
     }
   ]
