@@ -1,9 +1,9 @@
 {
   "schemaVersion": 3,
-  "datenVersion": 11,
-  "aktualisiertAm": "2026-09-04T23:44:12.814Z",
+  "datenVersion": 12,
+  "aktualisiertAm": "2026-09-05T00:25:39.460Z",
   "aktiveSaison": "2026-27",
-  "quelle": "The Old Smugglers Club Admin 6.5.0-HF15 Zwischenstand",
+  "quelle": "The Old Smugglers Club Admin 6.5.0-HF16 Zwischenstand",
   "regeln": {
     "tendenz": 2,
     "differenz": 3,
@@ -3488,7 +3488,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-09-04T23:44:12.814Z",
+              "stand": "2026-09-05T00:25:39.460Z",
               "abgegeben": 87,
               "nichtAbgegeben": 13,
               "verborgen": 0,
@@ -3507,7 +3507,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-09-04T23:44:12.814Z"
+            "aktualisiertAm": "2026-09-05T00:25:39.460Z"
           },
           {
             "id": "bl-2026-27-02-011",
@@ -79716,7 +79716,7 @@
             "tippImporte": []
           }
         ],
-        "statusErmitteltAm": "2026-09-04T23:44:12.860Z"
+        "statusErmitteltAm": "2026-09-05T00:25:39.511Z"
       },
       {
         "id": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
@@ -80674,7 +80674,7 @@
             "tippImporte": []
           }
         ],
-        "statusErmitteltAm": "2026-09-04T23:44:12.861Z"
+        "statusErmitteltAm": "2026-09-05T00:25:39.511Z"
       },
       {
         "id": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
@@ -89208,7 +89208,7 @@
             "tippImporte": []
           }
         ],
-        "statusErmitteltAm": "2026-09-04T23:44:12.862Z"
+        "statusErmitteltAm": "2026-09-05T00:25:39.512Z"
       },
       {
         "id": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
@@ -90146,7 +90146,7 @@
             "tippImporte": []
           }
         ],
-        "statusErmitteltAm": "2026-09-04T23:44:12.862Z"
+        "statusErmitteltAm": "2026-09-05T00:25:39.512Z"
       },
       {
         "id": "2026-27__bundesliga__2-spieltag__bl-2026-27-02-010-bl-2026-27-02-011-bl-2026-27-02-012-bl-2026-27-02-013-bl-2026-27-02-014-bl-2026-27-02-015-bl-2026-27-02-016-bl-2026-27-02-017-bl-2026-27-02-018",
@@ -90156,7 +90156,7 @@
         "label": "Bundesliga",
         "runde": "2. Spieltag",
         "erstelltAm": "2026-09-04T23:42:48.760Z",
-        "aktualisiertAm": "2026-09-04T23:44:12.863Z",
+        "aktualisiertAm": "2026-09-05T00:25:39.513Z",
         "spiele": [
           {
             "id": "bl-2026-27-02-010",
@@ -90404,7 +90404,7 @@
         ],
         "tippImportHistorie": [],
         "status": "teilweise",
-        "statusErmitteltAm": "2026-09-04T23:44:12.863Z"
+        "statusErmitteltAm": "2026-09-05T00:25:39.514Z"
       }
     ]
   },

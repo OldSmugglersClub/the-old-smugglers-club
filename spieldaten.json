@@ -1373,7 +1373,7 @@
           "tippverteilung": {
             "schemaVersion": 1,
             "quelle": "Kicktipp – Tipps aller Tipper",
-            "stand": "2026-09-04T23:44:12.814Z",
+            "stand": "2026-09-05T00:25:39.460Z",
             "abgegeben": 87,
             "nichtAbgegeben": 13,
             "verborgen": 0,
@@ -1392,7 +1392,7 @@
               }
             }
           },
-          "aktualisiertAm": "2026-09-04T23:44:12.814Z"
+          "aktualisiertAm": "2026-09-05T00:25:39.460Z"
         },
         {
           "id": "bl-2026-27-02-011",
@@ -8605,6 +8605,6 @@
       ]
     }
   ],
-  "datenVersion": 23,
-  "aktualisiert": "2026-09-04"
+  "datenVersion": 24,
+  "aktualisiert": "2026-09-05"
 }
