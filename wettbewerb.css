@@ -1501,6 +1501,143 @@ body.page-dynamo-dresden{
   }
 }
 
+/* Relegation: DFB, letzte Entscheidungen und Relegationsmotiv. */
+.page-relegation #info-cards > .info-card {
+  height: 290px;
+  min-height: 290px;
+}
+
+.page-relegation .info-card--competition-logo {
+  padding: 0;
+  overflow: hidden;
+}
+
+.page-relegation .info-card--competition-logo > p,
+.page-relegation .competition-logo-box {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.page-relegation .relegation-dfl-logo {
+  background: #fff;
+}
+
+.page-relegation .relegation-dfl-logo .competition-logo-image {
+  width: 94%;
+  height: 94%;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, .5));
+}
+
+.page-relegation .relegation-ghost-image .competition-logo-image {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: fill;
+  object-position: center;
+}
+
+.page-relegation .relegation-event-logo .competition-logo-image {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.page-relegation .relegation-event-logo {
+  background: #d8d8d8;
+}
+
+.page-relegation .info-card--relegation-summary {
+  padding: 11px 12px;
+}
+
+.page-relegation .info-card--relegation-summary > h2 {
+  margin: 0 0 .55rem;
+  font-size: clamp(1rem, 1.7vw, 1.3rem);
+  line-height: 1.08;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.page-relegation .info-card--relegation-summary > p {
+  height: calc(100% - 2rem);
+}
+
+.relegation-summary {
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: .48rem;
+}
+
+.relegation-duel {
+  min-height: 0;
+  display: grid;
+  align-content: center;
+  gap: .75rem;
+  padding: .48rem .58rem;
+  border: 1px solid rgba(190, 145, 62, .42);
+  border-radius: 9px;
+  background: linear-gradient(145deg, rgba(56, 36, 20, .82), rgba(17, 12, 8, .9));
+}
+
+.relegation-duel-title {
+  color: #efca70;
+  font-size: 1.08rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.relegation-results {
+  display: grid;
+  gap: .08rem;
+  color: #ead9ae;
+  font-size: .78rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.relegation-results span,
+.relegation-outcome span {
+  white-space: nowrap;
+}
+
+.relegation-outcome {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .35rem;
+  font-size: clamp(.88rem, 1.45vw, 1.08rem);
+  font-weight: 700;
+  text-align: center;
+}
+
+.relegation-up {
+  color: #aeea73;
+}
+
+.relegation-down {
+  color: #ff8b78;
+}
+
+@media (max-width: 420px) {
+  .page-relegation .info-card--relegation-summary > h2 {
+    font-size: .92rem;
+  }
+
+  .relegation-duel-title,
+  .relegation-outcome {
+    font-size: .82rem;
+  }
+}
+
 .page-europa-league .info-card--europa-league-goalgetter .goalgetter-leader {
   grid-template-rows: minmax(0, 1fr) auto auto;
   align-content: stretch;
