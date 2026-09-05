@@ -163,16 +163,40 @@
           "datumAnzeige": "05.09.2026",
           "anstoss": "20:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 1,
+          "auswaertstore": 2,
+          "status": "beendet",
           "sonderwertungen": [
             "smugglerauftrag"
           ],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen. Smugglerauftrag zum 4. Spieltag der 2. Bundesliga.",
           "quelleStand": "2026-07-30",
           "heimTeamId": "dynamo-dresden",
-          "auswaertsTeamId": "bochum"
+          "auswaertsTeamId": "bochum",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-09-05T23:26:28.294Z",
+            "abgegeben": 88,
+            "nichtAbgegeben": 12,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 46,
+                "prozent": 52.3
+              },
+              "2": {
+                "anzahl": 22,
+                "prozent": 25
+              },
+              "X": {
+                "anzahl": 20,
+                "prozent": 22.7
+              }
+            }
+          },
+          "aktualisiertAm": "2026-09-05T23:26:28.294Z"
         },
         {
           "id": "sma-2026-27-05-044",
@@ -8749,6 +8773,6 @@
       ]
     }
   ],
-  "datenVersion": 27,
+  "datenVersion": 28,
   "aktualisiert": "2026-09-05"
 }

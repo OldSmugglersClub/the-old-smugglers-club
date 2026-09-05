@@ -1,10 +1,148 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 6,
-  "aktualisiert": "2026-08-30",
+  "datenVersion": 7,
+  "aktualisiert": "2026-09-05",
   "saison": "2026-27",
   "hinweis": "Kumulativer Ranglistenverlauf nach jedem abgeschlossenen Auftrag.",
   "verlaeufe": [
+    {
+      "teilnehmerId": "baslermario",
+      "teilnehmer": "baslermario",
+      "punkte": [
+        {
+          "zeitpunkt": "2026-08-09T18:11:13.460Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
+          "platz": 1,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "2. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
+          "platz": 1,
+          "punkte": 7
+        },
+        {
+          "zeitpunkt": "2026-08-29T19:37:55.601Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "3. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
+          "platz": 1,
+          "punkte": 10
+        },
+        {
+          "zeitpunkt": "2026-08-30T19:49:50.788Z",
+          "wettbewerb": "bundesliga",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 2,
+          "punkte": 22
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 1,
+          "punkte": 27
+        }
+      ]
+    },
+    {
+      "teilnehmerId": "wildemoni",
+      "teilnehmer": "WildeMoni",
+      "punkte": [
+        {
+          "zeitpunkt": "2026-08-09T18:11:13.460Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
+          "platz": 1,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "2. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
+          "platz": 1,
+          "punkte": 7
+        },
+        {
+          "zeitpunkt": "2026-08-29T19:37:55.601Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "3. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
+          "platz": 2,
+          "punkte": 9
+        },
+        {
+          "zeitpunkt": "2026-08-30T19:49:50.788Z",
+          "wettbewerb": "bundesliga",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 4,
+          "punkte": 21
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 2,
+          "punkte": 26
+        }
+      ]
+    },
+    {
+      "teilnehmerId": "jwfussball",
+      "teilnehmer": "JWFUSSBALL",
+      "punkte": [
+        {
+          "zeitpunkt": "2026-08-09T18:11:13.460Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
+          "platz": 1,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "2. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
+          "platz": 33,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-29T19:37:55.601Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "3. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
+          "platz": 20,
+          "punkte": 5
+        },
+        {
+          "zeitpunkt": "2026-08-30T19:49:50.788Z",
+          "wettbewerb": "bundesliga",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 17,
+          "punkte": 19
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 3,
+          "punkte": 24
+        }
+      ]
+    },
     {
       "teilnehmerId": "rk69",
       "teilnehmer": "RK69",
@@ -40,12 +178,20 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 1,
           "punkte": 23
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 4,
+          "punkte": 23
         }
       ]
     },
     {
-      "teilnehmerId": "baslermario",
-      "teilnehmer": "baslermario",
+      "teilnehmerId": "jakob",
+      "teilnehmer": "Jakob",
       "punkte": [
         {
           "zeitpunkt": "2026-08-09T18:11:13.460Z",
@@ -60,23 +206,169 @@
           "wettbewerb": "smugglerauftrag",
           "runde": "2. Spieltag",
           "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 1,
-          "punkte": 7
+          "platz": 33,
+          "punkte": 2
         },
         {
           "zeitpunkt": "2026-08-29T19:37:55.601Z",
           "wettbewerb": "smugglerauftrag",
           "runde": "3. Spieltag",
           "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 1,
-          "punkte": 10
+          "platz": 20,
+          "punkte": 5
         },
         {
           "zeitpunkt": "2026-08-30T19:49:50.788Z",
           "wettbewerb": "bundesliga",
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 2,
+          "platz": 30,
+          "punkte": 17
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 5,
+          "punkte": 22
+        }
+      ]
+    },
+    {
+      "teilnehmerId": "maikiliii",
+      "teilnehmer": "Maikiliii",
+      "punkte": [
+        {
+          "zeitpunkt": "2026-08-09T18:11:13.460Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
+          "platz": 1,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "2. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
+          "platz": 33,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-29T19:37:55.601Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "3. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
+          "platz": 40,
+          "punkte": 4
+        },
+        {
+          "zeitpunkt": "2026-08-30T19:49:50.788Z",
+          "wettbewerb": "bundesliga",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 34,
+          "punkte": 17
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 6,
+          "punkte": 22
+        }
+      ]
+    },
+    {
+      "teilnehmerId": "realzaragoza",
+      "teilnehmer": "Realzaragoza",
+      "punkte": [
+        {
+          "zeitpunkt": "2026-08-09T18:11:13.460Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
+          "platz": 1,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "2. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
+          "platz": 33,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-29T19:37:55.601Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "3. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
+          "platz": 20,
+          "punkte": 5
+        },
+        {
+          "zeitpunkt": "2026-08-30T19:49:50.788Z",
+          "wettbewerb": "bundesliga",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 39,
+          "punkte": 17
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 7,
+          "punkte": 22
+        }
+      ]
+    },
+    {
+      "teilnehmerId": "berndibroti",
+      "teilnehmer": "Berndibroti",
+      "punkte": [
+        {
+          "zeitpunkt": "2026-08-09T18:11:13.460Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
+          "platz": 1,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "2. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
+          "platz": 33,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-29T19:37:55.601Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "3. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
+          "platz": 40,
+          "punkte": 4
+        },
+        {
+          "zeitpunkt": "2026-08-30T19:49:50.788Z",
+          "wettbewerb": "bundesliga",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 40,
+          "punkte": 17
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 8,
           "punkte": 22
         }
       ]
@@ -116,12 +408,20 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 3,
           "punkte": 22
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 9,
+          "punkte": 22
         }
       ]
     },
     {
-      "teilnehmerId": "wildemoni",
-      "teilnehmer": "WildeMoni",
+      "teilnehmerId": "gerrit1887",
+      "teilnehmer": "Gerrit1887",
       "punkte": [
         {
           "zeitpunkt": "2026-08-09T18:11:13.460Z",
@@ -136,23 +436,123 @@
           "wettbewerb": "smugglerauftrag",
           "runde": "2. Spieltag",
           "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 1,
-          "punkte": 7
+          "platz": 33,
+          "punkte": 2
         },
         {
           "zeitpunkt": "2026-08-29T19:37:55.601Z",
           "wettbewerb": "smugglerauftrag",
           "runde": "3. Spieltag",
           "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 2,
-          "punkte": 9
+          "platz": 20,
+          "punkte": 5
         },
         {
           "zeitpunkt": "2026-08-30T19:49:50.788Z",
           "wettbewerb": "bundesliga",
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 4,
+          "platz": 11,
+          "punkte": 19
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 10,
+          "punkte": 21
+        }
+      ]
+    },
+    {
+      "teilnehmerId": "sven-huhn",
+      "teilnehmer": "Sven_Huhn",
+      "punkte": [
+        {
+          "zeitpunkt": "2026-08-09T18:11:13.460Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
+          "platz": 1,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "2. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
+          "platz": 33,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-29T19:37:55.601Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "3. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
+          "platz": 40,
+          "punkte": 4
+        },
+        {
+          "zeitpunkt": "2026-08-30T19:49:50.788Z",
+          "wettbewerb": "bundesliga",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 45,
+          "punkte": 16
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 11,
+          "punkte": 21
+        }
+      ]
+    },
+    {
+      "teilnehmerId": "tribuna33",
+      "teilnehmer": "TRIBUNA33",
+      "punkte": [
+        {
+          "zeitpunkt": "2026-08-09T18:11:13.460Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
+          "platz": 1,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "2. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
+          "platz": 9,
+          "punkte": 5
+        },
+        {
+          "zeitpunkt": "2026-08-29T19:37:55.601Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "3. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
+          "platz": 20,
+          "punkte": 5
+        },
+        {
+          "zeitpunkt": "2026-08-30T19:49:50.788Z",
+          "wettbewerb": "bundesliga",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 45,
+          "punkte": 16
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 11,
           "punkte": 21
         }
       ]
@@ -192,6 +592,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 5,
           "punkte": 21
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 13,
+          "punkte": 21
         }
       ]
     },
@@ -229,6 +637,14 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 6,
+          "punkte": 20
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 14,
           "punkte": 20
         }
       ]
@@ -268,6 +684,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 7,
           "punkte": 20
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 15,
+          "punkte": 20
         }
       ]
     },
@@ -305,6 +729,14 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 7,
+          "punkte": 20
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 15,
           "punkte": 20
         }
       ]
@@ -344,6 +776,198 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 9,
           "punkte": 20
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 17,
+          "punkte": 20
+        }
+      ]
+    },
+    {
+      "teilnehmerId": "juri",
+      "teilnehmer": "JuRi",
+      "punkte": [
+        {
+          "zeitpunkt": "2026-08-09T18:11:13.460Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
+          "platz": 1,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "2. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
+          "platz": 33,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-29T19:37:55.601Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "3. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
+          "platz": 68,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-30T19:49:50.788Z",
+          "wettbewerb": "bundesliga",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 23,
+          "punkte": 18
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 17,
+          "punkte": 20
+        }
+      ]
+    },
+    {
+      "teilnehmerId": "kleinersachse",
+      "teilnehmer": "kleinersachse",
+      "punkte": [
+        {
+          "zeitpunkt": "2026-08-09T18:11:13.460Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
+          "platz": 1,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "2. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
+          "platz": 33,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-29T19:37:55.601Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "3. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
+          "platz": 40,
+          "punkte": 4
+        },
+        {
+          "zeitpunkt": "2026-08-30T19:49:50.788Z",
+          "wettbewerb": "bundesliga",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 54,
+          "punkte": 15
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 17,
+          "punkte": 20
+        }
+      ]
+    },
+    {
+      "teilnehmerId": "normiks",
+      "teilnehmer": "Normiks",
+      "punkte": [
+        {
+          "zeitpunkt": "2026-08-09T18:11:13.460Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
+          "platz": 1,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "2. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
+          "platz": 33,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-29T19:37:55.601Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "3. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
+          "platz": 40,
+          "punkte": 4
+        },
+        {
+          "zeitpunkt": "2026-08-30T19:49:50.788Z",
+          "wettbewerb": "bundesliga",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 34,
+          "punkte": 17
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 17,
+          "punkte": 20
+        }
+      ]
+    },
+    {
+      "teilnehmerId": "sam-entspender",
+      "teilnehmer": "SAM_ENTSPENDER",
+      "punkte": [
+        {
+          "zeitpunkt": "2026-08-09T18:11:13.460Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
+          "platz": 1,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "2. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
+          "platz": 33,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-29T19:37:55.601Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "3. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
+          "platz": 40,
+          "punkte": 4
+        },
+        {
+          "zeitpunkt": "2026-08-30T19:49:50.788Z",
+          "wettbewerb": "bundesliga",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 54,
+          "punkte": 15
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 17,
+          "punkte": 20
         }
       ]
     },
@@ -382,44 +1006,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 10,
           "punkte": 20
-        }
-      ]
-    },
-    {
-      "teilnehmerId": "gerrit1887",
-      "teilnehmer": "Gerrit1887",
-      "punkte": [
-        {
-          "zeitpunkt": "2026-08-09T18:11:13.460Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
-          "platz": 1,
-          "punkte": 2
         },
         {
-          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
           "wettbewerb": "smugglerauftrag",
-          "runde": "2. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 33,
-          "punkte": 2
-        },
-        {
-          "zeitpunkt": "2026-08-29T19:37:55.601Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "3. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 20,
-          "punkte": 5
-        },
-        {
-          "zeitpunkt": "2026-08-30T19:49:50.788Z",
-          "wettbewerb": "bundesliga",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 11,
-          "punkte": 19
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 22,
+          "punkte": 20
         }
       ]
     },
@@ -457,6 +1051,14 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 11,
+          "punkte": 19
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 23,
           "punkte": 19
         }
       ]
@@ -496,6 +1098,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 13,
           "punkte": 19
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 24,
+          "punkte": 19
         }
       ]
     },
@@ -533,6 +1143,14 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 13,
+          "punkte": 19
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 24,
           "punkte": 19
         }
       ]
@@ -572,6 +1190,60 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 13,
           "punkte": 19
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 24,
+          "punkte": 19
+        }
+      ]
+    },
+    {
+      "teilnehmerId": "stevie26",
+      "teilnehmer": "Stevie26",
+      "punkte": [
+        {
+          "zeitpunkt": "2026-08-09T18:11:13.460Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
+          "platz": 1,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "2. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
+          "platz": 33,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-29T19:37:55.601Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "3. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
+          "platz": 20,
+          "punkte": 5
+        },
+        {
+          "zeitpunkt": "2026-08-30T19:49:50.788Z",
+          "wettbewerb": "bundesliga",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 31,
+          "punkte": 17
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 24,
+          "punkte": 19
         }
       ]
     },
@@ -609,6 +1281,60 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 16,
+          "punkte": 19
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 28,
+          "punkte": 19
+        }
+      ]
+    },
+    {
+      "teilnehmerId": "sam2004",
+      "teilnehmer": "Sam2004",
+      "punkte": [
+        {
+          "zeitpunkt": "2026-08-09T18:11:13.460Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
+          "platz": 1,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "2. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
+          "platz": 33,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-29T19:37:55.601Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "3. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
+          "platz": 40,
+          "punkte": 4
+        },
+        {
+          "zeitpunkt": "2026-08-30T19:49:50.788Z",
+          "wettbewerb": "bundesliga",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 65,
+          "punkte": 14
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 28,
           "punkte": 19
         }
       ]
@@ -648,6 +1374,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 17,
           "punkte": 19
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 30,
+          "punkte": 19
         }
       ]
     },
@@ -686,43 +1420,13 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 17,
           "punkte": 19
-        }
-      ]
-    },
-    {
-      "teilnehmerId": "jwfussball",
-      "teilnehmer": "JWFUSSBALL",
-      "punkte": [
-        {
-          "zeitpunkt": "2026-08-09T18:11:13.460Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
-          "platz": 1,
-          "punkte": 2
         },
         {
-          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
           "wettbewerb": "smugglerauftrag",
-          "runde": "2. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 33,
-          "punkte": 2
-        },
-        {
-          "zeitpunkt": "2026-08-29T19:37:55.601Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "3. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 20,
-          "punkte": 5
-        },
-        {
-          "zeitpunkt": "2026-08-30T19:49:50.788Z",
-          "wettbewerb": "bundesliga",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 17,
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 30,
           "punkte": 19
         }
       ]
@@ -753,6 +1457,14 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 17,
+          "punkte": 19
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 30,
           "punkte": 19
         }
       ]
@@ -792,6 +1504,60 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 17,
           "punkte": 19
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 30,
+          "punkte": 19
+        }
+      ]
+    },
+    {
+      "teilnehmerId": "18amfg99",
+      "teilnehmer": "18AMFG99",
+      "punkte": [
+        {
+          "zeitpunkt": "2026-08-09T18:11:13.460Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
+          "platz": 68,
+          "punkte": 0
+        },
+        {
+          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "2. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
+          "platz": 22,
+          "punkte": 3
+        },
+        {
+          "zeitpunkt": "2026-08-29T19:37:55.601Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "3. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
+          "platz": 62,
+          "punkte": 3
+        },
+        {
+          "zeitpunkt": "2026-08-30T19:49:50.788Z",
+          "wettbewerb": "bundesliga",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 51,
+          "punkte": 15
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 34,
+          "punkte": 18
         }
       ]
     },
@@ -829,6 +1595,14 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 22,
+          "punkte": 18
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 34,
           "punkte": 18
         }
       ]
@@ -868,12 +1642,20 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 23,
           "punkte": 18
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 36,
+          "punkte": 18
         }
       ]
     },
     {
-      "teilnehmerId": "juri",
-      "teilnehmer": "JuRi",
+      "teilnehmerId": "luca",
+      "teilnehmer": "Luca",
       "punkte": [
         {
           "zeitpunkt": "2026-08-09T18:11:13.460Z",
@@ -904,7 +1686,15 @@
           "wettbewerb": "bundesliga",
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 23,
+          "platz": 43,
+          "punkte": 16
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 36,
           "punkte": 18
         }
       ]
@@ -944,6 +1734,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 23,
           "punkte": 18
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 36,
+          "punkte": 18
         }
       ]
     },
@@ -981,6 +1779,14 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 26,
+          "punkte": 18
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 39,
           "punkte": 18
         }
       ]
@@ -1020,6 +1826,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 26,
           "punkte": 18
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 39,
+          "punkte": 18
         }
       ]
     },
@@ -1058,6 +1872,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 26,
           "punkte": 18
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 39,
+          "punkte": 18
         }
       ]
     },
@@ -1088,44 +1910,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 26,
           "punkte": 18
-        }
-      ]
-    },
-    {
-      "teilnehmerId": "jakob",
-      "teilnehmer": "Jakob",
-      "punkte": [
-        {
-          "zeitpunkt": "2026-08-09T18:11:13.460Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
-          "platz": 1,
-          "punkte": 2
         },
         {
-          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
           "wettbewerb": "smugglerauftrag",
-          "runde": "2. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 33,
-          "punkte": 2
-        },
-        {
-          "zeitpunkt": "2026-08-29T19:37:55.601Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "3. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 20,
-          "punkte": 5
-        },
-        {
-          "zeitpunkt": "2026-08-30T19:49:50.788Z",
-          "wettbewerb": "bundesliga",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 30,
-          "punkte": 17
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 39,
+          "punkte": 18
         }
       ]
     },
@@ -1164,43 +1956,13 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 31,
           "punkte": 17
-        }
-      ]
-    },
-    {
-      "teilnehmerId": "stevie26",
-      "teilnehmer": "Stevie26",
-      "punkte": [
-        {
-          "zeitpunkt": "2026-08-09T18:11:13.460Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
-          "platz": 1,
-          "punkte": 2
         },
         {
-          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
           "wettbewerb": "smugglerauftrag",
-          "runde": "2. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 33,
-          "punkte": 2
-        },
-        {
-          "zeitpunkt": "2026-08-29T19:37:55.601Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "3. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 20,
-          "punkte": 5
-        },
-        {
-          "zeitpunkt": "2026-08-30T19:49:50.788Z",
-          "wettbewerb": "bundesliga",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 31,
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 43,
           "punkte": 17
         }
       ]
@@ -1240,6 +2002,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 31,
           "punkte": 17
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 43,
+          "punkte": 17
         }
       ]
     },
@@ -1277,6 +2047,14 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 34,
+          "punkte": 17
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 45,
           "punkte": 17
         }
       ]
@@ -1316,81 +2094,13 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 34,
           "punkte": 17
-        }
-      ]
-    },
-    {
-      "teilnehmerId": "maikiliii",
-      "teilnehmer": "Maikiliii",
-      "punkte": [
-        {
-          "zeitpunkt": "2026-08-09T18:11:13.460Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
-          "platz": 1,
-          "punkte": 2
         },
         {
-          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
           "wettbewerb": "smugglerauftrag",
-          "runde": "2. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 33,
-          "punkte": 2
-        },
-        {
-          "zeitpunkt": "2026-08-29T19:37:55.601Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "3. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 40,
-          "punkte": 4
-        },
-        {
-          "zeitpunkt": "2026-08-30T19:49:50.788Z",
-          "wettbewerb": "bundesliga",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 34,
-          "punkte": 17
-        }
-      ]
-    },
-    {
-      "teilnehmerId": "normiks",
-      "teilnehmer": "Normiks",
-      "punkte": [
-        {
-          "zeitpunkt": "2026-08-09T18:11:13.460Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
-          "platz": 1,
-          "punkte": 2
-        },
-        {
-          "zeitpunkt": "2026-08-23T14:17:41.394Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "2. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 33,
-          "punkte": 2
-        },
-        {
-          "zeitpunkt": "2026-08-29T19:37:55.601Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "3. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 40,
-          "punkte": 4
-        },
-        {
-          "zeitpunkt": "2026-08-30T19:49:50.788Z",
-          "wettbewerb": "bundesliga",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 34,
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 45,
           "punkte": 17
         }
       ]
@@ -1430,81 +2140,13 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 34,
           "punkte": 17
-        }
-      ]
-    },
-    {
-      "teilnehmerId": "realzaragoza",
-      "teilnehmer": "Realzaragoza",
-      "punkte": [
-        {
-          "zeitpunkt": "2026-08-09T18:11:13.460Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
-          "platz": 1,
-          "punkte": 2
         },
         {
-          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
           "wettbewerb": "smugglerauftrag",
-          "runde": "2. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 33,
-          "punkte": 2
-        },
-        {
-          "zeitpunkt": "2026-08-29T19:37:55.601Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "3. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 20,
-          "punkte": 5
-        },
-        {
-          "zeitpunkt": "2026-08-30T19:49:50.788Z",
-          "wettbewerb": "bundesliga",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 39,
-          "punkte": 17
-        }
-      ]
-    },
-    {
-      "teilnehmerId": "berndibroti",
-      "teilnehmer": "Berndibroti",
-      "punkte": [
-        {
-          "zeitpunkt": "2026-08-09T18:11:13.460Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
-          "platz": 1,
-          "punkte": 2
-        },
-        {
-          "zeitpunkt": "2026-08-23T14:17:41.394Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "2. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 33,
-          "punkte": 2
-        },
-        {
-          "zeitpunkt": "2026-08-29T19:37:55.601Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "3. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 40,
-          "punkte": 4
-        },
-        {
-          "zeitpunkt": "2026-08-30T19:49:50.788Z",
-          "wettbewerb": "bundesliga",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 40,
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 45,
           "punkte": 17
         }
       ]
@@ -1544,6 +2186,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 40,
           "punkte": 17
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 48,
+          "punkte": 17
         }
       ]
     },
@@ -1582,12 +2232,20 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 42,
           "punkte": 16
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 49,
+          "punkte": 16
         }
       ]
     },
     {
-      "teilnehmerId": "luca",
-      "teilnehmer": "Luca",
+      "teilnehmerId": "hardy17",
+      "teilnehmer": "Hardy17",
       "punkte": [
         {
           "zeitpunkt": "2026-08-09T18:11:13.460Z",
@@ -1610,15 +2268,23 @@
           "wettbewerb": "smugglerauftrag",
           "runde": "3. Spieltag",
           "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 68,
-          "punkte": 2
+          "platz": 40,
+          "punkte": 4
         },
         {
           "zeitpunkt": "2026-08-30T19:49:50.788Z",
           "wettbewerb": "bundesliga",
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 43,
+          "platz": 76,
+          "punkte": 11
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 50,
           "punkte": 16
         }
       ]
@@ -1641,6 +2307,14 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 43,
+          "punkte": 16
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 50,
           "punkte": 16
         }
       ]
@@ -1680,6 +2354,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 45,
           "punkte": 16
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 52,
+          "punkte": 16
         }
       ]
     },
@@ -1717,6 +2399,14 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 45,
+          "punkte": 16
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 52,
           "punkte": 16
         }
       ]
@@ -1756,6 +2446,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 45,
           "punkte": 16
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 52,
+          "punkte": 16
         }
       ]
     },
@@ -1794,120 +2492,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 45,
           "punkte": 16
-        }
-      ]
-    },
-    {
-      "teilnehmerId": "sven-huhn",
-      "teilnehmer": "Sven_Huhn",
-      "punkte": [
-        {
-          "zeitpunkt": "2026-08-09T18:11:13.460Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
-          "platz": 1,
-          "punkte": 2
         },
         {
-          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
           "wettbewerb": "smugglerauftrag",
-          "runde": "2. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 33,
-          "punkte": 2
-        },
-        {
-          "zeitpunkt": "2026-08-29T19:37:55.601Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "3. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 40,
-          "punkte": 4
-        },
-        {
-          "zeitpunkt": "2026-08-30T19:49:50.788Z",
-          "wettbewerb": "bundesliga",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 45,
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 52,
           "punkte": 16
-        }
-      ]
-    },
-    {
-      "teilnehmerId": "tribuna33",
-      "teilnehmer": "TRIBUNA33",
-      "punkte": [
-        {
-          "zeitpunkt": "2026-08-09T18:11:13.460Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
-          "platz": 1,
-          "punkte": 2
-        },
-        {
-          "zeitpunkt": "2026-08-23T14:17:41.394Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "2. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 9,
-          "punkte": 5
-        },
-        {
-          "zeitpunkt": "2026-08-29T19:37:55.601Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "3. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 20,
-          "punkte": 5
-        },
-        {
-          "zeitpunkt": "2026-08-30T19:49:50.788Z",
-          "wettbewerb": "bundesliga",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 45,
-          "punkte": 16
-        }
-      ]
-    },
-    {
-      "teilnehmerId": "18amfg99",
-      "teilnehmer": "18AMFG99",
-      "punkte": [
-        {
-          "zeitpunkt": "2026-08-09T18:11:13.460Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
-          "platz": 68,
-          "punkte": 0
-        },
-        {
-          "zeitpunkt": "2026-08-23T14:17:41.394Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "2. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 22,
-          "punkte": 3
-        },
-        {
-          "zeitpunkt": "2026-08-29T19:37:55.601Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "3. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 62,
-          "punkte": 3
-        },
-        {
-          "zeitpunkt": "2026-08-30T19:49:50.788Z",
-          "wettbewerb": "bundesliga",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 51,
-          "punkte": 15
         }
       ]
     },
@@ -1946,6 +2538,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 52,
           "punkte": 15
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 56,
+          "punkte": 15
         }
       ]
     },
@@ -1967,6 +2567,14 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 52,
+          "punkte": 15
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 56,
           "punkte": 15
         }
       ]
@@ -2006,6 +2614,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 54,
           "punkte": 15
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 58,
+          "punkte": 15
         }
       ]
     },
@@ -2044,43 +2660,13 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 54,
           "punkte": 15
-        }
-      ]
-    },
-    {
-      "teilnehmerId": "kleinersachse",
-      "teilnehmer": "kleinersachse",
-      "punkte": [
-        {
-          "zeitpunkt": "2026-08-09T18:11:13.460Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
-          "platz": 1,
-          "punkte": 2
         },
         {
-          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
           "wettbewerb": "smugglerauftrag",
-          "runde": "2. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 33,
-          "punkte": 2
-        },
-        {
-          "zeitpunkt": "2026-08-29T19:37:55.601Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "3. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 40,
-          "punkte": 4
-        },
-        {
-          "zeitpunkt": "2026-08-30T19:49:50.788Z",
-          "wettbewerb": "bundesliga",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 54,
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 58,
           "punkte": 15
         }
       ]
@@ -2120,12 +2706,20 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 54,
           "punkte": 15
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 58,
+          "punkte": 15
         }
       ]
     },
     {
-      "teilnehmerId": "sam-entspender",
-      "teilnehmer": "SAM_ENTSPENDER",
+      "teilnehmerId": "salas1904",
+      "teilnehmer": "Salas1904",
       "punkte": [
         {
           "zeitpunkt": "2026-08-09T18:11:13.460Z",
@@ -2156,7 +2750,15 @@
           "wettbewerb": "bundesliga",
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 54,
+          "platz": 71,
+          "punkte": 12
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 58,
           "punkte": 15
         }
       ]
@@ -2196,6 +2798,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 59,
           "punkte": 14
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 62,
+          "punkte": 14
         }
       ]
     },
@@ -2233,6 +2843,14 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 60,
+          "punkte": 14
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 63,
           "punkte": 14
         }
       ]
@@ -2272,6 +2890,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 61,
           "punkte": 14
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 64,
+          "punkte": 14
         }
       ]
     },
@@ -2309,6 +2935,14 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 61,
+          "punkte": 14
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 64,
           "punkte": 14
         }
       ]
@@ -2348,6 +2982,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 61,
           "punkte": 14
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 64,
+          "punkte": 14
         }
       ]
     },
@@ -2386,43 +3028,13 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 61,
           "punkte": 14
-        }
-      ]
-    },
-    {
-      "teilnehmerId": "sam2004",
-      "teilnehmer": "Sam2004",
-      "punkte": [
-        {
-          "zeitpunkt": "2026-08-09T18:11:13.460Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
-          "platz": 1,
-          "punkte": 2
         },
         {
-          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
           "wettbewerb": "smugglerauftrag",
-          "runde": "2. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 33,
-          "punkte": 2
-        },
-        {
-          "zeitpunkt": "2026-08-29T19:37:55.601Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "3. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 40,
-          "punkte": 4
-        },
-        {
-          "zeitpunkt": "2026-08-30T19:49:50.788Z",
-          "wettbewerb": "bundesliga",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 65,
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 64,
           "punkte": 14
         }
       ]
@@ -2462,6 +3074,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 66,
           "punkte": 13
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 68,
+          "punkte": 13
         }
       ]
     },
@@ -2499,6 +3119,60 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 67,
+          "punkte": 13
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 69,
+          "punkte": 13
+        }
+      ]
+    },
+    {
+      "teilnehmerId": "mary-grace",
+      "teilnehmer": "Mary-Grace",
+      "punkte": [
+        {
+          "zeitpunkt": "2026-08-09T18:11:13.460Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
+          "platz": 1,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "2. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
+          "platz": 33,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-29T19:37:55.601Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "3. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
+          "platz": 40,
+          "punkte": 4
+        },
+        {
+          "zeitpunkt": "2026-08-30T19:49:50.788Z",
+          "wettbewerb": "bundesliga",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 76,
+          "punkte": 11
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 69,
           "punkte": 13
         }
       ]
@@ -2538,6 +3212,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 67,
           "punkte": 13
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 69,
+          "punkte": 13
         }
       ]
     },
@@ -2575,6 +3257,14 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 69,
+          "punkte": 12
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 72,
           "punkte": 12
         }
       ]
@@ -2614,6 +3304,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 69,
           "punkte": 12
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 72,
+          "punkte": 12
         }
       ]
     },
@@ -2652,43 +3350,13 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 71,
           "punkte": 12
-        }
-      ]
-    },
-    {
-      "teilnehmerId": "salas1904",
-      "teilnehmer": "Salas1904",
-      "punkte": [
-        {
-          "zeitpunkt": "2026-08-09T18:11:13.460Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
-          "platz": 1,
-          "punkte": 2
         },
         {
-          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
           "wettbewerb": "smugglerauftrag",
-          "runde": "2. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 33,
-          "punkte": 2
-        },
-        {
-          "zeitpunkt": "2026-08-29T19:37:55.601Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "3. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 40,
-          "punkte": 4
-        },
-        {
-          "zeitpunkt": "2026-08-30T19:49:50.788Z",
-          "wettbewerb": "bundesliga",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 71,
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 74,
           "punkte": 12
         }
       ]
@@ -2711,6 +3379,14 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 73,
+          "punkte": 11
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 75,
           "punkte": 11
         }
       ]
@@ -2750,6 +3426,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 73,
           "punkte": 11
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 75,
+          "punkte": 11
         }
       ]
     },
@@ -2787,6 +3471,14 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 75,
+          "punkte": 11
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 77,
           "punkte": 11
         }
       ]
@@ -2826,6 +3518,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 76,
           "punkte": 11
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 78,
+          "punkte": 11
         }
       ]
     },
@@ -2864,6 +3564,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 76,
           "punkte": 11
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 78,
+          "punkte": 11
         }
       ]
     },
@@ -2894,43 +3602,13 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 76,
           "punkte": 11
-        }
-      ]
-    },
-    {
-      "teilnehmerId": "hardy17",
-      "teilnehmer": "Hardy17",
-      "punkte": [
-        {
-          "zeitpunkt": "2026-08-09T18:11:13.460Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
-          "platz": 1,
-          "punkte": 2
         },
         {
-          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
           "wettbewerb": "smugglerauftrag",
-          "runde": "2. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 33,
-          "punkte": 2
-        },
-        {
-          "zeitpunkt": "2026-08-29T19:37:55.601Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "3. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 40,
-          "punkte": 4
-        },
-        {
-          "zeitpunkt": "2026-08-30T19:49:50.788Z",
-          "wettbewerb": "bundesliga",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 76,
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 78,
           "punkte": 11
         }
       ]
@@ -2970,43 +3648,13 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 76,
           "punkte": 11
-        }
-      ]
-    },
-    {
-      "teilnehmerId": "mary-grace",
-      "teilnehmer": "Mary-Grace",
-      "punkte": [
-        {
-          "zeitpunkt": "2026-08-09T18:11:13.460Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
-          "platz": 1,
-          "punkte": 2
         },
         {
-          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
           "wettbewerb": "smugglerauftrag",
-          "runde": "2. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 33,
-          "punkte": 2
-        },
-        {
-          "zeitpunkt": "2026-08-29T19:37:55.601Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "3. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 40,
-          "punkte": 4
-        },
-        {
-          "zeitpunkt": "2026-08-30T19:49:50.788Z",
-          "wettbewerb": "bundesliga",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 76,
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 78,
           "punkte": 11
         }
       ]
@@ -3046,6 +3694,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 76,
           "punkte": 11
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 78,
+          "punkte": 11
         }
       ]
     },
@@ -3083,6 +3739,14 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 76,
+          "punkte": 11
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 78,
           "punkte": 11
         }
       ]
@@ -3122,6 +3786,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 76,
           "punkte": 11
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 78,
+          "punkte": 11
         }
       ]
     },
@@ -3158,6 +3830,14 @@
           "wettbewerb": "bundesliga",
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 85,
+          "punkte": 10
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
           "platz": 85,
           "punkte": 10
         }
@@ -3198,6 +3878,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 85,
           "punkte": 10
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 85,
+          "punkte": 10
         }
       ]
     },
@@ -3234,6 +3922,14 @@
           "wettbewerb": "bundesliga",
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 85,
+          "punkte": 10
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
           "platz": 85,
           "punkte": 10
         }
@@ -3274,6 +3970,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 88,
           "punkte": 10
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 88,
+          "punkte": 10
         }
       ]
     },
@@ -3312,6 +4016,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 89,
           "punkte": 9
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 89,
+          "punkte": 9
         }
       ]
     },
@@ -3340,6 +4052,14 @@
           "wettbewerb": "bundesliga",
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 90,
+          "punkte": 8
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
           "platz": 90,
           "punkte": 8
         }
@@ -3380,6 +4100,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 90,
           "punkte": 8
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 90,
+          "punkte": 8
         }
       ]
     },
@@ -3418,74 +4146,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 92,
           "punkte": 7
-        }
-      ]
-    },
-    {
-      "teilnehmerId": "cali79",
-      "teilnehmer": "Cali79",
-      "punkte": [
-        {
-          "zeitpunkt": "2026-08-09T18:11:13.460Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
-          "platz": 1,
-          "punkte": 2
         },
         {
-          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
           "wettbewerb": "smugglerauftrag",
-          "runde": "2. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 33,
-          "punkte": 2
-        },
-        {
-          "zeitpunkt": "2026-08-29T19:37:55.601Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "3. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 20,
-          "punkte": 5
-        },
-        {
-          "zeitpunkt": "2026-08-30T19:49:50.788Z",
-          "wettbewerb": "bundesliga",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 93,
-          "punkte": 5
-        }
-      ]
-    },
-    {
-      "teilnehmerId": "vebfriwiwerk",
-      "teilnehmer": "VebFriwiwerk",
-      "punkte": [
-        {
-          "zeitpunkt": "2026-08-23T14:17:41.394Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "2. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
-          "platz": 22,
-          "punkte": 3
-        },
-        {
-          "zeitpunkt": "2026-08-29T19:37:55.601Z",
-          "wettbewerb": "smugglerauftrag",
-          "runde": "3. Spieltag",
-          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
-          "platz": 62,
-          "punkte": 3
-        },
-        {
-          "zeitpunkt": "2026-08-30T19:49:50.788Z",
-          "wettbewerb": "bundesliga",
-          "runde": "1. Spieltag",
-          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
-          "platz": 93,
-          "punkte": 5
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 92,
+          "punkte": 7
         }
       ]
     },
@@ -3524,6 +4192,98 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 95,
           "punkte": 4
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 93,
+          "punkte": 6
+        }
+      ]
+    },
+    {
+      "teilnehmerId": "cali79",
+      "teilnehmer": "Cali79",
+      "punkte": [
+        {
+          "zeitpunkt": "2026-08-09T18:11:13.460Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001",
+          "platz": 1,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "2. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
+          "platz": 33,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-08-29T19:37:55.601Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "3. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
+          "platz": 20,
+          "punkte": 5
+        },
+        {
+          "zeitpunkt": "2026-08-30T19:49:50.788Z",
+          "wettbewerb": "bundesliga",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 93,
+          "punkte": 5
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 94,
+          "punkte": 5
+        }
+      ]
+    },
+    {
+      "teilnehmerId": "vebfriwiwerk",
+      "teilnehmer": "VebFriwiwerk",
+      "punkte": [
+        {
+          "zeitpunkt": "2026-08-23T14:17:41.394Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "2. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__2-spieltag__sma-2026-27-02-013",
+          "platz": 22,
+          "punkte": 3
+        },
+        {
+          "zeitpunkt": "2026-08-29T19:37:55.601Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "3. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__3-spieltag__sma-2026-27-03-020",
+          "platz": 62,
+          "punkte": 3
+        },
+        {
+          "zeitpunkt": "2026-08-30T19:49:50.788Z",
+          "wettbewerb": "bundesliga",
+          "runde": "1. Spieltag",
+          "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 93,
+          "punkte": 5
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 94,
+          "punkte": 5
         }
       ]
     },
@@ -3561,6 +4321,14 @@
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 95,
+          "punkte": 4
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 96,
           "punkte": 4
         }
       ]
@@ -3600,6 +4368,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 95,
           "punkte": 4
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 96,
+          "punkte": 4
         }
       ]
     },
@@ -3636,6 +4412,14 @@
           "wettbewerb": "bundesliga",
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 98,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
           "platz": 98,
           "punkte": 2
         }
@@ -3676,6 +4460,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 98,
           "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 98,
+          "punkte": 2
         }
       ]
     },
@@ -3712,6 +4504,14 @@
           "wettbewerb": "bundesliga",
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 98,
+          "punkte": 2
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
           "platz": 98,
           "punkte": 2
         }
@@ -3752,6 +4552,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 101,
           "punkte": 0
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 101,
+          "punkte": 0
         }
       ]
     },
@@ -3790,6 +4598,14 @@
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
           "platz": 101,
           "punkte": 0
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+          "platz": 101,
+          "punkte": 0
         }
       ]
     },
@@ -3826,6 +4642,14 @@
           "wettbewerb": "bundesliga",
           "runde": "1. Spieltag",
           "auftragId": "2026-27__bundesliga__1-spieltag__bl-2026-27-01-001-bl-2026-27-01-002-bl-2026-27-01-003-bl-2026-27-01-004-bl-2026-27-01-005-bl-2026-27-01-006-bl-2026-27-01-007-bl-2026-27-01-008-bl-2026-27-01-009",
+          "platz": 101,
+          "punkte": 0
+        },
+        {
+          "zeitpunkt": "2026-09-05T23:26:28.294Z",
+          "wettbewerb": "smugglerauftrag",
+          "runde": "4. Spieltag",
+          "auftragId": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
           "platz": 101,
           "punkte": 0
         }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 6,
-  "aktualisiert": "2026-08-30T19:49:50.788Z",
+  "datenVersion": 7,
+  "aktualisiert": "2026-09-05T23:26:28.294Z",
   "saison": "2026-27",
   "regelwerk": {
     "kapitaene": "Alle Tipper mit der höchsten tatsächlichen Spieltagspunktzahl; kein künstlicher Tie-Break.",
@@ -2780,6 +2780,793 @@
             "exakt": 35,
             "differenz": 93,
             "tendenz": 303
+          }
+        }
+      ]
+    },
+    {
+      "id": "2026-27__smugglerauftrag__4-spieltag__sma-2026-27-04-032",
+      "bezeichnung": "Smuggleraufträge 4. Spieltag",
+      "wettbewerb": "smugglerauftrag",
+      "runde": "4. Spieltag",
+      "abgeschlossen": true,
+      "spielIds": [
+        "sma-2026-27-04-032"
+      ],
+      "kapitaene": [
+        {
+          "teilnehmerId": "baslermario",
+          "teilnehmer": "baslermario",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "wildemoni",
+          "teilnehmer": "WildeMoni",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "jakob",
+          "teilnehmer": "Jakob",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "realzaragoza",
+          "teilnehmer": "Realzaragoza",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "jwfussball",
+          "teilnehmer": "JWFUSSBALL",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "kleinersachse",
+          "teilnehmer": "kleinersachse",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "sven-huhn",
+          "teilnehmer": "Sven_Huhn",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "hardy17",
+          "teilnehmer": "Hardy17",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "maikiliii",
+          "teilnehmer": "Maikiliii",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "berndibroti",
+          "teilnehmer": "Berndibroti",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "tribuna33",
+          "teilnehmer": "TRIBUNA33",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "sam2004",
+          "teilnehmer": "Sam2004",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "sam-entspender",
+          "teilnehmer": "SAM_ENTSPENDER",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        }
+      ],
+      "highlights": [
+        {
+          "typ": "kapitaene",
+          "prioritaet": 100,
+          "anzeigen": true,
+          "daten": {
+            "punkte": 5,
+            "anzahl": 13,
+            "tipper": [
+              {
+                "teilnehmerId": "baslermario",
+                "teilnehmer": "baslermario",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "wildemoni",
+                "teilnehmer": "WildeMoni",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "jakob",
+                "teilnehmer": "Jakob",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "realzaragoza",
+                "teilnehmer": "Realzaragoza",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "jwfussball",
+                "teilnehmer": "JWFUSSBALL",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "kleinersachse",
+                "teilnehmer": "kleinersachse",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "sven-huhn",
+                "teilnehmer": "Sven_Huhn",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "hardy17",
+                "teilnehmer": "Hardy17",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "maikiliii",
+                "teilnehmer": "Maikiliii",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "berndibroti",
+                "teilnehmer": "Berndibroti",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "tribuna33",
+                "teilnehmer": "TRIBUNA33",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "sam2004",
+                "teilnehmer": "Sam2004",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "sam-entspender",
+                "teilnehmer": "SAM_ENTSPENDER",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              }
+            ]
+          }
+        },
+        {
+          "typ": "gegen-den-strom",
+          "prioritaet": 90,
+          "anzeigen": true,
+          "daten": {
+            "spielId": "sma-2026-27-04-032",
+            "heimTeam": "dynamo-dresden",
+            "auswaertsTeam": "bochum",
+            "ergebnis": "1:2",
+            "abgegeben": 88,
+            "nichtAbgegeben": 12,
+            "tippverteilung": {
+              "1": 46,
+              "2": 22,
+              "X": 20
+            },
+            "exakt": 13,
+            "differenz": 3,
+            "tendenz": 6,
+            "richtigerAusgang": "2",
+            "meistGetippt": {
+              "ausgang": "1",
+              "anzahl": 46
+            },
+            "gegenDenStrom": true,
+            "richtigeTendenz": {
+              "anzahl": 22,
+              "anteil": 25,
+              "tipper": [
+                {
+                  "teilnehmerId": "baslermario",
+                  "teilnehmer": "baslermario",
+                  "tipp": "1:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "wildemoni",
+                  "teilnehmer": "WildeMoni",
+                  "tipp": "1:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "jwfussball",
+                  "teilnehmer": "JWFUSSBALL",
+                  "tipp": "1:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "jakob",
+                  "teilnehmer": "Jakob",
+                  "tipp": "1:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "realzaragoza",
+                  "teilnehmer": "Realzaragoza",
+                  "tipp": "1:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "maikiliii",
+                  "teilnehmer": "Maikiliii",
+                  "tipp": "1:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "berndibroti",
+                  "teilnehmer": "Berndibroti",
+                  "tipp": "1:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "sven-huhn",
+                  "teilnehmer": "Sven_Huhn",
+                  "tipp": "1:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "tribuna33",
+                  "teilnehmer": "TRIBUNA33",
+                  "tipp": "1:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "gerrit1887",
+                  "teilnehmer": "Gerrit1887",
+                  "tipp": "0:2",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "kleinersachse",
+                  "teilnehmer": "kleinersachse",
+                  "tipp": "1:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "sam-entspender",
+                  "teilnehmer": "SAM_ENTSPENDER",
+                  "tipp": "1:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "normiks",
+                  "teilnehmer": "Normiks",
+                  "tipp": "0:1",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "juri",
+                  "teilnehmer": "JuRi",
+                  "tipp": "0:2",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "sam2004",
+                  "teilnehmer": "Sam2004",
+                  "tipp": "1:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "stevie26",
+                  "teilnehmer": "Stevie26",
+                  "tipp": "1:3",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "luca",
+                  "teilnehmer": "Luca",
+                  "tipp": "1:3",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "18amfg99",
+                  "teilnehmer": "18AMFG99",
+                  "tipp": "0:1",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "hardy17",
+                  "teilnehmer": "Hardy17",
+                  "tipp": "1:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "salas1904",
+                  "teilnehmer": "Salas1904",
+                  "tipp": "0:1",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "mary-grace",
+                  "teilnehmer": "Mary-Grace",
+                  "tipp": "1:3",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "co",
+                  "teilnehmer": "Co",
+                  "tipp": "1:3",
+                  "exakt": false
+                }
+              ],
+              "exakteTipps": 13
+            }
+          }
+        },
+        {
+          "typ": "wer-hats-gerochen",
+          "prioritaet": 85,
+          "anzeigen": true,
+          "daten": {
+            "grenzeProzent": 25,
+            "testOverride": false,
+            "faelle": [
+              {
+                "spielId": "sma-2026-27-04-032",
+                "heimTeam": "dynamo-dresden",
+                "auswaertsTeam": "bochum",
+                "ergebnis": "1:2",
+                "abgegeben": 88,
+                "nichtAbgegeben": 12,
+                "tippverteilung": {
+                  "1": 46,
+                  "2": 22,
+                  "X": 20
+                },
+                "exakt": 13,
+                "differenz": 3,
+                "tendenz": 6,
+                "richtigerAusgang": "2",
+                "meistGetippt": {
+                  "ausgang": "1",
+                  "anzahl": 46
+                },
+                "gegenDenStrom": true,
+                "richtigeTendenz": {
+                  "anzahl": 22,
+                  "anteil": 25,
+                  "tipper": [
+                    {
+                      "teilnehmerId": "baslermario",
+                      "teilnehmer": "baslermario",
+                      "tipp": "1:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "wildemoni",
+                      "teilnehmer": "WildeMoni",
+                      "tipp": "1:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "jwfussball",
+                      "teilnehmer": "JWFUSSBALL",
+                      "tipp": "1:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "jakob",
+                      "teilnehmer": "Jakob",
+                      "tipp": "1:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "realzaragoza",
+                      "teilnehmer": "Realzaragoza",
+                      "tipp": "1:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "maikiliii",
+                      "teilnehmer": "Maikiliii",
+                      "tipp": "1:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "berndibroti",
+                      "teilnehmer": "Berndibroti",
+                      "tipp": "1:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "sven-huhn",
+                      "teilnehmer": "Sven_Huhn",
+                      "tipp": "1:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "tribuna33",
+                      "teilnehmer": "TRIBUNA33",
+                      "tipp": "1:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "gerrit1887",
+                      "teilnehmer": "Gerrit1887",
+                      "tipp": "0:2",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "kleinersachse",
+                      "teilnehmer": "kleinersachse",
+                      "tipp": "1:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "sam-entspender",
+                      "teilnehmer": "SAM_ENTSPENDER",
+                      "tipp": "1:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "normiks",
+                      "teilnehmer": "Normiks",
+                      "tipp": "0:1",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "juri",
+                      "teilnehmer": "JuRi",
+                      "tipp": "0:2",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "sam2004",
+                      "teilnehmer": "Sam2004",
+                      "tipp": "1:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "stevie26",
+                      "teilnehmer": "Stevie26",
+                      "tipp": "1:3",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "luca",
+                      "teilnehmer": "Luca",
+                      "tipp": "1:3",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "18amfg99",
+                      "teilnehmer": "18AMFG99",
+                      "tipp": "0:1",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "hardy17",
+                      "teilnehmer": "Hardy17",
+                      "tipp": "1:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "salas1904",
+                      "teilnehmer": "Salas1904",
+                      "tipp": "0:1",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "mary-grace",
+                      "teilnehmer": "Mary-Grace",
+                      "tipp": "1:3",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "co",
+                      "teilnehmer": "Co",
+                      "tipp": "1:3",
+                      "exakt": false
+                    }
+                  ],
+                  "exakteTipps": 13
+                }
+              }
+            ]
+          }
+        },
+        {
+          "typ": "volltreffer",
+          "prioritaet": 80,
+          "anzeigen": true,
+          "daten": {
+            "maxExakt": 1,
+            "anzahl": 13,
+            "tipper": [
+              {
+                "teilnehmerId": "baslermario",
+                "teilnehmer": "baslermario",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "wildemoni",
+                "teilnehmer": "WildeMoni",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "jakob",
+                "teilnehmer": "Jakob",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "realzaragoza",
+                "teilnehmer": "Realzaragoza",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "jwfussball",
+                "teilnehmer": "JWFUSSBALL",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "kleinersachse",
+                "teilnehmer": "kleinersachse",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "sven-huhn",
+                "teilnehmer": "Sven_Huhn",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "hardy17",
+                "teilnehmer": "Hardy17",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "maikiliii",
+                "teilnehmer": "Maikiliii",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "berndibroti",
+                "teilnehmer": "Berndibroti",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "tribuna33",
+                "teilnehmer": "TRIBUNA33",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "sam2004",
+                "teilnehmer": "Sam2004",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "sam-entspender",
+                "teilnehmer": "SAM_ENTSPENDER",
+                "exakt": 1
+              }
+            ]
+          }
+        },
+        {
+          "typ": "crewduell",
+          "prioritaet": 70,
+          "anzeigen": true,
+          "daten": {
+            "teams": [
+              {
+                "team": "New Smugglers Team",
+                "durchschnitt": 0.91,
+                "punktesumme": 68,
+                "mitglieder": 75
+              },
+              {
+                "team": "Old Smugglers Team",
+                "durchschnitt": 0.72,
+                "punktesumme": 18,
+                "mitglieder": 25
+              }
+            ],
+            "sieger": "New Smugglers Team",
+            "differenz": 0.19
+          }
+        },
+        {
+          "typ": "kursbewegung",
+          "prioritaet": 40,
+          "anzeigen": true,
+          "grund": null,
+          "daten": {
+            "gewinner": [
+              {
+                "teilnehmerId": "kleinersachse",
+                "teilnehmer": "kleinersachse",
+                "vorher": 54,
+                "jetzt": 17,
+                "veraenderung": 37
+              },
+              {
+                "teilnehmerId": "sam-entspender",
+                "teilnehmer": "SAM_ENTSPENDER",
+                "vorher": 54,
+                "jetzt": 17,
+                "veraenderung": 37
+              },
+              {
+                "teilnehmerId": "sam2004",
+                "teilnehmer": "Sam2004",
+                "vorher": 65,
+                "jetzt": 28,
+                "veraenderung": 37
+              }
+            ],
+            "verlierer": [
+              {
+                "teilnehmerId": "adamj",
+                "teilnehmer": "AdamJ",
+                "vorher": 17,
+                "jetzt": 30,
+                "veraenderung": -13
+              },
+              {
+                "teilnehmerId": "flokicker94",
+                "teilnehmer": "FloKicker94",
+                "vorher": 17,
+                "jetzt": 30,
+                "veraenderung": -13
+              },
+              {
+                "teilnehmerId": "olympiakos",
+                "teilnehmer": "Olympiakos",
+                "vorher": 17,
+                "jetzt": 30,
+                "veraenderung": -13
+              },
+              {
+                "teilnehmerId": "redwing",
+                "teilnehmer": "Redwing",
+                "vorher": 17,
+                "jetzt": 30,
+                "veraenderung": -13
+              },
+              {
+                "teilnehmerId": "andy1304",
+                "teilnehmer": "Andy1304",
+                "vorher": 23,
+                "jetzt": 36,
+                "veraenderung": -13
+              },
+              {
+                "teilnehmerId": "waltersen",
+                "teilnehmer": "Waltersen",
+                "vorher": 23,
+                "jetzt": 36,
+                "veraenderung": -13
+              },
+              {
+                "teilnehmerId": "dani1893",
+                "teilnehmer": "Dani1893",
+                "vorher": 26,
+                "jetzt": 39,
+                "veraenderung": -13
+              },
+              {
+                "teilnehmerId": "finch",
+                "teilnehmer": "Finch",
+                "vorher": 26,
+                "jetzt": 39,
+                "veraenderung": -13
+              },
+              {
+                "teilnehmerId": "handgottes",
+                "teilnehmer": "HandGottes",
+                "vorher": 26,
+                "jetzt": 39,
+                "veraenderung": -13
+              },
+              {
+                "teilnehmerId": "seboso",
+                "teilnehmer": "Seboso",
+                "vorher": 26,
+                "jetzt": 39,
+                "veraenderung": -13
+              }
+            ],
+            "maxGewinn": 37,
+            "maxVerlust": -13
+          }
+        },
+        {
+          "typ": "zahlen-aus-der-kombuese",
+          "prioritaet": 30,
+          "anzeigen": true,
+          "daten": {
+            "abgegeben": 88,
+            "nichtAbgegeben": 12,
+            "exakt": 13,
+            "differenz": 3,
+            "tendenz": 6
           }
         }
       ]
