@@ -1523,12 +1523,12 @@
           "datumAnzeige": "05.09.2026",
           "anstoss": "18:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 0,
+          "auswaertstore": 0,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "",
-          "quelleStand": "2026-07-30",
+          "quelleStand": "2026-09-05",
           "heimTeamId": "schalke-04",
           "auswaertsTeamId": "bayern-muenchen"
         },
@@ -8605,6 +8605,6 @@
       ]
     }
   ],
-  "datenVersion": 25,
+  "datenVersion": 26,
   "aktualisiert": "2026-09-05"
 }
