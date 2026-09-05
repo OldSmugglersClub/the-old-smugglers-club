@@ -1369,6 +1369,138 @@ body.page-dynamo-dresden{
   padding: 12px;
 }
 
+/* Dynamo Dresden: drei gleich hohe, kompakte Vereinsfenster. */
+.page-dynamo-dresden #info-cards > .info-card {
+  height: 290px;
+  min-height: 290px;
+}
+
+.page-dynamo-dresden #info-cards > .info-card h2 {
+  margin-bottom: .5rem;
+  font-size: clamp(.9rem, 1.45vw, 1.16rem);
+  line-height: 1.1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.page-dynamo-dresden .info-card--achievements > h2 {
+  margin-bottom: .72rem;
+  font-size: clamp(1.12rem, 1.85vw, 1.42rem);
+  line-height: 1.08;
+}
+
+.page-dynamo-dresden .info-card--dynamo-goalgetter,
+.page-dynamo-dresden .info-card--achievements {
+  padding: 12px;
+}
+
+.page-dynamo-dresden .info-card--dynamo-goalgetter .goalgetter-leader {
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  align-content: stretch;
+  height: 100%;
+  min-height: 0;
+}
+
+.page-dynamo-dresden .info-card--dynamo-goalgetter > p {
+  height: calc(100% - 1.8rem);
+  min-height: 0;
+}
+
+.page-dynamo-dresden .info-card--dynamo-goalgetter .goalgetter-cannon {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.page-dynamo-dresden .goalgetter-leader-name,
+.page-dynamo-dresden .goalgetter-leader-goals {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.page-dynamo-dresden .info-card--achievements > p {
+  height: calc(100% - 2.25rem);
+}
+
+.club-achievements {
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  gap: .45rem;
+}
+
+.club-achievement-row {
+  display: grid;
+  grid-template-columns: minmax(104px, 1fr) minmax(0, 2fr);
+  align-items: center;
+  column-gap: .85rem;
+  padding: .38rem .65rem;
+  border: 1px solid rgba(190, 145, 62, .34);
+  border-radius: 8px;
+  background: linear-gradient(90deg, rgba(93, 57, 20, .34), rgba(19, 12, 7, .28));
+}
+
+.club-achievement-value {
+  color: #f3ce70;
+  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.club-achievement-row:last-child .club-achievement-value {
+  font-size: clamp(.9rem, 1.45vw, 1.12rem);
+}
+
+.club-achievement-label {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.page-dynamo-dresden .info-card--competition-logo {
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f1aa22 0%, #fff1c8 42%, #fff 72%);
+}
+
+.page-dynamo-dresden .info-card--competition-logo > p,
+.page-dynamo-dresden .competition-logo-box {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.page-dynamo-dresden .competition-logo-image {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: 50% 50%;
+  transform: scale(1.42);
+}
+
+@media (max-width: 420px) {
+  .page-dynamo-dresden #info-cards > .info-card h2 {
+    font-size: .78rem;
+  }
+
+  .page-dynamo-dresden .info-card--achievements > h2 {
+    font-size: 1rem;
+  }
+
+  .club-achievement-row {
+    grid-template-columns: 82px minmax(0, 1fr);
+    gap: .45rem;
+    padding-inline: .45rem;
+    font-size: .78rem;
+  }
+}
+
 .page-europa-league .info-card--europa-league-goalgetter .goalgetter-leader {
   grid-template-rows: minmax(0, 1fr) auto auto;
   align-content: stretch;

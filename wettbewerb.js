@@ -637,6 +637,8 @@
   });
   const OPENLIGADB_EL_MATCHES_PROTOTYPE_URL = "https://api.openligadb.de/getmatchdata/uel/2026";
   const OPENLIGADB_EL_GOALGETTERS_URL = "https://api.openligadb.de/getgoalgetters/uel/2026";
+  const OPENLIGADB_DYNAMO_MATCHES_URL = "https://api.openligadb.de/getmatchdata/bl2/2026";
+  const OPENLIGADB_DYNAMO_TEAM_ID = 177;
   const EUROPA_LEAGUE_FALLBACK_PROTOTYPE_URL = "./europa-league-ko-2026.json";
   const OPENLIGADB_DFB_PROTOTYPE_URL = "https://api.openligadb.de/getmatchdata/dfb/2026";
   const OPENLIGADB_DFB_GOALGETTERS_URL = "https://api.openligadb.de/getgoalgetters/dfb/2026";
@@ -2210,6 +2212,79 @@ function normalizeGoalGetterEntries(goalGetterData) {
     return result;
   }
 
+  function dynamoDresdenGoalGetters(matchData) {
+    const scorers = new Map();
+
+    safeArray(matchData).forEach(match => {
+      safeArray(match?.goals).forEach(goal => {
+        if (Number(goal?.scoringTeamId) !== OPENLIGADB_DYNAMO_TEAM_ID || goal?.isOwnGoal) return;
+        const id = String(goal?.goalGetterID ?? goal?.goalGetterId ?? goal?.goalGetterName ?? "").trim();
+        const name = String(goal?.goalGetterName || "").trim();
+        if (!id || !name) return;
+        const entry = scorers.get(id) || { name, tore: 0 };
+        entry.tore += 1;
+        scorers.set(id, entry);
+      });
+    });
+
+    return [...scorers.values()]
+      .sort((a, b) => b.tore - a.tore || a.name.localeCompare(b.name, "de"));
+  }
+
+  function dynamoDresdenInfoCards(cards, matchData) {
+    const result = safeArray(cards).map(card => ({ ...card }));
+    if (slug !== "dynamo-dresden") return result;
+
+    const entries = dynamoDresdenGoalGetters(matchData);
+    const topGoals = entries[0]?.tore || 0;
+    const leaders = entries.filter(entry => entry.tore === topGoals);
+
+    if (result[0]) {
+      result[0] = {
+        ...result[0],
+        titel: "Aktueller Dynamo-Torjäger",
+        text: "",
+        leader: topGoals
+          ? {
+              image: "./assets/dynamo-torjaegerkanone.jpg",
+              name: leaders.map(entry => entry.name).join(" · "),
+              tore: topGoals
+            }
+          : {
+              image: "./assets/dynamo-torjaegerkanone.jpg",
+              name: "Noch offen",
+              goalsText: "Noch kein Dynamo-Tor"
+            }
+      };
+    }
+
+    if (result[1]) {
+      result[1] = {
+        ...result[1],
+        titel: "Dynamos größte Erfolge",
+        text: "",
+        achievements: [
+          { value: "8×", label: "DDR-Meister" },
+          { value: "7×", label: "FDGB-Pokalsieger" },
+          { value: "3×", label: "DDR-Double" },
+          { value: "1988/89", label: "UEFA-Cup-Halbfinale" }
+        ]
+      };
+    }
+
+    if (result[2]) {
+      result[2] = {
+        ...result[2],
+        titel: "",
+        text: "",
+        logo: "./assets/dynamo-dresden-logo.jpg",
+        logoAlt: "Logo der SG Dynamo Dresden"
+      };
+    }
+
+    return result;
+  }
+
   function renderCards(cards) {
     const root = $("info-cards");
     root.innerHTML = "";
@@ -2237,6 +2312,7 @@ function normalizeGoalGetterEntries(goalGetterData) {
         if (slug === "bundesliga") article.classList.add("info-card--bundesliga-goalgetter");
         if (slug === "champions-league") article.classList.add("info-card--champions-league-goalgetter");
         if (slug === "europa-league") article.classList.add("info-card--europa-league-goalgetter");
+        if (slug === "dynamo-dresden") article.classList.add("info-card--dynamo-goalgetter");
 
         const box = document.createElement("div");
         box.className = "goalgetter-leader";
@@ -2293,6 +2369,25 @@ function normalizeGoalGetterEntries(goalGetterData) {
             box.appendChild(row);
           });
         }
+
+        p.appendChild(box);
+      } else if (Array.isArray(card.achievements)) {
+        article.classList.add("info-card--achievements");
+        const box = document.createElement("div");
+        box.className = "club-achievements";
+
+        card.achievements.forEach(entry => {
+          const row = document.createElement("div");
+          row.className = "club-achievement-row";
+          const value = document.createElement("strong");
+          value.className = "club-achievement-value";
+          value.textContent = entry.value || "";
+          const label = document.createElement("span");
+          label.className = "club-achievement-label";
+          label.textContent = entry.label || "";
+          row.append(value, label);
+          box.appendChild(row);
+        });
 
         p.appendChild(box);
       } else if (Array.isArray(card.winners)) {
@@ -2769,7 +2864,7 @@ function normalizeGoalGetterEntries(goalGetterData) {
           window.OSCDataRegistry.url("wettbewerbe")
         ]);
       }
-      const [data, centralGameData, teamData, bundesligaTableData, bundesligaGoalGetterData, dfbGoalGetterData, championsLeagueGoalGetterData, europaLeagueGoalGetterData, competitionConfig, openLigaDbDfbMatches, openLigaDbClTable, openLigaDbElMatches, europaLeagueFallback] = await Promise.all([
+      const [data, centralGameData, teamData, bundesligaTableData, bundesligaGoalGetterData, dfbGoalGetterData, championsLeagueGoalGetterData, europaLeagueGoalGetterData, dynamoMatchData, competitionConfig, openLigaDbDfbMatches, openLigaDbClTable, openLigaDbElMatches, europaLeagueFallback] = await Promise.all([
         fetchJson(jsonUrl, true),
         fetchJson(gameDataUrl, false),
         fetchJson(teamDataUrl, false),
@@ -2778,6 +2873,7 @@ function normalizeGoalGetterEntries(goalGetterData) {
         slug === "dfb-pokal" ? fetchJson(OPENLIGADB_DFB_GOALGETTERS_URL, false) : Promise.resolve([]),
         slug === "champions-league" ? fetchJson(OPENLIGADB_CL_GOALGETTERS_URL, false) : Promise.resolve([]),
         slug === "europa-league" ? fetchJson(OPENLIGADB_EL_GOALGETTERS_URL, false) : Promise.resolve([]),
+        slug === "dynamo-dresden" ? fetchJson(OPENLIGADB_DYNAMO_MATCHES_URL, false) : Promise.resolve([]),
         fetchJson(competitionConfigUrl, false),
         slug === "dfb-pokal"
           ? fetchJson(OPENLIGADB_DFB_PROTOTYPE_URL, false)
@@ -2818,7 +2914,9 @@ function normalizeGoalGetterEntries(goalGetterData) {
             ? championsLeagueInfoCards(data.karten, championsLeagueGoalGetterData)
             : slug === "europa-league"
               ? europaLeagueInfoCards(data.karten, europaLeagueGoalGetterData)
-              : data.karten;
+              : slug === "dynamo-dresden"
+                ? dynamoDresdenInfoCards(data.karten, dynamoMatchData)
+                : data.karten;
       renderCards(preparedCards);
 
       const statusBox = $("status-box");
