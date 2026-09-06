@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 9,
-  "aktualisiert": "2026-09-05",
+  "datenVersion": 10,
+  "aktualisiert": "2026-09-06",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
@@ -43,11 +43,11 @@
       "tore": 2
     },
     {
-      "name": "Luis Díaz",
+      "name": "M. Olise",
       "tore": 1
     },
     {
-      "name": "M. Olise",
+      "name": "Luis Díaz",
       "tore": 1
     },
     {
@@ -111,11 +111,11 @@
       "tore": 1
     },
     {
-      "name": "D. Stalmach",
+      "name": "I. Matanovic",
       "tore": 1
     },
     {
-      "name": "I. Matanovic",
+      "name": "D. Stalmach",
       "tore": 1
     },
     {
@@ -179,6 +179,10 @@
       "tore": 1
     },
     {
+      "name": "E. Dinkçi",
+      "tore": 1
+    },
+    {
       "name": "N. Füllkrug",
       "tore": 1
     },
@@ -187,11 +191,15 @@
       "tore": 1
     },
     {
-      "name": "E. Dinkçi",
+      "name": "M. Eggestein",
       "tore": 1
     },
     {
-      "name": "M. Eggestein",
+      "name": "P. Mwene",
+      "tore": 1
+    },
+    {
+      "name": "S. Becker",
       "tore": 1
     }
   ]
