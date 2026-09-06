@@ -1737,12 +1737,12 @@
           "datumAnzeige": "06.09.2026",
           "anstoss": "17:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 1,
+          "auswaertstore": 4,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "",
-          "quelleStand": "2026-07-30",
+          "quelleStand": "2026-09-06",
           "heimTeamId": "frankfurt",
           "auswaertsTeamId": "augsburg"
         },
@@ -8773,6 +8773,6 @@
       ]
     }
   ],
-  "datenVersion": 29,
+  "datenVersion": 30,
   "aktualisiert": "2026-09-06"
 }
