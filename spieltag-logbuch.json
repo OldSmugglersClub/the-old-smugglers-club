@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 7,
-  "aktualisiert": "2026-09-05T23:26:28.294Z",
+  "datenVersion": 8,
+  "aktualisiert": "2026-09-06T20:27:35.671Z",
   "saison": "2026-27",
   "regelwerk": {
     "kapitaene": "Alle Tipper mit der höchsten tatsächlichen Spieltagspunktzahl; kein künstlicher Tie-Break.",
@@ -3567,6 +3567,299 @@
             "exakt": 13,
             "differenz": 3,
             "tendenz": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "2026-27__bundesliga__2-spieltag__bl-2026-27-02-010-bl-2026-27-02-011-bl-2026-27-02-012-bl-2026-27-02-013-bl-2026-27-02-014-bl-2026-27-02-015-bl-2026-27-02-016-bl-2026-27-02-017-bl-2026-27-02-018",
+      "bezeichnung": "Bundesliga 2. Spieltag",
+      "wettbewerb": "bundesliga",
+      "runde": "2. Spieltag",
+      "abgeschlossen": true,
+      "spielIds": [
+        "bl-2026-27-02-010",
+        "bl-2026-27-02-011",
+        "bl-2026-27-02-012",
+        "bl-2026-27-02-014",
+        "bl-2026-27-02-016",
+        "bl-2026-27-02-018",
+        "bl-2026-27-02-017",
+        "bl-2026-27-02-015",
+        "bl-2026-27-02-013"
+      ],
+      "kapitaene": [
+        {
+          "teilnehmerId": "moosmuzel",
+          "teilnehmer": "Moosmuzel",
+          "punkte": 15,
+          "exakt": 1,
+          "differenz": 2,
+          "tendenz": 2
+        }
+      ],
+      "highlights": [
+        {
+          "typ": "kapitaene",
+          "prioritaet": 100,
+          "anzeigen": true,
+          "daten": {
+            "punkte": 15,
+            "anzahl": 1,
+            "tipper": [
+              {
+                "teilnehmerId": "moosmuzel",
+                "teilnehmer": "Moosmuzel",
+                "punkte": 15,
+                "exakt": 1,
+                "differenz": 2,
+                "tendenz": 2
+              }
+            ]
+          }
+        },
+        {
+          "typ": "gegen-den-strom",
+          "prioritaet": 90,
+          "anzeigen": true,
+          "daten": {
+            "spielId": "bl-2026-27-02-017",
+            "heimTeam": "schalke-04",
+            "auswaertsTeam": "bayern-muenchen",
+            "ergebnis": "0:0",
+            "abgegeben": 86,
+            "nichtAbgegeben": 14,
+            "tippverteilung": {
+              "1": 1,
+              "2": 82,
+              "X": 3
+            },
+            "exakt": 0,
+            "differenz": 3,
+            "tendenz": 0,
+            "richtigerAusgang": "X",
+            "meistGetippt": {
+              "ausgang": "2",
+              "anzahl": 82
+            },
+            "gegenDenStrom": true,
+            "richtigeTendenz": {
+              "anzahl": 3,
+              "anteil": 3.5,
+              "tipper": [
+                {
+                  "teilnehmerId": "moosmuzel",
+                  "teilnehmer": "Moosmuzel",
+                  "tipp": "1:1",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "vebfriwiwerk",
+                  "teilnehmer": "VebFriwiwerk",
+                  "tipp": "2:2",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "kunstblume",
+                  "teilnehmer": "Kunstblume",
+                  "tipp": "1:1",
+                  "exakt": false
+                }
+              ],
+              "exakteTipps": 0
+            }
+          }
+        },
+        {
+          "typ": "wer-hats-gerochen",
+          "prioritaet": 85,
+          "anzeigen": true,
+          "daten": {
+            "grenzeProzent": 25,
+            "testOverride": false,
+            "faelle": [
+              {
+                "spielId": "bl-2026-27-02-017",
+                "heimTeam": "schalke-04",
+                "auswaertsTeam": "bayern-muenchen",
+                "ergebnis": "0:0",
+                "abgegeben": 86,
+                "nichtAbgegeben": 14,
+                "tippverteilung": {
+                  "1": 1,
+                  "2": 82,
+                  "X": 3
+                },
+                "exakt": 0,
+                "differenz": 3,
+                "tendenz": 0,
+                "richtigerAusgang": "X",
+                "meistGetippt": {
+                  "ausgang": "2",
+                  "anzahl": 82
+                },
+                "gegenDenStrom": true,
+                "richtigeTendenz": {
+                  "anzahl": 3,
+                  "anteil": 3.5,
+                  "tipper": [
+                    {
+                      "teilnehmerId": "moosmuzel",
+                      "teilnehmer": "Moosmuzel",
+                      "tipp": "1:1",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "vebfriwiwerk",
+                      "teilnehmer": "VebFriwiwerk",
+                      "tipp": "2:2",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "kunstblume",
+                      "teilnehmer": "Kunstblume",
+                      "tipp": "1:1",
+                      "exakt": false
+                    }
+                  ],
+                  "exakteTipps": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "typ": "volltreffer",
+          "prioritaet": 80,
+          "anzeigen": true,
+          "daten": {
+            "maxExakt": 1,
+            "anzahl": 12,
+            "tipper": [
+              {
+                "teilnehmerId": "moosmuzel",
+                "teilnehmer": "Moosmuzel",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "pochzerjung",
+                "teilnehmer": "PochzerJung",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "maikiliii",
+                "teilnehmer": "Maikiliii",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "best10",
+                "teilnehmer": "Best10",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "rk69",
+                "teilnehmer": "RK69",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "juri",
+                "teilnehmer": "JuRi",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "handgottes",
+                "teilnehmer": "HandGottes",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "dominik1966",
+                "teilnehmer": "dominik1966",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "kevinhick",
+                "teilnehmer": "Kevinhick",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "nurderscf",
+                "teilnehmer": "NurDerSCF",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "nick-zg-1501",
+                "teilnehmer": "Nick_ZG_1501",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "lattenkracher",
+                "teilnehmer": "Lattenkracher",
+                "exakt": 1
+              }
+            ]
+          }
+        },
+        {
+          "typ": "crewduell",
+          "prioritaet": 70,
+          "anzeigen": true,
+          "daten": {
+            "teams": [
+              {
+                "team": "New Smugglers Team",
+                "durchschnitt": 7.87,
+                "punktesumme": 590,
+                "mitglieder": 75
+              },
+              {
+                "team": "Old Smugglers Team",
+                "durchschnitt": 7.24,
+                "punktesumme": 181,
+                "mitglieder": 25
+              }
+            ],
+            "sieger": "New Smugglers Team",
+            "differenz": 0.63
+          }
+        },
+        {
+          "typ": "kursbewegung",
+          "prioritaet": 40,
+          "anzeigen": true,
+          "grund": null,
+          "daten": {
+            "gewinner": [
+              {
+                "teilnehmerId": "moosmuzel",
+                "teilnehmer": "Moosmuzel",
+                "vorher": 75,
+                "jetzt": 35,
+                "veraenderung": 40
+              }
+            ],
+            "verlierer": [
+              {
+                "teilnehmerId": "berndibroti",
+                "teilnehmer": "Berndibroti",
+                "vorher": 8,
+                "jetzt": 62,
+                "veraenderung": -54
+              }
+            ],
+            "maxGewinn": 40,
+            "maxVerlust": -54
+          }
+        },
+        {
+          "typ": "zahlen-aus-der-kombuese",
+          "prioritaet": 30,
+          "anzeigen": true,
+          "daten": {
+            "abgegeben": 87,
+            "nichtAbgegeben": 14,
+            "exakt": 12,
+            "differenz": 81,
+            "tendenz": 234
           }
         }
       ]

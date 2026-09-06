@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 6,
-  "aktualisiertAm": "2026-09-05T23:26:28.294Z",
+  "datenVersion": 7,
+  "aktualisiertAm": "2026-09-06T20:27:35.671Z",
   "saison": "2026-27",
   "status": "Berechnet",
   "kategorien": [
     {
       "titel": "Spieltagsführer",
       "name": "baslermario",
-      "wert": "27 Punkte"
+      "wert": "39 Punkte"
     },
     {
       "titel": "Meiste exakte Tipps",
-      "name": "Jakob",
+      "name": "RK69",
       "wert": "3"
     },
     {
