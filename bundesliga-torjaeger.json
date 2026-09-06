@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 10,
+  "datenVersion": 11,
   "aktualisiert": "2026-09-06",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
@@ -43,8 +43,8 @@
       "tore": 2
     },
     {
-      "name": "M. Olise",
-      "tore": 1
+      "name": "P. Tietz",
+      "tore": 2
     },
     {
       "name": "Luis Díaz",
@@ -52,6 +52,10 @@
     },
     {
       "name": "D. Upamecano",
+      "tore": 1
+    },
+    {
+      "name": "M. Olise",
       "tore": 1
     },
     {
@@ -83,11 +87,15 @@
       "tore": 1
     },
     {
+      "name": "O. Kabak",
+      "tore": 1
+    },
+    {
       "name": "S. El Mala",
       "tore": 1
     },
     {
-      "name": "O. Kabak",
+      "name": "C. Kofane",
       "tore": 1
     },
     {
@@ -96,10 +104,6 @@
     },
     {
       "name": "David Mokwa Ntusu",
-      "tore": 1
-    },
-    {
-      "name": "C. Kofane",
       "tore": 1
     },
     {
@@ -119,15 +123,15 @@
       "tore": 1
     },
     {
-      "name": "M. Gregoritsch",
-      "tore": 1
-    },
-    {
       "name": "A. Kade",
       "tore": 1
     },
     {
       "name": "Rodrigo Ribeiro",
+      "tore": 1
+    },
+    {
+      "name": "M. Gregoritsch",
       "tore": 1
     },
     {
@@ -200,6 +204,26 @@
     },
     {
       "name": "S. Becker",
+      "tore": 1
+    },
+    {
+      "name": "R. Königsdörffer",
+      "tore": 1
+    },
+    {
+      "name": "J. Burkardt",
+      "tore": 1
+    },
+    {
+      "name": "R. Fellhauer",
+      "tore": 1
+    },
+    {
+      "name": "F. Rieder",
+      "tore": 1
+    },
+    {
+      "name": "Alexis Claude-Maurice",
       "tore": 1
     }
   ]

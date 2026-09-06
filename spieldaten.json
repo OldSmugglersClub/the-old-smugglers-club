@@ -1714,12 +1714,12 @@
           "datumAnzeige": "06.09.2026",
           "anstoss": "15:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 0,
+          "auswaertstore": 5,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "",
-          "quelleStand": "2026-07-30",
+          "quelleStand": "2026-09-06",
           "heimTeamId": "hamburger-sv",
           "auswaertsTeamId": "mainz-05"
         },
@@ -8773,6 +8773,6 @@
       ]
     }
   ],
-  "datenVersion": 28,
-  "aktualisiert": "2026-09-05"
+  "datenVersion": 29,
+  "aktualisiert": "2026-09-06"
 }
