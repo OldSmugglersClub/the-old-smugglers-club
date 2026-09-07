@@ -4,12 +4,19 @@
   const DATA_PATH = '../spieldaten.json';
   const TEAMS_PATH = '../teams.json';
   const ORIGINAL_LOGOS_PATH = '../assets/team-logos/original-team-logos.json';
+  const COMPETITIONS_PATH = '../wettbewerbe.json';
+  const OPENLIGADB_SOURCES = Object.freeze([
+    { id: 'dfb-pokal', label: 'DFB-Pokal', url: 'https://api.openligadb.de/getmatchdata/dfb/2026' },
+    { id: 'champions-league', label: 'Champions League', url: 'https://api.openligadb.de/getmatchdata/ucl/2026' },
+    { id: 'europa-league', label: 'Europa League', url: 'https://api.openligadb.de/getmatchdata/uel/2026' }
+  ]);
   const BERLIN_TZ = 'Europe/Berlin';
 
   const els = {};
   let games = [];
   let teams = new Map();
   let originalLogos = new Map();
+  let competitionChoices = [];
   let selectedGame = null;
   let revealing = false;
 
@@ -19,11 +26,19 @@
     bindEls();
     bindEvents();
     try {
-      const [schedule, teamData, originalLogoData] = await Promise.all([fetchJson(DATA_PATH), fetchJson(TEAMS_PATH), fetchJson(ORIGINAL_LOGOS_PATH)]);
+      const [schedule, teamData, originalLogoData, competitionData, ...remoteSchedules] = await Promise.all([
+        fetchJson(DATA_PATH),
+        fetchJson(TEAMS_PATH),
+        fetchJson(ORIGINAL_LOGOS_PATH),
+        fetchJson(COMPETITIONS_PATH),
+        ...OPENLIGADB_SOURCES.map(source => fetchJsonOptional(source.url))
+      ]);
       const season = (schedule.saisons || []).find(s => s.id === schedule.aktiveSaison) || (schedule.saisons || [])[0];
       games = (season?.spiele || []).filter(hasRealTeams);
       teams = new Map((teamData.teams || []).map(team => [team.id, team]));
       originalLogos = new Map(Object.entries(originalLogoData.teams || {}));
+      competitionChoices = buildCompetitionChoices(competitionData);
+      appendRemoteSchedules(remoteSchedules);
       populateCompetitions();
       configureReturnLink();
       applyDeepLinkedGame();
@@ -59,6 +74,115 @@
     const response = await fetch(`${path}?v=${Date.now()}`, { cache: 'no-store' });
     if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
     return response.json();
+  }
+
+  async function fetchJsonOptional(path) {
+    try {
+      return await fetchJson(path);
+    } catch (error) {
+      console.warn(`Coco: optionale Spielplanquelle nicht erreichbar: ${path}`, error);
+      return [];
+    }
+  }
+
+  function buildCompetitionChoices(data) {
+    return (data?.wettbewerbe || []).map(entry => ({
+      value: entry.id === 'dynamo-dresden' ? '2-bundesliga' : entry.id,
+      label: entry.label || entry.id
+    }));
+  }
+
+  function normalize(value) {
+    return String(value || '')
+      .toLocaleLowerCase('de')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, ' ')
+      .trim();
+  }
+
+  function openLigaDbRound(match, competitionId) {
+    const group = match?.group || {};
+    const raw = String(group.groupName ?? group.GroupName ?? '').trim();
+    const clean = normalize(raw);
+    const order = Number(group.groupOrderID ?? group.groupOrderId ?? group.GroupOrderID ?? group.GroupOrderId);
+    if ((competitionId === 'champions-league' || competitionId === 'europa-league') && Number.isInteger(order) && order >= 1 && order <= 8) {
+      return `${order}. Spieltag`;
+    }
+    if (clean.includes('achtelfinale')) return 'Achtelfinale';
+    if (clean.includes('viertelfinale')) return 'Viertelfinale';
+    if (clean.includes('halbfinale')) return 'Halbfinale';
+    if (clean.includes('finale') || clean.includes('endspiel')) return 'Finale';
+    return raw || 'Ohne Runde';
+  }
+
+  function localTeamIdByName(name) {
+    const key = normalize(name);
+    for (const [id, team] of teams) {
+      const names = [team.id, team.name, team.kurzname, ...(team.apiAliase || []), ...(team.kicktippAliase || [])];
+      if (names.some(candidate => normalize(candidate) === key)) return id;
+    }
+    return '';
+  }
+
+  function registerOpenLigaDbTeam(rawTeam) {
+    const name = String(rawTeam?.teamName ?? rawTeam?.TeamName ?? '').trim();
+    const localId = localTeamIdByName(name);
+    if (localId) return localId;
+    const externalId = String(rawTeam?.teamId ?? rawTeam?.teamID ?? rawTeam?.TeamId ?? normalize(name).replace(/ /g, '-'));
+    const id = `openligadb-${externalId}`;
+    if (!teams.has(id)) {
+      teams.set(id, {
+        id,
+        name: name || 'Unbekannt',
+        kurzname: String(rawTeam?.shortName ?? rawTeam?.ShortName ?? name).trim(),
+        logo: String(rawTeam?.teamIconUrl ?? rawTeam?.TeamIconUrl ?? '')
+      });
+    }
+    return id;
+  }
+
+  function convertOpenLigaDbMatch(match, source) {
+    const rawDate = String(match?.matchDateTime ?? match?.MatchDateTime ?? match?.matchDateTimeUTC ?? '');
+    const date = rawDate.match(/^(\d{4}-\d{2}-\d{2})/)?.[1] || '';
+    const time = rawDate.match(/T(\d{2}:\d{2})/)?.[1] || '';
+    const matchId = match?.matchID ?? match?.matchId ?? match?.MatchID;
+    const home = match?.team1 ?? match?.Team1;
+    const away = match?.team2 ?? match?.Team2;
+    if (!matchId || !date || !time || !home || !away) return null;
+    return {
+      id: `openligadb-${source.id}-${matchId}`,
+      wettbewerb: source.id,
+      wettbewerbAnzeige: source.label,
+      runde: openLigaDbRound(match, source.id),
+      datum: date,
+      anstoss: time,
+      terminBestaetigt: true,
+      heimTeamId: registerOpenLigaDbTeam(home),
+      auswaertsTeamId: registerOpenLigaDbTeam(away),
+      heimtore: null,
+      auswaertstore: null,
+      ergebnisNach90MinutenBestaetigt: false,
+      status: 'terminiert'
+    };
+  }
+
+  function gameSignature(game) {
+    return [game.wettbewerb, game.datum, game.anstoss, game.heimTeamId, game.auswaertsTeamId].join('|');
+  }
+
+  function appendRemoteSchedules(remoteSchedules) {
+    const signatures = new Set(games.map(gameSignature));
+    OPENLIGADB_SOURCES.forEach((source, index) => {
+      const rows = Array.isArray(remoteSchedules[index]) ? remoteSchedules[index] : [];
+      rows.map(match => convertOpenLigaDbMatch(match, source)).filter(Boolean).forEach(game => {
+        const signature = gameSignature(game);
+        if (!signatures.has(signature)) {
+          games.push(game);
+          signatures.add(signature);
+        }
+      });
+    });
   }
 
   function hasRealTeams(game) {
@@ -144,8 +268,13 @@
   }
 
   function populateCompetitions() {
-    const comps = [...new Map(oracleGames().map(g => [g.wettbewerb, g.wettbewerbAnzeige || g.wettbewerb])).entries()]
-      .sort((a,b) => a[1].localeCompare(b[1], 'de'));
+    const configured = competitionChoices.map(entry => [entry.value, entry.label]);
+    const discovered = oracleGames().map(game => [game.wettbewerb, game.wettbewerbAnzeige || game.wettbewerb]);
+    const all = new Map(configured);
+    discovered.forEach(([value, label]) => {
+      if (!all.has(value)) all.set(value, label);
+    });
+    const comps = [...all.entries()];
     fillSelect(els.competition, comps, 'Wettbewerb wählen');
     populateRounds();
   }
@@ -183,6 +312,7 @@
     const original = originalLogos.get(id)?.path;
     if (original) return `../${original.replace(/^\.\//,'')}`;
     const fallback = teams.get(id)?.logo;
+    if (/^https?:\/\//i.test(fallback || '')) return fallback;
     return fallback ? `../${fallback.replace(/^\.\//,'')}` : '';
   }
 
