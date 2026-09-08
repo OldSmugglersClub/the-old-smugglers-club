@@ -973,43 +973,42 @@
     };
   }
 
+  function championsLeagueSituationGames(openLigaDbMatches) {
+    return safeArray(openLigaDbMatches).map(match => {
+      const date = openLigaDbMatchDate(match);
+      const rawDateTime = String(match?.matchDateTime ?? match?.MatchDateTime ?? "");
+      const time = rawDateTime.match(/T(\d{2}:\d{2})/)?.[1] || "";
+      const home = openLigaDbTeamName(match?.team1);
+      const away = openLigaDbTeamName(match?.team2);
+      const score = openLigaDbFinalResult(match);
+      const scoreParts = score.match(/^(\d+):(\d+)$/);
+      const matchdayNumber = championsLeagueMatchdayNumber(match);
+      const groupName = String(match?.group?.groupName ?? match?.group?.GroupName ?? "").trim();
+      if (!date || !home || !away) return null;
+      return {
+        id: match?.matchID ? `openligadb-cl-${match.matchID}` : "",
+        wettbewerb: "champions-league",
+        runde: matchdayNumber ? `${matchdayNumber}. Spieltag` : (groupName || "Champions League"),
+        datum: date,
+        anstoss: time,
+        terminBestaetigt: Boolean(date && time),
+        heimTeamId: championsLeagueLocalBadgeId(home),
+        heim: home,
+        auswaertsTeamId: championsLeagueLocalBadgeId(away),
+        auswaerts: away,
+        heimtore: scoreParts ? Number(scoreParts[1]) : null,
+        auswaertstore: scoreParts ? Number(scoreParts[2]) : null,
+        status: match?.matchIsFinished === true ? "beendet" : "terminiert"
+      };
+    }).filter(Boolean);
+  }
+
   function renderChampionsLeaguePhaseOverview(openLigaDbMatches, root) {
     if (slug !== "champions-league") return;
     const matches = championsLeaguePhaseMatches(openLigaDbMatches);
     const clusters = championsLeagueMatchdayClusters(matches);
     const scheduledMatchdays = clusters.length;
     const scheduleConfirmed = scheduledMatchdays > 0;
-
-    const section = document.createElement("section");
-    section.className = "dynamic-section competition-situation";
-    const headingRow = document.createElement("div");
-    headingRow.className = "section-heading-row";
-    const heading = document.createElement("h2");
-    heading.textContent = "Aktuelles Wettbewerbslagebild";
-    const badge = document.createElement("span");
-    badge.className = "data-status-badge";
-    badge.textContent = matches.length ? `${matches.length} Ligaphasen-Paarungen erfasst` : "Noch ohne Spielplan";
-    headingRow.append(heading, badge);
-    section.appendChild(headingRow);
-
-    const grid = document.createElement("div");
-    grid.className = "situation-grid";
-    const cards = [
-      ["Datenquelle", matches.length ? "OpenLigaDB verbunden" : "Noch keine Ligaphasen-Daten", matches.length ? "Die Community-Daten werden bei jedem Laden neu abgefragt." : "Die Seite wartet auf verwertbare OpenLigaDB-Daten."],
-      ["Spieltagszuordnung", scheduleConfirmed ? `${scheduledMatchdays} von 8 Spieltagen erkannt` : "Noch nicht belastbar", scheduleConfirmed ? "Jeder angezeigte Spieltag enthält 18 vollständig terminierte Spiele mit 36 eindeutigen Teams." : "OpenLigaDB liefert derzeit noch keinen vollständig terminierten 18er-Spieltag. Keine künstliche Zuordnung wird erzeugt."],
-      ["Terminierung", scheduleConfirmed ? "Veröffentlichte Spieltage aktiv" : "Noch in Bearbeitung", scheduleConfirmed ? "Sobald OpenLigaDB einen weiteren vollständigen Spieltag terminiert, wird er beim nächsten Laden automatisch ergänzt." : "Platzhalter- oder unvollständige Termine werden nicht als echte Spieltage behandelt."],
-      ["Wappen", "Lokale Stammdaten + geprüfter Fallback", "Lokale Originalwappen haben Vorrang. Nur sichere HTTP(S)-Wappen von OpenLigaDB werden ersatzweise geladen; Base64-Daten bleiben ausgeschlossen."]
-    ];
-    cards.forEach(([label, value, detail]) => {
-      const card = document.createElement("article");
-      card.className = "situation-card";
-      const small = document.createElement("span"); small.textContent = label;
-      const strong = document.createElement("strong"); strong.textContent = value;
-      const note = document.createElement("small"); note.textContent = detail;
-      card.append(small, strong, note); grid.appendChild(card);
-    });
-    section.appendChild(grid);
-    root.appendChild(section);
 
     if (!matches.length) return;
     const schedule = document.createElement("section");
@@ -1885,8 +1884,8 @@
     root.appendChild(section);
   }
 
-  function renderCompetitionSituation(gameData, teamData, root) {
-    const games = centralGamesForPage(gameData);
+  function renderCompetitionSituation(gameData, teamData, root, suppliedGames = null) {
+    const games = Array.isArray(suppliedGames) ? suppliedGames : centralGamesForPage(gameData);
     const teams = createTeamLookup(teamData);
     const now = new Date();
     const enriched = games.map(match => ({ match, date: gameTimestamp(match) }));
@@ -2908,8 +2907,12 @@ function normalizeGoalGetterEntries(goalGetterData) {
     root.innerHTML = "";
     document.body.classList.add(`page-${slug}`);
     renderCompetitionNavigator(root);
-    if (slug === "champions-league") renderChampionsLeaguePhaseOverview(openLigaDbClTable, root);
-    else renderCompetitionSituation(gameData, teamData, root);
+    if (slug === "champions-league") {
+      renderCompetitionSituation(gameData, teamData, root, championsLeagueSituationGames(openLigaDbClTable));
+      renderChampionsLeaguePhaseOverview(openLigaDbClTable, root);
+    } else {
+      renderCompetitionSituation(gameData, teamData, root);
+    }
     renderChampionsLeagueTable(openLigaDbClTable, root);
     renderChampionsLeagueKnockoutPrototype(openLigaDbClTable, root);
     renderEuropaLeagueKnockoutPrototype(openLigaDbElMatches, europaLeagueFallback, root);
