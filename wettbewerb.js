@@ -1129,64 +1129,18 @@
   function createChampionsLeagueTeamIdentity(team, modifier = "") {
     const name = openLigaDbTeamName(team);
     const localId = championsLeagueLocalBadgeId(name);
-    const hasLocalOriginal = Boolean(
-      localId &&
-      window.OSCTeamBadge &&
-      typeof window.OSCTeamBadge.originalLogoPath === "function" &&
-      window.OSCTeamBadge.originalLogoPath(localId)
-    );
-
-    // Lokale Originalwappen bleiben die erste Wahl. Für die übrigen CL-Teams
-    // wird zunächst das sichere OpenLigaDB-Wappen versucht; bei fehlender oder
-    // nicht ladbarer Fremdquelle fällt die Anzeige auf das bereits vorhandene
-    // lokale Schmugglersiegel desselben Vereins zurück. So bleibt die Wappenachse
-    // vollständig belegt, ohne externe Logos in das Repository zu kopieren.
-    if (hasLocalOriginal) return createTeamIdentity(localId, name, modifier);
+    // Alle Ansichten verwenden ausschließlich das verbindliche lokale
+    // Originalwappen-Register. Die Release-Prüfung blockiert jeden Datenstand,
+    // in dem ein verwendetes Team noch kein lokal archiviertes Original besitzt.
+    if (localId) return createTeamIdentity(localId, name, modifier);
 
     const wrap = document.createElement("span");
     wrap.className = `team-identity${modifier ? ` ${modifier}` : ""}`;
-    const iconUrl = openLigaDbSafeIconUrl(team);
-
-    if (iconUrl || localId) {
-      const badge = document.createElement("span");
-      badge.className = "team-identity__badge";
-
-      const renderLocalFallback = () => {
-        if (window.OSCTeamBadge) {
-          const fallbackId = localId || `cl-${normalizeTeamLabel(name).replace(/\s+/g, "-") || "team"}`;
-          window.OSCTeamBadge.render(badge, fallbackId, name, { loading: "lazy" });
-        }
-      };
-
-      // Den lokalen Badge immer sofort rendern. Dadurch bleibt die Wappenposition
-      // auch dann sichtbar, wenn eine externe OpenLigaDB-Bildquelle langsam,
-      // blockiert oder technisch mit HTTP 200 aber ohne brauchbares Bild antwortet.
-      renderLocalFallback();
-
-      // Nur wenn kein lokales Originalwappen existiert, darf ein erfolgreich
-      // vorgeladenes OpenLigaDB-Wappen den lokalen Fallback ersetzen. Ein Fehler
-      // oder Hängen der Fremdquelle kann damit keine leere Badge-Fläche mehr erzeugen.
-      if (!hasLocalOriginal && iconUrl) {
-        const probe = new Image();
-        probe.decoding = "async";
-        probe.referrerPolicy = "no-referrer";
-        probe.onload = () => {
-          if (!probe.naturalWidth || !probe.naturalHeight || !badge.isConnected) return;
-          const image = document.createElement("img");
-          image.src = iconUrl;
-          image.alt = "";
-          image.loading = "lazy";
-          image.decoding = "async";
-          image.referrerPolicy = "no-referrer";
-          image.addEventListener("error", renderLocalFallback, { once: true });
-          badge.replaceChildren(image);
-          badge.dataset.badgeSource = "openligadb";
-        };
-        probe.onerror = () => {};
-        probe.src = iconUrl;
-      }
-      wrap.appendChild(badge);
-    }
+    const badge = document.createElement("span");
+    badge.className = "team-identity__badge";
+    const unresolvedId = `cl-${normalizeTeamLabel(name).replace(/\s+/g, "-") || "team"}`;
+    window.OSCTeamBadge?.render(badge, unresolvedId, name, { loading: "lazy" });
+    wrap.appendChild(badge);
 
     const label = document.createElement("span");
     label.className = "team-identity__name";
@@ -2424,6 +2378,52 @@ function normalizeGoalGetterEntries(goalGetterData) {
     return result;
   }
 
+  function piratenkodexInfoCards(cards) {
+    const result = safeArray(cards).map(card => ({ ...card }));
+    if (slug !== "piratenkodex") return result;
+
+    if (result[0]) {
+      result[0] = {
+        ...result[0],
+        titel: "",
+        text: "",
+        featureImage: "./assets/piratenkodex-kronjuwelen.jpg",
+        featureImageAlt: "Die Kronjuwelen des Piratenkodex",
+        featureImageClass: "feature-image--cover"
+      };
+    }
+
+    if (result[1]) {
+      result[1] = {
+        ...result[1],
+        titel: "Saison 2025/2026",
+        text: "",
+        recentMeetings: [
+          { home: "FC Barcelona", score: "2:0", away: "Real Madrid", season: "2025/26" },
+          { home: "AC Mailand", score: "1:0", away: "Inter Mailand", season: "2025/26" },
+          { home: "FC Liverpool", score: "2:3", away: "Manchester United", season: "2025/26" },
+          { home: "Inter Mailand", score: "3:2", away: "Juventus Turin", season: "2025/26" },
+          { home: "Paris Saint-Germain", score: "5:0", away: "Olympique Marseille", season: "2025/26" },
+          { home: "Manchester City", score: "0:2", away: "Manchester United", season: "2025/26" },
+          { home: "Manchester City", score: "4:0", away: "FC Liverpool", season: "2025/26" }
+        ]
+      };
+    }
+
+    if (result[2]) {
+      result[2] = {
+        ...result[2],
+        titel: "",
+        text: "",
+        featureImage: "./assets/piratenkodex-classicos-querformat.png",
+        featureImageAlt: "Old Smugglers Classico’s",
+        featureImageClass: "feature-image--cover"
+      };
+    }
+
+    return result;
+  }
+
   function renderCards(cards) {
     const root = $("info-cards");
     root.innerHTML = "";
@@ -2433,7 +2433,25 @@ function normalizeGoalGetterEntries(goalGetterData) {
       const h2 = document.createElement("h2");
       h2.textContent = card.titel || "";
       const p = document.createElement("p");
-      if (card.logo) {
+      if (card.featureImage) {
+        article.classList.add("info-card--feature-image");
+        if (card.featureImageClass === "feature-image--contain") {
+          article.classList.add("info-card--feature-contain");
+        }
+        h2.classList.add("is-hidden");
+        const box = document.createElement("div");
+        box.className = "feature-image-box";
+        box.style.setProperty("--feature-image", `url("${card.featureImage}")`);
+
+        const img = document.createElement("img");
+        img.className = "feature-image";
+        if (card.featureImageClass) img.classList.add(card.featureImageClass);
+        img.src = card.featureImage;
+        img.alt = card.featureImageAlt || "Piratenkodex-Motiv";
+
+        box.appendChild(img);
+        p.appendChild(box);
+      } else if (card.logo) {
         article.classList.add("info-card--competition-logo");
         if (card.logoClass) article.classList.add(card.logoClass);
         h2.classList.add("is-hidden");
@@ -2510,6 +2528,26 @@ function normalizeGoalGetterEntries(goalGetterData) {
           });
         }
 
+        p.appendChild(box);
+      } else if (Array.isArray(card.recentMeetings)) {
+        article.classList.add("info-card--recent-meetings");
+        const box = document.createElement("div");
+        box.className = "recent-meetings";
+        card.recentMeetings.forEach(entry => {
+          const row = document.createElement("div");
+          row.className = "recent-meeting-row";
+          const home = document.createElement("span");
+          home.className = "recent-meeting-home";
+          home.textContent = entry.home || "";
+          const score = document.createElement("strong");
+          score.className = "recent-meeting-score";
+          score.textContent = entry.score || "–";
+          const away = document.createElement("span");
+          away.className = "recent-meeting-away";
+          away.textContent = entry.away || "";
+          row.append(home, score, away);
+          box.appendChild(row);
+        });
         p.appendChild(box);
       } else if (Array.isArray(card.relegationSummary)) {
         article.classList.add("info-card--relegation-summary");
@@ -3095,7 +3133,9 @@ function normalizeGoalGetterEntries(goalGetterData) {
               ? dynamoDresdenInfoCards(data.karten, dynamoMatchData)
               : slug === "relegation"
                 ? relegationInfoCards(data.karten, centralGameData)
-                : data.karten;
+                : slug === "piratenkodex"
+                  ? piratenkodexInfoCards(data.karten)
+                  : data.karten;
       renderCards(preparedCards);
 
       const statusBox = $("status-box");

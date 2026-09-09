@@ -1,15 +1,35 @@
 {
   "schemaVersion": 2,
-  "modus": "current-season-test3",
-  "hinweis": "Aktueller tatsächlich verwendeter Tippspielbestand. Lokales Originalwappen hat Priorität; Schmugglersiegel bleibt Fallback.",
+  "modus": "verbindliche-lokale-originalwappen",
+  "hinweis": "Für jedes in den Spieldaten verwendete Team ist ein lokal gespeichertes Originalwappen verpflichtend. Ein Release mit fehlendem Eintrag oder fehlender Datei ist unzulässig; Fantasie- und Ersatzwappen sind verboten.",
   "teams": {
     "ac-mailand": {
       "path": "./assets/team-logos/original/ac-mailand.png",
       "status": "local-original-512",
       "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
     },
+    "aek-athen": {
+      "path": "./assets/team-logos/original/aek-athen.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB/Wikimedia, lokal archiviert 2026-09-09"
+    },
     "arminia-bielefeld": {
       "path": "./assets/team-logos/original/arminia-bielefeld.png",
+      "status": "local-original-512",
+      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "arsenal": {
+      "path": "./assets/team-logos/original/arsenal.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB, lokal archiviert 2026-09-09"
+    },
+    "as-rom": {
+      "path": "./assets/team-logos/original/as-rom.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB/Wikimedia, lokal archiviert 2026-09-09"
+    },
+    "aston-villa": {
+      "path": "./assets/team-logos/original/aston-villa.png",
       "status": "local-original-512",
       "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
     },
@@ -18,10 +38,10 @@
       "status": "local-original-web",
       "quelle": "öffentlich verfügbares Vereinswappen"
     },
-    "aston-villa": {
-      "path": "./assets/team-logos/original/aston-villa.png",
-      "status": "local-original-512",
-      "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    "atletico-madrid": {
+      "path": "./assets/team-logos/original/atletico-madrid.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB/UEFA, lokal archiviert 2026-09-09"
     },
     "augsburg": {
       "path": "./assets/team-logos/original/augsburg.png",
@@ -48,10 +68,25 @@
       "status": "local-original-512",
       "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
     },
+    "bod-glimt": {
+      "path": "./assets/team-logos/original/bod-glimt.png",
+      "status": "local-original-verified",
+      "quelle": "Wikimedia, lokal archiviert 2026-09-09"
+    },
     "braunschweig": {
       "path": "./assets/team-logos/original/braunschweig.png",
       "status": "local-original-512",
       "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "club-brugge": {
+      "path": "./assets/team-logos/original/club-brugge.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB/UEFA, lokal archiviert 2026-09-09"
+    },
+    "como-1907": {
+      "path": "./assets/team-logos/original/como-1907.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB/Wikimedia, lokal archiviert 2026-09-09"
     },
     "darmstadt-98": {
       "path": "./assets/team-logos/original/darmstadt-98.png",
@@ -88,6 +123,21 @@
       "status": "local-original-512",
       "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
     },
+    "fc-porto": {
+      "path": "./assets/team-logos/original/fc-porto.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB, lokal archiviert 2026-09-09"
+    },
+    "fenerbahce": {
+      "path": "./assets/team-logos/original/fenerbahce.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB/UEFA, lokal archiviert 2026-09-09"
+    },
+    "feyenoord-rotterdam": {
+      "path": "./assets/team-logos/original/feyenoord-rotterdam.png",
+      "status": "local-original-verified",
+      "quelle": "Wikimedia, lokal archiviert 2026-09-09"
+    },
     "frankfurt": {
       "path": "./assets/team-logos/original/frankfurt.png",
       "status": "local-original-512",
@@ -97,6 +147,11 @@
       "path": "./assets/team-logos/original/freiburg.png",
       "status": "local-original-512",
       "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "galatasaray": {
+      "path": "./assets/team-logos/original/galatasaray.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB/Wikimedia, lokal archiviert 2026-09-09"
     },
     "greuther-fuerth": {
       "path": "./assets/team-logos/original/greuther-fuerth.png",
@@ -158,6 +213,11 @@
       "status": "local-original-512",
       "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
     },
+    "lask": {
+      "path": "./assets/team-logos/original/lask.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB/Wikimedia, lokal archiviert 2026-09-09"
+    },
     "leverkusen": {
       "path": "./assets/team-logos/original/leverkusen.png",
       "status": "local-original-512",
@@ -203,6 +263,11 @@
       "status": "local-original-512",
       "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
     },
+    "osc-lille": {
+      "path": "./assets/team-logos/original/osc-lille.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB/Kicker, lokal archiviert 2026-09-09"
+    },
     "osnabrueck": {
       "path": "./assets/team-logos/original/osnabrueck.png",
       "status": "local-original-512",
@@ -218,15 +283,40 @@
       "status": "local-original-512",
       "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
     },
+    "psv-eindhoven": {
+      "path": "./assets/team-logos/original/psv-eindhoven.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB/UEFA, lokal archiviert 2026-09-09"
+    },
     "rb-leipzig": {
       "path": "./assets/team-logos/original/rb-leipzig.png",
       "status": "local-original-512",
       "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
     },
+    "rc-lens": {
+      "path": "./assets/team-logos/original/rc-lens.png",
+      "status": "local-original-verified",
+      "quelle": "öffentliches Originalwappen, lokal archiviert 2026-09-09"
+    },
+    "real-betis": {
+      "path": "./assets/team-logos/original/real-betis.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB/Wikimedia, lokal archiviert 2026-09-09"
+    },
     "real-madrid": {
       "path": "./assets/team-logos/original/real-madrid.png",
       "status": "local-original-512",
       "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "sabah-fc": {
+      "path": "./assets/team-logos/original/sabah-fc.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB/Wikimedia, lokal archiviert 2026-09-09"
+    },
+    "schachtar-donezk": {
+      "path": "./assets/team-logos/original/schachtar-donezk.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB, lokal archiviert 2026-09-09"
     },
     "schalke-04": {
       "path": "./assets/team-logos/original/schalke-04.png",
@@ -238,10 +328,25 @@
       "status": "local-original-web",
       "quelle": "öffentlich verfügbares Vereinswappen"
     },
+    "slavia-prag": {
+      "path": "./assets/team-logos/original/slavia-prag.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB/Wikimedia, lokal archiviert 2026-09-09"
+    },
+    "slovan-bratislava": {
+      "path": "./assets/team-logos/original/slovan-bratislava.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB/Wikimedia, lokal archiviert 2026-09-09"
+    },
     "sporting-lissabon": {
       "path": "./assets/team-logos/original/sporting-lissabon.png",
       "status": "local-original-512",
       "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "ssc-neapel": {
+      "path": "./assets/team-logos/original/ssc-neapel.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB/UEFA, lokal archiviert 2026-09-09"
     },
     "st-pauli": {
       "path": "./assets/team-logos/original/st-pauli.png",
@@ -262,6 +367,16 @@
       "path": "./assets/team-logos/original/union-berlin.png",
       "status": "local-original-512",
       "quelle": "vom Nutzer bereitgestelltes football-logos.cc Saisonpaket"
+    },
+    "viking-fk": {
+      "path": "./assets/team-logos/original/viking-fk.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB/Wikimedia, lokal archiviert 2026-09-09"
+    },
+    "villarreal-cf": {
+      "path": "./assets/team-logos/original/villarreal-cf.png",
+      "status": "local-original-verified",
+      "quelle": "OpenLigaDB/Wikimedia, lokal archiviert 2026-09-09"
     },
     "werder-bremen": {
       "path": "./assets/team-logos/original/werder-bremen.png",
