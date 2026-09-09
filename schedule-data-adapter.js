@@ -46,6 +46,18 @@
       const websiteView = await fetchJson("./website-view.json");
       if (validSchedule(websiteView.schedule)) {
         const schedule = websiteView.schedule;
+        // Teamname und Wappen stammen immer aus den verbindlichen zentralen
+        // Stammdaten. Der eingebettete Website-Snapshot darf diese Angaben
+        // nicht mit einem älteren oder unvollständigen Stand überschreiben.
+        let canonicalTeams = schedule.teams;
+        try {
+          const teamsDocument = await fetchJson("./teams.json");
+          if (Array.isArray(teamsDocument?.teams) && teamsDocument.teams.length) {
+            canonicalTeams = teamsDocument.teams;
+          }
+        } catch (teamError) {
+          console.error("Verbindliche Teamstammdaten konnten nicht geladen werden.", teamError);
+        }
         const activeSeason = schedule.activeSeason || websiteView.saison || "2026-27";
         return {
           source: "website-view.json",
@@ -62,7 +74,7 @@
             kicktippButtonText: schedule.kicktippButtonText || ""
           },
           games: await mergePersistentSchedule({ aktiveSaison: activeSeason, saisons: [{ id: activeSeason, spiele: schedule.games }] }),
-          teams: { teams: schedule.teams },
+          teams: { teams: canonicalTeams },
           matchdays: {
             aktiveSaison: activeSeason,
             saisons: [{ id: activeSeason, aktiv: true, tippspieltage: schedule.matchdays }]
