@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-07T04:37:47.721Z",
+  "updatedAt": "2026-09-09T04:39:25.458Z",
   "entries": {
     "sma-2026-27-auftakt-001": {
       "datum": "2026-08-09",
@@ -604,6 +604,1302 @@
       "status": "terminiert",
       "terminBestaetigt": true,
       "quelleStand": "2026-07-30"
+    },
+    "ucl-2026-27-1-spieltag-87388": {
+      "datum": "2026-09-08",
+      "datumVon": "2026-09-08",
+      "datumBis": "2026-09-08",
+      "anstoss": "18:45",
+      "status": "beendet",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-1-spieltag-87389": {
+      "datum": "2026-09-08",
+      "datumVon": "2026-09-08",
+      "datumBis": "2026-09-08",
+      "anstoss": "18:45",
+      "status": "beendet",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-1-spieltag-87390": {
+      "datum": "2026-09-08",
+      "datumVon": "2026-09-08",
+      "datumBis": "2026-09-08",
+      "anstoss": "21:00",
+      "status": "beendet",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-1-spieltag-87391": {
+      "datum": "2026-09-08",
+      "datumVon": "2026-09-08",
+      "datumBis": "2026-09-08",
+      "anstoss": "21:00",
+      "status": "beendet",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-1-spieltag-87392": {
+      "datum": "2026-09-08",
+      "datumVon": "2026-09-08",
+      "datumBis": "2026-09-08",
+      "anstoss": "21:00",
+      "status": "beendet",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-1-spieltag-87393": {
+      "datum": "2026-09-08",
+      "datumVon": "2026-09-08",
+      "datumBis": "2026-09-08",
+      "anstoss": "21:00",
+      "status": "beendet",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-1-spieltag-87394": {
+      "datum": "2026-09-09",
+      "datumVon": "2026-09-09",
+      "datumBis": "2026-09-09",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-1-spieltag-87395": {
+      "datum": "2026-09-09",
+      "datumVon": "2026-09-09",
+      "datumBis": "2026-09-09",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-1-spieltag-87396": {
+      "datum": "2026-09-09",
+      "datumVon": "2026-09-09",
+      "datumBis": "2026-09-09",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-1-spieltag-87397": {
+      "datum": "2026-09-09",
+      "datumVon": "2026-09-09",
+      "datumBis": "2026-09-09",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-1-spieltag-87398": {
+      "datum": "2026-09-09",
+      "datumVon": "2026-09-09",
+      "datumBis": "2026-09-09",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-1-spieltag-87399": {
+      "datum": "2026-09-09",
+      "datumVon": "2026-09-09",
+      "datumBis": "2026-09-09",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-1-spieltag-87400": {
+      "datum": "2026-09-10",
+      "datumVon": "2026-09-10",
+      "datumBis": "2026-09-10",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-1-spieltag-87405": {
+      "datum": "2026-09-10",
+      "datumVon": "2026-09-10",
+      "datumBis": "2026-09-10",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-1-spieltag-87401": {
+      "datum": "2026-09-10",
+      "datumVon": "2026-09-10",
+      "datumBis": "2026-09-10",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-1-spieltag-87402": {
+      "datum": "2026-09-10",
+      "datumVon": "2026-09-10",
+      "datumBis": "2026-09-10",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-1-spieltag-87403": {
+      "datum": "2026-09-10",
+      "datumVon": "2026-09-10",
+      "datumBis": "2026-09-10",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-1-spieltag-87404": {
+      "datum": "2026-09-10",
+      "datumVon": "2026-09-10",
+      "datumBis": "2026-09-10",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-2-spieltag-87406": {
+      "datum": "2026-10-13",
+      "datumVon": "2026-10-13",
+      "datumBis": "2026-10-13",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-2-spieltag-87407": {
+      "datum": "2026-10-13",
+      "datumVon": "2026-10-13",
+      "datumBis": "2026-10-13",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-2-spieltag-87408": {
+      "datum": "2026-10-13",
+      "datumVon": "2026-10-13",
+      "datumBis": "2026-10-13",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-2-spieltag-87409": {
+      "datum": "2026-10-13",
+      "datumVon": "2026-10-13",
+      "datumBis": "2026-10-13",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-2-spieltag-87410": {
+      "datum": "2026-10-13",
+      "datumVon": "2026-10-13",
+      "datumBis": "2026-10-13",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-2-spieltag-87411": {
+      "datum": "2026-10-13",
+      "datumVon": "2026-10-13",
+      "datumBis": "2026-10-13",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-2-spieltag-87412": {
+      "datum": "2026-10-13",
+      "datumVon": "2026-10-13",
+      "datumBis": "2026-10-13",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-2-spieltag-87413": {
+      "datum": "2026-10-13",
+      "datumVon": "2026-10-13",
+      "datumBis": "2026-10-13",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-2-spieltag-87414": {
+      "datum": "2026-10-13",
+      "datumVon": "2026-10-13",
+      "datumBis": "2026-10-13",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-2-spieltag-87415": {
+      "datum": "2026-10-14",
+      "datumVon": "2026-10-14",
+      "datumBis": "2026-10-14",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-2-spieltag-87416": {
+      "datum": "2026-10-14",
+      "datumVon": "2026-10-14",
+      "datumBis": "2026-10-14",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-2-spieltag-87417": {
+      "datum": "2026-10-14",
+      "datumVon": "2026-10-14",
+      "datumBis": "2026-10-14",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-2-spieltag-87418": {
+      "datum": "2026-10-14",
+      "datumVon": "2026-10-14",
+      "datumBis": "2026-10-14",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-2-spieltag-87419": {
+      "datum": "2026-10-14",
+      "datumVon": "2026-10-14",
+      "datumBis": "2026-10-14",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-2-spieltag-87420": {
+      "datum": "2026-10-14",
+      "datumVon": "2026-10-14",
+      "datumBis": "2026-10-14",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-2-spieltag-87421": {
+      "datum": "2026-10-14",
+      "datumVon": "2026-10-14",
+      "datumBis": "2026-10-14",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-2-spieltag-87422": {
+      "datum": "2026-10-14",
+      "datumVon": "2026-10-14",
+      "datumBis": "2026-10-14",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-2-spieltag-87423": {
+      "datum": "2026-10-14",
+      "datumVon": "2026-10-14",
+      "datumBis": "2026-10-14",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-3-spieltag-87424": {
+      "datum": "2026-10-20",
+      "datumVon": "2026-10-20",
+      "datumBis": "2026-10-20",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-3-spieltag-87425": {
+      "datum": "2026-10-20",
+      "datumVon": "2026-10-20",
+      "datumBis": "2026-10-20",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-3-spieltag-87426": {
+      "datum": "2026-10-20",
+      "datumVon": "2026-10-20",
+      "datumBis": "2026-10-20",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-3-spieltag-87427": {
+      "datum": "2026-10-20",
+      "datumVon": "2026-10-20",
+      "datumBis": "2026-10-20",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-3-spieltag-87428": {
+      "datum": "2026-10-20",
+      "datumVon": "2026-10-20",
+      "datumBis": "2026-10-20",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-3-spieltag-87429": {
+      "datum": "2026-10-20",
+      "datumVon": "2026-10-20",
+      "datumBis": "2026-10-20",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-3-spieltag-87430": {
+      "datum": "2026-10-20",
+      "datumVon": "2026-10-20",
+      "datumBis": "2026-10-20",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-3-spieltag-87431": {
+      "datum": "2026-10-20",
+      "datumVon": "2026-10-20",
+      "datumBis": "2026-10-20",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-3-spieltag-87432": {
+      "datum": "2026-10-20",
+      "datumVon": "2026-10-20",
+      "datumBis": "2026-10-20",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-3-spieltag-87433": {
+      "datum": "2026-10-21",
+      "datumVon": "2026-10-21",
+      "datumBis": "2026-10-21",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-3-spieltag-87434": {
+      "datum": "2026-10-21",
+      "datumVon": "2026-10-21",
+      "datumBis": "2026-10-21",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-3-spieltag-87435": {
+      "datum": "2026-10-21",
+      "datumVon": "2026-10-21",
+      "datumBis": "2026-10-21",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-3-spieltag-87436": {
+      "datum": "2026-10-21",
+      "datumVon": "2026-10-21",
+      "datumBis": "2026-10-21",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-3-spieltag-87437": {
+      "datum": "2026-10-21",
+      "datumVon": "2026-10-21",
+      "datumBis": "2026-10-21",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-3-spieltag-87438": {
+      "datum": "2026-10-21",
+      "datumVon": "2026-10-21",
+      "datumBis": "2026-10-21",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-3-spieltag-87439": {
+      "datum": "2026-10-21",
+      "datumVon": "2026-10-21",
+      "datumBis": "2026-10-21",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-3-spieltag-87440": {
+      "datum": "2026-10-21",
+      "datumVon": "2026-10-21",
+      "datumBis": "2026-10-21",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-3-spieltag-87441": {
+      "datum": "2026-10-21",
+      "datumVon": "2026-10-21",
+      "datumBis": "2026-10-21",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-4-spieltag-87442": {
+      "datum": "2026-11-03",
+      "datumVon": "2026-11-03",
+      "datumBis": "2026-11-03",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-4-spieltag-87443": {
+      "datum": "2026-11-03",
+      "datumVon": "2026-11-03",
+      "datumBis": "2026-11-03",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-4-spieltag-87444": {
+      "datum": "2026-11-03",
+      "datumVon": "2026-11-03",
+      "datumBis": "2026-11-03",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-4-spieltag-87445": {
+      "datum": "2026-11-03",
+      "datumVon": "2026-11-03",
+      "datumBis": "2026-11-03",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-4-spieltag-87446": {
+      "datum": "2026-11-03",
+      "datumVon": "2026-11-03",
+      "datumBis": "2026-11-03",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-4-spieltag-87447": {
+      "datum": "2026-11-03",
+      "datumVon": "2026-11-03",
+      "datumBis": "2026-11-03",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-4-spieltag-87448": {
+      "datum": "2026-11-03",
+      "datumVon": "2026-11-03",
+      "datumBis": "2026-11-03",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-4-spieltag-87449": {
+      "datum": "2026-11-03",
+      "datumVon": "2026-11-03",
+      "datumBis": "2026-11-03",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-4-spieltag-87450": {
+      "datum": "2026-11-03",
+      "datumVon": "2026-11-03",
+      "datumBis": "2026-11-03",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-4-spieltag-87451": {
+      "datum": "2026-11-04",
+      "datumVon": "2026-11-04",
+      "datumBis": "2026-11-04",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-4-spieltag-87452": {
+      "datum": "2026-11-04",
+      "datumVon": "2026-11-04",
+      "datumBis": "2026-11-04",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-4-spieltag-87453": {
+      "datum": "2026-11-04",
+      "datumVon": "2026-11-04",
+      "datumBis": "2026-11-04",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-4-spieltag-87454": {
+      "datum": "2026-11-04",
+      "datumVon": "2026-11-04",
+      "datumBis": "2026-11-04",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-4-spieltag-87455": {
+      "datum": "2026-11-04",
+      "datumVon": "2026-11-04",
+      "datumBis": "2026-11-04",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-4-spieltag-87456": {
+      "datum": "2026-11-04",
+      "datumVon": "2026-11-04",
+      "datumBis": "2026-11-04",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-4-spieltag-87457": {
+      "datum": "2026-11-04",
+      "datumVon": "2026-11-04",
+      "datumBis": "2026-11-04",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-4-spieltag-87458": {
+      "datum": "2026-11-04",
+      "datumVon": "2026-11-04",
+      "datumBis": "2026-11-04",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-4-spieltag-87459": {
+      "datum": "2026-11-04",
+      "datumVon": "2026-11-04",
+      "datumBis": "2026-11-04",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-5-spieltag-87460": {
+      "datum": "2026-11-24",
+      "datumVon": "2026-11-24",
+      "datumBis": "2026-11-24",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-5-spieltag-87461": {
+      "datum": "2026-11-24",
+      "datumVon": "2026-11-24",
+      "datumBis": "2026-11-24",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-5-spieltag-87462": {
+      "datum": "2026-11-24",
+      "datumVon": "2026-11-24",
+      "datumBis": "2026-11-24",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-5-spieltag-87463": {
+      "datum": "2026-11-24",
+      "datumVon": "2026-11-24",
+      "datumBis": "2026-11-24",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-5-spieltag-87464": {
+      "datum": "2026-11-24",
+      "datumVon": "2026-11-24",
+      "datumBis": "2026-11-24",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-5-spieltag-87465": {
+      "datum": "2026-11-24",
+      "datumVon": "2026-11-24",
+      "datumBis": "2026-11-24",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-5-spieltag-87466": {
+      "datum": "2026-11-24",
+      "datumVon": "2026-11-24",
+      "datumBis": "2026-11-24",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-5-spieltag-87467": {
+      "datum": "2026-11-24",
+      "datumVon": "2026-11-24",
+      "datumBis": "2026-11-24",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-5-spieltag-87468": {
+      "datum": "2026-11-24",
+      "datumVon": "2026-11-24",
+      "datumBis": "2026-11-24",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-5-spieltag-87469": {
+      "datum": "2026-11-25",
+      "datumVon": "2026-11-25",
+      "datumBis": "2026-11-25",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-5-spieltag-87470": {
+      "datum": "2026-11-25",
+      "datumVon": "2026-11-25",
+      "datumBis": "2026-11-25",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-5-spieltag-87471": {
+      "datum": "2026-11-25",
+      "datumVon": "2026-11-25",
+      "datumBis": "2026-11-25",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-5-spieltag-87472": {
+      "datum": "2026-11-25",
+      "datumVon": "2026-11-25",
+      "datumBis": "2026-11-25",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-5-spieltag-87473": {
+      "datum": "2026-11-25",
+      "datumVon": "2026-11-25",
+      "datumBis": "2026-11-25",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-5-spieltag-87474": {
+      "datum": "2026-11-25",
+      "datumVon": "2026-11-25",
+      "datumBis": "2026-11-25",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-5-spieltag-87475": {
+      "datum": "2026-11-25",
+      "datumVon": "2026-11-25",
+      "datumBis": "2026-11-25",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-5-spieltag-87476": {
+      "datum": "2026-11-25",
+      "datumVon": "2026-11-25",
+      "datumBis": "2026-11-25",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-5-spieltag-87477": {
+      "datum": "2026-11-25",
+      "datumVon": "2026-11-25",
+      "datumBis": "2026-11-25",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-6-spieltag-87478": {
+      "datum": "2026-12-08",
+      "datumVon": "2026-12-08",
+      "datumBis": "2026-12-08",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-6-spieltag-87479": {
+      "datum": "2026-12-08",
+      "datumVon": "2026-12-08",
+      "datumBis": "2026-12-08",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-6-spieltag-87480": {
+      "datum": "2026-12-08",
+      "datumVon": "2026-12-08",
+      "datumBis": "2026-12-08",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-6-spieltag-87481": {
+      "datum": "2026-12-08",
+      "datumVon": "2026-12-08",
+      "datumBis": "2026-12-08",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-6-spieltag-87482": {
+      "datum": "2026-12-08",
+      "datumVon": "2026-12-08",
+      "datumBis": "2026-12-08",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-6-spieltag-87483": {
+      "datum": "2026-12-08",
+      "datumVon": "2026-12-08",
+      "datumBis": "2026-12-08",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-6-spieltag-87484": {
+      "datum": "2026-12-08",
+      "datumVon": "2026-12-08",
+      "datumBis": "2026-12-08",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-6-spieltag-87485": {
+      "datum": "2026-12-08",
+      "datumVon": "2026-12-08",
+      "datumBis": "2026-12-08",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-6-spieltag-87486": {
+      "datum": "2026-12-08",
+      "datumVon": "2026-12-08",
+      "datumBis": "2026-12-08",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-6-spieltag-87487": {
+      "datum": "2026-12-09",
+      "datumVon": "2026-12-09",
+      "datumBis": "2026-12-09",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-6-spieltag-87488": {
+      "datum": "2026-12-09",
+      "datumVon": "2026-12-09",
+      "datumBis": "2026-12-09",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-6-spieltag-87489": {
+      "datum": "2026-12-09",
+      "datumVon": "2026-12-09",
+      "datumBis": "2026-12-09",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-6-spieltag-87490": {
+      "datum": "2026-12-09",
+      "datumVon": "2026-12-09",
+      "datumBis": "2026-12-09",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-6-spieltag-87491": {
+      "datum": "2026-12-09",
+      "datumVon": "2026-12-09",
+      "datumBis": "2026-12-09",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-6-spieltag-87492": {
+      "datum": "2026-12-09",
+      "datumVon": "2026-12-09",
+      "datumBis": "2026-12-09",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-6-spieltag-87493": {
+      "datum": "2026-12-09",
+      "datumVon": "2026-12-09",
+      "datumBis": "2026-12-09",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-6-spieltag-87494": {
+      "datum": "2026-12-09",
+      "datumVon": "2026-12-09",
+      "datumBis": "2026-12-09",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-6-spieltag-87495": {
+      "datum": "2026-12-09",
+      "datumVon": "2026-12-09",
+      "datumBis": "2026-12-09",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-7-spieltag-87496": {
+      "datum": "2027-01-19",
+      "datumVon": "2027-01-19",
+      "datumBis": "2027-01-19",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-7-spieltag-87497": {
+      "datum": "2027-01-19",
+      "datumVon": "2027-01-19",
+      "datumBis": "2027-01-19",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-7-spieltag-87498": {
+      "datum": "2027-01-19",
+      "datumVon": "2027-01-19",
+      "datumBis": "2027-01-19",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-7-spieltag-87499": {
+      "datum": "2027-01-19",
+      "datumVon": "2027-01-19",
+      "datumBis": "2027-01-19",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-7-spieltag-87500": {
+      "datum": "2027-01-19",
+      "datumVon": "2027-01-19",
+      "datumBis": "2027-01-19",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-7-spieltag-87501": {
+      "datum": "2027-01-19",
+      "datumVon": "2027-01-19",
+      "datumBis": "2027-01-19",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-7-spieltag-87502": {
+      "datum": "2027-01-19",
+      "datumVon": "2027-01-19",
+      "datumBis": "2027-01-19",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-7-spieltag-87503": {
+      "datum": "2027-01-19",
+      "datumVon": "2027-01-19",
+      "datumBis": "2027-01-19",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-7-spieltag-87504": {
+      "datum": "2027-01-19",
+      "datumVon": "2027-01-19",
+      "datumBis": "2027-01-19",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-7-spieltag-87505": {
+      "datum": "2027-01-20",
+      "datumVon": "2027-01-20",
+      "datumBis": "2027-01-20",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-7-spieltag-87506": {
+      "datum": "2027-01-20",
+      "datumVon": "2027-01-20",
+      "datumBis": "2027-01-20",
+      "anstoss": "18:45",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-7-spieltag-87507": {
+      "datum": "2027-01-20",
+      "datumVon": "2027-01-20",
+      "datumBis": "2027-01-20",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-7-spieltag-87508": {
+      "datum": "2027-01-20",
+      "datumVon": "2027-01-20",
+      "datumBis": "2027-01-20",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-7-spieltag-87509": {
+      "datum": "2027-01-20",
+      "datumVon": "2027-01-20",
+      "datumBis": "2027-01-20",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-7-spieltag-87510": {
+      "datum": "2027-01-20",
+      "datumVon": "2027-01-20",
+      "datumBis": "2027-01-20",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-7-spieltag-87511": {
+      "datum": "2027-01-20",
+      "datumVon": "2027-01-20",
+      "datumBis": "2027-01-20",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-7-spieltag-87512": {
+      "datum": "2027-01-20",
+      "datumVon": "2027-01-20",
+      "datumBis": "2027-01-20",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-7-spieltag-87513": {
+      "datum": "2027-01-20",
+      "datumVon": "2027-01-20",
+      "datumBis": "2027-01-20",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-8-spieltag-87514": {
+      "datum": "2027-01-27",
+      "datumVon": "2027-01-27",
+      "datumBis": "2027-01-27",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-8-spieltag-87515": {
+      "datum": "2027-01-27",
+      "datumVon": "2027-01-27",
+      "datumBis": "2027-01-27",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-8-spieltag-87516": {
+      "datum": "2027-01-27",
+      "datumVon": "2027-01-27",
+      "datumBis": "2027-01-27",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-8-spieltag-87517": {
+      "datum": "2027-01-27",
+      "datumVon": "2027-01-27",
+      "datumBis": "2027-01-27",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-8-spieltag-87518": {
+      "datum": "2027-01-27",
+      "datumVon": "2027-01-27",
+      "datumBis": "2027-01-27",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-8-spieltag-87519": {
+      "datum": "2027-01-27",
+      "datumVon": "2027-01-27",
+      "datumBis": "2027-01-27",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-8-spieltag-87520": {
+      "datum": "2027-01-27",
+      "datumVon": "2027-01-27",
+      "datumBis": "2027-01-27",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-8-spieltag-87521": {
+      "datum": "2027-01-27",
+      "datumVon": "2027-01-27",
+      "datumBis": "2027-01-27",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-8-spieltag-87522": {
+      "datum": "2027-01-27",
+      "datumVon": "2027-01-27",
+      "datumBis": "2027-01-27",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-8-spieltag-87523": {
+      "datum": "2027-01-27",
+      "datumVon": "2027-01-27",
+      "datumBis": "2027-01-27",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-8-spieltag-87524": {
+      "datum": "2027-01-27",
+      "datumVon": "2027-01-27",
+      "datumBis": "2027-01-27",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-8-spieltag-87525": {
+      "datum": "2027-01-27",
+      "datumVon": "2027-01-27",
+      "datumBis": "2027-01-27",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-8-spieltag-87526": {
+      "datum": "2027-01-27",
+      "datumVon": "2027-01-27",
+      "datumBis": "2027-01-27",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-8-spieltag-87527": {
+      "datum": "2027-01-27",
+      "datumVon": "2027-01-27",
+      "datumBis": "2027-01-27",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-8-spieltag-87528": {
+      "datum": "2027-01-27",
+      "datumVon": "2027-01-27",
+      "datumBis": "2027-01-27",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-8-spieltag-87529": {
+      "datum": "2027-01-27",
+      "datumVon": "2027-01-27",
+      "datumBis": "2027-01-27",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-8-spieltag-87530": {
+      "datum": "2027-01-27",
+      "datumVon": "2027-01-27",
+      "datumBis": "2027-01-27",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
+    },
+    "ucl-2026-27-8-spieltag-87531": {
+      "datum": "2027-01-27",
+      "datumVon": "2027-01-27",
+      "datumBis": "2027-01-27",
+      "anstoss": "21:00",
+      "status": "terminiert",
+      "terminBestaetigt": true,
+      "quelleStand": "2026-09-09"
     }
   }
 }
