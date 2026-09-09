@@ -5371,9 +5371,9 @@
 
     @media (min-width: 761px) {
       .sm-event-row__match {
-        display: flex;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 1.2rem minmax(0, 1fr);
         align-items: center;
-        justify-content: center;
         gap: .62rem;
         text-align: center;
       }
@@ -5383,9 +5383,23 @@
       .sm-event-row__team--away {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        width: auto;
+        width: 100%;
         gap: .42rem;
+      }
+
+      .sm-event-row__team--home {
+        justify-content: flex-end;
+        text-align: right;
+      }
+
+      .sm-event-row__team--away {
+        justify-content: flex-start;
+        text-align: left;
+      }
+
+      .sm-event-row__separator {
+        width: 1.2rem;
+        text-align: center;
       }
 
       .sm-event-row__team-name {
