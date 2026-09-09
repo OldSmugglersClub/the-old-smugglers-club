@@ -940,14 +940,24 @@
       .map((cluster, index) => ({ ...cluster, matchdayNumber: index + 1 }));
   }
 
-  function championsLeagueDisplayMatch(match, matchdayNumber = null, provisional = false) {
+  function centralChampionsLeagueMatch(match, centralMatches) {
+    const matchId = String(match?.matchID ?? match?.matchId ?? match?.MatchID ?? "").trim();
+    if (!matchId) return null;
+    return safeArray(centralMatches).find(item =>
+      item?.wettbewerb === "champions-league" &&
+      String(item.id || "").endsWith(`-${matchId}`)
+    ) || null;
+  }
+
+  function championsLeagueDisplayMatch(match, matchdayNumber = null, provisional = false, centralMatches = []) {
     const rawDate = openLigaDbMatchDate(match);
     const rawTime = String(match?.matchDateTime ?? match?.MatchDateTime ?? "").match(/T(\d{2}:\d{2})/)?.[1] || "";
     const score = openLigaDbFinalResult(match);
     const homeName = openLigaDbTeamName(match?.team1);
     const awayName = openLigaDbTeamName(match?.team2);
+    const centralMatch = centralChampionsLeagueMatch(match, centralMatches);
     return {
-      id: match?.matchID ? `openligadb-cl-${match.matchID}` : "",
+      id: centralMatch?.id || (match?.matchID ? `openligadb-cl-${match.matchID}` : ""),
       datum: provisional || !rawDate ? "Terminierung offen" : formatDate(rawDate),
       datumSortierung: provisional || !rawDate ? "9999-12-31" : rawDate,
       datumIso: provisional || !rawDate ? "" : rawDate,
@@ -969,7 +979,10 @@
       runde: matchdayNumber ? `${matchdayNumber}. Spieltag` : "Ligaphase",
       spieltagNummer: matchdayNumber,
       terminBestaetigt: !provisional && Boolean(rawDate && rawTime),
-      abgeschlossen: match?.matchIsFinished === true && Boolean(score)
+      abgeschlossen: match?.matchIsFinished === true && Boolean(score),
+      tippverteilung: centralMatch?.tippverteilung && typeof centralMatch.tippverteilung === "object"
+        ? centralMatch.tippverteilung
+        : null
     };
   }
 
@@ -1003,12 +1016,13 @@
     }).filter(Boolean);
   }
 
-  function renderChampionsLeaguePhaseOverview(openLigaDbMatches, root) {
+  function renderChampionsLeaguePhaseOverview(openLigaDbMatches, centralGameData, root) {
     if (slug !== "champions-league") return;
     const matches = championsLeaguePhaseMatches(openLigaDbMatches);
     const clusters = championsLeagueMatchdayClusters(matches);
     const scheduledMatchdays = clusters.length;
     const scheduleConfirmed = scheduledMatchdays > 0;
+    const centralMatches = centralGamesForCompetition(centralGameData, "champions-league");
 
     if (!matches.length) return;
     const schedule = document.createElement("section");
@@ -1039,7 +1053,7 @@
         const rows = cluster.matches
           .slice()
           .sort((a, b) => String(a?.matchDateTime ?? "").localeCompare(String(b?.matchDateTime ?? "")))
-          .map(match => championsLeagueDisplayMatch(match, matchdayNumber, false));
+          .map(match => championsLeagueDisplayMatch(match, matchdayNumber, false, centralMatches));
         details.append(summary, createMatchList(rows, {
           teamIdentityFactory: (teamId, teamName, modifier, match, side) => {
             const sourceTeam = side === "home" ? match?.heimTeamSource : match?.auswaertsTeamSource;
@@ -2643,8 +2657,16 @@ function normalizeGoalGetterEntries(goalGetterData) {
     const link = document.createElement("a");
     const anchor = cocoMatchAnchor(match);
     const returnTarget = `${window.location.pathname}${window.location.search}#${anchor}`;
+    const params = new URLSearchParams({
+      game: match.id,
+      competition: slug,
+      round: match.runde || "Spiele",
+      home: match.heimTeamId || "",
+      away: match.auswaertsTeamId || "",
+      return: returnTarget
+    });
     link.className = "coco-match-link";
-    link.href = `./coco/?game=${encodeURIComponent(match.id)}&return=${encodeURIComponent(returnTarget)}`;
+    link.href = `./coco/?${params.toString()}`;
     link.textContent = "Coco fragen";
     link.setAttribute("aria-label", `Coco zu ${match.heim} gegen ${match.auswaerts} fragen`);
     return link;
@@ -2909,7 +2931,7 @@ function normalizeGoalGetterEntries(goalGetterData) {
     renderCompetitionNavigator(root);
     if (slug === "champions-league") {
       renderCompetitionSituation(gameData, teamData, root, championsLeagueSituationGames(openLigaDbClTable));
-      renderChampionsLeaguePhaseOverview(openLigaDbClTable, root);
+      renderChampionsLeaguePhaseOverview(openLigaDbClTable, gameData, root);
     } else {
       renderCompetitionSituation(gameData, teamData, root);
     }

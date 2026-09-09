@@ -18,6 +18,7 @@
   let originalLogos = new Map();
   let competitionChoices = [];
   let selectedGame = null;
+  let deepLinkedGameId = '';
   let revealing = false;
 
   document.addEventListener('DOMContentLoaded', init);
@@ -225,6 +226,7 @@
     const now = new Date();
     const limit = new Date(now.getTime() + ORACLE_WINDOW_DAYS * 24 * 60 * 60 * 1000);
     return games.filter(game => {
+      if (deepLinkedGameId && game.id === deepLinkedGameId) return true;
       const kickoff = gameTime(game);
       return kickoff > now && kickoff <= limit;
     });
@@ -252,13 +254,25 @@
   }
 
   function applyDeepLinkedGame() {
-    const gameId = new URLSearchParams(window.location.search).get('game');
+    const params = new URLSearchParams(window.location.search);
+    const gameId = params.get('game');
     if (!gameId) return;
-    const game = oracleGames().find(item => item.id === gameId);
+    const competition = params.get('competition');
+    const round = params.get('round');
+    const home = params.get('home');
+    const away = params.get('away');
+    const game = games.find(item => item.id === gameId) || games.find(item =>
+      (!competition || item.wettbewerb === competition) &&
+      (!round || (item.runde || 'Ohne Runde') === round) &&
+      (!home || item.heimTeamId === home) &&
+      (!away || item.auswaertsTeamId === away)
+    );
     if (!game) {
       setStatus('Diese Partie kann Coco derzeit nicht befragen.', true);
       return;
     }
+    deepLinkedGameId = game.id;
+    populateCompetitions();
     els.competition.value = game.wettbewerb;
     populateRounds();
     els.round.value = game.runde || 'Ohne Runde';
