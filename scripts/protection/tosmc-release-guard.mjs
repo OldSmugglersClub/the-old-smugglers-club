@@ -11,6 +11,7 @@ const kind = value("--kind") || "auto";
 const output = value("--output");
 const fail = [];
 const ok = [];
+const invalidJson = new Set();
 const sha = file => crypto.createHash("sha256").update(fs.readFileSync(file)).digest("hex");
 const read = file => fs.readFileSync(path.join(root,file),"utf8");
 const exists = file => fs.existsSync(path.join(root,file));
@@ -33,7 +34,7 @@ function snapshot(dir=root) {
 function checkJsonFiles() {
   for (const rel of walk(root).filter(x=>x.endsWith(".json"))) {
     try { parseJson(fs.readFileSync(path.join(root,rel),"utf8")); }
-    catch(e) { fail.push(`${rel}: ungültiges JSON (${e.message})`); }
+    catch(e) { invalidJson.add(rel); fail.push(`${rel}: ungültiges JSON (${e.message})`); }
   }
   if (!fail.some(x=>x.includes("ungültiges JSON"))) ok.push("Alle aktiven JSON-Dateien sind syntaktisch gültig.");
 }
@@ -61,18 +62,18 @@ function checkWebsite(){
     if(refs.size!==1)fail.push(`${asset}: abweichende Cache-Kennungen: ${[...refs].map(([v,p])=>`${v} (${p.join(",")})`).join("; ")}`);
     else ok.push(`${asset}: gemeinsame Cache-Kennung ${[...refs.keys()][0]}.`);
   }
-  if(exists("highscore.json"))checkRankingMirror(json("highscore.json"),"highscore.json");
-  if(exists("website-view.json")){
+  if(exists("highscore.json")&&!invalidJson.has("highscore.json"))checkRankingMirror(json("highscore.json"),"highscore.json");
+  if(exists("website-view.json")&&!invalidJson.has("website-view.json")){
     const view=json("website-view.json");
     if(view?.highscore)checkRankingMirror(view.highscore,"website-view.json/highscore");
   }
-  if(exists("spieldaten.json")&&exists("assets/team-logos/original-team-logos.json")){
+  if(exists("spieldaten.json")&&!invalidJson.has("spieldaten.json")&&exists("assets/team-logos/original-team-logos.json")&&!invalidJson.has("assets/team-logos/original-team-logos.json")){
     const games=flattenGames(json("spieldaten.json")), reg=json("assets/team-logos/original-team-logos.json");
     const entries=reg.teams||reg; const map=new Map((Array.isArray(entries)?entries:Object.entries(entries).map(([id,v])=>({id,...v}))).map(x=>[String(x.id||x.teamId),x]));
     const ids=[...new Set(games.flatMap(g=>[g?.heimTeamId,g?.auswaertsTeamId]).filter(Boolean).map(String))];
     const missing=ids.filter(id=>{const e=map.get(id); const f=e&&(e.file||e.path||e.logo); return !e||e.original===false||!f||!fs.existsSync(path.join(root,f.replace(/^\.\//,"")));});
     if(missing.length)fail.push(`Originalwappen fehlen/ungültig: ${missing.join(", ")}`); else ok.push(`Originalwappen: ${ids.length}/${ids.length} verwendete Teams abgesichert.`);
-    if(exists("teams.json")){
+    if(exists("teams.json")&&!invalidJson.has("teams.json")){
       const teams=json("teams.json")?.teams||[];
       const teamsById=new Map(teams.map(team=>[String(team?.id||""),team]));
       const wrong=[];
@@ -99,7 +100,7 @@ function checkAdmin(){
   if(!active)fail.push("Aktive Adminversion in admin.html nicht ermittelbar.");
   for(const f of files){const v=read(f).trim(); if(v!==active)fail.push(`${f}=${v}, aktive Oberfläche=${active}.`);}
   if(active&&files.every(f=>read(f).trim()===active))ok.push(`Admin-Version konsistent: ${active}.`);
-  if(exists("highscore.json"))checkRankingMirror(json("highscore.json"),"highscore.json");
+  if(exists("highscore.json")&&!invalidJson.has("highscore.json"))checkRankingMirror(json("highscore.json"),"highscore.json");
   const src=exists("spieltag-aktualisieren.js")?read("spieltag-aktualisieren.js"):"";
   for(const required of ["assertOfficialOverallIntegrity","assertLogbookHistoryPreserved","assertMonotonicOutputVersions","SHA256-WEBSITE-DATEN.txt","PRUEFPROTOKOLL.json"]){
     if(!src.includes(required))fail.push(`Admin-Schutzfunktion fehlt: ${required}`);
