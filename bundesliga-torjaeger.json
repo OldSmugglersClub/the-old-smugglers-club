@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 11,
-  "aktualisiert": "2026-09-06",
+  "datenVersion": 12,
+  "aktualisiert": "2026-09-10",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
@@ -224,6 +224,10 @@
     },
     {
       "name": "Alexis Claude-Maurice",
+      "tore": 1
+    },
+    {
+      "name": "A. Ibrahimovic",
       "tore": 1
     }
   ]
