@@ -1,0 +1,33 @@
+TOSMC LIVE-REPO – Weihnachtsregatta Ein-Fenster-Update
+
+Basis:
+Aktuelles vom Nutzer hochgeladenes Live-Repo.
+Die relevanten Ausgangsdateien wurden vor Übernahme gegen die bestätigte
+Test2v2-Ausgangsbasis geprüft und waren bytegleich.
+
+Geändert:
+- weihnachtsregatta.html
+- weihnachtsregatta.json
+- NEU: assets/weihnachtsregatta-2026.jpg
+
+Übernommen wurde exakt der im Test2v2 bestätigte Ein-Fenster-Stand:
+- ein einziges großes Bildfenster
+- neues Weihnachtsregatta-Bild
+- Zeitraum-/Wertungskarten entfallen
+- Bild proportional, ohne Cropping
+- Cache-Buster im Bildpfad
+
+NICHT verändert:
+- wettbewerb.js
+- wettbewerb.css
+- teams.json
+- datenregister.js
+- datenmodell.js
+- team-badge.js
+- Bundesliga
+- Champions League
+- Piratenkodex
+- sonstige Wettbewerbsseiten
+
+Schutzmechanismus:
+Keine gemeinsamen Renderer-, CSS-, Team-/Wappen- oder Datenpfade verändert.

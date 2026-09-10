@@ -5,16 +5,11 @@
   "beschreibung": "Fünf ausgewählte Begegnungen über den Jahreswechsel bilden gemeinsam einen besonderen Kicktipp-Spieltag des Old Smugglers Club.",
   "karten": [
     {
-      "titel": "Modus",
-      "text": "Die Weihnachtsregatta besteht aus fünf realen Spielen, die gemeinsam als ein eigener Tippspieltag gewertet werden."
-    },
-    {
-      "titel": "Zeitraum",
-      "text": "Die fünf Begegnungen finden vom 26. Dezember 2026 bis zum 3. Januar 2027 statt."
-    },
-    {
-      "titel": "Wertung",
-      "text": "Für jeden Tipp gelten die Clubregeln: 2 Punkte für die richtige Tendenz, 3 Punkte für die richtige Tordifferenz und 5 Punkte für das exakte Ergebnis."
+      "titel": "",
+      "text": "",
+      "featureImage": "./assets/weihnachtsregatta-2026.jpg?v=20260910-2",
+      "featureImageAlt": "Weihnachtsregatta 2026/2027 – Weihnachtstippspiel des Old Smugglers Club",
+      "featureImageClass": "feature-image--contain"
     }
   ],
   "aktuellerStandTitel": "",
