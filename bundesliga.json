@@ -6,11 +6,11 @@
   "karten": [
     {
       "titel": "Torjäger",
-      "text": "Aktuelle Torjägerdaten werden automatisch aus OpenLigaDB geladen."
+      "text": ""
     },
     {
       "titel": "Verfolgerfeld",
-      "text": "Die Plätze 2 bis 5 erscheinen hier, sobald OpenLigaDB verwertbare Torjägerdaten liefert."
+      "text": ""
     },
     {
       "titel": "",

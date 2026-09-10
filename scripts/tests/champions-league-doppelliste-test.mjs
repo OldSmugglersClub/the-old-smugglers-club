@@ -13,10 +13,10 @@ const requiredSnippets = [
 ];
 
 for (const snippet of requiredSnippets) {
-  if (!script.includes(snippet)) throw new Error(`HF64-Schutz fehlt: ${snippet}`);
+  if (!script.includes(snippet)) throw new Error(`CL-Doppellisten-Schutz fehlt: ${snippet}`);
 }
 
-for (const page of [
+const pages = [
   "bundesliga.html",
   "champions-league.html",
   "dfb-pokal.html",
@@ -25,11 +25,21 @@ for (const page of [
   "piratenkodex.html",
   "relegation.html",
   "weihnachtsregatta.html"
-]) {
+];
+
+let sharedScriptTag = null;
+for (const page of pages) {
   const html = fs.readFileSync(path.join(root, page), "utf8");
-  if (!html.includes('wettbewerb.js?v=4.9.2-HF12-HF64')) {
-    throw new Error(`${page}: gemeinsame HF64-Skriptkennung fehlt`);
+  const match = html.match(/wettbewerb\.js\?v=([^"']+)/);
+  if (!match) {
+    throw new Error(`${page}: gemeinsame wettbewerb.js-Skriptkennung fehlt`);
+  }
+  const currentTag = `wettbewerb.js?v=${match[1]}`;
+  if (sharedScriptTag === null) {
+    sharedScriptTag = currentTag;
+  } else if (currentTag !== sharedScriptTag) {
+    throw new Error(`${page}: abweichende gemeinsame Skriptkennung ${currentTag}; erwartet ${sharedScriptTag}`);
   }
 }
 
-console.log("CL-Doppellisten-Prüfung bestanden: obere Ligaphasenansicht ersetzt die zentrale Doppelliste; Fallback bleibt erhalten.");
+console.log(`CL-Doppellisten-Prüfung bestanden: obere Ligaphasenansicht ersetzt die zentrale Doppelliste; Fallback bleibt erhalten; gemeinsame Skriptkennung konsistent (${sharedScriptTag}).`);

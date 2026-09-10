@@ -19,18 +19,7 @@
   ],
   "aktuellerStandTitel": "",
   "aktuellerStand": "",
-  "bereiche": [
-    {
-      "typ": "liste",
-      "titel": "Regeln der Dynamo-Aufträge",
-      "anzeigen": true,
-      "eintraege": [
-        "Nur ausdrücklich angekündigte Dynamo-Spiele werden gewertet.",
-        "Der Auftrag wird vor dem Spiel mit Name, Termin und Begegnung veröffentlicht.",
-        "Nach dem Spiel werden Ergebnis, Punkte und Status in der Historie ergänzt."
-      ]
-    }
-  ],
+  "bereiche": [],
   "buttons": [
     {
       "text": "Kicktipp Live Action",

@@ -1,33 +1,22 @@
-TOSMC LIVE-REPO – Weihnachtsregatta Ein-Fenster-Update
+TOSMC Live Repository – 4.9.2-HF12-HF65
 
-Basis:
-Aktuelles vom Nutzer hochgeladenes Live-Repo.
-Die relevanten Ausgangsdateien wurden vor Übernahme gegen die bestätigte
-Test2v2-Ausgangsbasis geprüft und waren bytegleich.
+Enthaelt die in Test2v2 bestaetigten Aenderungen seit dem letzten Live-Stand:
+1. Besuchertext-Cleanup in den Wettbewerbsdarstellungen.
+2. Entfernung des rein statischen Fensters "Regeln der Dynamo-Auftraege".
+3. Aktualisierung des CL-Doppellisten-Regressionstests von harter HF64-Pruefung auf konsistente gemeinsame Skriptkennung.
 
-Geändert:
-- weihnachtsregatta.html
-- weihnachtsregatta.json
-- NEU: assets/weihnachtsregatta-2026.jpg
+Gemeinsame produktive Aenderung:
+- wettbewerb.js (nur der bestaetigte Besuchertext-Cleanup)
+- gemeinsame wettbewerb.js-Cachekennung auf allen 8 Wettbewerbsseiten = 4.9.2-HF12-HF65
 
-Übernommen wurde exakt der im Test2v2 bestätigte Ein-Fenster-Stand:
-- ein einziges großes Bildfenster
-- neues Weihnachtsregatta-Bild
-- Zeitraum-/Wertungskarten entfallen
-- Bild proportional, ohne Cropping
-- Cache-Buster im Bildpfad
-
-NICHT verändert:
-- wettbewerb.js
+Unveraendert:
 - wettbewerb.css
 - teams.json
 - datenregister.js
 - datenmodell.js
 - team-badge.js
-- Bundesliga
-- Champions League
-- Piratenkodex
-- sonstige Wettbewerbsseiten
+- Originalwappen-/Teamlogik
+- Highscore-/Wertungsdaten
 
-Schutzmechanismus:
-Keine gemeinsamen Renderer-, CSS-, Team-/Wappen- oder Datenpfade verändert.
+Release Guard: OK.
+Bekannte Alt-Testabweichungen automation-hf15 und automation-hf14 bestehen bereits identisch auf der unveraenderten Live-HF64-Basis und sind keine Regression dieses Updates.

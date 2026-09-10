@@ -6,11 +6,11 @@
   "karten": [
     {
       "titel": "Aktueller Torjäger",
-      "text": "Wird automatisch aus OpenLigaDB geladen. Bis zum ersten verwertbaren Treffer bleibt der Wettbewerb offen."
+      "text": ""
     },
     {
       "titel": "Die letzten 5\nChampions-League-Sieger",
-      "text": "Die letzten fünf Champions-League-Sieger werden mit den vorhandenen Teamwappen angezeigt."
+      "text": ""
     },
     {
       "titel": "",

@@ -6,11 +6,11 @@
   "karten": [
     {
       "titel": "Aktueller Torjäger",
-      "text": "Wird automatisch aus OpenLigaDB geladen. Falls noch keine Torschützen gepflegt sind, erscheint ein Hinweis."
+      "text": ""
     },
     {
       "titel": "Die letzten 5 Pokalsieger",
-      "text": "Die letzten fünf DFB-Pokalsieger werden mit Originalwappen angezeigt."
+      "text": ""
     },
     {
       "titel": "",

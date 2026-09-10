@@ -457,10 +457,6 @@
     formWrapper.appendChild(table);
     section.appendChild(formWrapper);
 
-    const note = document.createElement("p");
-    note.className = "data-note";
-    note.textContent = "Die Statistik wird nach jedem eingetragenen Bundesliga-Ergebnis automatisch aktualisiert. Torjäger- und Kartenstatistiken folgen, sobald entsprechende Saisonwerte vorliegen.";
-    section.appendChild(note);
     root.appendChild(section);
   }
 
@@ -1030,12 +1026,12 @@
     const title = document.createElement("h2");
     title.textContent = scheduleConfirmed ? "Spiele der Champions League" : "Ligaphase · Paarungen in Vorbereitung";
     schedule.appendChild(title);
-    const note = document.createElement("p");
-    note.className = "data-note";
-    note.textContent = scheduleConfirmed
-      ? `Aktuell sind ${scheduledMatchdays} von 8 Spieltagen vollständig terminiert und plausibilisiert. Weitere Spieltage erscheinen automatisch, sobald OpenLigaDB sie vollständig bereitstellt.`
-      : "OpenLigaDB hat bereits Ligaphasen-Paarungen erfasst, aber noch keinen vollständigen terminieren 18er-Spieltag. Deshalb werden keine erfundenen Spieltagsnummern oder Platzhaltertermine angezeigt.";
-    schedule.appendChild(note);
+    if (!scheduleConfirmed) {
+      const note = document.createElement("p");
+      note.className = "data-note";
+      note.textContent = "OpenLigaDB hat bereits Ligaphasen-Paarungen erfasst, aber noch keinen vollständigen terminieren 18er-Spieltag. Deshalb werden keine erfundenen Spieltagsnummern oder Platzhaltertermine angezeigt.";
+      schedule.appendChild(note);
+    }
 
     if (scheduleConfirmed) {
       const accordion = document.createElement("div");
@@ -1248,11 +1244,7 @@
       tbody.appendChild(tr);
     });
     table.appendChild(tbody); wrapper.appendChild(table); section.appendChild(wrapper);
-    const note = document.createElement("p"); note.className = "data-note";
-    note.textContent = complete
-      ? "Die Tabelle wurde ausschließlich aus den acht Spieltagen der Champions-League-Ligaphase berechnet. K.-o.-Spiele verändern diesen Endstand nicht."
-      : "Die Tabelle wird ausschließlich aus beendeten Spielen der OpenLigaDB-Ligaphase berechnet. Eine Spieltagsnummer wird erst nach belastbarer Zuordnung verwendet.";
-    section.appendChild(note); root.appendChild(section);
+    root.appendChild(section);
   }
 
   function championsLeagueKoRoundKey(match) {
@@ -1350,11 +1342,6 @@
     heading.textContent = "Champions League · Turnierbaum";
     headingRow.append(heading);
     section.appendChild(headingRow);
-
-    const note = document.createElement("p");
-    note.className = "data-note";
-    note.textContent = "K.-o.-Phase mit aggregierten Hin- und Rückspielen. Angezeigt wird das Gesamtergebnis der jeweiligen Paarung.";
-    section.appendChild(note);
 
     const scroll = document.createElement("div");
     scroll.className = "ko-bracket-scroll";
