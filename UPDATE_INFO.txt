@@ -1,22 +1,9 @@
-TOSMC Live Repository – 4.9.2-HF12-HF65
+TOSMC Live-Repo HF65 – Wartungsupdate Alt-Regressionstests
 
-Enthaelt die in Test2v2 bestaetigten Aenderungen seit dem letzten Live-Stand:
-1. Besuchertext-Cleanup in den Wettbewerbsdarstellungen.
-2. Entfernung des rein statischen Fensters "Regeln der Dynamo-Auftraege".
-3. Aktualisierung des CL-Doppellisten-Regressionstests von harter HF64-Pruefung auf konsistente gemeinsame Skriptkennung.
+Geaendert werden ausschliesslich:
+- scripts/tests/automation-hf14-p1-yaml-test.py
+- scripts/tests/automation-hf15-dynamo-terminautomatik-test.mjs
 
-Gemeinsame produktive Aenderung:
-- wettbewerb.js (nur der bestaetigte Besuchertext-Cleanup)
-- gemeinsame wettbewerb.js-Cachekennung auf allen 8 Wettbewerbsseiten = 4.9.2-HF12-HF65
-
-Unveraendert:
-- wettbewerb.css
-- teams.json
-- datenregister.js
-- datenmodell.js
-- team-badge.js
-- Originalwappen-/Teamlogik
-- Highscore-/Wertungsdaten
-
-Release Guard: OK.
-Bekannte Alt-Testabweichungen automation-hf15 und automation-hf14 bestehen bereits identisch auf der unveraenderten Live-HF64-Basis und sind keine Regression dieses Updates.
+Keine Produktionsdateien werden geaendert.
+Die Tests wurden auf die aktuelle Implementierung angepasst und erfolgreich ausgefuehrt.
+TOSMC Release Guard: OK.
