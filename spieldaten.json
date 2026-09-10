@@ -256,11 +256,11 @@
           "runde": "7. Spieltag",
           "spieltagNummer": 7,
           "spielNummer": 63,
-          "datum": "2026-10-11",
-          "datumVon": "2026-10-11",
-          "datumBis": "2026-10-11",
-          "datumAnzeige": "11.10.2026",
-          "anstoss": "13:30",
+          "datum": "2026-10-10",
+          "datumVon": "2026-10-10",
+          "datumBis": "2026-10-10",
+          "datumAnzeige": "10.10.2026",
+          "anstoss": "13:00",
           "terminBestaetigt": true,
           "heimtore": null,
           "auswaertstore": null,
@@ -269,7 +269,7 @@
             "smugglerauftrag"
           ],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen. Smugglerauftrag zum 7. Spieltag der 2. Bundesliga.",
-          "quelleStand": "2026-07-03",
+          "quelleStand": "2026-09-10",
           "heimTeamId": "osnabrueck",
           "auswaertsTeamId": "dynamo-dresden"
         },
@@ -356,11 +356,11 @@
           "runde": "11. Spieltag",
           "spieltagNummer": 11,
           "spielNummer": 95,
-          "datum": "2026-11-08",
-          "datumVon": "2026-11-08",
-          "datumBis": "2026-11-08",
-          "datumAnzeige": "08.11.2026",
-          "anstoss": "13:30",
+          "datum": "2026-11-06",
+          "datumVon": "2026-11-06",
+          "datumBis": "2026-11-06",
+          "datumAnzeige": "06.11.2026",
+          "anstoss": "18:30",
           "terminBestaetigt": true,
           "heimtore": null,
           "auswaertstore": null,
@@ -369,7 +369,7 @@
             "smugglerauftrag"
           ],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen. Smugglerauftrag zum 11. Spieltag der 2. Bundesliga.",
-          "quelleStand": "2026-07-03",
+          "quelleStand": "2026-09-10",
           "heimTeamId": "dynamo-dresden",
           "auswaertsTeamId": "greuther-fuerth"
         },
@@ -406,11 +406,11 @@
           "runde": "13. Spieltag",
           "spieltagNummer": 13,
           "spielNummer": 112,
-          "datum": "2026-11-29",
-          "datumVon": "2026-11-29",
-          "datumBis": "2026-11-29",
-          "datumAnzeige": "29.11.2026",
-          "anstoss": "13:30",
+          "datum": "2026-11-28",
+          "datumVon": "2026-11-28",
+          "datumBis": "2026-11-28",
+          "datumAnzeige": "28.11.2026",
+          "anstoss": "13:00",
           "terminBestaetigt": true,
           "heimtore": null,
           "auswaertstore": null,
@@ -419,7 +419,7 @@
             "smugglerauftrag"
           ],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen. Smugglerauftrag zum 13. Spieltag der 2. Bundesliga.",
-          "quelleStand": "2026-07-03",
+          "quelleStand": "2026-09-10",
           "heimTeamId": "dynamo-dresden",
           "auswaertsTeamId": "st-pauli"
         },
@@ -12553,6 +12553,6 @@
       ]
     }
   ],
-  "datenVersion": 35,
+  "datenVersion": 36,
   "aktualisiert": "2026-09-10"
 }
