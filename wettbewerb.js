@@ -1017,14 +1017,14 @@
   }
 
   function renderChampionsLeaguePhaseOverview(openLigaDbMatches, centralGameData, root) {
-    if (slug !== "champions-league") return;
+    if (slug !== "champions-league") return false;
     const matches = championsLeaguePhaseMatches(openLigaDbMatches);
     const clusters = championsLeagueMatchdayClusters(matches);
     const scheduledMatchdays = clusters.length;
     const scheduleConfirmed = scheduledMatchdays > 0;
     const centralMatches = centralGamesForCompetition(centralGameData, "champions-league");
 
-    if (!matches.length) return;
+    if (!matches.length) return false;
     const schedule = document.createElement("section");
     schedule.className = "dynamic-section";
     const title = document.createElement("h2");
@@ -1073,6 +1073,7 @@
       schedule.appendChild(waiting);
     }
     root.appendChild(schedule);
+    return true;
   }
 
   function openLigaDbSafeIconUrl(team) {
@@ -2967,9 +2968,10 @@ function normalizeGoalGetterEntries(goalGetterData) {
     root.innerHTML = "";
     document.body.classList.add(`page-${slug}`);
     renderCompetitionNavigator(root);
+    let championsLeaguePhaseOverviewRendered = false;
     if (slug === "champions-league") {
       renderCompetitionSituation(gameData, teamData, root, championsLeagueSituationGames(openLigaDbClTable));
-      renderChampionsLeaguePhaseOverview(openLigaDbClTable, gameData, root);
+      championsLeaguePhaseOverviewRendered = renderChampionsLeaguePhaseOverview(openLigaDbClTable, gameData, root);
     } else {
       renderCompetitionSituation(gameData, teamData, root);
     }
@@ -2985,6 +2987,7 @@ function normalizeGoalGetterEntries(goalGetterData) {
       renderBundesligaStatistics(gameData, teamData, root);
     }
     safeArray(sections).filter(s => s && s.anzeigen !== false).forEach(section => {
+      if (championsLeaguePhaseOverviewRendered && section.typ === "spiele" && section.zentral === true) return;
       const article = document.createElement("section");
       article.className = "dynamic-section";
       if (section.titel) {
