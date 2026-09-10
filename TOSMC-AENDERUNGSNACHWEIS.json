@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "tool": "TOSMC Release Guard",
+  "createdAt": "2026-09-10T15:02:19.715Z",
+  "changeType": "system",
+  "status": "OK",
+  "changes": [
+    {
+      "path": ".github/workflows/tosmc-schutzpruefung.yml",
+      "type": "new",
+      "before": null,
+      "after": "8b18166b601e9c05759bc827e2319bdd92196f0b64526505b0bfa8385cd573da"
+    },
+    {
+      "path": "SCHUTZARCHITEKTUR.md",
+      "type": "new",
+      "before": null,
+      "after": "0477d40da4af81ac8af5d85ea9b24fa1912f82ab61ec70ab46829aadf7b9d30f"
+    },
+    {
+      "path": "TOSMC-SCHUTZPRUEFUNG.json",
+      "type": "new",
+      "before": null,
+      "after": "c2b159c7c5b481ff15f134566e15cf80b79bcfd20330e0ef81101af471edcf98"
+    },
+    {
+      "path": "scripts/protection/AENDERUNGSPLAN-BEISPIEL.json",
+      "type": "new",
+      "before": null,
+      "after": "1c4cb1dd71aa68c98840acd2d6bda443c92bf3787e7117a172d86699425bf711"
+    },
+    {
+      "path": "scripts/protection/tosmc-protection-policy.json",
+      "type": "new",
+      "before": null,
+      "after": "bf1f5923c071dfaa98b3e99ec0e1477ca9ed634585e8ab2e3f3a794bb972a0e8"
+    },
+    {
+      "path": "scripts/protection/tosmc-release-guard.mjs",
+      "type": "new",
+      "before": null,
+      "after": "f485a273cbd1c58ab81c8a7198e05d70ef4affb93132d09dad09c9576bf6ae90"
+    }
+  ],
+  "unauthorizedChanges": [],
+  "unapprovedProtectedChanges": [],
+  "plan": {
+    "changeType": "system",
+    "purpose": "In Test2v2 bestätigten Release Guard auf Live-Website HF64 übertragen",
+    "allowedPaths": [
+      ".github/workflows/tosmc-schutzpruefung.yml",
+      "SCHUTZARCHITEKTUR.md",
+      "TOSMC-SCHUTZPRUEFUNG.json",
+      "TOSMC-AENDERUNGSNACHWEIS.json",
+      "scripts/protection/**"
+    ],
+    "protectedPaths": [
+      "teams.json",
+      "schedule-data-adapter.js",
+      "spielbetrieb.json",
+      "spieldaten.json",
+      "highscore.json",
+      "website-view.json",
+      "tipps.json",
+      "punkte.json",
+      "wettbewerb.js",
+      "wettbewerb.css"
+    ],
+    "explicitlyApprovedProtectedPaths": []
+  }
+}
