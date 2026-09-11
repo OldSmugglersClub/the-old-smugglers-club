@@ -267,9 +267,15 @@ footer{
 @media(max-width:800px){
   .competition-nav-actions{
     padding:12px;
+    gap:10px;
   }
   .competition-nav-actions .btn{
+    flex:0 0 auto;
+    width:100%;
     max-width:none;
+    min-height:50px;
+    height:auto;
+    padding:.8rem 1rem;
   }
 }
 .matchday-accordion{
