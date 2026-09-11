@@ -1808,12 +1808,12 @@
           "datumAnzeige": "11.09.2026",
           "anstoss": "20:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 1,
+          "auswaertstore": 3,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "",
-          "quelleStand": "2026-07-30",
+          "quelleStand": "2026-09-12",
           "heimTeamId": "union-berlin",
           "auswaertsTeamId": "schalke-04"
         },
@@ -12691,6 +12691,6 @@
       ]
     }
   ],
-  "datenVersion": 38,
-  "aktualisiert": "2026-09-11"
+  "datenVersion": 39,
+  "aktualisiert": "2026-09-12"
 }
