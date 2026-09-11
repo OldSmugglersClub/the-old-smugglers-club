@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 8,
-  "aktualisiert": "2026-09-06T20:27:35.671Z",
+  "datenVersion": 9,
+  "aktualisiert": "2026-09-11T04:18:29.628Z",
   "saison": "2026-27",
   "regelwerk": {
     "kapitaene": "Alle Tipper mit der höchsten tatsächlichen Spieltagspunktzahl; kein künstlicher Tie-Break.",
@@ -3860,6 +3860,289 @@
             "exakt": 12,
             "differenz": 81,
             "tendenz": 234
+          }
+        }
+      ]
+    },
+    {
+      "id": "2026-27__champions-league__1-spieltag__ucl-2026-27-1-spieltag-87388-ucl-2026-27-1-spieltag-87389-ucl-2026-27-1-spieltag-87390-ucl-2026-27-1-spieltag-87391-ucl-2026-27-1-spieltag-87392-ucl-2026-27-1-spieltag-87393-ucl-2026-27-1-spieltag-87394-ucl-2026-27-1-spieltag-87395-ucl-2026-27-1-spieltag-87396-ucl-2026-27-1-spieltag-87397-ucl-2026-27-1-spieltag-87398-ucl-2026-27-1-spieltag-87399-ucl-2026-27-1-spieltag-87400-ucl-2026-27-1-spieltag-87401-ucl-2026-27-1-spieltag-87402-ucl-2026-27-1-spieltag-87403-ucl-2026-27-1-spieltag-87404-ucl-2026-27-1-spieltag-87405",
+      "bezeichnung": "Champions League 1. Spieltag",
+      "wettbewerb": "champions-league",
+      "runde": "1. Spieltag",
+      "abgeschlossen": true,
+      "spielIds": [
+        "ucl-2026-27-1-spieltag-87388",
+        "ucl-2026-27-1-spieltag-87389",
+        "ucl-2026-27-1-spieltag-87390",
+        "ucl-2026-27-1-spieltag-87391",
+        "ucl-2026-27-1-spieltag-87392",
+        "ucl-2026-27-1-spieltag-87393",
+        "ucl-2026-27-1-spieltag-87394",
+        "ucl-2026-27-1-spieltag-87395",
+        "ucl-2026-27-1-spieltag-87396",
+        "ucl-2026-27-1-spieltag-87397",
+        "ucl-2026-27-1-spieltag-87398",
+        "ucl-2026-27-1-spieltag-87399",
+        "ucl-2026-27-1-spieltag-87400",
+        "ucl-2026-27-1-spieltag-87405",
+        "ucl-2026-27-1-spieltag-87401",
+        "ucl-2026-27-1-spieltag-87402",
+        "ucl-2026-27-1-spieltag-87403",
+        "ucl-2026-27-1-spieltag-87404"
+      ],
+      "kapitaene": [
+        {
+          "teilnehmerId": "dani1893",
+          "teilnehmer": "Dani1893",
+          "punkte": 50,
+          "exakt": 6,
+          "differenz": 2,
+          "tendenz": 7
+        }
+      ],
+      "highlights": [
+        {
+          "typ": "kapitaene",
+          "prioritaet": 100,
+          "anzeigen": true,
+          "daten": {
+            "punkte": 50,
+            "anzahl": 1,
+            "tipper": [
+              {
+                "teilnehmerId": "dani1893",
+                "teilnehmer": "Dani1893",
+                "punkte": 50,
+                "exakt": 6,
+                "differenz": 2,
+                "tendenz": 7
+              }
+            ]
+          }
+        },
+        {
+          "typ": "gegen-den-strom",
+          "prioritaet": 90,
+          "anzeigen": true,
+          "daten": {
+            "spielId": "ucl-2026-27-1-spieltag-87400",
+            "heimTeam": "psv-eindhoven",
+            "auswaertsTeam": "schachtar-donezk",
+            "ergebnis": "1:1",
+            "abgegeben": 81,
+            "nichtAbgegeben": 19,
+            "tippverteilung": {
+              "1": 74,
+              "2": 1,
+              "X": 6
+            },
+            "exakt": 4,
+            "differenz": 2,
+            "tendenz": 0,
+            "richtigerAusgang": "X",
+            "meistGetippt": {
+              "ausgang": "1",
+              "anzahl": 74
+            },
+            "gegenDenStrom": true,
+            "richtigeTendenz": {
+              "anzahl": 6,
+              "anteil": 7.4,
+              "tipper": [
+                {
+                  "teilnehmerId": "wildemoni",
+                  "teilnehmer": "WildeMoni",
+                  "tipp": "1:1",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "kleinersachse",
+                  "teilnehmer": "kleinersachse",
+                  "tipp": "1:1",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "waltersen",
+                  "teilnehmer": "Waltersen",
+                  "tipp": "2:2",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "marc86",
+                  "teilnehmer": "Marc86",
+                  "tipp": "2:2",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "frankfurterjung",
+                  "teilnehmer": "FrankfurterJung",
+                  "tipp": "1:1",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "salas1904",
+                  "teilnehmer": "Salas1904",
+                  "tipp": "1:1",
+                  "exakt": true
+                }
+              ],
+              "exakteTipps": 4
+            }
+          }
+        },
+        {
+          "typ": "wer-hats-gerochen",
+          "prioritaet": 85,
+          "anzeigen": true,
+          "daten": {
+            "grenzeProzent": 25,
+            "testOverride": false,
+            "faelle": [
+              {
+                "spielId": "ucl-2026-27-1-spieltag-87400",
+                "heimTeam": "psv-eindhoven",
+                "auswaertsTeam": "schachtar-donezk",
+                "ergebnis": "1:1",
+                "abgegeben": 81,
+                "nichtAbgegeben": 19,
+                "tippverteilung": {
+                  "1": 74,
+                  "2": 1,
+                  "X": 6
+                },
+                "exakt": 4,
+                "differenz": 2,
+                "tendenz": 0,
+                "richtigerAusgang": "X",
+                "meistGetippt": {
+                  "ausgang": "1",
+                  "anzahl": 74
+                },
+                "gegenDenStrom": true,
+                "richtigeTendenz": {
+                  "anzahl": 6,
+                  "anteil": 7.4,
+                  "tipper": [
+                    {
+                      "teilnehmerId": "wildemoni",
+                      "teilnehmer": "WildeMoni",
+                      "tipp": "1:1",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "kleinersachse",
+                      "teilnehmer": "kleinersachse",
+                      "tipp": "1:1",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "waltersen",
+                      "teilnehmer": "Waltersen",
+                      "tipp": "2:2",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "marc86",
+                      "teilnehmer": "Marc86",
+                      "tipp": "2:2",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "frankfurterjung",
+                      "teilnehmer": "FrankfurterJung",
+                      "tipp": "1:1",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "salas1904",
+                      "teilnehmer": "Salas1904",
+                      "tipp": "1:1",
+                      "exakt": true
+                    }
+                  ],
+                  "exakteTipps": 4
+                }
+              }
+            ]
+          }
+        },
+        {
+          "typ": "volltreffer",
+          "prioritaet": 80,
+          "anzeigen": true,
+          "daten": {
+            "maxExakt": 6,
+            "anzahl": 1,
+            "tipper": [
+              {
+                "teilnehmerId": "dani1893",
+                "teilnehmer": "Dani1893",
+                "exakt": 6
+              }
+            ]
+          }
+        },
+        {
+          "typ": "crewduell",
+          "prioritaet": 70,
+          "anzeigen": true,
+          "daten": {
+            "teams": [
+              {
+                "team": "New Smugglers Team",
+                "durchschnitt": 27.05,
+                "punktesumme": 2029,
+                "mitglieder": 75
+              },
+              {
+                "team": "Old Smugglers Team",
+                "durchschnitt": 23.92,
+                "punktesumme": 598,
+                "mitglieder": 25
+              }
+            ],
+            "sieger": "New Smugglers Team",
+            "differenz": 3.13
+          }
+        },
+        {
+          "typ": "kursbewegung",
+          "prioritaet": 40,
+          "anzeigen": true,
+          "grund": null,
+          "daten": {
+            "gewinner": [
+              {
+                "teilnehmerId": "lucipher",
+                "teilnehmer": "LuCipher",
+                "vorher": 65,
+                "jetzt": 21,
+                "veraenderung": 44
+              }
+            ],
+            "verlierer": [
+              {
+                "teilnehmerId": "marcor",
+                "teilnehmer": "MarcoR",
+                "vorher": 19,
+                "jetzt": 82,
+                "veraenderung": -63
+              }
+            ],
+            "maxGewinn": 44,
+            "maxVerlust": -63
+          }
+        },
+        {
+          "typ": "zahlen-aus-der-kombuese",
+          "prioritaet": 30,
+          "anzeigen": true,
+          "daten": {
+            "abgegeben": 81,
+            "nichtAbgegeben": 21,
+            "exakt": 157,
+            "differenz": 234,
+            "tendenz": 570
           }
         }
       ]

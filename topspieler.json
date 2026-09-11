@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 7,
-  "aktualisiertAm": "2026-09-06T20:27:35.671Z",
+  "datenVersion": 8,
+  "aktualisiertAm": "2026-09-11T04:18:29.628Z",
   "saison": "2026-27",
   "status": "Berechnet",
   "kategorien": [
     {
       "titel": "Spieltagsführer",
-      "name": "baslermario",
-      "wert": "39 Punkte"
+      "name": "WildeMoni",
+      "wert": "82 Punkte"
     },
     {
       "titel": "Meiste exakte Tipps",
-      "name": "RK69",
-      "wert": "3"
+      "name": "WildeMoni",
+      "wert": "6"
     },
     {
       "titel": "Beste Serie",
