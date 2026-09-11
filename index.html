@@ -10,7 +10,7 @@
   <!-- Diese Version verwendet exakt die aktuell in GitHub sichtbaren Dateinamen:
        Hintergrund.jpeg
        banner.png
-       Champion-Trophäe.jpeg
+       champion-trophy.jpeg
        favicon.jpeg
        logo.jpeg
   -->
@@ -6031,16 +6031,10 @@
 
           <div class="trophy-stage">
             <img class="trophy"
-                 src="./Champion-Trophäe.jpeg"
+                 src="./champion-trophy.jpeg"
                  alt="Champion-Pokal des Old Smugglers Club"
-                 onerror="
-                   const fallbacks=['./champion-trophy.jpg','./Champion-Trophäe.jpg','./champion-trophy.jpeg'];
-                   const next=fallbacks.shift();
-                   if(!this.dataset.tried){this.dataset.tried='1';this.src=next;}
-                   else if(this.dataset.tried==='1'){this.dataset.tried='2';this.src=fallbacks[0];}
-                   else if(this.dataset.tried==='2'){this.dataset.tried='3';this.src=fallbacks[1];}
-                   else{this.style.display='none';this.nextElementSibling.hidden=false;}
-                 " loading="lazy" decoding="async">
+                 onerror="this.style.display='none';this.nextElementSibling.hidden=false;"
+                 loading="lazy" decoding="async">
             <div class="trophy-fallback" hidden aria-label="Pokal">Pokal</div>
           </div>
 
