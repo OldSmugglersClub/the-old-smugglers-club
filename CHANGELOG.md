@@ -1,3 +1,11 @@
+# 4.9.2-HF12-HF89
+
+- Live-Übernahme des in Test2v2 abgenommenen Stands `4.9.2-HF12-HF89-TEST2`.
+- Desktop-Kachel „Der Hohe Schmugglerrat“ auf 455 px Mindesthöhe korrigiert.
+- Redundante Schnelllinks in dieser Kachel auf Desktop ausgeblendet.
+- „Kicktipp Live Action“ auf Desktop um 4 px nach unten feinjustiert.
+- Mobile Darstellung und funktionale Datenpfade unverändert.
+
 # 4.9.2-HF12-HF44
 
 - Live-Übernahme von `4.9.2-HF12-HF43-TEST50`.
