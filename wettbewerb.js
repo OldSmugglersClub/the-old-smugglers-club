@@ -3533,7 +3533,6 @@ function normalizeGoalGetterEntries(goalGetterData) {
       renderStandardGamesSlot(coreSections, buttons, root, { title: "Spiele von Dynamo Dresden" });
       renderMidNavigation(buttons, root);
       renderDynamoTableExcerpt(dynamoMatchData, root);
-      renderMidNavigation(buttons, root);
       renderDynamoDutyForm(dynamoMatchData, openLigaDbDfbMatches, root);
     } else {
       renderStandardGamesSlot(coreSections, buttons, root, { title: competitionDefinition(slug)?.scheduleTitle || "Spiele" });
