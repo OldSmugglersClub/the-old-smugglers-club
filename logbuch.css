@@ -881,3 +881,66 @@ body{overflow-x:hidden}
     width:104px;
   }
 }
+
+
+/* Website 4.9.2-HF12-HF70 – Kursbewegung ohne doppelte Aussage. */
+.lb-highlight--movement .lb-movement-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+.lb-movement-side{
+  min-width:0;
+  padding:12px;
+  border:1px solid rgba(190,137,48,.24);
+  border-radius:9px;
+  background:rgba(10,6,4,.34);
+}
+.lb-movement-side h4{
+  margin:0 0 10px;
+  color:#d8a84e;
+  font-size:.82rem;
+  text-transform:uppercase;
+  letter-spacing:.075em;
+}
+.lb-movement-side .lb-movement-names{
+  margin-top:0;
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:7px;
+}
+.lb-movement-side .lb-name--movement{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  border-radius:8px;
+  white-space:normal;
+}
+.lb-movement-side .lb-name--movement > span{
+  min-width:0;
+  overflow-wrap:anywhere;
+}
+.lb-movement-side .lb-name--movement strong{
+  flex:0 0 auto;
+}
+@media(max-width:760px){
+  .lb-highlight--movement .lb-movement-grid{grid-template-columns:1fr}
+  .lb-movement-side{padding:10px}
+}
+
+/* Website 4.9.2-HF72 – laufender Wertungsblock blockiert abgeschlossene Rueckblicke nicht mehr */
+.logbook-30s-previous-label{
+  margin:14px 0 8px;
+  padding-top:12px;
+  border-top:1px solid rgba(198,142,47,.22);
+}
+.logbook-30s-previous-label .logbook-kicker{
+  color:#d7a64d;
+  font-size:.68rem;
+  font-weight:900;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+}
+#lb-current .lb-entry--pending + .lb-entry{margin-top:18px}
