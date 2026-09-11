@@ -1815,7 +1815,31 @@
           "notiz": "",
           "quelleStand": "2026-09-12",
           "heimTeamId": "union-berlin",
-          "auswaertsTeamId": "schalke-04"
+          "auswaertsTeamId": "schalke-04",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-09-11T22:47:53.943Z",
+            "abgegeben": 77,
+            "nichtAbgegeben": 23,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 37,
+                "prozent": 48.1
+              },
+              "2": {
+                "anzahl": 25,
+                "prozent": 32.5
+              },
+              "X": {
+                "anzahl": 15,
+                "prozent": 19.5
+              }
+            }
+          },
+          "aktualisiertAm": "2026-09-11T22:47:53.943Z"
         },
         {
           "id": "bl-2026-27-03-019",
@@ -12691,6 +12715,6 @@
       ]
     }
   ],
-  "datenVersion": 39,
-  "aktualisiert": "2026-09-12"
+  "datenVersion": 40,
+  "aktualisiert": "2026-09-11"
 }
