@@ -5252,6 +5252,7 @@
     }
 
     @media (min-width: 901px) {
+      .countdown-panel { justify-content: space-between; }
       .welcome-command-button { margin-top: 4px; }
       .welcome-secondary-nav { display: none; }
     }
@@ -5280,13 +5281,23 @@
       /* HF7: mobile Schnellzugriffe – geschlossene Tafeln im vorhandenen
          rotbraunen Clubstil und mehr Abstand zwischen umgebrochenen Zeilen. */
       .welcome-secondary-nav {
-        gap: .65rem .5rem;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .65rem;
+        width: 100%;
         line-height: 1.45;
       }
       .welcome-secondary-nav a {
+        min-height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .65rem .45rem;
         border-color: rgba(213,161,59,.28);
         background: linear-gradient(145deg, rgba(56,36,19,.82), rgba(20,12,7,.92));
+        text-align: center;
       }
+      .welcome-secondary-nav .nav-separator { display: none; }
     }
 
 
