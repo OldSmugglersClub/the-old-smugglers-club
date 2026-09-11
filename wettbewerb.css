@@ -210,6 +210,68 @@ footer{
 .quick-actions{
   margin:0 0 16px;
 }
+
+/* Wettbewerbsnavigation: mittig und am Seitenende */
+.competition-nav-actions{
+  width:100%;
+  justify-content:center;
+  align-items:stretch;
+  gap:12px;
+  margin:24px 0;
+  padding:16px;
+  border:1px solid rgba(183,122,35,.42);
+  border-radius:10px;
+  background:linear-gradient(180deg,rgba(46,25,10,.72),rgba(17,10,5,.72));
+  box-sizing:border-box;
+}
+.competition-nav-actions .btn{
+  flex:1 1 220px;
+  max-width:320px;
+}
+.competition-nav-actions--bottom{
+  margin:0;
+}
+
+/* Wettbewerbsnavigation: feste Funktionsfarben mit Wiedererkennungswert */
+.competition-nav-actions .competition-nav-btn{
+  border:1px solid transparent;
+  font-weight:800;
+  letter-spacing:.01em;
+  text-align:center;
+  text-decoration:none;
+  box-shadow:0 8px 18px rgba(0,0,0,.24), inset 0 1px rgba(255,255,255,.12);
+  transition:transform .16s ease,filter .16s ease,box-shadow .16s ease;
+}
+.competition-nav-actions .competition-nav-btn:hover,
+.competition-nav-actions .competition-nav-btn:focus-visible{
+  transform:translateY(-1px);
+  filter:brightness(1.08);
+}
+.competition-nav-actions .competition-nav-btn--kicktipp{
+  color:#211300;
+  border-color:#f1c453;
+  background:linear-gradient(180deg,#ffe27a 0%,#e5a51e 52%,#b87309 100%);
+  box-shadow:0 0 0 1px rgba(255,222,104,.18),0 9px 22px rgba(211,143,15,.28),inset 0 1px rgba(255,255,255,.58);
+}
+.competition-nav-actions .competition-nav-btn--back{
+  color:#ffe1a0;
+  border-color:#a9652e;
+  background:linear-gradient(180deg,#6b3b20 0%,#462514 54%,#2b170d 100%);
+}
+.competition-nav-actions .competition-nav-btn--top{
+  color:#d8f0df;
+  border-color:#4f8871;
+  background:linear-gradient(180deg,#285b4d 0%,#173f36 54%,#0d2822 100%);
+}
+
+@media(max-width:800px){
+  .competition-nav-actions{
+    padding:12px;
+  }
+  .competition-nav-actions .btn{
+    max-width:none;
+  }
+}
 .matchday-accordion{
   display:grid;
   gap:10px;
@@ -2161,4 +2223,16 @@ body.page-dynamo-dresden{
 .info-card--goalgetter-chasers .goalgetter-chaser-row {
   align-self: center;
   width: min(100%, 320px);
+}
+
+/* HF77 – synchrone Wettbewerbsstruktur */
+.standings-table tr.is-highlighted-team,
+.form-table tr.is-highlighted-team {
+  font-weight: 800;
+  outline: 2px solid rgba(212, 175, 55, 0.65);
+  outline-offset: -2px;
+}
+
+.synchronized-placeholder .data-note {
+  margin-bottom: 0;
 }
