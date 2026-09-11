@@ -5622,6 +5622,7 @@
   <script src="./hall-of-fame-runtime.js"></script>
   <script src="./highscore-data-adapter.js"></script>
   <link rel="stylesheet" href="./website-mitteilung.css?v=4.9.2-HF12-HF40">
+  <link rel="stylesheet" href="./site-navigation.css?v=4.9.2-HF12-HF85">
 </head>
 
 <body>
@@ -5965,7 +5966,7 @@
           </div>
         </article>
       </div>
-      <p class="highscore-teaser-action"><a class="button button-primary" href="./highscore.html">Ranglistenlogbuch öffnen</a> <a class="button button-secondary" href="./duell.html">Duell auf hoher See</a></p>
+      <p class="highscore-teaser-action tosmc-nav"><a class="tosmc-nav-button tosmc-nav-button--primary" href="./highscore.html">Ranglistenlogbuch öffnen</a><a class="tosmc-nav-button tosmc-nav-button--secondary" href="./duell.html">Duell auf hoher See</a></p>
     </section>
 
 
@@ -5977,7 +5978,7 @@
     <div class="logbook-30s-titleline"><span class="logbook-30s-mark" aria-hidden="true">30</span><div><span class="logbook-kicker">Kurzfassung</span><h3 id="logbook-30s-title">Spieltag in 30 Sekunden</h3></div></div>
     <div id="logbook-30s" aria-live="polite"><div class="logbook-30s-empty">Kurzfassung wird geladen.</div></div>
   </div>
-  <p class="logbook-teaser-action"><a class="button button-primary" href="./logbuch.html">Ganzen Spieltag entdecken</a></p>
+  <p class="logbook-teaser-action tosmc-nav"><a class="tosmc-nav-button tosmc-nav-button--primary" href="./logbuch.html">Ganzen Spieltag entdecken</a></p>
 </section>
 
 <section class="section panel" id="wettbewerbe">
@@ -6254,6 +6255,11 @@
         </article>
       </div>
     </section>
+
+    <nav class="tosmc-nav home-bottom-nav" aria-label="Seitennavigation am Seitenende">
+      <a class="tosmc-nav-button tosmc-nav-button--primary" href="./kicktipp.html?path=tippuebersicht&amp;br_p=%2Fthe-old-smugglers-club%2Ftippuebersicht">Kicktipp Live Action</a>
+      <a class="tosmc-nav-button tosmc-nav-button--top" href="#start">Nach oben</a>
+    </nav>
   </main>
 
   <footer>
@@ -6264,8 +6270,6 @@
       </div>
 
       <div>
-        <a href="#start">Nach oben</a>
-        &nbsp;·&nbsp;
         <a href="mailto:kontakt@the-old-smugglers-club.de">Kontakt</a>
       </div>
 

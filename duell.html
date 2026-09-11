@@ -8,18 +8,19 @@
   <link rel="stylesheet" href="./duell.css?v=4.9.0">
   <link rel="stylesheet" href="./accessibility-v33.css">
   <link rel="stylesheet" href="./legal.css">
+  <link rel="stylesheet" href="./site-navigation.css?v=4.9.2-HF12-HF85">
 </head>
 <body>
-<main class="duel-page">
+<main class="duel-page" id="duel-top">
   <div class="duel-shell">
     <section class="duel-hero" aria-labelledby="duel-title">
       <div class="duel-crest-wrap"><img class="duel-crest" src="./club-crest.svg" alt=""></div>
       <div class="duel-kicker">Zwei Freibeuter · ein Kurs · kein Versteck</div>
       <h1 id="duel-title">Duell auf hoher See</h1>
       <p>Wähle zwei Mitglieder der Crew. Verglichen werden ausschließlich belastbare Werte aus den gespeicherten Tipp- und Spieltagsdaten.</p>
-      <div class="duel-toolbar">
-        <a class="duel-btn" href="./index.html#highscore">Zurück zur Clubseite</a>
-        <a class="duel-btn" href="./highscore.html">Highscore öffnen</a>
+      <div class="duel-toolbar tosmc-nav">
+        <a class="duel-btn tosmc-nav-button tosmc-nav-button--back" href="./index.html#highscore">Zurück zur Clubseite</a>
+        <a class="duel-btn tosmc-nav-button tosmc-nav-button--secondary" href="./highscore.html">Highscore öffnen</a>
       </div>
     </section>
 
@@ -113,6 +114,7 @@
       <div class="duel-board-ornament duel-board-ornament--bottom" aria-hidden="true"></div>
     </section>
 
+    <div class="tosmc-nav" aria-label="Duell-Navigation"><a class="tosmc-nav-button tosmc-nav-button--back" href="./index.html#highscore">Zurück zur Clubseite</a><a class="tosmc-nav-button tosmc-nav-button--secondary" href="./highscore.html">Highscore öffnen</a><a class="tosmc-nav-button tosmc-nav-button--top" href="#duel-top">Nach oben</a></div>
     <p class="duel-legal-note">Keine eigene Wertung: „Duell auf hoher See“ stellt vorhandene OSC-Daten nur im direkten Vergleich dar.</p>
   </div>
 </main>

@@ -9,9 +9,10 @@
   <link rel="stylesheet" href="./saisonuebersicht.css?v=4.9.2-HF12-HF53-TEST66">
   <link rel="stylesheet" href="./accessibility-v33.css">
   <link rel="stylesheet" href="./legal.css">
+  <link rel="stylesheet" href="./site-navigation.css?v=4.9.2-HF12-HF85">
 </head>
 <body>
-  <main class="page season-page">
+  <main class="page season-page" id="season-top">
     <section class="hero season-hero">
       <div class="topline">
         <div class="eyebrow">Zentrale Saisonakte</div>
@@ -65,9 +66,10 @@
         </div>
       </section>
 
-      <div class="actions season-actions">
-        <a class="btn btn-secondary" href="./index.html#wettbewerbe">Zurück zu den Wettbewerben</a>
-        <a class="btn btn-primary" href="./kicktipp.html?path=tippuebersicht&br_p=%2Fthe-old-smugglers-club%2Ftippuebersicht">Kicktipp Live Action</a>
+      <div class="actions season-actions tosmc-nav">
+        <a class="tosmc-nav-button tosmc-nav-button--primary" href="./kicktipp.html?path=tippuebersicht&br_p=%2Fthe-old-smugglers-club%2Ftippuebersicht">Kicktipp Live Action</a>
+        <a class="tosmc-nav-button tosmc-nav-button--back" href="./index.html#wettbewerbe">Zurück zu den Wettbewerben</a>
+        <a class="tosmc-nav-button tosmc-nav-button--top" href="#season-top">Nach oben</a>
       </div>
 
       <div class="error is-hidden" id="season-error"></div>

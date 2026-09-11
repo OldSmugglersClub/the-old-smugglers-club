@@ -15,10 +15,11 @@
     @media(max-width:720px){.pirate-note{grid-template-columns:38px minmax(0,1fr);gap:11px}.pirate-note__emblem{width:36px;height:36px}.achievement-list .row{grid-template-columns:1fr}.achievement-list .row strong{text-align:left}.top{align-items:flex-start}.crest{width:50px;height:50px}.grid,.champion{grid-template-columns:1fr}.champion{text-align:center}.row{align-items:flex-start;min-width:0;display:grid;grid-template-columns:minmax(0,1fr) auto}.row span,.row strong{min-width:0;overflow-wrap:normal;word-break:normal;hyphens:none}.row strong{font-size:.96rem}.wrap{width:min(100% - 20px,1120px);padding-top:14px}}@media(max-width:560px){.row{grid-template-columns:1fr}.row strong{text-align:left}.panel h2{font-size:1.35rem}}
   </style>
   <link rel="stylesheet" href="./legal.css">
+  <link rel="stylesheet" href="./site-navigation.css?v=4.9.2-HF12-HF85">
 </head>
 <body>
-  <main class="wrap">
-    <div class="top"><a class="back" href="./index.html#hall-of-fame">Zurück zur Startseite</a><img class="crest" src="./club-crest.svg" alt="Wappen des Old Smugglers Club"></div>
+  <main class="wrap" id="hall-top">
+    <div class="top"><a class="back tosmc-nav-button tosmc-nav-button--back" href="./index.html#hall-of-fame">Zurück zur Startseite</a><img class="crest" src="./club-crest.svg" alt="Wappen des Old Smugglers Club"></div>
     <header class="hero"><div class="eyebrow">Ehrenlogbuch der Crew</div><h1>Hall of Fame</h1><p>Die bestätigten Titel, Saisonssieger und Rekorde des Old Smugglers Club. Offene Wettbewerbe werden erst nach ihrer offiziellen Auswertung eingetragen.</p></header>
     <section class="grid">
       <article class="panel champion"><img class="trophy" src="./champion-trophy.jpeg" alt="Champion-Pokal"><div><div class="eyebrow">Aktueller Champion</div><h2 class="champion-name" id="championName">Manuel</h2><div class="meta" id="championMeta">Gesamtwertung · Gesamtchampion · 2025/2026</div><p id="championLabel">Old Smugglers Saison-Champion</p></div></article>
@@ -28,6 +29,7 @@
       <article class="panel"><h2>Ehrenchampions Sonderwettbewerbe</h2><div class="list achievement-list" id="achievements"></div><div class="note achievement-note pirate-note"><img class="pirate-note__emblem" src="./club-crest.svg" alt="" aria-hidden="true"><span>Champions zusätzlicher Sonderwettbewerbe außerhalb der regulären Saison-Gesamtwertung werden hier chronologisch dokumentiert. Die Startseite zeigt den zuletzt bestätigten Ehrenchampion.</span></div></article>
     </section>
     <div class="note hall-logbook-note pirate-note"><img class="pirate-note__emblem" src="./club-crest.svg" alt="" aria-hidden="true"><span><strong>Ehrenlogbuch</strong><br>Jeder bestätigte Titel und Rekord bleibt erhalten. Offene Wettbewerbe werden erst nach ihrer offiziellen Auswertung in die Ehrenhalle übernommen.</span></div>
+    <div class="tosmc-nav" aria-label="Hall-of-Fame-Navigation"><a class="tosmc-nav-button tosmc-nav-button--primary" href="./kicktipp.html?path=tippuebersicht&amp;br_p=%2Fthe-old-smugglers-club%2Ftippuebersicht">Kicktipp Live Action</a><a class="tosmc-nav-button tosmc-nav-button--back" href="./index.html#hall-of-fame">Zurück zur Startseite</a><a class="tosmc-nav-button tosmc-nav-button--top" href="#hall-top">Nach oben</a></div>
     <div class="status" id="dataStatus">Ehrenlogbuch wird geladen …</div>
   </main>
   <script src="./hall-of-fame-runtime.js"></script>
