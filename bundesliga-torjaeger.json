@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 15,
+  "datenVersion": 16,
   "aktualisiert": "2026-09-12",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
@@ -67,6 +67,10 @@
       "tore": 2
     },
     {
+      "name": "N. Füllkrug",
+      "tore": 2
+    },
+    {
       "name": "M. Eggestein",
       "tore": 2
     },
@@ -91,11 +95,11 @@
       "tore": 2
     },
     {
-      "name": "Luis Díaz",
+      "name": "M. Olise",
       "tore": 1
     },
     {
-      "name": "M. Olise",
+      "name": "Luis Díaz",
       "tore": 1
     },
     {
@@ -115,19 +119,19 @@
       "tore": 1
     },
     {
-      "name": "L. Querfeld",
-      "tore": 1
-    },
-    {
       "name": "Emmanuel Latte Lath",
       "tore": 1
     },
     {
-      "name": "A. Daghim",
+      "name": "L. Querfeld",
       "tore": 1
     },
     {
       "name": "S. El Mala",
+      "tore": 1
+    },
+    {
+      "name": "A. Daghim",
       "tore": 1
     },
     {
@@ -175,11 +179,11 @@
       "tore": 1
     },
     {
-      "name": "L. Avdullahu",
+      "name": "T. Lemperle",
       "tore": 1
     },
     {
-      "name": "T. Lemperle",
+      "name": "L. Avdullahu",
       "tore": 1
     },
     {
@@ -199,11 +203,11 @@
       "tore": 1
     },
     {
-      "name": "F. Keidel",
+      "name": "D. Mokwa",
       "tore": 1
     },
     {
-      "name": "D. Mokwa",
+      "name": "F. Keidel",
       "tore": 1
     },
     {
@@ -212,10 +216,6 @@
     },
     {
       "name": "E. Dinkçi",
-      "tore": 1
-    },
-    {
-      "name": "N. Füllkrug",
       "tore": 1
     },
     {
@@ -247,11 +247,11 @@
       "tore": 1
     },
     {
-      "name": "R. Gosens",
+      "name": "M. Wöber",
       "tore": 1
     },
     {
-      "name": "M. Wöber",
+      "name": "R. Gosens",
       "tore": 1
     },
     {
@@ -260,6 +260,10 @@
     },
     {
       "name": "M. Mittelstädt",
+      "tore": 1
+    },
+    {
+      "name": "L. Maina",
       "tore": 1
     }
   ]

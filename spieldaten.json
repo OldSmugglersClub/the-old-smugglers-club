@@ -1970,12 +1970,12 @@
           "datumAnzeige": "12.09.2026",
           "anstoss": "18:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 1,
+          "auswaertstore": 1,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "",
-          "quelleStand": "2026-07-30",
+          "quelleStand": "2026-09-12",
           "heimTeamId": "koeln",
           "auswaertsTeamId": "werder-bremen"
         },
@@ -12715,6 +12715,6 @@
       ]
     }
   ],
-  "datenVersion": 41,
+  "datenVersion": 42,
   "aktualisiert": "2026-09-12"
 }
