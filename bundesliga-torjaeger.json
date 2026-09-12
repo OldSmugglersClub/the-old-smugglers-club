@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 14,
+  "datenVersion": 16,
   "aktualisiert": "2026-09-12",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
@@ -11,7 +11,23 @@
       "tore": 3
     },
     {
+      "name": "P. Schick",
+      "tore": 3
+    },
+    {
+      "name": "I. Matanovic",
+      "tore": 3
+    },
+    {
       "name": "Y. Suzuki",
+      "tore": 3
+    },
+    {
+      "name": "M. Gregoritsch",
+      "tore": 3
+    },
+    {
+      "name": "P. Tietz",
       "tore": 3
     },
     {
@@ -31,7 +47,7 @@
       "tore": 2
     },
     {
-      "name": "P. Schick",
+      "name": "C. Kofane",
       "tore": 2
     },
     {
@@ -39,7 +55,7 @@
       "tore": 2
     },
     {
-      "name": "H. Bolin",
+      "name": "Fabio Silva",
       "tore": 2
     },
     {
@@ -47,8 +63,40 @@
       "tore": 2
     },
     {
-      "name": "P. Tietz",
+      "name": "H. Bolin",
       "tore": 2
+    },
+    {
+      "name": "N. Füllkrug",
+      "tore": 2
+    },
+    {
+      "name": "M. Eggestein",
+      "tore": 2
+    },
+    {
+      "name": "J. Burkardt",
+      "tore": 2
+    },
+    {
+      "name": "F. Nmecha",
+      "tore": 2
+    },
+    {
+      "name": "A. Hložek",
+      "tore": 2
+    },
+    {
+      "name": "Y. Engelhardt",
+      "tore": 2
+    },
+    {
+      "name": "C. Uzun",
+      "tore": 2
+    },
+    {
+      "name": "M. Olise",
+      "tore": 1
     },
     {
       "name": "Luis Díaz",
@@ -59,15 +107,7 @@
       "tore": 1
     },
     {
-      "name": "M. Olise",
-      "tore": 1
-    },
-    {
       "name": "Aleksandar Pavlovic",
-      "tore": 1
-    },
-    {
-      "name": "R. Reitz",
       "tore": 1
     },
     {
@@ -75,11 +115,15 @@
       "tore": 1
     },
     {
-      "name": "L. Querfeld",
+      "name": "R. Reitz",
       "tore": 1
     },
     {
       "name": "Emmanuel Latte Lath",
+      "tore": 1
+    },
+    {
+      "name": "L. Querfeld",
       "tore": 1
     },
     {
@@ -92,10 +136,6 @@
     },
     {
       "name": "O. Kabak",
-      "tore": 1
-    },
-    {
-      "name": "C. Kofane",
       "tore": 1
     },
     {
@@ -115,10 +155,6 @@
       "tore": 1
     },
     {
-      "name": "I. Matanovic",
-      "tore": 1
-    },
-    {
       "name": "D. Stalmach",
       "tore": 1
     },
@@ -128,10 +164,6 @@
     },
     {
       "name": "Rodrigo Ribeiro",
-      "tore": 1
-    },
-    {
-      "name": "M. Gregoritsch",
       "tore": 1
     },
     {
@@ -151,10 +183,6 @@
       "tore": 1
     },
     {
-      "name": "Fabio Silva",
-      "tore": 1
-    },
-    {
       "name": "L. Avdullahu",
       "tore": 1
     },
@@ -171,6 +199,10 @@
       "tore": 1
     },
     {
+      "name": "J. Scally",
+      "tore": 1
+    },
+    {
       "name": "D. Mokwa",
       "tore": 1
     },
@@ -179,7 +211,7 @@
       "tore": 1
     },
     {
-      "name": "J. Scally",
+      "name": "M. Grüll",
       "tore": 1
     },
     {
@@ -187,15 +219,7 @@
       "tore": 1
     },
     {
-      "name": "N. Füllkrug",
-      "tore": 1
-    },
-    {
-      "name": "M. Grüll",
-      "tore": 1
-    },
-    {
-      "name": "M. Eggestein",
+      "name": "P. Mwene",
       "tore": 1
     },
     {
@@ -203,15 +227,15 @@
       "tore": 1
     },
     {
-      "name": "P. Mwene",
-      "tore": 1
-    },
-    {
       "name": "S. Becker",
       "tore": 1
     },
     {
-      "name": "J. Burkardt",
+      "name": "A. Ibrahimovic",
+      "tore": 1
+    },
+    {
+      "name": "Alexis Claude-Maurice",
       "tore": 1
     },
     {
@@ -223,15 +247,11 @@
       "tore": 1
     },
     {
-      "name": "Alexis Claude-Maurice",
-      "tore": 1
-    },
-    {
-      "name": "A. Ibrahimovic",
-      "tore": 1
-    },
-    {
       "name": "M. Wöber",
+      "tore": 1
+    },
+    {
+      "name": "R. Gosens",
       "tore": 1
     },
     {
@@ -239,7 +259,11 @@
       "tore": 1
     },
     {
-      "name": "R. Gosens",
+      "name": "M. Mittelstädt",
+      "tore": 1
+    },
+    {
+      "name": "L. Maina",
       "tore": 1
     }
   ]
