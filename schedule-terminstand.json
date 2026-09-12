@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-12T04:31:54.180Z",
+  "updatedAt": "2026-09-12T20:31:54.534Z",
   "entries": {
     "sma-2026-27-auftakt-001": {
       "datum": "2026-08-09",
@@ -232,54 +232,54 @@
       "datumVon": "2026-09-12",
       "datumBis": "2026-09-12",
       "anstoss": "15:30",
-      "status": "terminiert",
+      "status": "beendet",
       "terminBestaetigt": true,
-      "quelleStand": "2026-07-30"
+      "quelleStand": "2026-09-12"
     },
     "bl-2026-27-03-021": {
       "datum": "2026-09-12",
       "datumVon": "2026-09-12",
       "datumBis": "2026-09-12",
       "anstoss": "15:30",
-      "status": "terminiert",
+      "status": "beendet",
       "terminBestaetigt": true,
-      "quelleStand": "2026-07-30"
+      "quelleStand": "2026-09-12"
     },
     "bl-2026-27-03-022": {
       "datum": "2026-09-12",
       "datumVon": "2026-09-12",
       "datumBis": "2026-09-12",
       "anstoss": "15:30",
-      "status": "terminiert",
+      "status": "beendet",
       "terminBestaetigt": true,
-      "quelleStand": "2026-07-30"
+      "quelleStand": "2026-09-12"
     },
     "bl-2026-27-03-023": {
       "datum": "2026-09-12",
       "datumVon": "2026-09-12",
       "datumBis": "2026-09-12",
       "anstoss": "15:30",
-      "status": "terminiert",
+      "status": "beendet",
       "terminBestaetigt": true,
-      "quelleStand": "2026-07-30"
+      "quelleStand": "2026-09-12"
     },
     "bl-2026-27-03-024": {
       "datum": "2026-09-12",
       "datumVon": "2026-09-12",
       "datumBis": "2026-09-12",
       "anstoss": "15:30",
-      "status": "terminiert",
+      "status": "beendet",
       "terminBestaetigt": true,
-      "quelleStand": "2026-07-30"
+      "quelleStand": "2026-09-12"
     },
     "bl-2026-27-03-026": {
       "datum": "2026-09-12",
       "datumVon": "2026-09-12",
       "datumBis": "2026-09-12",
       "anstoss": "18:30",
-      "status": "terminiert",
+      "status": "beendet",
       "terminBestaetigt": true,
-      "quelleStand": "2026-07-30"
+      "quelleStand": "2026-09-12"
     },
     "bl-2026-27-03-020": {
       "datum": "2026-09-13",
