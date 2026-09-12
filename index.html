@@ -2373,11 +2373,12 @@
     .countdown-panel .chronometer-seal span::before { transform: translate(-50%, -50%) rotate(45deg); height: 17px; opacity: .72; }
     .countdown-panel .chronometer-seal span::after { transform: translate(-50%, -50%) rotate(-45deg); height: 17px; opacity: .72; }
 
+    /* HF91: Ereignisinfo im Counter klar lesbar; nur Typografie/Abstände. */
     .countdown-message {
       position: relative;
       z-index: 1;
       margin: 1.85rem .08rem 0;
-      padding: .78rem .78rem .74rem .9rem;
+      padding: .90rem 1rem .88rem;
       border: 1px solid rgba(174,115,30,.34);
       border-left: 3px solid #c9952e;
       border-radius: 7px;
@@ -2396,17 +2397,26 @@
 
     .countdown-message strong {
       color: #ead8af;
-      font-size: .84rem;
-      line-height: 1.32;
-      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1.25;
+      font-weight: 800;
     }
 
     .countdown-message span {
-      margin-top: .24rem;
+      margin-top: .34rem;
       color: #c8a968;
-      font-size: .69rem;
+      font-size: .82rem;
       letter-spacing: .01em;
-      line-height: 1.32;
+      line-height: 1.38;
+    }
+
+    .countdown-message > strong + span + span {
+      margin-top: .24rem;
+      color: #ead8af;
+      font-size: .90rem;
+      line-height: 1.35;
+      font-weight: 700;
+      overflow-wrap: anywhere;
     }
 
     .countdown-message .mission-note {
@@ -2434,9 +2444,22 @@
         font-size: .62rem;
       }
 
-      /* HF23: Mobile – Ereignisfenster zwischen Chronometer-Stern und unterem Innenrand ausbalancieren. */
+      /* HF23/HF91: Mobile – ausbalanciert und lesbar, ohne die Counterlogik zu verändern. */
       .countdown-panel .countdown-message {
         margin-top: .35rem;
+        padding: .78rem .80rem;
+      }
+
+      .countdown-message strong {
+        font-size: .94rem;
+      }
+
+      .countdown-message span {
+        font-size: .78rem;
+      }
+
+      .countdown-message > strong + span + span {
+        font-size: .86rem;
       }
 
       .countdown-panel::after {
