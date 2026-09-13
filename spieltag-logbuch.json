@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 9,
-  "aktualisiert": "2026-09-11T04:18:29.628Z",
+  "datenVersion": 10,
+  "aktualisiert": "2026-09-13T06:10:22.505Z",
   "saison": "2026-27",
   "regelwerk": {
     "kapitaene": "Alle Tipper mit der höchsten tatsächlichen Spieltagspunktzahl; kein künstlicher Tie-Break.",
@@ -4143,6 +4143,603 @@
             "exakt": 157,
             "differenz": 234,
             "tendenz": 570
+          }
+        }
+      ]
+    },
+    {
+      "id": "2026-27__smugglerauftrag__5-spieltag__sma-2026-27-05-044",
+      "bezeichnung": "Smuggleraufträge 5. Spieltag",
+      "wettbewerb": "smugglerauftrag",
+      "runde": "5. Spieltag",
+      "abgeschlossen": true,
+      "spielIds": [
+        "sma-2026-27-05-044"
+      ],
+      "kapitaene": [
+        {
+          "teilnehmerId": "kleinersachse",
+          "teilnehmer": "kleinersachse",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "playboymarc88",
+          "teilnehmer": "PlayBoyMarc88",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "bigdog",
+          "teilnehmer": "Bigdog",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "tortugasge",
+          "teilnehmer": "TortugaSGE",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "andy1304",
+          "teilnehmer": "Andy1304",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "vebfriwiwerk",
+          "teilnehmer": "VebFriwiwerk",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "gruber",
+          "teilnehmer": "gRuBer",
+          "punkte": 5,
+          "exakt": 1,
+          "differenz": 0,
+          "tendenz": 0
+        }
+      ],
+      "highlights": [
+        {
+          "typ": "kapitaene",
+          "prioritaet": 100,
+          "anzeigen": true,
+          "daten": {
+            "punkte": 5,
+            "anzahl": 7,
+            "tipper": [
+              {
+                "teilnehmerId": "kleinersachse",
+                "teilnehmer": "kleinersachse",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "playboymarc88",
+                "teilnehmer": "PlayBoyMarc88",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "bigdog",
+                "teilnehmer": "Bigdog",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "tortugasge",
+                "teilnehmer": "TortugaSGE",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "andy1304",
+                "teilnehmer": "Andy1304",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "vebfriwiwerk",
+                "teilnehmer": "VebFriwiwerk",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "gruber",
+                "teilnehmer": "gRuBer",
+                "punkte": 5,
+                "exakt": 1,
+                "differenz": 0,
+                "tendenz": 0
+              }
+            ]
+          }
+        },
+        {
+          "typ": "gegen-den-strom",
+          "prioritaet": 90,
+          "anzeigen": true,
+          "daten": {
+            "spielId": "sma-2026-27-05-044",
+            "heimTeam": "braunschweig",
+            "auswaertsTeam": "dynamo-dresden",
+            "ergebnis": "2:2",
+            "abgegeben": 77,
+            "nichtAbgegeben": 23,
+            "tippverteilung": {
+              "1": 29,
+              "2": 29,
+              "X": 19
+            },
+            "exakt": 7,
+            "differenz": 12,
+            "tendenz": 0,
+            "richtigerAusgang": "X",
+            "meistGetippt": {
+              "ausgang": "1",
+              "anzahl": 29
+            },
+            "gegenDenStrom": true,
+            "richtigeTendenz": {
+              "anzahl": 19,
+              "anteil": 24.7,
+              "tipper": [
+                {
+                  "teilnehmerId": "baslermario",
+                  "teilnehmer": "baslermario",
+                  "tipp": "1:1",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "dani1893",
+                  "teilnehmer": "Dani1893",
+                  "tipp": "1:1",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "kleinersachse",
+                  "teilnehmer": "kleinersachse",
+                  "tipp": "2:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "finch",
+                  "teilnehmer": "Finch",
+                  "tipp": "1:1",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "opipeter",
+                  "teilnehmer": "Opipeter",
+                  "tipp": "1:1",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "rk69",
+                  "teilnehmer": "RK69",
+                  "tipp": "1:1",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "mariusv",
+                  "teilnehmer": "mariusv",
+                  "tipp": "1:1",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "maikiliii",
+                  "teilnehmer": "Maikiliii",
+                  "tipp": "1:1",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "kevin",
+                  "teilnehmer": "Kevin",
+                  "tipp": "1:1",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "mrjensationell",
+                  "teilnehmer": "MrJensationell",
+                  "tipp": "1:1",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "playboymarc88",
+                  "teilnehmer": "PlayBoyMarc88",
+                  "tipp": "2:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "handgottes",
+                  "teilnehmer": "HandGottes",
+                  "tipp": "1:1",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "bigdog",
+                  "teilnehmer": "Bigdog",
+                  "tipp": "2:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "tortugasge",
+                  "teilnehmer": "TortugaSGE",
+                  "tipp": "2:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "andy1304",
+                  "teilnehmer": "Andy1304",
+                  "tipp": "2:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "sam-entspender",
+                  "teilnehmer": "SAM_ENTSPENDER",
+                  "tipp": "1:1",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "vebfriwiwerk",
+                  "teilnehmer": "VebFriwiwerk",
+                  "tipp": "2:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "g-threepwood",
+                  "teilnehmer": "G.Threepwood",
+                  "tipp": "1:1",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "gruber",
+                  "teilnehmer": "gRuBer",
+                  "tipp": "2:2",
+                  "exakt": true
+                }
+              ],
+              "exakteTipps": 7
+            }
+          }
+        },
+        {
+          "typ": "wer-hats-gerochen",
+          "prioritaet": 85,
+          "anzeigen": true,
+          "daten": {
+            "grenzeProzent": 25,
+            "testOverride": false,
+            "faelle": [
+              {
+                "spielId": "sma-2026-27-05-044",
+                "heimTeam": "braunschweig",
+                "auswaertsTeam": "dynamo-dresden",
+                "ergebnis": "2:2",
+                "abgegeben": 77,
+                "nichtAbgegeben": 23,
+                "tippverteilung": {
+                  "1": 29,
+                  "2": 29,
+                  "X": 19
+                },
+                "exakt": 7,
+                "differenz": 12,
+                "tendenz": 0,
+                "richtigerAusgang": "X",
+                "meistGetippt": {
+                  "ausgang": "1",
+                  "anzahl": 29
+                },
+                "gegenDenStrom": true,
+                "richtigeTendenz": {
+                  "anzahl": 19,
+                  "anteil": 24.7,
+                  "tipper": [
+                    {
+                      "teilnehmerId": "baslermario",
+                      "teilnehmer": "baslermario",
+                      "tipp": "1:1",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "dani1893",
+                      "teilnehmer": "Dani1893",
+                      "tipp": "1:1",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "kleinersachse",
+                      "teilnehmer": "kleinersachse",
+                      "tipp": "2:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "finch",
+                      "teilnehmer": "Finch",
+                      "tipp": "1:1",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "opipeter",
+                      "teilnehmer": "Opipeter",
+                      "tipp": "1:1",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "rk69",
+                      "teilnehmer": "RK69",
+                      "tipp": "1:1",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "mariusv",
+                      "teilnehmer": "mariusv",
+                      "tipp": "1:1",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "maikiliii",
+                      "teilnehmer": "Maikiliii",
+                      "tipp": "1:1",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "kevin",
+                      "teilnehmer": "Kevin",
+                      "tipp": "1:1",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "mrjensationell",
+                      "teilnehmer": "MrJensationell",
+                      "tipp": "1:1",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "playboymarc88",
+                      "teilnehmer": "PlayBoyMarc88",
+                      "tipp": "2:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "handgottes",
+                      "teilnehmer": "HandGottes",
+                      "tipp": "1:1",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "bigdog",
+                      "teilnehmer": "Bigdog",
+                      "tipp": "2:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "tortugasge",
+                      "teilnehmer": "TortugaSGE",
+                      "tipp": "2:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "andy1304",
+                      "teilnehmer": "Andy1304",
+                      "tipp": "2:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "sam-entspender",
+                      "teilnehmer": "SAM_ENTSPENDER",
+                      "tipp": "1:1",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "vebfriwiwerk",
+                      "teilnehmer": "VebFriwiwerk",
+                      "tipp": "2:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "g-threepwood",
+                      "teilnehmer": "G.Threepwood",
+                      "tipp": "1:1",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "gruber",
+                      "teilnehmer": "gRuBer",
+                      "tipp": "2:2",
+                      "exakt": true
+                    }
+                  ],
+                  "exakteTipps": 7
+                }
+              }
+            ]
+          }
+        },
+        {
+          "typ": "volltreffer",
+          "prioritaet": 80,
+          "anzeigen": true,
+          "daten": {
+            "maxExakt": 1,
+            "anzahl": 7,
+            "tipper": [
+              {
+                "teilnehmerId": "kleinersachse",
+                "teilnehmer": "kleinersachse",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "playboymarc88",
+                "teilnehmer": "PlayBoyMarc88",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "bigdog",
+                "teilnehmer": "Bigdog",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "tortugasge",
+                "teilnehmer": "TortugaSGE",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "andy1304",
+                "teilnehmer": "Andy1304",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "vebfriwiwerk",
+                "teilnehmer": "VebFriwiwerk",
+                "exakt": 1
+              },
+              {
+                "teilnehmerId": "gruber",
+                "teilnehmer": "gRuBer",
+                "exakt": 1
+              }
+            ]
+          }
+        },
+        {
+          "typ": "crewduell",
+          "prioritaet": 70,
+          "anzeigen": true,
+          "daten": {
+            "teams": [
+              {
+                "team": "Old Smugglers Team",
+                "durchschnitt": 0.84,
+                "punktesumme": 21,
+                "mitglieder": 25
+              },
+              {
+                "team": "New Smugglers Team",
+                "durchschnitt": 0.67,
+                "punktesumme": 50,
+                "mitglieder": 75
+              }
+            ],
+            "sieger": "Old Smugglers Team",
+            "differenz": 0.17
+          }
+        },
+        {
+          "typ": "kursbewegung",
+          "prioritaet": 40,
+          "anzeigen": true,
+          "grund": null,
+          "daten": {
+            "gewinner": [
+              {
+                "teilnehmerId": "vebfriwiwerk",
+                "teilnehmer": "VebFriwiwerk",
+                "vorher": 66,
+                "jetzt": 49,
+                "veraenderung": 17
+              }
+            ],
+            "verlierer": [
+              {
+                "teilnehmerId": "hardy17",
+                "teilnehmer": "Hardy17",
+                "vorher": 31,
+                "jetzt": 36,
+                "veraenderung": -5
+              },
+              {
+                "teilnehmerId": "maxpam",
+                "teilnehmer": "MaxPam",
+                "vorher": 33,
+                "jetzt": 38,
+                "veraenderung": -5
+              },
+              {
+                "teilnehmerId": "dominik1966",
+                "teilnehmer": "dominik1966",
+                "vorher": 34,
+                "jetzt": 39,
+                "veraenderung": -5
+              },
+              {
+                "teilnehmerId": "souvard",
+                "teilnehmer": "Souvard",
+                "vorher": 35,
+                "jetzt": 40,
+                "veraenderung": -5
+              },
+              {
+                "teilnehmerId": "cobra75",
+                "teilnehmer": "Cobra75",
+                "vorher": 36,
+                "jetzt": 41,
+                "veraenderung": -5
+              },
+              {
+                "teilnehmerId": "kev1999",
+                "teilnehmer": "Kev1999",
+                "vorher": 37,
+                "jetzt": 42,
+                "veraenderung": -5
+              },
+              {
+                "teilnehmerId": "stevie26",
+                "teilnehmer": "Stevie26",
+                "vorher": 38,
+                "jetzt": 43,
+                "veraenderung": -5
+              },
+              {
+                "teilnehmerId": "redwing",
+                "teilnehmer": "Redwing",
+                "vorher": 39,
+                "jetzt": 44,
+                "veraenderung": -5
+              }
+            ],
+            "maxGewinn": 17,
+            "maxVerlust": -5
+          }
+        },
+        {
+          "typ": "zahlen-aus-der-kombuese",
+          "prioritaet": 30,
+          "anzeigen": true,
+          "daten": {
+            "abgegeben": 77,
+            "nichtAbgegeben": 23,
+            "exakt": 7,
+            "differenz": 12,
+            "tendenz": 0
           }
         }
       ]
