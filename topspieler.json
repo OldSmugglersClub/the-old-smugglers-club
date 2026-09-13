@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 9,
-  "aktualisiertAm": "2026-09-13T06:10:22.505Z",
+  "datenVersion": 10,
+  "aktualisiertAm": "2026-09-13T19:16:01.543Z",
   "saison": "2026-27",
   "status": "Berechnet",
   "kategorien": [
     {
       "titel": "Spieltagsführer",
-      "name": "WildeMoni",
-      "wert": "82 Punkte"
+      "name": "18AMFG99",
+      "wert": "96 Punkte"
     },
     {
       "titel": "Meiste exakte Tipps",
-      "name": "WildeMoni",
-      "wert": "6"
+      "name": "18AMFG99",
+      "wert": "8"
     },
     {
       "titel": "Beste Serie",
