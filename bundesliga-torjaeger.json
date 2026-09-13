@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 17,
+  "datenVersion": 18,
   "aktualisiert": "2026-09-13",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
@@ -119,11 +119,11 @@
       "tore": 1
     },
     {
-      "name": "L. Querfeld",
+      "name": "Emmanuel Latte Lath",
       "tore": 1
     },
     {
-      "name": "Emmanuel Latte Lath",
+      "name": "L. Querfeld",
       "tore": 1
     },
     {
@@ -139,15 +139,15 @@
       "tore": 1
     },
     {
-      "name": "L. Petkov",
-      "tore": 1
-    },
-    {
       "name": "Cole Campbell",
       "tore": 1
     },
     {
       "name": "David Mokwa Ntusu",
+      "tore": 1
+    },
+    {
+      "name": "L. Petkov",
       "tore": 1
     },
     {
@@ -179,11 +179,11 @@
       "tore": 1
     },
     {
-      "name": "L. Avdullahu",
+      "name": "T. Lemperle",
       "tore": 1
     },
     {
-      "name": "T. Lemperle",
+      "name": "L. Avdullahu",
       "tore": 1
     },
     {
@@ -211,15 +211,11 @@
       "tore": 1
     },
     {
-      "name": "M. Grüll",
-      "tore": 1
-    },
-    {
       "name": "E. Dinkçi",
       "tore": 1
     },
     {
-      "name": "R. Königsdörffer",
+      "name": "M. Grüll",
       "tore": 1
     },
     {
@@ -228,6 +224,10 @@
     },
     {
       "name": "S. Becker",
+      "tore": 1
+    },
+    {
+      "name": "R. Königsdörffer",
       "tore": 1
     },
     {
@@ -247,11 +247,11 @@
       "tore": 1
     },
     {
-      "name": "M. Wöber",
+      "name": "R. Gosens",
       "tore": 1
     },
     {
-      "name": "R. Gosens",
+      "name": "M. Wöber",
       "tore": 1
     },
     {
@@ -271,10 +271,6 @@
       "tore": 1
     },
     {
-      "name": "W. Orbán",
-      "tore": 1
-    },
-    {
       "name": "T. Gomis",
       "tore": 1
     },
@@ -283,7 +279,15 @@
       "tore": 1
     },
     {
+      "name": "W. Orbán",
+      "tore": 1
+    },
+    {
       "name": "Lennart Karl",
+      "tore": 1
+    },
+    {
+      "name": "H. Kane",
       "tore": 1
     }
   ]
