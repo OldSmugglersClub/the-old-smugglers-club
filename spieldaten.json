@@ -1820,7 +1820,7 @@
           "tippverteilung": {
             "schemaVersion": 1,
             "quelle": "Kicktipp – Tipps aller Tipper",
-            "stand": "2026-09-11T22:47:53.943Z",
+            "stand": "2026-09-13T04:55:18.196Z",
             "abgegeben": 77,
             "nichtAbgegeben": 23,
             "verborgen": 0,
@@ -1839,7 +1839,7 @@
               }
             }
           },
-          "aktualisiertAm": "2026-09-11T22:47:53.943Z"
+          "aktualisiertAm": "2026-09-13T04:55:18.196Z"
         },
         {
           "id": "bl-2026-27-03-019",
@@ -1862,7 +1862,31 @@
           "notiz": "",
           "quelleStand": "2026-09-12",
           "heimTeamId": "dortmund",
-          "auswaertsTeamId": "paderborn"
+          "auswaertsTeamId": "paderborn",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-09-13T04:55:18.196Z",
+            "abgegeben": 82,
+            "nichtAbgegeben": 18,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 82,
+                "prozent": 100
+              },
+              "2": {
+                "anzahl": 0,
+                "prozent": 0
+              },
+              "X": {
+                "anzahl": 0,
+                "prozent": 0
+              }
+            }
+          },
+          "aktualisiertAm": "2026-09-13T04:55:18.196Z"
         },
         {
           "id": "bl-2026-27-03-021",
@@ -1885,7 +1909,31 @@
           "notiz": "",
           "quelleStand": "2026-09-12",
           "heimTeamId": "hoffenheim",
-          "auswaertsTeamId": "stuttgart"
+          "auswaertsTeamId": "stuttgart",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-09-13T04:55:18.196Z",
+            "abgegeben": 82,
+            "nichtAbgegeben": 18,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 16,
+                "prozent": 19.5
+              },
+              "2": {
+                "anzahl": 42,
+                "prozent": 51.2
+              },
+              "X": {
+                "anzahl": 24,
+                "prozent": 29.3
+              }
+            }
+          },
+          "aktualisiertAm": "2026-09-13T04:55:18.196Z"
         },
         {
           "id": "bl-2026-27-03-022",
@@ -1908,7 +1956,31 @@
           "notiz": "",
           "quelleStand": "2026-09-12",
           "heimTeamId": "freiburg",
-          "auswaertsTeamId": "moenchengladbach"
+          "auswaertsTeamId": "moenchengladbach",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-09-13T04:55:18.196Z",
+            "abgegeben": 82,
+            "nichtAbgegeben": 18,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 73,
+                "prozent": 89
+              },
+              "2": {
+                "anzahl": 1,
+                "prozent": 1.2
+              },
+              "X": {
+                "anzahl": 8,
+                "prozent": 9.8
+              }
+            }
+          },
+          "aktualisiertAm": "2026-09-13T04:55:18.196Z"
         },
         {
           "id": "bl-2026-27-03-023",
@@ -1931,7 +2003,31 @@
           "notiz": "",
           "quelleStand": "2026-09-12",
           "heimTeamId": "augsburg",
-          "auswaertsTeamId": "leverkusen"
+          "auswaertsTeamId": "leverkusen",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-09-13T04:55:18.196Z",
+            "abgegeben": 82,
+            "nichtAbgegeben": 18,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 12,
+                "prozent": 14.6
+              },
+              "2": {
+                "anzahl": 50,
+                "prozent": 61
+              },
+              "X": {
+                "anzahl": 20,
+                "prozent": 24.4
+              }
+            }
+          },
+          "aktualisiertAm": "2026-09-13T04:55:18.196Z"
         },
         {
           "id": "bl-2026-27-03-024",
@@ -1954,7 +2050,31 @@
           "notiz": "",
           "quelleStand": "2026-09-12",
           "heimTeamId": "mainz-05",
-          "auswaertsTeamId": "frankfurt"
+          "auswaertsTeamId": "frankfurt",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-09-13T04:55:18.196Z",
+            "abgegeben": 82,
+            "nichtAbgegeben": 18,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 39,
+                "prozent": 47.6
+              },
+              "2": {
+                "anzahl": 20,
+                "prozent": 24.4
+              },
+              "X": {
+                "anzahl": 23,
+                "prozent": 28
+              }
+            }
+          },
+          "aktualisiertAm": "2026-09-13T04:55:18.196Z"
         },
         {
           "id": "bl-2026-27-03-026",
@@ -1977,7 +2097,31 @@
           "notiz": "",
           "quelleStand": "2026-09-12",
           "heimTeamId": "koeln",
-          "auswaertsTeamId": "werder-bremen"
+          "auswaertsTeamId": "werder-bremen",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-09-13T04:55:18.196Z",
+            "abgegeben": 82,
+            "nichtAbgegeben": 18,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 39,
+                "prozent": 47.6
+              },
+              "2": {
+                "anzahl": 18,
+                "prozent": 22
+              },
+              "X": {
+                "anzahl": 25,
+                "prozent": 30.5
+              }
+            }
+          },
+          "aktualisiertAm": "2026-09-13T04:55:18.196Z"
         },
         {
           "id": "bl-2026-27-03-020",
@@ -12715,6 +12859,6 @@
       ]
     }
   ],
-  "datenVersion": 42,
-  "aktualisiert": "2026-09-12"
+  "datenVersion": 43,
+  "aktualisiert": "2026-09-13"
 }
