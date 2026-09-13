@@ -2,19 +2,40 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const num=v=>Number(v||0);const fmt=(v,d=0)=>num(v).toLocaleString('de-DE',{minimumFractionDigits:d,maximumFractionDigits:d});const fmtMatchdayWins=v=>{const n=num(v);return Number.isInteger(n)?fmt(n):n.toLocaleString('de-DE',{minimumFractionDigits:0,maximumFractionDigits:2});};
 const catalog=[['overall','Gesamtwertung'],['bundesliga','Bundesliga'],['champions-league','Champions League'],['europa-league','Europa League'],['dfb-pokal','DFB-Pokal'],['relegation','Relegation'],['piratenkodex','Piratenkodex'],['smugglerauftraege','Smuggleraufträge'],['weihnachtsregatta','Weihnachtsregatta']];
 let source={};let scope='overall';let view='individual';let query='';let page=1;const pageSize=25;
+window.OSCHighscoreGoToPage=function(requested){
+ requested=Number.parseInt(requested,10);
+ if(!Number.isInteger(requested)||requested<1||requested===page)return false;
+ page=requested;
+ renderTable();
+ const panel=$('table-panel');
+ if(panel)panel.scrollIntoView({behavior:'smooth',block:'start'});
+ return false;
+};
 const $=id=>document.getElementById(id);
 function firstNonEmptyArray(...values){for(const value of values){if(Array.isArray(value)&&value.length)return value;}for(const value of values){if(Array.isArray(value))return value;}return [];}function normalizeLegacy(d){d=d||{};const overall=d.overall||{};d.overall={individual:firstNonEmptyArray(overall.individual,d.individual?.overall),team:firstNonEmptyArray(overall.team,d.gesamt?.team,d.teams?.overall,d.teamOverall),bonus:firstNonEmptyArray(overall.bonus,d.individual?.bonus)};d.competitions=d.competitions||d.wettbewerbe||{};return d;}
 function current(){if(scope==='overall')return source.overall||{};return source.competitions?.[scope]||{id:scope,label:catalog.find(x=>x[0]===scope)?.[1]||scope,matchday:[],overall:[],team:[]};}
 function views(){return scope==='overall'?[['individual','Gesamt-Einzelwertung'],['team','Gesamt-Teamwertung'],['bonus','Gesamt-Bonuswertung']]:[['matchday','Spieltagswertung'],['individual','Gesamtwertung'],['team','Spieltags-Teamwertung']];}
 function rows(){const c=current();if(scope==='overall'){if(view==='team')return firstNonEmptyArray(c.team,source.teams?.overall,source.gesamt?.team,source.teamOverall);if(view==='bonus')return c.bonus||[];return c.individual||[];}if(view==='matchday')return c.matchday||[];if(view==='team')return c.team||[];return c.overall||[];}
 function rowRank(r,i){return r.rank??r.platz??i+1;}function rowName(r){return r.name||r.teilnehmer||r.team||'–';}function rowPoints(r){if(view==='team')return r.averagePoints??r.durchschnitt??r.totalPoints??0;if(view==='bonus')return r.bonusPoints??r.points??0;if(view==='matchday')return r.points??r.punkte??0;return r.totalPoints??r.punkte??0;}
-function allZero(list){return !list.length||list.every(r=>rowPoints(r)===0);}function sortedRows(list){const copy=[...(Array.isArray(list)?list:[])];if(allZero(copy))return copy.sort((a,b)=>rowName(a).localeCompare(rowName(b),'de',{sensitivity:'base'}));return copy;}
+function allZero(list){return !list.length||list.every(r=>rowPoints(r)===0);}
+function rankBonusRows(list){
+ const copy=[...(Array.isArray(list)?list:[])].map((row,index)=>({...row,__sourceIndex:index,bonusPoints:Number(row?.bonusPoints??row?.points??0)}));
+ copy.sort((a,b)=>Number(b.bonusPoints||0)-Number(a.bonusPoints||0)||a.__sourceIndex-b.__sourceIndex);
+ let previous=null,currentRank=0;
+ return copy.map((row,index)=>{const bonus=Number(row.bonusPoints||0);if(index===0||bonus!==previous)currentRank=index+1;previous=bonus;const {__sourceIndex,...clean}=row;return {...clean,rank:currentRank};});
+}
+function sortedRows(list){
+ const copy=[...(Array.isArray(list)?list:[])];
+ if(view==='bonus')return rankBonusRows(copy);
+ if(allZero(copy))return copy.sort((a,b)=>rowName(a).localeCompare(rowName(b),'de',{sensitivity:'base'}));
+ return copy;
+}
 function renderTabs(){
  $('competition-tabs').innerHTML=catalog.map(([id,label])=>`<button class="hs-main-tab ${scope===id?'is-active':''}" data-scope="${id}" aria-pressed="${scope===id}">${esc(label)}</button>`).join('');
  const allowed=views();if(!allowed.some(x=>x[0]===view))view=allowed[0][0];
  $('view-tabs').innerHTML=allowed.map(([id,label])=>`<button class="hs-chip ${view===id?'is-active':''}" data-view="${id}" aria-pressed="${view===id}">${esc(label)}</button>`).join('');
- document.querySelectorAll('[data-scope]').forEach(b=>b.onclick=()=>{scope=b.dataset.scope;view=scope==='overall'?'individual':'matchday';query='';page=1;$('player-search').value='';render();});
- document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{view=b.dataset.view;query='';page=1;$('player-search').value='';render();});
+ $('competition-tabs').querySelectorAll('[data-scope]').forEach(b=>b.onclick=()=>{scope=b.dataset.scope;view=scope==='overall'?'individual':'matchday';query='';page=1;$('player-search').value='';render();});
+ $('view-tabs').querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{view=b.dataset.view;query='';page=1;$('player-search').value='';render();});
 }
 function renderSummary(list){
  const c=current(),scopeLabel=scope==='overall'?'Saison gesamt':c.label||catalog.find(x=>x[0]===scope)?.[1]||scope;
@@ -89,11 +110,32 @@ function renderPodium(list){
    <div class="hs-rank-grid hs-rank-grid--count-${count}">${top.map((r,i)=>podiumCard(r,i+1,false)).join('')}</div>
  </div>`:'<p class="hs-empty">Noch keine Daten vorhanden.</p>';
 }
-function paginationHtml(total){const pages=Math.max(1,Math.ceil(total/pageSize));page=Math.min(Math.max(1,page),pages);if(total<=pageSize)return '';const nums=Array.from({length:pages},(_,i)=>i+1).map(n=>`<button class="hs-page-btn ${n===page?'is-active':''}" type="button" data-page="${n}" aria-label="Seite ${n}" aria-current="${n===page?'page':'false'}">${n}</button>`).join('');return `<nav class="hs-pagination" aria-label="Ranglistenseiten"><button class="hs-page-btn" type="button" data-page="${page-1}" ${page===1?'disabled':''}>Zurück</button><span>Einträge ${(page-1)*pageSize+1}–${Math.min(page*pageSize,total)} von ${total}</span><div class="hs-page-numbers">${nums}</div><button class="hs-page-btn" type="button" data-page="${page+1}" ${page===pages?'disabled':''}>Weiter</button></nav>`;}
-function changePage(event){const button=event.target.closest('button[data-page]');if(!button||button.disabled)return;event.preventDefault();const requested=Number.parseInt(button.dataset.page,10);if(!Number.isInteger(requested)||requested===page)return;page=requested;renderTable(rows());$('table-panel').scrollIntoView({behavior:'smooth',block:'start'});}
-function bindPagination(){['pagination-top','pagination-bottom'].forEach(id=>{const container=$(id);if(container&&!container.dataset.paginationBound){container.addEventListener('click',changePage);container.dataset.paginationBound='true';}});}
-function renderTable(list){const team=view==='team';const bonus=view==='bonus';const tableWrap=$('ranking-body').closest('.hs-table-wrap');if(tableWrap){tableWrap.classList.toggle('is-team-table',team);tableWrap.classList.toggle('is-individual-table',view==='individual');tableWrap.classList.toggle('is-matchday-table',view==='matchday');tableWrap.classList.toggle('is-bonus-table',bonus);}$('search-box').hidden=false;const searchLabel=$('search-box').querySelector('span');if(searchLabel)searchLabel.textContent=team?'Team suchen':'Spieler suchen';let base=sortedRows(list);let filtered=base.filter(r=>rowName(r).toLocaleLowerCase('de').includes(query.toLocaleLowerCase('de')));const pages=Math.max(1,Math.ceil(filtered.length/pageSize));page=Math.min(page,pages);const shown=team?filtered:filtered.slice((page-1)*pageSize,page*pageSize);$('toolbar-count').textContent=`${filtered.length} ${team?'Teams':'Spieler'}`;$('ranking-head').innerHTML=team?'<tr><th>Rang</th><th>Team</th><th>Mitglieder</th><th>Punktesumme</th><th>Durchschnitt</th></tr>':bonus?'<tr><th>Rang</th><th>Spieler</th><th>Bonuspunkte</th></tr>':view==='matchday'?'<tr><th>Rang</th><th>Spieler</th><th>Punkte</th><th>Exakt</th><th>Differenz</th><th>Tendenz</th></tr>':'<tr><th>Rang</th><th>Spieler</th><th>Bonuspunkte</th><th>Spieltagsiege</th><th>Gesamtpunkte</th></tr>';
+function paginationHtml(total){
+ const pages=Math.max(1,Math.ceil(total/pageSize));
+ page=Math.min(Math.max(1,page),pages);
+ if(total<=pageSize)return '';
+ const button=(label,target,disabled=false,active=false,aria='')=>`<button class="hs-page-btn ${active?'is-active':''}" type="button" data-page="${target}" onclick="return window.OSCHighscoreGoToPage(${target})" ${disabled?'disabled':''} ${aria}>${label}</button>`;
+ const nums=Array.from({length:pages},(_,i)=>i+1).map(n=>button(String(n),n,false,n===page,`aria-label="Seite ${n}" aria-current="${n===page?'page':'false'}"`)).join('');
+ return `<nav class="hs-pagination" aria-label="Ranglistenseiten">${button('Zurück',page-1,page===1)}<span>Einträge ${(page-1)*pageSize+1}–${Math.min(page*pageSize,total)} von ${total}</span><div class="hs-page-numbers">${nums}</div>${button('Weiter',page+1,page===pages)}</nav>`;
+}
+function paginationButtonFromEvent(event,container){
+ const target=event?.target;
+ if(!target)return null;
+ const element=target.nodeType===1?target:target.parentElement;
+ const button=element?.closest?.('button[data-page]');
+ return button&&container.contains(button)?button:null;
+}
+function bindPagination(){
+ ['pagination-top','pagination-bottom'].forEach(id=>{
+  const container=$(id);
+  if(!container)return;
+  container.onpointerup=null;
+  container.onclick=null;
+ });
+}
+
+function renderTable(){const list=rows();const team=view==='team';const bonus=view==='bonus';const tableWrap=$('ranking-body').closest('.hs-table-wrap');if(tableWrap){tableWrap.classList.toggle('is-team-table',team);tableWrap.classList.toggle('is-individual-table',view==='individual');tableWrap.classList.toggle('is-matchday-table',view==='matchday');tableWrap.classList.toggle('is-bonus-table',bonus);}$('search-box').hidden=false;const searchLabel=$('search-box').querySelector('span');if(searchLabel)searchLabel.textContent=team?'Team suchen':'Spieler suchen';let base=sortedRows(list);let filtered=base.filter(r=>rowName(r).toLocaleLowerCase('de').includes(query.toLocaleLowerCase('de')));const pages=Math.max(1,Math.ceil(filtered.length/pageSize));page=Math.min(page,pages);const shown=team?filtered:filtered.slice((page-1)*pageSize,page*pageSize);$('toolbar-count').textContent=`${filtered.length} ${team?'Teams':'Spieler'}`;$('ranking-head').innerHTML=team?'<tr><th>Rang</th><th>Team</th><th>Mitglieder</th><th>Punktesumme</th><th>Durchschnitt</th></tr>':bonus?'<tr><th>Rang</th><th>Spieler</th><th>Bonuspunkte</th></tr>':view==='matchday'?'<tr><th>Rang</th><th>Spieler</th><th>Punkte</th><th>Exakt</th><th>Differenz</th><th>Tendenz</th></tr>':'<tr><th>Rang</th><th>Spieler</th><th>Bonuspunkte</th><th>Spieltagsiege</th><th>Gesamtpunkte</th></tr>';
  $('ranking-body').innerHTML=shown.map((r,i)=>{const absoluteIndex=team?i:(page-1)*pageSize+i;return team?`<tr><td>${esc(rowRank(r,absoluteIndex))}</td><td>${esc(rowName(r))}</td><td>${num(r.memberCount??r.mitglieder)}</td><td>${fmt(r.pointsSum??r.punktesumme??0,1)}</td><td>${fmt(rowPoints(r),2)}</td></tr>`:bonus?`<tr><td>${esc(rowRank(r,absoluteIndex))}</td><td>${esc(rowName(r))}</td><td>${fmt(rowPoints(r))}</td></tr>`:view==='matchday'?`<tr><td>${esc(rowRank(r,absoluteIndex))}</td><td>${esc(rowName(r))}</td><td>${fmt(rowPoints(r))}</td><td>${fmt(r.exactHits??r.exakt)}</td><td>${fmt(r.differenceHits??r.differenz)}</td><td>${fmt(r.tendencyHits??r.tendenz)}</td></tr>`:`<tr><td>${esc(rowRank(r,absoluteIndex))}</td><td>${esc(rowName(r))}</td><td>${fmt(r.bonusPoints)}</td><td>${fmtMatchdayWins(r.matchdayWins)}</td><td>${fmt(rowPoints(r))}</td></tr>`}).join('')||'<tr><td colspan="6">Keine passenden Einträge.</td></tr>';const nav=team?'':paginationHtml(filtered.length);$('pagination-top').innerHTML=nav;$('pagination-bottom').innerHTML=nav;const labels=team?['Rang','Team','Mitglieder','Punktesumme','Durchschnitt']:bonus?['Rang','Spieler','Bonuspunkte']:view==='matchday'?['Rang','Spieler','Punkte','Exakt','Differenz','Tendenz']:['Rang','Spieler','Bonus','S','Punkte'];$('ranking-body').querySelectorAll('tr').forEach(tr=>tr.querySelectorAll('td').forEach((td,index)=>{if(labels[index])td.dataset.label=labels[index];}));bindPagination();}
-function render(){renderTabs();const list=sortedRows(rows());const c=current(),scopeLabel=scope==='overall'?'Saison gesamt':c.label||catalog.find(x=>x[0]===scope)?.[1]||scope,viewLabel=views().find(x=>x[0]===view)?.[1]||view;const displayTitle=scope==='overall'?viewLabel:`${scopeLabel} · ${viewLabel}`;$('ranking-title').textContent=displayTitle;$('table-title').textContent=displayTitle;$('ranking-caption').textContent=scope!=='overall'&&(view==='matchday'||view==='team')?(c.matchdayLabel||'Aktueller Spieltag'):'Aktueller bestätigter Datenstand';$('toolbar-scope').textContent=scopeLabel;$('toolbar-view').textContent=viewLabel;renderSummary(list);renderPodium(list);renderTable(list);const diag=source.adapterDiagnostics||{};const missingTeams=scope==='overall'&&view==='team'&&list.length===0;const warning=diag.warning||(missingTeams?'Für diese Auswahl sind derzeit keine vollständigen Teamdaten verfügbar.':'');$('hs-system-status').className=warning?'hs-system-status is-error':'hs-system-status is-ready';$('hs-system-status').innerHTML=`<strong>${warning?'Daten nicht vollständig':'Daten geladen'}</strong><span>${warning?esc(warning):'Aktuelle Ranglisten verfügbar.'}</span>`;}
-$('player-search').addEventListener('input',e=>{query=e.target.value;page=1;renderTable(rows());});
+function render(){renderTabs();const list=sortedRows(rows());const c=current(),scopeLabel=scope==='overall'?'Saison gesamt':c.label||catalog.find(x=>x[0]===scope)?.[1]||scope,viewLabel=views().find(x=>x[0]===view)?.[1]||view;const displayTitle=scope==='overall'?viewLabel:`${scopeLabel} · ${viewLabel}`;$('ranking-title').textContent=displayTitle;$('table-title').textContent=displayTitle;$('ranking-caption').textContent=scope!=='overall'&&(view==='matchday'||view==='team')?(c.matchdayLabel||'Aktueller Spieltag'):'Aktueller bestätigter Datenstand';$('toolbar-scope').textContent=scopeLabel;$('toolbar-view').textContent=viewLabel;renderSummary(list);renderPodium(list);renderTable();const diag=source.adapterDiagnostics||{};const missingTeams=scope==='overall'&&view==='team'&&list.length===0;const warning=diag.warning||(missingTeams?'Für diese Auswahl sind derzeit keine vollständigen Teamdaten verfügbar.':'');$('hs-system-status').className=warning?'hs-system-status is-error':'hs-system-status is-ready';$('hs-system-status').innerHTML=`<strong>${warning?'Daten nicht vollständig':'Daten geladen'}</strong><span>${warning?esc(warning):'Aktuelle Ranglisten verfügbar.'}</span>`;}
+$('player-search').addEventListener('input',e=>{query=e.target.value;page=1;renderTable();});
 window.OSCHighscoreDataAdapter.loadHighscore().then(d=>{source=normalizeLegacy(d);render();}).catch(e=>{$('hs-system-status').className='hs-system-status is-error';$('hs-system-status').innerHTML=`<strong>Highscore nicht verfügbar</strong><span>${esc(e.message)}</span>`;});

@@ -696,9 +696,12 @@
   #highscore .highscore-teaser-card strong{
     display:flex;
     align-items:center;
+    justify-content:center;
     min-height:0;
+    width:100%;
     margin:0;
     padding:6px 0;
+    text-align:center;
     font-family:Georgia,serif;
     text-shadow:0 2px 0 #3d250e;
   }
@@ -1786,3 +1789,28 @@ body[data-view="team"] .hs-podium--simple .hs-rank-card--place-1{
     font-size:.62rem;
   }
 }
+
+
+/* HF94 – mobile Highscore-Pagination: Touch-Ziel und Stack explizit absichern */
+@media(max-width:700px){
+  #pagination-top,#pagination-bottom{position:relative;z-index:6;pointer-events:auto}
+  .hs-pagination,.hs-page-numbers,.hs-page-btn{pointer-events:auto}
+  .hs-page-btn{touch-action:manipulation;-webkit-tap-highlight-color:rgba(224,179,90,.18)}
+}
+
+
+/* HF95 – Pagination immer als aktive Bedienebene */
+#pagination-top,#pagination-bottom{
+  position:relative;
+  z-index:1000;
+  pointer-events:auto;
+  isolation:isolate;
+}
+#pagination-top .hs-pagination,#pagination-bottom .hs-pagination,
+#pagination-top .hs-page-numbers,#pagination-bottom .hs-page-numbers,
+#pagination-top .hs-page-btn,#pagination-bottom .hs-page-btn{
+  position:relative;
+  z-index:1001;
+  pointer-events:auto;
+}
+.hs-page-btn{touch-action:manipulation;cursor:pointer}
