@@ -2161,12 +2161,12 @@
           "datumAnzeige": "13.09.2026",
           "anstoss": "15:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 5,
+          "auswaertstore": 0,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "",
-          "quelleStand": "2026-07-30",
+          "quelleStand": "2026-09-13",
           "heimTeamId": "rb-leipzig",
           "auswaertsTeamId": "hamburger-sv"
         },
@@ -12883,6 +12883,6 @@
       ]
     }
   ],
-  "datenVersion": 44,
+  "datenVersion": 45,
   "aktualisiert": "2026-09-13"
 }

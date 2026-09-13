@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 16,
-  "aktualisiert": "2026-09-12",
+  "datenVersion": 17,
+  "aktualisiert": "2026-09-13",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
@@ -27,11 +27,19 @@
       "tore": 3
     },
     {
+      "name": "M. Krattenmacher",
+      "tore": 3
+    },
+    {
       "name": "P. Tietz",
       "tore": 3
     },
     {
       "name": "J. Vagnoman",
+      "tore": 2
+    },
+    {
+      "name": "A. Nusa",
       "tore": 2
     },
     {
@@ -56,10 +64,6 @@
     },
     {
       "name": "Fabio Silva",
-      "tore": 2
-    },
-    {
-      "name": "M. Krattenmacher",
       "tore": 2
     },
     {
@@ -95,11 +99,11 @@
       "tore": 2
     },
     {
-      "name": "M. Olise",
+      "name": "Luis Díaz",
       "tore": 1
     },
     {
-      "name": "Luis Díaz",
+      "name": "M. Olise",
       "tore": 1
     },
     {
@@ -111,15 +115,7 @@
       "tore": 1
     },
     {
-      "name": "A. Nusa",
-      "tore": 1
-    },
-    {
       "name": "R. Reitz",
-      "tore": 1
-    },
-    {
-      "name": "Emmanuel Latte Lath",
       "tore": 1
     },
     {
@@ -127,7 +123,7 @@
       "tore": 1
     },
     {
-      "name": "S. El Mala",
+      "name": "Emmanuel Latte Lath",
       "tore": 1
     },
     {
@@ -135,7 +131,15 @@
       "tore": 1
     },
     {
+      "name": "S. El Mala",
+      "tore": 1
+    },
+    {
       "name": "O. Kabak",
+      "tore": 1
+    },
+    {
+      "name": "L. Petkov",
       "tore": 1
     },
     {
@@ -144,10 +148,6 @@
     },
     {
       "name": "David Mokwa Ntusu",
-      "tore": 1
-    },
-    {
-      "name": "L. Petkov",
       "tore": 1
     },
     {
@@ -179,11 +179,11 @@
       "tore": 1
     },
     {
-      "name": "T. Lemperle",
+      "name": "L. Avdullahu",
       "tore": 1
     },
     {
-      "name": "L. Avdullahu",
+      "name": "T. Lemperle",
       "tore": 1
     },
     {
@@ -219,11 +219,11 @@
       "tore": 1
     },
     {
-      "name": "P. Mwene",
+      "name": "R. Königsdörffer",
       "tore": 1
     },
     {
-      "name": "R. Königsdörffer",
+      "name": "P. Mwene",
       "tore": 1
     },
     {
@@ -264,6 +264,26 @@
     },
     {
       "name": "L. Maina",
+      "tore": 1
+    },
+    {
+      "name": "C. Nkunku",
+      "tore": 1
+    },
+    {
+      "name": "W. Orbán",
+      "tore": 1
+    },
+    {
+      "name": "T. Gomis",
+      "tore": 1
+    },
+    {
+      "name": "Romulo",
+      "tore": 1
+    },
+    {
+      "name": "Lennart Karl",
       "tore": 1
     }
   ]
