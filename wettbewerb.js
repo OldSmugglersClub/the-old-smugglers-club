@@ -3558,6 +3558,17 @@ function normalizeGoalGetterEntries(goalGetterData) {
     root.classList.toggle("is-hidden", false);
   }
 
+  async function fetchGoalGettersWithFallback(competitionId, liveUrl) {
+    if (window.TOSMCGoalGetterFallback?.load) {
+      const result = await window.TOSMCGoalGetterFallback.load({ competitionId, liveUrl });
+      if (result.stale) {
+        console.warn(`Torjäger ${competitionId}: letzter bestätigter Stand wird verwendet (${result.source}).`);
+      }
+      return result.data;
+    }
+    return fetchJson(liveUrl, false);
+  }
+
   async function fetchJson(url, required = true) {
     try {
       const response = await fetch(url, { cache: "no-store" });
@@ -3605,9 +3616,9 @@ function normalizeGoalGetterEntries(goalGetterData) {
         fetchJson(teamDataUrl, false),
         slug === "bundesliga" ? fetchJson(bundesligaTableUrl, false) : Promise.resolve({ teams: [] }),
         slug === "bundesliga" ? fetchJson(bundesligaGoalGetterUrl, false) : Promise.resolve({ torjaeger: [] }),
-        slug === "dfb-pokal" ? fetchJson(OPENLIGADB_DFB_GOALGETTERS_URL, false) : Promise.resolve([]),
-        slug === "champions-league" ? fetchJson(OPENLIGADB_CL_GOALGETTERS_URL, false) : Promise.resolve([]),
-        slug === "europa-league" ? fetchJson(OPENLIGADB_EL_GOALGETTERS_URL, false) : Promise.resolve([]),
+        slug === "dfb-pokal" ? fetchGoalGettersWithFallback("dfb-pokal", OPENLIGADB_DFB_GOALGETTERS_URL) : Promise.resolve([]),
+        slug === "champions-league" ? fetchGoalGettersWithFallback("champions-league", OPENLIGADB_CL_GOALGETTERS_URL) : Promise.resolve([]),
+        slug === "europa-league" ? fetchGoalGettersWithFallback("europa-league", OPENLIGADB_EL_GOALGETTERS_URL) : Promise.resolve([]),
         slug === "dynamo-dresden" ? fetchJson(OPENLIGADB_DYNAMO_MATCHES_URL, false) : Promise.resolve([]),
         fetchJson(competitionConfigUrl, false),
         (slug === "dfb-pokal" || slug === "dynamo-dresden")
