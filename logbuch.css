@@ -944,3 +944,12 @@ body{overflow-x:hidden}
   text-transform:uppercase;
 }
 #lb-current .lb-entry--pending + .lb-entry{margin-top:18px}
+
+/* Website 4.9.2-HF12-HF102 – Frühere Einträge nach Wettbewerb und Spieltag/Runde */
+.lb-archive-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.lb-archive-field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.lb-archive-field label{color:#c99b4d;font-size:.74rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.lb-archive-field select{width:100%;min-height:44px;border:1px solid rgba(174,119,37,.54);border-radius:8px;background:#1b0e07;color:#ead09a;padding:9px 38px 9px 11px;font:inherit;font-weight:700;cursor:pointer}
+.lb-archive-field select:focus{outline:2px solid rgba(211,160,74,.7);outline-offset:2px}
+.lb-archive-empty{color:#bda783;line-height:1.5}
+@media(max-width:760px){.lb-archive-controls{grid-template-columns:1fr}}

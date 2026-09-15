@@ -318,18 +318,57 @@ function renderEntry(entry,pending){
 function archive(){
  const host=$("#lb-archive-list"); if(!host) return;
  const source=[...(data?.logbuecher||[])];
- const ordinalById=new Map(source.map((e,i)=>[e?.id,i+1]));
- const logs=[...source].reverse();
- host.innerHTML=logs.map((e,i)=>{
-   const ordinal=ordinalById.get(e?.id)||source.indexOf(e)+1;
-   const competition=labelType(e?.wettbewerb||e?.typ||"");
-   const archiveLabel=`${ordinal}. Tippspieltag · ${competition}`;
-   return `<button type="button" data-log-id="${esc(e.id)}" aria-current="${i===0?"true":"false"}">${esc(archiveLabel)}</button>`;
- }).join("");
- host.addEventListener("click",ev=>{
-   const b=ev.target.closest("button[data-log-id]"); if(!b)return;
-   const entry=(data.logbuecher||[]).find(x=>x.id===b.dataset.logId); renderEntry(entry,currentPending);
-   host.querySelectorAll("button").forEach(x=>x.setAttribute("aria-current",String(x===b)));
+ if(!source.length){host.innerHTML='<div class="lb-archive-empty">Noch keine früheren Einträge vorhanden.</div>';return;}
+
+ const competitionKey=e=>String(e?.wettbewerb||e?.typ||"tippspieltag");
+ const competitionOrder=[];
+ const grouped=new Map();
+ source.forEach(entry=>{
+   const key=competitionKey(entry);
+   if(!grouped.has(key)){grouped.set(key,[]);competitionOrder.push(key);}
+   grouped.get(key).push(entry);
+ });
+
+ const latest=source.at(-1);
+ const initialCompetition=competitionKey(latest);
+ host.innerHTML=`
+   <div class="lb-archive-field">
+     <label for="lb-archive-competition">Wettbewerb</label>
+     <select id="lb-archive-competition"></select>
+   </div>
+   <div class="lb-archive-field">
+     <label for="lb-archive-entry">Spieltag / Runde</label>
+     <select id="lb-archive-entry"></select>
+   </div>`;
+
+ const competitionSelect=$("#lb-archive-competition");
+ const entrySelect=$("#lb-archive-entry");
+ competitionSelect.innerHTML=competitionOrder.map(key=>`<option value="${esc(key)}">${esc(labelType(key))}</option>`).join("");
+
+ function entryLabel(entry){
+   const round=String(entry?.runde||"").trim();
+   if(round)return keepSpieltag(round);
+   const title=String(entry?.bezeichnung||"").trim();
+   if(title){
+     const competition=labelType(entry?.wettbewerb||entry?.typ||"");
+     const stripped=title.replace(new RegExp(`^${competition.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}\s*`,"i"),"").trim();
+     return keepSpieltag(stripped||title);
+   }
+   return "Logbucheintrag";
+ }
+ function fillEntries(key,preferredId){
+   const entries=[...(grouped.get(key)||[])].reverse();
+   entrySelect.innerHTML=entries.map(entry=>`<option value="${esc(entry.id)}">${esc(entryLabel(entry))}</option>`).join("");
+   const selected=entries.find(entry=>entry.id===preferredId)||entries[0];
+   if(selected){entrySelect.value=selected.id;renderEntry(selected,currentPending);}
+ }
+
+ competitionSelect.value=initialCompetition;
+ fillEntries(initialCompetition,latest?.id);
+ competitionSelect.addEventListener("change",()=>fillEntries(competitionSelect.value,null));
+ entrySelect.addEventListener("change",()=>{
+   const entry=source.find(x=>x.id===entrySelect.value);
+   if(entry)renderEntry(entry,currentPending);
  });
 }
 
