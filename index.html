@@ -5517,6 +5517,103 @@
     }
 
     .hall-columns--records-only { grid-template-columns: minmax(0, 1fr); }
+
+    /* HF99 – Rekordtafel visuell als eigenständige Ehrenwand, ohne Datenlogik anzutasten. */
+    #hall-of-fame .hall-columns--records-only {
+      margin-top: 1.35rem;
+    }
+    #hall-of-fame .hall-columns--records-only > div {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(1rem, 2.2vw, 1.6rem);
+      border: 1px solid rgba(213,161,59,.42);
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 50% -20%, rgba(213,161,59,.13), transparent 42%),
+        linear-gradient(145deg, rgba(31,18,9,.92), rgba(10,6,3,.97));
+      box-shadow: inset 0 0 0 1px rgba(255,225,150,.035), 0 16px 34px rgba(0,0,0,.24);
+    }
+    #hall-of-fame .hall-columns--records-only > div::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(213,161,59,.13);
+      border-radius: 12px;
+      pointer-events: none;
+    }
+    #hall-of-fame .hall-columns--records-only .hall-section-title {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .7rem;
+      margin: .15rem 0 1rem;
+      color: #f3c75d;
+      font-size: clamp(1.45rem, 2.7vw, 2rem);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    #hall-of-fame .hall-columns--records-only .hall-section-title::before,
+    #hall-of-fame .hall-columns--records-only .hall-section-title::after {
+      content: "";
+      width: min(90px, 12vw);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(213,161,59,.68));
+    }
+    #hall-of-fame .hall-columns--records-only .hall-section-title::after {
+      transform: scaleX(-1);
+    }
+    #hall-of-fame .records-grid {
+      position: relative;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: clamp(.7rem, 1.4vw, 1rem);
+    }
+    #hall-of-fame .record-card {
+      position: relative;
+      min-height: 132px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: .5rem;
+      padding: 1rem 1rem 1.05rem;
+      border-color: rgba(213,161,59,.36);
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: inset 0 0 24px rgba(213,161,59,.025);
+    }
+    #hall-of-fame .record-card::before {
+      content: "◆";
+      display: block;
+      margin-bottom: .1rem;
+      color: #c79635;
+      font-size: .75rem;
+      text-shadow: 0 0 12px rgba(213,161,59,.4);
+    }
+    #hall-of-fame .record-card span:first-child {
+      color: #d4b46f;
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    #hall-of-fame .record-card strong {
+      color: #fff0b2;
+      font-size: clamp(1.05rem, 1.8vw, 1.38rem);
+      line-height: 1.2;
+      text-shadow: 0 2px 12px rgba(0,0,0,.65);
+    }
+    #hall-of-fame .record-card strong:not(.status-open) {
+      font-variant-numeric: tabular-nums;
+    }
+    @media (max-width: 900px) {
+      #hall-of-fame .records-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 520px) {
+      #hall-of-fame .hall-columns--records-only > div { padding: .9rem; }
+      #hall-of-fame .records-grid { grid-template-columns: 1fr; }
+      #hall-of-fame .record-card { min-height: 104px; }
+    }
   
     /* Website 4.7.2-TEST1 – Hauptnavigation um Stalk-O-Meter erweitert.
        Nur Desktop: moderate Typografie-/Padding-Kompaktierung, keine Strukturänderung. */
@@ -6075,7 +6172,7 @@
 
           <div class="trophy-stage">
             <img class="trophy"
-                 src="./champion-trophy.jpeg?v=4.9.2-HF12-HF98"
+                 src="./champion-trophy.jpeg?v=4.9.2-HF12-HF99"
                  alt="Champion-Pokal des Old Smugglers Club"
                  onerror="this.style.display='none';this.nextElementSibling.hidden=false;"
                  loading="lazy" decoding="async">
