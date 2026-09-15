@@ -29,7 +29,16 @@
       result.besondereLeistungen=[...existing,...additions.filter(a=>!existing.some(e=>e.titel===a.titel&&e.name===a.name))];
     }
     if(Array.isArray(update.meisterchronik)) result.meisterchronik=update.meisterchronik.filter(x=>x&&x.freigegeben===true&&x.name&&x.saison);
-    if(update.rekorde&&update.rekordeFreigegeben===true) result.rekorde={...(result.rekorde||{}),...update.rekorde};
+    if(update.rekorde&&update.rekordeFreigegeben===true){
+      const recordSeason=seasonState?.saison||update.saison||"";
+      const releasedRecords={};
+      for(const [key,entry] of Object.entries(update.rekorde)){
+        releasedRecords[key]=entry&&typeof entry==="object"&&entry.offen!==true
+          ? {...entry,...(!entry.saison&&recordSeason?{saison:recordSeason}:{})}
+          : entry;
+      }
+      result.rekorde={...(result.rekorde||{}),...releasedRecords};
+    }
     const special=Array.isArray(result.besondereLeistungen)?result.besondereLeistungen.filter(x=>x&&x.name&&x.titel&&(x.bestaetigt===true||x.freigegeben===true||x.offen===false)).at(-1):null;
     if(special) result.ehrenmitglieder={label:special.titel,wert:special.name,offen:false};
     result.meta={...(result.meta||{}),runtime:"Das Ehrenlogbuch wurde aktualisiert."};

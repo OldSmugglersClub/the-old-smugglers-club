@@ -1,20 +1,21 @@
 {
-  "basis": "4.9.2-HF12-HF103",
-  "ziel": "4.9.2-HF12-HF104",
-  "zielbereich": "Spieltags-Logbuch – mobile Navigation",
+  "basis": "4.9.2-HF12-HF104",
+  "ziel": "4.9.2-HF12-HF105",
+  "zielbereich": "Hall of Fame Startseite – Rekordtafel Saisonbezeichnung",
   "aenderungen": [
-    "Nur im Spieltags-Logbuch: mobile Navigationsbuttons erhalten box-sizing:border-box und max-width:100%.",
-    "Cache-Buster von logbuch.css wird auf HF104 erhöht.",
-    "Keine Daten-, Ranking- oder JavaScript-Logik geändert."
+    "Unter Gesamtpunkte, Bonuspunkte und Exakte Tipps wird die Rekordsaison angezeigt.",
+    "Aktuelle Rekorde werden als Saison 2025/2026 dargestellt.",
+    "Künftige freigegebene Rekorde erhalten beim Runtime-Merge die Saison des Saisonabschlusses, sofern kein Saisonfeld vorhanden ist.",
+    "Weitere Rekorde / Noch offen bleibt unverändert."
   ],
   "nicht_angefasst": [
-    "site-navigation.css",
-    "logbuch.js",
-    "spieltag-logbuch.json",
-    "website-view.json",
-    "highscore.html und Highscore-Logik",
-    "Hall of Fame",
-    "Ehrenlogbuch"
-  ],
-  "hinweis": "HF103 änderte nur die Highscore-Navigation; logbuch.html und logbuch.css blieben gegenüber HF102 unverändert. Der HF104-Port baut daher gezielt auf den unveränderten Live-Logbuchdateien auf."
+    "Rekordwerte und Rekordhalter",
+    "Rekordvergleichslogik",
+    "Hall-of-Fame-Siegerfelder",
+    "Champion-Pokal",
+    "Ehrenlogbuch",
+    "Highscore",
+    "Spieltags-Logbuch",
+    "produktive JSON-Dateien"
+  ]
 }
