@@ -1,23 +1,20 @@
 {
-  "basis": "4.9.2-HF12-HF102",
-  "ziel": "4.9.2-HF12-HF103",
-  "zielbereich": "Highscore obere Navigation",
+  "basis": "4.9.2-HF12-HF103",
+  "ziel": "4.9.2-HF12-HF104",
+  "zielbereich": "Spieltags-Logbuch – mobile Navigation",
   "aenderungen": [
-    "Zusätzliche obere Navigationsleiste direkt vor dem Top-3-Bereich.",
-    "Oben nur 'Zurück zur Clubseite' und 'Kicktipp Live Action'.",
-    "Bestehende untere Navigationsleiste bleibt unverändert inklusive 'Nach oben'."
-  ],
-  "ausdruecklich_nicht_portiert": [
-    "TEST5-Änderung am Highscore-Datenadapter",
-    "sonstige Testkennungen oder Test-Cache-Buster"
+    "Nur im Spieltags-Logbuch: mobile Navigationsbuttons erhalten box-sizing:border-box und max-width:100%.",
+    "Cache-Buster von logbuch.css wird auf HF104 erhöht.",
+    "Keine Daten-, Ranking- oder JavaScript-Logik geändert."
   ],
   "nicht_angefasst": [
-    "highscore-data-adapter.js",
-    "highscore.js",
-    "highscore.json",
+    "site-navigation.css",
+    "logbuch.js",
+    "spieltag-logbuch.json",
     "website-view.json",
+    "highscore.html und Highscore-Logik",
     "Hall of Fame",
-    "Ehrenlogbuch",
-    "Spieltags-Logbuch"
-  ]
+    "Ehrenlogbuch"
+  ],
+  "hinweis": "HF103 änderte nur die Highscore-Navigation; logbuch.html und logbuch.css blieben gegenüber HF102 unverändert. Der HF104-Port baut daher gezielt auf den unveränderten Live-Logbuchdateien auf."
 }

@@ -1,4 +1,5 @@
-HF103 Live-Port auf bestätigter Live-Basis HF102.
-Portiert wurde ausschließlich die in TEST7 bestätigte zusätzliche obere Highscore-Navigation.
-Der verworfene TEST5-Adapter-Fix wurde NICHT übernommen.
-Keine Ranking-, Daten- oder Adapterlogik verändert.
+HF104: Gezielter Live-Port des in TEST8 bestätigten Mobile-Fixes.
+Nur logbuch.css, logbuch.html (Cache-Buster) und VERSION.txt werden geändert.
+Der Fix ist auf .lb-toolbar .tosmc-nav-button bei max-width:520px begrenzt.
+site-navigation.css, logbuch.js und sämtliche Datenbestände bleiben unverändert.
+HF103-Highscore-Navigation wird nicht berührt.

@@ -953,3 +953,12 @@ body{overflow-x:hidden}
 .lb-archive-field select:focus{outline:2px solid rgba(211,160,74,.7);outline-offset:2px}
 .lb-archive-empty{color:#bda783;line-height:1.5}
 @media(max-width:760px){.lb-archive-controls{grid-template-columns:1fr}}
+
+/* Website 4.9.2-HF12-HF104 – Mobile Logbuch-Navigation ohne Seitenüberlauf */
+@media(max-width:520px){
+  .lb-toolbar .tosmc-nav-button{
+    box-sizing:border-box;
+    max-width:100%;
+  }
+}
+
