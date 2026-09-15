@@ -10,7 +10,7 @@
   <!-- Diese Version verwendet exakt die aktuell in GitHub sichtbaren Dateinamen:
        Hintergrund.jpeg
        banner.png
-       champion-trophy.jpeg
+       hall-of-fame-trophy-neutral.jpg
        favicon.jpeg
        logo.jpeg
   -->
@@ -4268,6 +4268,24 @@
       object-position: center;
     }
 
+    #hall-of-fame .trophy-season {
+      position: absolute;
+      z-index: 2;
+      left: 50%;
+      bottom: 10.5%;
+      transform: translateX(-50%);
+      width: min(48%, 260px);
+      color: #9d7650;
+      font-size: clamp(.72rem, 1.35vw, 1.15rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: .035em;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 0 1px 1px rgba(0,0,0,.9), 0 -1px 0 rgba(235,204,156,.16);
+      pointer-events: none;
+    }
+
   
     /* ================================================================
        PIRATENKODEX – TEXTFREIER PIRATENHINTERGRUND
@@ -5759,7 +5777,7 @@
 
 </style>
   <link rel="stylesheet" href="./legal.css">
-  <script src="./hall-of-fame-runtime.js"></script>
+  <script src="./hall-of-fame-runtime.js?v=4.9.2-HF12-HF100"></script>
   <script src="./highscore-data-adapter.js"></script>
   <link rel="stylesheet" href="./website-mitteilung.css?v=4.9.2-HF12-HF40">
   <link rel="stylesheet" href="./site-navigation.css?v=4.9.2-HF12-HF85">
@@ -6172,10 +6190,11 @@
 
           <div class="trophy-stage">
             <img class="trophy"
-                 src="./champion-trophy.jpeg?v=4.9.2-HF12-HF99"
+                 src="./hall-of-fame-trophy-neutral.jpg?v=4.9.2-HF12-HF100"
                  alt="Champion-Pokal des Old Smugglers Club"
-                 onerror="this.style.display='none';this.nextElementSibling.hidden=false;"
+                 onerror="this.style.display='none';this.nextElementSibling.hidden=true;this.nextElementSibling.nextElementSibling.hidden=false;"
                  loading="lazy" decoding="async">
+            <span class="trophy-season" id="champion-trophy-season">SAISON 2025/2026</span>
             <div class="trophy-fallback" hidden aria-label="Pokal">Pokal</div>
           </div>
 
@@ -6183,7 +6202,7 @@
             <p class="champion-kicker">Gesamtchampion der letzten abgeschlossenen Saison</p>
             <h3 class="champion-name" id="champion-name">Manuel</h3>
             <p class="champion-meta" id="champion-meta">Gesamtchampion</p>
-            <div class="champion-season" id="champion-label">Old Smugglers Saison-Champion</div>
+            <div class="champion-season" id="champion-label">TOSMC Saison Champion</div>
           </div>
         </article>
 
@@ -6610,6 +6629,19 @@
       if (element && value !== undefined && value !== null) {
         element.textContent = value;
       }
+    }
+
+    function formatChampionSeason(value) {
+      const raw = String(value || "").trim();
+      const match = raw.match(/^(\d{4})[\/-](\d{2}|\d{4})$/);
+      if (!match) return raw;
+      const start = Number(match[1]);
+      let end = Number(match[2]);
+      if (match[2].length === 2) {
+        end = Math.floor(start / 100) * 100 + end;
+        if (end < start) end += 100;
+      }
+      return `${start}/${end}`;
     }
 
     function setOpenState(id, isOpen, openText = "Noch offen") {
@@ -7050,13 +7082,15 @@
 
         setText("champion-name", data.aktuellerChampion?.name);
         setText("welcome-champion", data.aktuellerChampion?.name || "Noch offen");
+        const championSeason = formatChampionSeason(data.aktuellerChampion?.saison || data.aktuellerChampion?.jahr);
+        if (championSeason) setText("champion-trophy-season", `SAISON ${championSeason}`);
         setText(
           "champion-meta",
           [data.aktuellerChampion?.titel]
             .filter(Boolean)
             .join(" · ")
         );
-        setText("champion-label", data.aktuellerChampion?.label);
+        setText("champion-label", "TOSMC Saison Champion");
 
         setText("meister-title", "Bundesliga");
         setText("meister-name", data.meister?.name);
