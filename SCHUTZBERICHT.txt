@@ -1,0 +1,4 @@
+HF103 Live-Port auf bestätigter Live-Basis HF102.
+Portiert wurde ausschließlich die in TEST7 bestätigte zusätzliche obere Highscore-Navigation.
+Der verworfene TEST5-Adapter-Fix wurde NICHT übernommen.
+Keine Ranking-, Daten- oder Adapterlogik verändert.

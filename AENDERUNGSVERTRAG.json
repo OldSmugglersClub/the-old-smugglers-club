@@ -1,0 +1,23 @@
+{
+  "basis": "4.9.2-HF12-HF102",
+  "ziel": "4.9.2-HF12-HF103",
+  "zielbereich": "Highscore obere Navigation",
+  "aenderungen": [
+    "Zusätzliche obere Navigationsleiste direkt vor dem Top-3-Bereich.",
+    "Oben nur 'Zurück zur Clubseite' und 'Kicktipp Live Action'.",
+    "Bestehende untere Navigationsleiste bleibt unverändert inklusive 'Nach oben'."
+  ],
+  "ausdruecklich_nicht_portiert": [
+    "TEST5-Änderung am Highscore-Datenadapter",
+    "sonstige Testkennungen oder Test-Cache-Buster"
+  ],
+  "nicht_angefasst": [
+    "highscore-data-adapter.js",
+    "highscore.js",
+    "highscore.json",
+    "website-view.json",
+    "Hall of Fame",
+    "Ehrenlogbuch",
+    "Spieltags-Logbuch"
+  ]
+}
