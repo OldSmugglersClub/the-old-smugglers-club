@@ -1012,7 +1012,7 @@
       position: relative;
       display: grid;
       place-items: center;
-      min-height: 310px;
+      min-height: 360px;
       margin: .15rem 0 .8rem;
       border-radius: 14px;
       background:
@@ -1035,8 +1035,9 @@
     .trophy {
       position: relative;
       z-index: 1;
-      width: min(92%, 420px);
-      height: 300px;
+      width: min(98%, 520px);
+      height: auto;
+      max-height: 440px;
       margin: 0 auto;
       object-fit: contain;
       border-radius: 14px;
@@ -1922,11 +1923,13 @@
       }
 
       .trophy-stage {
-        min-height: 230px;
+        min-height: 300px;
       }
 
       .trophy {
-        height: 220px;
+        width: min(98%, 340px);
+        height: auto;
+        max-height: 285px;
       }
 
       .honour-card {
@@ -5601,12 +5604,13 @@
     /* HF3 – Champion-Pokal Desktop: größer, vollständig sichtbar */
     @media (min-width: 769px) {
       #hall-of-fame .trophy-stage {
-        min-height: 430px;
+        min-height: 560px;
       }
 
       #hall-of-fame .trophy {
-        width: min(94%, 560px);
-        height: 410px;
+        width: min(98%, 620px);
+        height: auto;
+        max-height: 540px;
         object-fit: contain;
         object-position: center;
       }
@@ -6071,7 +6075,7 @@
 
           <div class="trophy-stage">
             <img class="trophy"
-                 src="./champion-trophy.jpeg"
+                 src="./champion-trophy.jpeg?v=4.9.2-HF12-HF98"
                  alt="Champion-Pokal des Old Smugglers Club"
                  onerror="this.style.display='none';this.nextElementSibling.hidden=false;"
                  loading="lazy" decoding="async">
