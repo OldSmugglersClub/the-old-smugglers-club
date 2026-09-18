@@ -1,11 +1,15 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 18,
-  "aktualisiert": "2026-09-13",
+  "datenVersion": 19,
+  "aktualisiert": "2026-09-18",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
   "torjaeger": [
+    {
+      "name": "M. Olise",
+      "tore": 4
+    },
     {
       "name": "Younes Ebnoutalib",
       "tore": 3
@@ -15,11 +19,11 @@
       "tore": 3
     },
     {
-      "name": "I. Matanovic",
+      "name": "Y. Suzuki",
       "tore": 3
     },
     {
-      "name": "Y. Suzuki",
+      "name": "I. Matanovic",
       "tore": 3
     },
     {
@@ -35,15 +39,19 @@
       "tore": 3
     },
     {
+      "name": "H. Kane",
+      "tore": 3
+    },
+    {
       "name": "J. Vagnoman",
       "tore": 2
     },
     {
-      "name": "A. Nusa",
+      "name": "R. Baku",
       "tore": 2
     },
     {
-      "name": "R. Baku",
+      "name": "A. Nusa",
       "tore": 2
     },
     {
@@ -99,14 +107,6 @@
       "tore": 2
     },
     {
-      "name": "Luis Díaz",
-      "tore": 1
-    },
-    {
-      "name": "M. Olise",
-      "tore": 1
-    },
-    {
       "name": "D. Upamecano",
       "tore": 1
     },
@@ -115,7 +115,15 @@
       "tore": 1
     },
     {
+      "name": "Luis Díaz",
+      "tore": 1
+    },
+    {
       "name": "R. Reitz",
+      "tore": 1
+    },
+    {
+      "name": "L. Querfeld",
       "tore": 1
     },
     {
@@ -123,7 +131,7 @@
       "tore": 1
     },
     {
-      "name": "L. Querfeld",
+      "name": "O. Kabak",
       "tore": 1
     },
     {
@@ -132,10 +140,6 @@
     },
     {
       "name": "S. El Mala",
-      "tore": 1
-    },
-    {
-      "name": "O. Kabak",
       "tore": 1
     },
     {
@@ -251,11 +255,11 @@
       "tore": 1
     },
     {
-      "name": "M. Wöber",
+      "name": "A. Aouchiche",
       "tore": 1
     },
     {
-      "name": "A. Aouchiche",
+      "name": "M. Wöber",
       "tore": 1
     },
     {
@@ -267,15 +271,7 @@
       "tore": 1
     },
     {
-      "name": "C. Nkunku",
-      "tore": 1
-    },
-    {
       "name": "T. Gomis",
-      "tore": 1
-    },
-    {
-      "name": "Romulo",
       "tore": 1
     },
     {
@@ -283,11 +279,23 @@
       "tore": 1
     },
     {
+      "name": "C. Nkunku",
+      "tore": 1
+    },
+    {
+      "name": "Romulo",
+      "tore": 1
+    },
+    {
       "name": "Lennart Karl",
       "tore": 1
     },
     {
-      "name": "H. Kane",
+      "name": "I. Saibari",
+      "tore": 1
+    },
+    {
+      "name": "J. Musiala",
       "tore": 1
     }
   ]

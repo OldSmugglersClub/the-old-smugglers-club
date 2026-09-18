@@ -2255,12 +2255,12 @@
           "datumAnzeige": "18.09.2026",
           "anstoss": "20:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 7,
+          "auswaertstore": 0,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "",
-          "quelleStand": "2026-07-30",
+          "quelleStand": "2026-09-18",
           "heimTeamId": "bayern-muenchen",
           "auswaertsTeamId": "union-berlin"
         },
@@ -12931,6 +12931,6 @@
       ]
     }
   ],
-  "datenVersion": 46,
-  "aktualisiert": "2026-09-13"
+  "datenVersion": 47,
+  "aktualisiert": "2026-09-18"
 }
