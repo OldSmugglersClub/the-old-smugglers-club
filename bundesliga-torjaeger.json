@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 21,
+  "datenVersion": 22,
   "aktualisiert": "2026-09-19",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
@@ -119,10 +119,6 @@
       "tore": 2
     },
     {
-      "name": "D. Upamecano",
-      "tore": 1
-    },
-    {
       "name": "Aleksandar Pavlovic",
       "tore": 1
     },
@@ -131,15 +127,19 @@
       "tore": 1
     },
     {
+      "name": "D. Upamecano",
+      "tore": 1
+    },
+    {
       "name": "R. Reitz",
       "tore": 1
     },
     {
-      "name": "L. Querfeld",
+      "name": "Emmanuel Latte Lath",
       "tore": 1
     },
     {
-      "name": "Emmanuel Latte Lath",
+      "name": "L. Querfeld",
       "tore": 1
     },
     {
@@ -175,11 +175,11 @@
       "tore": 1
     },
     {
-      "name": "A. Kade",
+      "name": "Rodrigo Ribeiro",
       "tore": 1
     },
     {
-      "name": "Rodrigo Ribeiro",
+      "name": "A. Kade",
       "tore": 1
     },
     {
@@ -231,11 +231,11 @@
       "tore": 1
     },
     {
-      "name": "P. Mwene",
+      "name": "R. Königsdörffer",
       "tore": 1
     },
     {
-      "name": "R. Königsdörffer",
+      "name": "P. Mwene",
       "tore": 1
     },
     {
@@ -243,19 +243,19 @@
       "tore": 1
     },
     {
-      "name": "F. Rieder",
-      "tore": 1
-    },
-    {
       "name": "A. Ibrahimovic",
       "tore": 1
     },
     {
-      "name": "A. Aouchiche",
+      "name": "F. Rieder",
       "tore": 1
     },
     {
       "name": "M. Wöber",
+      "tore": 1
+    },
+    {
+      "name": "A. Aouchiche",
       "tore": 1
     },
     {
@@ -271,6 +271,10 @@
       "tore": 1
     },
     {
+      "name": "W. Orbán",
+      "tore": 1
+    },
+    {
       "name": "T. Gomis",
       "tore": 1
     },
@@ -283,15 +287,7 @@
       "tore": 1
     },
     {
-      "name": "W. Orbán",
-      "tore": 1
-    },
-    {
       "name": "Lennart Karl",
-      "tore": 1
-    },
-    {
-      "name": "I. Saibari",
       "tore": 1
     },
     {
@@ -299,11 +295,15 @@
       "tore": 1
     },
     {
+      "name": "I. Saibari",
+      "tore": 1
+    },
+    {
       "name": "D. Scherhant",
       "tore": 1
     },
     {
-      "name": "Danny da Costa",
+      "name": "S. Machino",
       "tore": 1
     },
     {
@@ -311,15 +311,19 @@
       "tore": 1
     },
     {
-      "name": "F. Neuhaus",
-      "tore": 1
-    },
-    {
       "name": "Isac Lidberg",
       "tore": 1
     },
     {
-      "name": "S. Machino",
+      "name": "F. Neuhaus",
+      "tore": 1
+    },
+    {
+      "name": "Danny da Costa",
+      "tore": 1
+    },
+    {
+      "name": "N. Capaldo",
       "tore": 1
     },
     {
@@ -331,15 +335,15 @@
       "tore": 1
     },
     {
-      "name": "N. Capaldo",
-      "tore": 1
-    },
-    {
       "name": "Calvin Brackelmann",
       "tore": 1
     },
     {
       "name": "M. Weiser",
+      "tore": 1
+    },
+    {
+      "name": "M. Beier",
       "tore": 1
     }
   ]
