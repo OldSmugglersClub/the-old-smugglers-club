@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 19,
-  "aktualisiert": "2026-09-18",
+  "datenVersion": 20,
+  "aktualisiert": "2026-09-19",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
@@ -12,14 +12,18 @@
     },
     {
       "name": "Younes Ebnoutalib",
-      "tore": 3
-    },
-    {
-      "name": "P. Schick",
-      "tore": 3
+      "tore": 4
     },
     {
       "name": "Y. Suzuki",
+      "tore": 4
+    },
+    {
+      "name": "P. Tietz",
+      "tore": 4
+    },
+    {
+      "name": "P. Schick",
       "tore": 3
     },
     {
@@ -35,7 +39,7 @@
       "tore": 3
     },
     {
-      "name": "P. Tietz",
+      "name": "J. Burkardt",
       "tore": 3
     },
     {
@@ -47,11 +51,11 @@
       "tore": 2
     },
     {
-      "name": "R. Baku",
+      "name": "A. Nusa",
       "tore": 2
     },
     {
-      "name": "A. Nusa",
+      "name": "R. Baku",
       "tore": 2
     },
     {
@@ -87,7 +91,11 @@
       "tore": 2
     },
     {
-      "name": "J. Burkardt",
+      "name": "S. Becker",
+      "tore": 2
+    },
+    {
+      "name": "R. Fellhauer",
       "tore": 2
     },
     {
@@ -123,11 +131,11 @@
       "tore": 1
     },
     {
-      "name": "L. Querfeld",
+      "name": "Emmanuel Latte Lath",
       "tore": 1
     },
     {
-      "name": "Emmanuel Latte Lath",
+      "name": "L. Querfeld",
       "tore": 1
     },
     {
@@ -135,11 +143,11 @@
       "tore": 1
     },
     {
-      "name": "A. Daghim",
+      "name": "S. El Mala",
       "tore": 1
     },
     {
-      "name": "S. El Mala",
+      "name": "A. Daghim",
       "tore": 1
     },
     {
@@ -163,11 +171,11 @@
       "tore": 1
     },
     {
-      "name": "A. Kade",
+      "name": "Rodrigo Ribeiro",
       "tore": 1
     },
     {
-      "name": "Rodrigo Ribeiro",
+      "name": "A. Kade",
       "tore": 1
     },
     {
@@ -183,11 +191,11 @@
       "tore": 1
     },
     {
-      "name": "T. Lemperle",
+      "name": "L. Avdullahu",
       "tore": 1
     },
     {
-      "name": "L. Avdullahu",
+      "name": "T. Lemperle",
       "tore": 1
     },
     {
@@ -203,15 +211,15 @@
       "tore": 1
     },
     {
-      "name": "J. Scally",
-      "tore": 1
-    },
-    {
       "name": "D. Mokwa",
       "tore": 1
     },
     {
       "name": "F. Keidel",
+      "tore": 1
+    },
+    {
+      "name": "J. Scally",
       "tore": 1
     },
     {
@@ -227,10 +235,6 @@
       "tore": 1
     },
     {
-      "name": "S. Becker",
-      "tore": 1
-    },
-    {
       "name": "R. Königsdörffer",
       "tore": 1
     },
@@ -239,15 +243,11 @@
       "tore": 1
     },
     {
-      "name": "Alexis Claude-Maurice",
-      "tore": 1
-    },
-    {
-      "name": "R. Fellhauer",
-      "tore": 1
-    },
-    {
       "name": "F. Rieder",
+      "tore": 1
+    },
+    {
+      "name": "Alexis Claude-Maurice",
       "tore": 1
     },
     {
@@ -255,11 +255,11 @@
       "tore": 1
     },
     {
-      "name": "A. Aouchiche",
+      "name": "M. Wöber",
       "tore": 1
     },
     {
-      "name": "M. Wöber",
+      "name": "A. Aouchiche",
       "tore": 1
     },
     {
@@ -271,7 +271,7 @@
       "tore": 1
     },
     {
-      "name": "T. Gomis",
+      "name": "C. Nkunku",
       "tore": 1
     },
     {
@@ -279,7 +279,7 @@
       "tore": 1
     },
     {
-      "name": "C. Nkunku",
+      "name": "T. Gomis",
       "tore": 1
     },
     {
@@ -296,6 +296,22 @@
     },
     {
       "name": "J. Musiala",
+      "tore": 1
+    },
+    {
+      "name": "D. Scherhant",
+      "tore": 1
+    },
+    {
+      "name": "F. Neuhaus",
+      "tore": 1
+    },
+    {
+      "name": "N. Capaldo",
+      "tore": 1
+    },
+    {
+      "name": "Poulsen, Yussuf",
       "tore": 1
     }
   ]
