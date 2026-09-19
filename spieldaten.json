@@ -261,16 +261,40 @@
           "datumAnzeige": "19.09.2026",
           "anstoss": "20:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 1,
+          "auswaertstore": 2,
+          "status": "beendet",
           "sonderwertungen": [
             "smugglerauftrag"
           ],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen. Smugglerauftrag zum 6. Spieltag der 2. Bundesliga.",
           "quelleStand": "2026-07-30",
           "heimTeamId": "dynamo-dresden",
-          "auswaertsTeamId": "hertha-bsc"
+          "auswaertsTeamId": "hertha-bsc",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-09-19T21:46:06.921Z",
+            "abgegeben": 77,
+            "nichtAbgegeben": 23,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 11,
+                "prozent": 14.3
+              },
+              "2": {
+                "anzahl": 55,
+                "prozent": 71.4
+              },
+              "X": {
+                "anzahl": 11,
+                "prozent": 14.3
+              }
+            }
+          },
+          "aktualisiertAm": "2026-09-19T21:46:06.921Z"
         },
         {
           "id": "sma-2026-27-07-063",
@@ -13075,6 +13099,6 @@
       ]
     }
   ],
-  "datenVersion": 50,
+  "datenVersion": 51,
   "aktualisiert": "2026-09-19"
 }
