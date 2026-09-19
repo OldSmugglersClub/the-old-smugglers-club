@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-19T04:35:12.298Z",
+  "updatedAt": "2026-09-19T20:37:47.117Z",
   "entries": {
     "sma-2026-27-auftakt-001": {
       "datum": "2026-08-09",
@@ -313,43 +313,43 @@
       "datumVon": "2026-09-19",
       "datumBis": "2026-09-19",
       "anstoss": "15:30",
-      "status": "terminiert",
+      "status": "beendet",
       "terminBestaetigt": true,
-      "quelleStand": "2026-07-30"
+      "quelleStand": "2026-09-19"
     },
     "bl-2026-27-04-032": {
       "datum": "2026-09-19",
       "datumVon": "2026-09-19",
       "datumBis": "2026-09-19",
       "anstoss": "15:30",
-      "status": "terminiert",
+      "status": "beendet",
       "terminBestaetigt": true,
-      "quelleStand": "2026-07-30"
+      "quelleStand": "2026-09-19"
     },
     "bl-2026-27-04-033": {
       "datum": "2026-09-19",
       "datumVon": "2026-09-19",
       "datumBis": "2026-09-19",
       "anstoss": "15:30",
-      "status": "terminiert",
+      "status": "beendet",
       "terminBestaetigt": true,
-      "quelleStand": "2026-07-30"
+      "quelleStand": "2026-09-19"
     },
     "bl-2026-27-04-034": {
       "datum": "2026-09-19",
       "datumVon": "2026-09-19",
       "datumBis": "2026-09-19",
       "anstoss": "15:30",
-      "status": "terminiert",
+      "status": "beendet",
       "terminBestaetigt": true,
-      "quelleStand": "2026-07-30"
+      "quelleStand": "2026-09-19"
     },
     "bl-2026-27-04-029": {
       "datum": "2026-09-19",
       "datumVon": "2026-09-19",
       "datumBis": "2026-09-19",
       "anstoss": "18:30",
-      "status": "terminiert",
+      "status": "beendet",
       "terminBestaetigt": true,
       "quelleStand": "2026-07-30"
     },
