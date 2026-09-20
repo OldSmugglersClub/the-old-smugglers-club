@@ -2561,12 +2561,12 @@
           "datumAnzeige": "20.09.2026",
           "anstoss": "15:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 2,
+          "auswaertstore": 0,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "",
-          "quelleStand": "2026-07-30",
+          "quelleStand": "2026-09-20",
           "heimTeamId": "leverkusen",
           "auswaertsTeamId": "rb-leipzig"
         },
@@ -2584,12 +2584,12 @@
           "datumAnzeige": "20.09.2026",
           "anstoss": "17:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 0,
+          "auswaertstore": 0,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "",
-          "quelleStand": "2026-07-30",
+          "quelleStand": "2026-09-20",
           "heimTeamId": "schalke-04",
           "auswaertsTeamId": "elversberg"
         },
@@ -13099,6 +13099,6 @@
       ]
     }
   ],
-  "datenVersion": 51,
-  "aktualisiert": "2026-09-19"
+  "datenVersion": 52,
+  "aktualisiert": "2026-09-20"
 }
