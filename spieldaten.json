@@ -2607,12 +2607,12 @@
           "datumAnzeige": "20.09.2026",
           "anstoss": "19:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 3,
+          "auswaertstore": 1,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "",
-          "quelleStand": "2026-07-30",
+          "quelleStand": "2026-09-20",
           "heimTeamId": "paderborn",
           "auswaertsTeamId": "hoffenheim"
         },
@@ -13099,6 +13099,6 @@
       ]
     }
   ],
-  "datenVersion": 52,
+  "datenVersion": 53,
   "aktualisiert": "2026-09-20"
 }
