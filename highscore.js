@@ -146,6 +146,7 @@ function renderTable(){
    tableWrap.classList.toggle('is-individual-table',view==='individual');
    tableWrap.classList.toggle('is-matchday-table',matchday);
    tableWrap.classList.toggle('is-bonus-table',bonus);
+   tableWrap.classList.toggle('is-competition-overall-table',competitionOverall);
  }
  $('search-box').hidden=false;
  const searchLabel=$('search-box').querySelector('span');

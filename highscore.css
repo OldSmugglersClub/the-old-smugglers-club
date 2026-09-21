@@ -1814,3 +1814,55 @@ body[data-view="team"] .hs-podium--simple .hs-rank-card--place-1{
   pointer-events:auto;
 }
 .hs-page-btn{touch-action:manipulation;cursor:pointer}
+
+/* =========================================================
+   Live HF112 – Mobile Wettbewerbs-Gesamtwertung
+   7-spaltige Wettbewerbs-Gesamtwertungen erhalten ein eigenes
+   mobiles Kartenraster. Desktop und andere Highscore-Ansichten
+   bleiben unverändert.
+   ========================================================= */
+@media (max-width:700px){
+  .hs-table-wrap.is-individual-table.is-competition-overall-table .hs-table tbody tr{
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    grid-template-areas:
+      "player player player player rank rank"
+      "exact exact diff diff tendency tendency"
+      "wins wins wins points points points";
+  }
+
+  .hs-table-wrap.is-individual-table.is-competition-overall-table .hs-table td:nth-child(3){grid-area:exact}
+  .hs-table-wrap.is-individual-table.is-competition-overall-table .hs-table td:nth-child(4){grid-area:diff}
+  .hs-table-wrap.is-individual-table.is-competition-overall-table .hs-table td:nth-child(5){grid-area:tendency}
+  .hs-table-wrap.is-individual-table.is-competition-overall-table .hs-table td:nth-child(6){grid-area:wins}
+  .hs-table-wrap.is-individual-table.is-competition-overall-table .hs-table td:nth-child(7){grid-area:points}
+
+  .hs-table-wrap.is-individual-table.is-competition-overall-table .hs-table td:nth-child(3),
+  .hs-table-wrap.is-individual-table.is-competition-overall-table .hs-table td:nth-child(4),
+  .hs-table-wrap.is-individual-table.is-competition-overall-table .hs-table td:nth-child(5),
+  .hs-table-wrap.is-individual-table.is-competition-overall-table .hs-table td:nth-child(6),
+  .hs-table-wrap.is-individual-table.is-competition-overall-table .hs-table td:nth-child(7){
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    padding:9px 5px 2px;
+    border-top:1px solid rgba(184,138,61,.22);
+    text-align:center;
+    color:#ead097;
+    font-weight:700;
+    white-space:nowrap;
+  }
+}
+
+@media (max-width:390px){
+  .hs-table-wrap.is-individual-table.is-competition-overall-table .hs-table td:nth-child(3),
+  .hs-table-wrap.is-individual-table.is-competition-overall-table .hs-table td:nth-child(4),
+  .hs-table-wrap.is-individual-table.is-competition-overall-table .hs-table td:nth-child(5),
+  .hs-table-wrap.is-individual-table.is-competition-overall-table .hs-table td:nth-child(6),
+  .hs-table-wrap.is-individual-table.is-competition-overall-table .hs-table td:nth-child(7){
+    gap:3px;
+    padding-left:3px;
+    padding-right:3px;
+    font-size:.86rem;
+  }
+}
