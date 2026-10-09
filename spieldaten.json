@@ -2702,12 +2702,12 @@
           "datumAnzeige": "09.10.2026",
           "anstoss": "20:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 2,
+          "auswaertstore": 2,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-          "quelleStand": "2026-09-10",
+          "quelleStand": "2026-10-10",
           "heimTeamId": "dortmund",
           "auswaertsTeamId": "werder-bremen"
         },
@@ -13171,6 +13171,6 @@
       ]
     }
   ],
-  "datenVersion": 54,
-  "aktualisiert": "2026-09-20"
+  "datenVersion": 55,
+  "aktualisiert": "2026-10-10"
 }

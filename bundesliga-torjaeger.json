@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 24,
-  "aktualisiert": "2026-09-20",
+  "datenVersion": 25,
+  "aktualisiert": "2026-10-10",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
@@ -23,6 +23,10 @@
       "tore": 4
     },
     {
+      "name": "N. Füllkrug",
+      "tore": 4
+    },
+    {
       "name": "P. Tietz",
       "tore": 4
     },
@@ -39,10 +43,6 @@
       "tore": 3
     },
     {
-      "name": "N. Füllkrug",
-      "tore": 3
-    },
-    {
       "name": "J. Burkardt",
       "tore": 3
     },
@@ -55,11 +55,11 @@
       "tore": 2
     },
     {
-      "name": "R. Baku",
+      "name": "A. Nusa",
       "tore": 2
     },
     {
-      "name": "A. Nusa",
+      "name": "R. Baku",
       "tore": 2
     },
     {
@@ -123,7 +123,7 @@
       "tore": 2
     },
     {
-      "name": "Aleksandar Pavlovic",
+      "name": "D. Upamecano",
       "tore": 1
     },
     {
@@ -131,7 +131,7 @@
       "tore": 1
     },
     {
-      "name": "D. Upamecano",
+      "name": "Aleksandar Pavlovic",
       "tore": 1
     },
     {
@@ -183,6 +183,10 @@
       "tore": 1
     },
     {
+      "name": "B. El Khannouss",
+      "tore": 1
+    },
+    {
       "name": "E. Demirovic",
       "tore": 1
     },
@@ -191,7 +195,7 @@
       "tore": 1
     },
     {
-      "name": "B. El Khannouss",
+      "name": "T. Lemperle",
       "tore": 1
     },
     {
@@ -199,19 +203,15 @@
       "tore": 1
     },
     {
-      "name": "T. Lemperle",
-      "tore": 1
-    },
-    {
       "name": "Facundo Medina",
       "tore": 1
     },
     {
-      "name": "Ibrahim Maza",
+      "name": "E. Fernández",
       "tore": 1
     },
     {
-      "name": "E. Fernández",
+      "name": "Ibrahim Maza",
       "tore": 1
     },
     {
@@ -239,11 +239,11 @@
       "tore": 1
     },
     {
-      "name": "Alexis Claude-Maurice",
+      "name": "A. Ibrahimovic",
       "tore": 1
     },
     {
-      "name": "A. Ibrahimovic",
+      "name": "Alexis Claude-Maurice",
       "tore": 1
     },
     {
@@ -271,19 +271,19 @@
       "tore": 1
     },
     {
-      "name": "W. Orbán",
-      "tore": 1
-    },
-    {
       "name": "C. Nkunku",
       "tore": 1
     },
     {
-      "name": "Romulo",
+      "name": "W. Orbán",
       "tore": 1
     },
     {
       "name": "T. Gomis",
+      "tore": 1
+    },
+    {
+      "name": "Romulo",
       "tore": 1
     },
     {
@@ -303,15 +303,15 @@
       "tore": 1
     },
     {
+      "name": "E. Martel",
+      "tore": 1
+    },
+    {
       "name": "F. Neuhaus",
       "tore": 1
     },
     {
       "name": "S. Machino",
-      "tore": 1
-    },
-    {
-      "name": "E. Martel",
       "tore": 1
     },
     {
@@ -327,11 +327,11 @@
       "tore": 1
     },
     {
-      "name": "R. Ache",
+      "name": "Poulsen, Yussuf",
       "tore": 1
     },
     {
-      "name": "Poulsen, Yussuf",
+      "name": "R. Ache",
       "tore": 1
     },
     {
@@ -360,6 +360,18 @@
     },
     {
       "name": "S. Tigges",
+      "tore": 1
+    },
+    {
+      "name": "Daniel Svensson",
+      "tore": 1
+    },
+    {
+      "name": "N. Schlotterbeck",
+      "tore": 1
+    },
+    {
+      "name": "L. Reis",
       "tore": 1
     }
   ]
