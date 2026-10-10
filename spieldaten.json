@@ -2709,7 +2709,31 @@
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
           "quelleStand": "2026-10-10",
           "heimTeamId": "dortmund",
-          "auswaertsTeamId": "werder-bremen"
+          "auswaertsTeamId": "werder-bremen",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-10T06:04:39.386Z",
+            "abgegeben": 75,
+            "nichtAbgegeben": 25,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 70,
+                "prozent": 93.3
+              },
+              "2": {
+                "anzahl": 2,
+                "prozent": 2.7
+              },
+              "X": {
+                "anzahl": 3,
+                "prozent": 4
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-10T06:04:39.386Z"
         },
         {
           "id": "bl-2026-27-05-038",
@@ -13171,6 +13195,6 @@
       ]
     }
   ],
-  "datenVersion": 55,
+  "datenVersion": 56,
   "aktualisiert": "2026-10-10"
 }
