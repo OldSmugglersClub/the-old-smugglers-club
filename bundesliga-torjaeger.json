@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 26,
+  "datenVersion": 27,
   "aktualisiert": "2026-10-10",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
@@ -35,6 +35,10 @@
       "tore": 4
     },
     {
+      "name": "A. Nusa",
+      "tore": 3
+    },
+    {
       "name": "I. Matanovic",
       "tore": 3
     },
@@ -63,10 +67,6 @@
       "tore": 2
     },
     {
-      "name": "A. Nusa",
-      "tore": 2
-    },
-    {
       "name": "R. Baku",
       "tore": 2
     },
@@ -75,11 +75,11 @@
       "tore": 2
     },
     {
-      "name": "Thijs Dallinga",
+      "name": "A. Daghim",
       "tore": 2
     },
     {
-      "name": "A. Daghim",
+      "name": "Thijs Dallinga",
       "tore": 2
     },
     {
@@ -131,6 +131,10 @@
       "tore": 2
     },
     {
+      "name": "T. Gomis",
+      "tore": 2
+    },
+    {
       "name": "I. Saibari",
       "tore": 2
     },
@@ -159,19 +163,19 @@
       "tore": 1
     },
     {
-      "name": "Emmanuel Latte Lath",
-      "tore": 1
-    },
-    {
       "name": "L. Querfeld",
       "tore": 1
     },
     {
-      "name": "O. Kabak",
+      "name": "Emmanuel Latte Lath",
       "tore": 1
     },
     {
       "name": "S. El Mala",
+      "tore": 1
+    },
+    {
+      "name": "O. Kabak",
       "tore": 1
     },
     {
@@ -231,11 +235,11 @@
       "tore": 1
     },
     {
-      "name": "D. Mokwa",
+      "name": "J. Scally",
       "tore": 1
     },
     {
-      "name": "J. Scally",
+      "name": "D. Mokwa",
       "tore": 1
     },
     {
@@ -247,15 +251,11 @@
       "tore": 1
     },
     {
-      "name": "P. Mwene",
-      "tore": 1
-    },
-    {
       "name": "R. Königsdörffer",
       "tore": 1
     },
     {
-      "name": "A. Ibrahimovic",
+      "name": "P. Mwene",
       "tore": 1
     },
     {
@@ -263,7 +263,15 @@
       "tore": 1
     },
     {
+      "name": "A. Ibrahimovic",
+      "tore": 1
+    },
+    {
       "name": "Alexis Claude-Maurice",
+      "tore": 1
+    },
+    {
+      "name": "M. Wöber",
       "tore": 1
     },
     {
@@ -275,10 +283,6 @@
       "tore": 1
     },
     {
-      "name": "M. Wöber",
-      "tore": 1
-    },
-    {
       "name": "M. Mittelstädt",
       "tore": 1
     },
@@ -287,15 +291,11 @@
       "tore": 1
     },
     {
-      "name": "W. Orbán",
-      "tore": 1
-    },
-    {
-      "name": "T. Gomis",
-      "tore": 1
-    },
-    {
       "name": "Romulo",
+      "tore": 1
+    },
+    {
+      "name": "W. Orbán",
       "tore": 1
     },
     {
@@ -319,10 +319,6 @@
       "tore": 1
     },
     {
-      "name": "S. Machino",
-      "tore": 1
-    },
-    {
       "name": "Danny da Costa",
       "tore": 1
     },
@@ -331,11 +327,15 @@
       "tore": 1
     },
     {
-      "name": "R. Ache",
+      "name": "S. Machino",
       "tore": 1
     },
     {
       "name": "N. Capaldo",
+      "tore": 1
+    },
+    {
+      "name": "R. Ache",
       "tore": 1
     },
     {
@@ -359,11 +359,11 @@
       "tore": 1
     },
     {
-      "name": "S. Tigges",
+      "name": "S. Marino",
       "tore": 1
     },
     {
-      "name": "S. Marino",
+      "name": "S. Tigges",
       "tore": 1
     },
     {
@@ -379,15 +379,15 @@
       "tore": 1
     },
     {
-      "name": "T. Moffi",
-      "tore": 1
-    },
-    {
       "name": "M. Muheim",
       "tore": 1
     },
     {
       "name": "B. Conté",
+      "tore": 1
+    },
+    {
+      "name": "T. Moffi",
       "tore": 1
     },
     {

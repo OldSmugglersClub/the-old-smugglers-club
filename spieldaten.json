@@ -2749,12 +2749,12 @@
           "datumAnzeige": "10.10.2026",
           "anstoss": "18:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 6,
+          "auswaertstore": 0,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-          "quelleStand": "2026-09-10",
+          "quelleStand": "2026-10-10",
           "heimTeamId": "rb-leipzig",
           "auswaertsTeamId": "frankfurt"
         },
@@ -13195,6 +13195,6 @@
       ]
     }
   ],
-  "datenVersion": 57,
+  "datenVersion": 58,
   "aktualisiert": "2026-10-10"
 }
