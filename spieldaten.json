@@ -2867,12 +2867,12 @@
           "datumAnzeige": "11.10.2026",
           "anstoss": "17:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 2,
+          "auswaertstore": 1,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-          "quelleStand": "2026-09-10",
+          "quelleStand": "2026-10-11",
           "heimTeamId": "freiburg",
           "auswaertsTeamId": "schalke-04"
         },
@@ -3031,12 +3031,12 @@
           "datumAnzeige": "11.10.2026",
           "anstoss": "15:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 2,
+          "auswaertstore": 1,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-          "quelleStand": "2026-09-10",
+          "quelleStand": "2026-10-11",
           "heimTeamId": "koeln",
           "auswaertsTeamId": "moenchengladbach"
         },
@@ -13363,6 +13363,6 @@
       ]
     }
   ],
-  "datenVersion": 60,
+  "datenVersion": 61,
   "aktualisiert": "2026-10-11"
 }
