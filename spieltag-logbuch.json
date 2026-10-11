@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 14,
-  "aktualisiert": "2026-10-11T06:37:53.744Z",
+  "datenVersion": 15,
+  "aktualisiert": "2026-10-11T18:49:55.812Z",
   "saison": "2026-27",
   "regelwerk": {
     "kapitaene": "Alle Tipper mit der höchsten tatsächlichen Spieltagspunktzahl; kein künstlicher Tie-Break.",
@@ -6637,6 +6637,309 @@
             "exakt": 12,
             "differenz": 6,
             "tendenz": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "2026-27__bundesliga__5-spieltag__bl-2026-27-05-037-bl-2026-27-05-038-bl-2026-27-05-039-bl-2026-27-05-040-bl-2026-27-05-041-bl-2026-27-05-042-bl-2026-27-05-043-bl-2026-27-05-044-bl-2026-27-05-045",
+      "bezeichnung": "Bundesliga 5. Spieltag",
+      "wettbewerb": "bundesliga",
+      "runde": "5. Spieltag",
+      "abgeschlossen": true,
+      "spielIds": [
+        "bl-2026-27-05-037",
+        "bl-2026-27-05-038",
+        "bl-2026-27-05-039",
+        "bl-2026-27-05-040",
+        "bl-2026-27-05-041",
+        "bl-2026-27-05-042",
+        "bl-2026-27-05-043",
+        "bl-2026-27-05-044",
+        "bl-2026-27-05-045"
+      ],
+      "kapitaene": [
+        {
+          "teilnehmerId": "mythos",
+          "teilnehmer": "Mythos",
+          "punkte": 21,
+          "exakt": 2,
+          "differenz": 3,
+          "tendenz": 1
+        }
+      ],
+      "highlights": [
+        {
+          "typ": "kapitaene",
+          "prioritaet": 100,
+          "anzeigen": true,
+          "daten": {
+            "punkte": 21,
+            "anzahl": 1,
+            "tipper": [
+              {
+                "teilnehmerId": "mythos",
+                "teilnehmer": "Mythos",
+                "punkte": 21,
+                "exakt": 2,
+                "differenz": 3,
+                "tendenz": 1
+              }
+            ]
+          }
+        },
+        {
+          "typ": "gegen-den-strom",
+          "prioritaet": 90,
+          "anzeigen": true,
+          "daten": {
+            "spielId": "bl-2026-27-05-037",
+            "heimTeam": "dortmund",
+            "auswaertsTeam": "werder-bremen",
+            "ergebnis": "2:2",
+            "abgegeben": 75,
+            "nichtAbgegeben": 25,
+            "tippverteilung": {
+              "1": 70,
+              "2": 2,
+              "X": 3
+            },
+            "exakt": 2,
+            "differenz": 1,
+            "tendenz": 0,
+            "richtigerAusgang": "X",
+            "meistGetippt": {
+              "ausgang": "1",
+              "anzahl": 70
+            },
+            "gegenDenStrom": true,
+            "richtigeTendenz": {
+              "anzahl": 3,
+              "anteil": 4,
+              "tipper": [
+                {
+                  "teilnehmerId": "redwing",
+                  "teilnehmer": "Redwing",
+                  "tipp": "2:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "gruber",
+                  "teilnehmer": "gRuBer",
+                  "tipp": "2:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "stevie26",
+                  "teilnehmer": "Stevie26",
+                  "tipp": "3:3",
+                  "exakt": false
+                }
+              ],
+              "exakteTipps": 2
+            }
+          }
+        },
+        {
+          "typ": "wer-hats-gerochen",
+          "prioritaet": 85,
+          "anzeigen": true,
+          "daten": {
+            "grenzeProzent": 25,
+            "testOverride": false,
+            "faelle": [
+              {
+                "spielId": "bl-2026-27-05-037",
+                "heimTeam": "dortmund",
+                "auswaertsTeam": "werder-bremen",
+                "ergebnis": "2:2",
+                "abgegeben": 75,
+                "nichtAbgegeben": 25,
+                "tippverteilung": {
+                  "1": 70,
+                  "2": 2,
+                  "X": 3
+                },
+                "exakt": 2,
+                "differenz": 1,
+                "tendenz": 0,
+                "richtigerAusgang": "X",
+                "meistGetippt": {
+                  "ausgang": "1",
+                  "anzahl": 70
+                },
+                "gegenDenStrom": true,
+                "richtigeTendenz": {
+                  "anzahl": 3,
+                  "anteil": 4,
+                  "tipper": [
+                    {
+                      "teilnehmerId": "redwing",
+                      "teilnehmer": "Redwing",
+                      "tipp": "2:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "gruber",
+                      "teilnehmer": "gRuBer",
+                      "tipp": "2:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "stevie26",
+                      "teilnehmer": "Stevie26",
+                      "tipp": "3:3",
+                      "exakt": false
+                    }
+                  ],
+                  "exakteTipps": 2
+                }
+              }
+            ]
+          }
+        },
+        {
+          "typ": "volltreffer",
+          "prioritaet": 80,
+          "anzeigen": true,
+          "daten": {
+            "maxExakt": 2,
+            "anzahl": 14,
+            "tipper": [
+              {
+                "teilnehmerId": "mythos",
+                "teilnehmer": "Mythos",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "olympiakos",
+                "teilnehmer": "Olympiakos",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "kevin",
+                "teilnehmer": "Kevin",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "g-threepwood",
+                "teilnehmer": "G.Threepwood",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "seboso",
+                "teilnehmer": "Seboso",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "manuel",
+                "teilnehmer": "Manuel",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "opipeter",
+                "teilnehmer": "Opipeter",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "11le",
+                "teilnehmer": "11LE",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "steff77",
+                "teilnehmer": "Steff77",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "adamj",
+                "teilnehmer": "AdamJ",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "nurderscf",
+                "teilnehmer": "NurDerSCF",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "eckes2359",
+                "teilnehmer": "Eckes2359",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "jungunddurstig",
+                "teilnehmer": "JungundDurstig",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "gruber",
+                "teilnehmer": "gRuBer",
+                "exakt": 2
+              }
+            ]
+          }
+        },
+        {
+          "typ": "crewduell",
+          "prioritaet": 70,
+          "anzeigen": true,
+          "daten": {
+            "teams": [
+              {
+                "team": "New Smugglers Team",
+                "durchschnitt": 9.24,
+                "punktesumme": 693,
+                "mitglieder": 75
+              },
+              {
+                "team": "Old Smugglers Team",
+                "durchschnitt": 8.2,
+                "punktesumme": 205,
+                "mitglieder": 25
+              }
+            ],
+            "sieger": "New Smugglers Team",
+            "differenz": 1.04
+          }
+        },
+        {
+          "typ": "kursbewegung",
+          "prioritaet": 40,
+          "anzeigen": true,
+          "grund": null,
+          "daten": {
+            "gewinner": [
+              {
+                "teilnehmerId": "mythos",
+                "teilnehmer": "Mythos",
+                "vorher": 60,
+                "jetzt": 38,
+                "veraenderung": 22
+              }
+            ],
+            "verlierer": [
+              {
+                "teilnehmerId": "lucipher",
+                "teilnehmer": "LuCipher",
+                "vorher": 35,
+                "jetzt": 56,
+                "veraenderung": -21
+              }
+            ],
+            "maxGewinn": 22,
+            "maxVerlust": -21
+          }
+        },
+        {
+          "typ": "zahlen-aus-der-kombuese",
+          "prioritaet": 30,
+          "anzeigen": true,
+          "daten": {
+            "abgegeben": 75,
+            "nichtAbgegeben": 27,
+            "exakt": 65,
+            "differenz": 87,
+            "tendenz": 156
           }
         }
       ]
