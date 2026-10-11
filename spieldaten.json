@@ -310,16 +310,40 @@
           "datumAnzeige": "10.10.2026",
           "anstoss": "13:00",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 1,
+          "auswaertstore": 1,
+          "status": "beendet",
           "sonderwertungen": [
             "smugglerauftrag"
           ],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen. Smugglerauftrag zum 7. Spieltag der 2. Bundesliga.",
           "quelleStand": "2026-09-10",
           "heimTeamId": "osnabrueck",
-          "auswaertsTeamId": "dynamo-dresden"
+          "auswaertsTeamId": "dynamo-dresden",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-11T06:37:53.744Z",
+            "abgegeben": 71,
+            "nichtAbgegeben": 29,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 23,
+                "prozent": 32.4
+              },
+              "2": {
+                "anzahl": 30,
+                "prozent": 42.3
+              },
+              "X": {
+                "anzahl": 18,
+                "prozent": 25.4
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-11T06:37:53.744Z"
         },
         {
           "id": "sma-2026-27-08-068",
@@ -13339,6 +13363,6 @@
       ]
     }
   ],
-  "datenVersion": 59,
+  "datenVersion": 60,
   "aktualisiert": "2026-10-11"
 }
