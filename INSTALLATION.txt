@@ -1,0 +1,8 @@
+TOSMC Coco Duplikatfix v2, Grundlage Live-main 12.10.2026.
+NUR TEST2v2: beide Dateien im Ordner coco/ ersetzen.
+1. coco/coco.js (Alias-Abgleich + prioritaere OpenLigaDB-MatchID-Deduplikation)
+2. coco/index.html (Versionsparameter erneuert, damit geaendertes JavaScript frisch geladen wird)
+Keine JSON-Dateien oder historische Wertungen aendern.
+Vorher beide Dateien sichern.
+Nach GitHub Desktop Push im Browser die Test2v2-Seite neu laden und die zwei betroffenen Champions-League-Spiele pruefen.
+Erst nach bestaetigtem TEST ein Live-Update erwaegen.
