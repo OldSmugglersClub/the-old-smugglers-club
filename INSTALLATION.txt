@@ -1,8 +1,17 @@
-TOSMC Coco Duplikatfix v2, Grundlage Live-main 12.10.2026.
-NUR TEST2v2: beide Dateien im Ordner coco/ ersetzen.
-1. coco/coco.js (Alias-Abgleich + prioritaere OpenLigaDB-MatchID-Deduplikation)
-2. coco/index.html (Versionsparameter erneuert, damit geaendertes JavaScript frisch geladen wird)
-Keine JSON-Dateien oder historische Wertungen aendern.
-Vorher beide Dateien sichern.
-Nach GitHub Desktop Push im Browser die Test2v2-Seite neu laden und die zwei betroffenen Champions-League-Spiele pruefen.
-Erst nach bestaetigtem TEST ein Live-Update erwaegen.
+TOSMC – LIVE Update: Automatische CL-Spieltagsauswahl (13.10.2026)
+
+Basis: the-old-smugglers-club-main (1)(20261013-165106).zip
+Getestete Logik: vom Nutzer bestätigte Test2v2 wettbewerb.js.
+
+DATEIEN:
+- wettbewerb.js: nur CL-Accordion-Autoauswahl (Quellvergleich zur Live-Basis).
+- bundesliga.html, champions-league.html, dfb-pokal.html, dynamo-dresden.html, europa-league.html, piratenkodex.html, relegation.html, weihnachtsregatta.html: jeweils NUR gemeinsamer Cacheparameter fuer wettbewerb.js
+  4.9.2-HF12-HF110 -> 4.9.2-HF12-HF110-CL-AUTO1
+
+WICHTIG:
+Alle neun Dateien gemeinsam 1:1 in das Live-Repository kopieren.
+Eine Aenderung nur der CL-HTML wuerde am Live Release Guard scheitern.
+Andere HTML-Inhalte, CSS, JSON, Wertungen und historische Daten bleiben unberuehrt.
+Nach Commit/Push den GitHub Release Guard abwarten.
+Erst dann im Browser CL (2. Spieltag), manuellen 1. Spieltag, Bundesliga und andere Wettbewerbe pruefen.
+KEIN Live-Erfolg vor Benutzerbestaetigung behaupten.

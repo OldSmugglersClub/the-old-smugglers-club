@@ -1294,12 +1294,22 @@
     }
 
     if (scheduleConfirmed) {
+      // Dieselbe Auswahlregel wie bei der Bundesliga: den nächsten Spieltag
+      // mit mindestens einem Spiel heute oder in der Zukunft aufklappen.
+      // Lokales Kalenderdatum statt UTC verwenden (Tageswechsel in Deutschland).
+      const today = new Date();
+      const todayIso = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+      let openIndex = clusters.findIndex(cluster =>
+        safeArray(cluster.dates).some(date => date >= todayIso)
+      );
+      if (openIndex < 0) openIndex = Math.max(clusters.length - 1, 0);
+
       const accordion = document.createElement("div");
       accordion.className = "matchday-accordion";
       clusters.forEach((cluster, index) => {
         const details = document.createElement("details");
         details.className = "matchday-group";
-        details.open = index === 0;
+        details.open = index === openIndex;
         const summary = document.createElement("summary");
         summary.className = "matchday-summary";
         const matchdayNumber = cluster.matchdayNumber || index + 1;
