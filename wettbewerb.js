@@ -2269,7 +2269,14 @@
     safeArray(openLigaDbMatches).forEach(match => {
       const key = openLigaDbDfbEarlyRoundKey(match);
       if (!key || !groups.has(key)) return;
-      if (!openLigaDbFinalResult(match)) return;
+      // Auch ausgeloste, zeitgenau angesetzte Spiele ohne Endergebnis anzeigen.
+      // Unbestätigte Platzhalter bleiben verborgen; die TOSMC-Wertung ist unberührt.
+      const finished = Boolean(openLigaDbFinalResult(match));
+      const hasPairing = [match?.team1, match?.team2].every(team =>
+        String(team?.teamName ?? team?.TeamName ?? "").trim() &&
+        String(team?.teamId ?? team?.teamID ?? team?.TeamId ?? team?.TeamID ?? "").trim()
+      );
+      if (!finished && (!hasPairing || !championsLeagueMatchHasKickoff(match))) return;
       groups.get(key).push(match);
     });
 
@@ -2280,28 +2287,44 @@
     section.className = "dynamic-section dfb-informational-matches";
 
     const heading = document.createElement("h2");
-    heading.textContent = "Bereits absolvierte DFB-Pokal-Spiele";
+    heading.textContent = "DFB-Pokal · 1. und 2. Hauptrunde";
     section.appendChild(heading);
 
     const note = document.createElement("p");
     note.className = "data-note";
-    note.textContent = "Reine Ergebnisübersicht aus OpenLigaDB – diese Runden gehören nicht zur TOSMC-Wertung. Getippt wird ab dem Achtelfinale.";
+    note.textContent = "Termin- und Ergebnisübersicht aus OpenLigaDB – diese Runden gehören nicht zur TOSMC-Wertung. Getippt wird ab dem Achtelfinale.";
     section.appendChild(note);
 
-    [
+    // Die Pokal-Hauptrunden sind reine Informationsrunden. Wie bei der
+    // Bundesliga werden ihre Spiele in einklappbaren Spieltagsgruppen gezeigt.
+    const visibleRounds = [
       ["runde1", "1. Hauptrunde"],
       ["runde2", "2. Hauptrunde"]
-    ].forEach(([key, label]) => {
-      const matches = groups.get(key) || [];
-      if (!matches.length) return;
+    ].filter(([key]) => (groups.get(key) || []).length > 0);
 
-      const round = document.createElement("section");
-      round.className = "ko-round dfb-info-round";
+    const now = new Date();
+    const todayIso = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+    let openIndex = visibleRounds.findIndex(([key]) =>
+      (groups.get(key) || []).some(match => openLigaDbMatchDate(match) >= todayIso)
+    );
+    if (openIndex < 0) openIndex = Math.max(visibleRounds.length - 1, 0);
 
-      const title = document.createElement("h3");
-      title.className = "ko-round__title";
+    const accordion = document.createElement("div");
+    accordion.className = "matchday-accordion";
+    visibleRounds.forEach(([key, label], index) => {
+      const matches = groups.get(key);
+      const round = document.createElement("details");
+      round.className = "matchday-group dfb-info-round";
+      round.open = index === openIndex;
+
+      const summary = document.createElement("summary");
+      summary.className = "matchday-summary";
+      const title = document.createElement("span");
       title.textContent = label;
-      round.appendChild(title);
+      const count = document.createElement("span");
+      count.className = "matchday-count";
+      count.textContent = `${matches.length} Spiele`;
+      summary.append(title, count);
 
       const list = document.createElement("div");
       list.className = "ko-round__matches";
@@ -2310,9 +2333,10 @@
         .sort((a, b) => String(a?.matchDateTime ?? "").localeCompare(String(b?.matchDateTime ?? "")))
         .forEach(match => list.appendChild(createBracketMatch(match)));
 
-      round.appendChild(list);
-      section.appendChild(round);
+      round.append(summary, list);
+      accordion.appendChild(round);
     });
+    section.appendChild(accordion);
 
     root.appendChild(section);
     return true;
