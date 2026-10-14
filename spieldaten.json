@@ -10401,12 +10401,35 @@
           "terminBestaetigt": true,
           "heimTeamId": "rc-lens",
           "auswaertsTeamId": "sporting-lissabon",
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
-          "ergebnisNach90MinutenBestaetigt": false,
+          "heimtore": 0,
+          "auswaertstore": 2,
+          "status": "beendet",
+          "ergebnisNach90MinutenBestaetigt": true,
           "quelle": "OpenLigaDB",
-          "quelleStand": "2026-09-11"
+          "quelleStand": "2026-09-11",
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-14T03:53:14.426Z",
+            "abgegeben": 65,
+            "nichtAbgegeben": 35,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 11,
+                "prozent": 16.9
+              },
+              "2": {
+                "anzahl": 34,
+                "prozent": 52.3
+              },
+              "X": {
+                "anzahl": 20,
+                "prozent": 30.8
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-14T03:53:14.426Z"
         },
         {
           "id": "ucl-2026-27-2-spieltag-87407",
@@ -10425,12 +10448,35 @@
           "terminBestaetigt": true,
           "heimTeamId": "sabah-fc",
           "auswaertsTeamId": "slavia-prag",
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
-          "ergebnisNach90MinutenBestaetigt": false,
+          "heimtore": 2,
+          "auswaertstore": 0,
+          "status": "beendet",
+          "ergebnisNach90MinutenBestaetigt": true,
           "quelle": "OpenLigaDB",
-          "quelleStand": "2026-09-11"
+          "quelleStand": "2026-09-11",
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-14T03:53:14.426Z",
+            "abgegeben": 65,
+            "nichtAbgegeben": 35,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 7,
+                "prozent": 10.8
+              },
+              "2": {
+                "anzahl": 51,
+                "prozent": 78.5
+              },
+              "X": {
+                "anzahl": 7,
+                "prozent": 10.8
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-14T03:53:14.426Z"
         },
         {
           "id": "ucl-2026-27-2-spieltag-87408",
@@ -10449,12 +10495,35 @@
           "terminBestaetigt": true,
           "heimTeamId": "inter-mailand",
           "auswaertsTeamId": "club-brugge",
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
-          "ergebnisNach90MinutenBestaetigt": false,
+          "heimtore": 3,
+          "auswaertstore": 4,
+          "status": "beendet",
+          "ergebnisNach90MinutenBestaetigt": true,
           "quelle": "OpenLigaDB",
-          "quelleStand": "2026-09-11"
+          "quelleStand": "2026-09-11",
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-14T03:53:14.426Z",
+            "abgegeben": 68,
+            "nichtAbgegeben": 32,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 63,
+                "prozent": 92.6
+              },
+              "2": {
+                "anzahl": 1,
+                "prozent": 1.5
+              },
+              "X": {
+                "anzahl": 4,
+                "prozent": 5.9
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-14T03:53:14.426Z"
         },
         {
           "id": "ucl-2026-27-2-spieltag-87409",
@@ -10473,12 +10542,35 @@
           "terminBestaetigt": true,
           "heimTeamId": "galatasaray",
           "auswaertsTeamId": "barcelona",
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
-          "ergebnisNach90MinutenBestaetigt": false,
+          "heimtore": 1,
+          "auswaertstore": 4,
+          "status": "beendet",
+          "ergebnisNach90MinutenBestaetigt": true,
           "quelle": "OpenLigaDB",
-          "quelleStand": "2026-09-11"
+          "quelleStand": "2026-09-11",
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-14T03:53:14.426Z",
+            "abgegeben": 68,
+            "nichtAbgegeben": 32,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 2,
+                "prozent": 2.9
+              },
+              "2": {
+                "anzahl": 65,
+                "prozent": 95.6
+              },
+              "X": {
+                "anzahl": 1,
+                "prozent": 1.5
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-14T03:53:14.426Z"
         },
         {
           "id": "ucl-2026-27-2-spieltag-87410",
@@ -10497,12 +10589,35 @@
           "terminBestaetigt": true,
           "heimTeamId": "atletico-madrid",
           "auswaertsTeamId": "manchester-united",
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
-          "ergebnisNach90MinutenBestaetigt": false,
+          "heimtore": 2,
+          "auswaertstore": 0,
+          "status": "beendet",
+          "ergebnisNach90MinutenBestaetigt": true,
           "quelle": "OpenLigaDB",
-          "quelleStand": "2026-09-11"
+          "quelleStand": "2026-09-11",
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-14T03:53:14.426Z",
+            "abgegeben": 68,
+            "nichtAbgegeben": 32,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 45,
+                "prozent": 66.2
+              },
+              "2": {
+                "anzahl": 11,
+                "prozent": 16.2
+              },
+              "X": {
+                "anzahl": 12,
+                "prozent": 17.6
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-14T03:53:14.426Z"
         },
         {
           "id": "ucl-2026-27-2-spieltag-87411",
@@ -10521,12 +10636,35 @@
           "terminBestaetigt": true,
           "heimTeamId": "arsenal",
           "auswaertsTeamId": "osc-lille",
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
-          "ergebnisNach90MinutenBestaetigt": false,
+          "heimtore": 3,
+          "auswaertstore": 0,
+          "status": "beendet",
+          "ergebnisNach90MinutenBestaetigt": true,
           "quelle": "OpenLigaDB",
-          "quelleStand": "2026-09-11"
+          "quelleStand": "2026-09-11",
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-14T03:53:14.426Z",
+            "abgegeben": 69,
+            "nichtAbgegeben": 31,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 68,
+                "prozent": 98.6
+              },
+              "2": {
+                "anzahl": 1,
+                "prozent": 1.4
+              },
+              "X": {
+                "anzahl": 0,
+                "prozent": 0
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-14T03:53:14.426Z"
         },
         {
           "id": "ucl-2026-27-2-spieltag-87412",
@@ -10545,12 +10683,35 @@
           "terminBestaetigt": true,
           "heimTeamId": "viking-fk",
           "auswaertsTeamId": "bayern-muenchen",
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
-          "ergebnisNach90MinutenBestaetigt": false,
+          "heimtore": 3,
+          "auswaertstore": 3,
+          "status": "beendet",
+          "ergebnisNach90MinutenBestaetigt": true,
           "quelle": "OpenLigaDB",
-          "quelleStand": "2026-09-11"
+          "quelleStand": "2026-09-11",
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-14T03:53:14.426Z",
+            "abgegeben": 68,
+            "nichtAbgegeben": 32,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 1,
+                "prozent": 1.5
+              },
+              "2": {
+                "anzahl": 67,
+                "prozent": 98.5
+              },
+              "X": {
+                "anzahl": 0,
+                "prozent": 0
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-14T03:53:14.426Z"
         },
         {
           "id": "ucl-2026-27-2-spieltag-87413",
@@ -10569,12 +10730,35 @@
           "terminBestaetigt": true,
           "heimTeamId": "rb-leipzig",
           "auswaertsTeamId": "psv-eindhoven",
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
-          "ergebnisNach90MinutenBestaetigt": false,
+          "heimtore": 1,
+          "auswaertstore": 0,
+          "status": "beendet",
+          "ergebnisNach90MinutenBestaetigt": true,
           "quelle": "OpenLigaDB",
-          "quelleStand": "2026-09-11"
+          "quelleStand": "2026-09-11",
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-14T03:53:14.426Z",
+            "abgegeben": 68,
+            "nichtAbgegeben": 32,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 51,
+                "prozent": 75
+              },
+              "2": {
+                "anzahl": 11,
+                "prozent": 16.2
+              },
+              "X": {
+                "anzahl": 6,
+                "prozent": 8.8
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-14T03:53:14.426Z"
         },
         {
           "id": "ucl-2026-27-2-spieltag-87414",
@@ -10593,12 +10777,35 @@
           "terminBestaetigt": true,
           "heimTeamId": "villarreal-cf",
           "auswaertsTeamId": "ssc-neapel",
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
-          "ergebnisNach90MinutenBestaetigt": false,
+          "heimtore": 3,
+          "auswaertstore": 1,
+          "status": "beendet",
+          "ergebnisNach90MinutenBestaetigt": true,
           "quelle": "OpenLigaDB",
-          "quelleStand": "2026-09-11"
+          "quelleStand": "2026-09-11",
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-14T03:53:14.426Z",
+            "abgegeben": 68,
+            "nichtAbgegeben": 32,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 26,
+                "prozent": 38.2
+              },
+              "2": {
+                "anzahl": 22,
+                "prozent": 32.4
+              },
+              "X": {
+                "anzahl": 20,
+                "prozent": 29.4
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-14T03:53:14.426Z"
         },
         {
           "id": "ucl-2026-27-2-spieltag-87415",
@@ -13411,6 +13618,6 @@
       ]
     }
   ],
-  "datenVersion": 62,
-  "aktualisiert": "2026-10-11"
+  "datenVersion": 63,
+  "aktualisiert": "2026-10-14"
 }
