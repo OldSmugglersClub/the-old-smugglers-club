@@ -4,8 +4,8 @@
   "aktualisiert": "2026-10-15",
   "saison": "2026-27",
   "hinweis": "Die Gesamt-Teamwertung wird aus den offiziellen Kicktipp-Team-Gesamtübersichten übernommen. Die Spieltags-Teamwertung wird als arithmetisches Mittel aller aktiven Teammitglieder berechnet und gegen Kicktipp geprüft; echte Nichtabgabe zählt mit 0 Punkten.",
-  "berechnetAm": "2026-10-15T02:01:59.018Z",
-  "quelle": "Kicktipp-Team-Gesamtübersichten + Kicktipp-Einzelranglisten + Tipper-Gruppen / TOSMC-Admin 6.5.0-TOSMC-ADMIN2",
+  "berechnetAm": "2026-10-15T02:44:09.853Z",
+  "quelle": "Kicktipp-Team-Gesamtübersichten + Kicktipp-Einzelranglisten + Tipper-Gruppen / TOSMC-Admin 6.5.0-TOSMC-ADMIN3",
   "gesamt": [
     {
       "platz": 1,

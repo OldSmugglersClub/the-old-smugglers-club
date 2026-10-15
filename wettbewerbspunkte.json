@@ -4,8 +4,8 @@
   "aktualisiert": "2026-10-15",
   "saison": "2026-27",
   "hinweis": "Kumulativ aus der zentralen Spielbetriebsdatenbank erzeugt. Bei bislang genau einem abgeschlossenen Wettbewerb wird nur die Reihenfolge vollständig gleichrangiger Teilnehmer anhand der offiziellen Kicktipp-Gesamtreihenfolge stabilisiert.",
-  "berechnetAm": "2026-10-15T02:01:59.018Z",
-  "quelle": "TOSMC-Admin 6.5.0-TOSMC-ADMIN2",
+  "berechnetAm": "2026-10-15T02:44:09.853Z",
+  "quelle": "TOSMC-Admin 6.5.0-TOSMC-ADMIN3",
   "rangReferenz": {
     "applied": false,
     "reason": "mixed-or-missing-reference"

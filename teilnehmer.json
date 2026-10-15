@@ -5,7 +5,7 @@
   "hinweis": "Zentrale Teilnehmerliste mit stabilen IDs. E-Mail-Adressen aus dem Kicktipp-Export werden aus Datenschutzgründen nicht gespeichert oder veröffentlicht.",
   "import": {
     "quelle": "Kicktipp-Mitgliederexport",
-    "stand": "2026-10-15T02:01:59.018Z",
+    "stand": "2026-10-15T02:44:09.853Z",
     "anzahl": 100,
     "emailAdressenUebernommen": false
   },

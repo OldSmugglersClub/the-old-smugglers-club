@@ -1,9 +1,9 @@
 {
   "schemaVersion": 3,
   "datenVersion": 32,
-  "aktualisiertAm": "2026-10-15T02:01:59.018Z",
+  "aktualisiertAm": "2026-10-15T02:44:09.853Z",
   "aktiveSaison": "2026-27",
-  "quelle": "TOSMC-Admin 6.5.0-TOSMC-ADMIN2",
+  "quelle": "TOSMC-Admin 6.5.0-TOSMC-ADMIN3",
   "regeln": {
     "tendenz": 2,
     "differenz": 3,
@@ -12525,7 +12525,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-10-15T02:01:59.018Z",
+              "stand": "2026-10-15T02:44:09.853Z",
               "abgegeben": 65,
               "nichtAbgegeben": 35,
               "verborgen": 0,
@@ -12544,7 +12544,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-10-15T02:01:59.018Z"
+            "aktualisiertAm": "2026-10-15T02:44:09.853Z"
           },
           {
             "id": "ucl-2026-27-2-spieltag-87407",
@@ -12572,7 +12572,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-10-15T02:01:59.018Z",
+              "stand": "2026-10-15T02:44:09.853Z",
               "abgegeben": 65,
               "nichtAbgegeben": 35,
               "verborgen": 0,
@@ -12591,7 +12591,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-10-15T02:01:59.018Z"
+            "aktualisiertAm": "2026-10-15T02:44:09.853Z"
           },
           {
             "id": "ucl-2026-27-2-spieltag-87408",
@@ -12619,7 +12619,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-10-15T02:01:59.018Z",
+              "stand": "2026-10-15T02:44:09.853Z",
               "abgegeben": 68,
               "nichtAbgegeben": 32,
               "verborgen": 0,
@@ -12638,7 +12638,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-10-15T02:01:59.018Z"
+            "aktualisiertAm": "2026-10-15T02:44:09.853Z"
           },
           {
             "id": "ucl-2026-27-2-spieltag-87409",
@@ -12666,7 +12666,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-10-15T02:01:59.018Z",
+              "stand": "2026-10-15T02:44:09.853Z",
               "abgegeben": 68,
               "nichtAbgegeben": 32,
               "verborgen": 0,
@@ -12685,7 +12685,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-10-15T02:01:59.018Z"
+            "aktualisiertAm": "2026-10-15T02:44:09.853Z"
           },
           {
             "id": "ucl-2026-27-2-spieltag-87410",
@@ -12713,7 +12713,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-10-15T02:01:59.018Z",
+              "stand": "2026-10-15T02:44:09.853Z",
               "abgegeben": 68,
               "nichtAbgegeben": 32,
               "verborgen": 0,
@@ -12732,7 +12732,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-10-15T02:01:59.018Z"
+            "aktualisiertAm": "2026-10-15T02:44:09.853Z"
           },
           {
             "id": "ucl-2026-27-2-spieltag-87411",
@@ -12760,7 +12760,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-10-15T02:01:59.018Z",
+              "stand": "2026-10-15T02:44:09.853Z",
               "abgegeben": 69,
               "nichtAbgegeben": 31,
               "verborgen": 0,
@@ -12779,7 +12779,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-10-15T02:01:59.018Z"
+            "aktualisiertAm": "2026-10-15T02:44:09.853Z"
           },
           {
             "id": "ucl-2026-27-2-spieltag-87412",
@@ -12807,7 +12807,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-10-15T02:01:59.018Z",
+              "stand": "2026-10-15T02:44:09.853Z",
               "abgegeben": 68,
               "nichtAbgegeben": 32,
               "verborgen": 0,
@@ -12826,7 +12826,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-10-15T02:01:59.018Z"
+            "aktualisiertAm": "2026-10-15T02:44:09.853Z"
           },
           {
             "id": "ucl-2026-27-2-spieltag-87413",
@@ -12854,7 +12854,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-10-15T02:01:59.018Z",
+              "stand": "2026-10-15T02:44:09.853Z",
               "abgegeben": 68,
               "nichtAbgegeben": 32,
               "verborgen": 0,
@@ -12873,7 +12873,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-10-15T02:01:59.018Z"
+            "aktualisiertAm": "2026-10-15T02:44:09.853Z"
           },
           {
             "id": "ucl-2026-27-2-spieltag-87414",
@@ -12901,7 +12901,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-10-15T02:01:59.018Z",
+              "stand": "2026-10-15T02:44:09.853Z",
               "abgegeben": 68,
               "nichtAbgegeben": 32,
               "verborgen": 0,
@@ -12920,7 +12920,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-10-15T02:01:59.018Z"
+            "aktualisiertAm": "2026-10-15T02:44:09.853Z"
           },
           {
             "id": "ucl-2026-27-2-spieltag-87415",
@@ -12948,7 +12948,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-10-15T02:01:59.018Z",
+              "stand": "2026-10-15T02:44:09.853Z",
               "abgegeben": 71,
               "nichtAbgegeben": 29,
               "verborgen": 0,
@@ -12967,7 +12967,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-10-15T02:01:59.018Z"
+            "aktualisiertAm": "2026-10-15T02:44:09.853Z"
           },
           {
             "id": "ucl-2026-27-2-spieltag-87416",
@@ -12995,7 +12995,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-10-15T02:01:59.018Z",
+              "stand": "2026-10-15T02:44:09.853Z",
               "abgegeben": 71,
               "nichtAbgegeben": 29,
               "verborgen": 0,
@@ -13014,7 +13014,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-10-15T02:01:59.018Z"
+            "aktualisiertAm": "2026-10-15T02:44:09.853Z"
           },
           {
             "id": "ucl-2026-27-2-spieltag-87417",
@@ -13042,7 +13042,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-10-15T02:01:59.018Z",
+              "stand": "2026-10-15T02:44:09.853Z",
               "abgegeben": 73,
               "nichtAbgegeben": 27,
               "verborgen": 0,
@@ -13061,7 +13061,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-10-15T02:01:59.018Z"
+            "aktualisiertAm": "2026-10-15T02:44:09.853Z"
           },
           {
             "id": "ucl-2026-27-2-spieltag-87418",
@@ -13089,7 +13089,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-10-15T02:01:59.018Z",
+              "stand": "2026-10-15T02:44:09.853Z",
               "abgegeben": 72,
               "nichtAbgegeben": 28,
               "verborgen": 0,
@@ -13108,7 +13108,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-10-15T02:01:59.018Z"
+            "aktualisiertAm": "2026-10-15T02:44:09.853Z"
           },
           {
             "id": "ucl-2026-27-2-spieltag-87419",
@@ -13136,7 +13136,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-10-15T02:01:59.018Z",
+              "stand": "2026-10-15T02:44:09.853Z",
               "abgegeben": 73,
               "nichtAbgegeben": 27,
               "verborgen": 0,
@@ -13155,7 +13155,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-10-15T02:01:59.018Z"
+            "aktualisiertAm": "2026-10-15T02:44:09.853Z"
           },
           {
             "id": "ucl-2026-27-2-spieltag-87420",
@@ -13183,7 +13183,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-10-15T02:01:59.018Z",
+              "stand": "2026-10-15T02:44:09.853Z",
               "abgegeben": 73,
               "nichtAbgegeben": 27,
               "verborgen": 0,
@@ -13202,7 +13202,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-10-15T02:01:59.018Z"
+            "aktualisiertAm": "2026-10-15T02:44:09.853Z"
           },
           {
             "id": "ucl-2026-27-2-spieltag-87421",
@@ -13230,7 +13230,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-10-15T02:01:59.018Z",
+              "stand": "2026-10-15T02:44:09.853Z",
               "abgegeben": 73,
               "nichtAbgegeben": 27,
               "verborgen": 0,
@@ -13249,7 +13249,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-10-15T02:01:59.018Z"
+            "aktualisiertAm": "2026-10-15T02:44:09.853Z"
           },
           {
             "id": "ucl-2026-27-2-spieltag-87422",
@@ -13277,7 +13277,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-10-15T02:01:59.018Z",
+              "stand": "2026-10-15T02:44:09.853Z",
               "abgegeben": 73,
               "nichtAbgegeben": 27,
               "verborgen": 0,
@@ -13296,7 +13296,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-10-15T02:01:59.018Z"
+            "aktualisiertAm": "2026-10-15T02:44:09.853Z"
           },
           {
             "id": "ucl-2026-27-2-spieltag-87423",
@@ -13324,7 +13324,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-10-15T02:01:59.018Z",
+              "stand": "2026-10-15T02:44:09.853Z",
               "abgegeben": 73,
               "nichtAbgegeben": 27,
               "verborgen": 0,
@@ -13343,7 +13343,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-10-15T02:01:59.018Z"
+            "aktualisiertAm": "2026-10-15T02:44:09.853Z"
           },
           {
             "id": "ucl-2026-27-3-spieltag-87424",
@@ -212784,9 +212784,9 @@
       {
         "id": "2026-27__champions-league__2-spieltag__ucl-2026-27-2-spieltag-87406-ucl-2026-27-2-spieltag-87407-ucl-2026-27-2-spieltag-87408-ucl-2026-27-2-spieltag-87409-ucl-2026-27-2-spieltag-87410-ucl-2026-27-2-spieltag-87411-ucl-2026-27-2-spieltag-87412-ucl-2026-27-2-spieltag-87413-ucl-2026-27-2-spieltag-87414-ucl-2026-27-2-spieltag-87415-ucl-2026-27-2-spieltag-87416-ucl-2026-27-2-spieltag-87417-ucl-2026-27-2-spieltag-87418-ucl-2026-27-2-spieltag-87419-ucl-2026-27-2-spieltag-87420-ucl-2026-27-2-spieltag-87421-ucl-2026-27-2-spieltag-87422-ucl-2026-27-2-spieltag-87423",
         "fachlicheId": "2026-27__champions-league__2-spieltag__ucl-2026-27-2-spieltag-87406-ucl-2026-27-2-spieltag-87407-ucl-2026-27-2-spieltag-87408-ucl-2026-27-2-spieltag-87409-ucl-2026-27-2-spieltag-87410-ucl-2026-27-2-spieltag-87411-ucl-2026-27-2-spieltag-87412-ucl-2026-27-2-spieltag-87413-ucl-2026-27-2-spieltag-87414-ucl-2026-27-2-spieltag-87415-ucl-2026-27-2-spieltag-87416-ucl-2026-27-2-spieltag-87417-ucl-2026-27-2-spieltag-87418-ucl-2026-27-2-spieltag-87419-ucl-2026-27-2-spieltag-87420-ucl-2026-27-2-spieltag-87421-ucl-2026-27-2-spieltag-87422-ucl-2026-27-2-spieltag-87423",
-        "erstelltAm": "2026-10-15T02:01:59.018Z",
-        "aktualisiertAm": "2026-10-15T02:01:59.018Z",
-        "gespeichertAm": "2026-10-15T02:01:59.018Z",
+        "erstelltAm": "2026-10-15T02:44:09.853Z",
+        "aktualisiertAm": "2026-10-15T02:44:09.853Z",
+        "gespeichertAm": "2026-10-15T02:44:09.853Z",
         "modus": "produktiv",
         "wertung": "champions-league",
         "label": "Champions League",
@@ -378631,7 +378631,7 @@
         ]
       },
       {
-        "gespeichertAm": "2026-10-15T02:01:59.018Z",
+        "gespeichertAm": "2026-10-15T02:44:09.853Z",
         "auftragId": "2026-27__champions-league__2-spieltag__ucl-2026-27-2-spieltag-87406-ucl-2026-27-2-spieltag-87407-ucl-2026-27-2-spieltag-87408-ucl-2026-27-2-spieltag-87409-ucl-2026-27-2-spieltag-87410-ucl-2026-27-2-spieltag-87411-ucl-2026-27-2-spieltag-87412-ucl-2026-27-2-spieltag-87413-ucl-2026-27-2-spieltag-87414-ucl-2026-27-2-spieltag-87415-ucl-2026-27-2-spieltag-87416-ucl-2026-27-2-spieltag-87417-ucl-2026-27-2-spieltag-87418-ucl-2026-27-2-spieltag-87419-ucl-2026-27-2-spieltag-87420-ucl-2026-27-2-spieltag-87421-ucl-2026-27-2-spieltag-87422-ucl-2026-27-2-spieltag-87423",
         "wertung": "champions-league",
         "runde": "2. Spieltag",
@@ -382629,10 +382629,10 @@
         "generatorVersion": "6.5.0-TOSMC-ADMIN1"
       },
       {
-        "zeitpunkt": "2026-10-15T02:01:59.018Z",
+        "zeitpunkt": "2026-10-15T02:44:09.853Z",
         "aktion": "Spieltag abgeschlossen",
         "auftragId": "2026-27__champions-league__2-spieltag__ucl-2026-27-2-spieltag-87406-ucl-2026-27-2-spieltag-87407-ucl-2026-27-2-spieltag-87408-ucl-2026-27-2-spieltag-87409-ucl-2026-27-2-spieltag-87410-ucl-2026-27-2-spieltag-87411-ucl-2026-27-2-spieltag-87412-ucl-2026-27-2-spieltag-87413-ucl-2026-27-2-spieltag-87414-ucl-2026-27-2-spieltag-87415-ucl-2026-27-2-spieltag-87416-ucl-2026-27-2-spieltag-87417-ucl-2026-27-2-spieltag-87418-ucl-2026-27-2-spieltag-87419-ucl-2026-27-2-spieltag-87420-ucl-2026-27-2-spieltag-87421-ucl-2026-27-2-spieltag-87422-ucl-2026-27-2-spieltag-87423",
-        "generatorVersion": "6.5.0-TOSMC-ADMIN2"
+        "generatorVersion": "6.5.0-TOSMC-ADMIN3"
       }
     ],
     "wertungsbloecke": [
@@ -441398,9 +441398,9 @@
         "label": "Champions League",
         "runde": "2. Spieltag",
         "status": "abgeschlossen",
-        "erstelltAm": "2026-10-15T02:01:59.018Z",
-        "aktualisiertAm": "2026-10-15T02:01:59.018Z",
-        "abgeschlossenAm": "2026-10-15T02:01:59.018Z",
+        "erstelltAm": "2026-10-15T02:44:09.853Z",
+        "aktualisiertAm": "2026-10-15T02:44:09.853Z",
+        "abgeschlossenAm": "2026-10-15T02:44:09.853Z",
         "migriertAusAbgeschlossenemAuftrag": true,
         "spiele": [
           {

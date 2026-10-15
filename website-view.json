@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "datenVersion": 1,
-  "aktualisiertAm": "2026-10-15T02:01:59.018Z",
+  "aktualisiertAm": "2026-10-15T02:44:09.853Z",
   "saison": "2026-27",
   "modus": "produktiv",
   "quelle": "Admin 6.5.0-HF13-TEST4-HF29 Website-Adapter",
@@ -4890,17 +4890,23 @@
             "rank": 1,
             "name": "New Smugglers Team",
             "memberCount": 75,
-            "pointsSum": 3259,
-            "averagePoints": 43.45,
-            "totalPoints": 43.45
+            "pointsSum": 1230,
+            "averagePoints": 16.4,
+            "totalPoints": 16.4,
+            "kicktippControlValue": 16.4,
+            "validated": true,
+            "source": "Kicktipp-kontrollierter Mitglieder-Durchschnitt"
           },
           {
             "rank": 2,
             "name": "Old Smugglers Team",
             "memberCount": 25,
-            "pointsSum": 961,
-            "averagePoints": 38.44,
-            "totalPoints": 38.44
+            "pointsSum": 363,
+            "averagePoints": 14.52,
+            "totalPoints": 14.52,
+            "kicktippControlValue": 14.52,
+            "validated": true,
+            "source": "Kicktipp-kontrollierter Mitglieder-Durchschnitt"
           }
         ],
         "matchdayLabel": "Champions League 2. Spieltag",
@@ -4932,9 +4938,12 @@
           "rank": 1,
           "name": "New Smugglers Team",
           "memberCount": 75,
-          "pointsSum": 3259,
-          "averagePoints": 43.45,
-          "totalPoints": 43.45
+          "pointsSum": 1230,
+          "averagePoints": 16.4,
+          "totalPoints": 16.4,
+          "kicktippControlValue": 16.4,
+          "validated": true,
+          "source": "Kicktipp-kontrollierter Mitglieder-Durchschnitt"
         },
         "teamResult": "New Smugglers Team"
       },

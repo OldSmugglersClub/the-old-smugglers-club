@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-15T02:01:59.018Z",
+  "updatedAt": "2026-10-15T02:44:09.853Z",
   "imports": [
     {
       "id": "2026-27__smugglerauftrag__1-spieltag__sma-2026-27-auftakt-001-1786299073479",
@@ -741,8 +741,8 @@
       }
     },
     {
-      "id": "2026-27__champions-league__2-spieltag__ucl-2026-27-2-spieltag-87406-ucl-2026-27-2-spieltag-87407-ucl-2026-27-2-spieltag-87408-ucl-2026-27-2-spieltag-87409-ucl-2026-27-2-spieltag-87410-ucl-2026-27-2-spieltag-87411-ucl-2026-27-2-spieltag-87412-ucl-2026-27-2-spieltag-87413-ucl-2026-27-2-spieltag-87414-ucl-2026-27-2-spieltag-87415-ucl-2026-27-2-spieltag-87416-ucl-2026-27-2-spieltag-87417-ucl-2026-27-2-spieltag-87418-ucl-2026-27-2-spieltag-87419-ucl-2026-27-2-spieltag-87420-ucl-2026-27-2-spieltag-87421-ucl-2026-27-2-spieltag-87422-ucl-2026-27-2-spieltag-87423-1792029719312",
-      "createdAt": "2026-10-15T02:01:59.018Z",
+      "id": "2026-27__champions-league__2-spieltag__ucl-2026-27-2-spieltag-87406-ucl-2026-27-2-spieltag-87407-ucl-2026-27-2-spieltag-87408-ucl-2026-27-2-spieltag-87409-ucl-2026-27-2-spieltag-87410-ucl-2026-27-2-spieltag-87411-ucl-2026-27-2-spieltag-87412-ucl-2026-27-2-spieltag-87413-ucl-2026-27-2-spieltag-87414-ucl-2026-27-2-spieltag-87415-ucl-2026-27-2-spieltag-87416-ucl-2026-27-2-spieltag-87417-ucl-2026-27-2-spieltag-87418-ucl-2026-27-2-spieltag-87419-ucl-2026-27-2-spieltag-87420-ucl-2026-27-2-spieltag-87421-ucl-2026-27-2-spieltag-87422-ucl-2026-27-2-spieltag-87423-1792032250148",
+      "createdAt": "2026-10-15T02:44:09.853Z",
       "mode": "produktiv",
       "valuation": "champions-league",
       "round": "2. Spieltag",

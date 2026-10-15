@@ -3,7 +3,7 @@
     "season": "2026-27",
     "matchday": "Champions League 2. Spieltag",
     "exportDate": "2026-10-15",
-    "source": "Kicktipp-Ranglisten + interne Tippstatistiken / TOSMC-Admin 6.5.0-TOSMC-ADMIN2",
+    "source": "Kicktipp-Ranglisten + interne Tippstatistiken / TOSMC-Admin 6.5.0-TOSMC-ADMIN3",
     "privacy": "E-Mail-Adressen werden nicht übernommen.",
     "participantCount": 100,
     "status": "Kicktipp-Ranglisten übernommen",
@@ -10207,17 +10207,23 @@
           "rank": 1,
           "name": "New Smugglers Team",
           "memberCount": 75,
-          "pointsSum": 3259,
-          "averagePoints": 43.45,
-          "totalPoints": 43.45
+          "pointsSum": 1230,
+          "averagePoints": 16.4,
+          "totalPoints": 16.4,
+          "kicktippControlValue": 16.4,
+          "validated": true,
+          "source": "Kicktipp-kontrollierter Mitglieder-Durchschnitt"
         },
         {
           "rank": 2,
           "name": "Old Smugglers Team",
           "memberCount": 25,
-          "pointsSum": 961,
-          "averagePoints": 38.44,
-          "totalPoints": 38.44
+          "pointsSum": 363,
+          "averagePoints": 14.52,
+          "totalPoints": 14.52,
+          "kicktippControlValue": 14.52,
+          "validated": true,
+          "source": "Kicktipp-kontrollierter Mitglieder-Durchschnitt"
         }
       ],
       "matchdayLabel": "Champions League 2. Spieltag",
@@ -10249,9 +10255,12 @@
         "rank": 1,
         "name": "New Smugglers Team",
         "memberCount": 75,
-        "pointsSum": 3259,
-        "averagePoints": 43.45,
-        "totalPoints": 43.45
+        "pointsSum": 1230,
+        "averagePoints": 16.4,
+        "totalPoints": 16.4,
+        "kicktippControlValue": 16.4,
+        "validated": true,
+        "source": "Kicktipp-kontrollierter Mitglieder-Durchschnitt"
       },
       "teamResult": "New Smugglers Team"
     },
