@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 28,
-  "aktualisiert": "2026-10-11",
+  "datenVersion": 29,
+  "aktualisiert": "2026-10-16",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
   "torjaeger": [
+    {
+      "name": "Younes Ebnoutalib",
+      "tore": 5
+    },
     {
       "name": "P. Schick",
       "tore": 5
     },
     {
       "name": "M. Olise",
-      "tore": 4
-    },
-    {
-      "name": "Younes Ebnoutalib",
       "tore": 4
     },
     {
@@ -251,11 +251,11 @@
       "tore": 1
     },
     {
-      "name": "R. Königsdörffer",
+      "name": "P. Mwene",
       "tore": 1
     },
     {
-      "name": "P. Mwene",
+      "name": "R. Königsdörffer",
       "tore": 1
     },
     {
@@ -311,6 +311,10 @@
       "tore": 1
     },
     {
+      "name": "F. Neuhaus",
+      "tore": 1
+    },
+    {
       "name": "Danny da Costa",
       "tore": 1
     },
@@ -327,15 +331,11 @@
       "tore": 1
     },
     {
-      "name": "F. Neuhaus",
+      "name": "N. Capaldo",
       "tore": 1
     },
     {
       "name": "R. Ache",
-      "tore": 1
-    },
-    {
-      "name": "N. Capaldo",
       "tore": 1
     },
     {
@@ -379,15 +379,15 @@
       "tore": 1
     },
     {
-      "name": "T. Moffi",
-      "tore": 1
-    },
-    {
       "name": "B. Conté",
       "tore": 1
     },
     {
       "name": "M. Muheim",
+      "tore": 1
+    },
+    {
+      "name": "T. Moffi",
       "tore": 1
     },
     {
@@ -415,11 +415,11 @@
       "tore": 1
     },
     {
-      "name": "J. Chabot",
+      "name": "C. Führich",
       "tore": 1
     },
     {
-      "name": "C. Führich",
+      "name": "J. Chabot",
       "tore": 1
     },
     {

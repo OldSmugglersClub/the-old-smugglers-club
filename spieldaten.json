@@ -3195,12 +3195,12 @@
           "datumAnzeige": "16.10.2026",
           "anstoss": "20:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 1,
+          "auswaertstore": 0,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-          "quelleStand": "2026-09-10",
+          "quelleStand": "2026-10-16",
           "heimTeamId": "frankfurt",
           "auswaertsTeamId": "koeln"
         },
@@ -13825,6 +13825,6 @@
       ]
     }
   ],
-  "datenVersion": 64,
-  "aktualisiert": "2026-10-15"
+  "datenVersion": 65,
+  "aktualisiert": "2026-10-16"
 }
