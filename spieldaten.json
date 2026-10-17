@@ -3149,12 +3149,12 @@
           "datumAnzeige": "17.10.2026",
           "anstoss": "18:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 6,
+          "auswaertstore": 1,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-          "quelleStand": "2026-09-10",
+          "quelleStand": "2026-10-17",
           "heimTeamId": "bayern-muenchen",
           "auswaertsTeamId": "rb-leipzig"
         },
@@ -13849,6 +13849,6 @@
       ]
     }
   ],
-  "datenVersion": 67,
+  "datenVersion": 68,
   "aktualisiert": "2026-10-17"
 }
