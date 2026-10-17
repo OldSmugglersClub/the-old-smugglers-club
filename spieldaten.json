@@ -3202,7 +3202,31 @@
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
           "quelleStand": "2026-10-16",
           "heimTeamId": "frankfurt",
-          "auswaertsTeamId": "koeln"
+          "auswaertsTeamId": "koeln",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-17T07:17:50.141Z",
+            "abgegeben": 72,
+            "nichtAbgegeben": 28,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 50,
+                "prozent": 69.4
+              },
+              "2": {
+                "anzahl": 12,
+                "prozent": 16.7
+              },
+              "X": {
+                "anzahl": 10,
+                "prozent": 13.9
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-17T07:17:50.141Z"
         },
         {
           "id": "bl-2026-27-06-049",
@@ -13825,6 +13849,6 @@
       ]
     }
   ],
-  "datenVersion": 65,
-  "aktualisiert": "2026-10-16"
+  "datenVersion": 66,
+  "aktualisiert": "2026-10-17"
 }
