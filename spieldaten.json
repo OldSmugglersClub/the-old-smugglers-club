@@ -3156,7 +3156,31 @@
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
           "quelleStand": "2026-10-17",
           "heimTeamId": "bayern-muenchen",
-          "auswaertsTeamId": "rb-leipzig"
+          "auswaertsTeamId": "rb-leipzig",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-17T20:22:01.206Z",
+            "abgegeben": 73,
+            "nichtAbgegeben": 27,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 64,
+                "prozent": 87.7
+              },
+              "2": {
+                "anzahl": 4,
+                "prozent": 5.5
+              },
+              "X": {
+                "anzahl": 5,
+                "prozent": 6.8
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-17T20:22:01.206Z"
         },
         {
           "id": "bl-2026-27-06-047",
@@ -3207,7 +3231,7 @@
           "tippverteilung": {
             "schemaVersion": 1,
             "quelle": "Kicktipp – Tipps aller Tipper",
-            "stand": "2026-10-17T07:17:50.141Z",
+            "stand": "2026-10-17T20:22:01.206Z",
             "abgegeben": 72,
             "nichtAbgegeben": 28,
             "verborgen": 0,
@@ -3226,7 +3250,7 @@
               }
             }
           },
-          "aktualisiertAm": "2026-10-17T07:17:50.141Z"
+          "aktualisiertAm": "2026-10-17T20:22:01.206Z"
         },
         {
           "id": "bl-2026-27-06-049",
@@ -3249,7 +3273,31 @@
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
           "quelleStand": "2026-10-17",
           "heimTeamId": "union-berlin",
-          "auswaertsTeamId": "dortmund"
+          "auswaertsTeamId": "dortmund",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-17T20:22:01.206Z",
+            "abgegeben": 72,
+            "nichtAbgegeben": 28,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 2,
+                "prozent": 2.8
+              },
+              "2": {
+                "anzahl": 62,
+                "prozent": 86.1
+              },
+              "X": {
+                "anzahl": 8,
+                "prozent": 11.1
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-17T20:22:01.206Z"
         },
         {
           "id": "bl-2026-27-06-050",
@@ -3295,7 +3343,31 @@
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
           "quelleStand": "2026-10-17",
           "heimTeamId": "hamburger-sv",
-          "auswaertsTeamId": "stuttgart"
+          "auswaertsTeamId": "stuttgart",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-17T20:22:01.206Z",
+            "abgegeben": 73,
+            "nichtAbgegeben": 27,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 10,
+                "prozent": 13.7
+              },
+              "2": {
+                "anzahl": 47,
+                "prozent": 64.4
+              },
+              "X": {
+                "anzahl": 16,
+                "prozent": 21.9
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-17T20:22:01.206Z"
         },
         {
           "id": "bl-2026-27-06-052",
@@ -3318,7 +3390,31 @@
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
           "quelleStand": "2026-10-17",
           "heimTeamId": "werder-bremen",
-          "auswaertsTeamId": "paderborn"
+          "auswaertsTeamId": "paderborn",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-17T20:22:01.206Z",
+            "abgegeben": 72,
+            "nichtAbgegeben": 28,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 64,
+                "prozent": 88.9
+              },
+              "2": {
+                "anzahl": 2,
+                "prozent": 2.8
+              },
+              "X": {
+                "anzahl": 6,
+                "prozent": 8.3
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-17T20:22:01.206Z"
         },
         {
           "id": "bl-2026-27-06-053",
@@ -3341,7 +3437,31 @@
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
           "quelleStand": "2026-10-17",
           "heimTeamId": "schalke-04",
-          "auswaertsTeamId": "mainz-05"
+          "auswaertsTeamId": "mainz-05",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-17T20:22:01.206Z",
+            "abgegeben": 72,
+            "nichtAbgegeben": 28,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 26,
+                "prozent": 36.1
+              },
+              "2": {
+                "anzahl": 25,
+                "prozent": 34.7
+              },
+              "X": {
+                "anzahl": 21,
+                "prozent": 29.2
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-17T20:22:01.206Z"
         },
         {
           "id": "bl-2026-27-06-054",
@@ -3364,7 +3484,31 @@
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
           "quelleStand": "2026-10-17",
           "heimTeamId": "elversberg",
-          "auswaertsTeamId": "augsburg"
+          "auswaertsTeamId": "augsburg",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-17T20:22:01.206Z",
+            "abgegeben": 72,
+            "nichtAbgegeben": 28,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 19,
+                "prozent": 26.4
+              },
+              "2": {
+                "anzahl": 33,
+                "prozent": 45.8
+              },
+              "X": {
+                "anzahl": 20,
+                "prozent": 27.8
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-17T20:22:01.206Z"
         },
         {
           "id": "bl-2026-27-07-055",
@@ -13849,6 +13993,6 @@
       ]
     }
   ],
-  "datenVersion": 68,
+  "datenVersion": 69,
   "aktualisiert": "2026-10-17"
 }
