@@ -118,8 +118,9 @@ function podiumCard(r,pos,zero){
 }
 function leaderCard(r){
  const score=fmt(rowPoints(r));
+ const rank=Number(rowRank(r,0));
  return `<article class="hs-tie-card">
-   <div class="hs-tie-rank" aria-hidden="true">1</div>
+   <div class="hs-tie-rank" aria-hidden="true">${rank}</div>
    <strong class="hs-tie-name">${esc(rowName(r))}</strong>
    <div class="hs-tie-score"><b>${score}</b><span>Punkte</span></div>
  </article>`;
@@ -137,12 +138,22 @@ function renderPodium(list){
    return;
  }
 
- const sharedLeaders=view!=='team'&&view!=='teamOverall'&&view!=='bonus'?list.filter(r=>Number(rowRank(r,0))===1):[];
- if(sharedLeaders.length>1){
+ // Top 3 bezeichnet Rangplaetze, nicht maximal drei Personen.
+ // Bei Gleichstand alle Spieler mit offiziellem Rang 1, 2 oder 3 anzeigen.
+ // Teamkarten nutzen weiterhin die bestehende gesonderte Darstellung.
+ const isIndividual=view!=='team'&&view!=='teamOverall';
+ const topRanks=isIndividual?list.filter(r=>{
+   const rank=Number(rowRank(r,0));
+   return Number.isInteger(rank)&&rank>=1&&rank<=3;
+ }):[];
+ const tiedRanks=isIndividual&&topRanks.some((r,i)=>topRanks.findIndex(x=>Number(rowRank(x,0))===Number(rowRank(r,0)))!==i);
+ if(tiedRanks){
+   const rankGroups=[1,2,3].map(rank=>({rank,rows:topRanks.filter(r=>Number(rowRank(r,0))===rank)})).filter(group=>group.rows.length);
+   const tieInfo=rankGroups.filter(group=>group.rows.length>1).map(group=>`${group.rows.length} ${group.rows.length===1?'Freibeuter':'Freibeuter'} teilen sich Rang ${group.rank}`).join(' · ');
    podium.className='hs-podium hs-podium--simple hs-podium--tie';
    podium.innerHTML=`<div class="hs-simple-deck">
-     <header class="hs-simple-banner"><span>Das Führungsdeck</span><strong>${sharedLeaders.length} Freibeuter teilen sich Rang 1</strong><small>je ${fmt(rowPoints(sharedLeaders[0]))} Punkte</small></header>
-     <div class="hs-tie-grid">${sharedLeaders.map(leaderCard).join('')}</div>
+     <header class="hs-simple-banner"><span>Das Führungsdeck</span><strong>${esc(tieInfo)}</strong><small>Alle Spieler auf den Rängen 1 bis 3</small></header>
+     <div class="hs-tie-grid">${topRanks.map(leaderCard).join('')}</div>
    </div>`;
    return;
  }
