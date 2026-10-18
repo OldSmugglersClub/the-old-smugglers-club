@@ -5685,6 +5685,22 @@
       overflow-y: visible;
     }
 
+
+    /* HF115 18.10.2026: nur Smartphone – Hintergrundschrift aus der
+       aktuellen Spieltagskachel ausblenden. Bilddatei und Desktop unverändert.
+       Ein deckender Farbverlauf verhindert auch bei langer Kartenliste,
+       dass das im Motiv enthaltene Gold-Banner durchscheint. */
+    @media (max-width: 760px) {
+      #aktueller-spieltag.matchday-panel.sm-schedule {
+        background-color: #100a06;
+        background-image:
+          radial-gradient(ellipse at 75% 0%, rgba(94, 59, 25, .35), transparent 65%),
+          linear-gradient(180deg, #1b1008 0%, #0c0805 100%);
+        background-position: center;
+        background-size: auto;
+      }
+    }
+
   </style>
   <link rel="stylesheet" href="./highscore.css?v=4.0.1">
   <link rel="stylesheet" href="./logbuch.css?v=4.9.2-HF12-HF73">

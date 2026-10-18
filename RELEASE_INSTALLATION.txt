@@ -1,14 +1,18 @@
-TOSMC STARTSEITE – LIVE RELEASE 4.9.2-HF12-HF114
+TOSMC STARTSEITE – OFFIZIELLES LIVE-RELEASE 4.9.2-HF12-HF115
 
-Basis: Live main.zip 2026-10-18 05:49:14, vorheriger Stand 4.9.2-HF12-HF113.
-Quelle: auf Test2v2 bestätigter Funktionsstand TEST4.
+Ausgangsbasis: produktiv bestaetigte Website 4.9.2-HF12-HF114.
+Funktionsbasis: mobiler Hintergrund TEST1, auf Test2v2 fuer Mobil UND Desktop bestaetigt.
+Live-GitHub main: VERSION.txt und index.html geprueft (HF114).
 
-Einzuspielen im Hauptverzeichnis:
+Einzuspielen im HAUPTVERZEICHNIS des Live-Repositories:
 - index.html
 - VERSION.txt
 
-Keine anderen Dateien ersetzen. Vor Einspielung aktuelle Website sichern.
-Bei zwischenzeitlichen Änderungen an Live-index.html oder VERSION.txt erneut prüfen.
-Änderung: Block nicht zeitgenau terminierter Spiele von Startseite entfernt,
-Höhenanpassung, vereinfachte Rahmen und ausgerichtete Außenkanten.
-Eventseiten, JSON, Countdown-Daten und Highscore unverändert.
+NICHT andere Dateien, Bilder oder JSON-Daten ersetzen.
+Backup vor Einspielung erstellen.
+Bei abweichenden/neueren Live-Aenderungen bitte NICHT blind ueberschreiben.
+
+Aenderung: Ausschliesslich auf Smartphones (< =760px) wird der Hintergrund
+der Spieltagskachel durch dunklen Farbverlauf statt des Schriftzug-Motivs angezeigt.
+Desktop, Spielkarten, Countdown, Events und Daten bleiben unveraendert.
+Nach Einspielung Funktion auf Mobil und Desktop bestaetigen.
