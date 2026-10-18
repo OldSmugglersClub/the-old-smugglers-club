@@ -1,11 +1,15 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 31,
-  "aktualisiert": "2026-10-17",
+  "datenVersion": 32,
+  "aktualisiert": "2026-10-18",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
   "torjaeger": [
+    {
+      "name": "P. Schick",
+      "tore": 6
+    },
     {
       "name": "N. Füllkrug",
       "tore": 6
@@ -16,10 +20,6 @@
     },
     {
       "name": "Younes Ebnoutalib",
-      "tore": 5
-    },
-    {
-      "name": "P. Schick",
       "tore": 5
     },
     {
@@ -63,19 +63,19 @@
       "tore": 3
     },
     {
-      "name": "J. Burkardt",
-      "tore": 3
-    },
-    {
       "name": "R. Fellhauer",
       "tore": 3
     },
     {
-      "name": "Aleksandar Pavlovic",
-      "tore": 2
+      "name": "J. Burkardt",
+      "tore": 3
     },
     {
       "name": "J. Vagnoman",
+      "tore": 2
+    },
+    {
+      "name": "Aleksandar Pavlovic",
       "tore": 2
     },
     {
@@ -119,11 +119,15 @@
       "tore": 2
     },
     {
-      "name": "J. Scally",
+      "name": "Ibrahim Maza",
       "tore": 2
     },
     {
       "name": "H. Bolin",
+      "tore": 2
+    },
+    {
+      "name": "J. Scally",
       "tore": 2
     },
     {
@@ -163,6 +167,10 @@
       "tore": 2
     },
     {
+      "name": "D. Scherhant",
+      "tore": 2
+    },
+    {
       "name": "Poulsen, Yussuf",
       "tore": 2
     },
@@ -172,6 +180,10 @@
     },
     {
       "name": "S. Tigges",
+      "tore": 2
+    },
+    {
+      "name": "B. Conté",
       "tore": 2
     },
     {
@@ -251,10 +263,6 @@
       "tore": 1
     },
     {
-      "name": "Ibrahim Maza",
-      "tore": 1
-    },
-    {
       "name": "F. Keidel",
       "tore": 1
     },
@@ -267,11 +275,11 @@
       "tore": 1
     },
     {
-      "name": "R. Königsdörffer",
+      "name": "P. Mwene",
       "tore": 1
     },
     {
-      "name": "P. Mwene",
+      "name": "R. Königsdörffer",
       "tore": 1
     },
     {
@@ -303,11 +311,11 @@
       "tore": 1
     },
     {
-      "name": "W. Orbán",
+      "name": "Romulo",
       "tore": 1
     },
     {
-      "name": "Romulo",
+      "name": "W. Orbán",
       "tore": 1
     },
     {
@@ -319,19 +327,7 @@
       "tore": 1
     },
     {
-      "name": "D. Scherhant",
-      "tore": 1
-    },
-    {
-      "name": "F. Neuhaus",
-      "tore": 1
-    },
-    {
       "name": "Danny da Costa",
-      "tore": 1
-    },
-    {
-      "name": "Isac Lidberg",
       "tore": 1
     },
     {
@@ -343,6 +339,14 @@
       "tore": 1
     },
     {
+      "name": "Isac Lidberg",
+      "tore": 1
+    },
+    {
+      "name": "F. Neuhaus",
+      "tore": 1
+    },
+    {
       "name": "N. Capaldo",
       "tore": 1
     },
@@ -351,11 +355,11 @@
       "tore": 1
     },
     {
-      "name": "M. Weiser",
+      "name": "Calvin Brackelmann",
       "tore": 1
     },
     {
-      "name": "Calvin Brackelmann",
+      "name": "M. Weiser",
       "tore": 1
     },
     {
@@ -375,15 +379,11 @@
       "tore": 1
     },
     {
-      "name": "L. Reis",
-      "tore": 1
-    },
-    {
       "name": "N. Schlotterbeck",
       "tore": 1
     },
     {
-      "name": "B. Conté",
+      "name": "L. Reis",
       "tore": 1
     },
     {
@@ -395,11 +395,11 @@
       "tore": 1
     },
     {
-      "name": "J. Quansah",
+      "name": "B. Hollerbach",
       "tore": 1
     },
     {
-      "name": "B. Hollerbach",
+      "name": "M. Diaby",
       "tore": 1
     },
     {
@@ -407,7 +407,7 @@
       "tore": 1
     },
     {
-      "name": "M. Diaby",
+      "name": "J. Quansah",
       "tore": 1
     },
     {
@@ -439,11 +439,11 @@
       "tore": 1
     },
     {
-      "name": "Maximilian Rohr",
+      "name": "Lasse Günther",
       "tore": 1
     },
     {
-      "name": "Mert Kömür",
+      "name": "Maximilian Rohr",
       "tore": 1
     },
     {
@@ -451,11 +451,19 @@
       "tore": 1
     },
     {
-      "name": "Lasse Günther",
+      "name": "Mert Kömür",
       "tore": 1
     },
     {
       "name": "A. Maksimovic",
+      "tore": 1
+    },
+    {
+      "name": "W. Mohya",
+      "tore": 1
+    },
+    {
+      "name": "A. Prass",
       "tore": 1
     }
   ]
