@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 17,
-  "aktualisiert": "2026-10-18T14:52:15.866Z",
+  "datenVersion": 18,
+  "aktualisiert": "2026-10-18T19:09:24.747Z",
   "saison": "2026-27",
   "regelwerk": {
     "kapitaene": "Alle Tipper mit der höchsten tatsächlichen Spieltagspunktzahl; kein künstlicher Tie-Break.",
@@ -7582,6 +7582,326 @@
             "exakt": 0,
             "differenz": 8,
             "tendenz": 17
+          }
+        }
+      ]
+    },
+    {
+      "id": "2026-27__bundesliga__6-spieltag__bl-2026-27-06-046-bl-2026-27-06-047-bl-2026-27-06-048-bl-2026-27-06-049-bl-2026-27-06-050-bl-2026-27-06-051-bl-2026-27-06-052-bl-2026-27-06-053-bl-2026-27-06-054",
+      "bezeichnung": "Bundesliga 6. Spieltag",
+      "wettbewerb": "bundesliga",
+      "runde": "6. Spieltag",
+      "abgeschlossen": true,
+      "spielIds": [
+        "bl-2026-27-06-048",
+        "bl-2026-27-06-049",
+        "bl-2026-27-06-051",
+        "bl-2026-27-06-052",
+        "bl-2026-27-06-053",
+        "bl-2026-27-06-054",
+        "bl-2026-27-06-046",
+        "bl-2026-27-06-047",
+        "bl-2026-27-06-050"
+      ],
+      "kapitaene": [
+        {
+          "teilnehmerId": "xib0o",
+          "teilnehmer": "Xib0o",
+          "punkte": 19,
+          "exakt": 2,
+          "differenz": 3,
+          "tendenz": 0
+        },
+        {
+          "teilnehmerId": "oifinger",
+          "teilnehmer": "Oifinger",
+          "punkte": 19,
+          "exakt": 1,
+          "differenz": 4,
+          "tendenz": 1
+        }
+      ],
+      "highlights": [
+        {
+          "typ": "kapitaene",
+          "prioritaet": 100,
+          "anzeigen": true,
+          "daten": {
+            "punkte": 19,
+            "anzahl": 2,
+            "tipper": [
+              {
+                "teilnehmerId": "xib0o",
+                "teilnehmer": "Xib0o",
+                "punkte": 19,
+                "exakt": 2,
+                "differenz": 3,
+                "tendenz": 0
+              },
+              {
+                "teilnehmerId": "oifinger",
+                "teilnehmer": "Oifinger",
+                "punkte": 19,
+                "exakt": 1,
+                "differenz": 4,
+                "tendenz": 1
+              }
+            ]
+          }
+        },
+        {
+          "typ": "gegen-den-strom",
+          "prioritaet": 90,
+          "anzeigen": true,
+          "daten": {
+            "spielId": "bl-2026-27-06-052",
+            "heimTeam": "werder-bremen",
+            "auswaertsTeam": "paderborn",
+            "ergebnis": "2:2",
+            "abgegeben": 72,
+            "nichtAbgegeben": 28,
+            "tippverteilung": {
+              "1": 64,
+              "2": 2,
+              "X": 6
+            },
+            "exakt": 1,
+            "differenz": 5,
+            "tendenz": 0,
+            "richtigerAusgang": "X",
+            "meistGetippt": {
+              "ausgang": "1",
+              "anzahl": 64
+            },
+            "gegenDenStrom": true,
+            "richtigeTendenz": {
+              "anzahl": 6,
+              "anteil": 8.3,
+              "tipper": [
+                {
+                  "teilnehmerId": "18amfg99",
+                  "teilnehmer": "18AMFG99",
+                  "tipp": "1:1",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "flying-dutchman",
+                  "teilnehmer": "Flying-Dutchman",
+                  "tipp": "3:3",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "gruber",
+                  "teilnehmer": "gRuBer",
+                  "tipp": "2:2",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "jakob",
+                  "teilnehmer": "Jakob",
+                  "tipp": "1:1",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "mary-grace",
+                  "teilnehmer": "Mary-Grace",
+                  "tipp": "1:1",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "nick-zg-1501",
+                  "teilnehmer": "Nick_ZG_1501",
+                  "tipp": "1:1",
+                  "exakt": false
+                }
+              ],
+              "exakteTipps": 1
+            }
+          }
+        },
+        {
+          "typ": "wer-hats-gerochen",
+          "prioritaet": 85,
+          "anzeigen": true,
+          "daten": {
+            "grenzeProzent": 25,
+            "testOverride": false,
+            "faelle": [
+              {
+                "spielId": "bl-2026-27-06-052",
+                "heimTeam": "werder-bremen",
+                "auswaertsTeam": "paderborn",
+                "ergebnis": "2:2",
+                "abgegeben": 72,
+                "nichtAbgegeben": 28,
+                "tippverteilung": {
+                  "1": 64,
+                  "2": 2,
+                  "X": 6
+                },
+                "exakt": 1,
+                "differenz": 5,
+                "tendenz": 0,
+                "richtigerAusgang": "X",
+                "meistGetippt": {
+                  "ausgang": "1",
+                  "anzahl": 64
+                },
+                "gegenDenStrom": true,
+                "richtigeTendenz": {
+                  "anzahl": 6,
+                  "anteil": 8.3,
+                  "tipper": [
+                    {
+                      "teilnehmerId": "18amfg99",
+                      "teilnehmer": "18AMFG99",
+                      "tipp": "1:1",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "flying-dutchman",
+                      "teilnehmer": "Flying-Dutchman",
+                      "tipp": "3:3",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "gruber",
+                      "teilnehmer": "gRuBer",
+                      "tipp": "2:2",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "jakob",
+                      "teilnehmer": "Jakob",
+                      "tipp": "1:1",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "mary-grace",
+                      "teilnehmer": "Mary-Grace",
+                      "tipp": "1:1",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "nick-zg-1501",
+                      "teilnehmer": "Nick_ZG_1501",
+                      "tipp": "1:1",
+                      "exakt": false
+                    }
+                  ],
+                  "exakteTipps": 1
+                }
+              }
+            ]
+          }
+        },
+        {
+          "typ": "volltreffer",
+          "prioritaet": 80,
+          "anzeigen": true,
+          "daten": {
+            "maxExakt": 2,
+            "anzahl": 7,
+            "tipper": [
+              {
+                "teilnehmerId": "xib0o",
+                "teilnehmer": "Xib0o",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "finch",
+                "teilnehmer": "Finch",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "sam-entspender",
+                "teilnehmer": "SAM_ENTSPENDER",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "rk69",
+                "teilnehmer": "RK69",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "kevin",
+                "teilnehmer": "Kevin",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "hardy17",
+                "teilnehmer": "Hardy17",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "pochzerjung",
+                "teilnehmer": "PochzerJung",
+                "exakt": 2
+              }
+            ]
+          }
+        },
+        {
+          "typ": "crewduell",
+          "prioritaet": 70,
+          "anzeigen": true,
+          "daten": {
+            "teams": [
+              {
+                "team": "New Smugglers Team",
+                "durchschnitt": 7.85,
+                "punktesumme": 589,
+                "mitglieder": 75
+              },
+              {
+                "team": "Old Smugglers Team",
+                "durchschnitt": 6.88,
+                "punktesumme": 172,
+                "mitglieder": 25
+              }
+            ],
+            "sieger": "New Smugglers Team",
+            "differenz": 0.97
+          }
+        },
+        {
+          "typ": "kursbewegung",
+          "prioritaet": 40,
+          "anzeigen": true,
+          "grund": null,
+          "daten": {
+            "gewinner": [
+              {
+                "teilnehmerId": "flying-dutchman",
+                "teilnehmer": "Flying-Dutchman",
+                "vorher": 51,
+                "jetzt": 32,
+                "veraenderung": 19
+              }
+            ],
+            "verlierer": [
+              {
+                "teilnehmerId": "sven-huhn",
+                "teilnehmer": "Sven_Huhn",
+                "vorher": 8,
+                "jetzt": 21,
+                "veraenderung": -13
+              }
+            ],
+            "maxGewinn": 19,
+            "maxVerlust": -13
+          }
+        },
+        {
+          "typ": "zahlen-aus-der-kombuese",
+          "prioritaet": 30,
+          "anzeigen": true,
+          "daten": {
+            "abgegeben": 74,
+            "nichtAbgegeben": 28,
+            "exakt": 46,
+            "differenz": 93,
+            "tendenz": 126
           }
         }
       ]

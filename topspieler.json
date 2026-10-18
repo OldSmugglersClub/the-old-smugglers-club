@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 16,
-  "aktualisiertAm": "2026-10-18T14:52:15.866Z",
+  "datenVersion": 17,
+  "aktualisiertAm": "2026-10-18T19:09:24.747Z",
   "saison": "2026-27",
   "status": "Berechnet",
   "kategorien": [
     {
       "titel": "Spieltagsführer",
       "name": "Olympiakos",
-      "wert": "151 Punkte"
+      "wert": "161 Punkte"
     },
     {
       "titel": "Meiste exakte Tipps",
-      "name": "Olympiakos",
-      "wert": "11"
+      "name": "Dani1893",
+      "wert": "12"
     },
     {
       "titel": "Beste Serie",
