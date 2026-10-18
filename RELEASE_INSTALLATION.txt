@@ -1,0 +1,14 @@
+TOSMC STARTSEITE – LIVE RELEASE 4.9.2-HF12-HF114
+
+Basis: Live main.zip 2026-10-18 05:49:14, vorheriger Stand 4.9.2-HF12-HF113.
+Quelle: auf Test2v2 bestätigter Funktionsstand TEST4.
+
+Einzuspielen im Hauptverzeichnis:
+- index.html
+- VERSION.txt
+
+Keine anderen Dateien ersetzen. Vor Einspielung aktuelle Website sichern.
+Bei zwischenzeitlichen Änderungen an Live-index.html oder VERSION.txt erneut prüfen.
+Änderung: Block nicht zeitgenau terminierter Spiele von Startseite entfernt,
+Höhenanpassung, vereinfachte Rahmen und ausgerichtete Außenkanten.
+Eventseiten, JSON, Countdown-Daten und Highscore unverändert.
