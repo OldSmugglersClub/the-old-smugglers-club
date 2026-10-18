@@ -1880,3 +1880,15 @@
 .hs-team-select:focus-visible{outline:2px solid #edbd60;outline-offset:-3px}
 .hs-team-select-wrap::after{content:'▾';position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:1rem;color:#edbf64;pointer-events:none}
 @media(max-width:720px){.hs-view-tabs--event>.hs-team-select-wrap{min-height:44px}.hs-team-select{font-size:clamp(.56rem,2.2vw,.77rem);padding:5px 15px 5px 2px}.hs-team-select-wrap::after{right:4px;font-size:.76rem}}
+
+/* Mobile Highscore navigation: full labels stay in native select popup, not clipped on card.
+   Desktop rules intentionally untouched. */
+.hs-team-select-mobile-label{display:none}
+@media(max-width:720px){
+  .hs-view-tabs--event>.hs-team-select-wrap{position:relative;isolation:isolate;overflow:hidden}
+  .hs-view-tabs--event .hs-team-select-mobile-label{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;position:absolute;inset:0 17px 0 2px;pointer-events:none;color:#f5e2b7;text-align:center;line-height:1.12;font-weight:600;font-size:clamp(.65rem,2.45vw,.9rem);white-space:nowrap}
+  .hs-view-tabs--event .hs-team-select-mobile-label small{display:block;font-size:clamp(.59rem,2.15vw,.79rem);font-weight:400;color:#e9c888;line-height:1.1}
+  .hs-view-tabs--event .hs-team-select{position:absolute;inset:0;width:100%;height:100%;min-height:44px;opacity:0;z-index:2;cursor:pointer}
+  .hs-view-tabs--event .hs-team-select-wrap::after{right:6px;font-size:.8rem;z-index:1}
+  .hs-view-tabs--event .hs-team-select-wrap:focus-within{outline:2px solid #edbd60;outline-offset:2px}
+}

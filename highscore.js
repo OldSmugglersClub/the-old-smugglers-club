@@ -13,13 +13,14 @@ window.OSCHighscoreGoToPage=function(requested){
 };
 const $=id=>document.getElementById(id);
 function firstNonEmptyArray(...values){for(const value of values){if(Array.isArray(value)&&value.length)return value;}for(const value of values){if(Array.isArray(value))return value;}return [];}function normalizeLegacy(d){d=d||{};const overall=d.overall||{};d.overall={individual:firstNonEmptyArray(overall.individual,d.individual?.overall),team:firstNonEmptyArray(overall.team,d.gesamt?.team,d.teams?.overall,d.teamOverall),bonus:firstNonEmptyArray(overall.bonus,d.individual?.bonus)};d.competitions=d.competitions||d.wettbewerbe||{};return d;}
+// Team-Gesamtwertung: historische Ranglistenteilnehmer einschliesslich inzwischen inaktiver Mitglieder zuordnen.
 // Nur die Team-Gesamtansicht liest die jeweils aktuelle Teilnehmerzuordnung nach.
 // Keine Speicherung von kumulierten Werten in der Spieltags-Teamwertung.
 function computeEventTeamOverall(db,highscore){
  const members=db?.stammdaten?.teilnehmer;
  if(!Array.isArray(members))throw new Error('Teamzuordnungen fehlen in spielbetrieb.json.');
  const memberById=new Map();
- for(const m of members){if(m?.id&&['Old Smugglers Team','New Smugglers Team'].includes(m.team)&&m.aktiv!==false){
+ for(const m of members){if(m?.id&&['Old Smugglers Team','New Smugglers Team'].includes(m.team)){
   if(memberById.has(m.id))throw new Error('Teilnehmer-ID mehrfach vorhanden.');
   memberById.set(m.id,m.team);
  }}
@@ -76,7 +77,7 @@ function renderTabs(){
  $('view-tabs').classList.toggle('hs-view-tabs--event',scope!=='overall');
  $('view-tabs').innerHTML=scope==='overall'
    ? allowed.map(([id,label])=>`<button class="hs-chip ${view===id?'is-active':''}" data-view="${id}" aria-pressed="${view===id}">${esc(label)}</button>`).join('')
-   : `<button class="hs-chip ${view==='matchday'?'is-active':''}" data-view="matchday" aria-pressed="${view==='matchday'}">Spieltagswertung</button><button class="hs-chip ${view==='individual'?'is-active':''}" data-view="individual" aria-pressed="${view==='individual'}">Gesamtwertung</button><label class="hs-team-select-wrap ${(view==='team'||view==='teamOverall')?'is-active':''}"><span class="sr-only">Teamwertung auswählen</span><select class="hs-team-select" id="hs-team-select" aria-label="Teamwertung auswählen"><option value="" disabled ${(view!=='team'&&view!=='teamOverall')?'selected':''}>Teamwertung auswählen</option><option value="team" ${view==='team'?'selected':''}>Spieltags-Teamwertung</option><option value="teamOverall" ${view==='teamOverall'?'selected':''}>Gesamt-Teamwertung</option></select></label>`;
+   : `<button class="hs-chip ${view==='matchday'?'is-active':''}" data-view="matchday" aria-pressed="${view==='matchday'}">Spieltagswertung</button><button class="hs-chip ${view==='individual'?'is-active':''}" data-view="individual" aria-pressed="${view==='individual'}">Gesamtwertung</button><label class="hs-team-select-wrap ${(view==='team'||view==='teamOverall')?'is-active':''}"><span class="sr-only">Teamwertung auswählen</span><span class="hs-team-select-mobile-label" aria-hidden="true"><span>Teamwertung</span><small>${view==='team'?'Spieltag':view==='teamOverall'?'Gesamt':'Auswählen'}</small></span><select class="hs-team-select" id="hs-team-select" aria-label="Teamwertung auswählen"><option value="" disabled ${(view!=='team'&&view!=='teamOverall')?'selected':''}>Teamwertung auswählen</option><option value="team" ${view==='team'?'selected':''}>Spieltags-Teamwertung</option><option value="teamOverall" ${view==='teamOverall'?'selected':''}>Gesamt-Teamwertung</option></select></label>`;
  $('competition-tabs').querySelectorAll('[data-scope]').forEach(b=>b.onclick=()=>{scope=b.dataset.scope;view=scope==='overall'?'individual':'matchday';query='';page=1;$('player-search').value='';render();});
  $('view-tabs').querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{view=b.dataset.view;query='';page=1;$('player-search').value='';render();if(view==='teamOverall')loadEventTeamOverall();});
  const teamSelect=$('hs-team-select');if(teamSelect)teamSelect.onchange=()=>{if(!['team','teamOverall'].includes(teamSelect.value))return;view=teamSelect.value;query='';page=1;$('player-search').value='';render();if(view==='teamOverall')loadEventTeamOverall();};

@@ -7550,18 +7550,18 @@
           {
             "rank": 1,
             "name": "New Smugglers Team",
-            "memberCount": 77,
-            "pointsSum": 630,
-            "averagePoints": 8.18,
-            "totalPoints": 8.18
+            "memberCount": 75,
+            "pointsSum": 63,
+            "averagePoints": 0.84,
+            "totalPoints": 0.84
           },
           {
             "rank": 2,
             "name": "Old Smugglers Team",
-            "memberCount": 26,
-            "pointsSum": 172,
-            "averagePoints": 6.62,
-            "totalPoints": 6.62
+            "memberCount": 25,
+            "pointsSum": 15,
+            "averagePoints": 0.6,
+            "totalPoints": 0.6
           }
         ],
         "matchdayLabel": "Smuggleraufträge 7. Spieltag",
@@ -7592,10 +7592,10 @@
         "teamWinner": {
           "rank": 1,
           "name": "New Smugglers Team",
-          "memberCount": 77,
-          "pointsSum": 630,
-          "averagePoints": 8.18,
-          "totalPoints": 8.18
+          "memberCount": 75,
+          "pointsSum": 63,
+          "averagePoints": 0.84,
+          "totalPoints": 0.84
         },
         "teamResult": "New Smugglers Team"
       },
