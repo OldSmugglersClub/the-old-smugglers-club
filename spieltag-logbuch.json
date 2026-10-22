@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 18,
-  "aktualisiert": "2026-10-18T19:09:24.747Z",
+  "datenVersion": 19,
+  "aktualisiert": "2026-10-22T03:13:53.365Z",
   "saison": "2026-27",
   "regelwerk": {
     "kapitaene": "Alle Tipper mit der höchsten tatsächlichen Spieltagspunktzahl; kein künstlicher Tie-Break.",
@@ -7902,6 +7902,266 @@
             "exakt": 46,
             "differenz": 93,
             "tendenz": 126
+          }
+        }
+      ]
+    },
+    {
+      "id": "2026-27__champions-league__3-spieltag__ucl-2026-27-3-spieltag-87424-ucl-2026-27-3-spieltag-87425-ucl-2026-27-3-spieltag-87426-ucl-2026-27-3-spieltag-87427-ucl-2026-27-3-spieltag-87428-ucl-2026-27-3-spieltag-87429-ucl-2026-27-3-spieltag-87430-ucl-2026-27-3-spieltag-87431-ucl-2026-27-3-spieltag-87432-ucl-2026-27-3-spieltag-87433-ucl-2026-27-3-spieltag-87434-ucl-2026-27-3-spieltag-87435-ucl-2026-27-3-spieltag-87436-ucl-2026-27-3-spieltag-87437-ucl-2026-27-3-spieltag-87438-ucl-2026-27-3-spieltag-87439-ucl-2026-27-3-spieltag-87440-ucl-2026-27-3-spieltag-87441",
+      "bezeichnung": "Champions League 3. Spieltag",
+      "wettbewerb": "champions-league",
+      "runde": "3. Spieltag",
+      "abgeschlossen": true,
+      "spielIds": [
+        "ucl-2026-27-3-spieltag-87424",
+        "ucl-2026-27-3-spieltag-87425",
+        "ucl-2026-27-3-spieltag-87426",
+        "ucl-2026-27-3-spieltag-87427",
+        "ucl-2026-27-3-spieltag-87428",
+        "ucl-2026-27-3-spieltag-87429",
+        "ucl-2026-27-3-spieltag-87430",
+        "ucl-2026-27-3-spieltag-87431",
+        "ucl-2026-27-3-spieltag-87432",
+        "ucl-2026-27-3-spieltag-87433",
+        "ucl-2026-27-3-spieltag-87434",
+        "ucl-2026-27-3-spieltag-87435",
+        "ucl-2026-27-3-spieltag-87436",
+        "ucl-2026-27-3-spieltag-87437",
+        "ucl-2026-27-3-spieltag-87438",
+        "ucl-2026-27-3-spieltag-87439",
+        "ucl-2026-27-3-spieltag-87440",
+        "ucl-2026-27-3-spieltag-87441"
+      ],
+      "kapitaene": [
+        {
+          "teilnehmerId": "stevie26",
+          "teilnehmer": "Stevie26",
+          "punkte": 38,
+          "exakt": 2,
+          "differenz": 4,
+          "tendenz": 8
+        }
+      ],
+      "highlights": [
+        {
+          "typ": "kapitaene",
+          "prioritaet": 100,
+          "anzeigen": true,
+          "daten": {
+            "punkte": 38,
+            "anzahl": 1,
+            "tipper": [
+              {
+                "teilnehmerId": "stevie26",
+                "teilnehmer": "Stevie26",
+                "punkte": 38,
+                "exakt": 2,
+                "differenz": 4,
+                "tendenz": 8
+              }
+            ]
+          }
+        },
+        {
+          "typ": "gegen-den-strom",
+          "prioritaet": 90,
+          "anzeigen": true,
+          "daten": {
+            "spielId": "ucl-2026-27-3-spieltag-87440",
+            "heimTeam": "sporting-lissabon",
+            "auswaertsTeam": "lask",
+            "ergebnis": "2:3",
+            "abgegeben": 66,
+            "nichtAbgegeben": 34,
+            "tippverteilung": {
+              "1": 60,
+              "2": 2,
+              "X": 4
+            },
+            "exakt": 1,
+            "differenz": 1,
+            "tendenz": 0,
+            "richtigerAusgang": "2",
+            "meistGetippt": {
+              "ausgang": "1",
+              "anzahl": 60
+            },
+            "gegenDenStrom": true,
+            "richtigeTendenz": {
+              "anzahl": 2,
+              "anteil": 3,
+              "tipper": [
+                {
+                  "teilnehmerId": "kevinhick",
+                  "teilnehmer": "Kevinhick",
+                  "tipp": "2:3",
+                  "exakt": true
+                },
+                {
+                  "teilnehmerId": "andy1304",
+                  "teilnehmer": "Andy1304",
+                  "tipp": "0:1",
+                  "exakt": false
+                }
+              ],
+              "exakteTipps": 1
+            }
+          }
+        },
+        {
+          "typ": "wer-hats-gerochen",
+          "prioritaet": 85,
+          "anzeigen": true,
+          "daten": {
+            "grenzeProzent": 25,
+            "testOverride": false,
+            "faelle": [
+              {
+                "spielId": "ucl-2026-27-3-spieltag-87440",
+                "heimTeam": "sporting-lissabon",
+                "auswaertsTeam": "lask",
+                "ergebnis": "2:3",
+                "abgegeben": 66,
+                "nichtAbgegeben": 34,
+                "tippverteilung": {
+                  "1": 60,
+                  "2": 2,
+                  "X": 4
+                },
+                "exakt": 1,
+                "differenz": 1,
+                "tendenz": 0,
+                "richtigerAusgang": "2",
+                "meistGetippt": {
+                  "ausgang": "1",
+                  "anzahl": 60
+                },
+                "gegenDenStrom": true,
+                "richtigeTendenz": {
+                  "anzahl": 2,
+                  "anteil": 3,
+                  "tipper": [
+                    {
+                      "teilnehmerId": "kevinhick",
+                      "teilnehmer": "Kevinhick",
+                      "tipp": "2:3",
+                      "exakt": true
+                    },
+                    {
+                      "teilnehmerId": "andy1304",
+                      "teilnehmer": "Andy1304",
+                      "tipp": "0:1",
+                      "exakt": false
+                    }
+                  ],
+                  "exakteTipps": 1
+                }
+              }
+            ]
+          }
+        },
+        {
+          "typ": "volltreffer",
+          "prioritaet": 80,
+          "anzeigen": true,
+          "daten": {
+            "maxExakt": 3,
+            "anzahl": 6,
+            "tipper": [
+              {
+                "teilnehmerId": "bigdog",
+                "teilnehmer": "Bigdog",
+                "exakt": 3
+              },
+              {
+                "teilnehmerId": "sam-entspender",
+                "teilnehmer": "SAM_ENTSPENDER",
+                "exakt": 3
+              },
+              {
+                "teilnehmerId": "best10",
+                "teilnehmer": "Best10",
+                "exakt": 3
+              },
+              {
+                "teilnehmerId": "steff77",
+                "teilnehmer": "Steff77",
+                "exakt": 3
+              },
+              {
+                "teilnehmerId": "kevinhick",
+                "teilnehmer": "Kevinhick",
+                "exakt": 3
+              },
+              {
+                "teilnehmerId": "manuel",
+                "teilnehmer": "Manuel",
+                "exakt": 3
+              }
+            ]
+          }
+        },
+        {
+          "typ": "crewduell",
+          "prioritaet": 70,
+          "anzeigen": true,
+          "daten": {
+            "teams": [
+              {
+                "team": "New Smugglers Team",
+                "durchschnitt": 17.84,
+                "punktesumme": 1338,
+                "mitglieder": 75
+              },
+              {
+                "team": "Old Smugglers Team",
+                "durchschnitt": 14.92,
+                "punktesumme": 373,
+                "mitglieder": 25
+              }
+            ],
+            "sieger": "New Smugglers Team",
+            "differenz": 2.92
+          }
+        },
+        {
+          "typ": "kursbewegung",
+          "prioritaet": 40,
+          "anzeigen": true,
+          "grund": null,
+          "daten": {
+            "gewinner": [
+              {
+                "teilnehmerId": "flokicker94",
+                "teilnehmer": "FloKicker94",
+                "vorher": 55,
+                "jetzt": 35,
+                "veraenderung": 20
+              }
+            ],
+            "verlierer": [
+              {
+                "teilnehmerId": "sven-huhn",
+                "teilnehmer": "Sven_Huhn",
+                "vorher": 21,
+                "jetzt": 58,
+                "veraenderung": -37
+              }
+            ],
+            "maxGewinn": 20,
+            "maxVerlust": -37
+          }
+        },
+        {
+          "typ": "zahlen-aus-der-kombuese",
+          "prioritaet": 30,
+          "anzeigen": true,
+          "daten": {
+            "abgegeben": 66,
+            "nichtAbgegeben": 37,
+            "exakt": 63,
+            "differenz": 160,
+            "tendenz": 458
           }
         }
       ]
