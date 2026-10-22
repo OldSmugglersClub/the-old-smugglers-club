@@ -1,23 +1,21 @@
-TOSMC – PRODUKTIVVORBEREITUNG 4.9.2-HF12-HF119
-Basis: 4.9.2-HF12-HF118 aus Live main ZIP 22.10.2026 17:42:45.
+TOSMC – Produktiv-Hotfix HF120 (Beschriftung Spieltagsbilanz)
 
-STOPP VOR EINSPILUNG: Diese Datei ist ein vorbereiteter Release-Kandidat. Freigabe nur, wenn die aktuelle Live-Basis weiterhin den BEFORE-SHA256-Hashes in SHA256_MANIFEST.json entspricht.
+Basis: Live HF119. TEST15 auf Test2v2 durch Betreiber bestaetigt.
 
-Ausschließlich diese 5 Dateien im ROOT des Live-Repositories ersetzen:
-- index.html (neue Cache-Parameter für Logbuch)
-- logbuch.html (neue Cache-Parameter für Logbuch)
-- logbuch.js (TEST13, fachlich geprüft)
-- logbuch.css (TEST13, Layout bestätigt)
-- VERSION.txt (4.9.2-HF12-HF119)
+Nur diese VIER Dateien in den ROOT des Live-Repositories kopieren:
+- logbuch.js
+- logbuch.html
+- index.html
+- VERSION.txt
 
-NIEMALS Tests, Manifest oder README in die Website einspielen.
+Die beigefuegte logbuch.css ist als Schutzreferenz byteidentisch mit HF119 und soll NICHT ersetzt werden. README und Manifest ebenfalls nicht einspielen.
 
-Keine JSON-Wertungsdaten, Archive, HOF oder Admin-Dateien geändert.
+Ablauf:
+1. Aktuellen Live-Stand nochmals gegen BEFORE-SHA256 pruefen; bei Abweichung STOPP.
+2. Ausschliesslich die vier Dateien lokal ueber GitHub Desktop ersetzen.
+3. Git-Diff auf die vier Dateien begrenzen; Commit und Push nur durch Betreiber.
+4. GitHub-Schutzpruefung und Pages-Deployment kontrollieren.
+5. Browsercheck Logbuch sowie Startseiten-Teaser, aktuelle und historische Eintraege, Desktop/Mobil.
+6. Live-Abschluss erst nach Betreiberbestaetigung.
 
-Prüfen:
-1. Vorher-Hashes aller fünf Live-Dateien mit SHA256_MANIFEST.json vergleichen.
-2. Commit-Diff: exakt die fünf gelisteten Dateien; kein anderer Wettbewerb betroffen.
-3. Nachher-SHA256 mit Manifest kontrollieren.
-4. GitHub-Schutzprüfung, Pages Deployment und Browserfunktion kontrollieren.
-5. Startseite (Logbuch-Teaser) sowie Logbuch: aktueller CL-Abschluss, historische Gleichstände, Flop-LuCipher, Form-Fenster, Kursbewegung und Bilanz; Mobil prüfen.
-6. Bei Live-Abweichungen oder Fehlern STOPP und Basis neu einlesen.
+Keine Wertungsdaten, kein Admin und keine historischen Archive veraendert.

@@ -285,8 +285,8 @@ function spieltagBilanzCard(entry){
   <div class="lb-bilanz-grid">
     ${metric("Spiele",de(games.size),"abgeschlossen")}
     ${metric("Tipper",de(activeIds.size),"mit Tippabgabe")}
-    ${metric("Punkte",de(total),"insgesamt")}
-    ${metric("Ø Punkte",average.toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:2}),"pro aktivem Tipper")}
+    ${metric("Gesamtpunktzahl",de(total),"Punkte aller Teilnehmer zusammen")}
+    ${metric("Punktedurchschnitt",average.toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:2}),"Punkte je aktivem Tipper")}
   </div>
  </article>`;
 }
