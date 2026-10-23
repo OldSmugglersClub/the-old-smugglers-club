@@ -3647,9 +3647,33 @@
           "status": "beendet",
           "sonderwertungen": [],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-          "quelleStand": "2026-10-23",
+          "quelleStand": "2026-09-10",
           "heimTeamId": "stuttgart",
-          "auswaertsTeamId": "moenchengladbach"
+          "auswaertsTeamId": "moenchengladbach",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-23T21:56:45.200Z",
+            "abgegeben": 70,
+            "nichtAbgegeben": 30,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 63,
+                "prozent": 90
+              },
+              "2": {
+                "anzahl": 2,
+                "prozent": 2.9
+              },
+              "X": {
+                "anzahl": 5,
+                "prozent": 7.1
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-23T21:56:45.200Z"
         },
         {
           "id": "bl-2026-27-07-058",
