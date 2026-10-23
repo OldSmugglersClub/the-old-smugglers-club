@@ -3642,12 +3642,12 @@
           "datumAnzeige": "23.10.2026",
           "anstoss": "20:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 2,
+          "auswaertstore": 3,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-          "quelleStand": "2026-09-10",
+          "quelleStand": "2026-10-23",
           "heimTeamId": "stuttgart",
           "auswaertsTeamId": "moenchengladbach"
         },
@@ -14479,6 +14479,6 @@
       ]
     }
   ],
-  "datenVersion": 74,
-  "aktualisiert": "2026-10-22"
+  "datenVersion": 75,
+  "aktualisiert": "2026-10-23"
 }

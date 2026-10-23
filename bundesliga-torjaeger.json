@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 32,
-  "aktualisiert": "2026-10-18",
+  "datenVersion": 33,
+  "aktualisiert": "2026-10-23",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
@@ -55,7 +55,15 @@
       "tore": 3
     },
     {
+      "name": "E. Demirovic",
+      "tore": 3
+    },
+    {
       "name": "M. Krattenmacher",
+      "tore": 3
+    },
+    {
+      "name": "J. Scally",
       "tore": 3
     },
     {
@@ -127,10 +135,6 @@
       "tore": 2
     },
     {
-      "name": "J. Scally",
-      "tore": 2
-    },
-    {
       "name": "M. Grüll",
       "tore": 2
     },
@@ -171,6 +175,10 @@
       "tore": 2
     },
     {
+      "name": "S. Machino",
+      "tore": 2
+    },
+    {
       "name": "Poulsen, Yussuf",
       "tore": 2
     },
@@ -183,15 +191,19 @@
       "tore": 2
     },
     {
-      "name": "B. Conté",
-      "tore": 2
-    },
-    {
       "name": "M. Muheim",
       "tore": 2
     },
     {
+      "name": "B. Conté",
+      "tore": 2
+    },
+    {
       "name": "A. Caci",
+      "tore": 2
+    },
+    {
+      "name": "W. Mohya",
       "tore": 2
     },
     {
@@ -203,11 +215,11 @@
       "tore": 1
     },
     {
-      "name": "L. Querfeld",
+      "name": "Emmanuel Latte Lath",
       "tore": 1
     },
     {
-      "name": "Emmanuel Latte Lath",
+      "name": "L. Querfeld",
       "tore": 1
     },
     {
@@ -235,10 +247,6 @@
       "tore": 1
     },
     {
-      "name": "E. Demirovic",
-      "tore": 1
-    },
-    {
       "name": "G. Prömel",
       "tore": 1
     },
@@ -247,11 +255,11 @@
       "tore": 1
     },
     {
-      "name": "L. Avdullahu",
+      "name": "T. Lemperle",
       "tore": 1
     },
     {
-      "name": "T. Lemperle",
+      "name": "L. Avdullahu",
       "tore": 1
     },
     {
@@ -327,19 +335,15 @@
       "tore": 1
     },
     {
-      "name": "Danny da Costa",
-      "tore": 1
-    },
-    {
-      "name": "S. Machino",
-      "tore": 1
-    },
-    {
       "name": "E. Martel",
       "tore": 1
     },
     {
       "name": "Isac Lidberg",
+      "tore": 1
+    },
+    {
+      "name": "Danny da Costa",
       "tore": 1
     },
     {
@@ -439,11 +443,11 @@
       "tore": 1
     },
     {
-      "name": "Lasse Günther",
+      "name": "Maximilian Rohr",
       "tore": 1
     },
     {
-      "name": "Maximilian Rohr",
+      "name": "Lasse Günther",
       "tore": 1
     },
     {
@@ -456,10 +460,6 @@
     },
     {
       "name": "A. Maksimovic",
-      "tore": 1
-    },
-    {
-      "name": "W. Mohya",
       "tore": 1
     },
     {
