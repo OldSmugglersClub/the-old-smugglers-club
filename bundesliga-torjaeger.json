@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 33,
-  "aktualisiert": "2026-10-23",
+  "datenVersion": 34,
+  "aktualisiert": "2026-10-24",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
   "torjaeger": [
     {
-      "name": "P. Schick",
-      "tore": 6
+      "name": "N. Füllkrug",
+      "tore": 8
     },
     {
-      "name": "N. Füllkrug",
+      "name": "P. Schick",
       "tore": 6
     },
     {
@@ -59,11 +59,11 @@
       "tore": 3
     },
     {
-      "name": "M. Krattenmacher",
+      "name": "J. Scally",
       "tore": 3
     },
     {
-      "name": "J. Scally",
+      "name": "M. Krattenmacher",
       "tore": 3
     },
     {
@@ -79,11 +79,23 @@
       "tore": 3
     },
     {
-      "name": "J. Vagnoman",
-      "tore": 2
+      "name": "T. Gomis",
+      "tore": 3
+    },
+    {
+      "name": "Romulo",
+      "tore": 3
+    },
+    {
+      "name": "A. Caci",
+      "tore": 3
     },
     {
       "name": "Aleksandar Pavlovic",
+      "tore": 2
+    },
+    {
+      "name": "J. Vagnoman",
       "tore": 2
     },
     {
@@ -163,10 +175,6 @@
       "tore": 2
     },
     {
-      "name": "T. Gomis",
-      "tore": 2
-    },
-    {
       "name": "I. Saibari",
       "tore": 2
     },
@@ -183,15 +191,15 @@
       "tore": 2
     },
     {
-      "name": "S. Marino",
-      "tore": 2
-    },
-    {
       "name": "S. Tigges",
       "tore": 2
     },
     {
-      "name": "M. Muheim",
+      "name": "S. Marino",
+      "tore": 2
+    },
+    {
+      "name": "L. Reis",
       "tore": 2
     },
     {
@@ -199,7 +207,7 @@
       "tore": 2
     },
     {
-      "name": "A. Caci",
+      "name": "M. Muheim",
       "tore": 2
     },
     {
@@ -215,11 +223,11 @@
       "tore": 1
     },
     {
-      "name": "Emmanuel Latte Lath",
+      "name": "L. Querfeld",
       "tore": 1
     },
     {
-      "name": "L. Querfeld",
+      "name": "Emmanuel Latte Lath",
       "tore": 1
     },
     {
@@ -255,11 +263,11 @@
       "tore": 1
     },
     {
-      "name": "T. Lemperle",
+      "name": "L. Avdullahu",
       "tore": 1
     },
     {
-      "name": "L. Avdullahu",
+      "name": "T. Lemperle",
       "tore": 1
     },
     {
@@ -299,11 +307,11 @@
       "tore": 1
     },
     {
-      "name": "R. Gosens",
+      "name": "M. Wöber",
       "tore": 1
     },
     {
-      "name": "M. Wöber",
+      "name": "R. Gosens",
       "tore": 1
     },
     {
@@ -319,10 +327,6 @@
       "tore": 1
     },
     {
-      "name": "Romulo",
-      "tore": 1
-    },
-    {
       "name": "W. Orbán",
       "tore": 1
     },
@@ -335,7 +339,11 @@
       "tore": 1
     },
     {
-      "name": "E. Martel",
+      "name": "Danny da Costa",
+      "tore": 1
+    },
+    {
+      "name": "F. Neuhaus",
       "tore": 1
     },
     {
@@ -343,11 +351,7 @@
       "tore": 1
     },
     {
-      "name": "Danny da Costa",
-      "tore": 1
-    },
-    {
-      "name": "F. Neuhaus",
+      "name": "E. Martel",
       "tore": 1
     },
     {
@@ -387,15 +391,15 @@
       "tore": 1
     },
     {
-      "name": "L. Reis",
-      "tore": 1
-    },
-    {
       "name": "T. Moffi",
       "tore": 1
     },
     {
       "name": "N. Brown",
+      "tore": 1
+    },
+    {
+      "name": "J. Quansah",
       "tore": 1
     },
     {
@@ -411,19 +415,15 @@
       "tore": 1
     },
     {
-      "name": "J. Quansah",
-      "tore": 1
-    },
-    {
       "name": "Livan Burcu",
       "tore": 1
     },
     {
-      "name": "J. Chabot",
+      "name": "C. Führich",
       "tore": 1
     },
     {
-      "name": "C. Führich",
+      "name": "J. Chabot",
       "tore": 1
     },
     {
@@ -443,14 +443,6 @@
       "tore": 1
     },
     {
-      "name": "Maximilian Rohr",
-      "tore": 1
-    },
-    {
-      "name": "Lasse Günther",
-      "tore": 1
-    },
-    {
       "name": "Frederik Schmahl",
       "tore": 1
     },
@@ -459,11 +451,39 @@
       "tore": 1
     },
     {
+      "name": "Lasse Günther",
+      "tore": 1
+    },
+    {
+      "name": "Maximilian Rohr",
+      "tore": 1
+    },
+    {
       "name": "A. Maksimovic",
       "tore": 1
     },
     {
       "name": "A. Prass",
+      "tore": 1
+    },
+    {
+      "name": "C. Baumgartner",
+      "tore": 1
+    },
+    {
+      "name": "Han-Noah Massengo",
+      "tore": 1
+    },
+    {
+      "name": "J. Haberer",
+      "tore": 1
+    },
+    {
+      "name": "Lee Jae-sung",
+      "tore": 1
+    },
+    {
+      "name": "R. Philippe",
       "tore": 1
     }
   ]
