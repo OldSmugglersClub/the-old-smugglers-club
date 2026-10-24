@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "datenVersion": 39,
-  "aktualisiertAm": "2026-10-23T21:56:45.200Z",
+  "datenVersion": 40,
+  "aktualisiertAm": "2026-10-24T21:07:17.863Z",
   "aktiveSaison": "2026-27",
   "quelle": "TOSMC-Admin 6.5.0-TOSMC-ADMIN5-HF3-FIX2-HF2 Zwischenstand",
   "regeln": {
@@ -5711,14 +5711,38 @@
             "datumAnzeige": "24.10.2026",
             "anstoss": "18:30",
             "terminBestaetigt": true,
-            "heimtore": null,
-            "auswaertstore": null,
-            "status": "terminiert",
+            "heimtore": 1,
+            "auswaertstore": 0,
+            "status": "beendet",
             "sonderwertungen": [],
             "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-            "quelleStand": "2026-09-10",
+            "quelleStand": "2026-10-24",
             "heimTeamId": "dortmund",
-            "auswaertsTeamId": "frankfurt"
+            "auswaertsTeamId": "frankfurt",
+            "ergebnisNach90MinutenBestaetigt": true,
+            "tippverteilung": {
+              "schemaVersion": 1,
+              "quelle": "Kicktipp – Tipps aller Tipper",
+              "stand": "2026-10-24T21:07:17.863Z",
+              "abgegeben": 71,
+              "nichtAbgegeben": 29,
+              "verborgen": 0,
+              "tendenzen": {
+                "1": {
+                  "anzahl": 60,
+                  "prozent": 84.5
+                },
+                "2": {
+                  "anzahl": 6,
+                  "prozent": 8.5
+                },
+                "X": {
+                  "anzahl": 5,
+                  "prozent": 7
+                }
+              }
+            },
+            "aktualisiertAm": "2026-10-24T21:07:17.863Z"
           },
           {
             "id": "bl-2026-27-07-056",
@@ -5734,14 +5758,38 @@
             "datumAnzeige": "24.10.2026",
             "anstoss": "15:30",
             "terminBestaetigt": true,
-            "heimtore": null,
-            "auswaertstore": null,
-            "status": "terminiert",
+            "heimtore": 4,
+            "auswaertstore": 0,
+            "status": "beendet",
             "sonderwertungen": [],
             "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-            "quelleStand": "2026-07-30",
+            "quelleStand": "2026-10-24",
             "heimTeamId": "rb-leipzig",
-            "auswaertsTeamId": "elversberg"
+            "auswaertsTeamId": "elversberg",
+            "ergebnisNach90MinutenBestaetigt": true,
+            "tippverteilung": {
+              "schemaVersion": 1,
+              "quelle": "Kicktipp – Tipps aller Tipper",
+              "stand": "2026-10-24T21:07:17.863Z",
+              "abgegeben": 72,
+              "nichtAbgegeben": 28,
+              "verborgen": 0,
+              "tendenzen": {
+                "1": {
+                  "anzahl": 52,
+                  "prozent": 72.2
+                },
+                "2": {
+                  "anzahl": 9,
+                  "prozent": 12.5
+                },
+                "X": {
+                  "anzahl": 11,
+                  "prozent": 15.3
+                }
+              }
+            },
+            "aktualisiertAm": "2026-10-24T21:07:17.863Z"
           },
           {
             "id": "bl-2026-27-07-057",
@@ -5769,7 +5817,7 @@
             "tippverteilung": {
               "schemaVersion": 1,
               "quelle": "Kicktipp – Tipps aller Tipper",
-              "stand": "2026-10-23T21:56:45.200Z",
+              "stand": "2026-10-24T21:07:17.863Z",
               "abgegeben": 70,
               "nichtAbgegeben": 30,
               "verborgen": 0,
@@ -5788,7 +5836,7 @@
                 }
               }
             },
-            "aktualisiertAm": "2026-10-23T21:56:45.200Z"
+            "aktualisiertAm": "2026-10-24T21:07:17.863Z"
           },
           {
             "id": "bl-2026-27-07-058",
@@ -5850,14 +5898,38 @@
             "datumAnzeige": "24.10.2026",
             "anstoss": "15:30",
             "terminBestaetigt": true,
-            "heimtore": null,
-            "auswaertstore": null,
-            "status": "terminiert",
+            "heimtore": 1,
+            "auswaertstore": 1,
+            "status": "beendet",
             "sonderwertungen": [],
             "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-            "quelleStand": "2026-07-30",
+            "quelleStand": "2026-10-24",
             "heimTeamId": "augsburg",
-            "auswaertsTeamId": "union-berlin"
+            "auswaertsTeamId": "union-berlin",
+            "ergebnisNach90MinutenBestaetigt": true,
+            "tippverteilung": {
+              "schemaVersion": 1,
+              "quelle": "Kicktipp – Tipps aller Tipper",
+              "stand": "2026-10-24T21:07:17.863Z",
+              "abgegeben": 71,
+              "nichtAbgegeben": 29,
+              "verborgen": 0,
+              "tendenzen": {
+                "1": {
+                  "anzahl": 54,
+                  "prozent": 76.1
+                },
+                "2": {
+                  "anzahl": 3,
+                  "prozent": 4.2
+                },
+                "X": {
+                  "anzahl": 14,
+                  "prozent": 19.7
+                }
+              }
+            },
+            "aktualisiertAm": "2026-10-24T21:07:17.863Z"
           },
           {
             "id": "bl-2026-27-07-061",
@@ -5873,14 +5945,38 @@
             "datumAnzeige": "24.10.2026",
             "anstoss": "15:30",
             "terminBestaetigt": true,
-            "heimtore": null,
-            "auswaertstore": null,
-            "status": "terminiert",
+            "heimtore": 2,
+            "auswaertstore": 3,
+            "status": "beendet",
             "sonderwertungen": [],
             "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-            "quelleStand": "2026-07-30",
+            "quelleStand": "2026-10-24",
             "heimTeamId": "mainz-05",
-            "auswaertsTeamId": "werder-bremen"
+            "auswaertsTeamId": "werder-bremen",
+            "ergebnisNach90MinutenBestaetigt": true,
+            "tippverteilung": {
+              "schemaVersion": 1,
+              "quelle": "Kicktipp – Tipps aller Tipper",
+              "stand": "2026-10-24T21:07:17.863Z",
+              "abgegeben": 72,
+              "nichtAbgegeben": 28,
+              "verborgen": 0,
+              "tendenzen": {
+                "1": {
+                  "anzahl": 42,
+                  "prozent": 58.3
+                },
+                "2": {
+                  "anzahl": 16,
+                  "prozent": 22.2
+                },
+                "X": {
+                  "anzahl": 14,
+                  "prozent": 19.4
+                }
+              }
+            },
+            "aktualisiertAm": "2026-10-24T21:07:17.863Z"
           },
           {
             "id": "bl-2026-27-07-062",
@@ -5896,14 +5992,38 @@
             "datumAnzeige": "24.10.2026",
             "anstoss": "15:30",
             "terminBestaetigt": true,
-            "heimtore": null,
-            "auswaertstore": null,
-            "status": "terminiert",
+            "heimtore": 0,
+            "auswaertstore": 0,
+            "status": "beendet",
             "sonderwertungen": [],
             "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-            "quelleStand": "2026-07-30",
+            "quelleStand": "2026-10-24",
             "heimTeamId": "koeln",
-            "auswaertsTeamId": "schalke-04"
+            "auswaertsTeamId": "schalke-04",
+            "ergebnisNach90MinutenBestaetigt": true,
+            "tippverteilung": {
+              "schemaVersion": 1,
+              "quelle": "Kicktipp – Tipps aller Tipper",
+              "stand": "2026-10-24T21:07:17.863Z",
+              "abgegeben": 71,
+              "nichtAbgegeben": 29,
+              "verborgen": 0,
+              "tendenzen": {
+                "1": {
+                  "anzahl": 37,
+                  "prozent": 52.1
+                },
+                "2": {
+                  "anzahl": 16,
+                  "prozent": 22.5
+                },
+                "X": {
+                  "anzahl": 18,
+                  "prozent": 25.4
+                }
+              }
+            },
+            "aktualisiertAm": "2026-10-24T21:07:17.863Z"
           },
           {
             "id": "bl-2026-27-07-063",
@@ -5919,14 +6039,38 @@
             "datumAnzeige": "24.10.2026",
             "anstoss": "15:30",
             "terminBestaetigt": true,
-            "heimtore": null,
-            "auswaertstore": null,
-            "status": "terminiert",
+            "heimtore": 1,
+            "auswaertstore": 0,
+            "status": "beendet",
             "sonderwertungen": [],
             "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-            "quelleStand": "2026-07-30",
+            "quelleStand": "2026-10-24",
             "heimTeamId": "paderborn",
-            "auswaertsTeamId": "hamburger-sv"
+            "auswaertsTeamId": "hamburger-sv",
+            "ergebnisNach90MinutenBestaetigt": true,
+            "tippverteilung": {
+              "schemaVersion": 1,
+              "quelle": "Kicktipp – Tipps aller Tipper",
+              "stand": "2026-10-24T21:07:17.863Z",
+              "abgegeben": 72,
+              "nichtAbgegeben": 28,
+              "verborgen": 0,
+              "tendenzen": {
+                "1": {
+                  "anzahl": 12,
+                  "prozent": 16.7
+                },
+                "2": {
+                  "anzahl": 37,
+                  "prozent": 51.4
+                },
+                "X": {
+                  "anzahl": 23,
+                  "prozent": 31.9
+                }
+              }
+            },
+            "aktualisiertAm": "2026-10-24T21:07:17.863Z"
           },
           {
             "id": "bl-2026-27-08-064",
@@ -574275,7 +574419,7 @@
         "label": "Bundesliga",
         "runde": "7. Spieltag",
         "erstelltAm": "2026-10-23T21:55:54.635Z",
-        "aktualisiertAm": "2026-10-23T21:56:45.352Z",
+        "aktualisiertAm": "2026-10-24T21:07:17.986Z",
         "spiele": [
           {
             "id": "bl-2026-27-07-057",
@@ -574317,14 +574461,14 @@
             "datumAnzeige": "24.10.2026",
             "anstoss": "15:30",
             "terminBestaetigt": true,
-            "heimtore": null,
-            "auswaertstore": null,
-            "status": "terminiert",
+            "heimtore": 4,
+            "auswaertstore": 0,
+            "status": "beendet",
             "sonderwertungen": [],
-            "quelleStand": "2026-07-30",
+            "quelleStand": "2026-10-24",
             "heimTeamId": "rb-leipzig",
             "auswaertsTeamId": "elversberg",
-            "ergebnisNach90MinutenBestaetigt": false,
+            "ergebnisNach90MinutenBestaetigt": true,
             "tippStatus": "vorlaeufig",
             "tippImporte": [],
             "tippsSnapshot": []
@@ -574343,14 +574487,14 @@
             "datumAnzeige": "24.10.2026",
             "anstoss": "15:30",
             "terminBestaetigt": true,
-            "heimtore": null,
-            "auswaertstore": null,
-            "status": "terminiert",
+            "heimtore": 1,
+            "auswaertstore": 1,
+            "status": "beendet",
             "sonderwertungen": [],
-            "quelleStand": "2026-07-30",
+            "quelleStand": "2026-10-24",
             "heimTeamId": "augsburg",
             "auswaertsTeamId": "union-berlin",
-            "ergebnisNach90MinutenBestaetigt": false,
+            "ergebnisNach90MinutenBestaetigt": true,
             "tippStatus": "vorlaeufig",
             "tippImporte": [],
             "tippsSnapshot": []
@@ -574369,14 +574513,14 @@
             "datumAnzeige": "24.10.2026",
             "anstoss": "15:30",
             "terminBestaetigt": true,
-            "heimtore": null,
-            "auswaertstore": null,
-            "status": "terminiert",
+            "heimtore": 2,
+            "auswaertstore": 3,
+            "status": "beendet",
             "sonderwertungen": [],
-            "quelleStand": "2026-07-30",
+            "quelleStand": "2026-10-24",
             "heimTeamId": "mainz-05",
             "auswaertsTeamId": "werder-bremen",
-            "ergebnisNach90MinutenBestaetigt": false,
+            "ergebnisNach90MinutenBestaetigt": true,
             "tippStatus": "vorlaeufig",
             "tippImporte": [],
             "tippsSnapshot": []
@@ -574395,14 +574539,14 @@
             "datumAnzeige": "24.10.2026",
             "anstoss": "15:30",
             "terminBestaetigt": true,
-            "heimtore": null,
-            "auswaertstore": null,
-            "status": "terminiert",
+            "heimtore": 0,
+            "auswaertstore": 0,
+            "status": "beendet",
             "sonderwertungen": [],
-            "quelleStand": "2026-07-30",
+            "quelleStand": "2026-10-24",
             "heimTeamId": "koeln",
             "auswaertsTeamId": "schalke-04",
-            "ergebnisNach90MinutenBestaetigt": false,
+            "ergebnisNach90MinutenBestaetigt": true,
             "tippStatus": "vorlaeufig",
             "tippImporte": [],
             "tippsSnapshot": []
@@ -574421,14 +574565,14 @@
             "datumAnzeige": "24.10.2026",
             "anstoss": "15:30",
             "terminBestaetigt": true,
-            "heimtore": null,
-            "auswaertstore": null,
-            "status": "terminiert",
+            "heimtore": 1,
+            "auswaertstore": 0,
+            "status": "beendet",
             "sonderwertungen": [],
-            "quelleStand": "2026-07-30",
+            "quelleStand": "2026-10-24",
             "heimTeamId": "paderborn",
             "auswaertsTeamId": "hamburger-sv",
-            "ergebnisNach90MinutenBestaetigt": false,
+            "ergebnisNach90MinutenBestaetigt": true,
             "tippStatus": "vorlaeufig",
             "tippImporte": [],
             "tippsSnapshot": []
@@ -574447,14 +574591,14 @@
             "datumAnzeige": "24.10.2026",
             "anstoss": "18:30",
             "terminBestaetigt": true,
-            "heimtore": null,
-            "auswaertstore": null,
-            "status": "terminiert",
+            "heimtore": 1,
+            "auswaertstore": 0,
+            "status": "beendet",
             "sonderwertungen": [],
-            "quelleStand": "2026-09-10",
+            "quelleStand": "2026-10-24",
             "heimTeamId": "dortmund",
             "auswaertsTeamId": "frankfurt",
-            "ergebnisNach90MinutenBestaetigt": false,
+            "ergebnisNach90MinutenBestaetigt": true,
             "tippStatus": "vorlaeufig",
             "tippImporte": [],
             "tippsSnapshot": []
