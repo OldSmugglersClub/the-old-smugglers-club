@@ -3596,12 +3596,12 @@
           "datumAnzeige": "24.10.2026",
           "anstoss": "18:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 1,
+          "auswaertstore": 0,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-          "quelleStand": "2026-09-10",
+          "quelleStand": "2026-10-24",
           "heimTeamId": "dortmund",
           "auswaertsTeamId": "frankfurt"
         },
@@ -14503,6 +14503,6 @@
       ]
     }
   ],
-  "datenVersion": 76,
+  "datenVersion": 77,
   "aktualisiert": "2026-10-24"
 }
