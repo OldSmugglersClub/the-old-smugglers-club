@@ -1054,3 +1054,31 @@ body{overflow-x:hidden}
 .lb-highlight--movement .lb-movement-person small{font-size:.79rem;color:#c3ab8a;line-height:1.35;overflow-wrap:anywhere}
 .lb-highlight--movement .lb-movement-more{font-size:.78rem;color:#dbc399;margin:7px 0 0;line-height:1.35}
 @media(max-width:760px){.lb-highlight--movement .lb-movement-person{padding:8px 0}}
+
+/* Kapitaene TEST1: mindestens vier Punktbeste, inklusive Gleichstand an der Grenze.
+   Auf grossen Bildschirmen bevorzugt eine Zeile, bei vielen Namen/auf Mobil umbrechen. */
+.lb-highlight--captains .lb-names{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:stretch;
+  gap:8px;
+}
+.lb-highlight--captains .lb-name{
+  display:inline-flex;
+  flex:1 1 175px;
+  max-width:100%;
+  min-width:0;
+  gap:9px;
+  white-space:nowrap;
+  align-items:center;
+  justify-content:center;
+}
+.lb-captain-points{
+  font-size:.8em;
+  color:#ddb36c;
+  white-space:nowrap;
+  flex:0 0 auto;
+}
+@media(max-width:760px){
+  .lb-highlight--captains .lb-name{flex:1 1 140px;}
+}

@@ -124,6 +124,22 @@ function shortNames(rows,max=8){
  return names.slice(0,max).map(n=>`<span class="lb-name">${esc(n)}</span>`).join("")+
    (names.length>max?`<span class="lb-name">+${names.length-max} weitere</span>`:"");
 }
+// Kapitaene: aus den unveraenderten Punkten der abgeschlossenen Spieltagsrangliste.
+// Mindestens vier Tipper; bei Punktgleichstand am vierten Rang alle Gleichplatzierten.
+// Die Reihenfolge innerhalb gleicher Punktzahl bleibt wie in der Quellrangliste.
+function captainTopFour(entry){
+ const block=arr(spieltagpunkteDoc?.spieltage).find(x=>x?.id===entry?.id&&x?.abgeschlossen===true);
+ if(!block)return null;
+ const seen=new Set();
+ const rows=arr(block.rangliste).filter(r=>{
+   if(!r?.teilnehmerId||!r?.teilnehmer||typeof r.punkte!=="number"||!Number.isFinite(r.punkte))return false;
+   const id=String(r.teilnehmerId);if(seen.has(id))return false;seen.add(id);return true;
+ }).map((r,i)=>({...r,_originalIndex:i}));
+ if(!rows.length)return null;
+ rows.sort((a,b)=>b.punkte-a.punkte||a._originalIndex-b._originalIndex);
+ const cutoff=rows[Math.min(3,rows.length-1)].punkte;
+ return rows.filter((r,i)=>i<4||r.punkte===cutoff);
+}
 function outcomeLabel(v){return v==="1"?"Heimsieg":v==="2"?"Auswärtssieg":"Remis"}
 
 function renderHighlight(h,entry){
@@ -133,7 +149,9 @@ function renderHighlight(h,entry){
    const text=count===1
     ?`${esc(name||"1 Tipper")} holt mit ${Number(d.punkte||0)} Punkten die beste Spieltagsleistung.`
     :`<strong>${count} Tipper</strong> teilen sich mit ${Number(d.punkte||0)} Punkten die beste Spieltagsleistung.`;
-   return `<article class="lb-highlight lb-highlight--wide lb-highlight--captains"><h3>Kapitäne des Spieltags</h3><p>${text}</p><div class="lb-names">${shortNames(d.tipper)}</div></article>`;
+   const leaders=captainTopFour(entry);
+   const leaderNames=leaders?leaders.map(r=>`<span class="lb-name"><span class="lb-captain-name">${esc(r.teilnehmer)}</span><span class="lb-captain-points">${Number(r.punkte).toLocaleString("de-DE")} P.</span></span>`).join(""):shortNames(d.tipper);
+   return `<article class="lb-highlight lb-highlight--wide lb-highlight--captains"><h3>Kapitäne des Spieltags</h3><p>${text}</p><div class="lb-names">${leaderNames}</div></article>`;
  }
  if(h.typ==="gegen-den-strom"){
    const home=teamDisplayName(d.heimTeam),away=teamDisplayName(d.auswaertsTeam);
