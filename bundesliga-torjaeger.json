@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 36,
+  "datenVersion": 37,
   "aktualisiert": "2026-10-25",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
@@ -11,12 +11,12 @@
       "tore": 8
     },
     {
-      "name": "P. Schick",
+      "name": "M. Olise",
       "tore": 6
     },
     {
-      "name": "M. Olise",
-      "tore": 5
+      "name": "P. Schick",
+      "tore": 6
     },
     {
       "name": "Younes Ebnoutalib",
@@ -451,15 +451,15 @@
       "tore": 1
     },
     {
-      "name": "Mert Kömür",
-      "tore": 1
-    },
-    {
       "name": "Lasse Günther",
       "tore": 1
     },
     {
       "name": "Maximilian Rohr",
+      "tore": 1
+    },
+    {
+      "name": "Mert Kömür",
       "tore": 1
     },
     {
