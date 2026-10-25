@@ -3608,7 +3608,7 @@
           "tippverteilung": {
             "schemaVersion": 1,
             "quelle": "Kicktipp – Tipps aller Tipper",
-            "stand": "2026-10-24T21:07:17.863Z",
+            "stand": "2026-10-25T20:18:04.090Z",
             "abgegeben": 71,
             "nichtAbgegeben": 29,
             "verborgen": 0,
@@ -3627,7 +3627,7 @@
               }
             }
           },
-          "aktualisiertAm": "2026-10-24T21:07:17.863Z"
+          "aktualisiertAm": "2026-10-25T20:18:04.090Z"
         },
         {
           "id": "bl-2026-27-07-056",
@@ -3655,7 +3655,7 @@
           "tippverteilung": {
             "schemaVersion": 1,
             "quelle": "Kicktipp – Tipps aller Tipper",
-            "stand": "2026-10-24T21:07:17.863Z",
+            "stand": "2026-10-25T20:18:04.090Z",
             "abgegeben": 72,
             "nichtAbgegeben": 28,
             "verborgen": 0,
@@ -3674,7 +3674,7 @@
               }
             }
           },
-          "aktualisiertAm": "2026-10-24T21:07:17.863Z"
+          "aktualisiertAm": "2026-10-25T20:18:04.090Z"
         },
         {
           "id": "bl-2026-27-07-057",
@@ -3702,7 +3702,7 @@
           "tippverteilung": {
             "schemaVersion": 1,
             "quelle": "Kicktipp – Tipps aller Tipper",
-            "stand": "2026-10-24T21:07:17.863Z",
+            "stand": "2026-10-25T20:18:04.090Z",
             "abgegeben": 70,
             "nichtAbgegeben": 30,
             "verborgen": 0,
@@ -3721,7 +3721,7 @@
               }
             }
           },
-          "aktualisiertAm": "2026-10-24T21:07:17.863Z"
+          "aktualisiertAm": "2026-10-25T20:18:04.090Z"
         },
         {
           "id": "bl-2026-27-07-058",
@@ -3744,7 +3744,31 @@
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
           "quelleStand": "2026-10-25",
           "heimTeamId": "hoffenheim",
-          "auswaertsTeamId": "leverkusen"
+          "auswaertsTeamId": "leverkusen",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-25T20:18:04.090Z",
+            "abgegeben": 73,
+            "nichtAbgegeben": 27,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 3,
+                "prozent": 4.1
+              },
+              "2": {
+                "anzahl": 57,
+                "prozent": 78.1
+              },
+              "X": {
+                "anzahl": 13,
+                "prozent": 17.8
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-25T20:18:04.090Z"
         },
         {
           "id": "bl-2026-27-07-059",
@@ -3760,14 +3784,38 @@
           "datumAnzeige": "25.10.2026",
           "anstoss": "17:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 1,
+          "auswaertstore": 3,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
           "quelleStand": "2026-09-10",
           "heimTeamId": "freiburg",
-          "auswaertsTeamId": "bayern-muenchen"
+          "auswaertsTeamId": "bayern-muenchen",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-25T20:18:04.090Z",
+            "abgegeben": 73,
+            "nichtAbgegeben": 27,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 8,
+                "prozent": 11
+              },
+              "2": {
+                "anzahl": 57,
+                "prozent": 78.1
+              },
+              "X": {
+                "anzahl": 8,
+                "prozent": 11
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-25T20:18:04.090Z"
         },
         {
           "id": "bl-2026-27-07-060",
@@ -3795,7 +3843,7 @@
           "tippverteilung": {
             "schemaVersion": 1,
             "quelle": "Kicktipp – Tipps aller Tipper",
-            "stand": "2026-10-24T21:07:17.863Z",
+            "stand": "2026-10-25T20:18:04.090Z",
             "abgegeben": 71,
             "nichtAbgegeben": 29,
             "verborgen": 0,
@@ -3814,7 +3862,7 @@
               }
             }
           },
-          "aktualisiertAm": "2026-10-24T21:07:17.863Z"
+          "aktualisiertAm": "2026-10-25T20:18:04.090Z"
         },
         {
           "id": "bl-2026-27-07-061",
@@ -3842,7 +3890,7 @@
           "tippverteilung": {
             "schemaVersion": 1,
             "quelle": "Kicktipp – Tipps aller Tipper",
-            "stand": "2026-10-24T21:07:17.863Z",
+            "stand": "2026-10-25T20:18:04.090Z",
             "abgegeben": 72,
             "nichtAbgegeben": 28,
             "verborgen": 0,
@@ -3861,7 +3909,7 @@
               }
             }
           },
-          "aktualisiertAm": "2026-10-24T21:07:17.863Z"
+          "aktualisiertAm": "2026-10-25T20:18:04.090Z"
         },
         {
           "id": "bl-2026-27-07-062",
@@ -3889,7 +3937,7 @@
           "tippverteilung": {
             "schemaVersion": 1,
             "quelle": "Kicktipp – Tipps aller Tipper",
-            "stand": "2026-10-24T21:07:17.863Z",
+            "stand": "2026-10-25T20:18:04.090Z",
             "abgegeben": 71,
             "nichtAbgegeben": 29,
             "verborgen": 0,
@@ -3908,7 +3956,7 @@
               }
             }
           },
-          "aktualisiertAm": "2026-10-24T21:07:17.863Z"
+          "aktualisiertAm": "2026-10-25T20:18:04.090Z"
         },
         {
           "id": "bl-2026-27-07-063",
@@ -3936,7 +3984,7 @@
           "tippverteilung": {
             "schemaVersion": 1,
             "quelle": "Kicktipp – Tipps aller Tipper",
-            "stand": "2026-10-24T21:07:17.863Z",
+            "stand": "2026-10-25T20:18:04.090Z",
             "abgegeben": 72,
             "nichtAbgegeben": 28,
             "verborgen": 0,
@@ -3955,7 +4003,7 @@
               }
             }
           },
-          "aktualisiertAm": "2026-10-24T21:07:17.863Z"
+          "aktualisiertAm": "2026-10-25T20:18:04.090Z"
         },
         {
           "id": "bl-2026-27-08-064",
@@ -14647,6 +14695,6 @@
       ]
     }
   ],
-  "datenVersion": 79,
+  "datenVersion": 80,
   "aktualisiert": "2026-10-25"
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 19,
-  "aktualisiert": "2026-10-22T03:13:53.365Z",
+  "datenVersion": 20,
+  "aktualisiert": "2026-10-25T20:18:04.090Z",
   "saison": "2026-27",
   "regelwerk": {
     "kapitaene": "Alle Tipper mit der höchsten tatsächlichen Spieltagspunktzahl; kein künstlicher Tie-Break.",
@@ -8162,6 +8162,262 @@
             "exakt": 63,
             "differenz": 160,
             "tendenz": 458
+          }
+        }
+      ]
+    },
+    {
+      "id": "2026-27__bundesliga__7-spieltag__bl-2026-27-07-055-bl-2026-27-07-056-bl-2026-27-07-057-bl-2026-27-07-058-bl-2026-27-07-059-bl-2026-27-07-060-bl-2026-27-07-061-bl-2026-27-07-062-bl-2026-27-07-063",
+      "bezeichnung": "Bundesliga 7. Spieltag",
+      "wettbewerb": "bundesliga",
+      "runde": "7. Spieltag",
+      "abgeschlossen": true,
+      "spielIds": [
+        "bl-2026-27-07-057",
+        "bl-2026-27-07-056",
+        "bl-2026-27-07-060",
+        "bl-2026-27-07-061",
+        "bl-2026-27-07-062",
+        "bl-2026-27-07-063",
+        "bl-2026-27-07-055",
+        "bl-2026-27-07-058",
+        "bl-2026-27-07-059"
+      ],
+      "kapitaene": [
+        {
+          "teilnehmerId": "redwing",
+          "teilnehmer": "Redwing",
+          "punkte": 20,
+          "exakt": 2,
+          "differenz": 2,
+          "tendenz": 2
+        }
+      ],
+      "highlights": [
+        {
+          "typ": "kapitaene",
+          "prioritaet": 100,
+          "anzeigen": true,
+          "daten": {
+            "punkte": 20,
+            "anzahl": 1,
+            "tipper": [
+              {
+                "teilnehmerId": "redwing",
+                "teilnehmer": "Redwing",
+                "punkte": 20,
+                "exakt": 2,
+                "differenz": 2,
+                "tendenz": 2
+              }
+            ]
+          }
+        },
+        {
+          "typ": "gegen-den-strom",
+          "prioritaet": 90,
+          "anzeigen": true,
+          "daten": {
+            "spielId": "bl-2026-27-07-057",
+            "heimTeam": "stuttgart",
+            "auswaertsTeam": "moenchengladbach",
+            "ergebnis": "2:3",
+            "abgegeben": 70,
+            "nichtAbgegeben": 30,
+            "tippverteilung": {
+              "1": 63,
+              "2": 2,
+              "X": 5
+            },
+            "exakt": 1,
+            "differenz": 1,
+            "tendenz": 0,
+            "richtigerAusgang": "2",
+            "meistGetippt": {
+              "ausgang": "1",
+              "anzahl": 63
+            },
+            "gegenDenStrom": true,
+            "richtigeTendenz": {
+              "anzahl": 2,
+              "anteil": 2.9,
+              "tipper": [
+                {
+                  "teilnehmerId": "tribuna33",
+                  "teilnehmer": "TRIBUNA33",
+                  "tipp": "1:2",
+                  "exakt": false
+                },
+                {
+                  "teilnehmerId": "kevinhick",
+                  "teilnehmer": "Kevinhick",
+                  "tipp": "2:3",
+                  "exakt": true
+                }
+              ],
+              "exakteTipps": 1
+            }
+          }
+        },
+        {
+          "typ": "wer-hats-gerochen",
+          "prioritaet": 85,
+          "anzeigen": true,
+          "daten": {
+            "grenzeProzent": 25,
+            "testOverride": false,
+            "faelle": [
+              {
+                "spielId": "bl-2026-27-07-057",
+                "heimTeam": "stuttgart",
+                "auswaertsTeam": "moenchengladbach",
+                "ergebnis": "2:3",
+                "abgegeben": 70,
+                "nichtAbgegeben": 30,
+                "tippverteilung": {
+                  "1": 63,
+                  "2": 2,
+                  "X": 5
+                },
+                "exakt": 1,
+                "differenz": 1,
+                "tendenz": 0,
+                "richtigerAusgang": "2",
+                "meistGetippt": {
+                  "ausgang": "1",
+                  "anzahl": 63
+                },
+                "gegenDenStrom": true,
+                "richtigeTendenz": {
+                  "anzahl": 2,
+                  "anteil": 2.9,
+                  "tipper": [
+                    {
+                      "teilnehmerId": "tribuna33",
+                      "teilnehmer": "TRIBUNA33",
+                      "tipp": "1:2",
+                      "exakt": false
+                    },
+                    {
+                      "teilnehmerId": "kevinhick",
+                      "teilnehmer": "Kevinhick",
+                      "tipp": "2:3",
+                      "exakt": true
+                    }
+                  ],
+                  "exakteTipps": 1
+                }
+              }
+            ]
+          }
+        },
+        {
+          "typ": "volltreffer",
+          "prioritaet": 80,
+          "anzeigen": true,
+          "daten": {
+            "maxExakt": 2,
+            "anzahl": 7,
+            "tipper": [
+              {
+                "teilnehmerId": "redwing",
+                "teilnehmer": "Redwing",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "rk69",
+                "teilnehmer": "RK69",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "sgbw",
+                "teilnehmer": "sgbw",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "quick",
+                "teilnehmer": "Quick",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "marius",
+                "teilnehmer": "Marius",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "lattenkracher",
+                "teilnehmer": "Lattenkracher",
+                "exakt": 2
+              },
+              {
+                "teilnehmerId": "luki1887",
+                "teilnehmer": "Luki1887",
+                "exakt": 2
+              }
+            ]
+          }
+        },
+        {
+          "typ": "crewduell",
+          "prioritaet": 70,
+          "anzeigen": true,
+          "daten": {
+            "teams": [
+              {
+                "team": "New Smugglers Team",
+                "durchschnitt": 7.33,
+                "punktesumme": 550,
+                "mitglieder": 75
+              },
+              {
+                "team": "Old Smugglers Team",
+                "durchschnitt": 5.28,
+                "punktesumme": 132,
+                "mitglieder": 25
+              }
+            ],
+            "sieger": "New Smugglers Team",
+            "differenz": 2.05
+          }
+        },
+        {
+          "typ": "kursbewegung",
+          "prioritaet": 40,
+          "anzeigen": true,
+          "grund": null,
+          "daten": {
+            "gewinner": [
+              {
+                "teilnehmerId": "juri",
+                "teilnehmer": "JuRi",
+                "vorher": 37,
+                "jetzt": 27,
+                "veraenderung": 10
+              }
+            ],
+            "verlierer": [
+              {
+                "teilnehmerId": "flying-dutchman",
+                "teilnehmer": "Flying-Dutchman",
+                "vorher": 30,
+                "jetzt": 46,
+                "veraenderung": -16
+              }
+            ],
+            "maxGewinn": 10,
+            "maxVerlust": -16
+          }
+        },
+        {
+          "typ": "zahlen-aus-der-kombuese",
+          "prioritaet": 30,
+          "anzeigen": true,
+          "daten": {
+            "abgegeben": 73,
+            "nichtAbgegeben": 30,
+            "exakt": 47,
+            "differenz": 73,
+            "tendenz": 114
           }
         }
       ]
