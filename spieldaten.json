@@ -3737,12 +3737,12 @@
           "datumAnzeige": "25.10.2026",
           "anstoss": "15:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 3,
+          "auswaertstore": 0,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-          "quelleStand": "2026-09-10",
+          "quelleStand": "2026-10-25",
           "heimTeamId": "hoffenheim",
           "auswaertsTeamId": "leverkusen"
         },
@@ -14647,6 +14647,6 @@
       ]
     }
   ],
-  "datenVersion": 78,
-  "aktualisiert": "2026-10-24"
+  "datenVersion": 79,
+  "aktualisiert": "2026-10-25"
 }
