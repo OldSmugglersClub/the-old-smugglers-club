@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-24T20:46:09.466Z",
+  "updatedAt": "2026-10-25T20:48:35.425Z",
   "entries": {
     "sma-2026-27-auftakt-001": {
       "datum": "2026-08-09",
@@ -2158,16 +2158,16 @@
       "datumVon": "2026-10-25",
       "datumBis": "2026-10-25",
       "anstoss": "15:30",
-      "status": "terminiert",
+      "status": "beendet",
       "terminBestaetigt": true,
-      "quelleStand": "2026-09-10"
+      "quelleStand": "2026-10-25"
     },
     "bl-2026-27-07-059": {
       "datum": "2026-10-25",
       "datumVon": "2026-10-25",
       "datumBis": "2026-10-25",
       "anstoss": "17:30",
-      "status": "terminiert",
+      "status": "beendet",
       "terminBestaetigt": true,
       "quelleStand": "2026-09-10"
     },
