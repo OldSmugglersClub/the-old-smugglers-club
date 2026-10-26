@@ -408,16 +408,40 @@
           "datumAnzeige": "25.10.2026",
           "anstoss": "13:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 3,
+          "auswaertstore": 0,
+          "status": "beendet",
           "sonderwertungen": [
             "smugglerauftrag"
           ],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen. Smugglerauftrag zum 9. Spieltag der 2. Bundesliga.",
           "quelleStand": "2026-07-03",
           "heimTeamId": "holstein-kiel",
-          "auswaertsTeamId": "dynamo-dresden"
+          "auswaertsTeamId": "dynamo-dresden",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-26T06:18:27.853Z",
+            "abgegeben": 70,
+            "nichtAbgegeben": 30,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 37,
+                "prozent": 52.9
+              },
+              "2": {
+                "anzahl": 21,
+                "prozent": 30
+              },
+              "X": {
+                "anzahl": 12,
+                "prozent": 17.1
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-26T06:18:27.853Z"
         },
         {
           "id": "sma-2026-27-10-084",
@@ -14719,6 +14743,6 @@
       ]
     }
   ],
-  "datenVersion": 81,
+  "datenVersion": 82,
   "aktualisiert": "2026-10-26"
 }
