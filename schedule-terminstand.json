@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-26T12:57:30.267Z",
+  "updatedAt": "2026-10-27T22:11:09.564Z",
   "entries": {
     "sma-2026-27-auftakt-001": {
       "datum": "2026-08-09",
@@ -390,10 +390,10 @@
       "quelleStand": "2026-07-30"
     },
     "pk-2026-27-02-madonnina": {
-      "datum": "2026-11-01",
-      "datumVon": "2026-11-01",
-      "datumBis": "2026-11-01",
-      "anstoss": "18:30",
+      "datum": "2026-10-31",
+      "datumVon": "2026-10-31",
+      "datumBis": "2026-10-31",
+      "anstoss": "20:45",
       "status": "terminiert",
       "terminBestaetigt": true,
       "quelleStand": "2026-07-30"
