@@ -1,12 +1,8 @@
-TOSMC Logbuch – Kapitäne des Spieltags / LIVE Minimalfix, 25.10.2026
-
-TEST2v2: Top-4-Darstellung vom Nutzer bestätigt.
-Basis: zuletzt bereitgestellte LIVE-main.zip (2026-10-24 20:11) zuzüglich bereits bestätigter Kombüse-LIVE-Korrektur.
-Enthalten: logbuch.html, logbuch.js, logbuch.css – im LIVE-Repository-Stamm ersetzen.
-
-Änderungen: Die vier punktbesten Teilnehmer eines abgeschlossenen Spieltags werden angezeigt; Gleichstände am vierten Platz werden vollständig berücksichtigt. Responsive Darstellung; keine Veränderung der Punkteberechnung und anderer Wettbewerbe.
-Cache-Kennungen: CAPTAINS-LIVE1. Bereits bestätigte Kombüse-Beschriftungen bleiben erhalten.
-
-VOR ERSETZEN: Prüfen, ob die aktuelle LIVE-Version dieser drei Dateien zwischenzeitlich verändert wurde. Bei Abweichung nicht blind überschreiben, sondern Änderungen zusammenführen.
-GitHub Desktop: Nur diese drei Dateien prüfen, danach Commit und Push durch Nutzer, Funktion auf LIVE kontrollieren.
-Keine Einspielung durch ChatGPT.
+TOSMC – LIVE-DATEI: Piratenkodex II – Madonnina
+Ausgangsstand LIVE blob SHA: 48fe335cd7fefe66b99ace3aaadb3fb47b7fa529
+Nur nach ausdruecklicher LIVE-Freigabe und erneutem Abgleich der lokalen LIVE-Datei verwenden.
+Einzige Aenderungen: datum, datumVon, datumBis, datumAnzeige, anstoss des Spiels pk-2026-27-02-madonnina.
+Neuer Termin: Samstag 31.10.2026 20:45 Europe/Berlin.
+Falls dein LIVE-Repo seit dem Ausgangsstand veraendert wurde, nicht blind ueberschreiben.
+Einspielen via GitHub Desktop NUR durch den Nutzer. Keine Codeaenderung und keine sonstigen Datenveraenderungen.
+Nach Push Website und chronologische Startseitenkachel kontrollieren.
