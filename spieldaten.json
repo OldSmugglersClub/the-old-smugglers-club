@@ -4227,12 +4227,12 @@
           "datumAnzeige": "30.10.2026",
           "anstoss": "20:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 4,
+          "auswaertstore": 1,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-          "quelleStand": "2026-09-10",
+          "quelleStand": "2026-10-31",
           "heimTeamId": "elversberg",
           "auswaertsTeamId": "mainz-05"
         },
@@ -14743,6 +14743,6 @@
       ]
     }
   ],
-  "datenVersion": 82,
-  "aktualisiert": "2026-10-26"
+  "datenVersion": 83,
+  "aktualisiert": "2026-10-31"
 }

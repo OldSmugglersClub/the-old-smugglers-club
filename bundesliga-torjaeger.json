@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 38,
-  "aktualisiert": "2026-10-30",
+  "datenVersion": 39,
+  "aktualisiert": "2026-10-31",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
@@ -39,6 +39,10 @@
       "tore": 4
     },
     {
+      "name": "M. Krattenmacher",
+      "tore": 4
+    },
+    {
       "name": "C. Nkunku",
       "tore": 4
     },
@@ -60,10 +64,6 @@
     },
     {
       "name": "J. Scally",
-      "tore": 3
-    },
-    {
-      "name": "M. Krattenmacher",
       "tore": 3
     },
     {
@@ -115,15 +115,19 @@
       "tore": 2
     },
     {
-      "name": "Thijs Dallinga",
-      "tore": 2
-    },
-    {
       "name": "A. Daghim",
       "tore": 2
     },
     {
+      "name": "Thijs Dallinga",
+      "tore": 2
+    },
+    {
       "name": "C. Kofane",
+      "tore": 2
+    },
+    {
+      "name": "Cole Campbell",
       "tore": 2
     },
     {
@@ -223,6 +227,10 @@
       "tore": 2
     },
     {
+      "name": "B. Hollerbach",
+      "tore": 2
+    },
+    {
       "name": "W. Mohya",
       "tore": 2
     },
@@ -244,10 +252,6 @@
     },
     {
       "name": "O. Kabak",
-      "tore": 1
-    },
-    {
-      "name": "Cole Campbell",
       "tore": 1
     },
     {
@@ -407,10 +411,6 @@
       "tore": 1
     },
     {
-      "name": "B. Hollerbach",
-      "tore": 1
-    },
-    {
       "name": "J. Quansah",
       "tore": 1
     },
@@ -423,11 +423,11 @@
       "tore": 1
     },
     {
-      "name": "J. Chabot",
+      "name": "C. Führich",
       "tore": 1
     },
     {
-      "name": "C. Führich",
+      "name": "J. Chabot",
       "tore": 1
     },
     {
@@ -447,10 +447,6 @@
       "tore": 1
     },
     {
-      "name": "Maximilian Rohr",
-      "tore": 1
-    },
-    {
       "name": "Frederik Schmahl",
       "tore": 1
     },
@@ -460,6 +456,10 @@
     },
     {
       "name": "Mert Kömür",
+      "tore": 1
+    },
+    {
+      "name": "Maximilian Rohr",
       "tore": 1
     },
     {
