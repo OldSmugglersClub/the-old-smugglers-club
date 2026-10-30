@@ -1,0 +1,91 @@
+name: TOSMC LIVE – 11 Sondertermine automatisch uebernehmen
+run-name: TOSMC LIVE 11 – ${{ github.event_name == 'schedule' && 'TAEGLICH' || inputs.modus }}
+on:
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+    inputs:
+      modus:
+        description: 'VORSCHAU oder nach LIVE-Freigabe UEBERNEHMEN'
+        required: true
+        type: choice
+        default: VORSCHAU
+        options:
+          - VORSCHAU
+          - UEBERNEHMEN
+      freigabetext:
+        description: 'Nur bei manueller UEBERNEHMEN: LIVE_NUR_11_AMTLICH_BESTAETIGTE_ANSTOSSZEITPUNKTE'
+        type: string
+        required: false
+        default: ''
+permissions:
+  contents: write
+concurrency:
+  group: osc-bundesliga-ergebnisimport
+  cancel-in-progress: false
+jobs:
+  termine:
+    if: github.repository == 'OldSmugglersClub/the-old-smugglers-club' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Ausschliesslich LIVE/main auschecken
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Bestehende Quellen-, Schreib- und Bestandsschutztests
+        run: |
+          node scripts/TEST_terminwaechter_auto.mjs
+          node scripts/TEST_tosmc_test2v2_terminuebernahme.mjs
+          node scripts/TEST_tosmc_test2v2_taeglich_nach_abschluss.mjs
+          node scripts/TEST_tosmc_test2v2_frankreich_portugal.mjs
+      - name: Offizielle Browserquellen vorbereiten
+        run: |
+          npm install --no-save --ignore-scripts playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Alle 11 Paarungen pruefen und ggf. amtliche Termine schreiben
+        env:
+          TOSMC_MODE: ${{ github.event_name == 'schedule' && 'UEBERNEHMEN' || inputs.modus }}
+          TOSMC_FREIGABE: ${{ github.event_name == 'schedule' && 'LIVE_NUR_11_AMTLICH_BESTAETIGTE_ANSTOSSZEITPUNKTE' || inputs.freigabetext }}
+        run: node scripts/tosmc-live-11-terminuebernahme.mjs
+      - name: Harte Dateigrenze und Remote-HEAD pruefen; nur bei Bedarf committen
+        env:
+          TOSMC_MODE: ${{ github.event_name == 'schedule' && 'UEBERNEHMEN' || inputs.modus }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --name-only > /tmp/tosmc-live-files.txt
+          if grep -Ev '^(spieldaten\.json|schedule-terminstand\.json)$' /tmp/tosmc-live-files.txt | grep -q .; then
+            echo 'SCHUTZSTOPP: Nicht freigegebene Datei veraendert'; exit 1
+          fi
+          if [[ "$TOSMC_MODE" == 'VORSCHAU' ]]; then
+            if [[ -s /tmp/tosmc-live-files.txt ]]; then echo 'SCHUTZSTOPP: Vorschau hat geschrieben'; exit 1; fi
+            echo 'LIVE-VORSCHAU ohne Schreibvorgang'; exit 0
+          fi
+          if [[ ! -s /tmp/tosmc-live-files.txt ]]; then
+            echo 'Keine amtlich bestaetigte Aenderung im 56-Tage-Fenster'; exit 0
+          fi
+          if [[ "$(git ls-remote origin refs/heads/main | cut -f1)" != "$(git rev-parse HEAD)" ]]; then
+            echo 'SCHUTZSTOPP: LIVE/main wurde waehrend der Pruefung veraendert'; exit 1
+          fi
+          git add -- spieldaten.json schedule-terminstand.json
+          if git diff --cached --name-only | grep -Ev '^(spieldaten\.json|schedule-terminstand\.json)$' | grep -q .; then
+            echo 'SCHUTZSTOPP: Unerlaubter Commitinhalt'; exit 1
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'LIVE: amtlich bestaetigte Anstosszeiten der 11 Sonder-Spiele'
+          git push origin HEAD:refs/heads/main
+      - name: Audit-Bericht archivieren
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: TOSMC-LIVE-11-TERMINAUTOMATIK
+          path: terminwaechter-bericht/
+          retention-days: 14
+          if-no-files-found: warn
