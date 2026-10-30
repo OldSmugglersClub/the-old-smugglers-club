@@ -4227,14 +4227,38 @@
           "datumAnzeige": "30.10.2026",
           "anstoss": "20:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 4,
+          "auswaertstore": 1,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
           "quelleStand": "2026-09-10",
           "heimTeamId": "elversberg",
-          "auswaertsTeamId": "mainz-05"
+          "auswaertsTeamId": "mainz-05",
+          "ergebnisNach90MinutenBestaetigt": true,
+          "tippverteilung": {
+            "schemaVersion": 1,
+            "quelle": "Kicktipp – Tipps aller Tipper",
+            "stand": "2026-10-30T23:37:37.460Z",
+            "abgegeben": 68,
+            "nichtAbgegeben": 32,
+            "verborgen": 0,
+            "tendenzen": {
+              "1": {
+                "anzahl": 25,
+                "prozent": 36.8
+              },
+              "2": {
+                "anzahl": 28,
+                "prozent": 41.2
+              },
+              "X": {
+                "anzahl": 15,
+                "prozent": 22.1
+              }
+            }
+          },
+          "aktualisiertAm": "2026-10-30T23:37:37.460Z"
         },
         {
           "id": "bl-2026-27-09-073",
@@ -14743,6 +14767,6 @@
       ]
     }
   ],
-  "datenVersion": 82,
-  "aktualisiert": "2026-10-26"
+  "datenVersion": 83,
+  "aktualisiert": "2026-10-30"
 }
