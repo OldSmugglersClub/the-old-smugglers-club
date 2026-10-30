@@ -4232,7 +4232,7 @@
           "status": "beendet",
           "sonderwertungen": [],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-          "quelleStand": "2026-09-10",
+          "quelleStand": "2026-10-31",
           "heimTeamId": "elversberg",
           "auswaertsTeamId": "mainz-05",
           "ergebnisNach90MinutenBestaetigt": true,
@@ -14768,5 +14768,5 @@
     }
   ],
   "datenVersion": 83,
-  "aktualisiert": "2026-10-30"
+  "aktualisiert": "2026-10-31"
 }
