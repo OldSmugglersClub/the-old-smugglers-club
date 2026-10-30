@@ -30,35 +30,46 @@
     }
     return result.sort((a,b)=>b.finishedAt.localeCompare(a.finishedAt)||b.id.localeCompare(a.id));
   }
-  function insertHomeHonors(titles){
-    const original=document.querySelector(".special-achievement-card");
-    if(!original)return;
-    // Nur während dieser Laufzeit erzeugte Elemente ersetzen; historische Karte bleibt unangetastet.
+  function newestHonor(titles,archive){
+    const historic=(Array.isArray(archive?.ehrenchampions)?archive.ehrenchampions:[])
+      .filter(h=>h?.bestaetigt!==false&&h?.name&&h?.titel)
+      .map(h=>({title:h.titel,name:h.name,season:h.saison||h.jahr||"",finishedAt:h.abgeschlossenAm||h.datum||"",source:"archive"}));
+    const live=titles.map(t=>({title:`Champion ${t.label}`,name:t.name,season:t.season,finishedAt:t.finishedAt||"",source:"current"}));
+    // Keine Stapelung. Ein bestätigter neuer Titel ersetzt den bisherigen Homepage-Teaser.
+    const all=[...historic,...live];
+    if(!all.length)return null;
+    const seasonStart=s=>Number(String(s||"").slice(0,4))||0;
+    all.sort((a,b)=>seasonStart(b.season)-seasonStart(a.season)
+      ||String(b.finishedAt).localeCompare(String(a.finishedAt))
+      ||Number(b.source==="current")-Number(a.source==="current"));
+    return all[0];
+  }
+  function setHomeHonor(entry){
+    if(!entry)return;
+    const card=document.querySelector(".special-achievement-card");
+    if(!card)return;
+    // Kompatibel mit vorangehenden TEST2v2-Versionen, niemals historische Duplikate zeigen.
     document.querySelectorAll('.special-achievement-card[data-tosmc-auto-honor="true"]').forEach(el=>el.remove());
-    for(const item of titles){
-      const card=original.cloneNode(true);
-      card.setAttribute("data-tosmc-auto-honor","true");
-      card.querySelectorAll("[id]").forEach(el=>el.removeAttribute("id"));
-      const title=card.querySelector(".special-achievement-copy span");
-      const name=card.querySelector(".special-achievement-copy strong");
-      const season=card.querySelector(".special-achievement-copy small");
-      if(!title||!name||!season)continue;
-      title.textContent=`Champion ${item.label}`;
-      name.textContent=item.name;
-      season.textContent=`Saison ${item.season}`;
-      original.parentNode.insertBefore(card,original);
-    }
+    const label=card.querySelector("#honours-label");
+    const name=card.querySelector("#honours-value");
+    const subtitle=card.querySelector(".special-achievement-copy small");
+    if(label)label.textContent=entry.title;
+    if(name)name.textContent=entry.name;
+    if(subtitle)subtitle.textContent=entry.season?`Saison ${entry.season}`:"Champion eines Sonderwettbewerbs";
   }
   async function load(){
     const base=clone(await json("./hall-of-fame.json",{}));
     const view=await json("./website-view.json",{});
     const titles=confirmedTitles(view);
-    insertHomeHonors(titles);
+    const archive=await json("./ehrenlogbuch-archiv.json",{});
+    const latestHonor=newestHonor(titles,archive);
+    setHomeHonor(latestHonor);
     const update=view?.hallOfFame;
     const seasonState=update?.aktuelleSaison;
     const releasedSeasonChampion=(seasonState?.status==="abgeschlossen"||seasonState?.status==="abschluss-pruefen")&&seasonState?.gesamtChampion?.freigegeben===true?seasonState.gesamtChampion:null;
     const baseSpecial=Array.isArray(base.besondereLeistungen)?base.besondereLeistungen.filter(x=>x&&x.name&&x.titel&&(x.bestaetigt===true||x.freigegeben===true||x.offen===false)).at(-1):null;
     if(baseSpecial) base.ehrenmitglieder={label:baseSpecial.titel,wert:baseSpecial.name,offen:false};
+    if(latestHonor)base.ehrenmitglieder={label:latestHonor.title,wert:latestHonor.name,offen:false};
     if(!update||(update.freigegeben!==true&&!releasedSeasonChampion)){
       base.meta={...(base.meta||{}),runtime:"Historische Ehrungen werden angezeigt."};
       return base;
@@ -86,6 +97,7 @@
     }
     const special=Array.isArray(result.besondereLeistungen)?result.besondereLeistungen.filter(x=>x&&x.name&&x.titel&&(x.bestaetigt===true||x.freigegeben===true||x.offen===false)).at(-1):null;
     if(special) result.ehrenmitglieder={label:special.titel,wert:special.name,offen:false};
+    if(latestHonor)result.ehrenmitglieder={label:latestHonor.title,wert:latestHonor.name,offen:false};
     result.meta={...(result.meta||{}),runtime:"Das Ehrenlogbuch wurde aktualisiert."};
     return result;
   }
