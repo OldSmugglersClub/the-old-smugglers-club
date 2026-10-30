@@ -1,0 +1,23 @@
+import assert from 'node:assert/strict';
+import {validateTargetConfig,planOfficialChanges,applyOfficialChanges} from './terminwaechter-auto-core.mjs';
+const ids=[...Array.from({length:6},(_,i)=>`pk-fest-${i+1}`),...Array.from({length:5},(_,i)=>`wr-fest-${i+1}`)];
+const game=(id)=>({id,wettbewerb:id.startsWith('pk-')?'piratenkodex':'weihnachtsregatta',datum:'2026-11-01',datumVon:'2026-11-01',datumBis:'2026-11-01',datumAnzeige:'01.11.2026',anstoss:'18:00',status:'terminiert',heimtore:null,auswaertstore:null,quelleStand:'original'});
+const data={datenVersion:82,saisons:[{spiele:ids.map(game).concat([{...game('bl-1'),wettbewerb:'bundesliga'}])}]};
+const cfg={quellen:[{name:'Q1',spielIds:ids.slice(0,6)},{name:'Q2',spielIds:ids.slice(6)}]};
+const allowed=validateTargetConfig(data,cfg);assert.equal(allowed.size,11);
+const ended=structuredClone(data);ended.saisons[0].spiele[0].status='beendet';ended.saisons[0].spiele[0].heimtore=1;ended.saisons[0].spiele[0].auswaertstore=0;
+assert.equal(validateTargetConfig(ended,cfg).size,11,'Abschluss darf feste Zielmenge nicht zerstoeren');
+const report={quellen:[{name:'Q1',status:'SPIELE_EXTRAHIERT'}],befunde:[{spielId:ids[1],status:'ABWEICHUNG',quellenName:'Q1',amtlich:{datum:'2026-11-02',anstoss:'20:45'}}]};
+const plan=planOfficialChanges(ended,report,{allowedIds:allowed,now:new Date('2026-10-28T12:00:00Z')});
+const updated=applyOfficialChanges(ended,plan,{allowedIds:allowed});
+assert.equal(plan.planned.length,1);assert.equal(updated.saisons[0].spiele[1].datum,'2026-11-02');
+assert.deepEqual(updated.saisons[0].spiele[0],ended.saisons[0].spiele[0],'Beendete Spiele muessen unveraendert bleiben');
+assert.deepEqual(updated.saisons[0].spiele[11],ended.saisons[0].spiele[11],'Bundesliga muss unveraendert bleiben');
+const stale={...report,befunde:[{...report.befunde[0],spielId:ids[0]}]};
+assert.throws(()=>planOfficialChanges(ended,stale,{allowedIds:allowed,now:new Date('2026-10-28T12:00:00Z')}),/GESCHUETZTES_SPIEL/);
+const missing=structuredClone(ended);missing.saisons[0].spiele=missing.saisons[0].spiele.filter(x=>x.id!==ids[0]);assert.throws(()=>validateTargetConfig(missing,cfg),/NICHT_FREIGEGEBEN/);
+const corrupted=structuredClone(ended);corrupted.saisons[0].spiele.push({...game(ids[1])});assert.throws(()=>validateTargetConfig(corrupted,cfg),/DOPPELTE_SPIEL_ID/);
+const allFinished=structuredClone(ended);for(const g of allFinished.saisons[0].spiele.filter(x=>ids.includes(x.id))){g.status='beendet';g.heimtore=2;g.auswaertstore=1;}
+assert.equal(validateTargetConfig(allFinished,cfg).size,11);
+assert.equal(planOfficialChanges(allFinished,{quellen:[],befunde:[]},{allowedIds:allowed}).planned.length,0);
+console.log('PASS: alle 11 fixen IDs erhalten; Abschluss 1/11 und 11/11; nur offene Spiele updatefaehig; fremde Daten unveraendert; fehlende/duplizierte IDs blockiert.');

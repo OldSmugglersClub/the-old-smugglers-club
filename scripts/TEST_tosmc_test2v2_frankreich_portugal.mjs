@@ -1,0 +1,32 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {decodeOfficial} from './offizielle-liga-adapter.mjs';
+import {compare} from './offizielle-quellen.mjs';
+import {fetchFranceRound,portugalRoundsFromSource} from './offizielle-quellen-browser.mjs';
+const fixture=n=>JSON.parse(fs.readFileSync(new URL('./fixtures/terminwaechter/'+n,import.meta.url),'utf8'));
+const fr=decodeOfficial('france',fixture('france-round19.json')).fixtures;
+const pt=decodeOfficial('portugal',fixture('portugal-round16.json')).fixtures;
+assert.equal(fr.length,9,'Frankreich: Runde erkennen');
+assert.equal(pt.length,9,'Portugal: Runde erkennen');
+for(const f of [...fr,...pt]){
+ assert.equal(f.terminBestaetigt,false,'Offener Termin muss explizit offen bleiben');
+ assert.equal(f.datum,null);assert.equal(f.anstoss,null);assert.equal(f.startDate,null);
+}
+const fGame={heimTeamId:'paris-saint-germain',auswaertsTeamId:'olympique-marseille',datum:'2027-02-07',anstoss:'20:45'};
+const pGame={heimTeamId:'benfica-lissabon',auswaertsTeamId:'sporting-lissabon',datum:'2026-12-27',anstoss:'20:00'};
+assert.equal(compare(fGame,fr,{}).status,'PAARUNG_GEFUNDEN_TERMIN_OFFEN');
+assert.equal(compare(pGame,pt,{}).status,'PAARUNG_GEFUNDEN_TERMIN_OFFEN');
+assert.equal(compare(fGame,[],{}).status,'KEIN_EINDEUTIGES_SPIEL');
+assert.equal(compare(pGame,[...pt,...pt],{}).status,'MEHRDEUTIG');
+assert.deepEqual(portugalRoundsFromSource({spielIds:['wr-2026-27-02'],rundenBySpielId:{'wr-2026-27-02':16}}),[16]);
+const src={url:'https://ligue1.com/en/competitions/ligue1mcdonalds/results?gameweek=19'};
+const calls=[];
+const mocked=async url=>{calls.push(url);return {ok:true,status:200,text:async()=>JSON.stringify(url.endsWith('/championships-settings')?{championships:{1:{season:2026}}}:fixture('france-round19.json'))}};
+assert.equal((await fetchFranceRound(src,'2026/2027',mocked)).decoded.fixtures.length,9);
+assert.ok(calls[1].endsWith('/game-week/19'));
+await assert.rejects(()=>fetchFranceRound(src,'2025/2026',mocked),/SAISON_ABWEICHEND/);
+const valid=decodeOfficial('portugal',{matches:[{homeTeam:{name:'SL Benfica'},awayTeam:{name:'Sporting CP'},fixtureDate:'2026-12-27T20:15:00Z',fixtureDateIsDefined:true}]}).fixtures;
+assert.equal(valid.length,1);
+assert.equal(compare(pGame,valid,{}).status,'ABWEICHUNG');
+assert.equal(valid[0].anstoss,'21:15');
+console.log('PASS: 11 Checks – offizielle Paarungserkennung, offene Termine, Aliase, Zielrunde, Saisonpruefung, sichere Terminabweichung');

@@ -1,0 +1,52 @@
+name: TOSMC LIVE – 11 Sondertermine – NUR VORSCHAU
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: osc-bundesliga-ergebnisimport
+  cancel-in-progress: false
+jobs:
+  read_only:
+    if: github.repository == 'OldSmugglersClub/the-old-smugglers-club' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: LIVE/main read-only auschecken
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Bestehende Schutztests
+        run: |
+          node scripts/TEST_terminwaechter_auto.mjs
+          node scripts/TEST_tosmc_test2v2_terminuebernahme.mjs
+          node scripts/TEST_tosmc_test2v2_taeglich_nach_abschluss.mjs
+          node scripts/TEST_tosmc_test2v2_frankreich_portugal.mjs
+      - name: Offiziellen Browser aufsetzen
+        run: |
+          npm install --no-save --ignore-scripts playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: LIVE-Quellen und geplante Korrekturen NUR LESEN
+        env:
+          TOSMC_MODE: VORSCHAU
+        run: node scripts/tosmc-live-11-terminvorschau.mjs
+      - name: Keine Website-Datendatei darf veraendert sein
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! git diff --quiet -- spieldaten.json schedule-terminstand.json; then
+            echo 'SCHUTZSTOPP: Datendatei wurde veraendert'; exit 1
+          fi
+          echo 'LIVE-Datendateien unveraendert.'
+      - name: Vorschau-Berichte archivieren
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: TOSMC-LIVE-11-TERMINVORSCHAU
+          path: terminwaechter-bericht/
+          retention-days: 14
+          if-no-files-found: warn
