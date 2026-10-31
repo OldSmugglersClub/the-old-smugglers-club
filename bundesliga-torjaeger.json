@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 40,
+  "datenVersion": 41,
   "aktualisiert": "2026-10-31",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
@@ -43,11 +43,11 @@
       "tore": 4
     },
     {
-      "name": "I. Matanovic",
+      "name": "Y. Suzuki",
       "tore": 4
     },
     {
-      "name": "Y. Suzuki",
+      "name": "I. Matanovic",
       "tore": 4
     },
     {
@@ -65,6 +65,18 @@
     {
       "name": "H. Kane",
       "tore": 4
+    },
+    {
+      "name": "D. Upamecano",
+      "tore": 3
+    },
+    {
+      "name": "S. Guirassy",
+      "tore": 3
+    },
+    {
+      "name": "Fabio Silva",
+      "tore": 3
     },
     {
       "name": "J. Scally",
@@ -95,10 +107,6 @@
       "tore": 2
     },
     {
-      "name": "D. Upamecano",
-      "tore": 2
-    },
-    {
       "name": "J. Vagnoman",
       "tore": 2
     },
@@ -111,7 +119,7 @@
       "tore": 2
     },
     {
-      "name": "S. El Mala",
+      "name": "A. Daghim",
       "tore": 2
     },
     {
@@ -119,7 +127,7 @@
       "tore": 2
     },
     {
-      "name": "A. Daghim",
+      "name": "S. El Mala",
       "tore": 2
     },
     {
@@ -135,10 +143,6 @@
       "tore": 2
     },
     {
-      "name": "S. Guirassy",
-      "tore": 2
-    },
-    {
       "name": "Rodrigo Ribeiro",
       "tore": 2
     },
@@ -147,19 +151,15 @@
       "tore": 2
     },
     {
-      "name": "Fabio Silva",
-      "tore": 2
-    },
-    {
       "name": "Ibrahim Maza",
       "tore": 2
     },
     {
-      "name": "H. Bolin",
+      "name": "F. Keidel",
       "tore": 2
     },
     {
-      "name": "F. Keidel",
+      "name": "H. Bolin",
       "tore": 2
     },
     {
@@ -227,11 +227,11 @@
       "tore": 2
     },
     {
-      "name": "M. Muheim",
+      "name": "B. Conté",
       "tore": 2
     },
     {
-      "name": "B. Conté",
+      "name": "M. Muheim",
       "tore": 2
     },
     {
@@ -239,11 +239,11 @@
       "tore": 2
     },
     {
-      "name": "W. Mohya",
+      "name": "A. Prass",
       "tore": 2
     },
     {
-      "name": "A. Prass",
+      "name": "W. Mohya",
       "tore": 2
     },
     {
@@ -311,15 +311,11 @@
       "tore": 1
     },
     {
-      "name": "A. Ibrahimovic",
-      "tore": 1
-    },
-    {
       "name": "Alexis Claude-Maurice",
       "tore": 1
     },
     {
-      "name": "M. Wöber",
+      "name": "A. Ibrahimovic",
       "tore": 1
     },
     {
@@ -328,6 +324,10 @@
     },
     {
       "name": "R. Gosens",
+      "tore": 1
+    },
+    {
+      "name": "M. Wöber",
       "tore": 1
     },
     {
@@ -351,11 +351,11 @@
       "tore": 1
     },
     {
-      "name": "Danny da Costa",
+      "name": "Isac Lidberg",
       "tore": 1
     },
     {
-      "name": "Isac Lidberg",
+      "name": "Danny da Costa",
       "tore": 1
     },
     {
@@ -367,11 +367,11 @@
       "tore": 1
     },
     {
-      "name": "R. Ache",
+      "name": "N. Capaldo",
       "tore": 1
     },
     {
-      "name": "N. Capaldo",
+      "name": "R. Ache",
       "tore": 1
     },
     {
@@ -451,15 +451,15 @@
       "tore": 1
     },
     {
+      "name": "Lasse Günther",
+      "tore": 1
+    },
+    {
       "name": "Mert Kömür",
       "tore": 1
     },
     {
       "name": "Frederik Schmahl",
-      "tore": 1
-    },
-    {
-      "name": "Lasse Günther",
       "tore": 1
     },
     {
@@ -471,11 +471,11 @@
       "tore": 1
     },
     {
-      "name": "J. Haberer",
+      "name": "Han-Noah Massengo",
       "tore": 1
     },
     {
-      "name": "Han-Noah Massengo",
+      "name": "J. Haberer",
       "tore": 1
     },
     {
@@ -512,6 +512,10 @@
     },
     {
       "name": "C. Irie",
+      "tore": 1
+    },
+    {
+      "name": "K. Laimer",
       "tore": 1
     }
   ]
