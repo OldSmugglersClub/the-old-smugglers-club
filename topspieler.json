@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 22,
-  "aktualisiertAm": "2026-10-31T22:42:30.179Z",
+  "datenVersion": 23,
+  "aktualisiertAm": "2026-11-01T21:31:50.037Z",
   "saison": "2026-27",
   "status": "Berechnet",
   "kategorien": [
     {
       "titel": "Spieltagsführer",
       "name": "Olympiakos",
-      "wert": "199 Punkte"
+      "wert": "204 Punkte"
     },
     {
       "titel": "Meiste exakte Tipps",
-      "name": "PochzerJung",
+      "name": "Olympiakos",
       "wert": "14"
     },
     {
