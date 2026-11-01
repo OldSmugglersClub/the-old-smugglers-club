@@ -9744,63 +9744,42 @@
               {
                 "teilnehmerId": "juri",
                 "teilnehmer": "JuRi",
-                "vorher": 28,
-                "jetzt": 23,
-                "veraenderung": 5
-              },
-              {
-                "teilnehmerId": "tortugasge",
-                "teilnehmer": "TortugaSGE",
-                "vorher": 40,
-                "jetzt": 35,
-                "veraenderung": 5
-              },
-              {
-                "teilnehmerId": "mythos",
-                "teilnehmer": "Mythos",
-                "vorher": 43,
-                "jetzt": 38,
-                "veraenderung": 5
+                "vorher": 30,
+                "jetzt": 24,
+                "veraenderung": 6
               }
             ],
             "verlierer": [
               {
-                "teilnehmerId": "g-threepwood",
-                "teilnehmer": "G.Threepwood",
-                "vorher": 9,
-                "jetzt": 11,
+                "teilnehmerId": "sven-huhn",
+                "teilnehmer": "Sven_Huhn",
+                "vorher": 42,
+                "jetzt": 44,
                 "veraenderung": -2
               },
               {
-                "teilnehmerId": "eckes2359",
-                "teilnehmer": "Eckes2359",
-                "vorher": 37,
-                "jetzt": 39,
-                "veraenderung": -2
-              },
-              {
-                "teilnehmerId": "sgbw",
-                "teilnehmer": "sgbw",
-                "vorher": 38,
-                "jetzt": 40,
+                "teilnehmerId": "stevie26",
+                "teilnehmer": "Stevie26",
+                "vorher": 43,
+                "jetzt": 45,
                 "veraenderung": -2
               },
               {
                 "teilnehmerId": "luki1887",
                 "teilnehmer": "Luki1887",
-                "vorher": 39,
-                "jetzt": 41,
+                "vorher": 44,
+                "jetzt": 46,
                 "veraenderung": -2
               },
               {
-                "teilnehmerId": "pauli",
-                "teilnehmer": "Pauli",
-                "vorher": 42,
-                "jetzt": 44,
+                "teilnehmerId": "quick",
+                "teilnehmer": "Quick",
+                "vorher": 51,
+                "jetzt": 53,
                 "veraenderung": -2
               }
             ],
-            "maxGewinn": 5,
+            "maxGewinn": 6,
             "maxVerlust": -2
           }
         },
