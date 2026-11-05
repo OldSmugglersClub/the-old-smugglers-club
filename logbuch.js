@@ -143,9 +143,10 @@ function weekendCardsHtml(entries){
  const uniq=[...new Map(chosen.map(x=>[x.entry.id,x.entry])).values()];
  uniq.sort((a,b)=>String(a.wettbewerb).localeCompare(String(b.wettbewerb),'de')||String(a.runde).localeCompare(String(b.runde),'de'));
  const toDay=iso=>`${iso.slice(8,10)}.${iso.slice(5,7)}.${iso.slice(0,4)}`;
- const title=activeBlock.isWeekend
-  ? `Wochenend-Rueckblick · ${toDay(activeBlock.from)}–${toDay(activeBlock.to)}`
-  : `Spieltags-Rückblick · ${toDay(activeBlock.from)}–${toDay(activeBlock.to)}`;
+ // Mobile: Label und zusammenhaengendes Datum getrennt rendern, Desktop bleibt einzeilig.
+ const blockLabel=activeBlock.isWeekend?"Wochenend-Rueckblick":"Spieltags-Rückblick";
+ const blockDates=`${toDay(activeBlock.from)}–${toDay(activeBlock.to)}`;
+ const title=`<span class="logbook-weekend-label">${esc(blockLabel)}</span><span class="logbook-weekend-divider" aria-hidden="true"> · </span><span class="logbook-weekend-dates">${esc(blockDates)}</span>`;
  const cards=uniq.map(entry=>{
   const story=storyFromEntry(entry);
   const stats=[startStat(entry,"kapitaene"),startStat(entry,"gegen-den-strom"),startStat(entry,"volltreffer")].filter(Boolean);
@@ -182,7 +183,7 @@ function weekendCardsHtml(entries){
  }).join("");
  const gridClass=uniq.length===1?" logbook-weekend-grid--single":"";
  const hint=uniq.length>1?'<p class="logbook-block-swipe-hint">Weitere Wettbewerbe: Karten seitlich wischen</p>':"";
- return {html:`<div class="logbook-weekend-title">${esc(title)}</div><div class="logbook-weekend-grid${gridClass}" aria-label="Wettbewerbsrueckblicke">${cards}</div>${hint}`,isWeekend:activeBlock.isWeekend};
+ return {html:`<div class="logbook-weekend-title">${title}</div><div class="logbook-weekend-grid${gridClass}" aria-label="Wettbewerbsrueckblicke">${cards}</div>${hint}`,isWeekend:activeBlock.isWeekend};
 }
 function renderThirtySeconds(entry,pending){
  const host=$("#logbook-30s"); if(!host) return;
