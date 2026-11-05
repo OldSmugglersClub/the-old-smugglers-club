@@ -1,5 +1,5 @@
-// TOSMC LIVE – 11 amtlich bestaetigte Sonderwettbewerb-Termine. Fail closed.
-// Keine Tipps, Resultate, Rankings, Wettbewerbseinstellungen oder fremde Spiele aendern.
+// TOSMC LIVE – Sondertermine DYN1: dynamische Anzahl aktiver Spiele; fail closed.
+// Nur noch nicht beendete Zielspiele; keine anderen Spiele oder Wertungen aendern.
 import fs from 'node:fs';
 import path from 'node:path';
 import {run as checkOfficial} from './offizielle-quellen-browser.mjs';
@@ -15,37 +15,68 @@ const root=process.cwd(),dataPath=path.join(root,'spieldaten.json'),snapshotPath
 const originalText=fs.readFileSync(dataPath,'utf8');
 const before=JSON.parse(originalText);
 const config=JSON.parse(fs.readFileSync(path.join(root,'terminwaechter/offizielle-quellen.json'),'utf8'));
-const allowedIds=validateTargetConfig(before,config);
+const configuredIds=validateTargetConfig(before,config);
+if(configuredIds.size!==11)throw Error('KONFIGURIERTE_ZIELSPIELE_NICHT_11');
+const games=new Map(before.saisons.flatMap(s=>s.spiele||[]).map(g=>[g.id,g]));
+// Ausschliesslich explizit als beendet markierte Spiele verlassen die aktive Pruefmenge.
+// Unbekannte Stati bleiben aktiv und koennen nicht stillschweigend entfallen.
+const completedIds=new Set([...configuredIds].filter(id=>games.get(id)?.status==='beendet'));
+const allowedIds=new Set([...configuredIds].filter(id=>!completedIds.has(id)));
 const reportDir=path.join(root,'terminwaechter-bericht');fs.mkdirSync(reportDir,{recursive:true});
-const found=await checkOfficial({config,siteGames:before});
-const all=found.befunde||[];
-const seen=new Set();
-for(const f of all){
- if(!allowedIds.has(f.spielId)||seen.has(f.spielId))throw Error('QUELLENBEFUND_FREMD_ODER_DOPPELT:'+f.spielId);
- seen.add(f.spielId);
- const source=config.quellen.find(q=>q.spielIds?.includes(f.spielId));
- f.quellenName=source?.name||null;
-}
-if(found.status!=='GEPRUEFT'||all.length!==11||seen.size!==11||found.verifiziert!==11)throw Error('OFFIZIELLER_QUELLENBERICHT_NICHT_VOLLSTAENDIG');
-if(all.some(f=>!['IDENTISCH','ABWEICHUNG','PAARUNG_GEFUNDEN_TERMIN_OFFEN'].includes(f.status)))throw Error('UNZULAESSIGER_QUELLENSTATUS');
-const plan=planOfficialChanges(before,found,{allowedIds,windowDays:56,maxChanges:11});
-const next=applyOfficialChanges(before,plan,{allowedIds});
-if(fs.readFileSync(dataPath,'utf8')!==originalText)throw Error('SPIELDATEN_WAEHREND_PRUEFUNG_GEAENDERT');
-const changes=plan.planned.map(p=>({spielId:p.id,alt:(before.saisons.flatMap(s=>s.spiele||[]).find(g=>g.id===p.id)||{}),neu:p})).map(p=>({spielId:p.spielId,alt:{datum:p.alt.datum,anstoss:p.alt.anstoss},neu:{datum:p.neu.datum,anstoss:p.neu.anstoss}}));
-const report={repository:REPO,modus:mode,zeitpunkt:new Date().toISOString(),quellenStatus:found.status,pruefbarePaarungen:all.length,termineOffen:found.termineOffen,freigabeNurElfSpiele:true,geplanteAenderungen:changes,uebernommen:false,befunde:all,quellen:found.quellen};
+const report={repository:REPO,version:'LIVE-11-TERMIN-DYN1',modus:mode,zeitpunkt:new Date().toISOString(),
+ konfiguriert:configuredIds.size,abgeschlossen:completedIds.size,aktiv:allowedIds.size,
+ abgeschlosseneSpielIds:[...completedIds],aktiveSpielIds:[...allowedIds],
+ quellenStatus:'NICHT_GEPRUEFT',pruefbarePaarungen:0,verifiziert:0,termineOffen:null,
+ freigabeNurElfSpiele:true,geplanteAenderungen:[],uebernommen:false,befunde:[],quellen:[]};
 const emit=()=>{
  fs.writeFileSync(path.join(reportDir,'LIVE_11_TERMINAUTOMATIK.json'),JSON.stringify(report,null,2)+'\n');
- fs.writeFileSync(path.join(reportDir,'LIVE_11_TERMINAUTOMATIK.md'),['# LIVE – elf Sonderwettbewerbstermine',`Modus: ${mode}`,`Quellenstatus: ${found.status}`,`Paarungen: ${all.length}/11`,`Offene Termine: ${found.termineOffen}`,`Geplante Datumsupdates: ${changes.length}`,`Uebernommen: ${report.uebernommen?'Ja':'Nein'}`,...changes.map(c=>`${c.spielId}: ${c.alt.datum} ${c.alt.anstoss} -> ${c.neu.datum} ${c.neu.anstoss}`),'Andere Spiele, Tipps, Resultate, Admin und OpenLigaDB werden nicht veraendert.',''].join('\n'));
-};emit();
-if(mode==='UEBERNEHMEN'&&changes.length){
- let snapshotText=null,updatedSnapshot=null;
- if(fs.existsSync(snapshotPath)){
-  snapshotText=fs.readFileSync(snapshotPath,'utf8');
-  const snapshot=JSON.parse(snapshotText);
-  updatedSnapshot=updateScheduleSnapshot(snapshot,next,changes.map(c=>c.spielId));
+ fs.writeFileSync(path.join(reportDir,'LIVE_11_TERMINAUTOMATIK.md'),[
+ '# LIVE – Sondertermine DYN1',`Modus: ${mode}`,`Konfiguriert: ${report.konfiguriert}`,
+ `Abgeschlossen: ${report.abgeschlossen}`,`Aktiv: ${report.aktiv}`,
+ `Quellenstatus: ${report.quellenStatus}`,`Gepruefte aktive Paarungen: ${report.pruefbarePaarungen}/${report.aktiv}`,
+ `Offene Termine: ${report.termineOffen??'nicht ermittelt'}`,`Geplante Datumsupdates: ${report.geplanteAenderungen.length}`,
+ `Uebernommen: ${report.uebernommen?'Ja':'Nein'}`,
+ ...(report.fehler?[`Fehler: ${report.fehler}`]:[]),
+ ...report.geplanteAenderungen.map(c=>`${c.spielId}: ${c.alt.datum} ${c.alt.anstoss} -> ${c.neu.datum} ${c.neu.anstoss}`),
+ 'Andere Spiele, Tipps, Resultate, Admin und OpenLigaDB werden nicht veraendert.',''].join('\n'));
+};
+emit();
+try{
+ // Keine externen Anfragen mehr, sobald alle elf Zielspiele beendet sind.
+ if(allowedIds.size===0){report.quellenStatus='KEINE_AKTIVEN_SPIELE';emit();console.log('LIVE: alle 11 Zielspiele abgeschlossen; keine Aenderung');}
+ else{
+  const activeConfig={...config,quellen:config.quellen.map(q=>({...q,spielIds:(q.spielIds||[]).filter(id=>allowedIds.has(id))})).filter(q=>q.spielIds.length)};
+  const found=await checkOfficial({config:activeConfig,siteGames:before});
+  const all=found.befunde||[];const seen=new Set();
+  report.quellenStatus=found.status;report.pruefbarePaarungen=all.length;
+  report.verifiziert=found.verifiziert;report.termineOffen=found.termineOffen;
+  report.befunde=all;report.quellen=found.quellen;
+  for(const f of all){
+   if(!allowedIds.has(f.spielId)||seen.has(f.spielId))throw Error('QUELLENBEFUND_FREMD_ODER_DOPPELT:'+f.spielId);
+   seen.add(f.spielId);
+   const source=activeConfig.quellen.find(q=>q.spielIds?.includes(f.spielId));
+   f.quellenName=source?.name||null;
+  }
+  emit(); // Auch bei fehlerhafter Vollstaendigkeit steht der Befund im Artefakt.
+  if(found.status!=='GEPRUEFT'||all.length!==allowedIds.size||seen.size!==allowedIds.size||found.verifiziert!==allowedIds.size)
+   throw Error(`OFFIZIELLER_QUELLENBERICHT_NICHT_VOLLSTAENDIG:${all.length}/${allowedIds.size}`);
+  if(all.some(f=>!['IDENTISCH','ABWEICHUNG','PAARUNG_GEFUNDEN_TERMIN_OFFEN'].includes(f.status)))throw Error('UNZULAESSIGER_QUELLENSTATUS');
+  const plan=planOfficialChanges(before,found,{allowedIds,windowDays:56,maxChanges:11});
+  const next=applyOfficialChanges(before,plan,{allowedIds});
+  if(fs.readFileSync(dataPath,'utf8')!==originalText)throw Error('SPIELDATEN_WAEHREND_PRUEFUNG_GEAENDERT');
+  const changes=plan.planned.map(p=>({spielId:p.id,alt:before.saisons.flatMap(s=>s.spiele||[]).find(g=>g.id===p.id),neu:p}))
+   .map(p=>({spielId:p.spielId,alt:{datum:p.alt.datum,anstoss:p.alt.anstoss},neu:{datum:p.neu.datum,anstoss:p.neu.anstoss}}));
+  report.geplanteAenderungen=changes;emit();
+  if(mode==='UEBERNEHMEN'&&changes.length){
+   let snapshotText=null,updatedSnapshot=null;
+   if(fs.existsSync(snapshotPath)){
+    snapshotText=fs.readFileSync(snapshotPath,'utf8');
+    updatedSnapshot=updateScheduleSnapshot(JSON.parse(snapshotText),next,changes.map(c=>c.spielId));
+   }
+   fs.writeFileSync(dataPath,JSON.stringify(next,null,2)+'\n');
+   if(updatedSnapshot!==null&&JSON.stringify(JSON.parse(snapshotText))!==JSON.stringify(updatedSnapshot))fs.writeFileSync(snapshotPath,JSON.stringify(updatedSnapshot,null,2)+'\n');
+   report.uebernommen=true;emit();
+  }
+  console.log(`LIVE DYN1: ${all.length}/${allowedIds.size} aktive Paarungen, ${completedIds.size} abgeschlossen, ${changes.length} Aenderungen, geschrieben ${report.uebernommen}`);
  }
- fs.writeFileSync(dataPath,JSON.stringify(next,null,2)+'\n');
- if(updatedSnapshot!==null&&JSON.stringify(JSON.parse(snapshotText))!==JSON.stringify(updatedSnapshot))fs.writeFileSync(snapshotPath,JSON.stringify(updatedSnapshot,null,2)+'\n');
- report.uebernommen=true;emit();
-}
-console.log(`LIVE: Quellen ${found.status}, Paarungen ${all.length}/11, offen ${found.termineOffen}, Aenderungen ${changes.length}, geschrieben ${report.uebernommen}`);
+}catch(error){report.fehler=String(error.message||error);emit();throw error;}
