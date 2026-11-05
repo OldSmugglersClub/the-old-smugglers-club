@@ -1,0 +1,15 @@
+TOSMC LIVE STARTSEITE – 7 TAGE SPIELE FIX1 (05.11.2026)
+
+NUR nach bestaetigtem TEST2v2-FIX1 vom Nutzer fuer LIVE erstellt.
+Datei: index.html – ausschließlich die Zeitfenster-Auswahl der Startseiten-Terminliste geaendert.
+Ausgangsdatei Git-BLOB-SHA: edf52848ad95cf62a9714bc781f98ecf64e7e956
+Zieldatei Git-BLOB-SHA: b7f0ad64f159467da015ba644d794e67d44dd838
+TEST-Datei ist bytegenau identisch zur Zieldatei.
+
+Die neue Auswahl verwendet spieltag.json: anzeigeTage (aktuell 7) und
+OSCScheduleTimeline.windowEvents; keine Fixierung auf den Cluster des naechsten Spiels.
+Logbuch-Funktionen, Admin6, Ergebnisdateien und andere Wettbewerbsdaten bleiben unveraendert.
+
+Nur index.html in das LIVE-Repository uebernehmen. Pruefhinweise NICHT hochladen.
+Vor Einspielung bestaetigen, dass die LIVE-index.html weiterhin den genannten
+Ausgangs-SHA hat. Danach GitHub Desktop commit/push und visuelle LIVE-Pruefung.
