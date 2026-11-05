@@ -1,0 +1,26 @@
+TOSMC - LIVE-PAKET LOGBUCH KAPITAENE TEXT FIX1 - 05.11.2026
+
+FREIGABESTUFE: Nach Nutzerbestaetigung der TEST2v2-Sichtpruefung am 05.11.2026.
+Nutzerbestaetigt: CL ST4 korrekt auf TEST2v2 angezeigt.
+
+ZIEL: LIVE-Repository OldSmugglersClub/the-old-smugglers-club, Branch main.
+Vorbereiteter LIVE-Basistand (read-only verifiziert): 1a4c6fab05f7d5428fbd7e554d9923eb7a81db9a.
+AUSGANGSBASIS: the-old-smugglers-club-main(20261105-215122).zip.
+Nur die Datei logbuch.js im Repository-Hauptverzeichnis ersetzen.
+Basis-Git-Blob-SHA: 4c789f74181e47fdf98482f6581663164ca09faa
+Original-SHA256: 4a51fac982ef7c8e8e35ba9591481336381a2433f3c25a5e881ab6a7e7b1c2f9
+Neue-SHA256:     32e3e5c32a8b14c6bcde46b14b14996abfda093e8224d9b8037cf243f130b427
+
+AENDERUNG: Nur Kapitaens-Textlogik (Siegerzahl vs. Anzahl angezeigter Kapitaene),
+auch in Startseiten-Kurztexten. Keine JSON-Daten, keine Rang- oder Punktewerte,
+keine Admin-Dateien; kein Repository-Schreibzugriff durch KI.
+
+PRUEFUNG: Original-Basis gegen aktuelles LIVE-Git-Blob abgeglichen;
+TEST2v2-Browseransicht durch Nutzer bestaetigt; JS-Syntax und ZIP-CRC geprueft.
+
+EINSPIELUNG: Vor LIVE-Commit sicherstellen, dass LIVE main weiterhin der oben
+bezeichnete Stand ist oder die aktuelle logbuch.js weiterhin den Original-Git-Blob
+4c789f74181e47fdf98482f6581663164ca09faa hat. Sonst NICHT blind ueberschreiben, sondern erneuten Basisabgleich anfordern.
+Datei ersetzen, GitHub Desktop diff pruefen, committen und pushen; anschließend
+LIVE-Logbuch CL 4 sowie die Startseiten-Kurzfassung hart neu laden und pruefen.
+LIVE erst nach tatsaechlicher Nutzerbestaetigung als abgeschlossen dokumentieren.

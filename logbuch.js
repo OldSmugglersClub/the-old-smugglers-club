@@ -49,8 +49,8 @@ function startStat(entry,type){
  const h=highlight(entry,type),d=h?.daten||{};
  if(!h)return null;
  if(type==="kapitaene"){
-  const value=Number(d.anzahl||arr(d.tipper).length||0);
-  return {label:"Kapitäne",value,copy:value===1?"holt die Beute":"teilen die Beute"};
+  const result=captainResult(entry,d);
+  return {label:"Kapitäne",value:result.count,copy:result.winners.length===1?"ein Spieltagssieger":"punktgleiche Spieltagssieger"};
  }
  if(type==="gegen-den-strom"){
   const value=Number(d.richtigeTendenz?.anzahl||0);
@@ -93,10 +93,10 @@ function storyFromEntry(entry){
  }
  const captains=highlight(entry,"kapitaene");
  if(captains){
-  const d=captains.daten||{},count=Number(d.anzahl||arr(d.tipper).length||0);
+  const d=captains.daten||{},result=captainResult(entry,d);
   return {
-   title:count===1?"Ein Kapitän holte die beste Beute.":`${count} Kapitäne teilten die beste Beute.`,
-   text:`Die stärkste Spieltagsleistung lag bei ${Number(d.punkte||0)} Punkten.`
+   title:result.winners.length===1?"Ein Tipper holte die beste Beute.":`${result.winners.length} Tipper teilten die beste Beute.`,
+   text:`Die stärkste Spieltagsleistung lag bei ${result.points} Punkten.`
   };
  }
  return null;
@@ -164,9 +164,9 @@ function weekendCardsHtml(entries){
    detail=`<div class="logbook-poster-match">${esc(home)} <span>gegen</span> ${esc(away)}</div><div class="logbook-poster-proof"><strong>${count}${submitted?` von ${submitted}`:""}</strong> tippten anders <span aria-hidden="true">·</span> <strong>${correct}</strong> richtig <span aria-hidden="true">·</span> <strong>${exact}</strong> exakt</div>`;
    theme="sensation";
   }else if(captains){
-   const d=captains.daten||{},count=Number(d.anzahl||arr(d.tipper).length||0);
-   hero=String(count);headline=count===1?"Kapitän des Spieltags":"Kapitäne teilen die Beute";
-   detail=`<div class="logbook-poster-proof"><strong>${Number(d.punkte||0)}</strong> Punkte · beste Spieltagsleistung</div>`;
+   const d=captains.daten||{},result=captainResult(entry,d);
+   hero=String(result.count);headline=result.winners.length===1?"Ein Spieltagssieger":"Geteilte Spieltagsspitze";
+   detail=`<div class="logbook-poster-proof"><strong>${result.points}</strong> Punkte · beste Spieltagsleistung</div>`;
   }else if(story){
    hero="★";headline=esc(story.title||"Spieltag im Fokus");
    detail=story.text?`<div class="logbook-poster-proof">${esc(story.text)}</div>`:"";
@@ -225,15 +225,34 @@ function captainTopFour(entry){
  const cutoff=rows[Math.min(3,rows.length-1)].punkte;
  return rows.filter((r,i)=>i<4||r.punkte===cutoff);
 }
+// Nur punktgleiche Bestplatzierte sind gemeinsame Spieltagssieger.
+// Die Kapitaensauswahl (Top 4 inklusive Gleichstand an der Grenze) bleibt separat.
+function captainResult(entry,d){
+ const displayed=captainTopFour(entry)||arr(d.tipper);
+ const valid=displayed.filter(r=>r&&Number.isFinite(Number(r.punkte))&&r.teilnehmer);
+ const max=valid.length?Math.max(...valid.map(r=>Number(r.punkte))):Number(d.punkte||0);
+ const winners=valid.filter(r=>Number(r.punkte)===max);
+ const count=valid.length||Number(d.anzahl||0);
+ const points=Number.isFinite(max)?max:0;
+ return {displayed, winners, count, points};
+}
+function captainSummary(entry,d){
+ const result=captainResult(entry,d);
+ const n=result.winners.length;
+ const names=result.winners.map(r=>esc(r.teilnehmer));
+ const leading=n===1?`${names[0]} erzielt mit ${result.points} Punkten die beste Spieltagsleistung.`
+   :n===2?`${names.join(' und ')} teilen sich mit jeweils ${result.points} Punkten die beste Spieltagsleistung.`
+   :n>2?`<strong>${n} Tipper</strong> teilen sich mit jeweils ${result.points} Punkten die beste Spieltagsleistung.`
+   :`Die beste Spieltagsleistung lag bei ${result.points} Punkten.`;
+ const overview=result.count===1?'Der bestplatzierte Tipper im Überblick.':`Die ${result.count} bestplatzierten Tipper im Überblick.`;
+ return {result, html:`${leading} ${overview}`};
+}
 function outcomeLabel(v){return v==="1"?"Heimsieg":v==="2"?"Auswärtssieg":"Remis"}
 
 function renderHighlight(h,entry){
  const d=h.daten||{};
  if(h.typ==="kapitaene"){
-   const count=Number(d.anzahl||0),name=firstTipperName(d.tipper);
-   const text=count===1
-    ?`${esc(name||"1 Tipper")} holt mit ${Number(d.punkte||0)} Punkten die beste Spieltagsleistung.`
-    :`<strong>${count} Tipper</strong> teilen sich mit ${Number(d.punkte||0)} Punkten die beste Spieltagsleistung.`;
+   const text=captainSummary(entry,d).html;
    const leaders=captainTopFour(entry);
    const leaderNames=leaders?leaders.map(r=>`<span class="lb-name"><span class="lb-captain-name">${esc(r.teilnehmer)}</span><span class="lb-captain-points">${Number(r.punkte).toLocaleString("de-DE")} P.</span></span>`).join(""):shortNames(d.tipper);
    return `<article class="lb-highlight lb-highlight--wide lb-highlight--captains"><h3>Kapitäne des Spieltags</h3><p>${text}</p><div class="lb-names">${leaderNames}</div></article>`;
