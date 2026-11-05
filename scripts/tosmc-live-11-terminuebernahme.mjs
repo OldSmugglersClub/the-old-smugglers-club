@@ -1,4 +1,4 @@
-// TOSMC LIVE – Sondertermine DYN1: dynamische Anzahl aktiver Spiele; fail closed.
+// TOSMC LIVE – Sondertermine DYN2: dynamische Anzahl aktiver Spiele; fail closed.
 // Nur noch nicht beendete Zielspiele; keine anderen Spiele oder Wertungen aendern.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -23,7 +23,7 @@ const games=new Map(before.saisons.flatMap(s=>s.spiele||[]).map(g=>[g.id,g]));
 const completedIds=new Set([...configuredIds].filter(id=>games.get(id)?.status==='beendet'));
 const allowedIds=new Set([...configuredIds].filter(id=>!completedIds.has(id)));
 const reportDir=path.join(root,'terminwaechter-bericht');fs.mkdirSync(reportDir,{recursive:true});
-const report={repository:REPO,version:'LIVE-11-TERMIN-DYN1',modus:mode,zeitpunkt:new Date().toISOString(),
+const report={repository:REPO,version:'LIVE-11-TERMIN-DYN2',modus:mode,zeitpunkt:new Date().toISOString(),
  konfiguriert:configuredIds.size,abgeschlossen:completedIds.size,aktiv:allowedIds.size,
  abgeschlosseneSpielIds:[...completedIds],aktiveSpielIds:[...allowedIds],
  quellenStatus:'NICHT_GEPRUEFT',pruefbarePaarungen:0,verifiziert:0,termineOffen:null,
@@ -31,7 +31,7 @@ const report={repository:REPO,version:'LIVE-11-TERMIN-DYN1',modus:mode,zeitpunkt
 const emit=()=>{
  fs.writeFileSync(path.join(reportDir,'LIVE_11_TERMINAUTOMATIK.json'),JSON.stringify(report,null,2)+'\n');
  fs.writeFileSync(path.join(reportDir,'LIVE_11_TERMINAUTOMATIK.md'),[
- '# LIVE – Sondertermine DYN1',`Modus: ${mode}`,`Konfiguriert: ${report.konfiguriert}`,
+ '# LIVE – Sondertermine DYN2',`Modus: ${mode}`,`Konfiguriert: ${report.konfiguriert}`,
  `Abgeschlossen: ${report.abgeschlossen}`,`Aktiv: ${report.aktiv}`,
  `Quellenstatus: ${report.quellenStatus}`,`Gepruefte aktive Paarungen: ${report.pruefbarePaarungen}/${report.aktiv}`,
  `Offene Termine: ${report.termineOffen??'nicht ermittelt'}`,`Geplante Datumsupdates: ${report.geplanteAenderungen.length}`,
@@ -61,8 +61,8 @@ try{
   if(found.status!=='GEPRUEFT'||all.length!==allowedIds.size||seen.size!==allowedIds.size||found.verifiziert!==allowedIds.size)
    throw Error(`OFFIZIELLER_QUELLENBERICHT_NICHT_VOLLSTAENDIG:${all.length}/${allowedIds.size}`);
   if(all.some(f=>!['IDENTISCH','ABWEICHUNG','PAARUNG_GEFUNDEN_TERMIN_OFFEN'].includes(f.status)))throw Error('UNZULAESSIGER_QUELLENSTATUS');
-  const plan=planOfficialChanges(before,found,{allowedIds,windowDays:56,maxChanges:11});
-  const next=applyOfficialChanges(before,plan,{allowedIds});
+  const plan=planOfficialChanges(before,found,{allowedIds:configuredIds,windowDays:56,maxChanges:11});
+  const next=applyOfficialChanges(before,plan,{allowedIds:configuredIds});
   if(fs.readFileSync(dataPath,'utf8')!==originalText)throw Error('SPIELDATEN_WAEHREND_PRUEFUNG_GEAENDERT');
   const changes=plan.planned.map(p=>({spielId:p.id,alt:before.saisons.flatMap(s=>s.spiele||[]).find(g=>g.id===p.id),neu:p}))
    .map(p=>({spielId:p.spielId,alt:{datum:p.alt.datum,anstoss:p.alt.anstoss},neu:{datum:p.neu.datum,anstoss:p.neu.anstoss}}));
@@ -77,6 +77,6 @@ try{
    if(updatedSnapshot!==null&&JSON.stringify(JSON.parse(snapshotText))!==JSON.stringify(updatedSnapshot))fs.writeFileSync(snapshotPath,JSON.stringify(updatedSnapshot,null,2)+'\n');
    report.uebernommen=true;emit();
   }
-  console.log(`LIVE DYN1: ${all.length}/${allowedIds.size} aktive Paarungen, ${completedIds.size} abgeschlossen, ${changes.length} Aenderungen, geschrieben ${report.uebernommen}`);
+  console.log(`LIVE DYN2: ${all.length}/${allowedIds.size} aktive Paarungen, ${completedIds.size} abgeschlossen, ${changes.length} Aenderungen, geschrieben ${report.uebernommen}`);
  }
 }catch(error){report.fehler=String(error.message||error);emit();throw error;}
