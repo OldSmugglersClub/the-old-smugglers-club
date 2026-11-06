@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 43,
-  "aktualisiert": "2026-11-02",
+  "datenVersion": 44,
+  "aktualisiert": "2026-11-06",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
@@ -55,6 +55,10 @@
       "tore": 4
     },
     {
+      "name": "J. Scally",
+      "tore": 4
+    },
+    {
       "name": "C. Nkunku",
       "tore": 4
     },
@@ -83,15 +87,7 @@
       "tore": 3
     },
     {
-      "name": "J. Scally",
-      "tore": 3
-    },
-    {
       "name": "M. Eggestein",
-      "tore": 3
-    },
-    {
-      "name": "R. Fellhauer",
       "tore": 3
     },
     {
@@ -99,7 +95,15 @@
       "tore": 3
     },
     {
+      "name": "R. Fellhauer",
+      "tore": 3
+    },
+    {
       "name": "T. Gomis",
+      "tore": 3
+    },
+    {
+      "name": "M. Muheim",
       "tore": 3
     },
     {
@@ -123,10 +127,6 @@
       "tore": 2
     },
     {
-      "name": "S. El Mala",
-      "tore": 2
-    },
-    {
       "name": "Thijs Dallinga",
       "tore": 2
     },
@@ -135,15 +135,19 @@
       "tore": 2
     },
     {
+      "name": "S. El Mala",
+      "tore": 2
+    },
+    {
       "name": "L. Petkov",
       "tore": 2
     },
     {
-      "name": "C. Kofane",
+      "name": "Cole Campbell",
       "tore": 2
     },
     {
-      "name": "Cole Campbell",
+      "name": "C. Kofane",
       "tore": 2
     },
     {
@@ -227,15 +231,11 @@
       "tore": 2
     },
     {
-      "name": "M. Muheim",
+      "name": "T. Moffi",
       "tore": 2
     },
     {
       "name": "B. Conté",
-      "tore": 2
-    },
-    {
-      "name": "T. Moffi",
       "tore": 2
     },
     {
@@ -319,15 +319,11 @@
       "tore": 1
     },
     {
-      "name": "Alexis Claude-Maurice",
-      "tore": 1
-    },
-    {
       "name": "A. Ibrahimovic",
       "tore": 1
     },
     {
-      "name": "R. Gosens",
+      "name": "Alexis Claude-Maurice",
       "tore": 1
     },
     {
@@ -336,6 +332,10 @@
     },
     {
       "name": "A. Aouchiche",
+      "tore": 1
+    },
+    {
+      "name": "R. Gosens",
       "tore": 1
     },
     {
@@ -359,7 +359,7 @@
       "tore": 1
     },
     {
-      "name": "F. Neuhaus",
+      "name": "Isac Lidberg",
       "tore": 1
     },
     {
@@ -371,7 +371,7 @@
       "tore": 1
     },
     {
-      "name": "Isac Lidberg",
+      "name": "F. Neuhaus",
       "tore": 1
     },
     {
@@ -411,15 +411,15 @@
       "tore": 1
     },
     {
+      "name": "R. Andrich",
+      "tore": 1
+    },
+    {
       "name": "M. Diaby",
       "tore": 1
     },
     {
       "name": "J. Quansah",
-      "tore": 1
-    },
-    {
-      "name": "R. Andrich",
       "tore": 1
     },
     {
@@ -451,15 +451,15 @@
       "tore": 1
     },
     {
+      "name": "Mert Kömür",
+      "tore": 1
+    },
+    {
       "name": "Frederik Schmahl",
       "tore": 1
     },
     {
       "name": "Lasse Günther",
-      "tore": 1
-    },
-    {
-      "name": "Mert Kömür",
       "tore": 1
     },
     {
@@ -520,6 +520,14 @@
     },
     {
       "name": "R. Onyedika",
+      "tore": 1
+    },
+    {
+      "name": "Shafiq Nandja",
+      "tore": 1
+    },
+    {
+      "name": "A. Grønbæk",
       "tore": 1
     }
   ]
