@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 45,
+  "datenVersion": 46,
   "aktualisiert": "2026-11-07",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
@@ -23,6 +23,10 @@
       "tore": 6
     },
     {
+      "name": "P. Tietz",
+      "tore": 6
+    },
+    {
       "name": "M. Gregoritsch",
       "tore": 5
     },
@@ -31,7 +35,11 @@
       "tore": 5
     },
     {
-      "name": "P. Tietz",
+      "name": "J. Burkardt",
+      "tore": 5
+    },
+    {
+      "name": "Romulo",
       "tore": 5
     },
     {
@@ -47,11 +55,11 @@
       "tore": 4
     },
     {
-      "name": "Y. Suzuki",
+      "name": "I. Matanovic",
       "tore": 4
     },
     {
-      "name": "I. Matanovic",
+      "name": "Y. Suzuki",
       "tore": 4
     },
     {
@@ -63,11 +71,7 @@
       "tore": 4
     },
     {
-      "name": "J. Burkardt",
-      "tore": 4
-    },
-    {
-      "name": "Romulo",
+      "name": "F. Nmecha",
       "tore": 4
     },
     {
@@ -96,10 +100,6 @@
     },
     {
       "name": "R. Fellhauer",
-      "tore": 3
-    },
-    {
-      "name": "F. Nmecha",
       "tore": 3
     },
     {
@@ -167,11 +167,11 @@
       "tore": 2
     },
     {
-      "name": "H. Bolin",
+      "name": "F. Keidel",
       "tore": 2
     },
     {
-      "name": "F. Keidel",
+      "name": "H. Bolin",
       "tore": 2
     },
     {
@@ -195,11 +195,19 @@
       "tore": 2
     },
     {
+      "name": "M. Mittelstädt",
+      "tore": 2
+    },
+    {
       "name": "Y. Engelhardt",
       "tore": 2
     },
     {
       "name": "C. Uzun",
+      "tore": 2
+    },
+    {
+      "name": "Lennart Karl",
       "tore": 2
     },
     {
@@ -223,11 +231,11 @@
       "tore": 2
     },
     {
-      "name": "S. Marino",
+      "name": "S. Tigges",
       "tore": 2
     },
     {
-      "name": "S. Tigges",
+      "name": "S. Marino",
       "tore": 2
     },
     {
@@ -235,11 +243,11 @@
       "tore": 2
     },
     {
-      "name": "B. Conté",
+      "name": "T. Moffi",
       "tore": 2
     },
     {
-      "name": "T. Moffi",
+      "name": "B. Conté",
       "tore": 2
     },
     {
@@ -251,11 +259,15 @@
       "tore": 2
     },
     {
+      "name": "W. Mohya",
+      "tore": 2
+    },
+    {
       "name": "A. Prass",
       "tore": 2
     },
     {
-      "name": "W. Mohya",
+      "name": "C. Baumgartner",
       "tore": 2
     },
     {
@@ -315,11 +327,11 @@
       "tore": 1
     },
     {
-      "name": "P. Mwene",
+      "name": "R. Königsdörffer",
       "tore": 1
     },
     {
-      "name": "R. Königsdörffer",
+      "name": "P. Mwene",
       "tore": 1
     },
     {
@@ -343,10 +355,6 @@
       "tore": 1
     },
     {
-      "name": "M. Mittelstädt",
-      "tore": 1
-    },
-    {
       "name": "L. Maina",
       "tore": 1
     },
@@ -355,23 +363,7 @@
       "tore": 1
     },
     {
-      "name": "Lennart Karl",
-      "tore": 1
-    },
-    {
       "name": "J. Musiala",
-      "tore": 1
-    },
-    {
-      "name": "Isac Lidberg",
-      "tore": 1
-    },
-    {
-      "name": "E. Martel",
-      "tore": 1
-    },
-    {
-      "name": "Danny da Costa",
       "tore": 1
     },
     {
@@ -379,7 +371,15 @@
       "tore": 1
     },
     {
-      "name": "N. Capaldo",
+      "name": "Isac Lidberg",
+      "tore": 1
+    },
+    {
+      "name": "Danny da Costa",
+      "tore": 1
+    },
+    {
+      "name": "E. Martel",
       "tore": 1
     },
     {
@@ -387,11 +387,15 @@
       "tore": 1
     },
     {
-      "name": "Calvin Brackelmann",
+      "name": "N. Capaldo",
       "tore": 1
     },
     {
       "name": "M. Weiser",
+      "tore": 1
+    },
+    {
+      "name": "Calvin Brackelmann",
       "tore": 1
     },
     {
@@ -455,10 +459,6 @@
       "tore": 1
     },
     {
-      "name": "Lasse Günther",
-      "tore": 1
-    },
-    {
       "name": "Frederik Schmahl",
       "tore": 1
     },
@@ -467,11 +467,11 @@
       "tore": 1
     },
     {
-      "name": "A. Maksimovic",
+      "name": "Lasse Günther",
       "tore": 1
     },
     {
-      "name": "C. Baumgartner",
+      "name": "A. Maksimovic",
       "tore": 1
     },
     {
@@ -531,11 +531,23 @@
       "tore": 1
     },
     {
+      "name": "N. Futkeu",
+      "tore": 1
+    },
+    {
       "name": "D. Raum",
       "tore": 1
     },
     {
+      "name": "Uchenna Ogundu",
+      "tore": 1
+    },
+    {
       "name": "J. Kimmich",
+      "tore": 1
+    },
+    {
+      "name": "M. Pieringer",
       "tore": 1
     },
     {
