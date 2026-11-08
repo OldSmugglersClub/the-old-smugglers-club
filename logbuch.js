@@ -181,7 +181,7 @@ function weekendCardsHtml(entries){
   const competition=esc(rawCompetition.replace(/^(Piratenkodex)\s+\1(?=\s|$)/i,"$1"));
   return `<article class="logbook-weekend-card logbook-weekend-card--${theme}"><div class="logbook-poster-top"><span class="logbook-poster-competition">${competition}</span><span class="logbook-poster-symbol" aria-hidden="true">✦</span></div><div class="logbook-poster-center"><span class="logbook-poster-headline">${headline}</span><strong class="logbook-poster-hero">${hero}</strong>${detail}</div><a class="logbook-weekend-link" href="${link}" aria-label="Rückblick öffnen: ${competition}">Geschichte entdecken <span aria-hidden="true">›</span></a></article>`;
  }).join("");
- const gridClass=uniq.length===1?" logbook-weekend-grid--single":"";
+ const gridClass=uniq.length===1?" logbook-weekend-grid--single":uniq.length===2?" logbook-weekend-grid--double":"";
  const hint=uniq.length>1?'<p class="logbook-block-swipe-hint">Weitere Wettbewerbe: Karten seitlich wischen</p>':"";
  return {html:`<div class="logbook-weekend-title">${title}</div><div class="logbook-weekend-grid${gridClass}" aria-label="Wettbewerbsrueckblicke">${cards}</div>${hint}`,isWeekend:activeBlock.isWeekend};
 }

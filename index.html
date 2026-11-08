@@ -5717,7 +5717,7 @@
 
   </style>
   <link rel="stylesheet" href="./highscore.css?v=4.0.1">
-  <link rel="stylesheet" href="./logbuch.css?v=4.9.2-HF12-HF122-FINAL">
+  <link rel="stylesheet" href="./logbuch.css?v=2026-11-08-dynamic-weekend">
   <link rel="stylesheet" href="./accessibility-v33.css">
   <style id="welcome-cleanup-v434">
     /* Version 4.4.14: Startzentrale vollständig deckend halten und alle alten Dekore abschalten.
@@ -6594,6 +6594,46 @@
       });
     }
 
+    // Startseite: Terminfenster um 00:01 Uhr Europe/Berlin und bei Tab-Rueckkehr
+    // ohne vollstaendigen Seiten-Reload ueber die vorhandene Refresh-Warteschlange.
+    const scheduleBerlinDay = new Intl.DateTimeFormat("sv-SE", {
+      timeZone: "Europe/Berlin", year: "numeric", month: "2-digit", day: "2-digit"
+    });
+    const scheduleBerlinClock = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Europe/Berlin", hour: "2-digit", minute: "2-digit", hourCycle: "h23"
+    });
+    const currentBerlinDay = () => scheduleBerlinDay.format(new Date());
+    let lastScheduleRefreshDay = currentBerlinDay();
+    let lastScheduleRefreshAt = Date.now();
+
+    function refreshScheduleAtDayChange() {
+      const today = currentBerlinDay();
+      if (today === lastScheduleRefreshDay || scheduleBerlinClock.format(new Date()) < "00:01") return;
+      lastScheduleRefreshDay = today;
+      lastScheduleRefreshAt = Date.now();
+      requestMatchdayRefresh();
+    }
+
+    function refreshScheduleOnReturn() {
+      refreshScheduleAtDayChange();
+      // focus und visibilitychange koennen gleichzeitig eintreffen.
+      if (Date.now() - lastScheduleRefreshAt < 15000) return;
+      lastScheduleRefreshDay = currentBerlinDay();
+      lastScheduleRefreshAt = Date.now();
+      requestMatchdayRefresh();
+    }
+
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) refreshScheduleOnReturn();
+    });
+    window.addEventListener("focus", refreshScheduleOnReturn);
+    window.addEventListener("pageshow", event => {
+      if (event.persisted) refreshScheduleOnReturn();
+    });
+    window.setInterval(() => {
+      if (!document.hidden) refreshScheduleAtDayChange();
+    }, 30000);
+
     function synchronizeMatchdayWithCountdown(nextEvent) {
       const nextKey = nextEvent
         ? `${nextEvent.id || "event"}::${nextEvent._start.getTime()}`
@@ -7251,7 +7291,7 @@
   </script>
 
   <script src="./highscore-teaser.js?v=4.9.2-HF9" defer></script>
-  <script src="./logbuch.js?v=4.9.2-HF12-HF122-FINAL" defer></script>
+  <script src="./logbuch.js?v=2026-11-08-dynamic-weekend" defer></script>
   <script src="performance-v247.js" defer></script>
   <script src="./accessibility-v33.js" defer></script>
   <script>
