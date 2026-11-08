@@ -4678,12 +4678,12 @@
           "datumAnzeige": "08.11.2026",
           "anstoss": "17:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 2,
+          "auswaertstore": 0,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-          "quelleStand": "2026-09-10",
+          "quelleStand": "2026-11-08",
           "heimTeamId": "freiburg",
           "auswaertsTeamId": "union-berlin"
         },
@@ -4795,12 +4795,12 @@
           "datumAnzeige": "08.11.2026",
           "anstoss": "15:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 1,
+          "auswaertstore": 2,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-          "quelleStand": "2026-09-10",
+          "quelleStand": "2026-11-08",
           "heimTeamId": "koeln",
           "auswaertsTeamId": "leverkusen"
         },
@@ -15589,6 +15589,6 @@
       ]
     }
   ],
-  "datenVersion": 98,
-  "aktualisiert": "2026-11-07"
+  "datenVersion": 99,
+  "aktualisiert": "2026-11-08"
 }

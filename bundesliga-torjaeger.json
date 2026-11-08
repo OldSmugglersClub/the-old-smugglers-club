@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 46,
-  "aktualisiert": "2026-11-07",
+  "datenVersion": 47,
+  "aktualisiert": "2026-11-08",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
@@ -12,7 +12,7 @@
     },
     {
       "name": "P. Schick",
-      "tore": 7
+      "tore": 8
     },
     {
       "name": "M. Olise",
@@ -27,6 +27,10 @@
       "tore": 6
     },
     {
+      "name": "Y. Suzuki",
+      "tore": 5
+    },
+    {
       "name": "M. Gregoritsch",
       "tore": 5
     },
@@ -39,11 +43,11 @@
       "tore": 5
     },
     {
-      "name": "Romulo",
+      "name": "C. Nkunku",
       "tore": 5
     },
     {
-      "name": "C. Nkunku",
+      "name": "Romulo",
       "tore": 5
     },
     {
@@ -56,10 +60,6 @@
     },
     {
       "name": "I. Matanovic",
-      "tore": 4
-    },
-    {
-      "name": "Y. Suzuki",
       "tore": 4
     },
     {
@@ -80,6 +80,10 @@
     },
     {
       "name": "D. Upamecano",
+      "tore": 3
+    },
+    {
+      "name": "S. El Mala",
       "tore": 3
     },
     {
@@ -139,10 +143,6 @@
       "tore": 2
     },
     {
-      "name": "S. El Mala",
-      "tore": 2
-    },
-    {
       "name": "L. Petkov",
       "tore": 2
     },
@@ -155,11 +155,11 @@
       "tore": 2
     },
     {
-      "name": "Rodrigo Ribeiro",
+      "name": "A. Kade",
       "tore": 2
     },
     {
-      "name": "A. Kade",
+      "name": "Rodrigo Ribeiro",
       "tore": 2
     },
     {
@@ -167,11 +167,11 @@
       "tore": 2
     },
     {
-      "name": "F. Keidel",
+      "name": "H. Bolin",
       "tore": 2
     },
     {
-      "name": "H. Bolin",
+      "name": "F. Keidel",
       "tore": 2
     },
     {
@@ -327,19 +327,19 @@
       "tore": 1
     },
     {
-      "name": "R. Königsdörffer",
-      "tore": 1
-    },
-    {
       "name": "P. Mwene",
       "tore": 1
     },
     {
-      "name": "A. Ibrahimovic",
+      "name": "R. Königsdörffer",
       "tore": 1
     },
     {
       "name": "Alexis Claude-Maurice",
+      "tore": 1
+    },
+    {
+      "name": "A. Ibrahimovic",
       "tore": 1
     },
     {
@@ -383,11 +383,11 @@
       "tore": 1
     },
     {
-      "name": "R. Ache",
+      "name": "N. Capaldo",
       "tore": 1
     },
     {
-      "name": "N. Capaldo",
+      "name": "R. Ache",
       "tore": 1
     },
     {
@@ -419,11 +419,11 @@
       "tore": 1
     },
     {
-      "name": "M. Diaby",
+      "name": "R. Andrich",
       "tore": 1
     },
     {
-      "name": "R. Andrich",
+      "name": "M. Diaby",
       "tore": 1
     },
     {
@@ -447,19 +447,11 @@
       "tore": 1
     },
     {
-      "name": "K. Karaman",
-      "tore": 1
-    },
-    {
       "name": "K. Goto",
       "tore": 1
     },
     {
-      "name": "Maximilian Rohr",
-      "tore": 1
-    },
-    {
-      "name": "Frederik Schmahl",
+      "name": "K. Karaman",
       "tore": 1
     },
     {
@@ -468,6 +460,14 @@
     },
     {
       "name": "Lasse Günther",
+      "tore": 1
+    },
+    {
+      "name": "Maximilian Rohr",
+      "tore": 1
+    },
+    {
+      "name": "Frederik Schmahl",
       "tore": 1
     },
     {
@@ -535,11 +535,11 @@
       "tore": 1
     },
     {
-      "name": "D. Raum",
+      "name": "Uchenna Ogundu",
       "tore": 1
     },
     {
-      "name": "Uchenna Ogundu",
+      "name": "D. Raum",
       "tore": 1
     },
     {
@@ -547,11 +547,15 @@
       "tore": 1
     },
     {
+      "name": "R. Obermair",
+      "tore": 1
+    },
+    {
       "name": "M. Pieringer",
       "tore": 1
     },
     {
-      "name": "R. Obermair",
+      "name": "A. Garcia",
       "tore": 1
     }
   ]
