@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 48,
-  "aktualisiert": "2026-11-08",
+  "datenVersion": 49,
+  "aktualisiert": "2026-11-11",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
@@ -43,11 +43,11 @@
       "tore": 5
     },
     {
-      "name": "C. Nkunku",
+      "name": "Romulo",
       "tore": 5
     },
     {
-      "name": "Romulo",
+      "name": "C. Nkunku",
       "tore": 5
     },
     {
@@ -147,11 +147,11 @@
       "tore": 2
     },
     {
-      "name": "Cole Campbell",
+      "name": "C. Kofane",
       "tore": 2
     },
     {
-      "name": "C. Kofane",
+      "name": "Cole Campbell",
       "tore": 2
     },
     {
@@ -195,11 +195,11 @@
       "tore": 2
     },
     {
-      "name": "A. Hložek",
+      "name": "M. Mittelstädt",
       "tore": 2
     },
     {
-      "name": "M. Mittelstädt",
+      "name": "A. Hložek",
       "tore": 2
     },
     {
@@ -235,11 +235,11 @@
       "tore": 2
     },
     {
-      "name": "S. Tigges",
+      "name": "S. Marino",
       "tore": 2
     },
     {
-      "name": "S. Marino",
+      "name": "S. Tigges",
       "tore": 2
     },
     {
@@ -247,11 +247,11 @@
       "tore": 2
     },
     {
-      "name": "T. Moffi",
+      "name": "B. Conté",
       "tore": 2
     },
     {
-      "name": "B. Conté",
+      "name": "T. Moffi",
       "tore": 2
     },
     {
@@ -343,15 +343,15 @@
       "tore": 1
     },
     {
-      "name": "R. Gosens",
-      "tore": 1
-    },
-    {
       "name": "A. Aouchiche",
       "tore": 1
     },
     {
       "name": "M. Wöber",
+      "tore": 1
+    },
+    {
+      "name": "R. Gosens",
       "tore": 1
     },
     {
@@ -367,15 +367,11 @@
       "tore": 1
     },
     {
-      "name": "Danny da Costa",
-      "tore": 1
-    },
-    {
       "name": "F. Neuhaus",
       "tore": 1
     },
     {
-      "name": "Isac Lidberg",
+      "name": "Danny da Costa",
       "tore": 1
     },
     {
@@ -383,7 +379,7 @@
       "tore": 1
     },
     {
-      "name": "R. Ache",
+      "name": "Isac Lidberg",
       "tore": 1
     },
     {
@@ -391,11 +387,15 @@
       "tore": 1
     },
     {
-      "name": "Calvin Brackelmann",
+      "name": "R. Ache",
       "tore": 1
     },
     {
       "name": "M. Weiser",
+      "tore": 1
+    },
+    {
+      "name": "Calvin Brackelmann",
       "tore": 1
     },
     {
@@ -407,15 +407,19 @@
       "tore": 1
     },
     {
-      "name": "Daniel Svensson",
-      "tore": 1
-    },
-    {
       "name": "N. Schlotterbeck",
       "tore": 1
     },
     {
+      "name": "Daniel Svensson",
+      "tore": 1
+    },
+    {
       "name": "N. Brown",
+      "tore": 1
+    },
+    {
+      "name": "J. Quansah",
       "tore": 1
     },
     {
@@ -427,15 +431,7 @@
       "tore": 1
     },
     {
-      "name": "J. Quansah",
-      "tore": 1
-    },
-    {
       "name": "Livan Burcu",
-      "tore": 1
-    },
-    {
-      "name": "C. Führich",
       "tore": 1
     },
     {
@@ -443,11 +439,11 @@
       "tore": 1
     },
     {
-      "name": "Í. Jóhannesson",
+      "name": "C. Führich",
       "tore": 1
     },
     {
-      "name": "K. Goto",
+      "name": "Í. Jóhannesson",
       "tore": 1
     },
     {
@@ -455,11 +451,11 @@
       "tore": 1
     },
     {
-      "name": "Mert Kömür",
+      "name": "K. Goto",
       "tore": 1
     },
     {
-      "name": "Frederik Schmahl",
+      "name": "Maximilian Rohr",
       "tore": 1
     },
     {
@@ -467,7 +463,11 @@
       "tore": 1
     },
     {
-      "name": "Maximilian Rohr",
+      "name": "Frederik Schmahl",
+      "tore": 1
+    },
+    {
+      "name": "Mert Kömür",
       "tore": 1
     },
     {
@@ -487,11 +487,11 @@
       "tore": 1
     },
     {
-      "name": "M. Moerstedt",
+      "name": "A. Kramaric",
       "tore": 1
     },
     {
-      "name": "A. Kramaric",
+      "name": "M. Moerstedt",
       "tore": 1
     },
     {
@@ -523,11 +523,11 @@
       "tore": 1
     },
     {
-      "name": "Shafiq Nandja",
+      "name": "A. Grønbæk",
       "tore": 1
     },
     {
-      "name": "A. Grønbæk",
+      "name": "Shafiq Nandja",
       "tore": 1
     },
     {
