@@ -26,7 +26,7 @@ concurrency:
 jobs:
   termine:
     if: github.repository == 'OldSmugglersClub/the-old-smugglers-club' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
       - name: Ausschliesslich LIVE/main auschecken
