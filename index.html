@@ -5195,6 +5195,37 @@
       overflow-wrap: normal;
       word-break: normal;
     }
+    /* Hoher Schmugglerrat: Name und Punkte, bei engen Kacheln ohne Abschneiden. */
+    .welcome-status-item .welcome-leader-line {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      column-gap: .85rem;
+      row-gap: .22rem;
+      min-width: 0;
+      max-width: 100%;
+      white-space: normal;
+    }
+    .welcome-status-item #welcome-champion {
+      flex: 0 1 auto;
+      min-width: min(100%, 12ch);
+      max-width: 100%;
+      white-space: normal;
+      overflow: visible;
+      text-overflow: clip;
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+    .welcome-status-item .welcome-leader-points {
+      flex: 0 0 auto;
+      max-width: 100%;
+      white-space: nowrap;
+      margin-top: 0;
+      color: #d3b582;
+      font-size: clamp(.58rem, .82vw, .70rem);
+      line-height: 1.2;
+      font-variant-numeric: tabular-nums;
+    }
 
     /* Website 4.7.0-RC8.1-HF3 – Missionsblock als geschlossene Einheit zentriert */
     .welcome-status-item--mission {
@@ -6029,7 +6060,7 @@
             </div>
             <div class="welcome-status-item">
               <svg aria-hidden="true"><use href="#icon-trophy"></use></svg>
-              <span><small>Aktueller Champion</small><strong id="welcome-champion">Noch offen</strong></span>
+              <span><small>Platz 1 Gesamteinzelwertung</small><span class="welcome-leader-line"><strong id="welcome-champion">Wird geladen</strong><small id="welcome-leader-points" class="welcome-leader-points">Punktestand wird geladen</small></span></span>
             </div>
           </div>
 
@@ -7109,12 +7140,45 @@
       }
     }
 
+    // Der Hohe Schmugglerrat zeigt den aktuellen Fuehrenden der offiziellen
+    // Highscore-Gesamteinzelwertung. Der historische Saisonchampion bleibt
+    // ausschliesslich im Ehrenlogbuch / Hall of Fame erhalten.
+    async function loadCurrentOverallLeader() {
+      const label = document.getElementById("welcome-champion");
+      const pointsLabel = document.getElementById("welcome-leader-points");
+      if (!label || !pointsLabel) return;
+      try {
+        const data = await window.OSCHighscoreDataAdapter.loadHighscore();
+        const individuals = data?.overall?.individual;
+        if (!Array.isArray(individuals) || !individuals.length) {
+          label.textContent = "Noch offen";
+          pointsLabel.textContent = "Noch keine Gesamtwertung";
+          return;
+        }
+        const leaders = individuals.filter(entry => Number(entry?.rank) === 1 &&
+          typeof entry?.name === "string" && entry.name.trim());
+        label.textContent = leaders.length
+          ? leaders.map(entry => entry.name.trim()).join(" · ")
+          : "Noch offen";
+        const points = leaders.length ? leaders[0].totalPoints : null;
+        const validPoints = points !== null && points !== undefined &&
+          points !== "" && Number.isFinite(Number(points));
+        pointsLabel.textContent = validPoints
+          ? `${Number(points).toLocaleString("de-DE")} Punkte`
+          : "Punktestand nicht verfügbar";
+        label.title = leaders.length ? "Platz 1 Gesamteinzelwertung" : "Keine bestätigte Führung verfügbar";
+      } catch (error) {
+        label.textContent = "Nicht verfügbar";
+        pointsLabel.textContent = "Punktestand nicht verfügbar";
+        console.warn("Führende Gesamteinzelwertung konnte nicht geladen werden:", error);
+      }
+    }
+
     async function loadClubData() {
       try {
         const data = await window.OSCHighscoreDataAdapter.loadHallOfFame();
 
         setText("champion-name", data.aktuellerChampion?.name);
-        setText("welcome-champion", data.aktuellerChampion?.name || "Noch offen");
         const championSeason = formatChampionSeason(data.aktuellerChampion?.saison || data.aktuellerChampion?.jahr);
         if (championSeason) setText("champion-trophy-season", `SAISON ${championSeason}`);
         setText(
@@ -7249,6 +7313,7 @@
 
     loadSiteData();
     loadClubData();
+    loadCurrentOverallLeader();
     loadMatchdayData();
 
     document.getElementById("year").textContent = new Date().getFullYear();
