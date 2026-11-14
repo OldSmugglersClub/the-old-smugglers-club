@@ -5865,6 +5865,203 @@
   <script src="./highscore-data-adapter.js"></script>
   <link rel="stylesheet" href="./website-mitteilung.css?v=4.9.2-HF12-HF40">
   <link rel="stylesheet" href="./site-navigation.css?v=4.9.2-HF12-HF85">
+<style id="tosmc-unified-command-v2">
+  /* vNext: repariertes Hauptquartier, keine feste Bildkachel-Geometrie. */
+  body main .hero-grid.hero-grid--unified {
+    display:block !important;grid-template-columns:none !important;width:100%;margin-bottom:22px;
+  }
+  body main .hero-grid--unified > .smuggler-command-unified {
+    aspect-ratio:auto !important;height:auto !important;min-height:0 !important;
+    width:100% !important;display:block !important;padding:0 !important;box-sizing:border-box;
+    position:relative;isolation:isolate;overflow:hidden;
+    border:1px solid var(--line) !important;border-radius:var(--radius) !important;
+    background:radial-gradient(ellipse at 88% 12%,rgba(180,123,39,.055),transparent 31%),
+      linear-gradient(105deg,rgba(22,14,8,.985) 0 68%,rgba(9,6,4,.995) 100%) !important;
+    box-shadow:inset 0 1px rgba(245,210,129,.16),var(--shadow) !important;
+  }
+  body main .hero-grid--unified > .smuggler-command-unified::before {
+    content:none !important;display:none !important;
+  }
+  body main .hero-grid--unified > .smuggler-command-unified::after {content:none !important;display:none !important;}
+  .smuggler-combined-inner {position:relative;z-index:1;display:flex;flex-direction:column;gap:0;
+    box-sizing:border-box;width:100%;min-width:0;padding:clamp(24px,3vw,39px) clamp(18px,4vw,52px) 27px;
+  }
+  .smuggler-masthead {text-align:center;min-width:0;padding:0 5px 18px;}
+  .smuggler-masthead .welcome-command-copy {max-width:none !important;}
+  /* Variante A: Saison und Hauptquartier als eine kompakte Kopfzeile. */
+  .smuggler-masthead .welcome-topline {
+    display:inline-flex;align-items:center;justify-content:center;gap:.48rem;
+    max-width:100%;min-width:0;margin:0 auto 7px;padding:6px 12px;
+    border:1px solid rgba(215,169,76,.62);border-radius:999px;
+    background:rgba(39,24,10,.72);color:#efcf7b;
+    font-size:clamp(.62rem,1vw,.76rem);font-weight:800;
+    letter-spacing:.055em;line-height:1.25;text-transform:uppercase;
+  }
+  .smuggler-masthead .welcome-topline .welcome-season-badge {
+    display:inline !important;min-height:0;margin:0;padding:0;border:0;border-radius:0;
+    background:transparent;box-shadow:none;color:inherit;font:inherit;
+    letter-spacing:inherit;white-space:nowrap;
+  }
+  .smuggler-masthead .welcome-topline .welcome-headquarters-label {
+    display:inline !important;width:auto;margin:0;color:inherit !important;
+    text-shadow:none;font:inherit;letter-spacing:inherit;white-space:nowrap;
+  }
+  .smuggler-masthead #welcome-command-title {
+    margin:4px auto 0;color:#ffda86 !important;font:700 clamp(2.0rem,5vw,4rem)/1.08 Georgia,serif;
+    letter-spacing:-.024em;text-shadow:0 3px 5px #000,0 0 10px #361901;
+  }
+  .smuggler-masthead .welcome-divider {margin:5px auto 8px;max-width:510px;}
+  .smuggler-masthead .welcome-intro {
+    max-width:970px;margin:4px auto 0;color:#ffebc3 !important;
+    font-size:clamp(.88rem,1.35vw,1.08rem);line-height:1.45;text-shadow:0 2px 4px #000;
+  }
+  .smuggler-masthead .welcome-motto {color:#f3c971 !important;margin-top:4px;text-shadow:0 2px 4px #000;}
+  /* Hauptquartier: kurze Orientierung statt zweier redundanter Erklaersaetze. */
+  .smuggler-masthead .welcome-intro--compact {
+    display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+    gap:5px clamp(10px,1.8vw,22px);max-width:100%;
+    margin:10px auto 0;padding:0 8px;
+    font-size:clamp(.86rem,1.28vw,1.05rem);line-height:1.5;
+  }
+  .smuggler-masthead .welcome-intro--compact > span {display:inline-block;white-space:nowrap;}
+  .smuggler-masthead .welcome-intro--compact > span:nth-child(2) {
+    color:#f3c971;font-weight:700;
+  }
+  @media(max-width:430px) {
+    .smuggler-masthead .welcome-intro--compact {gap:3px 10px;font-size:.84rem;padding:0;}
+  }
+
+  .smuggler-event-area.countdown-panel {
+    position:relative;isolation:auto;display:block !important;flex:none !important;
+    height:auto !important;min-height:0 !important;width:100% !important;
+    margin:0 !important;padding:0 !important;border:none !important;box-shadow:none !important;
+    background:none !important;overflow:visible !important;
+  }
+  .smuggler-event-area.countdown-panel::before,
+  .smuggler-event-area.countdown-panel::after {content:none !important;display:none !important;}
+  .smuggler-mission-parchment {box-sizing:border-box;position:relative;z-index:2;width:min(88%,980px);margin:0 auto 16px;}
+  .smuggler-event-area .pirate-event-scroll {
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    box-sizing:border-box;width:100%;min-width:0;min-height:104px;margin:0 !important;
+    padding:13px clamp(18px,3vw,31px) 16px;border:2px solid #aa6b2b;border-radius:13px;
+    background:linear-gradient(90deg,#b8762b 0%,#e7b46a 13%,#f8d791 50%,#e9b96c 87%,#b87530 100%) !important;
+    box-shadow:inset 0 0 16px #7240125c,0 4px 12px #0009;
+  }
+  .smuggler-event-area .pirate-event-scroll-label {
+    font:800 clamp(1rem,1.7vw,1.35rem)/1.25 Georgia,serif;color:#4b2608 !important;text-shadow:none !important;
+  }
+  .smuggler-event-area #countdown-mission {
+    font:900 clamp(1.5rem,3.65vw,2.95rem)/1.17 Georgia,serif !important;
+    color:#261305 !important;min-width:0;max-width:100%;overflow-wrap:anywhere;hyphens:none;text-shadow:none !important;
+  }
+  .smuggler-clock-area {
+    display:grid;grid-template-columns:minmax(0,17%) minmax(0,1fr) minmax(0,17%);
+    gap:clamp(8px,1.5vw,19px);align-items:stretch;min-width:0;
+  }
+  .smuggler-hourglass,.smuggler-compass {
+    display:block !important;min-width:0;min-height:0 !important;align-self:stretch;
+    background-repeat:no-repeat;background-position:center center;background-size:contain;
+  }
+  .smuggler-hourglass {
+    width:100% !important;height:auto !important;margin:0 !important;
+    border:0 !important;position:static !important;background-image:url("./assets/next-event/sandglass.webp");
+  }
+  .smuggler-hourglass::before,.smuggler-hourglass::after {content:none !important;display:none !important;}
+  .smuggler-compass {background-image:url("./assets/next-event/compass.webp");}
+  .smuggler-clock-center {min-width:0;display:flex;flex-direction:column;justify-content:center;padding:0;}
+  .smuggler-event-area .countdown {
+    display:grid !important;grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+    width:100% !important;margin:0 0 16px !important;padding:0 !important;
+    gap:clamp(5px,1vw,13px) !important;align-items:stretch;
+  }
+  .smuggler-event-area .flip-unit {display:block;min-width:0;max-width:100%;}
+  .smuggler-event-area .flip-card {
+    width:100%;min-width:0;max-width:100%;height:100% !important;min-height:138px !important;
+    display:flex !important;flex-direction:column;align-items:center;justify-content:center;
+    box-sizing:border-box;padding:13px 3px 11px !important;gap:7px !important;
+    border:3px double #d7a34b !important;border-radius:12px !important;
+    background:linear-gradient(165deg,#30190a,#120903) !important;
+    box-shadow:inset 0 0 0 2px #68421f,0 5px 10px #0009 !important;
+    transform:none !important;animation:none !important;
+  }
+  .smuggler-event-area .flip-card::before,.smuggler-event-area .flip-card::after {content:none !important;display:none !important;}
+  .smuggler-event-area .flip-value {
+    color:#ffd681 !important;font:900 clamp(1.4rem,4vw,4rem)/1 Georgia,serif !important;
+    letter-spacing:-.035em !important;white-space:nowrap;font-variant-numeric:tabular-nums;
+    text-shadow:0 2px 4px #0009 !important;
+  }
+  .smuggler-event-area .flip-label {
+    display:block;margin:0 !important;font:800 clamp(.55rem,1vw,.9rem)/1.15 Georgia,serif !important;
+    color:#ffdda0 !important;letter-spacing:0 !important;white-space:nowrap;
+  }
+  .smuggler-event-bar {min-width:0;}
+  .smuggler-event-area .countdown-message {
+    display:block;width:100%;box-sizing:border-box;margin:0 !important;padding:11px 12px 13px;
+    background:linear-gradient(180deg,rgba(62,30,10,.96),rgba(19,9,4,.97)) !important;
+    border:2px solid #c68a31;border-radius:11px;box-shadow:inset 0 0 0 1px #ffcc6650,0 5px 13px #0008;
+    text-align:center;
+  }
+  .smuggler-event-area .countdown-message strong,.smuggler-event-area .countdown-message span {
+    display:block;margin:2px 0;color:#ffdda0 !important;
+    font-size:clamp(.91rem,1.6vw,1.18rem) !important;line-height:1.34;
+    overflow-wrap:anywhere;text-shadow:0 1px 3px #000;
+  }
+  .smuggler-countdown-state {display:none !important;}
+  .smuggler-command-bottom {display:flex;flex-direction:column;gap:18px;
+    width:100%;min-width:0;padding:18px 0 0;margin-top:18px;border-top:1px solid #bf843d66;}
+  .smuggler-command-bottom .welcome-status {
+    display:grid !important;grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    width:100% !important;max-width:100% !important;gap:clamp(7px,1.25vw,17px);
+    position:static !important;transform:none !important;opacity:1 !important;
+  }
+  .smuggler-command-bottom .welcome-status-item {
+    box-sizing:border-box;min-height:76px;min-width:0;padding:11px clamp(10px,1.3vw,18px);
+    display:flex;align-items:center;gap:clamp(8px,1vw,15px);
+    border:2px solid #ab762e;border-radius:9px;
+    background:linear-gradient(180deg,#3d230ff0,#160a04f3) !important;
+    box-shadow:inset 0 0 0 1px #e9a94b24;
+  }
+  .smuggler-command-bottom .welcome-status-item svg {width:clamp(27px,3.8vw,48px);height:clamp(27px,3.8vw,48px);flex:0 0 auto;}
+  .smuggler-command-bottom .welcome-status-item > span {min-width:0;max-width:100%;}
+  .smuggler-command-bottom .welcome-status-item small {
+    color:#e8c587 !important;font-size:clamp(.68rem,1.13vw,.89rem) !important;
+    line-height:1.25;overflow-wrap:anywhere;
+  }
+  .smuggler-command-bottom .welcome-status-item strong {
+    color:#ffde92 !important;font-size:clamp(.88rem,1.5vw,1.23rem) !important;
+    line-height:1.22;overflow-wrap:anywhere;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader > span {display:flex;flex-wrap:wrap;gap:3px 12px;align-items:baseline;}
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-label {flex:0 0 100%;}
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-points {
+    flex:0 0 auto;margin:0 !important;color:#ffdda0 !important;font-size:clamp(.75rem,1.17vw,.99rem) !important;
+    white-space:nowrap;
+  }
+  .smuggler-command-bottom .welcome-command-actions {
+    display:grid !important;gap:8px;width:100% !important;max-width:100% !important;
+    margin:0 !important;padding:0 !important;
+  }
+  .smuggler-command-bottom .welcome-command-button {
+    box-sizing:border-box;width:100% !important;min-height:54px !important;margin:0 !important;
+    font-size:clamp(.94rem,1.45vw,1.2rem);border-radius:10px;
+  }
+  .smuggler-command-bottom .welcome-secondary-nav {display:flex;justify-content:center;flex-wrap:wrap;}
+  @media(max-width:850px) {
+    .smuggler-mission-parchment {width:100%;}
+    .smuggler-clock-area {grid-template-columns:minmax(0,1fr);}
+    .smuggler-hourglass,.smuggler-compass {display:none !important;}
+    .smuggler-command-bottom .welcome-status {grid-template-columns:1fr !important;}
+  }
+  @media(max-width:440px) {
+    .smuggler-combined-inner {padding:23px 15px 21px;}
+    .smuggler-masthead #welcome-command-title {font-size:clamp(1.8rem,8vw,2.6rem);}
+    .smuggler-event-area .countdown {gap:5px !important;}
+    .smuggler-event-area .flip-card {min-height:87px !important;padding:9px 1px 8px !important;gap:6px !important;border-width:2px !important;}
+    .smuggler-event-area .flip-value {font-size:clamp(1.27rem,7vw,2.2rem) !important;}
+    .smuggler-event-area .flip-label {font-size:clamp(.43rem,2.05vw,.61rem) !important;}
+    .smuggler-event-area .pirate-event-scroll {min-height:90px;}
+  }
+</style>
 </head>
 
 <body>
@@ -6015,107 +6212,93 @@
   </div>
 
   <main>
-    <section class="hero-grid">
-      <article class="panel welcome-panel">
-        <div class="welcome-command-center" aria-labelledby="welcome-command-title">
-          <div class="welcome-command-copy">
-            <span class="welcome-season-badge" id="welcome-season-badge">Saison noch offen</span>
-            <span class="welcome-headquarters-label">Hauptquartier des Old Smugglers Club</span>
-            <h1 id="welcome-command-title">Der Hohe Schmugglerrat</h1>
-            <div class="welcome-divider" aria-hidden="true"><span></span></div>
-            <p class="welcome-intro">
-              Hier werden Kurse gesetzt, Missionen vorbereitet und alle Wettbewerbe
-              des Old Smugglers Club koordiniert.
-              <span class="welcome-motto">Alle Wege beginnen im Hauptquartier.</span>
-            </p>
+    <section class="hero-grid hero-grid--unified">
+      <article class="panel welcome-panel smuggler-command-unified" aria-labelledby="welcome-command-title">
+        <div class="smuggler-combined-inner">
+          <div class="smuggler-masthead"><div class="welcome-command-copy">
+<div class="welcome-topline" aria-label="Saison und Hauptquartier">
+  <span class="welcome-season-badge" id="welcome-season-badge">Saison noch offen</span>
+  <span class="welcome-headquarters-label">· HAUPTQUARTIER</span>
+</div>
+<h1 id="welcome-command-title">Der Hohe Schmugglerrat</h1>
+<div aria-hidden="true" class="welcome-divider"><span></span></div>
+<p class="welcome-intro welcome-intro--compact"><span>Alle Wettbewerbe.</span><span>Ein Kurs.</span><span>Deine Mission.</span></p>
+</div></div>
+          <div class="countdown-panel smuggler-event-area">
+            <div class="smuggler-mission-parchment"><div class="pirate-event-scroll">
+<span class="pirate-event-scroll-label">Nächste Mission</span>
+<strong id="countdown-mission">Mission wird geladen</strong>
+</div></div>
+            <div class="smuggler-clock-area">
+              <div class="smuggler-hourglass" aria-hidden="true"></div>
+              <div class="smuggler-clock-center"><div aria-label="Verbleibende Zeit bis zur nächsten Mission" aria-live="off" class="countdown">
+<div class="flip-unit">
+<div class="flip-card" data-unit="days">
+<span aria-hidden="true" class="chronometer-rivet rivet-left"></span>
+<span aria-hidden="true" class="chronometer-rivet rivet-right"></span>
+<strong class="flip-value" id="days">--</strong>
+<span class="flip-label">Tage</span>
+</div>
+</div>
+<div class="flip-unit">
+<div class="flip-card" data-unit="hours">
+<span aria-hidden="true" class="chronometer-rivet rivet-left"></span>
+<span aria-hidden="true" class="chronometer-rivet rivet-right"></span>
+<strong class="flip-value" id="hours">--</strong>
+<span class="flip-label">Stunden</span>
+</div>
+</div>
+<div class="flip-unit">
+<div class="flip-card" data-unit="minutes">
+<span aria-hidden="true" class="chronometer-rivet rivet-left"></span>
+<span aria-hidden="true" class="chronometer-rivet rivet-right"></span>
+<strong class="flip-value" id="minutes">--</strong>
+<span class="flip-label">Minuten</span>
+</div>
+</div>
+<div class="flip-unit">
+<div class="flip-card" data-unit="seconds">
+<span aria-hidden="true" class="chronometer-rivet rivet-left"></span>
+<span aria-hidden="true" class="chronometer-rivet rivet-right"></span>
+<strong class="flip-value" id="seconds">--</strong>
+<span class="flip-label">Sekunden</span>
+</div>
+</div>
+</div>
+                <div class="smuggler-event-bar" aria-live="polite"><div class="countdown-message" id="countdown-note">
+<strong>Der Zähler läuft bis zum nächsten bestätigten Event.</strong>
+<span>Termin und Begegnung werden aus dem zentralen Spielbetrieb geladen.</span>
+</div></div>
+              </div>
+              <div class="smuggler-compass" aria-hidden="true"></div>
+            </div>
+            <div class="smuggler-countdown-state" aria-hidden="true"><div class="countdown-plaque" id="countdown-plaque">
+          Nächstes Event
+        </div></div>
           </div>
-
-          <div class="welcome-status" aria-label="Aktueller Saisonstatus">
-            <div class="welcome-status-item">
-              <svg aria-hidden="true"><use href="#icon-map"></use></svg>
-              <span><small>Aktuelle Saison</small><strong id="welcome-season">Noch offen</strong></span>
-            </div>
-            <div class="welcome-status-item welcome-status-item--mission">
-              <svg aria-hidden="true"><use href="#icon-anchor"></use></svg>
-              <span><small>Nächste Mission</small><strong id="welcome-next-mission"><span class="welcome-mission-name">Noch kein Termin</span></strong></span>
-            </div>
-            <div class="welcome-status-item">
-              <svg aria-hidden="true"><use href="#icon-trophy"></use></svg>
-              <span><small>Platz 1 Gesamteinzelwertung</small><span class="welcome-leader-line"><strong id="welcome-champion">Wird geladen</strong><small id="welcome-leader-points" class="welcome-leader-points">Punktestand wird geladen</small></span></span>
-            </div>
-          </div>
-
-          <div class="welcome-command-actions">
-            <a class="welcome-command-button" id="welcome-kicktipp-link"
-               href="#">
-              <svg aria-hidden="true"><use href="#icon-skull"></use></svg>
-              <span>Zur Tipprunde</span>
-            </a>
-            <nav class="welcome-secondary-nav" aria-label="Schnellzugriffe der Startzentrale">
-              <a href="./highscore.html">Highscore</a>
-              <span class="nav-separator" aria-hidden="true">·</span>
-              <a href="./logbuch.html">Logbuch</a>
-              <span class="nav-separator" aria-hidden="true">·</span>
-              <a href="#hall-of-fame">Hall of Fame</a>
-              <span class="nav-separator" aria-hidden="true">·</span>
-              <a href="#wettbewerbe">Wettbewerbe</a>
-            </nav>
+          <div class="smuggler-command-bottom"><div aria-label="Aktueller Saisonstatus" class="welcome-status">
+<div class="welcome-status-item">
+<svg aria-hidden="true"><use href="#icon-map"></use></svg>
+<span><small>Aktuelle Saison</small><strong id="welcome-season">Noch offen</strong></span>
+</div>
+<div class="welcome-status-item welcome-status-item--mission">
+<svg aria-hidden="true"><use href="#icon-anchor"></use></svg>
+<span><small>Nächste Mission</small><strong id="welcome-next-mission"><span class="welcome-mission-name">Noch kein Termin</span></strong></span>
+</div>
+<div class="welcome-status-item welcome-status-item--overall-leader">
+<svg aria-hidden="true"><use href="#icon-trophy"></use></svg>
+<span><small id="welcome-leader-label">Platz 1 Gesamteinzelwertung</small><strong id="welcome-champion">Wird geladen</strong><small class="welcome-leader-points" id="welcome-leader-points"></small></span>
+</div>
+</div>
+            <div class="welcome-command-actions">
+<a class="welcome-command-button" href="#" id="welcome-kicktipp-link">
+<svg aria-hidden="true"><use href="#icon-skull"></use></svg>
+<span>Kicktipp Live Action</span>
+</a>
+</div>
           </div>
         </div>
       </article>
-
-      <aside class="panel countdown-panel">
-        <div class="countdown-plaque" id="countdown-plaque">
-          Nächstes Event
-        </div>
-
-        <div class="countdown" aria-live="polite" aria-label="Countdown bis zum Bundesliga-Start">
-          <div class="flip-unit">
-            <div class="flip-card" data-unit="days">
-              <span class="chronometer-rivet rivet-left" aria-hidden="true"></span>
-              <span class="chronometer-rivet rivet-right" aria-hidden="true"></span>
-              <strong class="flip-value" id="days">--</strong>
-              <span class="flip-label">Tage</span>
-            </div>
-          </div>
-
-          <div class="flip-unit">
-            <div class="flip-card" data-unit="hours">
-              <span class="chronometer-rivet rivet-left" aria-hidden="true"></span>
-              <span class="chronometer-rivet rivet-right" aria-hidden="true"></span>
-              <strong class="flip-value" id="hours">--</strong>
-              <span class="flip-label">Stunden</span>
-            </div>
-          </div>
-
-          <div class="flip-unit">
-            <div class="flip-card" data-unit="minutes">
-              <span class="chronometer-rivet rivet-left" aria-hidden="true"></span>
-              <span class="chronometer-rivet rivet-right" aria-hidden="true"></span>
-              <strong class="flip-value" id="minutes">--</strong>
-              <span class="flip-label">Minuten</span>
-            </div>
-          </div>
-
-          <div class="flip-unit">
-            <div class="flip-card" data-unit="seconds">
-              <span class="chronometer-rivet rivet-left" aria-hidden="true"></span>
-              <span class="chronometer-rivet rivet-right" aria-hidden="true"></span>
-              <strong class="flip-value" id="seconds">--</strong>
-              <span class="flip-label">Sekunden</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="countdown-rigging" aria-hidden="true">
-          <span class="chronometer-seal"><span></span></span>
-        </div>
-
-        <div class="countdown-message" id="countdown-note">
-          <strong>Der Zähler läuft bis zum nächsten bestätigten Event.</strong>
-          <span>Termin und Begegnung werden aus dem zentralen Spielbetrieb geladen.</span>
-        </div>
-      </aside>
     </section>
 
     <section class="section panel matchday-panel sm-schedule" id="aktueller-spieltag">
@@ -6553,15 +6736,8 @@
     function setFlipValue(id, value) {
       const element = document.getElementById(id);
       if (!element) return;
-      const card = element.closest(".flip-card");
       const formatted = String(Math.max(0, value)).padStart(2, "0");
-      if (element.textContent === formatted) return;
-      if (card) {
-        card.classList.remove("is-flipping");
-        void card.offsetWidth;
-        card.classList.add("is-flipping");
-      }
-      window.setTimeout(() => { element.textContent = formatted; }, 210);
+      if (element.textContent !== formatted) element.textContent = formatted;
     }
 
     function countdownClockNow() {
@@ -6597,7 +6773,9 @@
         return;
       }
       matchdayRefreshPending = true;
-      Promise.resolve(loadMatchdayData()).finally(() => {
+      // Operativer Tageswechsel und Tab-Rueckkehr: Termine und Gesamtfuehrung frisch laden.
+      window.OSCHighscoreDataAdapter?.clear?.();
+      Promise.allSettled([loadMatchdayData(), loadCurrentOverallLeader()]).finally(() => {
         matchdayRefreshPending = false;
         if (matchdayRefreshQueued) {
           matchdayRefreshQueued = false;
@@ -6646,6 +6824,8 @@
       if (!document.hidden) refreshScheduleAtDayChange();
     }, 30000);
 
+    window.requestMatchdayRefresh = requestMatchdayRefresh;
+
     function synchronizeMatchdayWithCountdown(nextEvent) {
       const nextKey = nextEvent
         ? `${nextEvent.id || "event"}::${nextEvent._start.getTime()}`
@@ -6663,11 +6843,10 @@
       const plaque = document.getElementById("countdown-plaque");
       const note = document.getElementById("countdown-note");
       if (plaque) plaque.textContent = plaqueText;
+      const mission = document.getElementById("countdown-mission");
+      if (mission) mission.textContent = headline;
       if (note) {
         note.replaceChildren();
-        const strong = document.createElement("strong");
-        strong.textContent = headline;
-        note.appendChild(strong);
         lines.filter(Boolean).forEach(line => {
           const span = document.createElement("span");
           span.textContent = line;
