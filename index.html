@@ -6006,6 +6006,35 @@
     font-size:clamp(.91rem,1.6vw,1.18rem) !important;line-height:1.34;
     overflow-wrap:anywhere;text-shadow:0 1px 3px #000;
   }
+  /* Hauptquartier: Originalwappen aus dem zentralen Team-Register neben der Begegnung. */
+  .smuggler-event-area .countdown-message .smuggler-match-row {
+    display:grid;grid-template-columns:minmax(0,max-content) auto minmax(0,max-content);
+    justify-content:center;align-items:center;gap:clamp(4px,.8vw,11px);
+    width:100%;min-width:0;margin:5px 0 0;
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-team {
+    display:flex;align-items:center;gap:clamp(4px,.55vw,9px);min-width:0;
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-team--home {justify-content:flex-end;}
+  .smuggler-event-area .countdown-message .smuggler-match-team--away {justify-content:flex-start;}
+  .smuggler-event-area .countdown-message .smuggler-match-name {
+    display:block;min-width:0;margin:0;font-size:clamp(.79rem,1.5vw,1.18rem) !important;
+    line-height:1.3;text-align:left;overflow-wrap:anywhere;
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-team--home .smuggler-match-name {text-align:right;}
+  .smuggler-event-area .countdown-message .smuggler-match-seal {
+    display:block;flex:0 0 clamp(26px,3.15vw,40px);width:clamp(26px,3.15vw,40px);
+    height:clamp(26px,3.15vw,40px);margin:0;line-height:1;
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-separator {
+    display:block;margin:0;font-size:clamp(.85rem,1.5vw,1.17rem);white-space:nowrap;
+  }
+  @media(max-width:440px) {
+    .smuggler-event-area .countdown-message .smuggler-match-row {gap:4px;}
+    .smuggler-event-area .countdown-message .smuggler-match-team {gap:4px;}
+    .smuggler-event-area .countdown-message .smuggler-match-seal {flex-basis:26px;width:26px;height:26px;}
+    .smuggler-event-area .countdown-message .smuggler-match-name {font-size:.79rem !important;}
+  }
   .smuggler-countdown-state {display:none !important;}
   .smuggler-command-bottom {display:flex;flex-direction:column;gap:18px;
     width:100%;min-width:0;padding:18px 0 0;margin-top:18px;border-top:1px solid #bf843d66;}
@@ -6354,21 +6383,7 @@
 
       <p class="lead is-hidden" id="sm-schedule-note"></p>
 
-      <a class="sm-next-event" id="sm-next-event" aria-label="Nächstes Ereignis">
-        <span class="sm-next-event__date" id="sm-next-date">TT.MM.JJJJ · --:--</span>
-        <span class="sm-next-event__competition" id="sm-next-competition">Wettbewerb offen</span>
-        <span class="sm-next-event__match" id="sm-next-match">
-          <span class="sm-team sm-team--home">
-            <span class="sm-team__seal" id="sm-next-home-seal" aria-hidden="true"><span>HEIM</span></span>
-            <span class="sm-team__name" id="sm-next-home-name">Heimteam</span>
-          </span>
-          <span class="sm-next-event__separator" id="sm-next-separator">–</span>
-          <span class="sm-team sm-team--away">
-            <span class="sm-team__name" id="sm-next-away-name">Auswärtsteam</span>
-            <span class="sm-team__seal" id="sm-next-away-seal" aria-hidden="true"><span>GAST</span></span>
-          </span>
-        </span>
-      </a>
+
 
       <div class="sm-event-list" id="sm-event-list" tabindex="0" aria-label="Kommende Tippereignisse"></div>
 
@@ -6800,6 +6815,7 @@
     }
 
     function configureEventCountdown(events, now, locale = "de-DE") {
+      countdownInfoRenderedKey = null;
       countdownRuntime = {
         events: [...events].sort((a, b) => a._start - b._start),
         baseNow: now.getTime(),
@@ -6881,22 +6897,55 @@
       requestMatchdayRefresh();
     }
 
-    function setCountdownInfo(plaqueText, headline, lines = []) {
+    let countdownInfoRenderedKey = null;
+    function setCountdownInfo(plaqueText, headline, lines = [], event = null) {
+      const nextKey = JSON.stringify([plaqueText, headline, lines, event?.id, event?.heimTeamId, event?.auswaertsTeamId]);
+      if (countdownInfoRenderedKey === nextKey) return;
+      countdownInfoRenderedKey = nextKey;
       const plaque = document.getElementById("countdown-plaque");
       const note = document.getElementById("countdown-note");
       if (plaque) plaque.textContent = plaqueText;
       const mission = document.getElementById("countdown-mission");
       if (mission) mission.textContent = headline;
-      if (note) {
-        note.replaceChildren();
-        lines.filter(Boolean).forEach(line => {
+      if (!note) return;
+      note.replaceChildren();
+      if (lines[0]) {
+        const dateLine = document.createElement("span");
+        dateLine.textContent = lines[0];
+        note.appendChild(dateLine);
+      }
+      if (event) {
+        const match = document.createElement("div");
+        match.className = "smuggler-match-row";
+        const makeTeam = (id, name, side) => {
+          const wrapper = document.createElement("div");
+          wrapper.className = `smuggler-match-team smuggler-match-team--${side}`;
+          const label = document.createElement("span");
+          label.className = "smuggler-match-name";
+          label.textContent = name || "Team offen";
+          const badge = document.createElement("span");
+          badge.className = "smuggler-match-seal";
+          badge.setAttribute("aria-hidden", "true");
+          if (side === "home") wrapper.append(badge, label);
+          else wrapper.append(label, badge);
+          if (window.OSCTeamBadge) window.OSCTeamBadge.render(badge, id, name);
+          else badge.hidden = true;
+          return wrapper;
+        };
+        const dash = document.createElement("span");
+        dash.className = "smuggler-match-separator";
+        dash.textContent = event.trenner || "–";
+        match.append(makeTeam(event.heimTeamId, event.heim, "home"), dash,
+          makeTeam(event.auswaertsTeamId, event.auswaerts, "away"));
+        note.appendChild(match);
+      } else {
+        lines.slice(1).filter(Boolean).forEach(line => {
           const span = document.createElement("span");
           span.textContent = line;
           note.appendChild(span);
         });
       }
     }
-
 
     function updateCountdown() {
       if (!countdownRuntime || !countdownRuntime.events.length) {
@@ -6927,7 +6976,7 @@
       setCountdownInfo("NÄCHSTES EVENT", formatEventMatchdayLabel(next, "Nächstes Tippspiel"), [
         dateLabel,
         `${next.heim} ${next.trenner || "–"} ${next.auswaerts}`
-      ]);
+      ], next);
     }
 
     updateCountdown();
@@ -7080,38 +7129,12 @@
         title: document.getElementById("sm-schedule-title"),
         status: document.getElementById("sm-schedule-status"),
         note: document.getElementById("sm-schedule-note"),
-        next: document.getElementById("sm-next-event"),
-        nextDate: document.getElementById("sm-next-date"),
-        nextCompetition: document.getElementById("sm-next-competition"),
-        nextMatch: document.getElementById("sm-next-match"),
-        nextHomeSeal: document.getElementById("sm-next-home-seal"),
-        nextHomeName: document.getElementById("sm-next-home-name"),
-        nextSeparator: document.getElementById("sm-next-separator"),
-        nextAwayName: document.getElementById("sm-next-away-name"),
-        nextAwaySeal: document.getElementById("sm-next-away-seal"),
         list: document.getElementById("sm-event-list"),
         overview: document.getElementById("sm-overview-link"),
         kicktipp: document.getElementById("sm-kicktipp-link")
       };
 
-      const setPlaceholder = (data = {}) => {
-        elements.next?.classList.add("is-placeholder");
-        elements.next?.removeAttribute("href");
-        if (elements.nextDate) elements.nextDate.textContent = data.platzhalterDatum || "TT.MM.JJJJ · --:--";
-        if (elements.nextCompetition) elements.nextCompetition.textContent = data.platzhalterWettbewerb || "Wettbewerb offen";
-        if (elements.nextHomeName) elements.nextHomeName.textContent = data.platzhalterHeim || "Heimteam";
-        if (elements.nextSeparator) elements.nextSeparator.textContent = data.platzhalterTrenner || "–";
-        if (elements.nextAwayName) elements.nextAwayName.textContent = data.platzhalterAuswaerts || "Auswärtsteam";
-        const setSealFallback = (element, label) => {
-          if (!element) return;
-          element.replaceChildren();
-          const fallback = document.createElement("span");
-          fallback.textContent = label;
-          element.appendChild(fallback);
-        };
-        setSealFallback(elements.nextHomeSeal, "HEIM");
-        setSealFallback(elements.nextAwaySeal, "GAST");
-      };
+
 
       const makeLocalDate = (date, time = "00:00") => {
         if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !/^\d{2}:\d{2}$/.test(time)) return null;
@@ -7233,22 +7256,12 @@
           if (elements.label) elements.label.textContent = "Nächste Tippereignisse";
           if (elements.title) elements.title.textContent = "Noch kein bestätigter Termin";
           if (elements.status) elements.status.textContent = "KEINE EXAKTEN TERMINE";
-          setPlaceholder(data);
         } else {
           if (elements.label) elements.label.textContent = "Nächstes Tippereignis";
           if (elements.title) elements.title.textContent = formatMatchdayTitle(focus);
           if (elements.status) elements.status.textContent = `${upcoming.length} EVENT${upcoming.length===1?"":"S"}`;
 
-          elements.next?.classList.remove("is-placeholder");
-          const focusDate = new Intl.DateTimeFormat(locale,{weekday:"short",day:"2-digit",month:"2-digit",year:"numeric"}).format(focus._start);
-          if(elements.nextDate) elements.nextDate.textContent=`${focusDate} · ${focus.anstoss}`;
-          if(elements.nextCompetition) elements.nextCompetition.textContent="Nächstes Spiel";
-          if(elements.nextHomeName) elements.nextHomeName.textContent=focus.heim;
-          if(elements.nextSeparator) elements.nextSeparator.textContent=focus.trenner||"–";
-          if(elements.nextAwayName) elements.nextAwayName.textContent=focus.auswaerts;
-          renderTeamSeal(elements.nextHomeSeal,focus.heimTeamId,focus.heim);
-          renderTeamSeal(elements.nextAwaySeal,focus.auswaertsTeamId,focus.auswaerts);
-          if(elements.next&&focus.ereignisLink) elements.next.href=focus.ereignisLink; else elements.next?.removeAttribute("href");
+
         }
 
         if(elements.list){
