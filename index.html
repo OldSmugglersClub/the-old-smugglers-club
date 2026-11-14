@@ -6010,10 +6010,12 @@
   .smuggler-command-bottom {display:flex;flex-direction:column;gap:18px;
     width:100%;min-width:0;padding:18px 0 0;margin-top:18px;border-top:1px solid #bf843d66;}
   .smuggler-command-bottom .welcome-status {
-    display:grid !important;grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr)) !important;
     width:100% !important;max-width:100% !important;gap:clamp(7px,1.25vw,17px);
     position:static !important;transform:none !important;opacity:1 !important;
   }
+  /* Die naechste Mission wird bereits im grossen Banner angezeigt. */
+  .smuggler-command-bottom .welcome-status-item--mission {display:none !important;}
   .smuggler-command-bottom .welcome-status-item {
     box-sizing:border-box;min-height:76px;min-width:0;padding:11px clamp(10px,1.3vw,18px);
     display:flex;align-items:center;gap:clamp(8px,1vw,15px);
