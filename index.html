@@ -5971,7 +5971,7 @@
   .smuggler-clock-center {min-width:0;display:flex;flex-direction:column;justify-content:center;padding:0;}
   .smuggler-event-area .countdown {
     display:grid !important;grid-template-columns:repeat(4,minmax(0,1fr)) !important;
-    width:100% !important;margin:0 0 16px !important;padding:0 !important;
+    width:100% !important;margin:0 0 18px !important;padding:0 !important;
     gap:clamp(5px,1vw,13px) !important;align-items:stretch;
   }
   .smuggler-event-area .flip-unit {display:block;min-width:0;max-width:100%;}
@@ -6060,6 +6060,46 @@
     .smuggler-event-area .flip-value {font-size:clamp(1.27rem,7vw,2.2rem) !important;}
     .smuggler-event-area .flip-label {font-size:clamp(.43rem,2.05vw,.61rem) !important;}
     .smuggler-event-area .pirate-event-scroll {min-height:90px;}
+  }
+
+  /* TEST2v2: mobil reduzierte Hauptquartier-Statusanzeige; Desktop unveraendert. */
+  @media (max-width: 600px) {
+    .smuggler-command-bottom .welcome-status {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 6px !important;
+    }
+    /* Missionsname steht bereits direkt oberhalb des Countdowns. */
+    .smuggler-command-bottom .welcome-status-item--mission {
+      display: none !important;
+    }
+    .smuggler-command-bottom .welcome-status-item:not(.welcome-status-item--mission) {
+      min-height: 0 !important;
+      padding: 5px 6px !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: none !important;
+      box-shadow: none !important;
+      align-items: center;
+      gap: 10px;
+    }
+    .smuggler-command-bottom .welcome-status-item:not(.welcome-status-item--mission) svg {
+      width: 25px !important;
+      height: 25px !important;
+      flex: 0 0 25px;
+    }
+    .smuggler-command-bottom .welcome-status-item:not(.welcome-status-item--mission) > span {
+      min-width: 0;
+    }
+    .smuggler-command-bottom .welcome-status-item--overall-leader > span {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px 10px;
+      align-items: baseline;
+    }
+    .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-label {
+      flex: 0 0 100%;
+    }
   }
 </style>
 </head>
