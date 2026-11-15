@@ -8913,11 +8913,11 @@
         const focus = state.focus;
         if (!focus) {
           if (elements.label) elements.label.textContent = "Nächste Tippereignisse";
-          if (elements.title) renderScheduleHeading(elements.title, "Noch kein bestätigter Termin");
+          if (elements.title) renderScheduleHeading(elements.title, `Die nächsten ${previewDays} Tage`);
           if (elements.status) elements.status.textContent = "KEINE EXAKTEN TERMINE";
         } else {
           if (elements.label) elements.label.textContent = "Nächste Tippereignisse";
-          if (elements.title) renderScheduleHeading(elements.title, formatMatchdayTitle(focus));
+          if (elements.title) renderScheduleHeading(elements.title, `Die nächsten ${previewDays} Tage`);
           if (elements.status) elements.status.textContent = `${upcoming.length} EVENT${upcoming.length===1?"":"S"}`;
 
 
@@ -8937,9 +8937,8 @@
               if (type==="smugglerauftrag") return `special:${type}`;
               return String(game.wettbewerb||game.wettbewerbAnzeige||game.matchdayType||"unbekannt").trim().toLowerCase();
             }));
-            const spanLabel=`${previewDays} ${previewDays===1?"Tag":"Tage"} Vorschau`;
             subline.hidden=count===0;
-            subline.textContent=count===0?"":`${count} ${count===1?"Begegnung":"Begegnungen"} ✦ ${spanLabel} ✦ ${competitions.size} ${competitions.size===1?"Wettbewerb":"Wettbewerbe"}`;
+            subline.textContent=count===0?"":`${count} ${count===1?"Begegnung":"Begegnungen"} ✦ ${competitions.size} ${competitions.size===1?"Wettbewerb":"Wettbewerbe"}`;
           }
           elements.list.classList.add(visibleExact.length===1?"is-single":visibleExact.length===2?"is-double":"is-multiple");
           const groups=new Map();
