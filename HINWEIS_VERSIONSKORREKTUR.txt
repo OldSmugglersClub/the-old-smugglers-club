@@ -1,0 +1,8 @@
+TOSMC LIVE Versionskorrektur / 15.11.2026
+
+Ausgangspunkt: LIVE index.html Git blob 8586ed26fd4120818fa066123b5e5fc951848b4f
+Live VERSION.txt vor Korrektur: 4.9.2.
+Version 4.9.3 ist vorgeschlagene inkrementelle Patch-Version auf Grundlage des aktuellen VERSION.txt, keine Fortsetzung alter HF-Suffixe.
+index.html ist BYTEIDENTISCH zum zuvor bereitgestellten und eingespielten LIVE-Update.
+Einspielung: VERSION.txt und index.html ins LIVE-Repository; keine weiteren Dateien ersetzen.
+WICHTIG: Release-Guard-Lauf und anschliessende LIVE-Sichtbestaetigung sind nicht durchgefuehrt.
