@@ -5727,7 +5727,70 @@
       }
     }
 
-  </style>
+  
+
+
+
+  /* TEST2v2: Mobile Ereignis-Kopfzeile mit Luft und dynamischem Ein-/Zweizeilentitel. */
+  @media (max-width: 760px) {
+    #aktueller-spieltag .sm-schedule__header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-rows: auto auto;
+      align-items: start;
+      column-gap: clamp(12px, 3.2vw, 20px);
+      row-gap: clamp(20px, 5vw, 28px);
+      padding: clamp(10px, 3vw, 16px) clamp(9px, 2.6vw, 16px) clamp(17px, 4vw, 24px);
+      box-sizing: border-box;
+    }
+    #aktueller-spieltag .sm-schedule__heading { display: contents; }
+    #aktueller-spieltag .sm-schedule__heading .eyebrow {
+      grid-column: 1; grid-row: 1;
+      display: flex; justify-content: center; align-items: center;
+      box-sizing: border-box;
+      width: 100%; min-width: 0; min-height: 45px;
+      padding: 8px 12px;
+      font-size: clamp(.61rem, 2.25vw, .73rem);
+      line-height: 1.18; letter-spacing: .035em;
+      text-align: center;
+      white-space: normal;
+    }
+    #aktueller-spieltag .sm-schedule__header .matchday-status {
+      grid-column: 2; grid-row: 1;
+      box-sizing: border-box;
+      align-self: stretch;
+      min-width: 88px; max-width: none; min-height: 45px;
+      padding: 8px 12px;
+      font-size: clamp(.61rem, 2.25vw, .73rem);
+      text-align: center;
+      white-space: nowrap;
+    }
+    #aktueller-spieltag .sm-schedule__heading h2 {
+      grid-column: 1 / -1; grid-row: 2;
+      margin: 0;
+      padding: 0;
+      width: 100%; min-width: 0;
+      color: #eac270;
+      font-size: clamp(1.2rem, 6vw, 1.65rem);
+      line-height: 1.2;
+      text-align: center;
+      white-space: normal;
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+    }
+    #aktueller-spieltag .sm-schedule-title-line {
+      display: block;
+      white-space: nowrap;
+    }
+    #aktueller-spieltag .sm-schedule-title-line + .sm-schedule-title-line { margin-top: 3px; }
+  }
+
+  @media (min-width: 761px) {
+    #aktueller-spieltag .sm-schedule-title-line { display: inline; }
+  }
+
+</style>
   <link rel="stylesheet" href="./highscore.css?v=4.0.1">
   <link rel="stylesheet" href="./logbuch.css?v=2026-11-08-dynamic-weekend">
   <link rel="stylesheet" href="./accessibility-v33.css">
@@ -6006,34 +6069,33 @@
     font-size:clamp(.91rem,1.6vw,1.18rem) !important;line-height:1.34;
     overflow-wrap:anywhere;text-shadow:0 1px 3px #000;
   }
-  /* Hauptquartier: Originalwappen aus dem zentralen Team-Register neben der Begegnung. */
+  /* TOSMC TEST2v2: vergroesserte Originalwappen innerhalb der bestehenden Ereigniskachel. */
   .smuggler-event-area .countdown-message .smuggler-match-row {
-    display:grid;grid-template-columns:minmax(0,max-content) auto minmax(0,max-content);
-    justify-content:center;align-items:center;gap:clamp(4px,.8vw,11px);
+    display:grid;grid-template-columns:clamp(42px,5.4vw,66px) minmax(0,1fr) auto minmax(0,1fr) clamp(42px,5.4vw,66px);
+    align-items:center;justify-content:stretch;column-gap:clamp(4px,.8vw,12px);
     width:100%;min-width:0;margin:5px 0 0;
   }
-  .smuggler-event-area .countdown-message .smuggler-match-team {
-    display:flex;align-items:center;gap:clamp(4px,.55vw,9px);min-width:0;
-  }
-  .smuggler-event-area .countdown-message .smuggler-match-team--home {justify-content:flex-end;}
-  .smuggler-event-area .countdown-message .smuggler-match-team--away {justify-content:flex-start;}
+  .smuggler-event-area .countdown-message .smuggler-match-team {display:contents;}
+  .smuggler-event-area .countdown-message .smuggler-match-team--home .smuggler-match-seal {grid-column:1;grid-row:1;}
+  .smuggler-event-area .countdown-message .smuggler-match-team--home .smuggler-match-name {grid-column:2;grid-row:1;text-align:right;}
+  .smuggler-event-area .countdown-message .smuggler-match-separator {grid-column:3;grid-row:1;display:block;margin:0;white-space:nowrap;font-size:clamp(.85rem,1.5vw,1.17rem);}
+  .smuggler-event-area .countdown-message .smuggler-match-team--away .smuggler-match-name {grid-column:4;grid-row:1;text-align:left;}
+  .smuggler-event-area .countdown-message .smuggler-match-team--away .smuggler-match-seal {grid-column:5;grid-row:1;}
   .smuggler-event-area .countdown-message .smuggler-match-name {
     display:block;min-width:0;margin:0;font-size:clamp(.79rem,1.5vw,1.18rem) !important;
-    line-height:1.3;text-align:left;overflow-wrap:anywhere;
+    line-height:1.2;overflow-wrap:anywhere;
   }
-  .smuggler-event-area .countdown-message .smuggler-match-team--home .smuggler-match-name {text-align:right;}
   .smuggler-event-area .countdown-message .smuggler-match-seal {
-    display:block;flex:0 0 clamp(26px,3.15vw,40px);width:clamp(26px,3.15vw,40px);
-    height:clamp(26px,3.15vw,40px);margin:0;line-height:1;
-  }
-  .smuggler-event-area .countdown-message .smuggler-match-separator {
-    display:block;margin:0;font-size:clamp(.85rem,1.5vw,1.17rem);white-space:nowrap;
+    display:block;box-sizing:border-box;width:100%;height:clamp(42px,5.4vw,66px);
+    min-width:0;min-height:0;margin:0;line-height:1;
   }
   @media(max-width:440px) {
-    .smuggler-event-area .countdown-message .smuggler-match-row {gap:4px;}
-    .smuggler-event-area .countdown-message .smuggler-match-team {gap:4px;}
-    .smuggler-event-area .countdown-message .smuggler-match-seal {flex-basis:26px;width:26px;height:26px;}
-    .smuggler-event-area .countdown-message .smuggler-match-name {font-size:.79rem !important;}
+    .smuggler-event-area .countdown-message .smuggler-match-row {
+      grid-template-columns:clamp(29px,9vw,38px) minmax(0,1fr) auto minmax(0,1fr) clamp(29px,9vw,38px);
+      column-gap:3px;
+    }
+    .smuggler-event-area .countdown-message .smuggler-match-seal {height:clamp(29px,9vw,38px);}
+    .smuggler-event-area .countdown-message .smuggler-match-name {font-size:.76rem !important;}
   }
   .smuggler-countdown-state {display:none !important;}
   .smuggler-command-bottom {display:flex;flex-direction:column;gap:18px;
@@ -6068,6 +6130,48 @@
     flex:0 0 auto;margin:0 !important;color:#ffdda0 !important;font-size:clamp(.75rem,1.17vw,.99rem) !important;
     white-space:nowrap;
   }
+  .smuggler-command-bottom .welcome-status-item--overall-leader > .welcome-leader-layout {
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    align-items:center;
+    column-gap:clamp(8px,1vw,14px);
+    width:100%;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader .welcome-leader-main {
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    gap:2px;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader .welcome-leader-line {
+    display:flex;
+    align-items:baseline;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:3px 10px;
+    min-width:0;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader .welcome-leader-side {
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    gap:2px;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-margin-label {
+    white-space:nowrap;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-margin {
+    color:#ffde92 !important;
+    font-size:clamp(.95rem,1.45vw,1.18rem) !important;
+    line-height:1.15;
+    white-space:nowrap;
+  }
   .smuggler-command-bottom .welcome-command-actions {
     display:grid !important;gap:8px;width:100% !important;max-width:100% !important;
     margin:0 !important;padding:0 !important;
@@ -6098,40 +6202,973 @@
     .smuggler-command-bottom .welcome-status {
       display: flex !important;
       flex-direction: column !important;
-      gap: 6px !important;
+      gap: 8px !important;
     }
-    /* Missionsname steht bereits direkt oberhalb des Countdowns. */
     .smuggler-command-bottom .welcome-status-item--mission {
       display: none !important;
     }
     .smuggler-command-bottom .welcome-status-item:not(.welcome-status-item--mission) {
-      min-height: 0 !important;
-      padding: 5px 6px !important;
-      border: 0 !important;
-      border-radius: 0 !important;
-      background: none !important;
-      box-shadow: none !important;
+      min-height: 72px !important;
+      padding: 9px 10px !important;
+      border: 2px solid #ab762e !important;
+      border-radius: 9px !important;
+      background: linear-gradient(180deg,#3d230ff0,#160a04f3) !important;
+      box-shadow: inset 0 0 0 1px #e9a94b24 !important;
+      display: grid !important;
+      grid-template-columns: 28px minmax(0,1fr);
       align-items: center;
       gap: 10px;
     }
     .smuggler-command-bottom .welcome-status-item:not(.welcome-status-item--mission) svg {
-      width: 25px !important;
-      height: 25px !important;
-      flex: 0 0 25px;
+      width: 24px !important;
+      height: 24px !important;
+      flex: 0 0 24px;
     }
-    .smuggler-command-bottom .welcome-status-item:not(.welcome-status-item--mission) > span {
+    .smuggler-command-bottom .welcome-status-item:not(.welcome-status-item--mission) > span,
+    .smuggler-command-bottom .welcome-status-item:not(.welcome-status-item--mission) > .welcome-leader-layout {
       min-width: 0;
+      width: 100%;
     }
-    .smuggler-command-bottom .welcome-status-item--overall-leader > span {
+    .smuggler-command-bottom .welcome-status-item:has(.welcome-season-progress-content) > svg {
+      transform: none !important;
+      align-self: center;
+    }
+    .smuggler-command-bottom .welcome-season-progress-content {
+      display: grid !important;
+      grid-template-columns: minmax(0,1fr) minmax(0,1fr) auto;
+      grid-template-rows: auto auto;
+      column-gap: 10px;
+      row-gap: 2px;
+      align-items: center;
+      align-content: center;
+      width: 100%;
+      max-width: 100%;
+    }
+    .smuggler-command-bottom .welcome-season-progress-content > small:first-child {
+      grid-column: 1;
+      grid-row: 1;
+      white-space: nowrap;
+      font-size: .68rem !important;
+      line-height: 1.1;
+      margin: 0;
+    }
+    .smuggler-command-bottom .welcome-season-progress-content > #welcome-season {
+      grid-column: 1;
+      grid-row: 2;
+      font-size: 1rem !important;
+      line-height: 1.12;
+      margin: 0;
+    }
+    .smuggler-command-bottom .season-progress-block,
+    .smuggler-command-bottom .season-progress-summary,
+    .smuggler-command-bottom .season-progress-caption--full {
+      display: contents !important;
+    }
+    .smuggler-command-bottom .season-progress-caption--full > small {
+      grid-column: 2;
+      grid-row: 1;
+      white-space: nowrap;
+      font-size: .68rem !important;
+      line-height: 1.1;
+      margin: 0;
+    }
+    .smuggler-command-bottom .season-progress-caption--full > strong {
+      grid-column: 2;
+      grid-row: 2;
+      font-size: 1rem !important;
+      line-height: 1.12;
+      margin: 0;
+    }
+    .smuggler-command-bottom .season-progress-percent {
+      grid-column: 3;
+      grid-row: 1 / span 2;
+      justify-self: end;
+      align-self: center;
+      min-width: 58px;
+      padding: 3px 8px;
+      font-size: .88rem !important;
+      line-height: 1.1;
+      text-align: center;
+      margin: 0;
+    }
+    .smuggler-command-bottom .welcome-status-item--overall-leader > .welcome-leader-layout {
+      display: grid !important;
+      grid-template-columns: minmax(0,1fr) auto;
+      align-items: center;
+      column-gap: 12px;
+      width: 100%;
+    }
+    .smuggler-command-bottom .welcome-status-item--overall-leader .welcome-leader-main {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+      gap: 2px;
+    }
+    .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-label,
+    .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-margin-label {
+      font-size: .68rem !important;
+      line-height: 1.1;
+      white-space: nowrap;
+      margin: 0;
+    }
+    .smuggler-command-bottom .welcome-status-item--overall-leader .welcome-leader-line {
       display: flex;
       flex-wrap: wrap;
-      gap: 2px 10px;
+      gap: 2px 8px;
       align-items: baseline;
+      justify-content: flex-start;
     }
-    .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-label {
-      flex: 0 0 100%;
+    .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-champion,
+    .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-margin {
+      font-size: 1rem !important;
+      line-height: 1.12;
+    }
+    .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-points {
+      font-size: .82rem !important;
+      line-height: 1.1;
+    }
+    .smuggler-command-bottom .welcome-status-item--overall-leader .welcome-leader-side {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      text-align: right;
+      gap: 2px;
     }
   }
+
+  /* Saisonfortschritt innerhalb der bisherigen Statuskachel, ohne Höhenzuwachs. */
+  .smuggler-command-bottom .welcome-season-progress-content {
+    display:grid;grid-template-columns:minmax(0,1fr) minmax(155px,1.24fr);
+    grid-template-rows:auto auto;column-gap:clamp(8px,1.2vw,16px);row-gap:2px;
+    align-items:center;flex:1 1 auto;min-width:0;max-width:100%;
+  }
+  .smuggler-command-bottom .welcome-season-progress-content > small:first-child {
+    grid-column:1;grid-row:1;align-self:end;
+  }
+  .smuggler-command-bottom .welcome-season-progress-content > #welcome-season {
+    grid-column:1;grid-row:2;align-self:start;
+    font-size:clamp(.88rem,1.5vw,1.23rem) !important;line-height:1.22;
+  }
+  .smuggler-command-bottom .season-progress-block {
+    grid-column:2;grid-row:1 / 3;display:flex;flex-direction:column;
+    justify-content:center;gap:5px;min-width:0;margin:0;
+  }
+  .smuggler-command-bottom .season-progress-caption {
+    display:block;color:#e8c587 !important;font-size:clamp(.63rem,.9vw,.76rem) !important;
+    line-height:1.2;overflow-wrap:normal;
+  }
+  .smuggler-command-bottom .season-progress-caption--compact {display:none !important;}
+  .smuggler-command-bottom .season-progress-track {
+    display:block;position:relative;overflow:hidden;width:100%;height:6px;
+    border-radius:999px;background:rgba(137,95,46,.4);border:1px solid rgba(226,181,94,.27);
+    box-sizing:border-box;
+  }
+  .smuggler-command-bottom .season-progress-fill {
+    display:block;height:100%;width:0%;border-radius:999px;
+    background:linear-gradient(90deg,#a46c24,#f1c76f);transition:width .35s ease;
+  }
+  @media(max-width:600px) {
+    .smuggler-command-bottom .welcome-season-progress-content {
+      grid-template-columns:minmax(0,1fr) auto;column-gap:8px;
+    }
+    .smuggler-command-bottom .season-progress-block {gap:0;max-width:100%;}
+    .smuggler-command-bottom .season-progress-caption--full {display:none !important;}
+    .smuggler-command-bottom .season-progress-caption--compact {display:block !important;white-space:nowrap;}
+    .smuggler-command-bottom .season-progress-track {display:none !important;}
+  }
+  @media(max-width:350px) {
+    .smuggler-command-bottom .season-progress-caption--compact {font-size:.60rem !important;}
+  }
+  @media(prefers-reduced-motion:reduce) {
+    .smuggler-command-bottom .season-progress-fill {transition:none;}
+  }
+  /* TEST2v2: visuell kompakter Saisonfortschritt, keine vergroesserte Statuskachel. */
+  .smuggler-command-bottom .welcome-season-progress-content {
+    grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);
+    column-gap:clamp(8px,1.2vw,16px);
+  }
+  .smuggler-command-bottom .season-progress-block {gap:4px;}
+  .smuggler-command-bottom .season-progress-summary {display:flex;align-items:center;justify-content:space-between;gap:6px;min-width:0;}
+  .smuggler-command-bottom .season-progress-caption--full {display:flex !important;flex-direction:column;gap:1px;min-width:0;}
+  .smuggler-command-bottom .season-progress-caption strong {
+    display:block;color:#ffe0a0;font:800 clamp(.9rem,1.55vw,1.28rem)/1.1 Georgia,serif;
+    white-space:nowrap;font-variant-numeric:tabular-nums;
+  }
+  .smuggler-command-bottom .season-progress-caption small {
+    display:block;color:#e8c587;font-size:clamp(.55rem,.75vw,.67rem) !important;
+    line-height:1.1;overflow-wrap:anywhere;
+  }
+  .smuggler-command-bottom .season-progress-percent {
+    display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
+    border:1px solid #b58232;border-radius:999px;padding:2px 6px;
+    color:#ffdda0;font:700 clamp(.66rem,.9vw,.82rem)/1.2 Georgia,serif;
+    white-space:nowrap;font-variant-numeric:tabular-nums;
+  }
+  @media(max-width:600px) {
+    .smuggler-command-bottom .welcome-season-progress-content {grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);column-gap:5px;}
+    .smuggler-command-bottom .season-progress-block {gap:3px;}
+    .smuggler-command-bottom .season-progress-caption--full {display:flex !important;}
+    .smuggler-command-bottom .season-progress-caption small {font-size:.52rem !important;}
+    .smuggler-command-bottom .season-progress-caption strong {font-size:clamp(.72rem,3.25vw,.95rem);}
+    .smuggler-command-bottom .season-progress-percent {font-size:.62rem;padding:2px 4px;}
+    .smuggler-command-bottom .season-progress-track {display:block !important;height:4px;}
+  }
+  @media(max-width:350px) {
+    .smuggler-command-bottom .season-progress-caption small {display:none !important;}
+    .smuggler-command-bottom .season-progress-percent {font-size:.56rem;padding:1px 3px;}
+  }
+
+  /* TEST2v2 2026-11-14: Saisonfortschritt nutzt Breite, ohne Kachelgroesse zu erhoehen. */
+  .smuggler-command-bottom .welcome-season-progress-content {
+    grid-template-columns: minmax(0,1.14fr) minmax(0,1.26fr);
+    column-gap: clamp(5px,.8vw,11px);
+  }
+  .smuggler-command-bottom .season-progress-block {gap:4px;}
+  .smuggler-command-bottom .season-progress-summary {
+    display:grid;grid-template-columns:minmax(0,1fr) auto;
+    align-items:center;column-gap:clamp(8px,1.2vw,16px);
+  }
+  .smuggler-command-bottom .season-progress-caption--full {min-width:0;}
+  .smuggler-command-bottom .season-progress-caption strong {
+    font-size:clamp(1.0rem,1.65vw,1.34rem);
+  }
+  .smuggler-command-bottom .season-progress-caption small {
+    font-size:clamp(.62rem,.84vw,.77rem) !important;
+    line-height:1.1;
+  }
+  .smuggler-command-bottom .season-progress-track {width:100%;}
+  .smuggler-command-bottom .season-progress-percent {padding:3px 9px;}
+
+  /* Wappen jeweils zentriert im freien Raum links/rechts neben den Teamnamen. */
+  .smuggler-event-area .countdown-message .smuggler-match-row {
+    grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+    column-gap:clamp(4px,.7vw,10px);
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-team {
+    display:grid;grid-row:1;align-items:center;min-width:0;
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-team--home {
+    grid-column:1;grid-template-columns:minmax(0,1fr) minmax(0,auto);
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-team--away {
+    grid-column:3;grid-template-columns:minmax(0,auto) minmax(0,1fr);
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-team--home .smuggler-match-seal {
+    grid-column:1;grid-row:1;justify-self:center;
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-team--home .smuggler-match-name {
+    grid-column:2;grid-row:1;justify-self:end;text-align:right;
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-separator {
+    grid-column:2;grid-row:1;
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-team--away .smuggler-match-name {
+    grid-column:1;grid-row:1;justify-self:start;text-align:left;
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-team--away .smuggler-match-seal {
+    grid-column:2;grid-row:1;justify-self:center;
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-seal {
+    width:clamp(42px,5.4vw,66px);height:clamp(42px,5.4vw,66px);
+    max-width:100%;
+  }
+  @media(max-width:600px) {
+    .smuggler-command-bottom .welcome-season-progress-content {
+      grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr);
+      column-gap:5px;
+    }
+    .smuggler-command-bottom .season-progress-summary {column-gap:4px;}
+    .smuggler-command-bottom .season-progress-block {gap:2px;}
+    .smuggler-command-bottom .season-progress-caption small {font-size:.52rem !important;}
+    .smuggler-command-bottom .season-progress-percent {padding:2px 5px;font-size:.62rem;}
+    .smuggler-event-area .countdown-message .smuggler-match-row {column-gap:3px;}
+  }
+  @media(max-width:440px) {
+    .smuggler-event-area .countdown-message .smuggler-match-row {
+      grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+    }
+    .smuggler-event-area .countdown-message .smuggler-match-team--home {grid-template-columns:minmax(29px,1fr) minmax(0,auto);}
+    .smuggler-event-area .countdown-message .smuggler-match-team--away {grid-template-columns:minmax(0,auto) minmax(29px,1fr);}
+    .smuggler-event-area .countdown-message .smuggler-match-seal {
+      width:clamp(29px,9vw,38px);height:clamp(29px,9vw,38px);
+    }
+  }
+  @media(max-width:350px) {
+    .smuggler-command-bottom .welcome-season-progress-content {
+      grid-template-columns:minmax(0,.84fr) minmax(0,1.4fr);
+    }
+    .smuggler-command-bottom .season-progress-caption small {display:none !important;}
+  }
+
+  /* TEST2v2: nur die visuelle Fortschrittsleiste der Saisonkachel ausblenden.
+     DOM und Datenberechnung bleiben fuer Zaehlung und Prozentwert erhalten. */
+  .smuggler-command-bottom .welcome-status-item:has(.welcome-season-progress-content) .season-progress-track {
+    display: none !important;
+  }
+
+  /* TEST2v2: korrigierte Zentrierung, bestehende Kachelgroessen bewahren. */
+  .smuggler-command-bottom .welcome-status-item:has(.welcome-season-progress-content) {
+    min-height:76px;
+    padding-top:7px;
+    padding-bottom:7px;
+  }
+  .smuggler-command-bottom .season-progress-block {
+    align-self:stretch;
+    justify-content:center;
+    gap:6px;
+  }
+  .smuggler-command-bottom .season-progress-caption--full {
+    gap:4px;
+  }
+  .smuggler-command-bottom .season-progress-caption strong {
+    font-size:clamp(1.12rem,1.8vw,1.43rem);
+    line-height:1.12;
+  }
+  .smuggler-command-bottom .season-progress-caption small {
+    font-size:clamp(.68rem,.92vw,.79rem) !important;
+    line-height:1.23;
+  }
+  .smuggler-command-bottom .season-progress-track {
+    height:7px;
+  }
+
+  /* TEST2v2: Saisonstatus-Typografie ausgewogen, ohne Aenderung der Kachelhoehe. */
+  @media (min-width: 601px) {
+    .smuggler-command-bottom .season-progress-caption strong {
+      font-size: clamp(1.03rem, 1.6vw, 1.28rem);
+    }
+    .smuggler-command-bottom .season-progress-caption small {
+      font-size: clamp(.73rem, 1.0vw, .84rem) !important;
+    }
+    /* TEST2v2: Beschriftung gekuerzt. Zeile 1 nur Titel, Zeile 2 Zahl links und Prozent rechts. */
+    .smuggler-command-bottom .season-progress-summary {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) auto;
+      grid-template-rows: auto auto;
+      column-gap: 4px;
+      row-gap: 2px;
+      align-items: center;
+    }
+    .smuggler-command-bottom .season-progress-caption--full {
+      display: contents !important;
+    }
+    .smuggler-command-bottom .season-progress-caption--full > small {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      white-space: nowrap;
+      overflow-wrap: normal;
+      font-size: clamp(.84rem, 1.15vw, .92rem) !important;
+      line-height: 1.12;
+      margin: 0;
+    }
+    .smuggler-command-bottom .season-progress-caption--full > strong {
+      grid-column: 1;
+      grid-row: 2;
+      font-size: clamp(.98rem, 1.52vw, 1.22rem);
+      margin: 0;
+    }
+    .smuggler-command-bottom .season-progress-percent {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      align-self: center;
+      justify-self: center;
+      font-size: clamp(1.05rem, 1.45vw, 1.20rem);
+      line-height: 1.12;
+      padding: 4px 11px;
+      margin: 0;
+    }
+  }
+
+  /* Drei unabhaengige Spalten: nur die Textgruppe bestimmt die echte Mitte. */
+  .smuggler-event-area .countdown-message .smuggler-match-row {
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,auto) minmax(0,1fr);
+    align-items:center;
+    column-gap:clamp(5px,1.1vw,15px);
+    width:100%;
+    margin:6px 0 0;
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-names {
+    grid-column:2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:clamp(4px,.75vw,10px);
+    min-width:0;
+    max-width:100%;
+    text-align:center;
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-names .smuggler-match-name {
+    min-width:0;
+    margin:0;
+    text-align:center;
+    overflow-wrap:anywhere;
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-names .smuggler-match-separator {
+    flex:0 0 auto;
+    margin:0;
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-row > .smuggler-match-seal {
+    grid-row:1;
+    width:clamp(42px,5.4vw,66px);
+    height:clamp(42px,5.4vw,66px);
+    max-width:100%;
+    margin:0;
+    align-self:center;
+    justify-self:center;
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-row > .smuggler-match-seal:first-child {grid-column:1;}
+  .smuggler-event-area .countdown-message .smuggler-match-row > .smuggler-match-seal:last-child {grid-column:3;}
+  @media(max-width:600px) {
+    .smuggler-command-bottom .season-progress-block {gap:4px;}
+    .smuggler-command-bottom .season-progress-caption--full {gap:2px;}
+    .smuggler-command-bottom .season-progress-caption strong {font-size:clamp(.77rem,3.5vw,1rem);}
+    .smuggler-command-bottom .season-progress-caption small {font-size:clamp(.52rem,2.25vw,.65rem) !important;line-height:1.2;}
+    .smuggler-command-bottom .season-progress-track {height:5px;}
+    .smuggler-event-area .countdown-message .smuggler-match-names {gap:3px;}
+    .smuggler-event-area .countdown-message .smuggler-match-row {column-gap:4px;}
+  }
+  @media(max-width:440px) {
+    .smuggler-event-area .countdown-message .smuggler-match-row > .smuggler-match-seal {
+      width:clamp(29px,9vw,38px);
+      height:clamp(29px,9vw,38px);
+    }
+    .smuggler-event-area .countdown-message .smuggler-match-names .smuggler-match-name {font-size:.76rem !important;}
+  }
+
+  /* Datum und Namen zentriert; beide Wappen vertikal ueber beide Zeilen. */
+  .smuggler-event-area .countdown-message:has(.smuggler-match-row) {
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) minmax(0,max-content) minmax(0,1fr);
+    grid-template-rows:auto auto;
+    column-gap:clamp(5px,1.1vw,15px);
+    align-items:center;
+    justify-items:center;
+  }
+  .smuggler-event-area .countdown-message:has(.smuggler-match-row) > span:first-child {
+    grid-column:2;grid-row:1;
+    text-align:center;
+    max-width:100%;
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-row {display:contents;}
+  .smuggler-event-area .countdown-message .smuggler-match-names {
+    grid-column:2;grid-row:2;
+    justify-self:center;
+    max-width:100%;
+  }
+  .smuggler-event-area .countdown-message .smuggler-match-row > .smuggler-match-seal {
+    grid-row:1 / 3;
+    align-self:center;
+  }
+  @media(max-width:440px) {
+    .smuggler-event-area .countdown-message:has(.smuggler-match-row) {
+      grid-template-columns:minmax(0,1fr) minmax(0,72%) minmax(0,1fr);
+      column-gap:3px;
+    }
+    .smuggler-event-area .countdown-message .smuggler-match-names {min-width:0;}
+  }
+
+  /* TEST2v2: Drei optisch gleichmaessig verteilte Inhaltsgruppen.
+     Nur die vorhandenen Kachel-Inhalte werden positioniert; Typografie/Logik bleiben gleich. */
+  @media (min-width: 601px) {
+    .smuggler-command-bottom .welcome-season-progress-content {
+      grid-template-columns: max-content max-content max-content;
+      grid-template-rows: auto auto;
+      justify-content: space-between;
+      column-gap: clamp(7px,.9vw,12px);
+      row-gap: 2px;
+      align-items: center;
+      align-content: center;
+    }
+    .smuggler-command-bottom .welcome-season-progress-content > small:first-child {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .smuggler-command-bottom .welcome-season-progress-content > #welcome-season {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    .smuggler-command-bottom .season-progress-block,
+    .smuggler-command-bottom .season-progress-summary,
+    .smuggler-command-bottom .season-progress-caption--full {
+      display: contents !important;
+    }
+    .smuggler-command-bottom .season-progress-caption--full > small {
+      grid-column: 2;
+      grid-row: 1;
+      white-space: nowrap;
+      margin: 0;
+    }
+    .smuggler-command-bottom .season-progress-caption--full > strong {
+      grid-column: 2;
+      grid-row: 2;
+      margin: 0;
+    }
+    .smuggler-command-bottom .season-progress-percent {
+      grid-column: 3;
+      grid-row: 1 / 3;
+      justify-self: center;
+      align-self: center;
+      font-size: clamp(1.08rem, 1.62vw, 1.30rem);
+      line-height: 1.08;
+      padding: 5px 13px;
+      min-width: clamp(72px, 7vw, 88px);
+      text-align: center;
+      margin: 0;
+    }
+    /* Ohne Fortschrittsleiste: Zettel-Icon wieder mittig zur gesamten Kachel. */
+    .smuggler-command-bottom .welcome-status-item:has(.welcome-season-progress-content) > svg {
+      transform: none;
+    }
+    /* Fortschrittsbalken ueber die volle nutzbare Kachelbreite; Dreispalten unveraendert. */
+    .smuggler-command-bottom .welcome-status-item:has(.welcome-season-progress-content) {
+      position: relative;
+    }
+    .smuggler-command-bottom .season-progress-track {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 7px;
+      width: auto;
+      margin: 0;
+    }
+  }
+
+  /* TEST2v2: Fuehrungskachel – die drei Gruppen mit gleich grossen Zwischenraeumen.
+     Nur Desktop; Mobilregeln, Hoehe, Typografie und Berechnung bleiben unveraendert. */
+  @media (min-width: 601px) {
+    .smuggler-command-bottom .welcome-status-item--overall-leader {
+      display: grid;
+      grid-template-columns: max-content max-content max-content;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 0;
+    }
+    .smuggler-command-bottom .welcome-status-item--overall-leader > .welcome-leader-layout {
+      display: contents;
+    }
+    .smuggler-command-bottom .welcome-status-item--overall-leader .welcome-leader-main,
+    .smuggler-command-bottom .welcome-status-item--overall-leader .welcome-leader-side {
+      width: max-content;
+      max-width: 100%;
+    }
+  }
+</style>
+<style>
+/* TEST2v2 / 2026-11-15: konsistentes, eigenstaendiges Zweispaltenlayout mobil.
+   Links der beiden Kacheln Icon; rechts je zwei Informationsbereiche.
+   Diese Regeln gelten nur bis 600 px. LIVE / Desktop / Datenlogik unberuehrt. */
+@media (max-width:600px) {
+  .smuggler-command-bottom .welcome-status {
+    display:flex !important;
+    flex-direction:column !important;
+    gap:9px !important;
+  }
+  .smuggler-command-bottom .welcome-status-item--mission {display:none !important;}
+  .smuggler-command-bottom .welcome-status-item:not(.welcome-status-item--mission) {
+    display:grid !important;
+    grid-template-columns:28px minmax(0,1fr) !important;
+    gap:12px !important;
+    align-items:center !important;
+    min-height:88px !important;
+    padding:11px 12px !important;
+    border:2px solid #ab762e !important;
+    border-radius:9px !important;
+    background:linear-gradient(180deg,#3d230ff0,#160a04f3) !important;
+    box-shadow:inset 0 0 0 1px #e9a94b24 !important;
+  }
+  .smuggler-command-bottom .welcome-status-item:not(.welcome-status-item--mission) > svg {
+    width:27px !important;
+    height:27px !important;
+    transform:none !important;
+    align-self:center !important;
+  }
+  .smuggler-command-bottom .welcome-status-item:not(.welcome-status-item--mission) > span {
+    width:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+  }
+  .smuggler-command-bottom .welcome-status-item:not(.welcome-status-item--mission) small {
+    color:#e8c587 !important;
+    font-size:clamp(.69rem,2.8vw,.82rem) !important;
+    line-height:1.15 !important;
+    overflow-wrap:normal !important;
+  }
+  .smuggler-command-bottom .welcome-status-item:not(.welcome-status-item--mission) strong {
+    color:#ffde92 !important;
+    font-size:clamp(.96rem,4.15vw,1.14rem) !important;
+    line-height:1.15 !important;
+  }
+  /* Saison: Titel+Wert fuer Saison und Tippspieltage als eine linke Gruppe;
+     Prozent als rechts vertikal zentrierter eigenstaendiger Bereich. */
+  .smuggler-command-bottom .welcome-season-progress-content {
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) auto !important;
+    grid-template-rows:repeat(4,auto) !important;
+    align-content:center !important;
+    align-items:center !important;
+    column-gap:8px !important;
+    row-gap:0 !important;
+  }
+  .smuggler-command-bottom .welcome-season-progress-content > small:first-child {
+    grid-column:1 !important; grid-row:1 !important;
+    white-space:nowrap !important; margin:0 !important;
+    align-self:end !important;
+  }
+  .smuggler-command-bottom .welcome-season-progress-content > #welcome-season {
+    grid-column:1 !important; grid-row:2 !important;
+    font-size:clamp(.96rem,4.15vw,1.14rem) !important;
+    margin:0 0 5px !important; align-self:start !important;
+    white-space:nowrap !important;
+  }
+  .smuggler-command-bottom .season-progress-block,
+  .smuggler-command-bottom .season-progress-summary,
+  .smuggler-command-bottom .season-progress-caption--full {display:contents !important;}
+  .smuggler-command-bottom .season-progress-caption--full > small {
+    grid-column:1 !important; grid-row:3 !important;
+    white-space:nowrap !important; margin:0 !important;
+    align-self:end !important;
+  }
+  .smuggler-command-bottom .season-progress-caption--full > strong {
+    grid-column:1 !important; grid-row:4 !important;
+    white-space:nowrap !important; margin:0 !important;
+    font-size:clamp(.96rem,4.15vw,1.14rem) !important;
+  }
+  .smuggler-command-bottom .season-progress-percent {
+    display:inline-flex !important;
+    grid-column:2 !important; grid-row:1 / 5 !important;
+    justify-self:center !important; align-self:center !important;
+    min-width:70px !important; padding:4px 9px !important;
+    margin:0 !important;
+    font-size:clamp(1rem,4.4vw,1.2rem) !important;
+    line-height:1.12 !important;
+    text-align:center !important;
+  }
+  .smuggler-command-bottom .season-progress-track {display:none !important;}
+  /* Gesamtfuehrung: links Name+Punkte, rechts Vorsprung+Punkte;
+     beide Bloecke vertikal mittig, Umbruch nur bei Beschriftung. */
+  .smuggler-command-bottom .welcome-status-item--overall-leader > .welcome-leader-layout {
+    display:grid !important;
+    grid-template-columns:minmax(0,1.12fr) minmax(0,1fr) !important;
+    align-items:center !important;
+    column-gap:clamp(8px,2.6vw,16px) !important;
+    width:100% !important;
+    min-width:0 !important;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader .welcome-leader-main,
+  .smuggler-command-bottom .welcome-status-item--overall-leader .welcome-leader-side {
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:center !important;
+    align-items:flex-start !important;
+    text-align:left !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    width:100% !important;
+    gap:3px !important;
+    padding:0 !important;
+    border:0 !important;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader .welcome-leader-line {
+    display:flex !important;
+    align-items:baseline !important;
+    justify-content:flex-start !important;
+    flex-wrap:wrap !important;
+    gap:2px 7px !important;
+    min-width:0 !important;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-label,
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-margin-label {
+    white-space:normal !important;
+    overflow-wrap:normal !important;
+    hyphens:auto !important;
+    font-size:clamp(.68rem,2.65vw,.79rem) !important;
+    line-height:1.18 !important;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-points {
+    font-size:clamp(.78rem,3.15vw,.93rem) !important;
+    white-space:normal !important;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-margin {
+    font-size:clamp(.89rem,3.8vw,1.06rem) !important;
+    white-space:normal !important;
+  }
+}
+@media (max-width:350px) {
+  .smuggler-command-bottom .welcome-status-item:not(.welcome-status-item--mission) {
+    grid-template-columns:24px minmax(0,1fr) !important;
+    gap:8px !important;
+    padding:9px 9px !important;
+  }
+  .smuggler-command-bottom .welcome-status-item:not(.welcome-status-item--mission) > svg {
+    width:23px !important;height:23px !important;
+  }
+  .smuggler-command-bottom .season-progress-percent {
+    min-width:60px !important;padding:3px 6px !important;
+  }
+}
+/* TEST2v2 2026-11-15: Mobile Feinausrichtung – nur Kachelabstaende und Label-Lesbarkeit. */
+@media (max-width: 600px) {
+  .smuggler-command-bottom .welcome-season-progress-content {
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr) auto;
+    column-gap: 6px;
+  }
+  .smuggler-command-bottom .welcome-season-progress-content > small:first-child,
+  .smuggler-command-bottom .season-progress-caption--full > small {
+    font-size: .75rem !important;
+  }
+  .smuggler-command-bottom .season-progress-percent {
+    min-width: 58px;
+    justify-self: center;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader > .welcome-leader-layout {
+    grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr);
+    column-gap: 8px;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-label,
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-margin-label {
+    font-size: .75rem !important;
+    white-space: normal;
+    overflow-wrap: normal;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader .welcome-leader-side {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+@media (max-width: 350px) {
+  .smuggler-command-bottom .welcome-season-progress-content > small:first-child,
+  .smuggler-command-bottom .season-progress-caption--full > small,
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-label,
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-margin-label {
+    font-size: .70rem !important;
+  }
+}
+</style>
+
+<style>
+/* TEST2v2 – ausschließlich mobile Feinausrichtung der beiden Statuskacheln.
+   Die Desktop-Beschriftung und sämtliche dynamischen Werte bleiben erhalten. */
+.leader-label-mobile { display:none; }
+@media (max-width:600px) {
+  .smuggler-command-bottom .welcome-season-progress-content {
+    grid-template-columns: max-content max-content !important;
+    justify-content: center !important;
+    column-gap: clamp(18px,6vw,34px) !important;
+  }
+  .smuggler-command-bottom .season-progress-percent {
+    grid-column: 2 !important;
+    justify-self: center !important;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader > .welcome-leader-layout {
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important;
+    column-gap: 12px !important;
+  }
+  .smuggler-command-bottom #welcome-leader-label .leader-label-desktop { display:none; }
+  .smuggler-command-bottom #welcome-leader-label .leader-label-mobile { display:inline; }
+  .smuggler-command-bottom .welcome-status-item--overall-leader .welcome-leader-main,
+  .smuggler-command-bottom .welcome-status-item--overall-leader .welcome-leader-side {
+    justify-content: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-label,
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-margin-label {
+    white-space: nowrap !important;
+    font-size: clamp(.67rem,2.65vw,.75rem) !important;
+  }
+}
+@media (max-width:350px) {
+  .smuggler-command-bottom .welcome-season-progress-content {
+    column-gap: 12px !important;
+  }
+  .smuggler-command-bottom .season-progress-caption--full > small {
+    display: block !important;
+    font-size: .68rem !important;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader > .welcome-leader-layout {
+    column-gap: 6px !important;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-label,
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-margin-label {
+    font-size: .65rem !important;
+  }
+}
+</style>
+
+<style>
+/* TEST2v2 2026-11-15: mobile Statuskacheln im Desktop-Spaltenprinzip.
+   Nur Mobil <=600 px; Desktop und Datenlogik unveraendert. */
+@media (max-width:600px) {
+  .smuggler-command-bottom .welcome-status-item:not(.welcome-status-item--mission) {
+    min-height: 84px !important;
+    padding: 10px 11px !important;
+  }
+  .smuggler-command-bottom .welcome-status-item:not(.welcome-status-item--mission) > svg {
+    width: 26px !important;
+    height: 26px !important;
+  }
+  .smuggler-command-bottom .welcome-season-progress-content {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0,1fr)) !important;
+    grid-template-rows: auto auto !important;
+    align-items: center !important;
+    justify-items: center !important;
+    justify-content: stretch !important;
+    column-gap: 8px !important;
+    row-gap: 2px !important;
+    width: 100% !important;
+  }
+  .smuggler-command-bottom .welcome-season-progress-content > small:first-child {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    font-size: clamp(.64rem,2.55vw,.72rem) !important;
+    line-height: 1.08 !important;
+    margin: 0 !important;
+  }
+  .smuggler-command-bottom .welcome-season-progress-content > #welcome-season {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    justify-self: center !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    font-size: clamp(.94rem,3.85vw,1.06rem) !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+  }
+  .smuggler-command-bottom .season-progress-block,
+  .smuggler-command-bottom .season-progress-summary,
+  .smuggler-command-bottom .season-progress-caption--full {
+    display: contents !important;
+  }
+  .smuggler-command-bottom .season-progress-caption--full > small {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    font-size: clamp(.64rem,2.55vw,.72rem) !important;
+    line-height: 1.08 !important;
+    margin: 0 !important;
+  }
+  .smuggler-command-bottom .season-progress-caption--full > strong {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    justify-self: center !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    font-size: clamp(.94rem,3.85vw,1.06rem) !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+  }
+  .smuggler-command-bottom .season-progress-percent {
+    display: inline-flex !important;
+    grid-column: 3 !important;
+    grid-row: 1 / span 2 !important;
+    justify-self: center !important;
+    align-self: center !important;
+    min-width: 60px !important;
+    padding: 4px 9px !important;
+    text-align: center !important;
+    font-size: clamp(.92rem,3.7vw,1.02rem) !important;
+    line-height: 1.08 !important;
+    margin: 0 !important;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader > .welcome-leader-layout {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+    align-items: center !important;
+    justify-items: center !important;
+    column-gap: 8px !important;
+    width: 100% !important;
+  }
+  .smuggler-command-bottom #welcome-leader-label .leader-label-desktop { display:none !important; }
+  .smuggler-command-bottom #welcome-leader-label .leader-label-mobile { display:inline !important; }
+  .smuggler-command-bottom .welcome-status-item--overall-leader .welcome-leader-main,
+  .smuggler-command-bottom .welcome-status-item--overall-leader .welcome-leader-side {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    gap: 3px !important;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-label,
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-margin-label {
+    text-align: center !important;
+    font-size: clamp(.63rem,2.45vw,.71rem) !important;
+    line-height: 1.08 !important;
+    white-space: normal !important;
+    overflow-wrap: normal !important;
+    margin: 0 !important;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader .welcome-leader-line {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: baseline !important;
+    gap: 2px 7px !important;
+    width: 100% !important;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-champion {
+    font-size: clamp(.96rem,3.95vw,1.08rem) !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-points {
+    font-size: clamp(.74rem,2.95vw,.82rem) !important;
+    line-height: 1.08 !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+  }
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-margin {
+    font-size: clamp(.92rem,3.7vw,1.02rem) !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+  }
+}
+@media (max-width:350px) {
+  .smuggler-command-bottom .welcome-status-item:not(.welcome-status-item--mission) {
+    padding: 9px 9px !important;
+  }
+  .smuggler-command-bottom .welcome-season-progress-content,
+  .smuggler-command-bottom .welcome-status-item--overall-leader > .welcome-leader-layout {
+    column-gap: 6px !important;
+  }
+  .smuggler-command-bottom .welcome-season-progress-content > small:first-child,
+  .smuggler-command-bottom .season-progress-caption--full > small,
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-label,
+  .smuggler-command-bottom .welcome-status-item--overall-leader #welcome-leader-margin-label {
+    font-size: .62rem !important;
+  }
+}
+</style>
+
+
+<style>
+/* TEST2v2 2026-11-15: Nur mobile Feinkorrektur der rechten Event-Tafel.
+   Mehr Innenabstand rechts, damit der Zierknopf nicht in den Schriftzug ragt. */
+@media (max-width:760px) {
+  #aktueller-spieltag .sm-schedule__header .matchday-status {
+    min-width: 104px !important;
+    padding: 8px 21px !important;
+  }
+  #aktueller-spieltag .sm-schedule__header .matchday-status::before {
+    left: 5px !important;
+  }
+  #aktueller-spieltag .sm-schedule__header .matchday-status::after {
+    right: 5px !important;
+  }
+}
 </style>
 </head>
 
@@ -6350,7 +7387,7 @@
           <div class="smuggler-command-bottom"><div aria-label="Aktueller Saisonstatus" class="welcome-status">
 <div class="welcome-status-item">
 <svg aria-hidden="true"><use href="#icon-map"></use></svg>
-<span><small>Aktuelle Saison</small><strong id="welcome-season">Noch offen</strong></span>
+<span class="welcome-season-progress-content"><small>Aktuelle Saison</small><strong id="welcome-season">Noch offen</strong><span class="season-progress-block" id="season-progress-block" role="group" aria-label="Abgeschlossene Tippspieltage der Saison"><span class="season-progress-summary"><span id="season-progress-caption" class="season-progress-caption season-progress-caption--full"><strong id="season-progress-count">– / –</strong><small>Tippspieltage</small></span><span id="season-progress-percent" class="season-progress-percent" aria-label="Saisonfortschritt in Prozent">–</span></span><span class="season-progress-track" role="progressbar" aria-label="Saisonfortschritt der Tippspieltage" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="season-progress-track"><span class="season-progress-fill" id="season-progress-fill"></span></span></span></span>
 </div>
 <div class="welcome-status-item welcome-status-item--mission">
 <svg aria-hidden="true"><use href="#icon-anchor"></use></svg>
@@ -6358,7 +7395,7 @@
 </div>
 <div class="welcome-status-item welcome-status-item--overall-leader">
 <svg aria-hidden="true"><use href="#icon-trophy"></use></svg>
-<span><small id="welcome-leader-label">Platz 1 Gesamteinzelwertung</small><strong id="welcome-champion">Wird geladen</strong><small class="welcome-leader-points" id="welcome-leader-points"></small></span>
+<span class="welcome-leader-layout"><span class="welcome-leader-main"><small id="welcome-leader-label"><span class="leader-label-desktop">Platz 1 Gesamteinzelwertung</span><span class="leader-label-mobile">Platz 1 Gesamtwertung</span></small><span class="welcome-leader-line"><strong id="welcome-champion">Wird geladen</strong><small class="welcome-leader-points" id="welcome-leader-points"></small></span></span><span class="welcome-leader-side"><small id="welcome-leader-margin-label">Vorsprung auf Platz 2</small><strong id="welcome-leader-margin">–</strong></span></span>
 </div>
 </div>
             <div class="welcome-command-actions">
@@ -6802,6 +7839,95 @@
       return new Date(countdownRuntime.baseNow + (Date.now() - countdownRuntime.startedAt));
     }
 
+
+    function renderScheduleHeading(titleElement, sourceTitle) {
+      if (!titleElement) return;
+      const full = String(sourceTitle || "").trim().replace(/\s+/g, " ");
+      const headingText = full.replace(/\u00a0/g, " ");
+      titleElement.dataset.fullTitle = full;
+      titleElement.setAttribute("aria-label", full);
+
+      const draw = () => {
+        // Desktop: original data and native typography, without mobile spans or font overrides.
+        titleElement.style.removeProperty("font-size");
+        if (!window.matchMedia("(max-width: 760px)").matches) {
+          titleElement.textContent = full;
+          return;
+        }
+        const css = getComputedStyle(titleElement);
+        const available = titleElement.clientWidth;
+        if (!available) {
+          titleElement.textContent = full;
+          return;
+        }
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        if (!ctx) {
+          titleElement.textContent = full;
+          return;
+        }
+        const family = css.fontFamily;
+        const weight = css.fontWeight;
+        const desired = parseFloat(css.fontSize);
+        const preferred = Number.isFinite(desired) ? desired : 22;
+        const minimum = 16; // unter 16px nicht zur Einzeiligkeit zwingen
+        const oneLineMinimum = Math.max(18, preferred * .85);
+        const measure = (str, size) => {
+          ctx.font = `${weight} ${size}px ${family}`;
+          return ctx.measureText(str).width;
+        };
+        const fit = (lines, startSize, minSize) => {
+          for (let size = startSize; size >= minSize; size -= .5) {
+            if (lines.every(line => measure(line, size) <= available - 2)) return size;
+          }
+          return null;
+        };
+
+        // Eine Zeile bevorzugen, sofern sie mindestens 16px gross sein kann.
+        let lines = [headingText];
+        let size = fit(lines, preferred, oneLineMinimum);
+        if (size === null) {
+          const words = headingText.split(" ");
+          const variants = [];
+          for (let i = 1; i < words.length; i++) {
+            const first = words.slice(0, i).join(" ");
+            const second = words.slice(i).join(" ");
+            // Sinnvolle Grenze vor Spieltag/Runde/Finale bevorzugen.
+            const semantic = /^(?:\d{1,2}\.\s*(?:Spieltag|Runde)|Achtelfinale|Viertelfinale|Halbfinale|Finale)/i.test(second);
+            variants.push({ lines: [first, second], score: Math.max(measure(first,preferred),measure(second,preferred)) - (semantic ? 30 : 0) });
+          }
+          variants.sort((a,b) => a.score - b.score);
+          for (const option of variants) {
+            const candidate = fit(option.lines, preferred, minimum);
+            if (candidate !== null) {
+              lines = option.lines;
+              size = candidate;
+              break;
+            }
+          }
+          if (size === null && variants.length) {
+            lines = variants[0].lines;
+            size = minimum;
+          }
+        }
+        titleElement.replaceChildren();
+        lines.forEach(line => {
+          const span = document.createElement("span");
+          span.className = "sm-schedule-title-line";
+          span.textContent = line.replace(/(\d{1,2}\.)\s+(Spieltag|Runde)/gi, "$1\u00a0$2");
+          titleElement.appendChild(span);
+        });
+        titleElement.style.fontSize = `${size || minimum}px`;
+      };
+      draw();
+      if (!titleElement.dataset.headingResizeBound) {
+        titleElement.dataset.headingResizeBound = "1";
+        window.addEventListener("resize", () => {
+          if (titleElement.dataset.fullTitle) renderScheduleHeading(titleElement, titleElement.dataset.fullTitle);
+        }, { passive: true });
+      }
+    }
+
     function formatEventMatchdayLabel(event, fallback = "Nächstes Event") {
       const name = String(event?.matchdayName || "").trim().replace(/(\d+\.)\s+(Spieltag)/gi, "$1\u00a0$2");
       const type = String(event?.matchdayType || "").trim().toLowerCase();
@@ -6833,7 +7959,7 @@
       matchdayRefreshPending = true;
       // Operativer Tageswechsel und Tab-Rueckkehr: Termine und Gesamtfuehrung frisch laden.
       window.OSCHighscoreDataAdapter?.clear?.();
-      Promise.allSettled([loadMatchdayData(), loadCurrentOverallLeader()]).finally(() => {
+      Promise.allSettled([loadMatchdayData(), loadCurrentOverallLeader(), loadSeasonProgress()]).finally(() => {
         matchdayRefreshPending = false;
         if (matchdayRefreshQueued) {
           matchdayRefreshQueued = false;
@@ -6935,8 +8061,15 @@
         const dash = document.createElement("span");
         dash.className = "smuggler-match-separator";
         dash.textContent = event.trenner || "–";
-        match.append(makeTeam(event.heimTeamId, event.heim, "home"), dash,
-          makeTeam(event.auswaertsTeamId, event.auswaerts, "away"));
+        const homeTeam = makeTeam(event.heimTeamId, event.heim, "home");
+        const awayTeam = makeTeam(event.auswaertsTeamId, event.auswaerts, "away");
+        const homeBadge = homeTeam.querySelector(".smuggler-match-seal");
+        const awayBadge = awayTeam.querySelector(".smuggler-match-seal");
+        const names = document.createElement("div");
+        names.className = "smuggler-match-names";
+        names.append(homeTeam.querySelector(".smuggler-match-name"), dash,
+          awayTeam.querySelector(".smuggler-match-name"));
+        match.append(homeBadge, names, awayBadge);
         note.appendChild(match);
       } else {
         lines.slice(1).filter(Boolean).forEach(line => {
@@ -7254,11 +8387,11 @@
         const focus = state.focus;
         if (!focus) {
           if (elements.label) elements.label.textContent = "Nächste Tippereignisse";
-          if (elements.title) elements.title.textContent = "Noch kein bestätigter Termin";
+          if (elements.title) renderScheduleHeading(elements.title, "Noch kein bestätigter Termin");
           if (elements.status) elements.status.textContent = "KEINE EXAKTEN TERMINE";
         } else {
           if (elements.label) elements.label.textContent = "Nächstes Tippereignis";
-          if (elements.title) elements.title.textContent = formatMatchdayTitle(focus);
+          if (elements.title) renderScheduleHeading(elements.title, formatMatchdayTitle(focus));
           if (elements.status) elements.status.textContent = `${upcoming.length} EVENT${upcoming.length===1?"":"S"}`;
 
 
@@ -7352,20 +8485,81 @@
     // Der Hohe Schmugglerrat zeigt den aktuellen Fuehrenden der offiziellen
     // Highscore-Gesamteinzelwertung. Der historische Saisonchampion bleibt
     // ausschliesslich im Ehrenlogbuch / Hall of Fame erhalten.
+
+    // Nur tatsaechlich abgeschlossene Tippspieltage zaehlen, nicht abgelaufene Kalendertermine.
+    let seasonProgressInFlight = null;
+    async function loadSeasonProgress() {
+      if (seasonProgressInFlight) return seasonProgressInFlight;
+      const label = document.getElementById("season-progress-caption");
+      const countLabel = document.getElementById("season-progress-count");
+      const percentLabel = document.getElementById("season-progress-percent");
+      const track = document.getElementById("season-progress-track");
+      const fill = document.getElementById("season-progress-fill");
+      if (!label || !countLabel || !percentLabel || !track || !fill) return;
+      seasonProgressInFlight = (async () => {
+        try {
+          const read = async path => {
+            const response = await fetch(path, {cache:"no-store"});
+            if (!response.ok) throw new Error(path + " HTTP " + response.status);
+            return response.json();
+          };
+          const [daysDocument, logbookDocument] = await Promise.all([
+            read("./tippspieltage.json"), read("./spieltag-logbuch.json")
+          ]);
+          const seasonId = String(daysDocument?.aktiveSaison || "");
+          const season = daysDocument?.saisons?.find(item => String(item?.id) === seasonId);
+          const days = season?.tippspieltage;
+          if (!seasonId || !Array.isArray(days) || !Array.isArray(logbookDocument?.logbuecher) ||
+              String(logbookDocument.saison) !== seasonId) throw new Error("Saisondaten unvollstaendig");
+          const total = days.filter(day => day?.aktiv !== false).length;
+          const completedIds = new Set(logbookDocument.logbuecher
+            .filter(item => item?.abgeschlossen === true &&
+              typeof item.id === "string" && item.id.startsWith(seasonId + "__"))
+            .map(item => item.id));
+          const completed = completedIds.size;
+          if (total < 1 || completed > total) throw new Error("Abschlusszaehlung widerspricht Saisonplanung");
+          const percent = Math.round(completed / total * 100);
+          countLabel.textContent = `${completed} / ${total}`;
+          percentLabel.textContent = `${percent} %`;
+          track.setAttribute("aria-valuenow", String(percent));
+          track.setAttribute("aria-valuetext", `${completed} von ${total} Tippspieltagen abgeschlossen`);
+          fill.style.width = `${percent}%`;
+        } catch (error) {
+          countLabel.textContent = "– / –";
+          percentLabel.textContent = "–";
+          label.title = "Saisonfortschritt derzeit nicht verfügbar";
+          track.removeAttribute("aria-valuenow");
+          track.removeAttribute("aria-valuetext");
+          fill.style.width = "0%";
+          console.warn("Saisonfortschritt:", error);
+        }
+      })();
+      try { await seasonProgressInFlight; }
+      finally { seasonProgressInFlight = null; }
+    }
+
     async function loadCurrentOverallLeader() {
       const label = document.getElementById("welcome-champion");
       const pointsLabel = document.getElementById("welcome-leader-points");
-      if (!label || !pointsLabel) return;
+      const marginLabel = document.getElementById("welcome-leader-margin-label");
+      const marginValue = document.getElementById("welcome-leader-margin");
+      if (!label || !pointsLabel || !marginLabel || !marginValue) return;
       try {
         const data = await window.OSCHighscoreDataAdapter.loadHighscore();
         const individuals = data?.overall?.individual;
         if (!Array.isArray(individuals) || !individuals.length) {
           label.textContent = "Noch offen";
           pointsLabel.textContent = "Noch keine Gesamtwertung";
+          marginLabel.textContent = "Vorsprung auf Platz 2";
+          marginValue.textContent = "–";
           return;
         }
-        const leaders = individuals.filter(entry => Number(entry?.rank) === 1 &&
-          typeof entry?.name === "string" && entry.name.trim());
+        const entries = individuals.filter(entry =>
+          typeof entry?.name === "string" && entry.name.trim() &&
+          entry?.totalPoints !== null && entry?.totalPoints !== undefined && entry?.totalPoints !== "" &&
+          Number.isFinite(Number(entry.totalPoints))
+        );
+        const leaders = entries.filter(entry => Number(entry?.rank) === 1);
         label.textContent = leaders.length
           ? leaders.map(entry => entry.name.trim()).join(" · ")
           : "Noch offen";
@@ -7375,10 +8569,30 @@
         pointsLabel.textContent = validPoints
           ? `${Number(points).toLocaleString("de-DE")} Punkte`
           : "Punktestand nicht verfügbar";
+        const leaderPoints = validPoints ? Number(points) : null;
+        const secondPlace = entries.find(entry => Number(entry?.rank) === 2);
+        if (leaders.length > 1) {
+          marginLabel.textContent = "Führungsstatus";
+          marginValue.textContent = "Punktgleich";
+        } else if (leaderPoints !== null && secondPlace && Number.isFinite(Number(secondPlace.totalPoints))) {
+          const gap = leaderPoints - Number(secondPlace.totalPoints);
+          if (gap > 0) {
+            marginLabel.textContent = "Vorsprung auf Platz 2";
+            marginValue.textContent = `+${gap.toLocaleString("de-DE")} ${gap === 1 ? "Punkt" : "Punkte"}`;
+          } else {
+            marginLabel.textContent = "Führungsstatus";
+            marginValue.textContent = "Punktgleich";
+          }
+        } else {
+          marginLabel.textContent = "Vorsprung auf Platz 2";
+          marginValue.textContent = "–";
+        }
         label.title = leaders.length ? "Platz 1 Gesamteinzelwertung" : "Keine bestätigte Führung verfügbar";
       } catch (error) {
         label.textContent = "Nicht verfügbar";
         pointsLabel.textContent = "Punktestand nicht verfügbar";
+        marginLabel.textContent = "Vorsprung auf Platz 2";
+        marginValue.textContent = "–";
         console.warn("Führende Gesamteinzelwertung konnte nicht geladen werden:", error);
       }
     }
@@ -7523,6 +8737,7 @@
     loadSiteData();
     loadClubData();
     loadCurrentOverallLeader();
+    loadSeasonProgress();
     loadMatchdayData();
 
     document.getElementById("year").textContent = new Date().getFullYear();
