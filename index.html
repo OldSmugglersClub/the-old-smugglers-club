@@ -6312,6 +6312,151 @@
     }
   }
 
+
+/* TOSMC TEST2v2 Tagesgruppen – einheitlich Desktop/Mobil */
+#aktueller-spieltag .sm-event-list,
+#aktueller-spieltag .sm-event-list.is-multiple,
+#aktueller-spieltag .sm-event-list.is-single,
+#aktueller-spieltag .sm-event-list.is-double {
+  height:auto !important; min-height:0 !important; max-height:none !important;
+  overflow:visible !important; overscroll-behavior:auto !important;
+  scrollbar-gutter:auto !important; flex:0 0 auto !important;
+}
+#aktueller-spieltag details.sm-day > summary.sm-day__title {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:.7rem; position:relative; top:auto; cursor:pointer;
+  list-style:none; user-select:none; touch-action:manipulation;
+}
+#aktueller-spieltag details.sm-day > summary.sm-day__title::-webkit-details-marker { display:none; }
+#aktueller-spieltag details.sm-day > summary.sm-day__title::after {
+  content:'+'; flex:0 0 auto; font-size:1.25rem; line-height:1;
+  color:#ebc873; font-weight:900;
+}
+#aktueller-spieltag details.sm-day[open] > summary.sm-day__title::after { content:'−'; }
+#aktueller-spieltag details.sm-day > summary.sm-day__title:focus-visible {
+  outline:2px solid #ebc873; outline-offset:-3px;
+}
+#aktueller-spieltag details.sm-day:not([open]) > summary.sm-day__title { border-bottom:0; }
+#aktueller-spieltag details.sm-day[open] > summary.sm-day__title { border-bottom:1px solid rgba(190,128,39,.48); }
+
+
+  /* TEST2v2 4.9.18: zentrale Wappen, Mannschaftsnamen nach aussen.
+     Heimname | Heimwappen | Trennstrich | Gastwappen | Gastname.
+     Gilt nur in der 7-Tage-Kachel. Tagesgruppen, Links, Daten unveraendert. */
+  #aktueller-spieltag .sm-event-row__match {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 32px 1.2rem 32px minmax(0, 1fr);
+    align-items: center;
+    grid-auto-rows: auto;
+    gap: clamp(.28rem, .8vw, .65rem);
+    min-width: 0;
+    width: 100%;
+    max-width: 620px;
+    margin-inline: auto;
+    justify-self: center;
+    text-align: left;
+  }
+  /* Eltern der direkten Rasterelemente aufloesen; DOM/Links bleiben bestehen. */
+  #aktueller-spieltag .sm-event-row__team,
+  #aktueller-spieltag .sm-event-row__team--home,
+  #aktueller-spieltag .sm-event-row__team--away {
+    display: contents;
+  }
+  #aktueller-spieltag .sm-event-row__team--home > .sm-event-row__seal {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  #aktueller-spieltag .sm-event-row__team--home > .sm-event-row__team-name {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  #aktueller-spieltag .sm-event-row__separator {
+    display: block;
+    grid-column: 3;
+    grid-row: 1;
+    width: auto;
+    justify-self: center;
+    text-align: center;
+    flex: none;
+  }
+  #aktueller-spieltag .sm-event-row__team--away > .sm-event-row__team-name {
+    grid-column: 5;
+    grid-row: 1;
+    text-align: left;
+  }
+  #aktueller-spieltag .sm-event-row__team--away > .sm-event-row__seal {
+    grid-column: 4;
+    grid-row: 1;
+  }
+  #aktueller-spieltag .sm-event-row__team-name {
+    min-width: 0;
+    width: auto;
+    white-space: normal;
+    overflow-wrap: break-word;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+    text-align: left;
+  }
+  /* Namen neben den Wappen; Wappen zentral unmittelbar am Trennstrich. */
+  #aktueller-spieltag .sm-event-row__team--home > .sm-event-row__team-name {
+    text-align: right;
+  }
+  #aktueller-spieltag .sm-event-row__team--away > .sm-event-row__team-name {
+    text-align: left;
+  }
+  #aktueller-spieltag .sm-event-row__seal {
+    width: 32px;
+    height: 32px;
+    min-width: 0;
+    flex: none;
+    justify-self: center;
+  }
+  @media (max-width: 760px) {
+    #aktueller-spieltag .sm-event-row__match {
+      grid-template-columns: minmax(0, 1fr) 27px .85rem 27px minmax(0, 1fr);
+      gap: clamp(.18rem, 1vw, .45rem);
+    }
+    #aktueller-spieltag .sm-event-row__seal {
+      width: 27px;
+      height: 27px;
+    }
+    #aktueller-spieltag .sm-event-row__team-name {
+      font-size: clamp(.7rem, 2.8vw, 1rem);
+    }
+  }
+  @media (max-width: 380px) {
+    #aktueller-spieltag .sm-event-row__match {
+      grid-template-columns: minmax(0, 1fr) 23px .7rem 23px minmax(0, 1fr);
+      gap: .18rem;
+    }
+    #aktueller-spieltag .sm-event-row__seal {
+      width: 23px;
+      height: 23px;
+    }
+  }
+
+
+  /* TEST2v2 4.9.24: Smugglerauftrag in gleicher Typografie wie die
+     anderen Wettbewerbe; responsiv ohne unerwuenschten Wortumbruch. */
+  #aktueller-spieltag .sm-event-row__competition--smugglerauftrag {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: .72rem;
+    letter-spacing: .05em;
+    line-height: 1.12;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+  @media (max-width: 760px) {
+    #aktueller-spieltag .sm-event-row__competition--smugglerauftrag {
+      font-size: clamp(.58rem, 2.5vw, .72rem);
+    }
+  }
 </style>
   <link rel="stylesheet" href="./highscore.css?v=4.0.1">
   <link rel="stylesheet" href="./logbuch.css?v=2026-11-08-dynamic-weekend">
@@ -8948,8 +9093,13 @@
             groups.get(key).push(game);
           });
           groups.forEach(eventsForDay=>{
-            const day=document.createElement("section"); day.className="sm-day";
-            const dayTitle=document.createElement("h3"); dayTitle.className="sm-day__title";
+            const day=document.createElement("details"); day.className="sm-day";
+            // Logbuch-Zuordnung: Wochenend-Events Freitag–Montag geöffnet,
+            // Wochenevents Dienstag–Donnerstag zunächst geschlossen.
+            // Datumsbezogen, unabhängig vom Beginn des 7-Tage-Vorschaufensters.
+            const weekday=eventsForDay[0]._start.getDay();
+            day.open=(weekday===5 || weekday===6 || weekday===0 || weekday===1);
+            const dayTitle=document.createElement("summary"); dayTitle.className="sm-day__title";
             dayTitle.textContent=new Intl.DateTimeFormat(locale,{weekday:"long",day:"2-digit",month:"long"}).format(eventsForDay[0]._start);
             day.appendChild(dayTitle);
             eventsForDay.forEach(game=>{
@@ -8966,7 +9116,14 @@
               }
               const time=document.createElement("span"); time.className="sm-event-row__time"; time.textContent=game.anstoss;
               const competition=document.createElement("span"); competition.className="sm-event-row__competition";
-              competition.textContent=String(game.matchdayType||"").trim().toLowerCase()==="smugglerauftrag"?(game.matchdayName||"Smugglerauftrag"):(game.wettbewerbAnzeige||game.wettbewerb||"Ereignis");
+              if (String(game.matchdayType||"").trim().toLowerCase()==="smugglerauftrag") {
+                competition.classList.add("sm-event-row__competition--smugglerauftrag");
+                // Nur die sichtbare Wettbewerbskennung vereinheitlichen.
+                // matchdayName bleibt in den Spieldaten unveraendert.
+                competition.textContent="SMUGGLERAUFTRAG";
+              } else {
+                competition.textContent=game.wettbewerbAnzeige||game.wettbewerb||"Ereignis";
+              }
               const match=document.createElement("span"); match.className="sm-event-row__match";
 
               const homeWrap=document.createElement("span"); homeWrap.className="sm-event-row__team sm-event-row__team--home";

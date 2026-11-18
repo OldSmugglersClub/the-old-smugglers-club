@@ -2242,3 +2242,177 @@ body.page-dynamo-dresden{
 .synchronized-placeholder .data-note {
   margin-bottom: 0;
 }
+
+/* TEST2v2 4.9.19 – freigegebene zentrale Wappenachse in regulären
+   Wettbewerbspaarungen. Beschraenkt auf createMatchList-Matchzeilen.
+   Tabellen, KO-Baeume, Dynamo-Sonderseite und Einzelkacheln bleiben frei. */
+body:not(.page-dynamo-dresden) .match-list .match-row > .match-pairing {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(14px, 1.6vw, 20px) minmax(0, 1fr);
+  gap: clamp(4px, .65vw, 9px);
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  justify-items: stretch;
+  text-align: left;
+}
+body:not(.page-dynamo-dresden) .match-list .match-row > .match-pairing > .team-identity--home,
+body:not(.page-dynamo-dresden) .match-list .match-row > .match-pairing > .team-identity--away {
+  display: grid;
+  align-items: center;
+  justify-content: stretch;
+  gap: clamp(4px, .65vw, 9px);
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+}
+body:not(.page-dynamo-dresden) .match-list .match-row > .match-pairing > .team-identity--home {
+  grid-column: 1;
+  grid-template-columns: minmax(0, 1fr) 32px;
+}
+body:not(.page-dynamo-dresden) .match-list .match-row > .match-pairing > .team-identity--away {
+  grid-column: 3;
+  grid-template-columns: 32px minmax(0, 1fr);
+}
+body:not(.page-dynamo-dresden) .match-list .match-row > .match-pairing > .team-identity--home > .team-identity__name {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: right;
+  justify-self: end;
+}
+body:not(.page-dynamo-dresden) .match-list .match-row > .match-pairing > .team-identity--home > .team-identity__badge {
+  grid-column: 2;
+  grid-row: 1;
+}
+body:not(.page-dynamo-dresden) .match-list .match-row > .match-pairing > .team-identity--away > .team-identity__badge {
+  grid-column: 1;
+  grid-row: 1;
+}
+body:not(.page-dynamo-dresden) .match-list .match-row > .match-pairing > .team-identity--away > .team-identity__name {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: left;
+  justify-self: start;
+}
+body:not(.page-dynamo-dresden) .match-list .match-row > .match-pairing .team-identity__badge {
+  width: 32px;
+  height: 32px;
+  min-width: 0;
+  flex: none;
+  justify-self: center;
+}
+body:not(.page-dynamo-dresden) .match-list .match-row > .match-pairing .team-identity__name {
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+}
+body:not(.page-dynamo-dresden) .match-list .match-row > .match-pairing > .match-pairing__separator {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1;
+}
+@media (max-width: 520px) {
+  body:not(.page-dynamo-dresden) .match-list .match-row > .match-pairing > .team-identity--home {
+    grid-template-columns: minmax(0, 1fr) 26px;
+  }
+  body:not(.page-dynamo-dresden) .match-list .match-row > .match-pairing > .team-identity--away {
+    grid-template-columns: 26px minmax(0, 1fr);
+  }
+  body:not(.page-dynamo-dresden) .match-list .match-row > .match-pairing .team-identity__badge {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* TEST2v2 4.9.23 – bereits bestaetigte Wappenachse auch in Smugglerauftrag-
+   Paarungszeilen. Nur createMatchList auf dynamo-dresden.html.
+   Tabelle, Tippverteilung, Status, Logik, Sonderkacheln bleiben unveraendert. */
+body.page-dynamo-dresden .match-list .match-row > .match-pairing {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(14px, 1.6vw, 20px) minmax(0, 1fr);
+  gap: clamp(4px, .65vw, 9px);
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  justify-items: stretch;
+  text-align: left;
+}
+body.page-dynamo-dresden .match-list .match-row > .match-pairing > .team-identity--home,
+body.page-dynamo-dresden .match-list .match-row > .match-pairing > .team-identity--away {
+  display: grid;
+  align-items: center;
+  justify-content: stretch;
+  gap: clamp(4px, .65vw, 9px);
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+}
+body.page-dynamo-dresden .match-list .match-row > .match-pairing > .team-identity--home {
+  grid-column: 1;
+  grid-template-columns: minmax(0, 1fr) 32px;
+}
+body.page-dynamo-dresden .match-list .match-row > .match-pairing > .team-identity--away {
+  grid-column: 3;
+  grid-template-columns: 32px minmax(0, 1fr);
+}
+body.page-dynamo-dresden .match-list .match-row > .match-pairing > .team-identity--home > .team-identity__name {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: right;
+  justify-self: end;
+}
+body.page-dynamo-dresden .match-list .match-row > .match-pairing > .team-identity--home > .team-identity__badge {
+  grid-column: 2;
+  grid-row: 1;
+}
+body.page-dynamo-dresden .match-list .match-row > .match-pairing > .team-identity--away > .team-identity__badge {
+  grid-column: 1;
+  grid-row: 1;
+}
+body.page-dynamo-dresden .match-list .match-row > .match-pairing > .team-identity--away > .team-identity__name {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: left;
+  justify-self: start;
+}
+body.page-dynamo-dresden .match-list .match-row > .match-pairing .team-identity__badge {
+  width: 32px;
+  height: 32px;
+  min-width: 0;
+  flex: none;
+  justify-self: center;
+}
+body.page-dynamo-dresden .match-list .match-row > .match-pairing .team-identity__name {
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+}
+body.page-dynamo-dresden .match-list .match-row > .match-pairing > .match-pairing__separator {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1;
+}
+@media (max-width: 520px) {
+  body.page-dynamo-dresden .match-list .match-row > .match-pairing > .team-identity--home {
+    grid-template-columns: minmax(0, 1fr) 26px;
+  }
+  body.page-dynamo-dresden .match-list .match-row > .match-pairing > .team-identity--away {
+    grid-template-columns: 26px minmax(0, 1fr);
+  }
+  body.page-dynamo-dresden .match-list .match-row > .match-pairing .team-identity__badge {
+    width: 26px;
+    height: 26px;
+  }
+}
