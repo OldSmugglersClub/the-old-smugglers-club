@@ -872,6 +872,8 @@
     "ac sparta praha": "sparta-praha",
     "sparta praha": "sparta-praha",
     "sparta prag": "sparta-praha",
+    "sk puntigamer sturm graz": "sturm-graz",
+    "puntigamer sturm graz": "sturm-graz",
     "sk sturm graz": "sturm-graz",
     "sturm graz": "sturm-graz",
     "sunderland afc": "sunderland",
