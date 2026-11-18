@@ -2416,3 +2416,16 @@ body.page-dynamo-dresden .match-list .match-row > .match-pairing > .match-pairin
     height: 26px;
   }
 }
+
+/* TEST2v2 4.9.32 – mobile Namen ohne unnatuerliche Silbentrennung.
+   Nur reguläre Begegnungszeilen; Wappenachse, Ergebnisse und Layoutachsen bleiben unveraendert. */
+@media (max-width: 520px) {
+  body .match-list .match-row > .match-pairing > .team-identity > .team-identity__name {
+    font-size: clamp(.72rem, 3.4vw, .875rem);
+    line-height: 1.25;
+    hyphens: none;
+    overflow-wrap: normal;
+    word-break: normal;
+    text-wrap: balance;
+  }
+}
