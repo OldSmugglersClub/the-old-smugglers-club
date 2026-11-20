@@ -4937,12 +4937,12 @@
           "datumAnzeige": "20.11.2026",
           "anstoss": "20:30",
           "terminBestaetigt": true,
-          "heimtore": null,
-          "auswaertstore": null,
-          "status": "terminiert",
+          "heimtore": 1,
+          "auswaertstore": 1,
+          "status": "beendet",
           "sonderwertungen": [],
           "notiz": "Die genaue Ansetzung innerhalb des angegebenen Spieltagszeitraums ist noch offen.",
-          "quelleStand": "2026-09-10",
+          "quelleStand": "2026-11-20",
           "heimTeamId": "bayern-muenchen",
           "auswaertsTeamId": "koeln"
         },
@@ -15661,6 +15661,6 @@
       ]
     }
   ],
-  "datenVersion": 100,
-  "aktualisiert": "2026-11-08"
+  "datenVersion": 101,
+  "aktualisiert": "2026-11-20"
 }
