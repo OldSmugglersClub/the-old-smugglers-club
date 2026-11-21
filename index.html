@@ -9097,12 +9097,15 @@
           });
           groups.forEach(eventsForDay=>{
             const day=document.createElement("details"); day.className="sm-day";
-            // Logbuch-Zuordnung: Wochenend-Events Freitag–Montag geöffnet,
-            // Wochenevents Dienstag–Donnerstag zunächst geschlossen.
-            // Datumsbezogen, unabhängig vom Beginn des 7-Tage-Vorschaufensters.
-            const weekday=eventsForDay[0]._start.getDay();
-            day.open=(weekday===5 || weekday===6 || weekday===0 || weekday===1);
+            const firstEventStart = Math.min(...eventsForDay.map(event => event._start.getTime()));
+            const opensAt = firstEventStart - 3 * 24 * 60 * 60 * 1000;
+            const delay = opensAt - Date.now();
+            day.open = delay <= 0;
             const dayTitle=document.createElement("summary"); dayTitle.className="sm-day__title";
+            if (!day.open) {
+              const openTimer = window.setTimeout(() => { day.open = true; }, delay);
+              dayTitle.addEventListener("click", () => window.clearTimeout(openTimer), {once:true});
+            }
             dayTitle.textContent=new Intl.DateTimeFormat(locale,{weekday:"long",day:"2-digit",month:"long"}).format(eventsForDay[0]._start);
             day.appendChild(dayTitle);
             eventsForDay.forEach(game=>{
