@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 50,
-  "aktualisiert": "2026-11-20",
+  "datenVersion": 51,
+  "aktualisiert": "2026-11-21",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
   "torjaeger": [
     {
-      "name": "N. Füllkrug",
+      "name": "P. Schick",
       "tore": 9
     },
     {
-      "name": "P. Schick",
-      "tore": 8
+      "name": "N. Füllkrug",
+      "tore": 9
     },
     {
       "name": "M. Olise",
@@ -27,7 +27,23 @@
       "tore": 6
     },
     {
+      "name": "J. Burkardt",
+      "tore": 6
+    },
+    {
+      "name": "Romulo",
+      "tore": 6
+    },
+    {
+      "name": "A. Nusa",
+      "tore": 5
+    },
+    {
       "name": "Y. Suzuki",
+      "tore": 5
+    },
+    {
+      "name": "I. Matanovic",
       "tore": 5
     },
     {
@@ -39,11 +55,7 @@
       "tore": 5
     },
     {
-      "name": "J. Burkardt",
-      "tore": 5
-    },
-    {
-      "name": "Romulo",
+      "name": "F. Nmecha",
       "tore": 5
     },
     {
@@ -55,23 +67,11 @@
       "tore": 4
     },
     {
-      "name": "A. Nusa",
-      "tore": 4
-    },
-    {
-      "name": "I. Matanovic",
-      "tore": 4
-    },
-    {
-      "name": "M. Krattenmacher",
-      "tore": 4
-    },
-    {
       "name": "J. Scally",
       "tore": 4
     },
     {
-      "name": "F. Nmecha",
+      "name": "M. Krattenmacher",
       "tore": 4
     },
     {
@@ -80,6 +80,10 @@
     },
     {
       "name": "D. Upamecano",
+      "tore": 3
+    },
+    {
+      "name": "R. Baku",
       "tore": 3
     },
     {
@@ -127,7 +131,7 @@
       "tore": 2
     },
     {
-      "name": "R. Baku",
+      "name": "R. Reitz",
       "tore": 2
     },
     {
@@ -135,11 +139,11 @@
       "tore": 2
     },
     {
-      "name": "Thijs Dallinga",
+      "name": "A. Daghim",
       "tore": 2
     },
     {
-      "name": "A. Daghim",
+      "name": "Thijs Dallinga",
       "tore": 2
     },
     {
@@ -155,11 +159,11 @@
       "tore": 2
     },
     {
-      "name": "Rodrigo Ribeiro",
+      "name": "A. Kade",
       "tore": 2
     },
     {
-      "name": "A. Kade",
+      "name": "Rodrigo Ribeiro",
       "tore": 2
     },
     {
@@ -168,6 +172,10 @@
     },
     {
       "name": "T. Lemperle",
+      "tore": 2
+    },
+    {
+      "name": "E. Fernández",
       "tore": 2
     },
     {
@@ -235,11 +243,11 @@
       "tore": 2
     },
     {
-      "name": "S. Marino",
+      "name": "S. Tigges",
       "tore": 2
     },
     {
-      "name": "S. Tigges",
+      "name": "S. Marino",
       "tore": 2
     },
     {
@@ -283,8 +291,8 @@
       "tore": 2
     },
     {
-      "name": "R. Reitz",
-      "tore": 1
+      "name": "A. Moreira",
+      "tore": 2
     },
     {
       "name": "L. Querfeld",
@@ -323,19 +331,15 @@
       "tore": 1
     },
     {
-      "name": "E. Fernández",
-      "tore": 1
-    },
-    {
       "name": "D. Mokwa",
       "tore": 1
     },
     {
-      "name": "R. Königsdörffer",
+      "name": "P. Mwene",
       "tore": 1
     },
     {
-      "name": "P. Mwene",
+      "name": "R. Königsdörffer",
       "tore": 1
     },
     {
@@ -375,15 +379,15 @@
       "tore": 1
     },
     {
+      "name": "Danny da Costa",
+      "tore": 1
+    },
+    {
       "name": "Isac Lidberg",
       "tore": 1
     },
     {
       "name": "E. Martel",
-      "tore": 1
-    },
-    {
-      "name": "Danny da Costa",
       "tore": 1
     },
     {
@@ -411,15 +415,15 @@
       "tore": 1
     },
     {
-      "name": "N. Schlotterbeck",
-      "tore": 1
-    },
-    {
       "name": "Daniel Svensson",
       "tore": 1
     },
     {
-      "name": "J. Quansah",
+      "name": "N. Schlotterbeck",
+      "tore": 1
+    },
+    {
+      "name": "M. Diaby",
       "tore": 1
     },
     {
@@ -427,7 +431,7 @@
       "tore": 1
     },
     {
-      "name": "M. Diaby",
+      "name": "J. Quansah",
       "tore": 1
     },
     {
@@ -523,11 +527,11 @@
       "tore": 1
     },
     {
-      "name": "A. Grønbæk",
+      "name": "Shafiq Nandja",
       "tore": 1
     },
     {
-      "name": "Shafiq Nandja",
+      "name": "A. Grønbæk",
       "tore": 1
     },
     {
@@ -568,6 +572,14 @@
     },
     {
       "name": "M. Moore",
+      "tore": 1
+    },
+    {
+      "name": "B. Gruda",
+      "tore": 1
+    },
+    {
+      "name": "M. Aebischer",
       "tore": 1
     }
   ]
