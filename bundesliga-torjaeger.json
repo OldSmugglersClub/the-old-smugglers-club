@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 51,
-  "aktualisiert": "2026-11-21",
+  "datenVersion": 52,
+  "aktualisiert": "2026-11-22",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
@@ -20,6 +20,10 @@
     },
     {
       "name": "Younes Ebnoutalib",
+      "tore": 6
+    },
+    {
+      "name": "M. Gregoritsch",
       "tore": 6
     },
     {
@@ -44,10 +48,6 @@
     },
     {
       "name": "I. Matanovic",
-      "tore": 5
-    },
-    {
-      "name": "M. Gregoritsch",
       "tore": 5
     },
     {
@@ -580,6 +580,10 @@
     },
     {
       "name": "M. Aebischer",
+      "tore": 1
+    },
+    {
+      "name": "J. Bah",
       "tore": 1
     }
   ]
