@@ -17,6 +17,16 @@
   <link rel="icon" type="image/x-icon" href="./assets/app-icons/tosmc.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/app-icons/tosmc-apple-180.png">
   <link rel="manifest" href="./site.webmanifest">
+  <script>
+    (() => {
+      const { userAgent, userAgentData, maxTouchPoints } = navigator;
+      const isMobile = userAgentData?.mobile || /Android|iPhone|iPad|iPod|Mobile/i.test(userAgent);
+      const isIPadWithDesktopUA = /Macintosh/i.test(userAgent) && maxTouchPoints > 1;
+      if (!isMobile && !isIPadWithDesktopUA && /Windows|Macintosh|Linux|CrOS/i.test(userAgent)) {
+        document.querySelector('link[rel="manifest"]').setAttribute("href", "./site-desktop.webmanifest");
+      }
+    })();
+  </script>
 
   <style>
     :root {
