@@ -10,9 +10,9 @@
   const pages = [
     { label: 'Startseite', path: '/index.html' },
     { label: 'Saisonübersicht', path: '/saison-2026-2027.html' },
-    { label: 'Ranglistenlogbuch', path: '/highscore.html' },
+    { label: 'Highscore Ranglistenlogbuch', path: '/highscore.html' },
     { label: 'Spieltags-Logbuch', path: '/logbuch.html' },
-    { label: 'Ehrenlogbuch', path: '/hall-of-fame.html' },
+    { label: 'Hall of Fame Ehrenlogbuch', path: '/hall-of-fame.html' },
     { label: 'Bundesliga', path: '/bundesliga.html' },
     { label: 'DFB-Pokal', path: '/dfb-pokal.html' },
     { label: 'Champions League', path: '/champions-league.html' },

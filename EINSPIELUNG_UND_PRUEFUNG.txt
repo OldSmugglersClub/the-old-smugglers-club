@@ -1,25 +1,7 @@
-TOSMC – Stalk-O-Meter GC2 – separates LIVE-Dateipaket
-Datum: 24.11.2026
-LIVE-Quelle: OldSmugglersClub/the-old-smugglers-club, main
-LIVE-Ausgangscommit: db4dfb64c528889d0bb7e3f6d25c3a636364ee6b
-LIVE-Originaldateien vor Paketbau direkt ueber GitHub read-only geprueft:
-  stalk-o-meter.html Git-Blob e6fd702d64dc4e6d7a4251166873ceb4ca91859a
-  stalk-o-meter.js   Git-Blob 358e8419439203311aea2a50669c68a9f8514320
-GC2-Quelle: TEST2v2-Einspielpaket vom 24.11.2026; Sichtpruefung vom Nutzer bestaetigt.
-
-Freigegebener Aenderungsumfang:
-- Untere Summen-Beschriftungszeile entfernen.
-- Gesamtzahl im Zaehlerfeld vertikal zentrieren.
-- Bereits bestaetigte GC1-Zaehlerverarbeitung beibehalten.
-- Keine Aenderung an GoatCounter-Tracking, Wettbewerben, Wertungen oder anderen Dateien.
-
-Einspielung: Nur stalk-o-meter.html und stalk-o-meter.js ins Root des LIVE-Repositories
-uebernehmen. Vor Commit den aktuellen LIVE-HEAD gegen obigen Ausgangscommit abgleichen.
-Commit/Push erfolgt ausschliesslich durch Nutzer ueber GitHub Desktop.
-Anschliessend LIVE-Sichtpruefung separat bestaetigen.
-
-GitHub Summary:
-fix: Stalk-O-Meter GC2 – Summenzeile entfernen und Gesamtzahl ausrichten (LIVE)
-
-GitHub Description:
-Uebernimmt die auf TEST2v2 sichtgepruefte GC2-Layoutkorrektur in LIVE. Die untere Summenbeschreibung entfaellt und die Gesamtzahl wird im Zaehlerfeld vertikal zentriert. GC1-Zahlenverarbeitung und GoatCounter-Tracking bleiben unveraendert. Nur stalk-o-meter.html und stalk-o-meter.js betroffen.
+TOSMC GC3 – LIVE-Einspielung nach bestätigter TEST2v2-Sichtprüfung
+LIVE-Basis: OldSmugglersClub/the-old-smugglers-club, main, Commit 7d591002c3a62d27e502f74c757ce2cbb2e71d45
+Geprüfte Git-Blobs: stalk-o-meter.js a6fef768b691f4d8018d09b34284ebd4d47e6f1e; stalk-o-meter.html 1f81d5beeb9a4280f047bb16d4f61018ed129047
+Änderungen: Nur zwei sichtbare Bezeichnungen im Stalk-O-Meter und JS-Cacheparameter GC2 -> GC3.
+Kein Einfluss auf GoatCounter-Abfragen, Berechnung, Statistik, andere Website-Bereiche.
+Einspielung: Nur stalk-o-meter.js und stalk-o-meter.html im LIVE-Repository ersetzen. Vorher HEAD abgleichen, danach GitHub Desktop Commit/Push und LIVE-Sichtprüfung.
+Freigabe ausschließlich für diese beiden Dateien und die oben geprüfte LIVE-Basis. Kein GitHub-Schreibzugriff durchgeführt.
