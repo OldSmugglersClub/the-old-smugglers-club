@@ -26,7 +26,6 @@
 
   const list = document.getElementById('stalk-list');
   const total = document.getElementById('stalk-total-count');
-  const status = document.getElementById('stalk-total-status');
   const error = document.getElementById('stalk-error');
 
   const format = new Intl.NumberFormat('de-DE');
@@ -83,11 +82,9 @@
       render(rows);
       const sum = rows.reduce((acc, row) => acc + row.count, 0);
       total.textContent = format.format(sum);
-      status.textContent = 'Summe der 14 ausgewählten TOSMC-Inhaltsbereiche';
     })
     .catch(() => {
       total.textContent = '–';
-      status.textContent = 'Aufrufzahlen derzeit nicht verfügbar';
       list.innerHTML = '<div class="stalk-empty">Keine Statistikdaten verfügbar.</div>';
       if (error) error.classList.remove('is-hidden');
     });

@@ -7,6 +7,11 @@
   <title>Stalk-O-Meter | The Old Smugglers Club</title>
   <link rel="stylesheet" href="./wettbewerb.css?v=4.9.2-HF12-HF86">
   <link rel="stylesheet" href="./stalk-o-meter.css?v=4.7.2-TEST1">
+  <style>
+    /* GC2: Zahl mittig zwischen Zaehlertitel und unterem Rahmen platzieren. */
+    .stalk-total{display:flex;flex-direction:column;min-height:190px}
+    .stalk-total strong{display:flex;flex:1;align-items:center;justify-content:center;margin:0}
+  </style>
   <link rel="stylesheet" href="./accessibility-v33.css">
   <link rel="stylesheet" href="./legal.css">
   <link rel="stylesheet" href="./site-navigation.css?v=4.9.2-HF12-HF86">
@@ -25,7 +30,6 @@
       <section class="stalk-total" aria-labelledby="stalk-total-title">
         <span id="stalk-total-title">Aufrufe der ausgewählten TOSMC-Inhaltsbereiche seit Aktivierung</span>
         <strong id="stalk-total-count" aria-live="polite">–</strong>
-        <small id="stalk-total-status">Aufrufzahlen werden geladen …</small>
       </section>
 
       <section class="dynamic-section stalk-ranking" aria-labelledby="stalk-ranking-title">
@@ -55,7 +59,7 @@
     </div>
   </footer>
 
-  <script src="./stalk-o-meter.js?v=4.9.15-GC1" defer></script>
+  <script src="./stalk-o-meter.js?v=4.9.15-GC2" defer></script>
   <script>
   (function(){
     const target=document.getElementById('legal-version');

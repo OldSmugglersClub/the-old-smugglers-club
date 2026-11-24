@@ -1,21 +1,25 @@
-TOSMC Stalk-O-Meter GC1 – separates LIVE-Dateipaket
-Quelle LIVE: OldSmugglersClub/the-old-smugglers-club, main
-Gepruefter LIVE-HEAD: fdb027238bac212a730c2da4198d314ead70ca46
-LIVE-Original-Blobs:
-  stalk-o-meter.js   961a42ee16b57c19b1dfe445d8d0983d6ca2efff
-  stalk-o-meter.html 12354c00aaf63d715b43586136882f75d6a8e8dd
-TEST2v2: Nutzer hat Sichtpruefung nach GC1 und Entfernen des Hinweistexts bestaetigt.
+TOSMC – Stalk-O-Meter GC2 – separates LIVE-Dateipaket
+Datum: 24.11.2026
+LIVE-Quelle: OldSmugglersClub/the-old-smugglers-club, main
+LIVE-Ausgangscommit: db4dfb64c528889d0bb7e3f6d25c3a636364ee6b
+LIVE-Originaldateien vor Paketbau direkt ueber GitHub read-only geprueft:
+  stalk-o-meter.html Git-Blob e6fd702d64dc4e6d7a4251166873ceb4ca91859a
+  stalk-o-meter.js   Git-Blob 358e8419439203311aea2a50669c68a9f8514320
+GC2-Quelle: TEST2v2-Einspielpaket vom 24.11.2026; Sichtpruefung vom Nutzer bestaetigt.
 
-Inhalt fuer LIVE:
-- stalk-o-meter.js: robuste Interpretation der oeffentlichen GoatCounter-Zaehlerwerte
-- stalk-o-meter.html: angepasster Zaehler-Titel, kein erklaerender Absatz unter Beliebteste Bereiche
+Freigegebener Aenderungsumfang:
+- Untere Summen-Beschriftungszeile entfernen.
+- Gesamtzahl im Zaehlerfeld vertikal zentrieren.
+- Bereits bestaetigte GC1-Zaehlerverarbeitung beibehalten.
+- Keine Aenderung an GoatCounter-Tracking, Wettbewerben, Wertungen oder anderen Dateien.
 
-GitHub Desktop: diese beiden Dateien im LIVE-Repository ersetzen, Commit/Push durch Nutzer.
-Vorher erneut LIVE-HEAD mit oben genanntem Stand abgleichen. Bei inzwischen veraendertem LIVE-Bestand keine blinde Ueberschreibung.
-Nachher LIVE-Sichtpruefung durch Nutzer erforderlich.
+Einspielung: Nur stalk-o-meter.html und stalk-o-meter.js ins Root des LIVE-Repositories
+uebernehmen. Vor Commit den aktuellen LIVE-HEAD gegen obigen Ausgangscommit abgleichen.
+Commit/Push erfolgt ausschliesslich durch Nutzer ueber GitHub Desktop.
+Anschliessend LIVE-Sichtpruefung separat bestaetigen.
 
-Summary:
-fix: Stalk-O-Meter GC1 – Zahlenverarbeitung und Anzeige (LIVE)
+GitHub Summary:
+fix: Stalk-O-Meter GC2 – Summenzeile entfernen und Gesamtzahl ausrichten (LIVE)
 
-Description:
-Uebernimmt die auf TEST2v2 sichtgepruefte GC1-Korrektur nach LIVE: GoatCounter-Zahlen mit Tausendertrennzeichen werden korrekt gelesen; die Gesamtanzeige beschreibt die ausgewaehlten TOSMC-Inhaltsbereiche. Der zusaetzliche Erklaerungsabsatz unter Beliebteste Bereiche bleibt entfernt. Tracking und Zaehlerpfade bleiben unveraendert. Nur zwei Stalk-O-Meter-Dateien geaendert.
+GitHub Description:
+Uebernimmt die auf TEST2v2 sichtgepruefte GC2-Layoutkorrektur in LIVE. Die untere Summenbeschreibung entfaellt und die Gesamtzahl wird im Zaehlerfeld vertikal zentriert. GC1-Zahlenverarbeitung und GoatCounter-Tracking bleiben unveraendert. Nur stalk-o-meter.html und stalk-o-meter.js betroffen.
