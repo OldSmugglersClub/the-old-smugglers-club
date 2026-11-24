@@ -40,8 +40,17 @@
     if (response.status === 404) return { ...page, count: 0 };
     if (!response.ok) throw new Error('Counter HTTP ' + response.status);
     const data = await response.json();
-    const count = Number.parseInt(data.count, 10);
-    return { ...page, count: Number.isFinite(count) ? count : 0 };
+    // GoatCounter kann aggregierte Zahlen mit Tausendertrennzeichen liefern.
+    // Keine Teilzahlen (z. B. "1,234" -> 1) stillschweigend übernehmen.
+    const raw = String(data.count ?? '').trim();
+    if (!/^(?:\d+|\d{1,3}(?:[., \u00a0\u202f]\d{3})+)$/.test(raw)) {
+      throw new Error('Ungueltiger GoatCounter-Zaehler');
+    }
+    const count = Number(raw.replace(/[., \u00a0\u202f]/g, ''));
+    if (!Number.isSafeInteger(count) || count < 0) {
+      throw new Error('Zaehler ausserhalb des sicheren Bereichs');
+    }
+    return { ...page, count };
   }
 
   function render(rows) {
@@ -74,7 +83,7 @@
       render(rows);
       const sum = rows.reduce((acc, row) => acc + row.count, 0);
       total.textContent = format.format(sum);
-      status.textContent = 'Summe der unten aufgeführten Inhaltsseiten';
+      status.textContent = 'Summe der 14 ausgewählten TOSMC-Inhaltsbereiche';
     })
     .catch(() => {
       total.textContent = '–';

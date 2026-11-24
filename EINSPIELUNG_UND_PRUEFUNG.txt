@@ -1,0 +1,21 @@
+TOSMC Stalk-O-Meter GC1 – separates LIVE-Dateipaket
+Quelle LIVE: OldSmugglersClub/the-old-smugglers-club, main
+Gepruefter LIVE-HEAD: fdb027238bac212a730c2da4198d314ead70ca46
+LIVE-Original-Blobs:
+  stalk-o-meter.js   961a42ee16b57c19b1dfe445d8d0983d6ca2efff
+  stalk-o-meter.html 12354c00aaf63d715b43586136882f75d6a8e8dd
+TEST2v2: Nutzer hat Sichtpruefung nach GC1 und Entfernen des Hinweistexts bestaetigt.
+
+Inhalt fuer LIVE:
+- stalk-o-meter.js: robuste Interpretation der oeffentlichen GoatCounter-Zaehlerwerte
+- stalk-o-meter.html: angepasster Zaehler-Titel, kein erklaerender Absatz unter Beliebteste Bereiche
+
+GitHub Desktop: diese beiden Dateien im LIVE-Repository ersetzen, Commit/Push durch Nutzer.
+Vorher erneut LIVE-HEAD mit oben genanntem Stand abgleichen. Bei inzwischen veraendertem LIVE-Bestand keine blinde Ueberschreibung.
+Nachher LIVE-Sichtpruefung durch Nutzer erforderlich.
+
+Summary:
+fix: Stalk-O-Meter GC1 – Zahlenverarbeitung und Anzeige (LIVE)
+
+Description:
+Uebernimmt die auf TEST2v2 sichtgepruefte GC1-Korrektur nach LIVE: GoatCounter-Zahlen mit Tausendertrennzeichen werden korrekt gelesen; die Gesamtanzeige beschreibt die ausgewaehlten TOSMC-Inhaltsbereiche. Der zusaetzliche Erklaerungsabsatz unter Beliebteste Bereiche bleibt entfernt. Tracking und Zaehlerpfade bleiben unveraendert. Nur zwei Stalk-O-Meter-Dateien geaendert.
