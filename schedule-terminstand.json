@@ -444,10 +444,10 @@
       "quelleStand": "2026-07-30"
     },
     "wr-2026-27-02": {
-      "datum": "2026-12-27",
-      "datumVon": "2026-12-27",
-      "datumBis": "2026-12-27",
-      "anstoss": "18:00",
+      "datum": "2026-12-29",
+      "datumVon": "2026-12-29",
+      "datumBis": "2026-12-29",
+      "anstoss": "21:45",
       "status": "terminiert",
       "terminBestaetigt": true,
       "quelleStand": "2026-07-30"
