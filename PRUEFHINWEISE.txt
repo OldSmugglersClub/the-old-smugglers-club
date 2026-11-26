@@ -1,13 +1,27 @@
-TOSMC Spieltags-Logbuch HERO2 – LIVE-Einspielpaket
+TOSMC Spieltags-Logbuch HERO4 – separates LIVE-Einspielpaket, 26.11.2026
 
-LIVE-Basis: OldSmugglersClub/the-old-smugglers-club, main 91cacd68fac9e64b34b399b783e3c29df407279d
-TEST2v2: HERO2 vom Nutzer visuell bestaetigt, TEST HEAD a2fb98e9d411dbddf32a4d02a65df7591aaf7c24
+TEST2v2 Sicht- und Funktionspruefung durch Nutzer bestaetigt.
+LIVE-Repository: OldSmugglersClub/the-old-smugglers-club
+Ermittelte LIVE-main-Basis: 47ee702f9567a52bc0410e80f53c8a8ae14a81d4
 
-Einspielen: NUR logbuch.html und logbuch.css im LIVE-Repository ersetzen.
-SHA256SUMS und PRUEFHINWEISE.txt NICHT in das Repository uebernehmen.
+Vorherige LIVE Git-Blob-SHAs (vor Einspielung erneut abgleichen):
+ logbuch.html a692b10bca149b93fd528d2761902b3d2f2f7a2b
+ logbuch.css  f7971589227082f65333c4e7862e09e1f732654b
+ logbuch.js   575de139aade5210cede2c21b2b56251dc897ba7
 
-Aenderung: Linke Hero-Buttons mittig; gleichmaessige vertikale Abstaende; zweispaltiges Layout aus HERO1.
-Keine Aenderung an Logbuchdaten, Statistik, Scripts oder Navigation.
+TEST2v2-Referenzstand:
+ logbuch.html bc535e43776101be7b24d624a38c244b9ecd374a
+ logbuch.css  5bf4b8300df194608424591e43ee4c83b30d4dd9
+ logbuch.js   09f0db62ae752561663f01c8768827adcfabc97a
 
-Vor Commit LIVE-HEAD vergleichen; bei Abweichung erneuter Review.
-Nach Commit/Push LIVE-Sichtpruefung.
+Einspielen: Ausschliesslich logbuch.html, logbuch.css und logbuch.js im LIVE-Repository ersetzen.
+Nicht ins Repository: SHA256SUMS, PRUEFHINWEISE.txt.
+
+Inhalt: Nutzerbestaetigte HERO3-Logbuch-Spruenge und Button-/Navigation-Optimierungen
+bis HERO3G sowie HERO4-Goldglanz. CSS und JS entsprechen TEST2v2-Originalen,
+HTML unterscheidet sich vom TEST2v2-Original nur in den zwei Cacheversionen LIVE.
+Keine Spielbetriebs- oder Wertungsdaten geaendert.
+
+ACHTUNG: LIVE-HEAD vor Upload erneut pruefen; bei einer Aenderung der drei
+Zieldateien muss das Paket neu gegen LIVE abgeglichen werden.
+LIVE-Sichtpruefung nach Einspielung durch Nutzer erforderlich.
