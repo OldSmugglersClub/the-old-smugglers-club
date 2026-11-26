@@ -1,0 +1,13 @@
+TOSMC Spieltags-Logbuch HERO2 – LIVE-Einspielpaket
+
+LIVE-Basis: OldSmugglersClub/the-old-smugglers-club, main 91cacd68fac9e64b34b399b783e3c29df407279d
+TEST2v2: HERO2 vom Nutzer visuell bestaetigt, TEST HEAD a2fb98e9d411dbddf32a4d02a65df7591aaf7c24
+
+Einspielen: NUR logbuch.html und logbuch.css im LIVE-Repository ersetzen.
+SHA256SUMS und PRUEFHINWEISE.txt NICHT in das Repository uebernehmen.
+
+Aenderung: Linke Hero-Buttons mittig; gleichmaessige vertikale Abstaende; zweispaltiges Layout aus HERO1.
+Keine Aenderung an Logbuchdaten, Statistik, Scripts oder Navigation.
+
+Vor Commit LIVE-HEAD vergleichen; bei Abweichung erneuter Review.
+Nach Commit/Push LIVE-Sichtpruefung.
