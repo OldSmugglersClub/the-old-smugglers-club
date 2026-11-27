@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "datenVersion": 53,
-  "aktualisiert": "2026-11-22",
+  "datenVersion": 54,
+  "aktualisiert": "2026-11-28",
   "saison": "2026/2027",
   "quelle": "OpenLigaDB getgoalgetters/bl1/2026",
   "status": "bereit",
   "torjaeger": [
     {
       "name": "N. Füllkrug",
-      "tore": 10
+      "tore": 11
     },
     {
       "name": "P. Schick",
@@ -72,6 +72,10 @@
     },
     {
       "name": "M. Krattenmacher",
+      "tore": 4
+    },
+    {
+      "name": "E. Dinkçi",
       "tore": 4
     },
     {
@@ -159,11 +163,11 @@
       "tore": 2
     },
     {
-      "name": "A. Kade",
+      "name": "Rodrigo Ribeiro",
       "tore": 2
     },
     {
-      "name": "Rodrigo Ribeiro",
+      "name": "A. Kade",
       "tore": 2
     },
     {
@@ -187,10 +191,6 @@
       "tore": 2
     },
     {
-      "name": "E. Dinkçi",
-      "tore": 2
-    },
-    {
       "name": "M. Grüll",
       "tore": 2
     },
@@ -207,11 +207,11 @@
       "tore": 2
     },
     {
-      "name": "M. Mittelstädt",
+      "name": "A. Hložek",
       "tore": 2
     },
     {
-      "name": "A. Hložek",
+      "name": "M. Mittelstädt",
       "tore": 2
     },
     {
@@ -247,11 +247,11 @@
       "tore": 2
     },
     {
-      "name": "S. Marino",
+      "name": "S. Tigges",
       "tore": 2
     },
     {
-      "name": "S. Tigges",
+      "name": "S. Marino",
       "tore": 2
     },
     {
@@ -300,6 +300,10 @@
     },
     {
       "name": "J. Njinmah",
+      "tore": 2
+    },
+    {
+      "name": "F. Honorat",
       "tore": 2
     },
     {
@@ -355,11 +359,11 @@
       "tore": 1
     },
     {
-      "name": "A. Aouchiche",
+      "name": "M. Wöber",
       "tore": 1
     },
     {
-      "name": "M. Wöber",
+      "name": "A. Aouchiche",
       "tore": 1
     },
     {
@@ -383,7 +387,7 @@
       "tore": 1
     },
     {
-      "name": "E. Martel",
+      "name": "Danny da Costa",
       "tore": 1
     },
     {
@@ -391,7 +395,7 @@
       "tore": 1
     },
     {
-      "name": "Danny da Costa",
+      "name": "E. Martel",
       "tore": 1
     },
     {
@@ -419,15 +423,11 @@
       "tore": 1
     },
     {
-      "name": "N. Schlotterbeck",
-      "tore": 1
-    },
-    {
       "name": "Daniel Svensson",
       "tore": 1
     },
     {
-      "name": "J. Quansah",
+      "name": "N. Schlotterbeck",
       "tore": 1
     },
     {
@@ -436,6 +436,10 @@
     },
     {
       "name": "R. Andrich",
+      "tore": 1
+    },
+    {
+      "name": "J. Quansah",
       "tore": 1
     },
     {
@@ -567,11 +571,11 @@
       "tore": 1
     },
     {
-      "name": "J. Adamu",
+      "name": "F. Asllani",
       "tore": 1
     },
     {
-      "name": "F. Asllani",
+      "name": "J. Adamu",
       "tore": 1
     },
     {
@@ -592,6 +596,10 @@
     },
     {
       "name": "M. Friedl",
+      "tore": 1
+    },
+    {
+      "name": "K. Diks",
       "tore": 1
     }
   ]
